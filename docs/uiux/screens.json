@@ -1,0 +1,472 @@
+{
+  "title": "Pemetaan Layar SLR_07",
+  "sources": [
+    "PRD SILAR 0.5",
+    "Acuan Teknis SILAR 0.3 termasuk Lampiran A",
+    "Pemetaan Fitur Final 1.0",
+    "Task SLR_07 dan diskusi kelompok"
+  ],
+  "screens": [
+    {
+      "id": "AK01",
+      "name": "Masuk",
+      "requirements": [
+        "FR01"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "POST auth/login/",
+        "GET auth/csrf/",
+        "POST auth/refresh/",
+        "POST auth/logout/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "AK02",
+      "name": "Daftar Reporter",
+      "requirements": [
+        "FR01"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "POST auth/register/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "AK03",
+      "name": "Verifikasi Email",
+      "requirements": [
+        "FR01"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "POST auth/otp/verify/",
+        "POST auth/otp/request/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "AK04",
+      "name": "Aktivasi Operator",
+      "requirements": [
+        "FR01",
+        "FR02"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "POST auth/operators/activate/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "AK05",
+      "name": "Lupa Password",
+      "requirements": [
+        "FR01"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "POST auth/otp/request/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "AK06",
+      "name": "Reset Password",
+      "requirements": [
+        "FR01"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "POST auth/password/reset/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "AK07",
+      "name": "Profil",
+      "requirements": [
+        "FR01"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "GET me/",
+        "PATCH me/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "RP01",
+      "name": "Laporan Saya",
+      "requirements": [
+        "FR03",
+        "FR14"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "GET reports/?scope=owned"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "RP02",
+      "name": "Buat atau Lanjutkan Draft",
+      "requirements": [
+        "FR03",
+        "FR04"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06",
+        "NFR02",
+        "NFR03"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "POST reports/",
+        "POST reports/{r}/evidence/",
+        "GET reports/{r}/evidence/",
+        "GET evidence/{id}/media/",
+        "POST reports/{r}/bundles/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "RP03",
+      "name": "Analisis dan Pemulihan",
+      "requirements": [
+        "FR05",
+        "FR06",
+        "FR07",
+        "FR08",
+        "FR09",
+        "FR10"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06",
+        "NFR03"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "POST reports/{r}/analyses/",
+        "GET requests/",
+        "GET requests/{key}/",
+        "GET reports/{r}/analysis-runs/{id}/",
+        "GET reports/{r}/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "RP04",
+      "name": "Pemeriksaan Koreksi Konfirmasi dan Pengiriman",
+      "requirements": [
+        "FR11",
+        "FR12",
+        "FR13"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06",
+        "NFR02"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "POST reports/{r}/narratives/revisions/",
+        "POST reports/{r}/cards/revisions/",
+        "POST reports/{r}/human-verifications/",
+        "POST reports/{r}/submit/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "RP05",
+      "name": "Detail Status dan Riwayat",
+      "requirements": [
+        "FR14"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06",
+        "NFR02"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "GET reports/{r}/",
+        "GET reports/{r}/versions/",
+        "GET reports/{r}/versions/{kind}/{id}/",
+        "GET reports/{r}/history/",
+        "GET reports/{r}/reviews/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "OP01",
+      "name": "Antrean Laporan",
+      "requirements": [
+        "FR16"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06",
+        "NFR02"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "GET operator/queue/",
+        "POST reports/{r}/claim/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "OP02",
+      "name": "Laporan Tugas Operator",
+      "requirements": [
+        "FR16",
+        "FR17"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "GET operator/assigned/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "OP03",
+      "name": "Pemeriksaan dan Tindak Lanjut",
+      "requirements": [
+        "FR17",
+        "FR18",
+        "FR24"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06",
+        "NFR02"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "GET reports/{r}/",
+        "GET reports/{r}/reviews/",
+        "POST reports/{r}/reviews/",
+        "GET reports/{r}/follow-ups/",
+        "POST reports/{r}/follow-ups/",
+        "PATCH reports/{r}/follow-ups/{id}/",
+        "POST reports/{r}/close/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "OP04",
+      "name": "Keputusan Internal atau Publikasi",
+      "requirements": [
+        "FR20"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "POST reports/{r}/publication-decision/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "OP05",
+      "name": "Kandidat Sanitasi Persetujuan dan Penerbitan",
+      "requirements": [
+        "FR21"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06",
+        "NFR02"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "POST reports/{r}/publication-versions/",
+        "POST reports/{r}/publication-versions/{id}/approve/",
+        "POST reports/{r}/publication-versions/{id}/publish/",
+        "POST reports/{r}/publication-versions/{id}/cancel/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "AD01",
+      "name": "Pengelolaan Operator",
+      "requirements": [
+        "FR02"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "GET admin/operators/",
+        "POST admin/operators/",
+        "GET admin/operators/{id}/",
+        "PATCH admin/operators/{id}/",
+        "GET admin/operator-permissions/",
+        "POST admin/operators/{id}/activation-otp/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "AD02",
+      "name": "Monitoring dan Penugasan",
+      "requirements": [
+        "FR19"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06",
+        "NFR02"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "GET admin/reports/",
+        "GET reports/{r}/",
+        "GET admin/operators/",
+        "POST admin/reports/{r}/assignments/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "AD03",
+      "name": "Audit",
+      "requirements": [
+        "FR23"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "GET admin/audit/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "AD04",
+      "name": "Monitoring Layanan",
+      "requirements": [
+        "FR26"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "GET admin/services/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "PB01",
+      "name": "Daftar dan Pencarian Publik",
+      "requirements": [
+        "FR22"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06",
+        "NFR02"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "GET public/reports/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "PB02",
+      "name": "Detail Publik",
+      "requirements": [
+        "FR22"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06",
+        "NFR02"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "GET public/reports/{r}/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "UM01",
+      "name": "Notifikasi",
+      "requirements": [
+        "FR15"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06"
+      ],
+      "api_base": "/api/v1/",
+      "api": [
+        "GET notifications/",
+        "PATCH notifications/{id}/read/"
+      ],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    },
+    {
+      "id": "UM02",
+      "name": "Instalasi PWA dan Koneksi",
+      "requirements": [
+        "FR25"
+      ],
+      "design_nfr": [
+        "NFR05",
+        "NFR06"
+      ],
+      "api_base": "/api/v1/",
+      "api": [],
+      "status": "Rancangan tersedia; review bertahap dan kasus yang belum dilaporkan mengikuti review-results.md. Belum penerimaan akhir."
+    }
+  ]
+}
