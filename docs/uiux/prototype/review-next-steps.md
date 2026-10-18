@@ -1,58 +1,42 @@
-# Langkah Review Lanjutan SLR_07
+# Finalisasi Review Setelah Audit SLR_07
 
-Dokumen ini menjelaskan tindak lanjut catatan Nicy Putra Pratama tanggal 16 Oktober 2026. Pemeriksaan teknis tambahan U07-11–U07-15 sudah selesai dan dicatat pada review-results.md. Dokumen ini adalah panduan finalisasi manual; langkah berikut belum dianggap sudah dilakukan oleh penguji.
+Diperbarui 18 Oktober 2026. Audit sumber telah membuktikan tujuh alur browser pada paket awal, termasuk login/OTP serta jalur Operator sampai close. Menu/avatar telah diperbaiki dan 60 pemeriksaan teknis lulus pada sumber terbaru. Langkah berikut adalah pengujian yang masih perlu bukti aktual; bukan pernyataan bahwa kegiatan sudah dilakukan.
 
-## Menggunakan paket baru
+## Membuka paket
 
-1. Ekstrak ZIP ke folder sementara, lalu salin folder docs di dalamnya ke akar proyek Silar. Dokumentasi berada di docs/uiux/ dan sumber prototype di docs/uiux/prototype/.
-2. Dari akar proyek jalankan `py -m http.server 8000 --directory docs/uiux/prototype` atau `python -m http.server 8000 --directory docs/uiux/prototype`.
-3. Buka http://localhost:8000. Setelah mengganti sumber, muat ulang penuh sekali sebelum putaran baru. Ini mereset data contoh; jangan dilakukan di tengah alur yang ingin dipertahankan.
-4. Akun awal Reporter: email `pelapor@contoh.test`, password `Silar123!`. Ini contoh publik untuk simulasi dalam memori, bukan akun server. Gunakan data fiktif dan jangan memakai password asli.
-5. Untuk pendaftaran, gunakan email fiktif lain seperti `uji@contoh.test`. Sesudah verifikasi, masuk dengan password pendaftaran. Sesudah reset, gunakan password baru. Refresh/Mulai ulang mengembalikan akun contoh ke awal.
+Ekstrak ZIP, salin folder docs ke akar SILAR, lalu jalankan `py -m http.server 8000 --directory docs/uiux/prototype`. Gunakan python/python3 bila py tidak tersedia. Buka http://localhost:8000 dan muat ulang penuh sebelum alur baru. Akun fixture Reporter: pelapor@contoh.test / Silar123!; OTP 123456. Mulai ulang/refresh mereset data contoh.
 
-## Uji ulang password salah
+## A07-01 — Uji ulang menu
 
-1. Mulai ulang → Alur normal → Akun → Masuk.
-2. Isi pelapor@contoh.test dengan password Salah123! → Masuk.
-3. Harapan: email/password ditolak; tetap di halaman Masuk dan tidak masuk ke Reporter.
-4. Coba email yang sama dengan password Silar123!.
-5. Harapan: masuk ke Laporan Saya sebagai Reporter.
-6. Catat hasil dan screenshot sebagai uji ulang R07-01; pertahankan catatan awal password salah diterima.
-
-Password salah pada login berbeda dari password baru pada Reset Password. Password baru yang memenuhi syarat dan cocok dengan konfirmasinya memang boleh diterima bersama OTP valid. Uji negatif reset adalah kode salah/kedaluwarsa, password terlalu pendek, atau konfirmasi berbeda. Setelah reset berhasil, password lama ditolak dan password baru digunakan.
-
-## Cara mencoba OTP kedaluwarsa
-
-1. Pilih Akun → Verifikasi Email.
-2. Pada bar Ruang Review, pilih Uji keadaan → OTP kedaluwarsa.
-3. Masukkan 123456 lalu klik Verifikasi Email.
-4. Harapan: pesan kode kedaluwarsa/tidak dapat digunakan; tidak beralih sebagai verifikasi berhasil.
-5. Catat pesan, halaman dan screenshot untuk U07-01 langkah 7b.
-6. Kembalikan Uji keadaan ke Alur normal sebelum menguji keberhasilan berikutnya; ikuti alur kirim ulang yang tersedia.
-
-Pada prototype tidak perlu menunggu masa berlaku kode nyata; kontrol review menyimulasikan kedaluwarsa. Pengiriman dan masa berlaku OTP sebenarnya diperiksa saat implementasi akun.
-
-## RUNNING dan UNKNOWN
-
-- RUNNING menunjukkan proses masih berjalan; UNKNOWN menunjukkan hasil belum dapat dipastikan. Keduanya menahan analisis baru.
-- Klik Periksa Status. Kedua keadaan sengaja tidak diselesaikan timer prototype.
-- Untuk melanjutkan simulasi: Simulasi pemulihan teknis → Alur normal → Coba Analisis Lagi secara eksplisit.
-- Kontrol itu alat lab. Pada aplikasi nyata pengelola teknis membuktikan proses lama berhenti dan mengesahkan keadaan terminal; bukan tombol retry Admin.
-- Respons hilang, hasil tersimpan diuji tersendiri: pilih keadaan → Analisis → Periksa Status; hasil ditemukan tanpa analisis kedua.
-
-## Penelusuran manual lanjutan
-
-| ID | Cara melanjutkan | Hasil yang harus dicatat |
+| Kasus | Langkah | Hasil yang diperiksa |
 | --- | --- | --- |
-| U07-11 | Operator penanggung jawab → review Valid → PREPARE → buat kandidat → sanitasi → setujui → terbitkan; uji pembatalan kandidat pengganti. | Kandidat/approval belum langsung terbit; pembatalan mempertahankan versi publik sebelumnya. |
-| U07-12 | Coba close sebelum syarat lengkap; selesaikan tindak lanjut/keputusan; close dengan catatan; coba mutasi setelah CLOSED. | Penolakan sebelum syarat lengkap, close yang sah, dan penahanan perubahan sesudah CLOSED. |
-| U07-13 | Admin → akun Operator → aktivasi contoh → cabut izin/nonaktifkan → assignment ke Operator lain dengan alasan → audit/monitoring. | Izin/assignment baru berlaku, akses lama hilang, draft tidak terbuka, monitoring tidak menjalankan AI. |
-| U07-14 | Publik → daftar/detail → pencarian → filter kategori/lokasi → kata tanpa hasil. | Hasil sesuai field publik; data privat tidak muncul; waktu kejadian/publikasi dibedakan. |
-| U07-15 | Notifikasi sesudah tindakan → tandai dibaca → notifikasi lama sesudah assignment → Offline → panduan PWA. | Notifikasi tidak menambah akses; operasi laporan ditahan saat offline; batas PWA dijelaskan. |
-| U07-16 | Chrome Android dan Chrome/Edge Windows; 390×844 dan 1366×768; tambahan 360×800 dan 768×1024; menu/form/tabel/dialog/keyboard/Tab. | Perangkat/browser/versi dan viewport aktual, screenshot, kemudahan penggunaan serta Digital Awareness. |
+| Draft sudah ada | Lebar 390 px → Reporter → buka menu → Buat Laporan. | RP02 terbuka, menu/overlay hilang dan textarea serta tindakan formulir dapat digunakan. |
+| Draft baru | Mulai ulang → selesaikan draft contoh sampai konfirmasi dan submit → buka menu → Buat Laporan. | Satu draft baru terbuka dan menu/overlay hilang. |
+| Tidak menggandakan draft | Dari draft baru, buka menu lalu pilih Buat Laporan kembali. | Draft yang sama dibuka; jumlah draft tidak bertambah. |
+| Ukuran sempit | Ulangi kasus draft lama dan baru pada lebar 360 px. | Formulir langsung dapat digunakan tanpa menutup overlay secara manual. |
+| Pergantian ukuran | Sesudah navigasi Buat Laporan, beralih antara 390 px dan 1366 px, lalu kembali; buka/tutup menu kembali pada ponsel. | Tujuan/formulir tetap sesuai, tidak ada overlay tertinggal, menu masih dapat dibuka/ditutup. |
 
-Untuk U07-11–U07-15, hasil teknis yang tersedia dapat menjadi acuan penelusuran kelompok. U07-16 tetap memerlukan pemeriksaan perangkat/usability. Langkah lengkap dan acuan FR/NFR ada pada test-plan.md. Isi hasil aktual setelah dicoba; belum dilaporkan tidak otomatis berarti gagal atau belum pernah dicoba.
+Jika memakai emulasi browser, catat sebagai simulasi viewport. Bukti pada perangkat nyata dicatat terpisah. Simpan screenshot/rekaman relevan dan kaitkan dengan A07-01 serta U07-16.
 
-## Bukti dan finalisasi
+## A07-02 — Avatar
 
-Simpan screenshot/rekaman data fiktif di docs/uiux/bukti-review/. Catat hasil, lingkungan, ID laporan bila relevan, temuan, perbaikan dan uji ulang pada review-results.md. Versi/commit harus merujuk paket yang benar-benar diuji. Lengkapi nama peserta serta keputusan kelompok setelah review. Card tetap berjalan sampai kriteria SLR_07 terpenuhi.
+Periksa avatar pada sidebar desktop. Warna teks telah dibuat eksplisit #1d2b32 pada #edf1f2; perhitungan sRGB 12,79:1. Ulangi pemeriksaan kontras melalui browser/alat yang dipakai kelompok, catat hasil serta versinya. Jangan menyimpulkan seluruh UI memenuhi aksesibilitas hanya dari avatar atau pemindaian otomatis.
+
+## A07-03 — Review perangkat dan penerimaan kelompok
+
+1. Catat nama reviewer, tanggal, perangkat/OS/browser/versi, viewport serta identitas paket atau commit yang benar-benar dipakai.
+2. Periksa alur utama Reporter/Publik pada sasaran Android Chrome dan Operator/Admin pada Windows Chrome/Edge. Bedakan perangkat nyata dari emulasi viewport.
+3. Periksa menu, keyboard, dialog, fokus, pesan error dan pemahaman batas AI/privasi. Catat titik bingung dan tindak lanjut yang diamati.
+4. Gunakan test-plan.md sebagai acuan cakupan. Hasil browser auditor dan uji teknis yang sudah tersedia dapat menjadi bahan review; tidak perlu mengulang pekerjaan dari awal tanpa alasan.
+5. Isi keputusan kelompok di review-results.md: diterima untuk lingkup SLR_07, atau perlu perbaikan dengan alasan/tindak lanjut. Jangan mengisi keputusan sebelum kelompok menetapkannya.
+6. Jika review sudah dilakukan di luar ZIP, cukup lampirkan/tautkan catatan aktual. Setelah kelompok commit/push, tautkan commit final ke card.
+
+## Ringkasan yang perlu dikirim untuk memperbarui hasil
+
+- Nama reviewer dan tanggal review akhir.
+- Perangkat, OS, browser/versi, viewport; nyata atau simulasi.
+- Hasil uji ulang menu lama/baru, perubahan ukuran dan avatar.
+- Temuan/usability serta tindak lanjut bila ada.
+- Keputusan penerimaan kelompok dan tautan bukti/commit bila sudah tersedia.
+
+Laporan audit sumber tidak menyebut nama personal auditor atau keputusan kelompok. Nama penguji awal Nicy Putra Pratama tidak otomatis menjadi reviewer akhir. Status tetap In Review sampai bukti penutupan tersedia sesuai lingkup perancangan/prototype.

@@ -1,6 +1,6 @@
 {
   "title": "Bukti Pemeriksaan Teknis SLR_07",
-  "executed_at": "2026-10-16T11:46:19.814Z",
+  "executed_at": "2026-10-18T12:48:10.785Z",
   "method": "Node.js: perilaku model, handler klik, dan proyeksi HTML pada stub DOM; bukan browser.",
   "node_version": "v24.19.0",
   "scope": "Prototype dengan data fiktif; tanpa API/AI/email/PWA nyata.",
@@ -8,8 +8,8 @@
   "manual_tester": "Tidak diatribusikan kepada penguji manual.",
   "asset_sha256": {
     "index.html": "19abb5e3a4a2862dbb1551bca5f9762981a581fc919d1d71482d295d4708adef",
-    "styles.css": "059d4a04027a2a4039c031bbb5993f541a9afe935dcb8c778bba83f4f8adff1f",
-    "app.mjs": "056aba2e0a2d468f0a7dbca3990640b339fc81e2ede6867521763a0d85d7c7e3",
+    "styles.css": "4b15b13505aca13838a0bb941adc61f31352f7f54e5237410c518e3e804f870b",
+    "app.mjs": "e6a5780264792dfd84039986bafcf97221e80dccfceb8e53020fb1026ef14600",
     "model.mjs": "e9a680dc43c017f09b92c0f117b20e2527d820a4803ca2ea7566f6b76d806477"
   },
   "summary": {
@@ -140,8 +140,8 @@
     }
   ],
   "manual_follow_up": [
-    "U07-01: uji ulang login/OTP oleh penguji pada browser.",
-    "U07-16: layout, perangkat/browser aktual, keyboard, fokus, kontras dan review usability kelompok.",
+    "Uji visual ulang menu/avatar pada paket hasil perbaikan audit.",
+    "U07-16: perangkat/browser sasaran, keyboard, fokus dan review usability kelompok.",
     "Penerimaan akhir kelompok dan commit repository SILAR yang sebenarnya."
   ]
 }

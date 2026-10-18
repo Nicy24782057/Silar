@@ -214,6 +214,9 @@ Acuan: seluruh layar; NFR05/NFR06 utama, NFR02/NFR03 pendukung.
 5. Minta anggota mencoba membuat laporan tanpa arahan. Catat titik bingung, kesalahan, waktu yang diamati, dan komentar; tidak menambahkan target angka penerimaan baru.
 6. Periksa penjelasan empat kategori; kepemilikan bukti; Gemini; keterbatasan AI; OTP; sanitasi publik; dan bantuan pemulihan pada tindakan yang relevan.
 
+7. Regresi A07-01: pada 390 dan 360 px, buka menu → Buat Laporan; uji draft yang sudah ada dan draft baru setelah submit. Pastikan menu/overlay langsung tertutup; membuka ulang tidak menambah draft. Beralih ukuran desktop/ponsel dan periksa kembali.
+8. Regresi A07-02: periksa avatar desktop sesudah warna diperbaiki; catat hasil kontras browser/alat yang digunakan. Perhitungan CSS terbaru 12,79:1 tidak menggantikan pemeriksaan browser.
+
 Harapan: alur dapat diselesaikan, kontrol dapat dijangkau, informasi tidak terpotong, dan pengguna memahami langkah berikutnya serta batas sistem. Browser/visual QA tidak dapat digantikan pemeriksaan struktur JavaScript.
 
 ## Penilaian dan bukti
