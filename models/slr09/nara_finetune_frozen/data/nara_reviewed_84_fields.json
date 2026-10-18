@@ -1,0 +1,199 @@
+{
+  "origin": "FINAL_REVIEW_CHECKPOINT",
+  "checkpoint_sha256": "7e9aae2728ea0755b5697fb4e5cf1ce29e6037ddc34bf8fc07043b4cd9294d97",
+  "selection": "KNOWN_DIAGNOSTIC_REVIEWED_AFTER_SEEING_PREDICTIONS_NOT_BLIND_TEST",
+  "records": [
+    {
+      "id": "D01",
+      "text": "Banjir terjadi di Sukarame dan merendam beberapa rumah sejak pukul 15.00.",
+      "fields": {
+        "location_text": "Sukarame",
+        "time_text": "sejak pukul 15.00",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merendam beberapa rumah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "beberapa rumah"
+        ]
+      }
+    },
+    {
+      "id": "D02",
+      "text": "Air naik cepat di Way Halim dan dua rumah sudah terendam sejak sore.",
+      "fields": {
+        "location_text": "Way Halim",
+        "time_text": "sejak sore",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "dua rumah sudah terendam"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dua rumah"
+        ]
+      }
+    },
+    {
+      "id": "D03",
+      "text": "Bangunan bergoyang dan warga langsung keluar rumah.",
+      "fields": {
+        "location_text": null,
+        "time_text": null,
+        "occurred_at": null,
+        "involved_parties": [
+          "warga"
+        ],
+        "impacts": [
+          "Bangunan bergoyang"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "Bangunan"
+        ]
+      }
+    },
+    {
+      "id": "D04",
+      "text": "Kebakaran terjadi di kios dekat pasar sekitar pukul 21.15.",
+      "fields": {
+        "location_text": "dekat pasar",
+        "time_text": "sekitar pukul 21.15",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": [
+          "kios"
+        ]
+      }
+    },
+    {
+      "id": "D05",
+      "text": "Kecelakaan terjadi di Jalan Soekarno Hatta dan menyebabkan dua orang terluka.",
+      "fields": {
+        "location_text": "Jalan Soekarno Hatta",
+        "time_text": null,
+        "occurred_at": null,
+        "involved_parties": [
+          "dua orang"
+        ],
+        "impacts": [
+          "menyebabkan dua orang terluka"
+        ],
+        "victims": [
+          "dua orang terluka"
+        ],
+        "affected_objects": []
+      }
+    },
+    {
+      "id": "D06",
+      "text": "Mobil terguling di Jalan Pangeran Antasari, tidak ada korban meninggal.",
+      "fields": {
+        "location_text": "Jalan Pangeran Antasari",
+        "time_text": null,
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "Mobil terguling"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "Mobil"
+        ]
+      }
+    },
+    {
+      "id": "D07",
+      "text": "Pemerintah sedang membahas solusi banjir untuk tahun depan.",
+      "fields": {
+        "location_text": null,
+        "time_text": null,
+        "occurred_at": null,
+        "involved_parties": [
+          "Pemerintah"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      }
+    },
+    {
+      "id": "D08",
+      "text": "Sekolah mengadakan simulasi evakuasi kebakaran pagi ini.",
+      "fields": {
+        "location_text": null,
+        "time_text": "pagi ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Sekolah"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      }
+    },
+    {
+      "id": "D09",
+      "text": "Video gempa yang beredar itu ternyata rekaman lama dan bukan kejadian hari ini.",
+      "fields": {
+        "location_text": null,
+        "time_text": null,
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      }
+    },
+    {
+      "id": "D10",
+      "text": "Asap terlihat dari arah belakang pasar, belum diketahui apakah kebakaran atau pembakaran sampah.",
+      "fields": {
+        "location_text": "arah belakang pasar",
+        "time_text": null,
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      }
+    },
+    {
+      "id": "D11",
+      "text": "Ada informasi dua orang dibawa ambulans dari jalan depan mall, penyebabnya belum diketahui.",
+      "fields": {
+        "location_text": "jalan depan mall",
+        "time_text": null,
+        "occurred_at": null,
+        "involved_parties": [
+          "dua orang"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      }
+    },
+    {
+      "id": "D12",
+      "text": "Gempa terasa di Kemiling malam tadi dan warga keluar rumah.",
+      "fields": {
+        "location_text": "Kemiling",
+        "time_text": "malam tadi",
+        "occurred_at": null,
+        "involved_parties": [
+          "warga"
+        ],
+        "impacts": [
+          "warga keluar rumah"
+        ],
+        "victims": [],
+        "affected_objects": []
+      }
+    }
+  ]
+}

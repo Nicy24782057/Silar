@@ -1,0 +1,23 @@
+[
+  {
+    "sheet": "SENA_Validation",
+    "row": 292,
+    "id": "BAN-01028",
+    "status": "DITUNDA",
+    "note": "Narasi menyebut banjir dan kemalangan di Kulim. Kemalangan dapat merujuk kecelakaan atau kesusahan umum. Perlu konteks untuk menetapkan kategori utama tanpa memilih label secara arbitrer. R1,R4."
+  },
+  {
+    "sheet": "SENA_Validation",
+    "row": 345,
+    "id": "KEB-01113",
+    "status": "DITUNDA",
+    "note": "Kritik penyaluran bantuan menyebut banjir bandang Jayapura dan kebakaran Depok sekaligus. Kedua kategori MVP tidak memiliki kejadian utama yang jelas; perlu adjudikasi kategori utama. R1,R5."
+  },
+  {
+    "sheet": "SENA_Validation",
+    "row": 417,
+    "id": "BAN-01529",
+    "status": "DITUNDA",
+    "note": "Belasungkawa merujuk banjir Papua dan gempa NTB sekaligus, di samping korban Christchurch. Tidak ada kategori MVP utama yang jelas di antara FLOOD dan EARTHQUAKE. Perlu adjudikasi kategori utama. R1,R5."
+  }
+]

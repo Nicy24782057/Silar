@@ -1,0 +1,42 @@
+[
+  {
+    "notebook": "notebooks/01_SENA_Pelatihan_Awal.ipynb",
+    "source": "sources/notebooks_original/TanggapMakna_V3A_EventClassifier.ipynb",
+    "source_sha256": "70aceec827004bf603f4e41032860bb8ca486c7f26efd228863472bec768c380",
+    "code_cells_sha256": "88938a1551604051c3f4ac29bd7613a40e8d58503367c44b213769895f35d5e4",
+    "all_code_cells_unchanged": true,
+    "original_saved_output_cells": 0
+  },
+  {
+    "notebook": "notebooks/02_NARA_Pelatihan_Awal.ipynb",
+    "source": "sources/notebooks_original/TanggapMakna_SRL_Feasibility_V2.ipynb",
+    "source_sha256": "163a559381b054bccb190de60ed69c3a0add9f07394e1836dd2fa02ba3427fa6",
+    "code_cells_sha256": "82f104b4fb7ccd17acf4abfca62a2b3a7d2026623106f6ebf585567ccf49c486",
+    "all_code_cells_unchanged": true,
+    "original_saved_output_cells": 23
+  },
+  {
+    "notebook": "notebooks/03_NARA_FineTune_dan_Evaluasi.ipynb",
+    "source": "sources/notebooks_original/SLR09_NARA_FineTune_dan_Evaluasi_v0.1.ipynb",
+    "source_sha256": "6596251f91f3c49445322f08ea75124c4751f07b647045018801fd7b4bff8ef2",
+    "code_cells_sha256": "cb078d56c61b4cd3f596c0cb1b5e813198108710196ec6f57eabf5a181c63de0",
+    "all_code_cells_unchanged": true,
+    "original_saved_output_cells": 0
+  },
+  {
+    "notebook": "notebooks/04_NARA_Evaluasi_Acuan_Revisi.ipynb",
+    "source": "sources/notebooks_original/SLR09_NARA_Evaluasi_Acuan_Revisi_v0.1.ipynb",
+    "source_sha256": "158e2c6b5ce7db54bd0971275871665af031821a9d1c3d6d8a83b4666604ad4c",
+    "code_cells_sha256": "1f11aeb278622e404044e8250512f2e52bf0aaa087f969f4770303473fb5d3dd",
+    "all_code_cells_unchanged": true,
+    "original_saved_output_cells": 0
+  },
+  {
+    "notebook": "notebooks/05_SILAR_Inferensi_Baseline_dan_Kalibrasi.ipynb",
+    "source": "sources/notebooks_original/SLR09_Uji_Inferensi_dan_Kandidat_Threshold_v0.3.ipynb",
+    "source_sha256": "40d5047df53e47247147c107e1016ac3357a4cb64dae78712ccbcdc3bbc77dc8",
+    "code_cells_sha256": "762668fdf5da534fd6d1dd6f28afe0239ae3ac4e436373246c80cd76ad95c4ab",
+    "all_code_cells_unchanged": true,
+    "original_saved_output_cells": 8
+  }
+]

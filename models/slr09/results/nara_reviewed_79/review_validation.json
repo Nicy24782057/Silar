@@ -1,0 +1,663 @@
+{
+  "review_status": "AWAITING_REVIEW_OR_RESOLUTION",
+  "ready_to_evaluate": false,
+  "reviewer": "bintang",
+  "narratives_expected": 80,
+  "tokens_expected": 1718,
+  "ready_narratives": 79,
+  "pending_narratives": 0,
+  "deferred_narratives": 1,
+  "missing_labels": 0,
+  "invalid_labels": 0,
+  "case_canonicalizations": [],
+  "invalid_label_details": [],
+  "details": [
+    {
+      "review_id": "UJI-001",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-002",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-003",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-004",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-005",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-006",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-007",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-008",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-009",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-010",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-011",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-012",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-013",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-014",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-015",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-016",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-017",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-018",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-019",
+      "status": "DEFERRED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": false,
+      "issues": [
+        "KASUS_DITUNDA"
+      ]
+    },
+    {
+      "review_id": "UJI-020",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-021",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-022",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-023",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-024",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-025",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-026",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-027",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-028",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-029",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-030",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-031",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-032",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-033",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-034",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-035",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-036",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-037",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-038",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-039",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-040",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-041",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-042",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-043",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-044",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-045",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-046",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-047",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-048",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-049",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-050",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-051",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-052",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-053",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-054",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-055",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-056",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-057",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-058",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-059",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-060",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-061",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-062",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-063",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-064",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-065",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-066",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-067",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-068",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-069",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-070",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-071",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-072",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-073",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-074",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-075",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-076",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-077",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-078",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-079",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    },
+    {
+      "review_id": "UJI-080",
+      "status": "APPROVED",
+      "missing_labels": 0,
+      "invalid_labels": 0,
+      "ready": true,
+      "issues": []
+    }
+  ],
+  "blank_labels_converted_to_o": 0,
+  "deferred_records_automatically_replaced_or_dropped": false,
+  "neural_inference_executed": false,
+  "metrics_computed": false,
+  "workbook_sha256": "2fedd29e14663f9cc129ca9f0b43b2244e480e51d134c1dea77a1b913910e3e9"
+}

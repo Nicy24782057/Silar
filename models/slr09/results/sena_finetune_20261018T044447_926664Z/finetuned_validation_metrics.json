@@ -1,0 +1,94 @@
+{
+  "records": 620,
+  "correct": 546,
+  "incorrect": 74,
+  "accuracy": 0.8806451612903226,
+  "macro_f1_all_five_classes": 0.8807164532997971,
+  "weighted_f1": 0.8777032002598237,
+  "per_class": {
+    "FLOOD": {
+      "support": 131,
+      "predicted": 135,
+      "precision": 0.8518518518518519,
+      "recall": 0.8778625954198473,
+      "f1": 0.8646616541353384
+    },
+    "EARTHQUAKE": {
+      "support": 108,
+      "predicted": 120,
+      "precision": 0.8833333333333333,
+      "recall": 0.9814814814814815,
+      "f1": 0.9298245614035088
+    },
+    "FIRE": {
+      "support": 141,
+      "predicted": 143,
+      "precision": 0.951048951048951,
+      "recall": 0.9645390070921985,
+      "f1": 0.9577464788732394
+    },
+    "ACCIDENT": {
+      "support": 109,
+      "predicted": 108,
+      "precision": 0.9537037037037037,
+      "recall": 0.944954128440367,
+      "f1": 0.9493087557603687
+    },
+    "NON_EVENT": {
+      "support": 131,
+      "predicted": 114,
+      "precision": 0.7543859649122807,
+      "recall": 0.6564885496183206,
+      "f1": 0.7020408163265306
+    }
+  },
+  "labels": [
+    "FLOOD",
+    "EARTHQUAKE",
+    "FIRE",
+    "ACCIDENT",
+    "NON_EVENT"
+  ],
+  "confusion_matrix_rows_gold_columns_prediction": [
+    [
+      115,
+      0,
+      0,
+      0,
+      16
+    ],
+    [
+      0,
+      106,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      136,
+      0,
+      5
+    ],
+    [
+      0,
+      1,
+      0,
+      103,
+      5
+    ],
+    [
+      20,
+      13,
+      7,
+      5,
+      86
+    ]
+  ],
+  "gold_event_count": 489,
+  "false_non_event_count": 28,
+  "false_non_event_rate_among_gold_events": 0.05725971370143149,
+  "false_event_count": 45,
+  "wrong_event_type_count": 1
+}

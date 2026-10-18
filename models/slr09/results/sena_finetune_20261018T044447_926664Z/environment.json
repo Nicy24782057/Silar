@@ -1,0 +1,9 @@
+{
+  "python": "3.13.15",
+  "torch": "2.11.0+cu130",
+  "transformers": "4.57.1",
+  "gpu": "Tesla T4",
+  "cuda": "13.0",
+  "source_archive_sha256": "e4af9d1e09023bcfb29670f2ff93d9aa477e8af6990d1ad21192d50486de57f6",
+  "source_weights_sha256": "ae7ceb9959b7f0f3c55a6babd2cf73759a1d9458daadb654ca2fb68ca25cc4dc"
+}

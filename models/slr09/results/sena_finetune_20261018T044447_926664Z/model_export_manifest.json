@@ -1,0 +1,18 @@
+{
+  "archive_name": "SILAR_SENA_reviewed_pilot_20261018T044447_926664Z.zip",
+  "archive_sha256": "144e13d1904f1f4beee56a5ac29fc4fc75cf6a424806ce3c9a0082bf6adf92a3",
+  "files_sha256": {
+    "config.json": "53190f6443cea17db8e8d152839916b640aac910ff6e50c6bcb7f8cc4729e431",
+    "experiment_metadata.json": "68b52af00b05cb7aca05364c0013bfb01af034bcec6974ee4779a75788d0a5d1",
+    "model.safetensors": "9512a4895de281f3696e6c53a86d1271ad45180339995af01cf2b886ddc0afad",
+    "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+    "tokenizer.json": "9fe770007d1727a8cacfec0b467e2b6d6f60d7ff93f3b0be692d63c62ccc856d",
+    "tokenizer_config.json": "af1e05390d2f52f5c09553b0695dba1f047cadc875a0b12dca06c9e0fe039b21",
+    "training_args.bin": "7056347991a70df4d6de661e4f018cf20dfc16735e9dab6a65ace66d08bb8063",
+    "vocab.txt": "343bf28a78f7efeda6419fa610f553184a6dcd29aae726f46850cd05e3167dc3"
+  },
+  "reload_sample_count": 3,
+  "reload_logits_match": true,
+  "production_model_selected": false,
+  "production_threshold_selected": false
+}

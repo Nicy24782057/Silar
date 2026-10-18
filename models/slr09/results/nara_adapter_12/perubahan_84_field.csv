@@ -1,0 +1,85 @@
+﻿id,field,reference,baseline,finetuned,baseline_correct,finetuned_correct,change
+D01,location_text,Sukarame,Sukarame,Sukarame,True,True,STILL_CORRECT
+D01,time_text,sejak pukul 15.00,sejak pukul 15.00,sejak pukul 15.00,True,True,STILL_CORRECT
+D01,occurred_at,null,null,null,True,True,STILL_CORRECT
+D01,involved_parties,[],[],[],True,True,STILL_CORRECT
+D01,impacts,"[""merendam beberapa rumah""]",[],"[""merendam beberapa rumah""]",False,True,IMPROVED
+D01,victims,[],[],[],True,True,STILL_CORRECT
+D01,affected_objects,"[""beberapa rumah""]","[""beberapa rumah""]","[""beberapa rumah""]",True,True,STILL_CORRECT
+D02,location_text,Way Halim,Way Halim,Way Halim,True,True,STILL_CORRECT
+D02,time_text,sejak sore,sejak sore,sejak sore,True,True,STILL_CORRECT
+D02,occurred_at,null,null,null,True,True,STILL_CORRECT
+D02,involved_parties,[],[],[],True,True,STILL_CORRECT
+D02,impacts,"[""dua rumah sudah terendam""]",[],"[""Air naik cepat"", ""dua rumah sudah terendam""]",False,False,STILL_WRONG
+D02,victims,[],[],[],True,True,STILL_CORRECT
+D02,affected_objects,"[""dua rumah""]","[""dua rumah""]","[""dua rumah""]",True,True,STILL_CORRECT
+D03,location_text,null,null,null,True,True,STILL_CORRECT
+D03,time_text,null,null,null,True,True,STILL_CORRECT
+D03,occurred_at,null,null,null,True,True,STILL_CORRECT
+D03,involved_parties,"[""warga""]",[],"[""warga""]",False,True,IMPROVED
+D03,impacts,"[""Bangunan bergoyang""]",[],"[""Bangunan bergoyang"", ""warga langsung keluar rumah""]",False,False,STILL_WRONG
+D03,victims,[],[],[],True,True,STILL_CORRECT
+D03,affected_objects,"[""Bangunan""]",[],"[""Bangunan""]",False,True,IMPROVED
+D04,location_text,dekat pasar,null,kios dekat pasar,False,False,STILL_WRONG
+D04,time_text,sekitar pukul 21.15,sekitar pukul 21.15,sekitar pukul 21.15,True,True,STILL_CORRECT
+D04,occurred_at,null,null,null,True,True,STILL_CORRECT
+D04,involved_parties,[],[],[],True,True,STILL_CORRECT
+D04,impacts,[],[],[],True,True,STILL_CORRECT
+D04,victims,[],[],[],True,True,STILL_CORRECT
+D04,affected_objects,"[""kios""]","[""kios dekat pasar""]",[],False,False,STILL_WRONG
+D05,location_text,Jalan Soekarno Hatta,Jalan Soekarno Hatta,Jalan Soekarno Hatta,True,True,STILL_CORRECT
+D05,time_text,null,null,null,True,True,STILL_CORRECT
+D05,occurred_at,null,null,null,True,True,STILL_CORRECT
+D05,involved_parties,"[""dua orang""]","[""dua orang""]","[""dua orang""]",True,True,STILL_CORRECT
+D05,impacts,"[""menyebabkan dua orang terluka""]",[],"[""menyebabkan dua orang terluka""]",False,True,IMPROVED
+D05,victims,"[""dua orang terluka""]","[""dua orang terluka""]","[""dua orang terluka""]",True,True,STILL_CORRECT
+D05,affected_objects,[],[],[],True,True,STILL_CORRECT
+D06,location_text,Jalan Pangeran Antasari,Jalan Pangeran Antasari,Jalan Pangeran Antasari,True,True,STILL_CORRECT
+D06,time_text,null,null,null,True,True,STILL_CORRECT
+D06,occurred_at,null,null,null,True,True,STILL_CORRECT
+D06,involved_parties,[],[],[],True,True,STILL_CORRECT
+D06,impacts,"[""Mobil terguling""]",[],"[""Mobil terguling""]",False,True,IMPROVED
+D06,victims,[],[],[],True,True,STILL_CORRECT
+D06,affected_objects,"[""Mobil""]","[""Mobil terguling""]","[""Mobil""]",False,True,IMPROVED
+D07,location_text,null,null,null,True,True,STILL_CORRECT
+D07,time_text,null,null,tahun,True,False,REGRESSED
+D07,occurred_at,null,null,null,True,True,STILL_CORRECT
+D07,involved_parties,"[""Pemerintah""]",[],"[""Pemerintah""]",False,True,IMPROVED
+D07,impacts,[],[],"[""Pemerintah sedang membahas""]",True,False,REGRESSED
+D07,victims,[],[],[],True,True,STILL_CORRECT
+D07,affected_objects,[],[],[],True,True,STILL_CORRECT
+D08,location_text,null,null,null,True,True,STILL_CORRECT
+D08,time_text,pagi ini,pagi ini,pagi,True,False,REGRESSED
+D08,occurred_at,null,null,null,True,True,STILL_CORRECT
+D08,involved_parties,"[""Sekolah""]",[],"[""Sekolah""]",False,True,IMPROVED
+D08,impacts,[],[],"[""simulasi evakuasi""]",True,False,REGRESSED
+D08,victims,[],[],[],True,True,STILL_CORRECT
+D08,affected_objects,[],[],[],True,True,STILL_CORRECT
+D09,location_text,null,null,null,True,True,STILL_CORRECT
+D09,time_text,null,null,null,True,True,STILL_CORRECT
+D09,occurred_at,null,null,null,True,True,STILL_CORRECT
+D09,involved_parties,[],[],[],True,True,STILL_CORRECT
+D09,impacts,[],[],[],True,True,STILL_CORRECT
+D09,victims,[],[],[],True,True,STILL_CORRECT
+D09,affected_objects,[],[],[],True,True,STILL_CORRECT
+D10,location_text,arah belakang pasar,null,arah belakang pasar,False,True,IMPROVED
+D10,time_text,null,null,null,True,True,STILL_CORRECT
+D10,occurred_at,null,null,null,True,True,STILL_CORRECT
+D10,involved_parties,[],[],[],True,True,STILL_CORRECT
+D10,impacts,[],[],"[""belum diketahui""]",True,False,REGRESSED
+D10,victims,[],[],[],True,True,STILL_CORRECT
+D10,affected_objects,[],"[""sampah""]",[],False,True,IMPROVED
+D11,location_text,jalan depan mall,null,jalan depan mall,False,True,IMPROVED
+D11,time_text,null,null,null,True,True,STILL_CORRECT
+D11,occurred_at,null,null,null,True,True,STILL_CORRECT
+D11,involved_parties,"[""dua orang""]",[],"[""dua orang""]",False,True,IMPROVED
+D11,impacts,[],[],"[""dua orang dibawa ambulans"", ""penyebabnya belum diketahui""]",True,False,REGRESSED
+D11,victims,[],[],[],True,True,STILL_CORRECT
+D11,affected_objects,[],[],[],True,True,STILL_CORRECT
+D12,location_text,Kemiling,Kemiling,Kemiling,True,True,STILL_CORRECT
+D12,time_text,malam tadi,malam tadi,malam tadi,True,True,STILL_CORRECT
+D12,occurred_at,null,null,null,True,True,STILL_CORRECT
+D12,involved_parties,"[""warga""]",[],"[""warga""]",False,True,IMPROVED
+D12,impacts,"[""warga keluar rumah""]",[],"[""terasa"", ""warga keluar rumah""]",False,False,STILL_WRONG
+D12,victims,[],[],[],True,True,STILL_CORRECT
+D12,affected_objects,[],[],[],True,True,STILL_CORRECT

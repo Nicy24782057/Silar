@@ -1,0 +1,22 @@
+{
+  "train_narratives": 110,
+  "validation_narratives": 620,
+  "train_class_counts": {
+    "FLOOD": 28,
+    "EARTHQUAKE": 13,
+    "FIRE": 35,
+    "ACCIDENT": 10,
+    "NON_EVENT": 24
+  },
+  "validation_class_counts": {
+    "FLOOD": 131,
+    "EARTHQUAKE": 108,
+    "FIRE": 141,
+    "ACCIDENT": 109,
+    "NON_EVENT": 131
+  },
+  "test_used_for_training_or_selection": false,
+  "historical_sena_train_membership_verified": false,
+  "max_wordpieces": 72,
+  "truncated_narratives": 0
+}

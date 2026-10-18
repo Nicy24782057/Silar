@@ -1,0 +1,54 @@
+{
+  "checks": [
+    {
+      "check": "reviewed/accuracy",
+      "passed": true
+    },
+    {
+      "check": "reviewed/macro_f1_all_five_classes",
+      "passed": true
+    },
+    {
+      "check": "reviewed/weighted_f1",
+      "passed": true
+    },
+    {
+      "check": "reviewed/confusion_matrix",
+      "passed": true
+    },
+    {
+      "check": "reviewed/all_class_precision_recall_f1_support",
+      "passed": true
+    },
+    {
+      "check": "original_same_subset/accuracy",
+      "passed": true
+    },
+    {
+      "check": "original_same_subset/macro_f1_all_five_classes",
+      "passed": true
+    },
+    {
+      "check": "original_same_subset/weighted_f1",
+      "passed": true
+    },
+    {
+      "check": "original_same_subset/confusion_matrix",
+      "passed": true
+    },
+    {
+      "check": "original_same_subset/all_class_precision_recall_f1_support",
+      "passed": true
+    },
+    {
+      "check": "all cutoff coverage/error partitions",
+      "passed": true
+    },
+    {
+      "check": "no training/inference/production threshold",
+      "passed": true
+    }
+  ],
+  "checks_passed": 12,
+  "reference": "scikit-learn independent metrics"
+}

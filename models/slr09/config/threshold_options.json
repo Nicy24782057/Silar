@@ -1,0 +1,46 @@
+{
+  "schema": "slr09-confidence-cutoff-proposals-0.1",
+  "selected_option": "A",
+  "activated": false,
+  "purpose": "SELECTED_CANDIDATE_INTEGRATION_NOT_PRODUCTION_ACCEPTANCE",
+  "recommended_option": "A",
+  "reference_run_id": "20261018T044447_926664Z",
+  "sena_weights_sha256": "9512a4895de281f3696e6c53a86d1271ad45180339995af01cf2b886ddc0afad",
+  "reference_report_sha256": "0077365fac8b70d4c624958bbcef60978aab41cf50978bd78f8154c9bdbf691f",
+  "reference_scope": "620_REVIEWED_VALIDATION_CHECKPOINT_SELECTION_NOT_INDEPENDENT_TEST",
+  "options": [
+    {
+      "option": "A",
+      "confidence_threshold": 0.95,
+      "low_confidence_flag_count": 153,
+      "low_confidence_flag_rate": 0.2467741935483871,
+      "errors_flagged": 51,
+      "correct_predictions_also_flagged": 102,
+      "errors_remaining_at_or_above": 23,
+      "observed_accuracy_at_or_above": 0.9507494646680942,
+      "calibration_reference": "SLR09_SENA_20261018T044447_926664Z:reviewed_validation620:cutoff_0.95",
+      "activated": false,
+      "selected": true
+    },
+    {
+      "option": "B",
+      "confidence_threshold": 0.9,
+      "low_confidence_flag_count": 102,
+      "low_confidence_flag_rate": 0.16451612903225807,
+      "errors_flagged": 38,
+      "correct_predictions_also_flagged": 64,
+      "errors_remaining_at_or_above": 36,
+      "observed_accuracy_at_or_above": 0.9305019305019305,
+      "calibration_reference": "SLR09_SENA_20261018T044447_926664Z:reviewed_validation620:cutoff_0.90",
+      "activated": false,
+      "selected": false
+    }
+  ],
+  "overall_model_accuracy_is_unchanged_by_cutoff": true,
+  "note": "Flag when confidence < cutoff; equality is above. NON_EVENT still blocks; all reports need Human Verification.",
+  "confidence_threshold": 0.95,
+  "calibration_reference": "SLR09_SENA_20261018T044447_926664Z:reviewed_validation620:cutoff_0.95",
+  "selection_status": "USER_SELECTED_FOR_INTEGRATION",
+  "decision_file": "config/threshold_decision.json",
+  "activated_means": "DEPLOYED_TO_APPLICATION; FALSE_DOES_NOT_MEAN_UNSELECTED"
+}

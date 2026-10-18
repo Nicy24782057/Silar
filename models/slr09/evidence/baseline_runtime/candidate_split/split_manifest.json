@@ -1,0 +1,67 @@
+{
+  "analysis_version": "silar-threshold-analysis-0.1.0",
+  "split_status": "CANDIDATE_VALIDATION_RECONSTRUCTED_HISTORICAL_IDENTITY_UNVERIFIED",
+  "historical_split_identity_verified": false,
+  "production_threshold_can_be_finalized_from_this_artifact_alone": false,
+  "reason": "SENA tidak mengekspor ID train/validation; versi dependency saat training tidak terkunci dalam notebook lama.",
+  "method": "V3A minimal cleaning, derived single label, official prefix split, iterative stratifier",
+  "seed": 42,
+  "validation_fraction": 0.2,
+  "nara_validation_ids_used_for_sena": false,
+  "held_out_test_used_for_tuning": false,
+  "blind_test_used": false,
+  "source": {
+    "csv_member": "Semantic Role Labeling Datasets for Crisis Event/Semantic-Role-Labeling-Datasets-for-Crisis-Event/3-Labeled Data/all-labeled-data.csv",
+    "raw_rows": 99206,
+    "clean_rows": 99202,
+    "texts": 4150,
+    "blank_token_rows_removed": 4,
+    "dataset_archive_sha256": "3e22f54044e7b44f49a243aeb3e6fdad3dc2ce0d000ce8a0fd5a33f7d9c56cbf",
+    "csv_sha256": "14ff9121e37cdaed2a0b8f35e2131da4c710daebf2cad0781fdbbdfdad00c211",
+    "training_notebook_sha256": "70aceec827004bf603f4e41032860bb8ca486c7f26efd228863472bec768c380"
+  },
+  "counts": {
+    "all": 4150,
+    "usable": 4096,
+    "excluded": 54,
+    "train": 2487,
+    "validation": 623,
+    "test_excluded_from_tuning": 986
+  },
+  "class_counts": {
+    "train": {
+      "NON_EVENT": 1439,
+      "FLOOD": 199,
+      "EARTHQUAKE": 126,
+      "FIRE": 400,
+      "ACCIDENT": 323
+    },
+    "validation": {
+      "FLOOD": 50,
+      "NON_EVENT": 360,
+      "EARTHQUAKE": 32,
+      "FIRE": 100,
+      "ACCIDENT": 81
+    },
+    "test_not_used": {
+      "NON_EVENT": 469,
+      "FLOOD": 116,
+      "EARTHQUAKE": 82,
+      "FIRE": 142,
+      "ACCIDENT": 177
+    }
+  },
+  "versions": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "iterative-stratification": "0.1.9"
+  },
+  "files_sha256": {
+    "candidate_validation.jsonl": "786195317a29245751839dd16517f8bdaa263b4f86c707a1d0570f9471135da6",
+    "train_ids.json": "c365e9fe21c9528065f7cd52f04227ba07f21a19ee9d19d6ae2b5aa86c4e9176",
+    "validation_ids.json": "48c2087c685fe77a49974d4011f9427c125b2069669c9b055700cf88ad90c2cc",
+    "test_ids.json": "27db8af2060f92d0d7c7843a06502c664a8cf308ffac89e2e002a5268832e08b"
+  },
+  "production_confidence_threshold": null
+}

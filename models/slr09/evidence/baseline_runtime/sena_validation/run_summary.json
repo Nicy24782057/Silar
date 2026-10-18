@@ -1,0 +1,64 @@
+{
+  "runner_version": "silar-runtime-0.1.0",
+  "adapter_version": "silar-adapter-0.1.0",
+  "mode": "sena",
+  "status": "SUCCEEDED",
+  "input_sha256": "786195317a29245751839dd16517f8bdaa263b4f86c707a1d0570f9471135da6",
+  "model_inference_executed": true,
+  "training_executed": false,
+  "production_threshold_selected": false,
+  "fusion_executed": false,
+  "environment_label": "NOTEBOOK_CPU",
+  "environment": {
+    "python": "3.13.16",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "cpu_count": 2,
+    "packages": {
+      "torch": "2.11.0+cpu",
+      "transformers": "5.13.1",
+      "tokenizers": "0.22.2",
+      "safetensors": "0.8.0",
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.6.1",
+      "iterative-stratification": "0.1.9"
+    },
+    "device": "cpu",
+    "peak_process_rss_bytes": 959090688,
+    "measurement_scope": "PROCESS_ON_OBSERVED_ENVIRONMENT_NOT_AUTOMATIC_TARGET_VM_PROOF",
+    "torch_num_threads": 1,
+    "cuda_available": false,
+    "cuda_runtime": null
+  },
+  "records_expected": 623,
+  "models": {
+    "sena": {
+      "files": {
+        "config.json": "b05589deb775fe55afee6300ed91b7a2cfd9a60917b678bfc55e826f7e6840e4",
+        "tokenizer.json": "9fe32d346105f405394d2ba3f4c15df117127584e6042336956f15e1357857d3",
+        "tokenizer_config.json": "9f0c2c65a70ea18113ffa2e717103e7210ea826e7acc3442b69b346686b55a48",
+        "model.safetensors": "ae7ceb9959b7f0f3c55a6babd2cf73759a1d9458daadb654ca2fb68ca25cc4dc"
+      },
+      "labels": [
+        "FLOOD",
+        "EARTHQUAKE",
+        "FIRE",
+        "ACCIDENT",
+        "NON_EVENT"
+      ],
+      "model_id": "SILAR_SENA_v1"
+    }
+  },
+  "model_load_seconds": 0.6091905130001578,
+  "records_completed": 623,
+  "wall_seconds_including_loading": 106.60019679600009,
+  "per_record_seconds_including_first_record": {
+    "min": 0.0685917480000171,
+    "median": 0.13860736800006634,
+    "mean": 0.15143557044141046,
+    "max": 0.5378856459997223,
+    "scope": "SINGLE_PASS_NOT_STEADY_STATE_OR_CONCURRENT_BACKEND_BENCHMARK"
+  },
+  "predictions_sha256": "15ef198da0f238a43b8e76eb087872a425c2d3c17e69daff2a74ece02f0ab400"
+}

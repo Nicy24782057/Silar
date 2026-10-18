@@ -1,0 +1,90 @@
+{
+  "schema": "slr09-selected-threshold-contract-checks-0.1",
+  "selected_option": "A",
+  "confidence_threshold": 0.95,
+  "calibration_reference": "SLR09_SENA_20261018T044447_926664Z:reviewed_validation620:cutoff_0.95",
+  "configuration_sha256": "dbee386a46cae545ca565ca8c38617ee640c7cf86b42b71b9ca14e03684fdfe3",
+  "configuration_identity_consistent": true,
+  "checks": [
+    {
+      "case": "FIRE_0.949",
+      "confidence": 0.949,
+      "uncertain": true,
+      "uncertain_reasons": [
+        "LOW_CLASSIFICATION_CONFIDENCE"
+      ],
+      "blocked_by_non_event": false,
+      "empty_extraction_alone_adds_no_uncertain_reason": true,
+      "passed": true
+    },
+    {
+      "case": "FIRE_0.950",
+      "confidence": 0.95,
+      "uncertain": false,
+      "uncertain_reasons": [],
+      "blocked_by_non_event": false,
+      "empty_extraction_alone_adds_no_uncertain_reason": true,
+      "passed": true
+    },
+    {
+      "case": "FIRE_0.951",
+      "confidence": 0.951,
+      "uncertain": false,
+      "uncertain_reasons": [],
+      "blocked_by_non_event": false,
+      "empty_extraction_alone_adds_no_uncertain_reason": true,
+      "passed": true
+    },
+    {
+      "case": "NON_EVENT_0.949",
+      "confidence": 0.949,
+      "uncertain": true,
+      "uncertain_reasons": [
+        "LOW_CLASSIFICATION_CONFIDENCE"
+      ],
+      "blocked_by_non_event": true,
+      "empty_extraction_alone_adds_no_uncertain_reason": true,
+      "passed": true
+    },
+    {
+      "case": "NON_EVENT_0.950",
+      "confidence": 0.95,
+      "uncertain": false,
+      "uncertain_reasons": [],
+      "blocked_by_non_event": true,
+      "empty_extraction_alone_adds_no_uncertain_reason": true,
+      "passed": true
+    },
+    {
+      "case": "NON_EVENT_0.951",
+      "confidence": 0.951,
+      "uncertain": false,
+      "uncertain_reasons": [],
+      "blocked_by_non_event": true,
+      "empty_extraction_alone_adds_no_uncertain_reason": true,
+      "passed": true
+    },
+    {
+      "case": "CATEGORY_FROM_SENA_WHEN_NARA_EVENT_LABEL_DIFFERS",
+      "passed": true,
+      "scope": "CATEGORY_PRECEDENCE_ONLY_NOT_GENERAL_SEMANTIC_CONFLICT_DETECTION"
+    },
+    {
+      "case": "MISSING_THRESHOLD_REJECTED",
+      "passed": true
+    },
+    {
+      "case": "MISSING_REFERENCE_REJECTED",
+      "passed": true
+    }
+  ],
+  "all_passed": true,
+  "fixture_source": "SYNTHETIC_CONTROLLED_VALUES_NOT_NEURAL_PREDICTIONS",
+  "training_executed": false,
+  "neural_inference_executed": false,
+  "prior_nara_evaluation_or_adapter_diagnostic_repeated": false,
+  "human_verification_required_in_configuration": true,
+  "human_verification_backend_enforcement_verified": false,
+  "production_deployed": false,
+  "quality_acceptance_approved": false
+}

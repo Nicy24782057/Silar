@@ -1,0 +1,37 @@
+{
+  "code_cells_executed_locally": 5,
+  "cells": [
+    {
+      "cell": 1,
+      "executed_locally_for_qa": true,
+      "output_characters": 67
+    },
+    {
+      "cell": 3,
+      "executed_locally_for_qa": true,
+      "output_characters": 65
+    },
+    {
+      "cell": 5,
+      "executed_locally_for_qa": true,
+      "output_characters": 1171
+    },
+    {
+      "cell": 7,
+      "executed_locally_for_qa": true,
+      "output_characters": 9605
+    },
+    {
+      "cell": 9,
+      "executed_locally_for_qa": true,
+      "output_characters": 159
+    }
+  ],
+  "notebook_sha256": "158e2c6b5ce7db54bd0971275871665af031821a9d1c3d6d8a83b4666604ad4c",
+  "metrics_identical_to_report": true,
+  "full80_gold_not_created": true,
+  "snapshot_byte_identical": true,
+  "source_code_readable_appendices": 4,
+  "no_training_or_neural_inference": true,
+  "notebook_contains_no_fabricated_cell_outputs": true
+}

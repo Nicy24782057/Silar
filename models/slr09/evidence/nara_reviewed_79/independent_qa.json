@@ -1,0 +1,83 @@
+{
+  "checks": [
+    {
+      "check": "review unchanged",
+      "passed": true
+    },
+    {
+      "check": "79 approved and one deferred",
+      "passed": true
+    },
+    {
+      "check": "partial scope disclosed",
+      "passed": true
+    },
+    {
+      "check": "UJI-019 omitted rather than relabelled",
+      "passed": true
+    },
+    {
+      "check": "baseline/reviewed_gold: all token metrics verified independently",
+      "passed": true
+    },
+    {
+      "check": "baseline/reviewed_gold: full confusion matrix",
+      "passed": true
+    },
+    {
+      "check": "baseline/reviewed_gold: independent exact spans",
+      "passed": true
+    },
+    {
+      "check": "baseline/historical_gold_same_subset: all token metrics verified independently",
+      "passed": true
+    },
+    {
+      "check": "baseline/historical_gold_same_subset: full confusion matrix",
+      "passed": true
+    },
+    {
+      "check": "baseline/historical_gold_same_subset: independent exact spans",
+      "passed": true
+    },
+    {
+      "check": "finetuned/reviewed_gold: all token metrics verified independently",
+      "passed": true
+    },
+    {
+      "check": "finetuned/reviewed_gold: full confusion matrix",
+      "passed": true
+    },
+    {
+      "check": "finetuned/reviewed_gold: independent exact spans",
+      "passed": true
+    },
+    {
+      "check": "finetuned/historical_gold_same_subset: all token metrics verified independently",
+      "passed": true
+    },
+    {
+      "check": "finetuned/historical_gold_same_subset: full confusion matrix",
+      "passed": true
+    },
+    {
+      "check": "finetuned/historical_gold_same_subset: independent exact spans",
+      "passed": true
+    },
+    {
+      "check": "full80 gate still rejects unresolved reference",
+      "passed": true
+    },
+    {
+      "check": "omitted case not scored in per-record results",
+      "passed": true
+    },
+    {
+      "check": "no automatic production promotion or fresh neural inference",
+      "passed": true
+    }
+  ],
+  "checks_passed": 19,
+  "reference_workbook_byte_identical": true,
+  "new_training_or_neural_inference": false
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "sena-reviewed-pilot-input-0.1",
+  "training_executed": false,
+  "train_narratives": 110,
+  "validation_narratives": 620,
+  "historical_base_training_membership_verified": false,
+  "deferred_ids": [
+    "BAN-01028",
+    "KEB-01113",
+    "BAN-01529"
+  ],
+  "sha256": {
+    "data/sena_train_reviewed.jsonl": "0e97bdd197442821d5da02cbe4f2ab863781f037e411eb70fddceed1f62d0c18",
+    "data/sena_validation_reviewed.jsonl": "8055d15c77b0d30ca33f2427e64c6a1d2daf085b6dabd37e8983911fd36e7fc0",
+    "data/baseline_reviewed_evaluation.json": "20baa5656d59d969d1a76ff8565b8cd8a0c4761df959ba42f38f5458ccfd3643"
+  }
+}

@@ -1,0 +1,650 @@
+{
+  "scope": "12 diagnostik dikenal/review setelah melihat prediksi; bukan blind test atau skor produksi.",
+  "nara_neural_inference_is_fresh": true,
+  "sena_source": "ACTUAL_CACHED_PREVIOUS_RUN_NO_FRESH_SENA_INFERENCE",
+  "correct_fields_including_empty": 66,
+  "total_fields": 84,
+  "correct_nonempty_reference_fields": 14,
+  "nonempty_reference_fields": 31,
+  "production_fusion_executed": false,
+  "details": [
+    {
+      "id": "D01",
+      "field": "location_text",
+      "reference": "Sukarame",
+      "prediction": "Sukarame",
+      "exact": true
+    },
+    {
+      "id": "D01",
+      "field": "time_text",
+      "reference": "sejak pukul 15.00",
+      "prediction": "sejak pukul 15.00",
+      "exact": true
+    },
+    {
+      "id": "D01",
+      "field": "occurred_at",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D01",
+      "field": "involved_parties",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D01",
+      "field": "impacts",
+      "reference": [
+        "merendam beberapa rumah"
+      ],
+      "prediction": [],
+      "exact": false
+    },
+    {
+      "id": "D01",
+      "field": "victims",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D01",
+      "field": "affected_objects",
+      "reference": [
+        "beberapa rumah"
+      ],
+      "prediction": [
+        "beberapa rumah"
+      ],
+      "exact": true
+    },
+    {
+      "id": "D02",
+      "field": "location_text",
+      "reference": "Way Halim",
+      "prediction": "Way Halim",
+      "exact": true
+    },
+    {
+      "id": "D02",
+      "field": "time_text",
+      "reference": "sejak sore",
+      "prediction": "sejak sore",
+      "exact": true
+    },
+    {
+      "id": "D02",
+      "field": "occurred_at",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D02",
+      "field": "involved_parties",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D02",
+      "field": "impacts",
+      "reference": [
+        "dua rumah sudah terendam"
+      ],
+      "prediction": [],
+      "exact": false
+    },
+    {
+      "id": "D02",
+      "field": "victims",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D02",
+      "field": "affected_objects",
+      "reference": [
+        "dua rumah"
+      ],
+      "prediction": [
+        "dua rumah"
+      ],
+      "exact": true
+    },
+    {
+      "id": "D03",
+      "field": "location_text",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D03",
+      "field": "time_text",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D03",
+      "field": "occurred_at",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D03",
+      "field": "involved_parties",
+      "reference": [
+        "warga"
+      ],
+      "prediction": [],
+      "exact": false
+    },
+    {
+      "id": "D03",
+      "field": "impacts",
+      "reference": [
+        "Bangunan bergoyang"
+      ],
+      "prediction": [],
+      "exact": false
+    },
+    {
+      "id": "D03",
+      "field": "victims",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D03",
+      "field": "affected_objects",
+      "reference": [
+        "Bangunan"
+      ],
+      "prediction": [],
+      "exact": false
+    },
+    {
+      "id": "D04",
+      "field": "location_text",
+      "reference": "dekat pasar",
+      "prediction": null,
+      "exact": false
+    },
+    {
+      "id": "D04",
+      "field": "time_text",
+      "reference": "sekitar pukul 21.15",
+      "prediction": "sekitar pukul 21.15",
+      "exact": true
+    },
+    {
+      "id": "D04",
+      "field": "occurred_at",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D04",
+      "field": "involved_parties",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D04",
+      "field": "impacts",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D04",
+      "field": "victims",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D04",
+      "field": "affected_objects",
+      "reference": [
+        "kios"
+      ],
+      "prediction": [
+        "kios dekat pasar"
+      ],
+      "exact": false
+    },
+    {
+      "id": "D05",
+      "field": "location_text",
+      "reference": "Jalan Soekarno Hatta",
+      "prediction": "Jalan Soekarno Hatta",
+      "exact": true
+    },
+    {
+      "id": "D05",
+      "field": "time_text",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D05",
+      "field": "occurred_at",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D05",
+      "field": "involved_parties",
+      "reference": [
+        "dua orang"
+      ],
+      "prediction": [
+        "dua orang"
+      ],
+      "exact": true
+    },
+    {
+      "id": "D05",
+      "field": "impacts",
+      "reference": [
+        "menyebabkan dua orang terluka"
+      ],
+      "prediction": [],
+      "exact": false
+    },
+    {
+      "id": "D05",
+      "field": "victims",
+      "reference": [
+        "dua orang terluka"
+      ],
+      "prediction": [
+        "dua orang terluka"
+      ],
+      "exact": true
+    },
+    {
+      "id": "D05",
+      "field": "affected_objects",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D06",
+      "field": "location_text",
+      "reference": "Jalan Pangeran Antasari",
+      "prediction": "Jalan Pangeran Antasari",
+      "exact": true
+    },
+    {
+      "id": "D06",
+      "field": "time_text",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D06",
+      "field": "occurred_at",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D06",
+      "field": "involved_parties",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D06",
+      "field": "impacts",
+      "reference": [
+        "Mobil terguling"
+      ],
+      "prediction": [],
+      "exact": false
+    },
+    {
+      "id": "D06",
+      "field": "victims",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D06",
+      "field": "affected_objects",
+      "reference": [
+        "Mobil"
+      ],
+      "prediction": [
+        "Mobil terguling"
+      ],
+      "exact": false
+    },
+    {
+      "id": "D07",
+      "field": "location_text",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D07",
+      "field": "time_text",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D07",
+      "field": "occurred_at",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D07",
+      "field": "involved_parties",
+      "reference": [
+        "Pemerintah"
+      ],
+      "prediction": [],
+      "exact": false
+    },
+    {
+      "id": "D07",
+      "field": "impacts",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D07",
+      "field": "victims",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D07",
+      "field": "affected_objects",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D08",
+      "field": "location_text",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D08",
+      "field": "time_text",
+      "reference": "pagi ini",
+      "prediction": "pagi ini",
+      "exact": true
+    },
+    {
+      "id": "D08",
+      "field": "occurred_at",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D08",
+      "field": "involved_parties",
+      "reference": [
+        "Sekolah"
+      ],
+      "prediction": [],
+      "exact": false
+    },
+    {
+      "id": "D08",
+      "field": "impacts",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D08",
+      "field": "victims",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D08",
+      "field": "affected_objects",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D09",
+      "field": "location_text",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D09",
+      "field": "time_text",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D09",
+      "field": "occurred_at",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D09",
+      "field": "involved_parties",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D09",
+      "field": "impacts",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D09",
+      "field": "victims",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D09",
+      "field": "affected_objects",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D10",
+      "field": "location_text",
+      "reference": "arah belakang pasar",
+      "prediction": null,
+      "exact": false
+    },
+    {
+      "id": "D10",
+      "field": "time_text",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D10",
+      "field": "occurred_at",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D10",
+      "field": "involved_parties",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D10",
+      "field": "impacts",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D10",
+      "field": "victims",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D10",
+      "field": "affected_objects",
+      "reference": [],
+      "prediction": [
+        "sampah"
+      ],
+      "exact": false
+    },
+    {
+      "id": "D11",
+      "field": "location_text",
+      "reference": "jalan depan mall",
+      "prediction": null,
+      "exact": false
+    },
+    {
+      "id": "D11",
+      "field": "time_text",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D11",
+      "field": "occurred_at",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D11",
+      "field": "involved_parties",
+      "reference": [
+        "dua orang"
+      ],
+      "prediction": [],
+      "exact": false
+    },
+    {
+      "id": "D11",
+      "field": "impacts",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D11",
+      "field": "victims",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D11",
+      "field": "affected_objects",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D12",
+      "field": "location_text",
+      "reference": "Kemiling",
+      "prediction": "Kemiling",
+      "exact": true
+    },
+    {
+      "id": "D12",
+      "field": "time_text",
+      "reference": "malam tadi",
+      "prediction": "malam tadi",
+      "exact": true
+    },
+    {
+      "id": "D12",
+      "field": "occurred_at",
+      "reference": null,
+      "prediction": null,
+      "exact": true
+    },
+    {
+      "id": "D12",
+      "field": "involved_parties",
+      "reference": [
+        "warga"
+      ],
+      "prediction": [],
+      "exact": false
+    },
+    {
+      "id": "D12",
+      "field": "impacts",
+      "reference": [
+        "warga keluar rumah"
+      ],
+      "prediction": [],
+      "exact": false
+    },
+    {
+      "id": "D12",
+      "field": "victims",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    },
+    {
+      "id": "D12",
+      "field": "affected_objects",
+      "reference": [],
+      "prediction": [],
+      "exact": true
+    }
+  ]
+}

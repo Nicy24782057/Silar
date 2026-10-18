@@ -1,0 +1,59 @@
+{
+  "reviewed_validation": {
+    "narratives": 41,
+    "baseline": {
+      "accuracy": 0.5714285714285714,
+      "precision_macro_no_o": 0.6302047699353338,
+      "recall_macro_no_o": 0.5155775818407584,
+      "macro_f1_no_o": 0.49281917110812007,
+      "micro_f1_no_o": 0.4928639391056137,
+      "weighted_f1_no_o": 0.4456312214795874,
+      "predicted_non_o_rate": 0.3812877263581489,
+      "gold_non_o_rate": 0.676056338028169
+    },
+    "finetuned": {
+      "accuracy": 0.7756539235412475,
+      "precision_macro_no_o": 0.8205319792729446,
+      "recall_macro_no_o": 0.7925889369607505,
+      "macro_f1_no_o": 0.7865426851937519,
+      "micro_f1_no_o": 0.7651109410864575,
+      "weighted_f1_no_o": 0.7651981801330924,
+      "predicted_non_o_rate": 0.6388329979879276,
+      "gold_non_o_rate": 0.676056338028169
+    },
+    "macro_f1_no_o_delta": 0.29372351408563185,
+    "interpretation": "Validation pilot dipakai memilih checkpoint, bukan estimasi generalisasi independen."
+  },
+  "historical_test": {
+    "narratives": 1000,
+    "baseline": {
+      "accuracy": 0.8624794745484401,
+      "precision_macro_no_o": 0.7476103847037565,
+      "recall_macro_no_o": 0.6574696470149105,
+      "macro_f1_no_o": 0.6777298258163258,
+      "micro_f1_no_o": 0.7412891394416898,
+      "weighted_f1_no_o": 0.7410634699328686,
+      "predicted_non_o_rate": 0.3352034300310162,
+      "gold_non_o_rate": 0.33634373289545705
+    },
+    "finetuned": {
+      "accuracy": 0.6815362160189746,
+      "precision_macro_no_o": 0.5361747743081564,
+      "recall_macro_no_o": 0.7587069300760243,
+      "macro_f1_no_o": 0.5855855411652761,
+      "micro_f1_no_o": 0.5620322761289008,
+      "weighted_f1_no_o": 0.5978584070604065,
+      "predicted_non_o_rate": 0.5596150337529648,
+      "gold_non_o_rate": 0.33634373289545705
+    },
+    "interpretation": "Gold asli belum diselaraskan ke pedoman 0.2; bukan skor test baru sesuai definisi revisi."
+  },
+  "diagnostic_12_fields": {
+    "baseline_exact_including_empty": 66,
+    "finetuned_exact_including_empty": 73,
+    "denominator": 84,
+    "interpretation": "Diagnostik dikenal; SENA memakai prediksi aktual tersimpan, NARA inferensi baru; bukan akurasi produksi."
+  },
+  "automatic_production_promotion": false,
+  "production_threshold_selected": false
+}

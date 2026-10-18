@@ -1,0 +1,531 @@
+{
+  "schema": "slr09-completed-sena-analysis-0.1",
+  "run_id": "20261018T044447_926664Z",
+  "run_report_sha256": "0077365fac8b70d4c624958bbcef60978aab41cf50978bd78f8154c9bdbf691f",
+  "source_report_files": 17,
+  "state": {
+    "schema": "silar-sena-finetune-run-0.1",
+    "run_id": "20261018T044447_926664Z",
+    "status": "SUCCEEDED",
+    "completed_stages": [
+      "PREPARE",
+      "FINE_TUNE",
+      "EVALUATE",
+      "EXPORT"
+    ],
+    "config": {
+      "seed": 42,
+      "max_length": 256,
+      "learning_rate": 2e-05,
+      "train_batch_size": 16,
+      "eval_batch_size": 32,
+      "max_epochs": 10,
+      "weight_decay": 0.01,
+      "early_stopping_patience": 2,
+      "metric_for_best_model": "macro_f1",
+      "transformers_version": "4.57.1"
+    },
+    "started_utc": "2026-10-18T04:44:47.926973+00:00",
+    "training_attempted": true,
+    "training_executed": true,
+    "training_completed": true,
+    "new_neural_inference_started": true,
+    "new_neural_inference_executed": true,
+    "baseline_neural_inference_repeated": false,
+    "model_exported": true,
+    "production_model_selected": false,
+    "production_threshold_selected": false,
+    "validation_is_independent_blind_test": false,
+    "current_stage": "EXPORT",
+    "train_narratives": 110,
+    "validation_narratives": 620,
+    "optimizer_steps": 42,
+    "best_checkpoint": "/content/slr09_sena_finetune_v01/runs/20261018T044447_926664Z/checkpoints/checkpoint-28",
+    "best_validation_macro_f1": 0.8807164532997971,
+    "epochs_completed": 6.0,
+    "model_archive_path": "/content/drive/MyDrive/SILAR_SLR09/SILAR_SENA_reviewed_pilot_20261018T044447_926664Z.zip",
+    "finished_utc": "2026-10-18T04:47:07.983930+00:00"
+  },
+  "baseline_metrics": {
+    "records": 620,
+    "correct": 397,
+    "incorrect": 223,
+    "accuracy": 0.6403225806451613,
+    "macro_f1_all_five_classes": 0.6575353599405218,
+    "weighted_f1": 0.6566529284203215,
+    "per_class": {
+      "FLOOD": {
+        "support": 131,
+        "predicted": 52,
+        "precision": 0.9423076923076923,
+        "recall": 0.37404580152671757,
+        "f1": 0.5355191256830601
+      },
+      "EARTHQUAKE": {
+        "support": 108,
+        "predicted": 41,
+        "precision": 0.975609756097561,
+        "recall": 0.37037037037037035,
+        "f1": 0.5369127516778524
+      },
+      "FIRE": {
+        "support": 141,
+        "predicted": 102,
+        "precision": 0.9705882352941176,
+        "recall": 0.7021276595744681,
+        "f1": 0.8148148148148148
+      },
+      "ACCIDENT": {
+        "support": 109,
+        "predicted": 91,
+        "precision": 0.967032967032967,
+        "recall": 0.8073394495412844,
+        "f1": 0.88
+      },
+      "NON_EVENT": {
+        "support": 131,
+        "predicted": 334,
+        "precision": 0.36227544910179643,
+        "recall": 0.9236641221374046,
+        "f1": 0.5204301075268817
+      }
+    },
+    "labels": [
+      "FLOOD",
+      "EARTHQUAKE",
+      "FIRE",
+      "ACCIDENT",
+      "NON_EVENT"
+    ],
+    "confusion_matrix_rows_gold_columns_prediction": [
+      [
+        49,
+        0,
+        0,
+        0,
+        82
+      ],
+      [
+        0,
+        40,
+        0,
+        0,
+        68
+      ],
+      [
+        0,
+        0,
+        99,
+        0,
+        42
+      ],
+      [
+        0,
+        0,
+        0,
+        88,
+        21
+      ],
+      [
+        3,
+        1,
+        3,
+        3,
+        121
+      ]
+    ],
+    "gold_event_count": 489,
+    "false_non_event_count": 213,
+    "false_non_event_rate_among_gold_events": 0.43558282208588955,
+    "false_event_count": 10,
+    "wrong_event_type_count": 0
+  },
+  "finetuned_metrics": {
+    "records": 620,
+    "correct": 546,
+    "incorrect": 74,
+    "accuracy": 0.8806451612903226,
+    "macro_f1_all_five_classes": 0.8807164532997971,
+    "weighted_f1": 0.8777032002598237,
+    "per_class": {
+      "FLOOD": {
+        "support": 131,
+        "predicted": 135,
+        "precision": 0.8518518518518519,
+        "recall": 0.8778625954198473,
+        "f1": 0.8646616541353384
+      },
+      "EARTHQUAKE": {
+        "support": 108,
+        "predicted": 120,
+        "precision": 0.8833333333333333,
+        "recall": 0.9814814814814815,
+        "f1": 0.9298245614035088
+      },
+      "FIRE": {
+        "support": 141,
+        "predicted": 143,
+        "precision": 0.951048951048951,
+        "recall": 0.9645390070921985,
+        "f1": 0.9577464788732394
+      },
+      "ACCIDENT": {
+        "support": 109,
+        "predicted": 108,
+        "precision": 0.9537037037037037,
+        "recall": 0.944954128440367,
+        "f1": 0.9493087557603687
+      },
+      "NON_EVENT": {
+        "support": 131,
+        "predicted": 114,
+        "precision": 0.7543859649122807,
+        "recall": 0.6564885496183206,
+        "f1": 0.7020408163265306
+      }
+    },
+    "labels": [
+      "FLOOD",
+      "EARTHQUAKE",
+      "FIRE",
+      "ACCIDENT",
+      "NON_EVENT"
+    ],
+    "confusion_matrix_rows_gold_columns_prediction": [
+      [
+        115,
+        0,
+        0,
+        0,
+        16
+      ],
+      [
+        0,
+        106,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        136,
+        0,
+        5
+      ],
+      [
+        0,
+        1,
+        0,
+        103,
+        5
+      ],
+      [
+        20,
+        13,
+        7,
+        5,
+        86
+      ]
+    ],
+    "gold_event_count": 489,
+    "false_non_event_count": 28,
+    "false_non_event_rate_among_gold_events": 0.05725971370143149,
+    "false_event_count": 45,
+    "wrong_event_type_count": 1
+  },
+  "prediction_changes": {
+    "IMPROVED": 184,
+    "STILL_CORRECT": 362,
+    "REGRESSED": 35,
+    "STILL_WRONG": 39
+  },
+  "best_epoch": 4.0,
+  "best_step": 28,
+  "epochs_completed": 6.0,
+  "optimizer_steps": 42,
+  "cutoff_comparison": [
+    {
+      "threshold": 0.0,
+      "below_threshold_uncertain": 0,
+      "at_or_above_threshold": 620,
+      "coverage_at_or_above": 1.0,
+      "correct_at_or_above": 546,
+      "accuracy_at_or_above": 0.8806451612903226,
+      "errors_at_or_above": 74,
+      "errors_below_threshold": 0,
+      "fraction_of_errors_flagged": 0.0,
+      "false_non_event_at_or_above": 28,
+      "non_event_predictions_blocked_total": 114,
+      "flagged_rate": 0.0,
+      "correct_predictions_also_flagged": 0,
+      "false_event_at_or_above": 45,
+      "wrong_event_type_at_or_above": 1
+    },
+    {
+      "threshold": 0.5,
+      "below_threshold_uncertain": 4,
+      "at_or_above_threshold": 616,
+      "coverage_at_or_above": 0.9935483870967742,
+      "correct_at_or_above": 544,
+      "accuracy_at_or_above": 0.8831168831168831,
+      "errors_at_or_above": 72,
+      "errors_below_threshold": 2,
+      "fraction_of_errors_flagged": 0.02702702702702703,
+      "false_non_event_at_or_above": 27,
+      "non_event_predictions_blocked_total": 114,
+      "flagged_rate": 0.0064516129032258064,
+      "correct_predictions_also_flagged": 2,
+      "false_event_at_or_above": 44,
+      "wrong_event_type_at_or_above": 1
+    },
+    {
+      "threshold": 0.6,
+      "below_threshold_uncertain": 25,
+      "at_or_above_threshold": 595,
+      "coverage_at_or_above": 0.9596774193548387,
+      "correct_at_or_above": 532,
+      "accuracy_at_or_above": 0.8941176470588236,
+      "errors_at_or_above": 63,
+      "errors_below_threshold": 11,
+      "fraction_of_errors_flagged": 0.14864864864864866,
+      "false_non_event_at_or_above": 22,
+      "non_event_predictions_blocked_total": 114,
+      "flagged_rate": 0.04032258064516129,
+      "correct_predictions_also_flagged": 14,
+      "false_event_at_or_above": 40,
+      "wrong_event_type_at_or_above": 1
+    },
+    {
+      "threshold": 0.7,
+      "below_threshold_uncertain": 40,
+      "at_or_above_threshold": 580,
+      "coverage_at_or_above": 0.9354838709677419,
+      "correct_at_or_above": 522,
+      "accuracy_at_or_above": 0.9,
+      "errors_at_or_above": 58,
+      "errors_below_threshold": 16,
+      "fraction_of_errors_flagged": 0.21621621621621623,
+      "false_non_event_at_or_above": 19,
+      "non_event_predictions_blocked_total": 114,
+      "flagged_rate": 0.06451612903225806,
+      "correct_predictions_also_flagged": 24,
+      "false_event_at_or_above": 38,
+      "wrong_event_type_at_or_above": 1
+    },
+    {
+      "threshold": 0.8,
+      "below_threshold_uncertain": 60,
+      "at_or_above_threshold": 560,
+      "coverage_at_or_above": 0.9032258064516129,
+      "correct_at_or_above": 510,
+      "accuracy_at_or_above": 0.9107142857142857,
+      "errors_at_or_above": 50,
+      "errors_below_threshold": 24,
+      "fraction_of_errors_flagged": 0.32432432432432434,
+      "false_non_event_at_or_above": 16,
+      "non_event_predictions_blocked_total": 114,
+      "flagged_rate": 0.0967741935483871,
+      "correct_predictions_also_flagged": 36,
+      "false_event_at_or_above": 33,
+      "wrong_event_type_at_or_above": 1
+    },
+    {
+      "threshold": 0.9,
+      "below_threshold_uncertain": 102,
+      "at_or_above_threshold": 518,
+      "coverage_at_or_above": 0.8354838709677419,
+      "correct_at_or_above": 482,
+      "accuracy_at_or_above": 0.9305019305019305,
+      "errors_at_or_above": 36,
+      "errors_below_threshold": 38,
+      "fraction_of_errors_flagged": 0.5135135135135135,
+      "false_non_event_at_or_above": 6,
+      "non_event_predictions_blocked_total": 114,
+      "flagged_rate": 0.16451612903225807,
+      "correct_predictions_also_flagged": 64,
+      "false_event_at_or_above": 29,
+      "wrong_event_type_at_or_above": 1
+    },
+    {
+      "threshold": 0.95,
+      "below_threshold_uncertain": 153,
+      "at_or_above_threshold": 467,
+      "coverage_at_or_above": 0.7532258064516129,
+      "correct_at_or_above": 444,
+      "accuracy_at_or_above": 0.9507494646680942,
+      "errors_at_or_above": 23,
+      "errors_below_threshold": 51,
+      "fraction_of_errors_flagged": 0.6891891891891891,
+      "false_non_event_at_or_above": 4,
+      "non_event_predictions_blocked_total": 114,
+      "flagged_rate": 0.2467741935483871,
+      "correct_predictions_also_flagged": 102,
+      "false_event_at_or_above": 18,
+      "wrong_event_type_at_or_above": 1
+    },
+    {
+      "threshold": 0.99,
+      "below_threshold_uncertain": 437,
+      "at_or_above_threshold": 183,
+      "coverage_at_or_above": 0.29516129032258065,
+      "correct_at_or_above": 181,
+      "accuracy_at_or_above": 0.9890710382513661,
+      "errors_at_or_above": 2,
+      "errors_below_threshold": 72,
+      "fraction_of_errors_flagged": 0.972972972972973,
+      "false_non_event_at_or_above": 0,
+      "non_event_predictions_blocked_total": 114,
+      "flagged_rate": 0.7048387096774194,
+      "correct_predictions_also_flagged": 365,
+      "false_event_at_or_above": 2,
+      "wrong_event_type_at_or_above": 0
+    },
+    {
+      "threshold": 1.0,
+      "below_threshold_uncertain": 620,
+      "at_or_above_threshold": 0,
+      "coverage_at_or_above": 0.0,
+      "correct_at_or_above": 0,
+      "accuracy_at_or_above": null,
+      "errors_at_or_above": 0,
+      "errors_below_threshold": 74,
+      "fraction_of_errors_flagged": 1.0,
+      "false_non_event_at_or_above": 0,
+      "non_event_predictions_blocked_total": 114,
+      "flagged_rate": 1.0,
+      "correct_predictions_also_flagged": 546,
+      "false_event_at_or_above": 0,
+      "wrong_event_type_at_or_above": 0
+    }
+  ],
+  "examples": [
+    {
+      "id": "KEC-01395",
+      "text": "korban tewas kecelakaan selama mudik lebaran di sumsel naik",
+      "gold": "NON_EVENT",
+      "baseline_prediction": "ACCIDENT",
+      "new_prediction": "ACCIDENT",
+      "baseline_confidence": 0.9853597283363342,
+      "new_confidence": 0.9926267266273499,
+      "change": "STILL_WRONG",
+      "new_error_kind": "FALSE_EVENT",
+      "review_note": ""
+    },
+    {
+      "id": "KEB-00598",
+      "text": "damkar banda aceh : penyebab kebakaran di rumah tangga dan cara penanggulangan nya",
+      "gold": "NON_EVENT",
+      "baseline_prediction": "FIRE",
+      "new_prediction": "FIRE",
+      "baseline_confidence": 0.8728508353233337,
+      "new_confidence": 0.9902331829071045,
+      "change": "STILL_WRONG",
+      "new_error_kind": "FALSE_EVENT",
+      "review_note": ""
+    },
+    {
+      "id": "BAN-01074",
+      "text": "cegah banjir dan longsor warga tanam ribuan batang pohon di gunung buthak",
+      "gold": "NON_EVENT",
+      "baseline_prediction": "FLOOD",
+      "new_prediction": "FLOOD",
+      "baseline_confidence": 0.6586176753044128,
+      "new_confidence": 0.9835461378097534,
+      "change": "STILL_WRONG",
+      "new_error_kind": "FALSE_EVENT",
+      "review_note": ""
+    },
+    {
+      "id": "GEM-01398",
+      "text": "dari sekian banyak korban gempa bumi tsunamibanjirdan pesawat jatuhhanya korban php yang enggak di evakuasi",
+      "gold": "NON_EVENT",
+      "baseline_prediction": "NON_EVENT",
+      "new_prediction": "EARTHQUAKE",
+      "baseline_confidence": 0.9898172616958618,
+      "new_confidence": 0.9827017188072205,
+      "change": "REGRESSED",
+      "new_error_kind": "FALSE_EVENT",
+      "review_note": "Daftar korban bencana dan korban PHP dipakai untuk lelucon umum, tanpa kejadian tertentu. R3."
+    },
+    {
+      "id": "KEC-00351",
+      "text": "sehabis baca salah satu artikel mengenai kecelakaan di tanjakan emen itu semakin khawatir kalau bystander effect di masyarakat kita semakin tinggi ya gila saja orang kecelakaan begitu malah sibuk direkamin bukan dibantuin",
+      "gold": "ACCIDENT",
+      "baseline_prediction": "NON_EVENT",
+      "new_prediction": "NON_EVENT",
+      "baseline_confidence": 0.9875455498695374,
+      "new_confidence": 0.9818987250328064,
+      "change": "STILL_WRONG",
+      "new_error_kind": "FALSE_NON_EVENT",
+      "review_note": "Komentar tentang perilaku penonton merujuk artikel kecelakaan Tanjakan Emen. Kritik bystander effect tetap memuat kejadian konkret. R1,R5."
+    },
+    {
+      "id": "GEM-01229",
+      "text": "negeri kita sedang dirundung duka setelah gempa bumi bertubi-tubi kemarin pesawat lion air juta 610 hilang dan ditemukan jatuh di perairan kerawang pesawat boing 737 mengalami kegagalan terbang ingat bukan karena dosa manusia tetapi hidup dan mati ada di tangan tuhan",
+      "gold": "ACCIDENT",
+      "baseline_prediction": "NON_EVENT",
+      "new_prediction": "EARTHQUAKE",
+      "baseline_confidence": 0.9870983958244324,
+      "new_confidence": 0.9756837487220764,
+      "change": "STILL_WRONG",
+      "new_error_kind": "WRONG_EVENT_TYPE",
+      "review_note": "Narasi secara spesifik menyatakan pesawat Lion Air JT610 hilang lalu ditemukan jatuh di perairan Kerawang. Gempa menjadi konteks umum sebelumnya; kecelakaan pesawat menjadi kejadian utama yang diuraikan. R1,R4."
+    }
+  ],
+  "model_export_manifest": {
+    "archive_name": "SILAR_SENA_reviewed_pilot_20261018T044447_926664Z.zip",
+    "archive_sha256": "144e13d1904f1f4beee56a5ac29fc4fc75cf6a424806ce3c9a0082bf6adf92a3",
+    "files_sha256": {
+      "config.json": "53190f6443cea17db8e8d152839916b640aac910ff6e50c6bcb7f8cc4729e431",
+      "experiment_metadata.json": "68b52af00b05cb7aca05364c0013bfb01af034bcec6974ee4779a75788d0a5d1",
+      "model.safetensors": "9512a4895de281f3696e6c53a86d1271ad45180339995af01cf2b886ddc0afad",
+      "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+      "tokenizer.json": "9fe770007d1727a8cacfec0b467e2b6d6f60d7ff93f3b0be692d63c62ccc856d",
+      "tokenizer_config.json": "af1e05390d2f52f5c09553b0695dba1f047cadc875a0b12dca06c9e0fe039b21",
+      "training_args.bin": "7056347991a70df4d6de661e4f018cf20dfc16735e9dab6a65ace66d08bb8063",
+      "vocab.txt": "343bf28a78f7efeda6419fa610f553184a6dcd29aae726f46850cd05e3167dc3"
+    },
+    "reload_sample_count": 3,
+    "reload_logits_match": true,
+    "production_model_selected": false,
+    "production_threshold_selected": false
+  },
+  "proposed_recommended_cutoff": 0.95,
+  "alternative_cutoff": 0.9,
+  "confidence_threshold_selected": null,
+  "threshold_activated": false,
+  "validation_used_for_checkpoint_selection": true,
+  "independent_test": false,
+  "historical_sena_training_split_identity_verified": false,
+  "model_weights_directly_read_in_this_analysis": false,
+  "new_training_executed_in_this_analysis": false,
+  "new_neural_inference_executed_in_this_analysis": false,
+  "previous_attachment_check": "Accuracy/F1/per-class/confusion matrix were independently checked with scikit-learn on receipt.",
+  "checks": [
+    {
+      "check": "data/sena_train_reviewed.jsonl: frozen input SHA-256",
+      "passed": true
+    },
+    {
+      "check": "data/sena_validation_reviewed.jsonl: frozen input SHA-256",
+      "passed": true
+    },
+    {
+      "check": "data/baseline_reviewed_evaluation.json: frozen input SHA-256",
+      "passed": true
+    },
+    {
+      "check": "all 620 IDs/texts/gold/argmax/confidence/probabilities",
+      "passed": true
+    },
+    {
+      "check": "all nine cutoff partitions match the original report",
+      "passed": true
+    },
+    {
+      "check": "selected checkpoint metric equals saved prediction metric",
+      "passed": true
+    }
+  ]
+}

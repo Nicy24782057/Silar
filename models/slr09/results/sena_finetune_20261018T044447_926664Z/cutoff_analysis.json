@@ -1,0 +1,123 @@
+{
+  "rows": [
+    {
+      "threshold": 0.0,
+      "below_threshold_uncertain": 0,
+      "at_or_above_threshold": 620,
+      "coverage_at_or_above": 1.0,
+      "correct_at_or_above": 546,
+      "accuracy_at_or_above": 0.8806451612903226,
+      "errors_at_or_above": 74,
+      "errors_below_threshold": 0,
+      "fraction_of_errors_flagged": 0.0,
+      "false_non_event_at_or_above": 28,
+      "non_event_predictions_blocked_total": 114
+    },
+    {
+      "threshold": 0.5,
+      "below_threshold_uncertain": 4,
+      "at_or_above_threshold": 616,
+      "coverage_at_or_above": 0.9935483870967742,
+      "correct_at_or_above": 544,
+      "accuracy_at_or_above": 0.8831168831168831,
+      "errors_at_or_above": 72,
+      "errors_below_threshold": 2,
+      "fraction_of_errors_flagged": 0.02702702702702703,
+      "false_non_event_at_or_above": 27,
+      "non_event_predictions_blocked_total": 114
+    },
+    {
+      "threshold": 0.6,
+      "below_threshold_uncertain": 25,
+      "at_or_above_threshold": 595,
+      "coverage_at_or_above": 0.9596774193548387,
+      "correct_at_or_above": 532,
+      "accuracy_at_or_above": 0.8941176470588236,
+      "errors_at_or_above": 63,
+      "errors_below_threshold": 11,
+      "fraction_of_errors_flagged": 0.14864864864864866,
+      "false_non_event_at_or_above": 22,
+      "non_event_predictions_blocked_total": 114
+    },
+    {
+      "threshold": 0.7,
+      "below_threshold_uncertain": 40,
+      "at_or_above_threshold": 580,
+      "coverage_at_or_above": 0.9354838709677419,
+      "correct_at_or_above": 522,
+      "accuracy_at_or_above": 0.9,
+      "errors_at_or_above": 58,
+      "errors_below_threshold": 16,
+      "fraction_of_errors_flagged": 0.21621621621621623,
+      "false_non_event_at_or_above": 19,
+      "non_event_predictions_blocked_total": 114
+    },
+    {
+      "threshold": 0.8,
+      "below_threshold_uncertain": 60,
+      "at_or_above_threshold": 560,
+      "coverage_at_or_above": 0.9032258064516129,
+      "correct_at_or_above": 510,
+      "accuracy_at_or_above": 0.9107142857142857,
+      "errors_at_or_above": 50,
+      "errors_below_threshold": 24,
+      "fraction_of_errors_flagged": 0.32432432432432434,
+      "false_non_event_at_or_above": 16,
+      "non_event_predictions_blocked_total": 114
+    },
+    {
+      "threshold": 0.9,
+      "below_threshold_uncertain": 102,
+      "at_or_above_threshold": 518,
+      "coverage_at_or_above": 0.8354838709677419,
+      "correct_at_or_above": 482,
+      "accuracy_at_or_above": 0.9305019305019305,
+      "errors_at_or_above": 36,
+      "errors_below_threshold": 38,
+      "fraction_of_errors_flagged": 0.5135135135135135,
+      "false_non_event_at_or_above": 6,
+      "non_event_predictions_blocked_total": 114
+    },
+    {
+      "threshold": 0.95,
+      "below_threshold_uncertain": 153,
+      "at_or_above_threshold": 467,
+      "coverage_at_or_above": 0.7532258064516129,
+      "correct_at_or_above": 444,
+      "accuracy_at_or_above": 0.9507494646680942,
+      "errors_at_or_above": 23,
+      "errors_below_threshold": 51,
+      "fraction_of_errors_flagged": 0.6891891891891891,
+      "false_non_event_at_or_above": 4,
+      "non_event_predictions_blocked_total": 114
+    },
+    {
+      "threshold": 0.99,
+      "below_threshold_uncertain": 437,
+      "at_or_above_threshold": 183,
+      "coverage_at_or_above": 0.29516129032258065,
+      "correct_at_or_above": 181,
+      "accuracy_at_or_above": 0.9890710382513661,
+      "errors_at_or_above": 2,
+      "errors_below_threshold": 72,
+      "fraction_of_errors_flagged": 0.972972972972973,
+      "false_non_event_at_or_above": 0,
+      "non_event_predictions_blocked_total": 114
+    },
+    {
+      "threshold": 1.0,
+      "below_threshold_uncertain": 620,
+      "at_or_above_threshold": 0,
+      "coverage_at_or_above": 0.0,
+      "correct_at_or_above": 0,
+      "accuracy_at_or_above": null,
+      "errors_at_or_above": 0,
+      "errors_below_threshold": 74,
+      "fraction_of_errors_flagged": 1.0,
+      "false_non_event_at_or_above": 0,
+      "non_event_predictions_blocked_total": 114
+    }
+  ],
+  "production_threshold_selected": false,
+  "independent_test": false
+}

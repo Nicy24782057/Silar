@@ -1,0 +1,43 @@
+{
+  "schema": "silar-sena-finetune-run-0.1",
+  "run_id": "20261018T044447_926664Z",
+  "status": "SUCCEEDED",
+  "completed_stages": [
+    "PREPARE",
+    "FINE_TUNE",
+    "EVALUATE",
+    "EXPORT"
+  ],
+  "config": {
+    "seed": 42,
+    "max_length": 256,
+    "learning_rate": 2e-05,
+    "train_batch_size": 16,
+    "eval_batch_size": 32,
+    "max_epochs": 10,
+    "weight_decay": 0.01,
+    "early_stopping_patience": 2,
+    "metric_for_best_model": "macro_f1",
+    "transformers_version": "4.57.1"
+  },
+  "started_utc": "2026-10-18T04:44:47.926973+00:00",
+  "training_attempted": true,
+  "training_executed": true,
+  "training_completed": true,
+  "new_neural_inference_started": true,
+  "new_neural_inference_executed": true,
+  "baseline_neural_inference_repeated": false,
+  "model_exported": true,
+  "production_model_selected": false,
+  "production_threshold_selected": false,
+  "validation_is_independent_blind_test": false,
+  "current_stage": "EXPORT",
+  "train_narratives": 110,
+  "validation_narratives": 620,
+  "optimizer_steps": 42,
+  "best_checkpoint": "/content/slr09_sena_finetune_v01/runs/20261018T044447_926664Z/checkpoints/checkpoint-28",
+  "best_validation_macro_f1": 0.8807164532997971,
+  "epochs_completed": 6.0,
+  "model_archive_path": "/content/drive/MyDrive/SILAR_SLR09/SILAR_SENA_reviewed_pilot_20261018T044447_926664Z.zip",
+  "finished_utc": "2026-10-18T04:47:07.983930+00:00"
+}

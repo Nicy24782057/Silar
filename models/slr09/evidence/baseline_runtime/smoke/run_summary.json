@@ -1,0 +1,90 @@
+{
+  "runner_version": "silar-runtime-0.1.0",
+  "adapter_version": "silar-adapter-0.1.0",
+  "mode": "smoke",
+  "status": "SUCCEEDED",
+  "input_sha256": "1e3c1ca0c407121b454ccbae2b76436c1641dbe1f4cf2279cd203a1065133633",
+  "model_inference_executed": true,
+  "training_executed": false,
+  "production_threshold_selected": false,
+  "fusion_executed": false,
+  "environment_label": "NOTEBOOK_CPU",
+  "environment": {
+    "python": "3.13.16",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "cpu_count": 2,
+    "packages": {
+      "torch": "2.11.0+cpu",
+      "transformers": "5.13.1",
+      "tokenizers": "0.22.2",
+      "safetensors": "0.8.0",
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.6.1",
+      "iterative-stratification": "0.1.9"
+    },
+    "device": "cpu",
+    "peak_process_rss_bytes": 1251123200,
+    "measurement_scope": "PROCESS_ON_OBSERVED_ENVIRONMENT_NOT_AUTOMATIC_TARGET_VM_PROOF",
+    "torch_num_threads": 1,
+    "cuda_available": false,
+    "cuda_runtime": null
+  },
+  "records_expected": 12,
+  "models": {
+    "sena": {
+      "files": {
+        "config.json": "b05589deb775fe55afee6300ed91b7a2cfd9a60917b678bfc55e826f7e6840e4",
+        "tokenizer.json": "9fe32d346105f405394d2ba3f4c15df117127584e6042336956f15e1357857d3",
+        "tokenizer_config.json": "9f0c2c65a70ea18113ffa2e717103e7210ea826e7acc3442b69b346686b55a48",
+        "model.safetensors": "ae7ceb9959b7f0f3c55a6babd2cf73759a1d9458daadb654ca2fb68ca25cc4dc"
+      },
+      "labels": [
+        "FLOOD",
+        "EARTHQUAKE",
+        "FIRE",
+        "ACCIDENT",
+        "NON_EVENT"
+      ],
+      "model_id": "SILAR_SENA_v1"
+    },
+    "nara": {
+      "files": {
+        "config.json": "7b31561467ebcc180a4ab13a249c8cebb5462672670b6371ca7fbbad0d408293",
+        "tokenizer.json": "9fe770007d1727a8cacfec0b467e2b6d6f60d7ff93f3b0be692d63c62ccc856d",
+        "tokenizer_config.json": "9f0c2c65a70ea18113ffa2e717103e7210ea826e7acc3442b69b346686b55a48",
+        "model.safetensors": "f80a007e2e3a6ce3d444899656284b906283bc15a927888539aa9da1b7dbc3d4"
+      },
+      "labels": [
+        "O",
+        "ACCIDENT-EVENT",
+        "AFFECTEDOBJECTS-ARG",
+        "DEATHVICTIM-ARG",
+        "EARTHQUAKE-EVENT",
+        "FALSE-EVENT",
+        "FIRE-EVENT",
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "OFFICER-ARG",
+        "PLACE-ARG",
+        "REASON-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "WOUNDVICTIM-ARG"
+      ],
+      "model_id": "SILAR_NARA_v1"
+    }
+  },
+  "model_load_seconds": 1.844619780999892,
+  "records_completed": 12,
+  "wall_seconds_including_loading": 25.91835028100013,
+  "per_record_seconds_including_first_record": {
+    "min": 0.22456965800029138,
+    "median": 0.28450132450007004,
+    "mean": 0.2936552134166656,
+    "max": 0.5502672909997273,
+    "scope": "SINGLE_PASS_NOT_STEADY_STATE_OR_CONCURRENT_BACKEND_BENCHMARK"
+  },
+  "predictions_sha256": "52619841ac4ecd139e17e9b74d19bf723bbe667a689e495f90d055f18445f5cb"
+}

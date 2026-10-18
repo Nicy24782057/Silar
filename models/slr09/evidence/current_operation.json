@@ -1,0 +1,15 @@
+{
+  "revision": "AFTER_USER_THRESHOLD_SELECTION",
+  "accepted_external_sena_run": "20261018T044447_926664Z",
+  "external_sena_training_completed": true,
+  "new_training_executed_in_this_update": false,
+  "new_neural_inference_executed_in_this_update": false,
+  "nara_evaluation_or_adapter_replay_repeated": false,
+  "training_notebook_code_changed": false,
+  "production_model_selected": false,
+  "confidence_threshold_selected": 0.95,
+  "selected_option": "A",
+  "production_deployed": false,
+  "synthetic_fusion_contract_checks_executed": true,
+  "repository_or_github_card_mutated": false
+}
