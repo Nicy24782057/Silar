@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "tests_passed": 73,
+  "http_setup_checks_passed": 9,
+  "openapi_paths": 16,
+  "checks": [
+    "generated Markdown links resolve",
+    "OpenAPI route inventory matches Django URLs",
+    "Python files compile",
+    "ZIP entries are unique and remain within one package root",
+    "ZIP CRC passes",
+    "manifest SHA-256 matches all listed files",
+    ".env, credentials, mailbox, media, model binaries, virtual environment, cache and test databases excluded"
+  ],
+  "files_hashed": 68,
+  "windows_browser_acceptance": "PENDING_TEAM_REVIEW"
+}

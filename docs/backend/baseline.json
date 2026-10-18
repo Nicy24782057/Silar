@@ -1,0 +1,46 @@
+{
+  "prepared_on": "2026-10-17",
+  "repository": "https://github.com/Nicy24782057/Silar",
+  "reference_commit": "f7943313fa01eb70c3b41c1ad3efe63d02430f8c",
+  "reference_commit_is_backend_work_commit": false,
+  "prd_version": "0.5 (dirujuk Acuan Teknis 0.3 dan brief kelompok)",
+  "technical_reference_version": "0.3 / 11 Oktober 2026",
+  "sources": [
+    {
+      "file": "references/SILAR_Technical_Reference.docx",
+      "source_url": "https://raw.githubusercontent.com/Nicy24782057/Silar/f7943313fa01eb70c3b41c1ad3efe63d02430f8c/docs/architecture/SILAR_Technical_Reference.docx",
+      "sha256": "6603a3687e7335b8fa0fd3b7d23e58540770eff6d06427f734ed317b5d86517b",
+      "bytes": 5313134
+    },
+    {
+      "file": "references/SILAR_PRD.docx",
+      "source_url": "https://raw.githubusercontent.com/Nicy24782057/Silar/f7943313fa01eb70c3b41c1ad3efe63d02430f8c/docs/product/SILAR_PRD.docx",
+      "sha256": "481b8617bbac22f6050fe110bed136d17bfabca35b0574d1a5e037b7a0ef8b23",
+      "bytes": 50871
+    },
+    {
+      "file": "references/SILAR_Pemetaan_Fitur_Final.md",
+      "source_url": "https://raw.githubusercontent.com/Nicy24782057/Silar/f7943313fa01eb70c3b41c1ad3efe63d02430f8c/docs/planning/SILAR_Pemetaan_Fitur_Final.md",
+      "sha256": "9c61bee474c584359a94acbac05e0fd3ffbbd40e1dd3a5a9896b6c49dd6ed273",
+      "bytes": 18028
+    },
+    {
+      "file": "references/SLR_07_screens.json",
+      "source": "Lampiran ZIP SLR_07_UIUX_SILAR_Siap_Dipindahkan.zip/docs/uiux/screens.json",
+      "sha256": "e23760a441179affe00f585875e581065c4e9852551c06b76c4e4571352a2b90",
+      "bytes": 12311
+    },
+    {
+      "file": "references/SLR_07_README.md",
+      "source": "Lampiran ZIP SLR_07_UIUX_SILAR_Siap_Dipindahkan.zip/docs/uiux/README.md",
+      "sha256": "9cd8e101296a0160faa2f7914ab6472f7f15bbdd7cddbc56d64ee295d8ec7016",
+      "bytes": 19118
+    },
+    {
+      "file": "references/SLR_08_card.md",
+      "source": "Lampiran checklist pengguna, ekstrak SLR_08",
+      "sha256": "5efcf5d33cdf6b18ec64f7a0f26f1d6660bee6fbed8b1803c322d875363b8b08"
+    }
+  ],
+  "prototype_note": "SLR_07 merupakan prototype data contoh; bukan implementasi API frontend produksi."
+}

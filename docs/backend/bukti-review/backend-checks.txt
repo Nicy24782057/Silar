@@ -1,0 +1,188 @@
+RUN /workspace/scratch/7a1f4ce674b8/tmp/slr08-venv/bin/python manage.py migrate --noinput
+Operations to perform:
+  Apply all migrations: accounts, auth, contenttypes, core, sessions, token_blacklist
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying accounts.0001_initial... OK
+  Applying core.0001_initial... OK
+  Applying core.0002_history_guards... OK
+  Applying core.0003_nara_normalization_warnings... OK
+  Applying core.0004_allowed_enums... OK
+  Applying sessions.0001_initial... OK
+  Applying token_blacklist.0001_initial... OK
+  Applying token_blacklist.0002_outstandingtoken_jti_hex... OK
+  Applying token_blacklist.0003_auto_20171017_2007... OK
+  Applying token_blacklist.0004_auto_20171017_2013... OK
+  Applying token_blacklist.0005_remove_outstandingtoken_jti... OK
+  Applying token_blacklist.0006_auto_20171017_2113... OK
+  Applying token_blacklist.0007_auto_20171017_2214... OK
+  Applying token_blacklist.0008_migrate_to_bigautofield... OK
+  Applying token_blacklist.0010_fix_migrate_to_bigautofield... OK
+  Applying token_blacklist.0011_linearizes_history... OK
+  Applying token_blacklist.0012_alter_outstandingtoken_user... OK
+  Applying token_blacklist.0013_alter_blacklistedtoken_options_and_more... OK
+
+RUN /workspace/scratch/7a1f4ce674b8/tmp/slr08-venv/bin/python manage.py bootstrap_silar
+Katalog 13 izin dan tiga Group tersedia. Izin Operator/Admin tetap diberikan eksplisit.
+
+RUN /workspace/scratch/7a1f4ce674b8/tmp/slr08-venv/bin/python manage.py check
+System check identified no issues (0 silenced).
+
+RUN /workspace/scratch/7a1f4ce674b8/tmp/slr08-venv/bin/python manage.py makemigrations --check --dry-run
+No changes detected
+
+RUN /workspace/scratch/7a1f4ce674b8/tmp/slr08-venv/bin/python manage.py test --noinput --verbosity 2 --settings=config.test_settings
+Creating test database for alias 'default' ('test_silar08_test')...
+Found 73 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: corsheaders, rest_framework
+  Apply all migrations: accounts, auth, contenttypes, core, sessions, token_blacklist
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying accounts.0001_initial... OK
+  Applying core.0001_initial... OK
+  Applying core.0002_history_guards... OK
+  Applying core.0003_nara_normalization_warnings... OK
+  Applying core.0004_allowed_enums... OK
+  Applying sessions.0001_initial... OK
+  Applying token_blacklist.0001_initial... OK
+  Applying token_blacklist.0002_outstandingtoken_jti_hex... OK
+  Applying token_blacklist.0003_auto_20171017_2007... OK
+  Applying token_blacklist.0004_auto_20171017_2013... OK
+  Applying token_blacklist.0005_remove_outstandingtoken_jti... OK
+  Applying token_blacklist.0006_auto_20171017_2113... OK
+  Applying token_blacklist.0007_auto_20171017_2214... OK
+  Applying token_blacklist.0008_migrate_to_bigautofield... OK
+  Applying token_blacklist.0010_fix_migrate_to_bigautofield... OK
+  Applying token_blacklist.0011_linearizes_history... OK
+  Applying token_blacklist.0012_alter_outstandingtoken_user... OK
+  Applying token_blacklist.0013_alter_blacklistedtoken_options_and_more...test_admin_role_without_grant_is_denied (accounts.tests.AccountAPITests.test_admin_role_without_grant_is_denied) ... ok
+test_all_auth_posts_require_csrf (accounts.tests.AccountAPITests.test_all_auth_posts_require_csrf) ... ok
+test_assignment_projection_omits_email_and_permission_ids (accounts.tests.AccountAPITests.test_assignment_projection_omits_email_and_permission_ids) ... ok
+test_attempt_counter_survives_resend (accounts.tests.AccountAPITests.test_attempt_counter_survives_resend) ... ok
+test_cannot_activate_unverified_operator_by_admin_patch (accounts.tests.AccountAPITests.test_cannot_activate_unverified_operator_by_admin_patch) ... ok
+test_challenge_only_in_email_and_digest_only_in_database (accounts.tests.AccountAPITests.test_challenge_only_in_email_and_digest_only_in_database) ... ok
+test_cors_and_safe_json_errors (accounts.tests.AccountAPITests.test_cors_and_safe_json_errors) ... ok
+test_csrf_origin_rejection_even_with_valid_token (accounts.tests.AccountAPITests.test_csrf_origin_rejection_even_with_valid_token) ... ok
+test_disabled_account_immediately_loses_access (accounts.tests.AccountAPITests.test_disabled_account_immediately_loses_access) ... ok
+test_expired_code_is_rejected (accounts.tests.AccountAPITests.test_expired_code_is_rejected) ... ok
+test_generic_registration_hides_user_and_challenge (accounts.tests.AccountAPITests.test_generic_registration_hides_user_and_challenge) ... ok
+test_invalid_new_password_does_not_consume_challenge (accounts.tests.AccountAPITests.test_invalid_new_password_does_not_consume_challenge) ... ok
+test_local_mailbox_writes_private_email_files (accounts.tests.AccountAPITests.test_local_mailbox_writes_private_email_files) ... ok
+test_login_me_and_cookie_contract (accounts.tests.AccountAPITests.test_login_me_and_cookie_contract) ... ok
+test_logout_is_204_and_blacklists_refresh (accounts.tests.AccountAPITests.test_logout_is_204_and_blacklists_refresh) ... ok
+test_operator_catalog_exactly_seven_integer_ids (accounts.tests.AccountAPITests.test_operator_catalog_exactly_seven_integer_ids) ... ok
+test_operator_create_survives_delivery_failure_and_resend_is_503 (accounts.tests.AccountAPITests.test_operator_create_survives_delivery_failure_and_resend_is_503) ... ok
+test_operator_create_then_activation_uses_explicit_permissions (accounts.tests.AccountAPITests.test_operator_create_then_activation_uses_explicit_permissions) ... ok
+test_operator_permissions_cannot_include_admin_or_duplicate (accounts.tests.AccountAPITests.test_operator_permissions_cannot_include_admin_or_duplicate) ... ok
+test_otp_purpose_cannot_be_substituted (accounts.tests.AccountAPITests.test_otp_purpose_cannot_be_substituted) ... ok
+test_otp_request_unknown_and_ineligible_have_same_response (accounts.tests.AccountAPITests.test_otp_request_unknown_and_ineligible_have_same_response) ... ok
+test_password_hash_and_email_normalization (accounts.tests.AccountAPITests.test_password_hash_and_email_normalization) ... ok
+test_password_policy_and_confirmation (accounts.tests.AccountAPITests.test_password_policy_and_confirmation) ... ok
+test_permission_revocation_effective_on_existing_token (accounts.tests.AccountAPITests.test_permission_revocation_effective_on_existing_token) ... ok
+test_profile_only_accepts_full_name (accounts.tests.AccountAPITests.test_profile_only_accepts_full_name) ... ok
+test_public_delivery_failure_remains_generic (accounts.tests.AccountAPITests.test_public_delivery_failure_remains_generic) ... ok
+test_refresh_in_body_is_rejected (accounts.tests.AccountAPITests.test_refresh_in_body_is_rejected) ... ok
+test_refresh_rotates_and_rejects_reuse (accounts.tests.AccountAPITests.test_refresh_rotates_and_rejects_reuse) ... ok
+test_resend_revokes_previous_challenge (accounts.tests.AccountAPITests.test_resend_revokes_previous_challenge) ... ok
+test_reset_atomically_revokes_access_and_refresh (accounts.tests.AccountAPITests.test_reset_atomically_revokes_access_and_refresh) ... ok
+test_role_injection_and_unknown_field_rejected (accounts.tests.AccountAPITests.test_role_injection_and_unknown_field_rejected) ... ok
+test_unknown_query_and_pagination_rejected (accounts.tests.AccountAPITests.test_unknown_query_and_pagination_rejected) ... ok
+test_unverified_or_wrong_password_cannot_login (accounts.tests.AccountAPITests.test_unverified_or_wrong_password_cannot_login) ... ok
+test_verify_is_once_and_does_not_issue_tokens (accounts.tests.AccountAPITests.test_verify_is_once_and_does_not_issue_tokens) ... ok
+test_wrong_otp_attempt_persists (accounts.tests.AccountAPITests.test_wrong_otp_attempt_persists) ... ok
+test_admin_and_superuser_do_not_inherit_operator_actions (core.tests.FoundationTests.test_admin_and_superuser_do_not_inherit_operator_actions) ... ok
+test_admin_handling_uses_operator_role_snapshot (core.tests.FoundationTests.test_admin_handling_uses_operator_role_snapshot) ... ok
+test_analysis_enums_are_database_constraints (core.tests.FoundationTests.test_analysis_enums_are_database_constraints) ... ok
+test_assignment_identity_and_ledger_history_cannot_be_rewritten (core.tests.FoundationTests.test_assignment_identity_and_ledger_history_cannot_be_rewritten) ... ok
+test_audit_is_in_same_transaction_and_whitelisted (core.tests.FoundationTests.test_audit_is_in_same_transaction_and_whitelisted) ... ok
+test_audit_read_requires_explicit_admin_permission (core.tests.FoundationTests.test_audit_read_requires_explicit_admin_permission) ... ok
+test_authorization_precedes_idempotency_replay (core.tests.FoundationTests.test_authorization_precedes_idempotency_replay) ... ok
+test_closed_report_is_terminal (core.tests.FoundationTests.test_closed_report_is_terminal) ... ok
+test_cross_report_reference_is_rejected (core.tests.FoundationTests.test_cross_report_reference_is_rejected) ... ok
+test_expired_key_is_retained_and_cannot_be_reused (core.tests.FoundationTests.test_expired_key_is_retained_and_cannot_be_reused) ... ok
+test_health_checks_database_without_claiming_ai_ready (core.tests.FoundationTests.test_health_checks_database_without_claiming_ai_ready) ... ok
+test_history_cannot_be_updated_by_orm_or_raw_sql (core.tests.FoundationTests.test_history_cannot_be_updated_by_orm_or_raw_sql) ... ok
+test_idempotency_mismatch_and_revision_conflict (core.tests.FoundationTests.test_idempotency_mismatch_and_revision_conflict) ... ok
+test_idempotent_replay_returns_frozen_result_before_revision_check (core.tests.FoundationTests.test_idempotent_replay_returns_frozen_result_before_revision_check) ... ok
+test_impossible_calendar_date_is_a_validation_error (core.tests.FoundationTests.test_impossible_calendar_date_is_a_validation_error) ... ok
+test_json_shape_and_category_separation (core.tests.FoundationTests.test_json_shape_and_category_separation) ... ok
+test_json_type_constraint_blocks_raw_sql_bypass (core.tests.FoundationTests.test_json_type_constraint_blocks_raw_sql_bypass) ... ok
+test_ledger_never_stores_credentials (core.tests.FoundationTests.test_ledger_never_stores_credentials) ... ok
+test_mutation_failure_rolls_back_resource_and_ledger (core.tests.FoundationTests.test_mutation_failure_rolls_back_resource_and_ledger) ... ok
+test_nara_warnings_preserve_adapter_metadata_without_category (core.tests.FoundationTests.test_nara_warnings_preserve_adapter_metadata_without_category) ... ok
+test_one_active_assignment_preserves_ended_history (core.tests.FoundationTests.test_one_active_assignment_preserves_ended_history) ... ok
+test_owner_assignment_monitoring_and_private_access_scopes (core.tests.FoundationTests.test_owner_assignment_monitoring_and_private_access_scopes) ... ok
+test_postgresql_16_is_actual_test_engine (core.tests.FoundationTests.test_postgresql_16_is_actual_test_engine) ... ok
+test_private_media_has_no_public_url_and_requires_report_access (core.tests.FoundationTests.test_private_media_has_no_public_url_and_requires_report_access) ... ok
+test_public_allowlist_does_not_allow_private_fields (core.tests.FoundationTests.test_public_allowlist_does_not_allow_private_fields) ... ok
+test_publication_content_requires_new_version_and_closed_rejects_candidates (core.tests.FoundationTests.test_publication_content_requires_new_version_and_closed_rejects_candidates) ... ok
+test_reservation_and_failure_are_token_fenced (core.tests.FoundationTests.test_reservation_and_failure_are_token_fenced) ... ok
+test_sena_nara_are_one_per_run (core.tests.FoundationTests.test_sena_nara_are_one_per_run) ... ok
+test_submitted_source_is_locked_in_database (core.tests.FoundationTests.test_submitted_source_is_locked_in_database) ... ok
+test_unknown_fields_and_naive_event_time_are_rejected (core.tests.FoundationTests.test_unknown_fields_and_naive_event_time_are_rejected) ... ok
+test_unknown_holds_global_slot_and_report_reservation (core.tests.FoundationTests.test_unknown_holds_global_slot_and_report_reservation) ... ok
+test_unknown_request_cannot_auto_retry (core.tests.FoundationTests.test_unknown_request_cannot_auto_retry) ... ok
+test_version_number_uniqueness_is_database_enforced (core.tests.FoundationTests.test_version_number_uniqueness_is_database_enforced) ... ok
+test_audit_requires_atomic_block (core.tests.DatabaseTransactionTests.test_audit_requires_atomic_block) ... ok
+test_committed_bundle_cannot_gain_members (core.tests.DatabaseTransactionTests.test_committed_bundle_cannot_gain_members) ... ok
+test_dedicated_session_lock_rejects_parallel_slot_and_releases (core.tests.DatabaseTransactionTests.test_dedicated_session_lock_rejects_parallel_slot_and_releases) ... ok
+test_empty_bundle_cannot_commit (core.tests.DatabaseTransactionTests.test_empty_bundle_cannot_commit) ... ok
+test_unknown_reservation_still_blocks_slot_after_session_lost (core.tests.DatabaseTransactionTests.test_unknown_reservation_still_blocks_slot_after_session_lost) ... ok
+
+----------------------------------------------------------------------
+Ran 73 tests in 3.082s
+
+OK
+Destroying test database for alias 'default' ('test_silar08_test')...
+ OK
+System check identified no issues (0 silenced).
+Katalog 13 izin dan tiga Group tersedia. Izin Operator/Admin tetap diberikan eksplisit.
+Katalog 13 izin dan tiga Group tersedia. Izin Operator/Admin tetap diberikan eksplisit.
+
+RUN /workspace/scratch/7a1f4ce674b8/tmp/slr08-venv/bin/python -m pip check
+No broken requirements found.
+
+RUN /workspace/scratch/7a1f4ce674b8/tmp/slr08-venv/bin/python /workspace/scratch/7a1f4ce674b8/tmp/host_smoke_checks.py
+PostgreSQL 16 harus sudah terpasang dan servicenya berjalan.
+Database baru dan .env lokal tersedia; rahasia dibuat acak.
+.env sudah ada; konfigurasi dan database dipertahankan.
+PASS setup creates fresh local role/database/secrets and preserves existing .env
+PASS migrations succeed as generated application role without PostgreSQL superuser
+PASS live HTTP health on PostgreSQL 16
+PASS live HTTP auth rejects missing CSRF
+PASS live HTTP register has generic response and no challenge/token
+PASS live HTTP verifies OTP delivered to private local mailbox
+PASS live HTTP wrong-password rejection, login, cookie attributes, bearer profile
+PASS live HTTP cookie rotation, logout 204 and session rejection
+PASS future report endpoint is not misrepresented as implemented
+

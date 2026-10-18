@@ -1,0 +1,53 @@
+@base = http://localhost:8001/api/v1
+@csrf = ISI_DARI_GET_CSRF
+@access = ISI_ACCESS_LOGIN
+@challenge = ISI_UUID_DARI_EMAIL
+@code = ISI_ENAM_DIGIT_DARI_EMAIL
+
+### Aktifkan cookie jar pada alat pengujian; pertahankan localhost dan path cookie.
+GET {{base}}/auth/csrf/
+Origin: http://localhost:5173
+
+### Register selalu 202 Message bila schema valid dan tidak terkena throttle.
+POST {{base}}/auth/register/
+Content-Type: application/json
+Origin: http://localhost:5173
+X-CSRFToken: {{csrf}}
+
+{"full_name":"Pelapor Lokal","email":"pelapor@example.test","password":"GANTI_PASSWORD_PILIHAN_SENDIRI","password_confirm":"GANTI_PASSWORD_PILIHAN_SENDIRI"}
+
+### Salin challenge dan kode dari private_outbox/email terbaru; bukan response register.
+POST {{base}}/auth/otp/verify/
+Content-Type: application/json
+Origin: http://localhost:5173
+X-CSRFToken: {{csrf}}
+
+{"challenge_id":"{{challenge}}","code":"{{code}}"}
+
+### Login menyetel refresh cookie; respons JSON hanya access.
+POST {{base}}/auth/login/
+Content-Type: application/json
+Origin: http://localhost:5173
+X-CSRFToken: {{csrf}}
+
+{"email":"pelapor@example.test","password":"GANTI_PASSWORD_PILIHAN_SENDIRI"}
+
+### Profil memakai Bearer access dari login.
+GET {{base}}/me/
+Authorization: Bearer {{access}}
+
+### Refresh hanya cookie + CSRF, body kosong. Cookie jar wajib aktif.
+POST {{base}}/auth/refresh/
+Content-Type: application/json
+Origin: http://localhost:5173
+X-CSRFToken: {{csrf}}
+
+{}
+
+### Logout 204 tidak memiliki JSON.
+POST {{base}}/auth/logout/
+Content-Type: application/json
+Origin: http://localhost:5173
+X-CSRFToken: {{csrf}}
+
+{}

@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "setup creates fresh local role/database/secrets and preserves existing .env",
+      "status": "PASS"
+    },
+    {
+      "check": "migrations succeed as generated application role without PostgreSQL superuser",
+      "status": "PASS"
+    },
+    {
+      "check": "live HTTP health on PostgreSQL 16",
+      "status": "PASS"
+    },
+    {
+      "check": "live HTTP auth rejects missing CSRF",
+      "status": "PASS"
+    },
+    {
+      "check": "live HTTP register has generic response and no challenge/token",
+      "status": "PASS"
+    },
+    {
+      "check": "live HTTP verifies OTP delivered to private local mailbox",
+      "status": "PASS"
+    },
+    {
+      "check": "live HTTP wrong-password rejection, login, cookie attributes, bearer profile",
+      "status": "PASS"
+    },
+    {
+      "check": "live HTTP cookie rotation, logout 204 and session rejection",
+      "status": "PASS"
+    },
+    {
+      "check": "future report endpoint is not misrepresented as implemented",
+      "status": "PASS"
+    }
+  ],
+  "test_type": "real HTTP + generated database role on isolated PostgreSQL 16",
+  "secrets_in_report": false
+}

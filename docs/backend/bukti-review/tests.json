@@ -1,0 +1,375 @@
+{
+  "date": "2026-10-17",
+  "status": "PASS",
+  "tests_run": 73,
+  "tests_passed": 73,
+  "database": "PostgreSQL 16.12",
+  "python": "3.12.14",
+  "cases": [
+    {
+      "name": "test_admin_role_without_grant_is_denied",
+      "test": "accounts.tests.AccountAPITests.test_admin_role_without_grant_is_denied",
+      "status": "PASS"
+    },
+    {
+      "name": "test_all_auth_posts_require_csrf",
+      "test": "accounts.tests.AccountAPITests.test_all_auth_posts_require_csrf",
+      "status": "PASS"
+    },
+    {
+      "name": "test_assignment_projection_omits_email_and_permission_ids",
+      "test": "accounts.tests.AccountAPITests.test_assignment_projection_omits_email_and_permission_ids",
+      "status": "PASS"
+    },
+    {
+      "name": "test_attempt_counter_survives_resend",
+      "test": "accounts.tests.AccountAPITests.test_attempt_counter_survives_resend",
+      "status": "PASS"
+    },
+    {
+      "name": "test_cannot_activate_unverified_operator_by_admin_patch",
+      "test": "accounts.tests.AccountAPITests.test_cannot_activate_unverified_operator_by_admin_patch",
+      "status": "PASS"
+    },
+    {
+      "name": "test_challenge_only_in_email_and_digest_only_in_database",
+      "test": "accounts.tests.AccountAPITests.test_challenge_only_in_email_and_digest_only_in_database",
+      "status": "PASS"
+    },
+    {
+      "name": "test_cors_and_safe_json_errors",
+      "test": "accounts.tests.AccountAPITests.test_cors_and_safe_json_errors",
+      "status": "PASS"
+    },
+    {
+      "name": "test_csrf_origin_rejection_even_with_valid_token",
+      "test": "accounts.tests.AccountAPITests.test_csrf_origin_rejection_even_with_valid_token",
+      "status": "PASS"
+    },
+    {
+      "name": "test_disabled_account_immediately_loses_access",
+      "test": "accounts.tests.AccountAPITests.test_disabled_account_immediately_loses_access",
+      "status": "PASS"
+    },
+    {
+      "name": "test_expired_code_is_rejected",
+      "test": "accounts.tests.AccountAPITests.test_expired_code_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_generic_registration_hides_user_and_challenge",
+      "test": "accounts.tests.AccountAPITests.test_generic_registration_hides_user_and_challenge",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_new_password_does_not_consume_challenge",
+      "test": "accounts.tests.AccountAPITests.test_invalid_new_password_does_not_consume_challenge",
+      "status": "PASS"
+    },
+    {
+      "name": "test_local_mailbox_writes_private_email_files",
+      "test": "accounts.tests.AccountAPITests.test_local_mailbox_writes_private_email_files",
+      "status": "PASS"
+    },
+    {
+      "name": "test_login_me_and_cookie_contract",
+      "test": "accounts.tests.AccountAPITests.test_login_me_and_cookie_contract",
+      "status": "PASS"
+    },
+    {
+      "name": "test_logout_is_204_and_blacklists_refresh",
+      "test": "accounts.tests.AccountAPITests.test_logout_is_204_and_blacklists_refresh",
+      "status": "PASS"
+    },
+    {
+      "name": "test_operator_catalog_exactly_seven_integer_ids",
+      "test": "accounts.tests.AccountAPITests.test_operator_catalog_exactly_seven_integer_ids",
+      "status": "PASS"
+    },
+    {
+      "name": "test_operator_create_survives_delivery_failure_and_resend_is_503",
+      "test": "accounts.tests.AccountAPITests.test_operator_create_survives_delivery_failure_and_resend_is_503",
+      "status": "PASS"
+    },
+    {
+      "name": "test_operator_create_then_activation_uses_explicit_permissions",
+      "test": "accounts.tests.AccountAPITests.test_operator_create_then_activation_uses_explicit_permissions",
+      "status": "PASS"
+    },
+    {
+      "name": "test_operator_permissions_cannot_include_admin_or_duplicate",
+      "test": "accounts.tests.AccountAPITests.test_operator_permissions_cannot_include_admin_or_duplicate",
+      "status": "PASS"
+    },
+    {
+      "name": "test_otp_purpose_cannot_be_substituted",
+      "test": "accounts.tests.AccountAPITests.test_otp_purpose_cannot_be_substituted",
+      "status": "PASS"
+    },
+    {
+      "name": "test_otp_request_unknown_and_ineligible_have_same_response",
+      "test": "accounts.tests.AccountAPITests.test_otp_request_unknown_and_ineligible_have_same_response",
+      "status": "PASS"
+    },
+    {
+      "name": "test_password_hash_and_email_normalization",
+      "test": "accounts.tests.AccountAPITests.test_password_hash_and_email_normalization",
+      "status": "PASS"
+    },
+    {
+      "name": "test_password_policy_and_confirmation",
+      "test": "accounts.tests.AccountAPITests.test_password_policy_and_confirmation",
+      "status": "PASS"
+    },
+    {
+      "name": "test_permission_revocation_effective_on_existing_token",
+      "test": "accounts.tests.AccountAPITests.test_permission_revocation_effective_on_existing_token",
+      "status": "PASS"
+    },
+    {
+      "name": "test_profile_only_accepts_full_name",
+      "test": "accounts.tests.AccountAPITests.test_profile_only_accepts_full_name",
+      "status": "PASS"
+    },
+    {
+      "name": "test_public_delivery_failure_remains_generic",
+      "test": "accounts.tests.AccountAPITests.test_public_delivery_failure_remains_generic",
+      "status": "PASS"
+    },
+    {
+      "name": "test_refresh_in_body_is_rejected",
+      "test": "accounts.tests.AccountAPITests.test_refresh_in_body_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_refresh_rotates_and_rejects_reuse",
+      "test": "accounts.tests.AccountAPITests.test_refresh_rotates_and_rejects_reuse",
+      "status": "PASS"
+    },
+    {
+      "name": "test_resend_revokes_previous_challenge",
+      "test": "accounts.tests.AccountAPITests.test_resend_revokes_previous_challenge",
+      "status": "PASS"
+    },
+    {
+      "name": "test_reset_atomically_revokes_access_and_refresh",
+      "test": "accounts.tests.AccountAPITests.test_reset_atomically_revokes_access_and_refresh",
+      "status": "PASS"
+    },
+    {
+      "name": "test_role_injection_and_unknown_field_rejected",
+      "test": "accounts.tests.AccountAPITests.test_role_injection_and_unknown_field_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unknown_query_and_pagination_rejected",
+      "test": "accounts.tests.AccountAPITests.test_unknown_query_and_pagination_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unverified_or_wrong_password_cannot_login",
+      "test": "accounts.tests.AccountAPITests.test_unverified_or_wrong_password_cannot_login",
+      "status": "PASS"
+    },
+    {
+      "name": "test_verify_is_once_and_does_not_issue_tokens",
+      "test": "accounts.tests.AccountAPITests.test_verify_is_once_and_does_not_issue_tokens",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_otp_attempt_persists",
+      "test": "accounts.tests.AccountAPITests.test_wrong_otp_attempt_persists",
+      "status": "PASS"
+    },
+    {
+      "name": "test_admin_and_superuser_do_not_inherit_operator_actions",
+      "test": "core.tests.FoundationTests.test_admin_and_superuser_do_not_inherit_operator_actions",
+      "status": "PASS"
+    },
+    {
+      "name": "test_admin_handling_uses_operator_role_snapshot",
+      "test": "core.tests.FoundationTests.test_admin_handling_uses_operator_role_snapshot",
+      "status": "PASS"
+    },
+    {
+      "name": "test_analysis_enums_are_database_constraints",
+      "test": "core.tests.FoundationTests.test_analysis_enums_are_database_constraints",
+      "status": "PASS"
+    },
+    {
+      "name": "test_assignment_identity_and_ledger_history_cannot_be_rewritten",
+      "test": "core.tests.FoundationTests.test_assignment_identity_and_ledger_history_cannot_be_rewritten",
+      "status": "PASS"
+    },
+    {
+      "name": "test_audit_is_in_same_transaction_and_whitelisted",
+      "test": "core.tests.FoundationTests.test_audit_is_in_same_transaction_and_whitelisted",
+      "status": "PASS"
+    },
+    {
+      "name": "test_audit_read_requires_explicit_admin_permission",
+      "test": "core.tests.FoundationTests.test_audit_read_requires_explicit_admin_permission",
+      "status": "PASS"
+    },
+    {
+      "name": "test_authorization_precedes_idempotency_replay",
+      "test": "core.tests.FoundationTests.test_authorization_precedes_idempotency_replay",
+      "status": "PASS"
+    },
+    {
+      "name": "test_closed_report_is_terminal",
+      "test": "core.tests.FoundationTests.test_closed_report_is_terminal",
+      "status": "PASS"
+    },
+    {
+      "name": "test_cross_report_reference_is_rejected",
+      "test": "core.tests.FoundationTests.test_cross_report_reference_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_expired_key_is_retained_and_cannot_be_reused",
+      "test": "core.tests.FoundationTests.test_expired_key_is_retained_and_cannot_be_reused",
+      "status": "PASS"
+    },
+    {
+      "name": "test_health_checks_database_without_claiming_ai_ready",
+      "test": "core.tests.FoundationTests.test_health_checks_database_without_claiming_ai_ready",
+      "status": "PASS"
+    },
+    {
+      "name": "test_history_cannot_be_updated_by_orm_or_raw_sql",
+      "test": "core.tests.FoundationTests.test_history_cannot_be_updated_by_orm_or_raw_sql",
+      "status": "PASS"
+    },
+    {
+      "name": "test_idempotency_mismatch_and_revision_conflict",
+      "test": "core.tests.FoundationTests.test_idempotency_mismatch_and_revision_conflict",
+      "status": "PASS"
+    },
+    {
+      "name": "test_idempotent_replay_returns_frozen_result_before_revision_check",
+      "test": "core.tests.FoundationTests.test_idempotent_replay_returns_frozen_result_before_revision_check",
+      "status": "PASS"
+    },
+    {
+      "name": "test_impossible_calendar_date_is_a_validation_error",
+      "test": "core.tests.FoundationTests.test_impossible_calendar_date_is_a_validation_error",
+      "status": "PASS"
+    },
+    {
+      "name": "test_json_shape_and_category_separation",
+      "test": "core.tests.FoundationTests.test_json_shape_and_category_separation",
+      "status": "PASS"
+    },
+    {
+      "name": "test_json_type_constraint_blocks_raw_sql_bypass",
+      "test": "core.tests.FoundationTests.test_json_type_constraint_blocks_raw_sql_bypass",
+      "status": "PASS"
+    },
+    {
+      "name": "test_ledger_never_stores_credentials",
+      "test": "core.tests.FoundationTests.test_ledger_never_stores_credentials",
+      "status": "PASS"
+    },
+    {
+      "name": "test_mutation_failure_rolls_back_resource_and_ledger",
+      "test": "core.tests.FoundationTests.test_mutation_failure_rolls_back_resource_and_ledger",
+      "status": "PASS"
+    },
+    {
+      "name": "test_nara_warnings_preserve_adapter_metadata_without_category",
+      "test": "core.tests.FoundationTests.test_nara_warnings_preserve_adapter_metadata_without_category",
+      "status": "PASS"
+    },
+    {
+      "name": "test_one_active_assignment_preserves_ended_history",
+      "test": "core.tests.FoundationTests.test_one_active_assignment_preserves_ended_history",
+      "status": "PASS"
+    },
+    {
+      "name": "test_owner_assignment_monitoring_and_private_access_scopes",
+      "test": "core.tests.FoundationTests.test_owner_assignment_monitoring_and_private_access_scopes",
+      "status": "PASS"
+    },
+    {
+      "name": "test_postgresql_16_is_actual_test_engine",
+      "test": "core.tests.FoundationTests.test_postgresql_16_is_actual_test_engine",
+      "status": "PASS"
+    },
+    {
+      "name": "test_private_media_has_no_public_url_and_requires_report_access",
+      "test": "core.tests.FoundationTests.test_private_media_has_no_public_url_and_requires_report_access",
+      "status": "PASS"
+    },
+    {
+      "name": "test_public_allowlist_does_not_allow_private_fields",
+      "test": "core.tests.FoundationTests.test_public_allowlist_does_not_allow_private_fields",
+      "status": "PASS"
+    },
+    {
+      "name": "test_publication_content_requires_new_version_and_closed_rejects_candidates",
+      "test": "core.tests.FoundationTests.test_publication_content_requires_new_version_and_closed_rejects_candidates",
+      "status": "PASS"
+    },
+    {
+      "name": "test_reservation_and_failure_are_token_fenced",
+      "test": "core.tests.FoundationTests.test_reservation_and_failure_are_token_fenced",
+      "status": "PASS"
+    },
+    {
+      "name": "test_sena_nara_are_one_per_run",
+      "test": "core.tests.FoundationTests.test_sena_nara_are_one_per_run",
+      "status": "PASS"
+    },
+    {
+      "name": "test_submitted_source_is_locked_in_database",
+      "test": "core.tests.FoundationTests.test_submitted_source_is_locked_in_database",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unknown_fields_and_naive_event_time_are_rejected",
+      "test": "core.tests.FoundationTests.test_unknown_fields_and_naive_event_time_are_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unknown_holds_global_slot_and_report_reservation",
+      "test": "core.tests.FoundationTests.test_unknown_holds_global_slot_and_report_reservation",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unknown_request_cannot_auto_retry",
+      "test": "core.tests.FoundationTests.test_unknown_request_cannot_auto_retry",
+      "status": "PASS"
+    },
+    {
+      "name": "test_version_number_uniqueness_is_database_enforced",
+      "test": "core.tests.FoundationTests.test_version_number_uniqueness_is_database_enforced",
+      "status": "PASS"
+    },
+    {
+      "name": "test_audit_requires_atomic_block",
+      "test": "core.tests.DatabaseTransactionTests.test_audit_requires_atomic_block",
+      "status": "PASS"
+    },
+    {
+      "name": "test_committed_bundle_cannot_gain_members",
+      "test": "core.tests.DatabaseTransactionTests.test_committed_bundle_cannot_gain_members",
+      "status": "PASS"
+    },
+    {
+      "name": "test_dedicated_session_lock_rejects_parallel_slot_and_releases",
+      "test": "core.tests.DatabaseTransactionTests.test_dedicated_session_lock_rejects_parallel_slot_and_releases",
+      "status": "PASS"
+    },
+    {
+      "name": "test_empty_bundle_cannot_commit",
+      "test": "core.tests.DatabaseTransactionTests.test_empty_bundle_cannot_commit",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unknown_reservation_still_blocks_slot_after_session_lost",
+      "test": "core.tests.DatabaseTransactionTests.test_unknown_reservation_still_blocks_slot_after_session_lost",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,351 @@
+{
+  "package": "SLR_08_Backend_SILAR",
+  "prepared_on": "2026-10-17",
+  "hash_algorithm": "SHA-256",
+  "self_excluded": [
+    "docs/backend/bukti-review/package-check.json",
+    "docs/backend/package-manifest.json"
+  ],
+  "files": [
+    {
+      "path": "MULAI_DI_SINI.txt",
+      "bytes": 2419,
+      "sha256": "cae0301a8e44216ece5815a2a6d6e4e2bd290680d4433f74adbad547e27b4f05"
+    },
+    {
+      "path": "code/backend/.env.example",
+      "bytes": 1078,
+      "sha256": "3ecb011b333d21b7e3f43070e1b28feab5d18d184062457c78c04765c7be9226"
+    },
+    {
+      "path": "code/backend/.gitignore",
+      "bytes": 106,
+      "sha256": "be309dff4be87f1733bd3f54995ab267656e3dc6b305f2e790503e59f0cc0571"
+    },
+    {
+      "path": "code/backend/BUAT_ADMIN.bat",
+      "bytes": 204,
+      "sha256": "cf0ddabc58ad8f9cd80e93af8128e4a87d80267348418a651c0d77bef10033f0"
+    },
+    {
+      "path": "code/backend/JALANKAN_BACKEND.bat",
+      "bytes": 210,
+      "sha256": "02763ba5f3a213ecb3c6ec549ade146191bac31455dc8522899ffe3e1ba6834c"
+    },
+    {
+      "path": "code/backend/SETUP_LOKAL.bat",
+      "bytes": 335,
+      "sha256": "6c7b6e85e1901d8af073b5435e63333021740ceaff9798ae69b66c7c58fadafe"
+    },
+    {
+      "path": "code/backend/UJI_BACKEND.bat",
+      "bytes": 222,
+      "sha256": "643dae6cb72954bec0d623f140cda6f763e0715523dd739f003c216d80a1a03f"
+    },
+    {
+      "path": "code/backend/accounts/__init__.py",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "code/backend/accounts/authentication.py",
+      "bytes": 786,
+      "sha256": "34d26c659b868498ddfbf41f7f39b27561c9fb9f9cbd97a5979e81820c3dd549"
+    },
+    {
+      "path": "code/backend/accounts/migrations/0001_initial.py",
+      "bytes": 5415,
+      "sha256": "0e52ce9ac262ebe69df51ea0b4a1e272cc96040a2c633515e853224297878efe"
+    },
+    {
+      "path": "code/backend/accounts/migrations/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "code/backend/accounts/models.py",
+      "bytes": 4301,
+      "sha256": "98280723ef3344ca7df29af1a912c5c8d72124e837043e329f1f57ed23b00241"
+    },
+    {
+      "path": "code/backend/accounts/serializers.py",
+      "bytes": 3181,
+      "sha256": "c0869db206ce01675d56f5340541a54c6539b7ce6beb9ff6e828a6c14f725b55"
+    },
+    {
+      "path": "code/backend/accounts/services.py",
+      "bytes": 13938,
+      "sha256": "66960bca228869a58485de7fe3fdce014fac2bd6b5c0b53a6804cd32be41d8ae"
+    },
+    {
+      "path": "code/backend/accounts/tests.py",
+      "bytes": 19865,
+      "sha256": "031cefccc0ae28b53179d5b9ef4121844f1bf3ef45f050586aaaab9c11bb983e"
+    },
+    {
+      "path": "code/backend/accounts/views.py",
+      "bytes": 8499,
+      "sha256": "2e315213acd9562182f430184e4ee281b7f18151f643e66aeb05202e5dc0bdb1"
+    },
+    {
+      "path": "code/backend/common/__init__.py",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "code/backend/common/api.py",
+      "bytes": 5376,
+      "sha256": "93f83ffca57d9d2892aef0575d92940b8e64f299894ee35251365a7c0bb424e3"
+    },
+    {
+      "path": "code/backend/common/email_backend.py",
+      "bytes": 718,
+      "sha256": "20d07e1dc6ac10334fd7dc8943dba30c3449829357a5fd76c7055f2a3186e44b"
+    },
+    {
+      "path": "code/backend/common/middleware.py",
+      "bytes": 1053,
+      "sha256": "37a59a120d30c04a4de2ccd4072c1bead0eba74af0bb39d70031d73de0e42fdb"
+    },
+    {
+      "path": "code/backend/common/testing.py",
+      "bytes": 828,
+      "sha256": "fbd7390dcc309fb1b98af13966a9f73c0eec131c6ac890ced72caa6bcd72cc2c"
+    },
+    {
+      "path": "code/backend/config/__init__.py",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "code/backend/config/asgi.py",
+      "bytes": 164,
+      "sha256": "2494e1f911138b444f8398fbe6a175a433898a3e8f69d037e3c52e684b0daacf"
+    },
+    {
+      "path": "code/backend/config/settings.py",
+      "bytes": 6865,
+      "sha256": "6017a45ec81cf3c2d09683b7be1ca0a18b822b0d7cd05d769a8a389ea32faa04"
+    },
+    {
+      "path": "code/backend/config/test_settings.py",
+      "bytes": 265,
+      "sha256": "73b84af508cf9cf3fc433809b18e0fda5eed00a3d67990858095d44ba1bf88f9"
+    },
+    {
+      "path": "code/backend/config/urls.py",
+      "bytes": 1200,
+      "sha256": "4462391eda4a6d7dab068330005679f42bac4a3241c75d1c5687d649183b184e"
+    },
+    {
+      "path": "code/backend/config/wsgi.py",
+      "bytes": 164,
+      "sha256": "c1ed832c2a0786feb5149ed553edb97a0dec3abf91f510bb5ebedf9214833c53"
+    },
+    {
+      "path": "code/backend/core/__init__.py",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "code/backend/core/audit.py",
+      "bytes": 1713,
+      "sha256": "d8e66bf978f2f7ab77e3bb87ae4fe3c294227e66aa3a96fdb501a1e259ddadb2"
+    },
+    {
+      "path": "code/backend/core/capacity.py",
+      "bytes": 5264,
+      "sha256": "aa5b2beec37572f59dc4bae17e7bed0c723c716720e311b00ee3c09dcf605cd7"
+    },
+    {
+      "path": "code/backend/core/management/__init__.py",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "code/backend/core/management/commands/__init__.py",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "code/backend/core/management/commands/bootstrap_silar.py",
+      "bytes": 1246,
+      "sha256": "012ab8003dd1e4dd897c5f143b4867cbdb32dfc53f20a408cd70316c55af92b9"
+    },
+    {
+      "path": "code/backend/core/management/commands/create_silar_admin.py",
+      "bytes": 2310,
+      "sha256": "2e6a376d0ec91d28aed01aafffa9e7e4660835f3fa7b2d860e8708f67072ec92"
+    },
+    {
+      "path": "code/backend/core/management/commands/revoke_silar_sessions.py",
+      "bytes": 1080,
+      "sha256": "2ddd632f50911a0e6a5c600823b848f47070f0afd4771118c33b6251b2f2851a"
+    },
+    {
+      "path": "code/backend/core/migrations/0001_initial.py",
+      "bytes": 38708,
+      "sha256": "a11252fa50bedbb17d42fb2bd24a86172734e2e04fc4ecd7276fe217cde7e407"
+    },
+    {
+      "path": "code/backend/core/migrations/0002_history_guards.py",
+      "bytes": 7730,
+      "sha256": "9a71d9676297b4f001f6a0644aac004a68dd6514928c588ec4c7555564d240e7"
+    },
+    {
+      "path": "code/backend/core/migrations/0003_nara_normalization_warnings.py",
+      "bytes": 612,
+      "sha256": "f449de641522fb52249aa4556e77d42706bdaf27f9aaa8a52983b71e55fb1e31"
+    },
+    {
+      "path": "code/backend/core/migrations/0004_allowed_enums.py",
+      "bytes": 2110,
+      "sha256": "641487affc3814364c0356c08c4c1f72833b6f773afd93081a1e018eaeee6c1b"
+    },
+    {
+      "path": "code/backend/core/migrations/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "code/backend/core/models.py",
+      "bytes": 27493,
+      "sha256": "29fefd3348ffd41e419ca7c882016745d746e57d1961424cdf0c4f97abf8dac7"
+    },
+    {
+      "path": "code/backend/core/mutations.py",
+      "bytes": 4001,
+      "sha256": "3fed4f94a7b22c4b12aaebb6ae9b2a0b69f3e21de1b34cc4f5b0a543bfdd373a"
+    },
+    {
+      "path": "code/backend/core/permissions.py",
+      "bytes": 2996,
+      "sha256": "f296f1f3f0876ba3c7fe4199cb3480d3ae280d15e80aebcc1793f32336d0e48b"
+    },
+    {
+      "path": "code/backend/core/storage.py",
+      "bytes": 1500,
+      "sha256": "90f94a21df6d6605c678269a03e5c4b08ed741a795b47fb0576b446e4f479345"
+    },
+    {
+      "path": "code/backend/core/test_fixtures.py",
+      "bytes": 2644,
+      "sha256": "4569da4a40040d289c5a549881aec0ca1f559d9f44e667bb4310fd67f5a7ced4"
+    },
+    {
+      "path": "code/backend/core/tests.py",
+      "bytes": 21949,
+      "sha256": "63c6481f67948accc91158d2739a5ea453414a4f29ed845ee64b05c8f77c7992"
+    },
+    {
+      "path": "code/backend/core/validators.py",
+      "bytes": 3384,
+      "sha256": "67df45a3d1871ddba331799c8242e062007f394e8bd4676e3702e51c82388229"
+    },
+    {
+      "path": "code/backend/core/views.py",
+      "bytes": 2009,
+      "sha256": "4b8fc1cf584b27b91eeecd5623716361b469817bd14d6a111a7e9da79c3995e7"
+    },
+    {
+      "path": "code/backend/manage.py",
+      "bytes": 247,
+      "sha256": "6c2cb33dc41f230c6b5719d6e0ba86060aaf7c410bb8d92f5bf9c8d720cc24f1"
+    },
+    {
+      "path": "code/backend/requirements.txt",
+      "bytes": 223,
+      "sha256": "18e57bd7b89edb5d365a25003156bf8b6235a39691a387b483f32cf106031fa6"
+    },
+    {
+      "path": "code/backend/scripts/setup_local.py",
+      "bytes": 5599,
+      "sha256": "2bfcfd3dd0f6aaaa6d80044b55bf5e93dc28a6d8ea945471efe637cef66a17e6"
+    },
+    {
+      "path": "docs/backend/README.md",
+      "bytes": 8663,
+      "sha256": "eb2b52cc226ecd3567076fdc46c9fffc90fa3414fcf9d36a360146cfc197e5df"
+    },
+    {
+      "path": "docs/backend/baseline.json",
+      "bytes": 2165,
+      "sha256": "d4aa1c4c9cb2908987f1280468001bec8ce8a85bab036ab04f14616be61f718f"
+    },
+    {
+      "path": "docs/backend/bukti-review/backend-checks.txt",
+      "bytes": 15782,
+      "sha256": "d5d4699ef7f60c0ed9be6ff446d35f9f6d0ed5be2a850177cdf459b9f8e1a840"
+    },
+    {
+      "path": "docs/backend/bukti-review/http-smoke-result.json",
+      "bytes": 1179,
+      "sha256": "42ef81a34eea952bcf13a8738650e53e8a17664705f3e90f5ec488e664b34f51"
+    },
+    {
+      "path": "docs/backend/bukti-review/tests.json",
+      "bytes": 14384,
+      "sha256": "80c1ed2eede91cf50df0ed8ff81c8fde6b212d37d9597e1efe9b28190dc5eeef"
+    },
+    {
+      "path": "docs/backend/database-dan-layanan.md",
+      "bytes": 8797,
+      "sha256": "97daf649bd739bdea376f526ae3e1b4ed719a1264eed4cdc30df3d2f19c4f5f0"
+    },
+    {
+      "path": "docs/backend/examples/akun.http",
+      "bytes": 1584,
+      "sha256": "46fba959a903626ed402c5c2ed3134dd1108d993dfdc5606f6b3292afa3888b2"
+    },
+    {
+      "path": "docs/backend/frontend-handoff.md",
+      "bytes": 8149,
+      "sha256": "a9ad764fe307ce823c8b53cb488da0768ec190db068ec82dfa328e78c03be11e"
+    },
+    {
+      "path": "docs/backend/hasil-verifikasi.md",
+      "bytes": 3559,
+      "sha256": "719f1cdb729f3108c4da6a421ab105e06d0c97f0dd98f57ddc6d3ffa76f18702"
+    },
+    {
+      "path": "docs/backend/openapi.json",
+      "bytes": 212536,
+      "sha256": "305a1af5b72e13c68af479a2dc7ad5425a2bfb6fd2c0794570f171f99487fbd8"
+    },
+    {
+      "path": "docs/backend/penyerahan.md",
+      "bytes": 3125,
+      "sha256": "9c68d33561d2111a959d6d04914193b177aaf65f7f3e908adee52856af75dc0f"
+    },
+    {
+      "path": "docs/backend/references/SILAR_PRD.docx",
+      "bytes": 50871,
+      "sha256": "481b8617bbac22f6050fe110bed136d17bfabca35b0574d1a5e037b7a0ef8b23"
+    },
+    {
+      "path": "docs/backend/references/SILAR_Pemetaan_Fitur_Final.md",
+      "bytes": 18028,
+      "sha256": "9c61bee474c584359a94acbac05e0fd3ffbbd40e1dd3a5a9896b6c49dd6ed273"
+    },
+    {
+      "path": "docs/backend/references/SILAR_Technical_Reference.docx",
+      "bytes": 5313134,
+      "sha256": "6603a3687e7335b8fa0fd3b7d23e58540770eff6d06427f734ed317b5d86517b"
+    },
+    {
+      "path": "docs/backend/references/SLR_07_README.md",
+      "bytes": 19118,
+      "sha256": "9cd8e101296a0160faa2f7914ab6472f7f15bbdd7cddbc56d64ee295d8ec7016"
+    },
+    {
+      "path": "docs/backend/references/SLR_07_screens.json",
+      "bytes": 12311,
+      "sha256": "e23760a441179affe00f585875e581065c4e9852551c06b76c4e4571352a2b90"
+    },
+    {
+      "path": "docs/backend/references/SLR_08_card.md",
+      "bytes": 3820,
+      "sha256": "5efcf5d33cdf6b18ec64f7a0f26f1d6660bee6fbed8b1803c322d875363b8b08"
+    }
+  ]
+}
