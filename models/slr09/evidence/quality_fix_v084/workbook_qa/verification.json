@@ -1,0 +1,22 @@
+{
+  "status": "SUCCEEDED",
+  "records": 50,
+  "tokens": 692,
+  "all_values_match_proposals": true,
+  "all_pending": true,
+  "reviewer_blank": true,
+  "targets_unchanged": true,
+  "formula_count": 24,
+  "formula_error_scan_matches": 0,
+  "native_tables_dropdowns_and_freeze_panes_verified": true,
+  "visual_review": "Mulai, Narasi and Token rendered and viewed",
+  "readiness_checks": {
+    "blank_reviewer_blocks_import": true,
+    "pending_blocks_inference": true,
+    "complete_in_memory_fixture_passes": true,
+    "deferred_below_minimum_blocks": true
+  },
+  "new_reference_inference_executed": false,
+  "fixture_is_only_in_memory_not_human_approval": true,
+  "workbook_sha256": "a9bae2a1952a52cc7d2950e9c29d64ade2ce1dc446b3589c0e7b8984e91141e7"
+}

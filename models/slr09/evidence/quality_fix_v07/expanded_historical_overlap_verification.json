@@ -1,0 +1,9 @@
+{
+  "status": "PASSED",
+  "comparison_records": 2038,
+  "normalized_exact_overlap_count": 0,
+  "additional_historical_scope_check_after_inference": true,
+  "new_data_modified": false,
+  "probability_calibration_established": false,
+  "human_reference_reviewed": false
+}

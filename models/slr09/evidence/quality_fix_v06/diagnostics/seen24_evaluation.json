@@ -1,0 +1,190 @@
+{
+  "records": 24,
+  "accuracy": 0.9166666666666666,
+  "macro_f1": 0.9147619047619047,
+  "per_class": {
+    "FLOOD": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "EARTHQUAKE": {
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1": 0.8,
+      "support": 3
+    },
+    "FIRE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "ACCIDENT": {
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571,
+      "support": 3
+    },
+    "NON_EVENT": {
+      "precision": 0.9166666666666666,
+      "recall": 0.9166666666666666,
+      "f1": 0.9166666666666666,
+      "support": 12
+    }
+  },
+  "confusion_matrix": {
+    "FLOOD": {
+      "FLOOD": 3,
+      "EARTHQUAKE": 0,
+      "FIRE": 0,
+      "ACCIDENT": 0,
+      "NON_EVENT": 0
+    },
+    "EARTHQUAKE": {
+      "FLOOD": 0,
+      "EARTHQUAKE": 2,
+      "FIRE": 0,
+      "ACCIDENT": 0,
+      "NON_EVENT": 1
+    },
+    "FIRE": {
+      "FLOOD": 0,
+      "EARTHQUAKE": 0,
+      "FIRE": 3,
+      "ACCIDENT": 0,
+      "NON_EVENT": 0
+    },
+    "ACCIDENT": {
+      "FLOOD": 0,
+      "EARTHQUAKE": 0,
+      "FIRE": 0,
+      "ACCIDENT": 3,
+      "NON_EVENT": 0
+    },
+    "NON_EVENT": {
+      "FLOOD": 0,
+      "EARTHQUAKE": 0,
+      "FIRE": 0,
+      "ACCIDENT": 1,
+      "NON_EVENT": 11
+    }
+  },
+  "errors": [
+    {
+      "id": "FRESH-05-006",
+      "text": "Ini bukan contoh soal. Gempa baru saja merobohkan pagar rumah kami.",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9629915952682495,
+      "low_confidence": false,
+      "family": "real_with_negation",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "id": "FRESH-05-024",
+      "text": "Petugas mengklarifikasi kabar kecelakaan di Jalan Kamboja: kendaraan berhenti biasa dan tidak saling menabrak.",
+      "gold": "NON_EVENT",
+      "prediction": "ACCIDENT",
+      "confidence": 0.9761705994606018,
+      "low_confidence": false,
+      "family": "denial",
+      "kind": "FALSE_EVENT"
+    }
+  ],
+  "false_event": 1,
+  "false_non_event": 1,
+  "high_confidence_errors": 2,
+  "threshold_analysis": {
+    "cutoff": 0.95,
+    "flagged": 3,
+    "errors_flagged": 0,
+    "errors_remaining_at_or_above": 2,
+    "coverage": 0.875
+  },
+  "reliability": {
+    "ten_bin_ece": 0.08220607787370687,
+    "multiclass_brier_sum_over_classes": 0.17008250285924995,
+    "bins": [
+      {
+        "lower": 0.0,
+        "upper": 0.1,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.3,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.3,
+        "upper": 0.4,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.6,
+        "upper": 0.7,
+        "n": 1,
+        "mean_confidence": 0.6197590827941895,
+        "accuracy": 1.0
+      },
+      {
+        "lower": 0.7,
+        "upper": 0.8,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.9,
+        "upper": 1.0,
+        "n": 23,
+        "mean_confidence": 0.9822915196418762,
+        "accuracy": 0.9130434782608695
+      }
+    ],
+    "probability_calibration_established": false,
+    "scope": "DIAGNOSTIC_ON_APPROVED_PILOT_NOT_PROOF_OF_95_PERCENT_CORRECTNESS"
+  },
+  "scope": "SEEN_ASSISTANT_REFERENCE_REGRESSION",
+  "human_reference_reviewed": false,
+  "used_for_training_or_checkpoint_selection": false,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "classification_targets_met": false
+}

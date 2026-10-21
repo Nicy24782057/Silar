@@ -1,0 +1,19 @@
+{
+  "schema": "slr09-short-intercept-fit-0.8",
+  "status": "SUCCEEDED",
+  "source": "V08_SHORT_TRAINED_MODEL_DEVELOPMENT_ONLY_INTERCEPT_FIT",
+  "started_at": "2026-10-19T06:50:46.287976+00:00",
+  "training_executed": false,
+  "parameter_fit_executed": true,
+  "source_gradient_training_executed": true,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "pilot50_used_for_training": false,
+  "pilot50_used_for_checkpoint_selection": true,
+  "v07_diagnostic50_used_for_training_or_selection": false,
+  "new_acceptance50_read_or_inferred": false,
+  "selected_head_bias": 2.5,
+  "all_development_targets_met": true,
+  "model_exported": true,
+  "finished_at": "2026-10-19T06:50:53.984945+00:00"
+}

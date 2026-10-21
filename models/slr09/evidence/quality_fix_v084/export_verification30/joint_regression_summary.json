@@ -1,0 +1,11 @@
+{
+  "sets": {
+    "human_regression50": true,
+    "FINAL081_seen": true,
+    "FINAL082_seen": true,
+    "FINAL083_seen": true
+  },
+  "all_known_joint_regressions_met": true,
+  "new_acceptance_inference_executed": false,
+  "quality_acceptance_approved": false
+}

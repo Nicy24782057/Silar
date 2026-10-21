@@ -1,0 +1,294 @@
+{
+  "schema": "slr09-quality-review-items-0.5",
+  "scope": "SEEN_DEVELOPMENT_INPUTS_NOT_FRESH_ACCEPTANCE",
+  "records": [
+    {
+      "id": "BAN-01186",
+      "text": "banjir di aceh peneliti zaiyana putri : sekolah & ; outdoor & ; juga menarik",
+      "gold_label": "FLOOD",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "BAN-01703",
+      "text": "abang tolongin ini muti mau plng dari acara tadi dari metmall hujan deras banget mana banjir tolonginnnnn haha angkot nya lama nih mana masih jauh rumah mutiabang pokoknya sih you ya di event selanjutnya",
+      "gold_label": "FLOOD",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "BAN-01483",
+      "text": "bapak bupati stay sejak bencana banjir sampai hari ini banser siap di belakang bapak bupati madiun",
+      "gold_label": "FLOOD",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "BAN-01984",
+      "text": "asli ngeri-ngeri sedap naf eug beberapa kali bikin kegiatan sosial open donasi dari banjir 2014 kelud sinabung bencana asap dan ada beberapa kegiatan sosial lainnya wajib banget share dana yang masuk & keluar sampai terakir bikin lpj itu kalo di komunitas",
+      "gold_label": "FLOOD",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "BAN-01058",
+      "text": "butuh karung pasir dari wan badud sabaaar ini ujian air pasang banjir rob rendam kampung nelayan di penjaringan",
+      "gold_label": "FLOOD",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "GEM-01075",
+      "text": "presiden menyambut baik keputusan untuk menyederhanakan prosedur pengambilan uang bagi korban gempa bumi di lombok ntb dari 17 menjadi tinggal 1 prosedur saja yang diikuti sehingga di lapangan betul-betul bisa dilaksanakan pembagian uang bantuan pembangunan rumah itu",
+      "gold_label": "EARTHQUAKE",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "GEM-01485",
+      "text": "setelah kemarin ada yang tetap nekad meneruskan shalat ketika gempa bumi dan masjid tempat shalatnya bergoyang kemudian ada yang shalat berjamaah di halte busway ada pula yang shalat di tengah gang gerbong kereta",
+      "gold_label": "EARTHQUAKE",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "GEM-01323",
+      "text": "sebelum gempa bumi yang begitu dahsat begitu indah ya pemandang di kator inch setiap ada kegiatan apa saja pasti di tempat inich orang berkumpul tapi sayang itu semua tinggal kenangan belaka saja karena sok di hempas",
+      "gold_label": "EARTHQUAKE",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "KEB-00831",
+      "text": "jadi cerita nya ada kebakaran , trus pemadam dateng , pemandm nya langsung nyiremin rumah2 di samping rumah yg lagi kebakaran nya trus pemadam kebakaran nya di lemparin batu warga , kata nya pemadam nya malah bercanda wkwk dasar orang2 tolol lu kira api nabun bisa di pademin pake aer",
+      "gold_label": "FIRE",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "KEB-00264",
+      "text": "1 . kebakaran hutan dan lahan ( ) saat ini sudah mulai dilakukan penanggulangan dan pencegahan nya oleh tim manggala agni klhk , tni dan polri di daerah riau . via",
+      "gold_label": "FIRE",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "KEB-00695",
+      "text": "gedung telkom ada yg kebakaran gi kata nya di pekanbaru , makanya jaringan langsung pada keputus .",
+      "gold_label": "FIRE",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "KEB-00940",
+      "text": ". . . . kavling dpr di sidoarjo udah kebakaran semalem . baru tau di story ig . bener-bener bakalan banyak api mulai hari ini .",
+      "gold_label": "FIRE",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "KEC-01051",
+      "text": "-kakak perempuannya meninggal diakibatkan kecelakaan saat ini celyn duduk di bangku sama dia bukanlah siswi yang pintar dan memiliki banyak prestasi tapi celyn merupakan siswi yang aktif dalam organisasi dia adalah wakil ketua osis di sekolahnya-",
+      "gold_label": "ACCIDENT",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "BAN-01692",
+      "text": "banjir dukungan di injury time",
+      "gold_label": "NON_EVENT",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "BAN-01763",
+      "text": "guna antisipasi banjir dan situasi kamtibmas yang aman dan kondusif kapolsek bukit intan akp madi putra sh mah beserta kasubnit reskrim ipda imam sh dan personil polsek bukit intan memantau debit air di perumahan warga yang rawan terdampak banjir di kelurahan parit lalang",
+      "gold_label": "NON_EVENT",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "KEC-01006",
+      "text": "4 kecelakaan maut dan mengerikan di dunia karena hal sepele",
+      "gold_label": "NON_EVENT",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "FRESH-05-001",
+      "text": "Laporan posko: air sungai meluap dan merendam kios-kios di Kampung Anggrek sejak subuh.",
+      "gold_label": "FLOOD",
+      "family": "real",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-002",
+      "text": "Sesi latihan dihentikan: air sungguhan meluap masuk asrama dan petugas mengevakuasi penghuni.",
+      "gold_label": "FLOOD",
+      "family": "real_during_exercise",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-003",
+      "text": "Tidak ada latihan hari ini; banjir benar-benar menutup akses jembatan di Desa Kenanga.",
+      "gold_label": "FLOOD",
+      "family": "real_with_negation",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-004",
+      "text": "Warga Kabupaten Mandala merasakan gempa pukul dua; tembok sekolah roboh.",
+      "gold_label": "EARTHQUAKE",
+      "family": "real",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-005",
+      "text": "Ketika siswa berlatih berlindung, gempa sungguhan mengguncang sekolah hingga lampu jatuh.",
+      "gold_label": "EARTHQUAKE",
+      "family": "real_during_exercise",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-006",
+      "text": "Ini bukan contoh soal. Gempa baru saja merobohkan pagar rumah kami.",
+      "gold_label": "EARTHQUAKE",
+      "family": "real_with_negation",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-007",
+      "text": "Api membesar di bengkel las Jalan Delima dan membakar dua kendaraan malam tadi.",
+      "gold_label": "FIRE",
+      "family": "real",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-008",
+      "text": "Skenario latihan dibatalkan karena gudang di sebelahnya benar-benar terbakar dan dua pekerja cedera.",
+      "gold_label": "FIRE",
+      "family": "real_during_exercise",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-009",
+      "text": "Bukan simulasi, dapur restoran sedang kebakaran; asap pekat keluar dari atap.",
+      "gold_label": "FIRE",
+      "family": "real_with_negation",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-010",
+      "text": "Sepeda motor menabrak pejalan kaki di simpang Jalan Kapuk; korban dibawa ke puskesmas.",
+      "gold_label": "ACCIDENT",
+      "family": "real",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-011",
+      "text": "Latihan lalu lintas terhenti setelah truk sungguhan menabrak peserta di pintu gerbang.",
+      "gold_label": "ACCIDENT",
+      "family": "real_during_exercise",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-012",
+      "text": "Tidak ada tabrakan beruntun, tetapi sebuah bus menabrak pohon dan satu penumpang terluka.",
+      "gold_label": "ACCIDENT",
+      "family": "real_with_negation",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-013",
+      "text": "Bahan lokakarya berjudul Hidup Bersama Banjir dibagikan kepada peserta; semua contoh hanya ilustrasi.",
+      "gold_label": "NON_EVENT",
+      "family": "education",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-014",
+      "text": "Panitia berencana berlatih evakuasi banjir bulan depan; pengumuman ini tidak melaporkan kejadian.",
+      "gold_label": "NON_EVENT",
+      "family": "planning",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-015",
+      "text": "Banjir hadiah untuk tim juara, begitu bunyi candaan pembawa acara.",
+      "gold_label": "NON_EVENT",
+      "family": "metaphor",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-016",
+      "text": "Dosen menguraikan teori lempeng penyebab gempa dalam rekaman kuliah.",
+      "gold_label": "NON_EVENT",
+      "family": "education",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-017",
+      "text": "Pesan berantai tentang gempa di sini dibantah: pemeriksaan menyatakan guncangan itu tidak terjadi.",
+      "gold_label": "NON_EVENT",
+      "family": "denial",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-018",
+      "text": "Dalam novel fantasi itu kerajaan dihancurkan gempa buatan naga.",
+      "gold_label": "NON_EVENT",
+      "family": "fiction",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-019",
+      "text": "Api tiruan dan mesin asap digunakan dalam peragaan keselamatan; tidak ada kebakaran sungguhan.",
+      "gold_label": "NON_EVENT",
+      "family": "simulation",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-020",
+      "text": "Audit mencatat dua belas kebakaran selama tiga tahun terakhir sebagai angka statistik.",
+      "gold_label": "NON_EVENT",
+      "family": "aggregate",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-021",
+      "text": "Jika gudang kebakaran, jalur mana yang harus dipakai? Ini pertanyaan ujian.",
+      "gold_label": "NON_EVENT",
+      "family": "hypothetical",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-022",
+      "text": "Poster layanan masyarakat memuat kiat mencegah kecelakaan saat libur panjang.",
+      "gold_label": "NON_EVENT",
+      "family": "prevention",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-023",
+      "text": "Aktor merekam adegan kecelakaan menggunakan mobil properti; tidak ada insiden nyata.",
+      "gold_label": "NON_EVENT",
+      "family": "fiction",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-024",
+      "text": "Petugas mengklarifikasi kabar kecelakaan di Jalan Kamboja: kendaraan berhenti biasa dan tidak saling menabrak.",
+      "gold_label": "NON_EVENT",
+      "family": "denial",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    }
+  ]
+}

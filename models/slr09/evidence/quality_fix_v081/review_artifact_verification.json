@@ -1,0 +1,22 @@
+{
+  "status": "SUCCEEDED",
+  "saved_excel_rows": 50,
+  "saved_excel_tokens": 762,
+  "new_reference_all_pending": true,
+  "reviewer_blank": true,
+  "fake_approvals_saved": false,
+  "unreviewed_workbook_rejected_before_model_load": true,
+  "rejection": "Isi nama reviewer pada Mulai!B5",
+  "source40_preserved": true,
+  "source_field_detail_preserved": true,
+  "approved_development": 39,
+  "deferred_development": 1,
+  "native_validation_tables_freeze_panes_present": true,
+  "formula_errors": 0,
+  "notebooks20_21_22_22b_actual_cpython_success": true,
+  "notebook23_not_executed": true,
+  "candidate_binding_verified": true,
+  "model_inference_executed_by_this_check": false,
+  "quality_acceptance_approved": false,
+  "card_done": false
+}

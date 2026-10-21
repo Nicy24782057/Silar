@@ -1,0 +1,39 @@
+{
+  "frozen_at": "2026-10-19T11:16:36.724053+00:00",
+  "bundle_sha256": "8dae6a3fd45da442bf9e9d7f3f67245b758dd85ac320af81d69d68343a9a3987",
+  "review_file_sha256": "b0c1306f85e5e23cf4e9dd4cebce12807ae6b88df17773b31c428db1db1d2184",
+  "model_and_code_binding": {
+    "candidate_version": "0.8.1",
+    "files_sha256": {
+      "acceptance/known_inputs.json": "c4954277133a9f08d726eaa2223cdfa7774787869893dd454c8625dffe0dc19c",
+      "asset_manifest.json": "54559fbf581834068cc7d47ee4810043c8dd8fbe6693d19b76851e8fe90e4b62",
+      "code/acceptance/evaluate_acceptance.py": "5522b1c48ad129b6450ba37a09877dcfc985869a77fe40125930b9bc77c78359",
+      "code/acceptance/import_review_xlsx.py": "51dd1853839bd251bde7f724ed6af15250aa797c49c050635de5678a597f93af",
+      "code/active_nara_adapter/legacy_postprocessing.py": "06275b3aa338718689fba66984626754e6b34739156f65e378ceaad4b06bfa9f",
+      "code/active_nara_adapter/nara_data.py": "eea1124afd1d0628b7a96c3d9dbca43a116f8bed0fef76f2c67718e7ff2e4a29",
+      "code/active_nara_adapter/nara_experiment.py": "734e9c15a13ac967a72a482c68a9fc777e6632a75957ffd854b0863894a28409",
+      "code/active_nara_adapter/nara_metrics.py": "8f74d058db3e613c77df83c772b5142f2b504dfde542455284754e4c8ceefcb7",
+      "code/active_nara_adapter/silar_ai_adapter.py": "4243ad3d5f9dbae76c8f2b97b47b484ba65af9e5c57b618727591f851025b169",
+      "code/active_nara_adapter/silar_nara_composition.py": "085eb88ae4f448ff600c2beccc5ba74fd3d81678e1b66507f197a0978c7a9cbb",
+      "code/active_nara_adapter/silar_postprocessing.py": "61e466d891a952c3fe560b7f3b99b9942bab7766871f18ad8969d464e60e5899",
+      "code/active_nara_adapter/silar_victim_guard.py": "691c8d9a74c15d91720e8ca8672d6ce1fa575542ceb55858ff81f050bd100ac9",
+      "code/active_nara_adapter/slr09_candidate_runtime.py": "932b09fdf3acb5e036e5d61bc3b6c51f9e9a4c85e10ae669c0ffa0c4ec14cacd",
+      "code/active_nara_adapter/slr09_runtime.py": "f0dc27fab23ef99046d615f24b5ea4c0d7fba5010314f3769ad0d730404a085d",
+      "code/quality_fix/fit_simulation_guard_v081.py": "714c7989e79b9f148bb653b29a15e812ff49917b433fad062682b007c42cb233",
+      "code/quality_fix/train_context_correction_v081.py": "c9e43ce039022b1fa8d2f3270eaa597582a872de764b0da6f917178ae69a52b6",
+      "config/SLR09_Konfigurasi_Integrasi_v0.6.json": "75190adf63decc4203188b79ede9fe8bd747c46aa1af53895480401a81f9eb7e",
+      "config/inference_environment.json": "d2f235f7b5b3f4d7cb445fa5870cfc6b0b49f9f1a429e8518075c4ff53955bbd",
+      "config/quality_candidate_asset_lock_v0.8.1.json": "420703aa4abf34ba92339417d586b2ac175f880c780fc5976cc5e6d5c3d19f37",
+      "config/requirements-inference.txt": "1e496aa6408ac46bd8545e395a6f960edcf5b5bc85aa3d165632da37421823f8",
+      "data/development_review_v0.8.json": "76203e7d658b175c0d62b7e4b8f8acb097903b97ff047b24d1c5f9503a62763f",
+      "data/final_reference_identity_v0.8.1.json": "c876efcf6048b488e057adc9ea3ee091f93b0cf8753b26fbfa1dc0e0de29b9ed",
+      "data/final_reference_proposals_v0.8.1.json": "f47c5ca5b73bd3055bf5d499fd032ba483889ff4971223bdb932d2973836f7f0",
+      "evidence/quality_fix_v081/training21/executed_training_source.py": "c9e43ce039022b1fa8d2f3270eaa597582a872de764b0da6f917178ae69a52b6",
+      "evidence/quality_fix_v081/training21/training_records_frozen.json": "749a6040d03051b3256bfecf30f8c7ef63dc03327efa9c7175e250208cfb0900"
+    }
+  },
+  "threshold": 0.95,
+  "test_not_used_for_checkpoint_selection": true,
+  "initial_training_membership_verified": false,
+  "notes": "Exact overlap checks only; synthetic pilot, not a population estimate"
+}

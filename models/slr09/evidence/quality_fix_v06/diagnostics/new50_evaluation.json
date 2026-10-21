@@ -1,0 +1,280 @@
+{
+  "records": 50,
+  "accuracy": 0.78,
+  "macro_f1": 0.7940258862165555,
+  "per_class": {
+    "FLOOD": {
+      "precision": 1.0,
+      "recall": 0.7,
+      "f1": 0.8235294117647058,
+      "support": 10
+    },
+    "EARTHQUAKE": {
+      "precision": 1.0,
+      "recall": 0.6,
+      "f1": 0.7499999999999999,
+      "support": 10
+    },
+    "FIRE": {
+      "precision": 1.0,
+      "recall": 0.7,
+      "f1": 0.8235294117647058,
+      "support": 10
+    },
+    "ACCIDENT": {
+      "precision": 0.9090909090909091,
+      "recall": 1.0,
+      "f1": 0.9523809523809523,
+      "support": 10
+    },
+    "NON_EVENT": {
+      "precision": 0.47368421052631576,
+      "recall": 0.9,
+      "f1": 0.6206896551724138,
+      "support": 10
+    }
+  },
+  "confusion_matrix": {
+    "FLOOD": {
+      "FLOOD": 7,
+      "EARTHQUAKE": 0,
+      "FIRE": 0,
+      "ACCIDENT": 0,
+      "NON_EVENT": 3
+    },
+    "EARTHQUAKE": {
+      "FLOOD": 0,
+      "EARTHQUAKE": 6,
+      "FIRE": 0,
+      "ACCIDENT": 0,
+      "NON_EVENT": 4
+    },
+    "FIRE": {
+      "FLOOD": 0,
+      "EARTHQUAKE": 0,
+      "FIRE": 7,
+      "ACCIDENT": 0,
+      "NON_EVENT": 3
+    },
+    "ACCIDENT": {
+      "FLOOD": 0,
+      "EARTHQUAKE": 0,
+      "FIRE": 0,
+      "ACCIDENT": 10,
+      "NON_EVENT": 0
+    },
+    "NON_EVENT": {
+      "FLOOD": 0,
+      "EARTHQUAKE": 0,
+      "FIRE": 0,
+      "ACCIDENT": 1,
+      "NON_EVENT": 9
+    }
+  },
+  "errors": [
+    {
+      "id": "NEW06-FLOOD-05",
+      "text": "Warga mengira kabar itu lelucon. Petugas kemudian mengonfirmasi banjir nyata di Desa Walikukun.",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.8973790407180786,
+      "low_confidence": true,
+      "family": "clarified_reality",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "id": "NEW06-FLOOD-07",
+      "text": "Tidak ada kebakaran di pasar. Yang terjadi adalah banjir, dengan air setinggi lutut para pedagang.",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9956472516059875,
+      "low_confidence": false,
+      "family": "alternative_denied",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "id": "NEW06-FLOOD-08",
+      "text": "Banjir itu bukan prediksi untuk besok: hari ini air sudah menenggelamkan ruang kelas.",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.603455662727356,
+      "low_confidence": true,
+      "family": "future_negation",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "id": "NEW06-EARTHQUAKE-05",
+      "text": "Gempa terjadi pukul dua tadi; setelah itu tidak ada gempa susulan hingga laporan ini dikirim.",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9352511763572693,
+      "low_confidence": true,
+      "family": "aftershock_negation",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "id": "NEW06-EARTHQUAKE-07",
+      "text": "Bukan kecelakaan kendaraan yang membuat warga keluar. Gempa sedang mengguncang kawasan perumahan.",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9735754132270813,
+      "low_confidence": false,
+      "family": "alternative_denied",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "id": "NEW06-EARTHQUAKE-09",
+      "text": "Kabar gempa awalnya diragukan, tetapi tim lapangan memastikan guncangan nyata dan menemukan rumah rusak.",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9581282138824463,
+      "low_confidence": false,
+      "family": "rumor_verified",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "id": "NEW06-EARTHQUAKE-10",
+      "text": "Peringatan ini bukan bagian simulasi: gempa baru terasa keras di gedung kantor dan para pegawai berlarian.",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.6864898204803467,
+      "low_confidence": true,
+      "family": "negated_simulation",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "id": "NEW06-FIRE-05",
+      "text": "Kebakaran yang sedang kami laporkan bukan adegan film. Dua rumah terbakar dan warga membutuhkan pemadam.",
+      "gold": "FIRE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.640813946723938,
+      "low_confidence": true,
+      "family": "negated_fiction",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "id": "NEW06-FIRE-07",
+      "text": "Bukan banjir di pabrik itu; kebakaran sedang berlangsung dan asap hitam terlihat dari jalan besar.",
+      "gold": "FIRE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.820457935333252,
+      "low_confidence": true,
+      "family": "alternative_denied",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "id": "NEW06-FIRE-10",
+      "text": "Kebakaran bukan di sekolah seperti kabar awal, melainkan di gudang sebelahnya; petugas sudah tiba.",
+      "gold": "FIRE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.6531789898872375,
+      "low_confidence": true,
+      "family": "location_negation",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "id": "NEW06-NON_EVENT-01",
+      "text": "Pengecekan polisi memastikan kabar kecelakaan di Jalan Melati keliru; mobil-mobil sedang parkir dan tidak ada tabrakan.",
+      "gold": "NON_EVENT",
+      "prediction": "ACCIDENT",
+      "confidence": 0.7339208126068115,
+      "low_confidence": true,
+      "family": "denial",
+      "kind": "FALSE_EVENT"
+    }
+  ],
+  "false_event": 1,
+  "false_non_event": 10,
+  "high_confidence_errors": 3,
+  "threshold_analysis": {
+    "cutoff": 0.95,
+    "flagged": 19,
+    "errors_flagged": 8,
+    "errors_remaining_at_or_above": 3,
+    "coverage": 0.62
+  },
+  "reliability": {
+    "ten_bin_ece": 0.13625594854354853,
+    "multiclass_brier_sum_over_classes": 0.31222151067156284,
+    "bins": [
+      {
+        "lower": 0.0,
+        "upper": 0.1,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.3,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.3,
+        "upper": 0.4,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.6,
+        "upper": 0.7,
+        "n": 6,
+        "mean_confidence": 0.6540794769922892,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "lower": 0.7,
+        "upper": 0.8,
+        "n": 2,
+        "mean_confidence": 0.7555452883243561,
+        "accuracy": 0.5
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "n": 4,
+        "mean_confidence": 0.8422767668962479,
+        "accuracy": 0.5
+      },
+      {
+        "lower": 0.9,
+        "upper": 1.0,
+        "n": 38,
+        "mean_confidence": 0.9738979716049997,
+        "accuracy": 0.8947368421052632
+      }
+    ],
+    "probability_calibration_established": false,
+    "scope": "DIAGNOSTIC_ON_APPROVED_PILOT_NOT_PROOF_OF_95_PERCENT_CORRECTNESS"
+  },
+  "scope": "ONE_SHOT_NEW_ASSISTANT_REFERENCE_DIAGNOSTIC_NOT_HUMAN_ACCEPTANCE",
+  "human_reference_reviewed": false,
+  "used_for_training_or_checkpoint_selection": false,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "classification_targets_met": false
+}

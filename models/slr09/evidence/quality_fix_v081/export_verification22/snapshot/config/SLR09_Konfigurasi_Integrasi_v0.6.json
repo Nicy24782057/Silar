@@ -1,0 +1,72 @@
+{
+  "schema": "slr09-integration-configuration-0.6",
+  "status": "DEVELOPMENT_CANDIDATE_NOT_ACCEPTED",
+  "selected_option": "A",
+  "confidence_threshold": 0.95,
+  "calibration_reference": "SILAR_SENA_context_v081_20261019T102427:OPERATING_CUTOFF_0.95_NOT_PROBABILITY_CALIBRATED",
+  "decision_file": "config/threshold_decision.json",
+  "low_confidence_rule": "confidence < confidence_threshold",
+  "equal_to_threshold_is_low_confidence": false,
+  "reference_run_id": "20261019T054716",
+  "reference_report_sha256": "a6eef397e66a8ae7a38af7bd9c8b20f6b66d3abd61bc505317f4e0af35d61530",
+  "reference_scope": "HUMAN130_DEVELOPMENT_AND_KNOWN_REGRESSION_NOT_INDEPENDENT_ACCEPTANCE",
+  "probability_calibration_fitted": false,
+  "selection_basis": "PRIOR_USER_CUTOFF_UNCHANGED_MODEL_AND_INTERCEPT_SELECTED_ON_DEVELOPMENT",
+  "sena": {
+    "archive_name": "SILAR_SENA_context_v0.8.1_20261019.zip",
+    "archive_sha256": "47428d76d8446e456de9195bafdaffea6e3a5826ac2f1f58a34f91cb7f6a6d9d",
+    "run_id": "20261019T102427",
+    "labels": [
+      "FLOOD",
+      "EARTHQUAKE",
+      "FIRE",
+      "ACCIDENT",
+      "NON_EVENT"
+    ],
+    "weights_sha256": "a77e27c59a2c16ba9515daa6489dfab423abb8fcc4f0e500ce949f351503b4e5"
+  },
+  "nara": {
+    "archive_name": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z.zip",
+    "archive_sha256": "bce9feba0dd2ae4518880708085f44286ae8d1dd7e50f4eb452e36824f967798",
+    "run_id": "20261018T001122_607337Z",
+    "labels": [
+      "O",
+      "ACCIDENT-EVENT",
+      "AFFECTEDOBJECTS-ARG",
+      "DEATHVICTIM-ARG",
+      "EARTHQUAKE-EVENT",
+      "FALSE-EVENT",
+      "FIRE-EVENT",
+      "FLOOD-EVENT",
+      "INFORMATION-ARG",
+      "OFFICER-ARG",
+      "PLACE-ARG",
+      "REASON-ARG",
+      "STREET-ARG",
+      "TIME-ARG",
+      "WOUNDVICTIM-ARG"
+    ],
+    "weights_sha256": "ef84ccfeca2d116942c5d7f8882e064192279eabf92127e8adc1741933b60c29"
+  },
+  "adapter_version": "silar-adapter-0.5.0",
+  "fusion_version": "silar-fusion-a4.22-0.1.0",
+  "victim_guard_version": "silar-victim-guard-0.5.0",
+  "role_guideline_version": "nara-role-guideline-0.2",
+  "rules": {
+    "category_from_sena_only": true,
+    "non_event_blocks_submission": true,
+    "human_verification_always_required": true,
+    "empty_fields_do_not_automatically_make_uncertain": true,
+    "unknown_extracted_values_remain_null_or_empty_array": true
+  },
+  "production_deployed": false,
+  "production_model_selected": false,
+  "quality_acceptance_approved": false,
+  "target_vm_loading_and_joint_new_model_inference_verified": false,
+  "general_extraction_conflict_detection_verified": false,
+  "postprocessing_version": "silar-postprocessing-0.3.0",
+  "composition_version": "silar-nara-composition-0.2.0",
+  "non_event_head_bias_fitted_on_development": 0.1,
+  "previous_configuration_preserved": "config/SLR09_Konfigurasi_Integrasi_v0.3.json",
+  "auxiliary_human_review_completed": false
+}

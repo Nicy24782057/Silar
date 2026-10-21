@@ -1,0 +1,1706 @@
+[
+  {
+    "cohort": "sena_validation",
+    "id": "BAN-01692",
+    "text": "banjir dukungan di injury time",
+    "status": "FINAL_TERWARIS",
+    "decision": "TERWARIS",
+    "reviewer": "TERWARIS",
+    "note": "",
+    "inherited_review": {
+      "id": "BAN-01692",
+      "text_sha256": "d6657f892cee82de77a90f7dc33659bc36558447c729cff444dfb8de0b4ce51e",
+      "source_label": "NON_EVENT",
+      "final_label": "NON_EVENT",
+      "reviewer": "Reviewer SILAR",
+      "reason": "Banjir dukungan adalah kiasan untuk banyaknya dukungan dalam konteks injury time. Tidak ada pernyataan banjir fisik. Dasar: R3."
+    },
+    "source_label": "NON_EVENT",
+    "final": "NON_EVENT",
+    "label_origin": "KNOWN_HUMAN_ADJUDICATED_NOW_TRAINING"
+  },
+  {
+    "cohort": "sena_validation",
+    "id": "BAN-01763",
+    "text": "guna antisipasi banjir dan situasi kamtibmas yang aman dan kondusif kapolsek bukit intan akp madi putra sh mah beserta kasubnit reskrim ipda imam sh dan personil polsek bukit intan memantau debit air di perumahan warga yang rawan terdampak banjir di kelurahan parit lalang",
+    "status": "REVIEW_TERCATAT",
+    "decision": "SETUJU_USULAN",
+    "reviewer": "bintang",
+    "note": "Pemantauan debit air dilakukan untuk antisipasi di daerah rawan. Banjir belum dinyatakan terjadi. R3.",
+    "inherited_review": null,
+    "source_label": "NON_EVENT",
+    "final": "NON_EVENT",
+    "label_origin": "KNOWN_HUMAN_ADJUDICATED_NOW_TRAINING"
+  },
+  {
+    "cohort": "sena_validation",
+    "id": "KEC-01006",
+    "text": "4 kecelakaan maut dan mengerikan di dunia karena hal sepele",
+    "status": "FINAL_TERWARIS",
+    "decision": "TERWARIS",
+    "reviewer": "TERWARIS",
+    "note": "",
+    "inherited_review": {
+      "id": "KEC-01006",
+      "text_sha256": "b769483a3713719eb1758ce863180ade57e68e8eda496eda2463341d433e1acf",
+      "source_label": "NON_EVENT",
+      "final_label": "NON_EVENT",
+      "reviewer": "Reviewer SILAR",
+      "reason": "Judul daftar empat kecelakaan di dunia tidak menguraikan identitas atau kejadian tertentu. Penyebutan kategori dalam daftar umum mengikuti R3. Dasar: R3."
+    },
+    "source_label": "NON_EVENT",
+    "final": "NON_EVENT",
+    "label_origin": "KNOWN_HUMAN_ADJUDICATED_NOW_TRAINING"
+  },
+  {
+    "id": "NEW07-FLOOD-04",
+    "text": "Petugas sedang berlatih menolong korban gempa ketika air banjir betulan menerobos tempat latihan dan mereka harus pindah.",
+    "gold_label": "FLOOD",
+    "family": "exercise_contrast",
+    "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+    "final": "FLOOD",
+    "label_origin": "ASSISTANT_SEEN_V07",
+    "reference_human_reviewed": false
+  },
+  {
+    "id": "NEW07-EARTHQUAKE-04",
+    "text": "Latihan menghadapi banjir mendadak berhenti. Tanah benar-benar berguncang akibat gempa dan peserta keluar dari gedung.",
+    "gold_label": "EARTHQUAKE",
+    "family": "exercise_contrast",
+    "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+    "final": "EARTHQUAKE",
+    "label_origin": "ASSISTANT_SEEN_V07",
+    "reference_human_reviewed": false
+  },
+  {
+    "id": "NEW07-FIRE-04",
+    "text": "Saat warga mengikuti simulasi evakuasi banjir, tabung di kantin bocor dan kebakaran nyata terjadi di dapur.",
+    "gold_label": "FIRE",
+    "family": "exercise_contrast",
+    "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+    "final": "FIRE",
+    "label_origin": "ASSISTANT_SEEN_V07",
+    "reference_human_reviewed": false
+  },
+  {
+    "id": "NEW07-ACCIDENT-04",
+    "text": "Praktik penyeberangan sekolah dihentikan setelah motor sungguhan menabrak pagar dan pengendaranya terluka.",
+    "gold_label": "ACCIDENT",
+    "family": "exercise_contrast",
+    "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+    "final": "ACCIDENT",
+    "label_origin": "ASSISTANT_SEEN_V07",
+    "reference_human_reviewed": false
+  },
+  {
+    "id": "NEW07-NON_EVENT-06",
+    "text": "Suara benturan dalam latihan kecelakaan berasal dari pengeras suara. Mobil rusak dan korban merupakan properti serta pemeran simulasi.",
+    "gold_label": "NON_EVENT",
+    "family": "simulation",
+    "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+    "final": "NON_EVENT",
+    "label_origin": "ASSISTANT_SEEN_V07",
+    "reference_human_reviewed": false
+  },
+  {
+    "cohort": "sena_validation",
+    "id": "BAN-01221",
+    "text": "tahh lamun bandung banjir ieu salah sahiji mobil nu jadi sebabna ngeunah pisan di jalan bengawan parkir nyatu kacang sabari runtahna dipiceun dijalan mikirrrrr ath",
+    "status": "REVIEW_TERCATAT",
+    "decision": "SETUJU_USULAN",
+    "reviewer": "bintang",
+    "note": "Kata lamun memperkenalkan kemungkinan banjir akibat membuang sampah. Tidak ada klaim episode banjir. R3.",
+    "inherited_review": null,
+    "source_label": "NON_EVENT",
+    "final": "NON_EVENT",
+    "label_origin": "KNOWN_HUMAN_ADJUDICATED_NOW_TRAINING"
+  },
+  {
+    "cohort": "sena_validation",
+    "id": "BAN-01512",
+    "text": "hari ini bu risma melakukan kunjungan ke beberapa lokasi kunjungan ini terkait cara pemkot mengatasi banjir di surabaya di titik ujung timur dan barat surabaya",
+    "status": "REVIEW_TERCATAT",
+    "decision": "SETUJU_USULAN",
+    "reviewer": "bintang",
+    "note": "Kunjungan membahas cara pemerintah mengatasi banjir secara umum. Tidak ada episode atau dampak banjir tertentu yang dinyatakan. R3.",
+    "inherited_review": null,
+    "source_label": "NON_EVENT",
+    "final": "NON_EVENT",
+    "label_origin": "KNOWN_HUMAN_ADJUDICATED_NOW_TRAINING"
+  },
+  {
+    "cohort": "sena_validation",
+    "id": "BAN-01925",
+    "text": "banjir dikit menyalahkan pemerintah kalo kau masih buang puntung rokok sama bungkus permen di jalan enggak usah menyalahkan orang lain karena banjir ! !",
+    "status": "REVIEW_TERCATAT",
+    "decision": "SETUJU_USULAN",
+    "reviewer": "bintang",
+    "note": "Teguran mengenai sampah dan menyalahkan pemerintah bersifat umum, tanpa episode banjir tertentu. R3.",
+    "inherited_review": null,
+    "source_label": "NON_EVENT",
+    "final": "NON_EVENT",
+    "label_origin": "KNOWN_HUMAN_ADJUDICATED_NOW_TRAINING"
+  },
+  {
+    "id": "NEW06-FLOOD-04",
+    "text": "Peserta simulasi kebakaran harus keluar gedung karena banjir sungguhan masuk ke lantai dasar.",
+    "gold_label": "FLOOD",
+    "family": "real_during_exercise",
+    "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+    "final": "FLOOD",
+    "source": "RETIRED_ASSISTANT_DIAGNOSTIC_NOW_DEVELOPMENT_NOT_HUMAN_GOLD",
+    "label_origin": "KNOWN_ASSISTANT_SCOPE_NOW_TRAINING"
+  },
+  {
+    "id": "NEW06-EARTHQUAKE-04",
+    "text": "Praktik berlindung di bawah meja terhenti ketika gempa asli mengguncang sekolah dan memecahkan kaca.",
+    "gold_label": "EARTHQUAKE",
+    "family": "real_during_exercise",
+    "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+    "final": "EARTHQUAKE",
+    "source": "RETIRED_ASSISTANT_DIAGNOSTIC_NOW_DEVELOPMENT_NOT_HUMAN_GOLD",
+    "label_origin": "KNOWN_ASSISTANT_SCOPE_NOW_TRAINING"
+  },
+  {
+    "id": "NEW06-FIRE-04",
+    "text": "Pelatihan antigempa dihentikan karena kebakaran asli muncul di gudang bahan bakar sebelah lokasi.",
+    "gold_label": "FIRE",
+    "family": "real_during_exercise",
+    "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+    "final": "FIRE",
+    "source": "RETIRED_ASSISTANT_DIAGNOSTIC_NOW_DEVELOPMENT_NOT_HUMAN_GOLD",
+    "label_origin": "KNOWN_ASSISTANT_SCOPE_NOW_TRAINING"
+  },
+  {
+    "id": "NEW06-ACCIDENT-04",
+    "text": "Latihan pengaturan jalan terhenti setelah sebuah motor sungguhan menabrak peserta di pintu masuk.",
+    "gold_label": "ACCIDENT",
+    "family": "real_during_exercise",
+    "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+    "final": "ACCIDENT",
+    "source": "RETIRED_ASSISTANT_DIAGNOSTIC_NOW_DEVELOPMENT_NOT_HUMAN_GOLD",
+    "label_origin": "KNOWN_ASSISTANT_SCOPE_NOW_TRAINING"
+  },
+  {
+    "id": "NEW06-NON_EVENT-06",
+    "text": "Panitia menggelar simulasi kebakaran dengan api tiruan dan pemeran korban. Semua peserta aman, tanpa kejadian sungguhan.",
+    "gold_label": "NON_EVENT",
+    "family": "simulation",
+    "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+    "final": "NON_EVENT",
+    "source": "RETIRED_ASSISTANT_DIAGNOSTIC_NOW_DEVELOPMENT_NOT_HUMAN_GOLD",
+    "label_origin": "KNOWN_ASSISTANT_SCOPE_NOW_TRAINING"
+  },
+  {
+    "id": "MVP-NEW-027",
+    "family": "real_during_exercise",
+    "text": "Saat latihan evakuasi, kebakaran sungguhan menghanguskan gudang di Desa Karangrejo siang ini.",
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+    },
+    "gold_label": "FIRE",
+    "gold_fields": {
+      "location_text": "Desa Karangrejo",
+      "time_text": "siang ini",
+      "occurred_at": null,
+      "involved_parties": [],
+      "impacts": [
+        "menghanguskan gudang"
+      ],
+      "victims": [],
+      "affected_objects": [
+        "gudang"
+      ]
+    },
+    "gold_nara_labels": [
+      "O",
+      "O",
+      "O",
+      "O",
+      "FIRE-EVENT",
+      "O",
+      "INFORMATION-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "O",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O"
+    ],
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T01:39:09.195285+00:00",
+      "note": "Kebakaran dinyatakan sungguhan meskipun berlangsung saat latihan; kategori FIRE dipertahankan."
+    },
+    "final": "FIRE",
+    "label_origin": "KNOWN_HUMAN_REGRESSION_NOW_TRAINING"
+  },
+  {
+    "id": "MVP-NEW-038",
+    "family": "real_during_exercise",
+    "text": "Saat simulasi lalu lintas, kecelakaan sungguhan merusak mobil di Jalan Pemuda pagi tadi.",
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+    },
+    "gold_label": "ACCIDENT",
+    "gold_fields": {
+      "location_text": "Jalan Pemuda",
+      "time_text": "pagi tadi",
+      "occurred_at": null,
+      "involved_parties": [],
+      "impacts": [
+        "merusak mobil"
+      ],
+      "victims": [],
+      "affected_objects": [
+        "mobil"
+      ]
+    },
+    "gold_nara_labels": [
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "ACCIDENT-EVENT",
+      "O",
+      "INFORMATION-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "O",
+      "STREET-ARG",
+      "STREET-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O"
+    ],
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T01:39:09.195285+00:00",
+      "note": "Kecelakaan dinyatakan sungguhan meskipun terjadi saat simulasi; kategori ACCIDENT dipertahankan."
+    },
+    "final": "ACCIDENT",
+    "label_origin": "KNOWN_HUMAN_REGRESSION_NOW_TRAINING"
+  },
+  {
+    "id": "MVP-NEW-041",
+    "family": "simulation",
+    "text": "Petugas mengadakan simulasi kebakaran di halaman kantor kelurahan pagi ini.",
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+    },
+    "gold_label": "NON_EVENT",
+    "gold_fields": {
+      "location_text": "halaman kantor kelurahan",
+      "time_text": "pagi ini",
+      "occurred_at": null,
+      "involved_parties": [
+        "Petugas"
+      ],
+      "impacts": [],
+      "victims": [],
+      "affected_objects": []
+    },
+    "gold_nara_labels": [
+      "OFFICER-ARG",
+      "O",
+      "O",
+      "FALSE-EVENT",
+      "O",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O"
+    ],
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T01:39:09.195285+00:00",
+      "note": "Simulasi, bukan kebakaran nyata. Pemicu FALSE-EVENT; tidak menambahkan dampak atau korban."
+    },
+    "final": "NON_EVENT",
+    "label_origin": "KNOWN_HUMAN_REGRESSION_NOW_TRAINING"
+  },
+  {
+    "id": "MVP-NEW-050",
+    "family": "exercise_only",
+    "text": "Polisi menggelar simulasi penanganan kecelakaan di lapangan kecamatan sore ini.",
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+    },
+    "gold_label": "NON_EVENT",
+    "gold_fields": {
+      "location_text": "lapangan kecamatan",
+      "time_text": "sore ini",
+      "occurred_at": null,
+      "involved_parties": [
+        "Polisi"
+      ],
+      "impacts": [],
+      "victims": [],
+      "affected_objects": []
+    },
+    "gold_nara_labels": [
+      "OFFICER-ARG",
+      "O",
+      "O",
+      "O",
+      "FALSE-EVENT",
+      "O",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O"
+    ],
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T01:39:09.195285+00:00",
+      "note": "Simulasi penanganan, bukan kecelakaan nyata. Tidak menambahkan dampak atau korban."
+    },
+    "final": "NON_EVENT",
+    "label_origin": "KNOWN_HUMAN_REGRESSION_NOW_TRAINING"
+  },
+  {
+    "id": "FINAL081-FLOOD-08",
+    "text": "Di tengah latihan evakuasi, Banjir sungguhan menggenangi tiga rumah di Desa Beringinwangi Utara pagi tadi.",
+    "family": "real_during_exercise",
+    "gold_label": "FLOOD",
+    "gold_fields": {
+      "location_text": "Desa Beringinwangi Utara",
+      "time_text": "pagi tadi",
+      "occurred_at": null,
+      "involved_parties": [],
+      "impacts": [
+        "menggenangi tiga rumah"
+      ],
+      "victims": [],
+      "affected_objects": [
+        "tiga rumah"
+      ]
+    },
+    "gold_nara_labels": [
+      "TIME-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O",
+      "FLOOD-EVENT",
+      "O",
+      "INFORMATION-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "O",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O"
+    ],
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "v0.8.1 proposal, not a model prediction"
+    },
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T11:16:36.658827+00:00",
+      "note": "Di tengah latihan evakuasi dilabeli TIME. Kejadian dinyatakan sungguhan. Waktu utama tetap pagi tadi."
+    },
+    "final": "FLOOD",
+    "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+  },
+  {
+    "id": "FINAL081-EARTHQUAKE-08",
+    "text": "Di tengah latihan evakuasi, Gempa sungguhan merusak dinding sekolah di Desa Beringinwangi Selatan pagi tadi.",
+    "family": "real_during_exercise",
+    "gold_label": "EARTHQUAKE",
+    "gold_fields": {
+      "location_text": "Desa Beringinwangi Selatan",
+      "time_text": "pagi tadi",
+      "occurred_at": null,
+      "involved_parties": [],
+      "impacts": [
+        "merusak dinding sekolah"
+      ],
+      "victims": [],
+      "affected_objects": [
+        "dinding sekolah"
+      ]
+    },
+    "gold_nara_labels": [
+      "TIME-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O",
+      "EARTHQUAKE-EVENT",
+      "O",
+      "INFORMATION-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "O",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O"
+    ],
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "v0.8.1 proposal, not a model prediction"
+    },
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T11:16:36.658827+00:00",
+      "note": "Di tengah latihan evakuasi dilabeli TIME. Kejadian dinyatakan sungguhan. Waktu utama tetap pagi tadi."
+    },
+    "final": "EARTHQUAKE",
+    "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+  },
+  {
+    "id": "FINAL081-FIRE-08",
+    "text": "Di tengah latihan evakuasi, Kebakaran sungguhan menghanguskan satu warung di Desa Beringinwangi Barat pagi tadi.",
+    "family": "real_during_exercise",
+    "gold_label": "FIRE",
+    "gold_fields": {
+      "location_text": "Desa Beringinwangi Barat",
+      "time_text": "pagi tadi",
+      "occurred_at": null,
+      "involved_parties": [],
+      "impacts": [
+        "menghanguskan satu warung"
+      ],
+      "victims": [],
+      "affected_objects": [
+        "satu warung"
+      ]
+    },
+    "gold_nara_labels": [
+      "TIME-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O",
+      "FIRE-EVENT",
+      "O",
+      "INFORMATION-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "O",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O"
+    ],
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "v0.8.1 proposal, not a model prediction"
+    },
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T11:16:36.658827+00:00",
+      "note": "Di tengah latihan evakuasi dilabeli TIME. Kejadian dinyatakan sungguhan. Waktu utama tetap pagi tadi."
+    },
+    "final": "FIRE",
+    "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+  },
+  {
+    "id": "FINAL081-ACCIDENT-08",
+    "text": "Di tengah latihan evakuasi, Kecelakaan sungguhan merusak dua sepeda motor di Desa Beringinwangi Tengah pagi tadi.",
+    "family": "real_during_exercise",
+    "gold_label": "ACCIDENT",
+    "gold_fields": {
+      "location_text": "Desa Beringinwangi Tengah",
+      "time_text": "pagi tadi",
+      "occurred_at": null,
+      "involved_parties": [],
+      "impacts": [
+        "merusak dua sepeda motor"
+      ],
+      "victims": [],
+      "affected_objects": [
+        "dua sepeda motor"
+      ]
+    },
+    "gold_nara_labels": [
+      "TIME-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O",
+      "ACCIDENT-EVENT",
+      "O",
+      "INFORMATION-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "O",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O"
+    ],
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "v0.8.1 proposal, not a model prediction"
+    },
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T11:16:36.658827+00:00",
+      "note": "Di tengah latihan evakuasi dilabeli TIME. Kejadian dinyatakan sungguhan. Waktu utama tetap pagi tadi."
+    },
+    "final": "ACCIDENT",
+    "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+  },
+  {
+    "id": "FINAL081-NON_EVENT-01",
+    "text": "Petugas BPBD menggelar simulasi kebakaran di lapangan Kalimurni sore ini.",
+    "family": "simulation",
+    "gold_label": "NON_EVENT",
+    "gold_fields": {
+      "location_text": "lapangan Kalimurni",
+      "time_text": "sore ini",
+      "occurred_at": null,
+      "involved_parties": [
+        "Petugas BPBD"
+      ],
+      "impacts": [],
+      "victims": [],
+      "affected_objects": []
+    },
+    "gold_nara_labels": [
+      "OFFICER-ARG",
+      "OFFICER-ARG",
+      "O",
+      "O",
+      "FALSE-EVENT",
+      "O",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O"
+    ],
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "v0.8.1 proposal, not a model prediction"
+    },
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T11:16:36.658827+00:00",
+      "note": "Simulasi kebakaran, bukan kebakaran nyata. Lokasi, waktu dan pihak kegiatan dipertahankan."
+    },
+    "final": "NON_EVENT",
+    "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+  },
+  {
+    "id": "FINAL081-NON_EVENT-02",
+    "text": "Latihan penanganan kecelakaan diselenggarakan di balai pelatihan Puspasari pagi ini.",
+    "family": "exercise_only",
+    "gold_label": "NON_EVENT",
+    "gold_fields": {
+      "location_text": "balai pelatihan Puspasari",
+      "time_text": "pagi ini",
+      "occurred_at": null,
+      "involved_parties": [],
+      "impacts": [],
+      "victims": [],
+      "affected_objects": []
+    },
+    "gold_nara_labels": [
+      "O",
+      "O",
+      "FALSE-EVENT",
+      "O",
+      "O",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O"
+    ],
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "v0.8.1 proposal, not a model prediction"
+    },
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T11:16:36.658827+00:00",
+      "note": "Latihan penanganan, bukan laporan kecelakaan. Tidak menebak penyelenggara atau korban."
+    },
+    "final": "NON_EVENT",
+    "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+  },
+  {
+    "id": "FINAL081-NON_EVENT-06",
+    "text": "Tim kelurahan menyiapkan jalur evakuasi untuk mengantisipasi banjir di Kampung Manggala.",
+    "family": "prevention",
+    "gold_label": "NON_EVENT",
+    "gold_fields": {
+      "location_text": "Kampung Manggala",
+      "time_text": null,
+      "occurred_at": null,
+      "involved_parties": [
+        "Tim kelurahan"
+      ],
+      "impacts": [],
+      "victims": [],
+      "affected_objects": []
+    },
+    "gold_nara_labels": [
+      "OFFICER-ARG",
+      "OFFICER-ARG",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "FALSE-EVENT",
+      "O",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "O"
+    ],
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "v0.8.1 proposal, not a model prediction"
+    },
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T11:16:36.658827+00:00",
+      "note": "Persiapan mengantisipasi banjir tidak menyatakan banjir telah terjadi. Jalur evakuasi bukan objek rusak."
+    },
+    "final": "NON_EVENT",
+    "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+  },
+  {
+    "id": "FINAL082-FLOOD-07",
+    "text": "Saat latihan pertolongan, banjir nyata merusak jembatan kayu di Desa Bantarasih siang tadi.",
+    "family": "real_during_exercise",
+    "gold_label": "FLOOD",
+    "gold_fields": {
+      "location_text": "Desa Bantarasih",
+      "time_text": "siang tadi",
+      "occurred_at": null,
+      "involved_parties": [],
+      "impacts": [
+        "merusak jembatan kayu"
+      ],
+      "victims": [],
+      "affected_objects": [
+        "jembatan kayu"
+      ]
+    },
+    "gold_nara_labels": [
+      "TIME-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O",
+      "FLOOD-EVENT",
+      "O",
+      "INFORMATION-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "O",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O"
+    ],
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "New v0.8.2 proposal, varied narrative constructions; no model predictions inspected; not a field report."
+    },
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T12:45:30.177581+00:00",
+      "note": "Saat latihan pertolongan dilabeli TIME. Banjir dinyatakan nyata. Waktu utama tetap siang tadi."
+    },
+    "final": "FLOOD",
+    "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+  },
+  {
+    "id": "FINAL082-EARTHQUAKE-07",
+    "text": "Latihan evakuasi dihentikan karena gempa sungguhan mengguncang Kampung Cendrawana sore ini.",
+    "family": "real_during_exercise",
+    "gold_label": "EARTHQUAKE",
+    "gold_fields": {
+      "location_text": "Kampung Cendrawana",
+      "time_text": "sore ini",
+      "occurred_at": null,
+      "involved_parties": [],
+      "impacts": [
+        "Latihan evakuasi dihentikan",
+        "mengguncang Kampung Cendrawana"
+      ],
+      "victims": [],
+      "affected_objects": []
+    },
+    "gold_nara_labels": [
+      "INFORMATION-ARG",
+      "INFORMATION-ARG",
+      "INFORMATION-ARG",
+      "O",
+      "EARTHQUAKE-EVENT",
+      "O",
+      "INFORMATION-ARG",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O"
+    ],
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "New v0.8.2 proposal, varied narrative constructions; no model predictions inspected; not a field report."
+    },
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T12:45:30.177581+00:00",
+      "note": "Penghentian latihan ditambahkan sebagai dampak dan INFORMATION karena dinyatakan akibat gempa sungguhan."
+    },
+    "final": "EARTHQUAKE",
+    "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+  },
+  {
+    "id": "FINAL082-FIRE-07",
+    "text": "Di tengah latihan damkar, kebakaran nyata merusak satu mobil di Lapangan Mekarjaya siang ini.",
+    "family": "real_during_exercise",
+    "gold_label": "FIRE",
+    "gold_fields": {
+      "location_text": "Lapangan Mekarjaya",
+      "time_text": "siang ini",
+      "occurred_at": null,
+      "involved_parties": [],
+      "impacts": [
+        "merusak satu mobil"
+      ],
+      "victims": [],
+      "affected_objects": [
+        "satu mobil"
+      ]
+    },
+    "gold_nara_labels": [
+      "TIME-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O",
+      "FIRE-EVENT",
+      "O",
+      "INFORMATION-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "O",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O"
+    ],
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "New v0.8.2 proposal, varied narrative constructions; no model predictions inspected; not a field report."
+    },
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T12:45:30.177581+00:00",
+      "note": "Di tengah latihan damkar dilabeli TIME. Kebakaran dinyatakan nyata, dengan satu mobil rusak."
+    },
+    "final": "FIRE",
+    "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+  },
+  {
+    "id": "FINAL082-ACCIDENT-07",
+    "text": "Saat latihan pertolongan, kecelakaan sungguhan merusak mobil petugas di Lapangan Binamarga sore ini.",
+    "family": "real_during_exercise",
+    "gold_label": "ACCIDENT",
+    "gold_fields": {
+      "location_text": "Lapangan Binamarga",
+      "time_text": "sore ini",
+      "occurred_at": null,
+      "involved_parties": [],
+      "impacts": [
+        "merusak mobil petugas"
+      ],
+      "victims": [],
+      "affected_objects": [
+        "mobil petugas"
+      ]
+    },
+    "gold_nara_labels": [
+      "TIME-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O",
+      "ACCIDENT-EVENT",
+      "O",
+      "INFORMATION-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "AFFECTEDOBJECTS-ARG",
+      "O",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O"
+    ],
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "New v0.8.2 proposal, varied narrative constructions; no model predictions inspected; not a field report."
+    },
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T12:45:30.177581+00:00",
+      "note": "Saat latihan pertolongan dilabeli TIME. Mobil petugas tetap objek. Kepemilikan tidak membuktikan petugas menjadi korban."
+    },
+    "final": "ACCIDENT",
+    "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+  },
+  {
+    "id": "FINAL082-NON_EVENT-01",
+    "text": "Tim damkar hanya menggelar simulasi kebakaran di Halaman Purnawana pagi tadi.",
+    "family": "simulation",
+    "gold_label": "NON_EVENT",
+    "gold_fields": {
+      "location_text": "Halaman Purnawana",
+      "time_text": "pagi tadi",
+      "occurred_at": null,
+      "involved_parties": [
+        "Tim damkar"
+      ],
+      "impacts": [],
+      "victims": [],
+      "affected_objects": []
+    },
+    "gold_nara_labels": [
+      "OFFICER-ARG",
+      "OFFICER-ARG",
+      "O",
+      "O",
+      "O",
+      "FALSE-EVENT",
+      "O",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O"
+    ],
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "New v0.8.2 proposal, varied narrative constructions; no model predictions inspected; not a field report."
+    },
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T12:45:30.177581+00:00",
+      "note": "Hanya simulasi kebakaran. Lokasi, waktu dan pihak kegiatan dipertahankan tanpa dampak kebakaran nyata."
+    },
+    "final": "NON_EVENT",
+    "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+  },
+  {
+    "id": "FINAL082-NON_EVENT-02",
+    "text": "Kecelakaan dalam latihan di Balai Suryalaya sore ini memakai mobil properti, tanpa kejadian sungguhan.",
+    "family": "exercise_only",
+    "gold_label": "NON_EVENT",
+    "gold_fields": {
+      "location_text": "Balai Suryalaya",
+      "time_text": "sore ini",
+      "occurred_at": null,
+      "involved_parties": [],
+      "impacts": [],
+      "victims": [],
+      "affected_objects": []
+    },
+    "gold_nara_labels": [
+      "FALSE-EVENT",
+      "O",
+      "O",
+      "O",
+      "PLACE-ARG",
+      "PLACE-ARG",
+      "TIME-ARG",
+      "TIME-ARG",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O"
+    ],
+    "origin": {
+      "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+      "reference": "New v0.8.2 proposal, varied narrative constructions; no model predictions inspected; not a field report."
+    },
+    "review": {
+      "status": "APPROVED",
+      "reviewer": "bintang",
+      "at": "2026-10-19T12:45:30.177581+00:00",
+      "note": "Kecelakaan hanya diperagakan dengan mobil properti. Mobil tidak dinyatakan rusak oleh kejadian nyata."
+    },
+    "final": "NON_EVENT",
+    "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+  },
+  {
+    "id": "DIAG083-FLOOD-01",
+    "text": "Latihan penyelamatan dihentikan: banjir yang sesungguhnya baru terjadi dan warga dievakuasi.",
+    "final": "FLOOD",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-FLOOD-02",
+    "text": "Tidak ada korban jiwa, tetapi banjir benar-benar terjadi dan petugas memeriksa bangunan rusak.",
+    "final": "FLOOD",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-FLOOD-03",
+    "text": "Semua orang selamat setelah banjir terjadi di sebelah pusat pelatihan. Bantuan sedang dikirim.",
+    "final": "FLOOD",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-FLOOD-04",
+    "text": "Informasi banjir telah diperiksa di lokasi dan ternyata benar; pesan ini bukan pengumuman latihan.",
+    "final": "FLOOD",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-FLOOD-05",
+    "text": "Skenario yang dibaca peserta berbeda dari banjir sungguhan yang sedang ditangani di luar gedung.",
+    "final": "FLOOD",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-FLOOD-06",
+    "text": "Tadi malam banjir merusak fasilitas di kampung, meskipun tidak ada orang yang terluka.",
+    "final": "FLOOD",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-FLOOD-07",
+    "text": "Tim yang semula mengira hanya latihan menemukan banjir nyata dan meminta bantuan segera.",
+    "final": "FLOOD",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-FLOOD-08",
+    "text": "Peristiwa banjir memang terjadi pagi ini. Kabar bahwa semuanya hanya peragaan sudah dibantah petugas.",
+    "final": "FLOOD",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-EARTHQUAKE-01",
+    "text": "Latihan penyelamatan dihentikan: gempa yang sesungguhnya baru terjadi dan warga dievakuasi.",
+    "final": "EARTHQUAKE",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-EARTHQUAKE-02",
+    "text": "Tidak ada korban jiwa, tetapi gempa benar-benar terjadi dan petugas memeriksa bangunan rusak.",
+    "final": "EARTHQUAKE",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-EARTHQUAKE-03",
+    "text": "Semua orang selamat setelah gempa terjadi di sebelah pusat pelatihan. Bantuan sedang dikirim.",
+    "final": "EARTHQUAKE",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-EARTHQUAKE-04",
+    "text": "Informasi gempa telah diperiksa di lokasi dan ternyata benar; pesan ini bukan pengumuman latihan.",
+    "final": "EARTHQUAKE",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-EARTHQUAKE-05",
+    "text": "Skenario yang dibaca peserta berbeda dari gempa sungguhan yang sedang ditangani di luar gedung.",
+    "final": "EARTHQUAKE",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-EARTHQUAKE-06",
+    "text": "Tadi malam gempa merusak fasilitas di kampung, meskipun tidak ada orang yang terluka.",
+    "final": "EARTHQUAKE",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-EARTHQUAKE-07",
+    "text": "Tim yang semula mengira hanya latihan menemukan gempa nyata dan meminta bantuan segera.",
+    "final": "EARTHQUAKE",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-EARTHQUAKE-08",
+    "text": "Peristiwa gempa memang terjadi pagi ini. Kabar bahwa semuanya hanya peragaan sudah dibantah petugas.",
+    "final": "EARTHQUAKE",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-FIRE-01",
+    "text": "Latihan penyelamatan dihentikan: kebakaran yang sesungguhnya baru terjadi dan warga dievakuasi.",
+    "final": "FIRE",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-FIRE-02",
+    "text": "Tidak ada korban jiwa, tetapi kebakaran benar-benar terjadi dan petugas memeriksa bangunan rusak.",
+    "final": "FIRE",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-FIRE-03",
+    "text": "Semua orang selamat setelah kebakaran terjadi di sebelah pusat pelatihan. Bantuan sedang dikirim.",
+    "final": "FIRE",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-FIRE-04",
+    "text": "Informasi kebakaran telah diperiksa di lokasi dan ternyata benar; pesan ini bukan pengumuman latihan.",
+    "final": "FIRE",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-FIRE-05",
+    "text": "Skenario yang dibaca peserta berbeda dari kebakaran sungguhan yang sedang ditangani di luar gedung.",
+    "final": "FIRE",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-FIRE-06",
+    "text": "Tadi malam kebakaran merusak fasilitas di kampung, meskipun tidak ada orang yang terluka.",
+    "final": "FIRE",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-FIRE-07",
+    "text": "Tim yang semula mengira hanya latihan menemukan kebakaran nyata dan meminta bantuan segera.",
+    "final": "FIRE",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-FIRE-08",
+    "text": "Peristiwa kebakaran memang terjadi pagi ini. Kabar bahwa semuanya hanya peragaan sudah dibantah petugas.",
+    "final": "FIRE",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-ACCIDENT-01",
+    "text": "Latihan penyelamatan dihentikan: kecelakaan yang sesungguhnya baru terjadi dan warga dievakuasi.",
+    "final": "ACCIDENT",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-ACCIDENT-02",
+    "text": "Tidak ada korban jiwa, tetapi kecelakaan benar-benar terjadi dan petugas memeriksa bangunan rusak.",
+    "final": "ACCIDENT",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-ACCIDENT-03",
+    "text": "Semua orang selamat setelah kecelakaan terjadi di sebelah pusat pelatihan. Bantuan sedang dikirim.",
+    "final": "ACCIDENT",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-ACCIDENT-04",
+    "text": "Informasi kecelakaan telah diperiksa di lokasi dan ternyata benar; pesan ini bukan pengumuman latihan.",
+    "final": "ACCIDENT",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-ACCIDENT-05",
+    "text": "Skenario yang dibaca peserta berbeda dari kecelakaan sungguhan yang sedang ditangani di luar gedung.",
+    "final": "ACCIDENT",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-ACCIDENT-06",
+    "text": "Tadi malam kecelakaan merusak fasilitas di kampung, meskipun tidak ada orang yang terluka.",
+    "final": "ACCIDENT",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-ACCIDENT-07",
+    "text": "Tim yang semula mengira hanya latihan menemukan kecelakaan nyata dan meminta bantuan segera.",
+    "final": "ACCIDENT",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-ACCIDENT-08",
+    "text": "Peristiwa kecelakaan memang terjadi pagi ini. Kabar bahwa semuanya hanya peragaan sudah dibantah petugas.",
+    "final": "ACCIDENT",
+    "family": "context_diagnostic",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-NON_EVENT-01",
+    "text": "Panitia memastikan benturan mobil dalam latihan kecelakaan hanyalah peragaan; tidak berlangsung kejadian nyata.",
+    "final": "NON_EVENT",
+    "family": "exercise_only",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-NON_EVENT-02",
+    "text": "Simulasi gempa memakai efek getaran. Pernyataan tentang bangunan runtuh hanya bagian naskah kegiatan.",
+    "final": "NON_EVENT",
+    "family": "exercise_only",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-NON_EVENT-03",
+    "text": "Air untuk latihan banjir disiapkan dalam kolam buatan; tidak terjadi banjir sungguhan di kampung.",
+    "final": "NON_EVENT",
+    "family": "exercise_only",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-NON_EVENT-04",
+    "text": "Adegan kebakaran pada pelatihan menggunakan alat peraga, tanpa adanya peristiwa nyata.",
+    "final": "NON_EVENT",
+    "family": "exercise_only",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-NON_EVENT-05",
+    "text": "Kendaraan yang tampak rusak itu properti kelas pertolongan kecelakaan, bukan akibat kecelakaan sungguhan.",
+    "final": "NON_EVENT",
+    "family": "exercise_only",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-NON_EVENT-06",
+    "text": "Tulisan gempa sungguhan pada contoh formulir hanya bahan belajar dan tidak melaporkan suatu kejadian.",
+    "final": "NON_EVENT",
+    "family": "exercise_only",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-NON_EVENT-07",
+    "text": "Petugas menyelesaikan peragaan tanggap banjir. Kerusakan dan korban yang ditampilkan semuanya tiruan.",
+    "final": "NON_EVENT",
+    "family": "exercise_only",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "DIAG083-NON_EVENT-08",
+    "text": "Suara ledakan dan api di layar adalah rekaman latihan kebakaran; petugas memastikan lokasi sekarang aman tanpa kejadian nyata.",
+    "final": "NON_EVENT",
+    "family": "exercise_only",
+    "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+  },
+  {
+    "id": "FINAL083-FLOOD-01",
+    "text": "Banjir memutus akses pasar di Kelurahan Puspanala sejak subuh.",
+    "final": "FLOOD",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "plain",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FLOOD-02",
+    "text": "Tiga rumah terendam banjir malam kemarin di Dusun Gintungasri.",
+    "final": "FLOOD",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "object_first",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FLOOD-03",
+    "text": "Regu SAR mengungsikan penduduk dari Desa Sekarwangi akibat banjir pagi ini.",
+    "final": "FLOOD",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "response",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FLOOD-04",
+    "text": "Peserta latihan mengangkat perahu ketika banjir sungguhan merendam gudang beras di Dusun Waringinreja sore tadi.",
+    "final": "FLOOD",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "real_during_exercise",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FLOOD-05",
+    "text": "Petugas kelurahan mengonfirmasi banjir di Kelurahan Mekarnala malam ini; informasi tersebut bukan skenario latihan.",
+    "final": "FLOOD",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "rumor_verified",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FLOOD-06",
+    "text": "Luapan sungai menyebabkan banjir menggenangi kebun sayur di Desa Karangnusa siang tadi.",
+    "final": "FLOOD",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "cause",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FLOOD-07",
+    "text": "Banjir di Desa Palaswangi kemarin malam mengakibatkan seorang warga terluka.",
+    "final": "FLOOD",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "victim",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FLOOD-08",
+    "text": "Dua nelayan meninggal saat banjir di Kampung Rengganala pagi tadi.",
+    "final": "FLOOD",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "death",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FLOOD-09",
+    "text": "Tak ada korban jiwa, tetapi banjir merusak pagar puskesmas di Desa Manggalarum sore ini.",
+    "final": "FLOOD",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "local_negation",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FLOOD-10",
+    "text": "Sejak tadi malam, banjir masih menggenangi jalan desa di Kampung Cikareja.",
+    "final": "FLOOD",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "ongoing",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-01",
+    "text": "Gempa mengguncang Kecamatan Sukamanah siang ini; warga keluar dari rumah.",
+    "final": "EARTHQUAKE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "plain",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-02",
+    "text": "Atap balai warga ambruk akibat gempa subuh tadi di Desa Ciparanti.",
+    "final": "EARTHQUAKE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "object_first",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-03",
+    "text": "Setelah gempa di Dusun Sindangnala pagi tadi, relawan mendirikan tenda.",
+    "final": "EARTHQUAKE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "response",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-04",
+    "text": "Instruktur menghentikan latihan karena gempa betulan meretakkan tembok kelas di Sekolah Binarasa siang tadi.",
+    "final": "EARTHQUAKE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "real_during_exercise",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-05",
+    "text": "Tim BPBD memastikan kabar gempa di Desa Kertanala tadi malam benar; satu rumah rusak.",
+    "final": "EARTHQUAKE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "rumor_verified",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-06",
+    "text": "Akibat pergeseran sesar, gempa merusak menara air di Kelurahan Tirtanala sore ini.",
+    "final": "EARTHQUAKE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "cause",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-07",
+    "text": "Dua pedagang terluka dalam gempa di Pasar Ciburuan kemarin pagi.",
+    "final": "EARTHQUAKE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "victim",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-08",
+    "text": "Gempa di Desa Langlangreja malam tadi menimbulkan satu korban meninggal.",
+    "final": "EARTHQUAKE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "death",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-09",
+    "text": "Tidak ada korban luka setelah gempa sore tadi di Kampung Pasirnala; dinding musala retak.",
+    "final": "EARTHQUAKE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "local_negation",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-10",
+    "text": "Gempa susulan terasa di Desa Wanasukma malam ini dan warga menunggu di luar.",
+    "final": "EARTHQUAKE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "ongoing",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FIRE-01",
+    "text": "Kebakaran melalap kios buah di Pasar Palagan dini hari tadi.",
+    "final": "FIRE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "plain",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FIRE-02",
+    "text": "Dua bengkel hangus dalam kebakaran di Jalan Nataraya kemarin sore.",
+    "final": "FIRE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "object_first",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FIRE-03",
+    "text": "Regu damkar memadamkan api saat kebakaran di Gudang Puspalaras siang ini.",
+    "final": "FIRE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "response",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FIRE-04",
+    "text": "Bukan alat peraga yang terbakar: kebakaran sungguhan merusak kantin di Pusat Latihan Wiranala pagi ini.",
+    "final": "FIRE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "real_during_exercise",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FIRE-05",
+    "text": "Pemeriksaan petugas desa membuktikan kebakaran di Desa Bayumanah tadi malam merupakan kejadian nyata.",
+    "final": "FIRE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "rumor_verified",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FIRE-06",
+    "text": "Tabung gas bocor memicu kebakaran yang menghanguskan dapur warung di Kampung Nusaloka sore tadi.",
+    "final": "FIRE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "cause",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FIRE-07",
+    "text": "Kebakaran subuh tadi di Kelurahan Ringinmanah mengakibatkan satu pemilik rumah terluka.",
+    "final": "FIRE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "victim",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FIRE-08",
+    "text": "Dalam kebakaran di Desa Cikamulya malam kemarin, seorang pekerja meninggal.",
+    "final": "FIRE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "death",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FIRE-09",
+    "text": "Kebakaran merusak ruang penyimpanan di Balai Naramukti siang tadi; semua orang selamat.",
+    "final": "FIRE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "local_negation",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-FIRE-10",
+    "text": "Malam ini, api masih membakar tumpukan kayu di Dusun Ciparayasih.",
+    "final": "FIRE",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "ongoing",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-ACCIDENT-01",
+    "text": "Kecelakaan melibatkan sepeda motor di Jalan Sindangarum pagi tadi.",
+    "final": "ACCIDENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "plain",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-ACCIDENT-02",
+    "text": "Mobil pengangkut telur terbalik dalam kecelakaan di Desa Bantarwulan siang ini.",
+    "final": "ACCIDENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "object_first",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-ACCIDENT-03",
+    "text": "Petugas polisi mengatur lalu lintas setelah kecelakaan di Jalan Madunala kemarin sore.",
+    "final": "ACCIDENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "response",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-ACCIDENT-04",
+    "text": "Pelatihan dihentikan ketika kecelakaan nyata merusak mobil instruktur di Lapangan Sekarnala sore tadi.",
+    "final": "ACCIDENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "real_during_exercise",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-ACCIDENT-05",
+    "text": "Rekaman latihan itu terputus oleh kecelakaan sungguhan di Jalan Giriarum pagi ini; seorang pengendara terluka.",
+    "final": "ACCIDENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "rumor_verified",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-ACCIDENT-06",
+    "text": "Ban pecah memicu kecelakaan di Desa Wanamanah malam tadi; satu truk rusak.",
+    "final": "ACCIDENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "cause",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-ACCIDENT-07",
+    "text": "Akibat kecelakaan di Jalan Sukawening subuh tadi, dua penumpang terluka.",
+    "final": "ACCIDENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "victim",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-ACCIDENT-08",
+    "text": "Seorang sopir meninggal pada kecelakaan di Kampung Palawana kemarin malam.",
+    "final": "ACCIDENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "death",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-ACCIDENT-09",
+    "text": "Kecelakaan merusak dua motor di Jalan Puspasukma siang tadi, tanpa korban luka.",
+    "final": "ACCIDENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "local_negation",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-ACCIDENT-10",
+    "text": "Tadi sore, kecelakaan melibatkan bus sekolah di Kelurahan Mekarwening.",
+    "final": "ACCIDENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "plain",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-NON_EVENT-01",
+    "text": "Di Balai Sukmanala siang ini, peserta memperagakan kecelakaan dengan kendaraan tiruan; seluruh adegan hanya latihan.",
+    "final": "NON_EVENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "exercise_only",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-NON_EVENT-02",
+    "text": "Regu damkar menggunakan layar untuk simulasi kebakaran di Aula Giriwening pagi tadi; tidak ada kejadian nyata.",
+    "final": "NON_EVENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "simulation",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-NON_EVENT-03",
+    "text": "Getaran buatan menandai peragaan gempa di Pusat Belajar Naramerta sore ini, bukan gempa sungguhan.",
+    "final": "NON_EVENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "exercise_only",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-NON_EVENT-04",
+    "text": "Banjir pada latihan di Lapangan Kertamanah kemarin pagi ditiru dengan kolam kecil; permukiman tetap kering.",
+    "final": "NON_EVENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "simulation",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-NON_EVENT-05",
+    "text": "Petugas membahas potensi banjir di Desa Nusalintang pekan depan; sampai kini belum ada kejadian.",
+    "final": "NON_EVENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "forecast",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-NON_EVENT-06",
+    "text": "Kepala dusun membantah kabar kebakaran di Dusun Girimadu malam tadi; pemeriksaan tidak menemukan peristiwa tersebut.",
+    "final": "NON_EVENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "denial",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-NON_EVENT-07",
+    "text": "Guru menguraikan teori penyebab gempa di Sekolah Wanasukma pagi ini; ini pelajaran, tanpa peristiwa tertentu.",
+    "final": "NON_EVENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "education",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-NON_EVENT-08",
+    "text": "Pedagang berkata tokonya banjir pesanan hari ini; ungkapan itu berarti banyak pembeli.",
+    "final": "NON_EVENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "metaphor",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-NON_EVENT-09",
+    "text": "Cerita pendek tentang kecelakaan di negeri rekaan dibacakan peserta kelas sore tadi; kisahnya fiksi.",
+    "final": "NON_EVENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "fiction",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  },
+  {
+    "id": "FINAL083-NON_EVENT-10",
+    "text": "Peneliti menyajikan statistik kebakaran tahunan di Gedung Wanasukma siang tadi, tanpa melaporkan kejadian baru.",
+    "final": "NON_EVENT",
+    "label_origin": "REVIEWED_FINAL083_RETIRED_TO_DEVELOPMENT",
+    "family": "statistics",
+    "reviewer": "Bintang",
+    "source_gold_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c"
+  }
+]

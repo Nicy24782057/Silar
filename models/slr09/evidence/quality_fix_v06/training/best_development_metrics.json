@@ -1,0 +1,38 @@
+{
+  "accuracy": 0.8835616438356164,
+  "macro_f1": 0.8864703531804828,
+  "per_class": {
+    "FLOOD": {
+      "support": 32,
+      "precision": 0.8285714285714286,
+      "recall": 0.90625,
+      "f1": 0.8656716417910447
+    },
+    "EARTHQUAKE": {
+      "support": 24,
+      "precision": 0.8846153846153846,
+      "recall": 0.9583333333333334,
+      "f1": 0.92
+    },
+    "FIRE": {
+      "support": 35,
+      "precision": 1.0,
+      "recall": 0.9142857142857143,
+      "f1": 0.9552238805970149
+    },
+    "ACCIDENT": {
+      "support": 24,
+      "precision": 0.96,
+      "recall": 1.0,
+      "f1": 0.9795918367346939
+    },
+    "NON_EVENT": {
+      "support": 31,
+      "precision": 0.75,
+      "recall": 0.6774193548387096,
+      "f1": 0.711864406779661
+    }
+  },
+  "predeclared_selection_metric": 0.7526881720430106,
+  "targets_met": false
+}

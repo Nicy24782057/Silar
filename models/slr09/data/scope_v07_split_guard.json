@@ -1,0 +1,8 @@
+{
+  "new50_sha256": "737399b8e9479cf2732b5c47edc2f28143f93dd9f75451e247aeb54b46acea1c",
+  "normalized_exact_overlap_count": 0,
+  "comparison_records": 1430,
+  "semantic_or_template_independence_established": false,
+  "human_reference_reviewed": false,
+  "frozen_before_training": true
+}

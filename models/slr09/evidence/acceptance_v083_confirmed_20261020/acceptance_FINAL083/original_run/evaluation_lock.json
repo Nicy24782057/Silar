@@ -1,0 +1,35 @@
+{
+  "frozen_at": "2026-10-20T14:17:49.968931+00:00",
+  "bundle_sha256": "291075bdd3f9bdc048bd7deed46668ebb20bd104095a979cb81290f973418f2c",
+  "review_file_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c",
+  "model_and_code_binding": {
+    "candidate_version": "0.8.3",
+    "files_sha256": {
+      "acceptance/known_inputs.json": "82b4490a2e7bf48016deafefd6816d0a3d92ba16f1ccca6947c774c81f5adeda",
+      "asset_manifest.json": "9ba0645c091ba474c6ef478db47bfc43f6db86d3ea7319ecbe8350f145cd7322",
+      "code/acceptance/evaluate_acceptance.py": "0911fdef1538e5ff36084983a63b5f527bd7680da82d2443c250c44d7142ad6c",
+      "code/acceptance/import_review_xlsx.py": "51dd1853839bd251bde7f724ed6af15250aa797c49c050635de5678a597f93af",
+      "code/active_nara_adapter/legacy_postprocessing.py": "06275b3aa338718689fba66984626754e6b34739156f65e378ceaad4b06bfa9f",
+      "code/active_nara_adapter/nara_data.py": "eea1124afd1d0628b7a96c3d9dbca43a116f8bed0fef76f2c67718e7ff2e4a29",
+      "code/active_nara_adapter/nara_experiment.py": "734e9c15a13ac967a72a482c68a9fc777e6632a75957ffd854b0863894a28409",
+      "code/active_nara_adapter/nara_metrics.py": "8f74d058db3e613c77df83c772b5142f2b504dfde542455284754e4c8ceefcb7",
+      "code/active_nara_adapter/silar_ai_adapter.py": "254e4def1db5e2b73c8ac5e0dec4718f7afa531ba46055c5d9cc15e0d4acd9f2",
+      "code/active_nara_adapter/silar_nara_composition.py": "cb62fe8d755f0dacefab8ebab44e4345a8c0e89c09d8b085ef116b103cf421b0",
+      "code/active_nara_adapter/silar_postprocessing.py": "61e466d891a952c3fe560b7f3b99b9942bab7766871f18ad8969d464e60e5899",
+      "code/active_nara_adapter/silar_victim_guard.py": "691c8d9a74c15d91720e8ca8672d6ce1fa575542ceb55858ff81f050bd100ac9",
+      "code/active_nara_adapter/slr09_candidate_runtime.py": "ee8b685edb34925cf08ff1e9fd53655ae8838ff032be7fe230a2752c7b01f8e1",
+      "code/active_nara_adapter/slr09_runtime.py": "f0dc27fab23ef99046d615f24b5ea4c0d7fba5010314f3769ad0d730404a085d",
+      "config/SLR09_Konfigurasi_Integrasi_v0.8.json": "11383974c01d0e45d831dc7aa103469ab9c28824f5e61cdfd0759e3b8859945c",
+      "config/inference_environment.json": "d2f235f7b5b3f4d7cb445fa5870cfc6b0b49f9f1a429e8518075c4ff53955bbd",
+      "config/quality_candidate_asset_lock_v0.8.3.json": "6d159b6c3577c10515f50a884d7c599512d1ecf193f3cb62e6f43c1f9da9c85a",
+      "config/requirements-inference.txt": "1e496aa6408ac46bd8545e395a6f960edcf5b5bc85aa3d165632da37421823f8",
+      "data/final_reference_identity_v0.8.3.json": "4ac7bb61c1f2aecea9d6126a8c9fb5d56e32dc1b612907c09747cb5b7ce378dd",
+      "data/final_reference_proposals_v0.8.3.json": "c11e9877f7137790f8cb8480c7b9099fd93aeb01d43c2a2b40aca91bd8b83190",
+      "data/retirement_after_FINAL082_v0.8.3.json": "35a4fcbc96832fe45f034990cebb52df25f9cbbf490dc561bb2ea000039fb286"
+    }
+  },
+  "threshold": 0.95,
+  "test_not_used_for_checkpoint_selection": true,
+  "initial_training_membership_verified": false,
+  "notes": "Exact overlap checks only; synthetic pilot, not a population estimate"
+}

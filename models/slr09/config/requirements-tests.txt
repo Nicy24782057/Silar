@@ -1,0 +1,3 @@
+# Lingkungan suite lokal yang benar-benar dijalankan: Python 3.12.14.
+# Pisahkan dari lingkungan inference agar pin NumPy tidak saling mengganti.
+numpy==2.3.5

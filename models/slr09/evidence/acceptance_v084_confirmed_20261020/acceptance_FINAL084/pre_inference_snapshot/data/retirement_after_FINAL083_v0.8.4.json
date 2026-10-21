@@ -1,0 +1,13 @@
+{
+  "schema": "slr09-reference-retirement-0.8.4",
+  "retired_at": "2026-10-20T14:40:38.551297+00:00",
+  "reason": "User requested continued correction after the completed FINAL083 acceptance failure; its seen errors will now inform development.",
+  "source_reference_sha256": "ba83d0014a4ed1968dc62c7e71c06480bf37f5beefcb14968519f6083196558c",
+  "previous_status": "COMPLETED_ACCEPTANCE_FINAL083_6_OF_9_CHECKS_MET",
+  "new_status": "DEVELOPMENT_AND_REGRESSION_NOT_FRESH_ACCEPTANCE",
+  "records": 50,
+  "all_reviewed_gold_preserved": true,
+  "targets_and_cutoff_unchanged": true,
+  "new_human_reviewed_acceptance_reference_required": true,
+  "original_result_path": "evidence/acceptance_v083_confirmed_20261020/acceptance_FINAL083/original_run/evaluation.json"
+}

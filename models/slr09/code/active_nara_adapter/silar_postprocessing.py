@@ -1,7 +1,8 @@
-"""Filter normalisasi SLR09 yang terbatas pada dua temuan review.
+"""Filter lokal untuk negasi, waktu dan fragmen informasi non-dampak.
 
-Tidak mengubah token/span mentah, menambah hasil ekstraksi, atau menentukan
-kategori/uncertain. Aturan sengaja konservatif; bukan pendeteksi semantik umum.
+Tidak mengubah token/span mentah atau menentukan kategori/uncertain.
+Fallback tambahan hanya mengambil frasa waktu literal yang ditentukan.
+Aturan sengaja terbatas; bukan pendeteksi semantik umum.
 """
 
 from __future__ import annotations
@@ -9,7 +10,7 @@ from __future__ import annotations
 import re
 
 
-POSTPROCESSING_VERSION = "silar-postprocessing-0.2.0"
+POSTPROCESSING_VERSION = "silar-postprocessing-0.3.1"
 _TOKEN = re.compile(r"\w+(?:[-']\w+)*|[^\w\s]", flags=re.UNICODE)
 _NEGATED_TIME_PREFIXES = (
     ("bukan",), ("bukan", "pada"),
@@ -85,3 +86,46 @@ def filter_spatial_information(
         else:
             kept.append(value)
     return kept, removed
+
+
+def filter_nonimpact_information(narrative, values):
+    """Buang frasa komunikasi/latihan/penyangkalan, bukan kategori kejadian.
+
+    Filter lokal pada fragmen INFORMATION, tidak memblokir narasi yang
+    mengandung kata simulasi dan tidak menambah label/uncertainty baru.
+    """
+    kept, removed = [], []
+    reporting = re.compile(r'\b(?:memastikan|melaporkan|menjelaskan|menyebut|dibahas|membahas|penyuluhan|mengonfirmasi|mengkonfirmasi|memverifikasi|membantah|pemeriksaan)\b',re.I)
+    effects = re.compile(r'\b(?:terendam|merendam|rusak|merusak|kerusakan|roboh|merobohkan|terluka|meninggal|tewas|menghanguskan|hangus|mengevakuasi|mengungsi|berlarian|memadamkan|melanda|mengguncang|menyebabkan|mengakibatkan|menutup|melibatkan)\b',re.I)
+    training = re.compile(r'^(?:(?:menggelar|mengadakan|mengikuti)\s+)?(?:simulasi|latihan)\b',re.I)
+    absent_outcome = re.compile(r'^(?:tanpa|nihil)\s+(?:(?:ada|adanya|laporan|mengalami|terjadi)\s+)*(?:korban|luka|cedera|kematian|kerusakan|dampak|kerugian)\b',re.I)
+    absent_event = re.compile(r'(?:tidak|tak|belum)\s+(?:(?:ada|adanya|terjadi|ditemukan|dilaporkan)\s+)+(?:kejadian|peristiwa|korban|luka|cedera|kematian|kerusakan|dampak|kerugian)(?:\s+(?:baru|nyata|sungguhan|luka|jiwa|meninggal|apapun|lagi))*[.!]?',re.I)
+    for value in values:
+        folded=value.casefold().strip()
+        # A negated event is not a positive impact. Keep mixed fragments with
+        # an explicit later effect so a reporting cue cannot erase real damage.
+        reject = bool(absent_outcome.search(folded)) or folded in {'tanpa','nihil'}
+        reject |= bool(absent_event.fullmatch(folded))
+        reject |= bool(reporting.search(value) and not effects.search(value))
+        reject |= bool(training.search(folded) and not effects.search(value))
+        reject |= folded in {'tolong','laporan','sampai','hingga','karena','namun'} or folded.endswith('diminta bersiap menghadapi')
+        if reject:removed.append({'field':'impacts','text':value,'rule':'NONIMPACT_INFORMATION_FRAGMENT'})
+        else:kept.append(value)
+    return kept,removed
+
+
+def filter_explicitly_unaffected_objects(narrative, values):
+    from silar_nara_composition import locate
+    denial=re.compile(r'\b(?:tanpa|nihil|tidak|tak|belum)\s+(?:(?:ada|terdapat|kerusakan|pada|yang|korban|luka|jiwa)\s+)*$',re.I)
+    kept,removed=[],[]
+    for value in values:
+        span=locate(value,narrative)
+        prior=re.split(r'[.;!?]|\b(?:tetapi|namun|sedangkan)\b',narrative[:span['start']],flags=re.I)[-1] if span else ''
+        if span and denial.search(prior+' '):removed.append({'field':'affected_objects','text':value,'rule':'OBJECT_DAMAGE_EXPLICITLY_DENIED'})
+        else:kept.append(value)
+    return kept,removed
+
+
+def supplemental_time_fallback(text):
+    """Frasa waktu literal tambahan; tetap teks, tidak menjadi timestamp."""
+    return [m.group() for m in re.finditer(r'\b(?:sekarang|saat\s+ini|kemarin\s+(?:pagi|siang|sore|malam)|(?:pagi|siang|sore|malam)\s+tadi)\b',text,re.I)]

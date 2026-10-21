@@ -1,0 +1,68 @@
+{
+  "scope": "SEEN_OUTPUT_REPLAY_NOT_ACCEPTANCE",
+  "sets": {
+    "human_regression50": {
+      "nonempty_exact": 0.9162303664921466,
+      "empty_spurious_rate": 0.012578616352201259,
+      "checks": {
+        "sena_macro_f1": true,
+        "non_event_recall": true,
+        "all_event_class_recalls": true,
+        "nara_macro_f1_all_14_non_o": true,
+        "nara_exact_span_f1": true,
+        "fields_nonempty_exact": true,
+        "empty_field_spurious_rate": true,
+        "adapter_fusion_contract": true,
+        "simulation_vs_real_exercise_contrasts": true
+      }
+    },
+    "FINAL081_seen": {
+      "nonempty_exact": 0.855072463768116,
+      "empty_spurious_rate": 0.013986013986013986,
+      "checks": {
+        "sena_macro_f1": true,
+        "non_event_recall": true,
+        "all_event_class_recalls": true,
+        "nara_macro_f1_all_14_non_o": true,
+        "nara_exact_span_f1": true,
+        "fields_nonempty_exact": true,
+        "empty_field_spurious_rate": true,
+        "adapter_fusion_contract": true,
+        "simulation_vs_real_exercise_contrasts": true
+      }
+    },
+    "FINAL082_seen": {
+      "nonempty_exact": 0.8911917098445595,
+      "empty_spurious_rate": 0.044585987261146494,
+      "checks": {
+        "sena_macro_f1": true,
+        "non_event_recall": true,
+        "all_event_class_recalls": true,
+        "nara_macro_f1_all_14_non_o": true,
+        "nara_exact_span_f1": true,
+        "fields_nonempty_exact": true,
+        "empty_field_spurious_rate": true,
+        "adapter_fusion_contract": true,
+        "simulation_vs_real_exercise_contrasts": true
+      }
+    },
+    "FINAL083_seen": {
+      "nonempty_exact": 0.8457446808510638,
+      "empty_spurious_rate": 0.043209876543209874,
+      "checks": {
+        "sena_macro_f1": true,
+        "non_event_recall": false,
+        "all_event_class_recalls": true,
+        "nara_macro_f1_all_14_non_o": true,
+        "nara_exact_span_f1": true,
+        "fields_nonempty_exact": true,
+        "empty_field_spurious_rate": true,
+        "adapter_fusion_contract": true,
+        "simulation_vs_real_exercise_contrasts": false
+      }
+    }
+  },
+  "model_inference_executed": false,
+  "new_acceptance_inference_executed": false,
+  "quality_acceptance_approved": false
+}

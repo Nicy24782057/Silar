@@ -1,0 +1,224 @@
+{
+  "schema": "slr09-saved-smoke-audit-0.1",
+  "run_id": "20261018T224651Z_672df897",
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "workflow_and_runtime_succeeded",
+      "passed": true
+    },
+    {
+      "name": "no_training_reported",
+      "passed": true
+    },
+    {
+      "name": "scope_consistent_representative",
+      "passed": true
+    },
+    {
+      "name": "inference_and_fusion_executed",
+      "passed": true
+    },
+    {
+      "name": "input_hash",
+      "passed": true
+    },
+    {
+      "name": "prediction_hash",
+      "passed": true
+    },
+    {
+      "name": "configuration_hash",
+      "passed": true
+    },
+    {
+      "name": "candidate_lock_hash",
+      "passed": true
+    },
+    {
+      "name": "selected_configuration_unchanged",
+      "passed": true
+    },
+    {
+      "name": "threshold_095",
+      "passed": true
+    },
+    {
+      "name": "dependency_versions_match_profile",
+      "passed": true
+    },
+    {
+      "name": "dependency_versions_match_runtime",
+      "passed": true
+    },
+    {
+      "name": "sena_archive_hash",
+      "passed": true
+    },
+    {
+      "name": "sena_runtime_file_hashes",
+      "passed": true
+    },
+    {
+      "name": "sena_selected_weights",
+      "passed": true
+    },
+    {
+      "name": "sena_label_order",
+      "passed": true
+    },
+    {
+      "name": "sena_identity",
+      "passed": true
+    },
+    {
+      "name": "nara_archive_hash",
+      "passed": true
+    },
+    {
+      "name": "nara_runtime_file_hashes",
+      "passed": true
+    },
+    {
+      "name": "nara_selected_weights",
+      "passed": true
+    },
+    {
+      "name": "nara_label_order",
+      "passed": true
+    },
+    {
+      "name": "nara_identity",
+      "passed": true
+    },
+    {
+      "name": "source_package_identity",
+      "passed": true
+    },
+    {
+      "name": "all_source_snapshot_files_match",
+      "passed": true
+    },
+    {
+      "name": "source_bundle_identity",
+      "passed": true
+    },
+    {
+      "name": "record_counts",
+      "passed": true
+    },
+    {
+      "name": "record_ids_exactly_match",
+      "passed": true
+    },
+    {
+      "name": "SMOKE-SYNTHETIC-001_input_identity",
+      "passed": true
+    },
+    {
+      "name": "SMOKE-SYNTHETIC-001_seven_and_eight_fields",
+      "passed": true
+    },
+    {
+      "name": "SMOKE-SYNTHETIC-001_category_and_block_signal",
+      "passed": true
+    },
+    {
+      "name": "SMOKE-SYNTHETIC-001_uncertainty_rule",
+      "passed": true
+    },
+    {
+      "name": "SMOKE-SYNTHETIC-001_candidate_output_versions",
+      "passed": true
+    },
+    {
+      "name": "SMOKE-SYNTHETIC-002_input_identity",
+      "passed": true
+    },
+    {
+      "name": "SMOKE-SYNTHETIC-002_seven_and_eight_fields",
+      "passed": true
+    },
+    {
+      "name": "SMOKE-SYNTHETIC-002_category_and_block_signal",
+      "passed": true
+    },
+    {
+      "name": "SMOKE-SYNTHETIC-002_uncertainty_rule",
+      "passed": true
+    },
+    {
+      "name": "SMOKE-SYNTHETIC-002_candidate_output_versions",
+      "passed": true
+    },
+    {
+      "name": "SMOKE-SYNTHETIC-003_input_identity",
+      "passed": true
+    },
+    {
+      "name": "SMOKE-SYNTHETIC-003_seven_and_eight_fields",
+      "passed": true
+    },
+    {
+      "name": "SMOKE-SYNTHETIC-003_category_and_block_signal",
+      "passed": true
+    },
+    {
+      "name": "SMOKE-SYNTHETIC-003_uncertainty_rule",
+      "passed": true
+    },
+    {
+      "name": "SMOKE-SYNTHETIC-003_candidate_output_versions",
+      "passed": true
+    }
+  ],
+  "checks_passed": 42,
+  "training_executed_by_audit": false,
+  "neural_inference_repeated_by_audit": false,
+  "new_quality_metrics_computed": false,
+  "source_snapshot_against_zip_verified": true,
+  "environment_scope": "REPRESENTATIVE",
+  "candidate_loading_verified_in_reported_environment": true,
+  "target_vm_verified": false,
+  "quality_acceptance_approved": false,
+  "observed_labels": [
+    "ACCIDENT",
+    "FIRE",
+    "FLOOD"
+  ],
+  "non_event_prediction_seen": false,
+  "low_confidence_prediction_seen": false,
+  "diagnostic_rows": [
+    {
+      "id": "SMOKE-SYNTHETIC-001",
+      "text": "Banjir merendam dua rumah di Rajabasa tadi pagi.",
+      "prediction": "FLOOD",
+      "confidence": 0.9787775278091431,
+      "uncertain": false,
+      "uncertain_reasons": [],
+      "input_is_synthetic": true,
+      "formal_gold_label_assigned": false
+    },
+    {
+      "id": "SMOKE-SYNTHETIC-002",
+      "text": "Petugas melakukan simulasi kebakaran di sekolah.",
+      "prediction": "FIRE",
+      "confidence": 0.9757677316665649,
+      "uncertain": false,
+      "uncertain_reasons": [],
+      "input_is_synthetic": true,
+      "formal_gold_label_assigned": false
+    },
+    {
+      "id": "SMOKE-SYNTHETIC-003",
+      "text": "Kecelakaan di Jalan Mawar menyebabkan satu warga terluka.",
+      "prediction": "ACCIDENT",
+      "confidence": 0.9910699129104614,
+      "uncertain": false,
+      "uncertain_reasons": [],
+      "input_is_synthetic": true,
+      "formal_gold_label_assigned": false
+    }
+  ],
+  "quality_observation": "SMOKE-SYNTHETIC-002 menyebut simulasi; diprediksi FIRE ber-confidence tinggi tanpa uncertain. Perlu review mutu; bukan gold atau skor test independen."
+}

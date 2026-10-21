@@ -119,6 +119,6 @@ Dataset: Semantic Role Labeling Datasets for Crisis Event, Ariyanto dkk.; halama
 
 Identitas byte dataset run mengikuti asset_lock: arsip 3e22f54044e7b44f49a243aeb3e6fdad3dc2ce0d000ce8a0fd5a33f7d9c56cbf dan CSV 14ff9121e37cdaed2a0b8f35e2131da4c710daebf2cad0781fdbbdfdad00c211. Versi halaman publik tidak dipakai untuk mengklaim kesamaan byte arsip. Dataset besar dan bobot tetap mengikuti sumber Drive; paket tidak menyertakan bobot.
 
-## Pemeriksaan paket
+## Validasi hasil analisis
 
 Metrik baru SENA telah dicocokkan dengan scikit-learn (accuracy, macro/weighted F1, precision/recall/F1/support setiap kelas dan confusion matrix) pada kedua acuan 620 narasi yang sama. Sumber review cocok dengan checkpoint, manifest dan workbook terkunci. Hash input dan probabilitas dicocokkan pada setiap narasi. Tidak ada training atau inferensi neural baru pada penyusunan paket. Evidence berisi hasil pemeriksaan, hash notebook sumber, status notebook baru dan manifest berkas.

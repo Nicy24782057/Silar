@@ -1,0 +1,11 @@
+{
+  "known_texts": 2534,
+  "records": 50,
+  "tokens": 671,
+  "reference_sha256": "146479d8d6ca17a82db37ecc9a7791eb04c2371ef0ea59cd3abd0573bbe0989e",
+  "bundle_sha256": "53aa509299be176af4d1de9e1f4e9628a85cd4f1587bfe565fa58da64eae7088",
+  "normalized_exact_overlap": 0,
+  "status": "50_PENDING",
+  "new_neural_inference_executed": false,
+  "quality_acceptance_approved": false
+}

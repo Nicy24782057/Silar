@@ -1,0 +1,1538 @@
+[
+  {
+    "id": "SCOPE06-development-FLOOD-dev_reality_correction-0-P",
+    "text": "Jangan dianggap adegan buatan: air sungai meluap dan merendam rumah penduduk di Desa Wanasari barusan. Bantuan untuk peristiwa nyata sudah dikirim.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9863868272910546,
+      "EARTHQUAKE": 0.00040972924223233603,
+      "FIRE": 0.0007997206937431265,
+      "ACCIDENT": 0.0005252422127309685,
+      "NON_EVENT": 0.011878480560238927
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_reality_correction-0-N",
+    "text": "Kabar banjir yang dikaitkan dengan Desa Wanasari barusan ternyata adegan buatan. Pengelola menegaskan tidak ada kejadian asli.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.001163238425220453,
+      "EARTHQUAKE": 0.00013573707301867293,
+      "FIRE": 0.0005953173125061323,
+      "ACCIDENT": 0.0002077702233379312,
+      "NON_EVENT": 0.9978979369659168
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_education_scope-0-P",
+    "text": "Bukan pertanyaan ujian, ini laporan langsung dari Desa Wanasari: banjir baru terjadi barusan dan warga memerlukan penanganan.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9760812243715119,
+      "EARTHQUAKE": 0.0006693968319066465,
+      "FIRE": 0.00027247454126382096,
+      "ACCIDENT": 0.0007024775504885283,
+      "NON_EVENT": 0.022274426704829146
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_education_scope-0-N",
+    "text": "Pertanyaan ujian barusan meminta siswa membayangkan banjir di Desa Wanasari. Kalimat itu tidak merujuk kejadian sungguhan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0018164618476393596,
+      "EARTHQUAKE": 0.00042913166091964504,
+      "FIRE": 0.002193271693797524,
+      "ACCIDENT": 0.00025100485992394426,
+      "NON_EVENT": 0.9953101299377195
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_drill_interrupted-0-P",
+    "text": "Walaupun lokasi dipakai berlatih menghadapi kebakaran, laporan barusan dari Desa Wanasari menyatakan air sungai meluap dan merendam rumah penduduk di luar rencana latihan.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9834278662671605,
+      "EARTHQUAKE": 0.0005814241330832575,
+      "FIRE": 0.0026596862904194364,
+      "ACCIDENT": 0.0003082053855794803,
+      "NON_EVENT": 0.013022817923757351
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_drill_interrupted-0-N",
+    "text": "Di Desa Wanasari, laporan latihan barusan memakai skenario banjir. Kerusakan yang disebutkan hanya properti latihan dan semua peserta aman.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.002521689165907726,
+      "EARTHQUAKE": 0.0010528116454307155,
+      "FIRE": 0.0013884840945987788,
+      "ACCIDENT": 0.0001741752636493103,
+      "NON_EVENT": 0.9948628398304135
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_negation_target-0-P",
+    "text": "Tidak ada korban jiwa dalam banjir di Desa Wanasari barusan, tetapi air sungai meluap dan merendam rumah penduduk. Tim tanggap sedang bekerja.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9609919479180653,
+      "EARTHQUAKE": 0.0006920754543821167,
+      "FIRE": 0.001021397127042077,
+      "ACCIDENT": 0.0006231079384602554,
+      "NON_EVENT": 0.03667147156205023
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_negation_target-0-N",
+    "text": "Pemeriksaan barusan di Desa Wanasari memastikan banjir tidak terjadi. Kalimat tentang korban hanyalah rumor yang dibantah.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.004235002038209699,
+      "EARTHQUAKE": 0.00023387409258767686,
+      "FIRE": 0.0007320812251225919,
+      "ACCIDENT": 0.00023808438503980788,
+      "NON_EVENT": 0.9945609582590402
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_suppressed_alternative-0-P",
+    "text": "Petugas menyebut bukan kebakaran penyebab keadaan di Desa Wanasari barusan. Terjadi banjir, dan air sungai meluap dan merendam rumah penduduk.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9902512070336457,
+      "EARTHQUAKE": 0.0005206760651039087,
+      "FIRE": 0.0025835189316742776,
+      "ACCIDENT": 0.00043934898978324467,
+      "NON_EVENT": 0.00620524897979288
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_suppressed_alternative-0-N",
+    "text": "Petugas di Desa Wanasari barusan tidak melaporkan banjir; mereka hanya menerangkan prosedur penanganannya sebagai persiapan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.028692044984177045,
+      "EARTHQUAKE": 0.000193112398371196,
+      "FIRE": 0.0004918067914978796,
+      "ACCIDENT": 0.0002805409801772931,
+      "NON_EVENT": 0.9703424948457765
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_multiple_sentences-0-P",
+    "text": "Berhenti menyebutnya lelucon. Di Desa Wanasari barusan, air sungai meluap dan merendam rumah penduduk. Warga sudah meminta pertolongan.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9932483497875143,
+      "EARTHQUAKE": 0.00041663340073430454,
+      "FIRE": 0.0008024261884333894,
+      "ACCIDENT": 0.0005345033092493467,
+      "NON_EVENT": 0.004998087314068619
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_multiple_sentences-0-N",
+    "text": "Lelucon tentang banjir di Desa Wanasari dibicarakan barusan; penulisnya menjelaskan bahwa tidak ada peristiwa nyata yang dimaksud.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0008832233201575459,
+      "EARTHQUAKE": 0.00012688038452698442,
+      "FIRE": 0.00040633251679984914,
+      "ACCIDENT": 0.00015168672711770328,
+      "NON_EVENT": 0.9984318770513979
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_rumor_verified-0-P",
+    "text": "Dugaan bahwa video itu hanya simulasi dibantah. Peninjauan di Desa Wanasari barusan menemukan air sungai meluap dan merendam rumah penduduk, sehingga kejadian dikonfirmasi nyata.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9308547898835035,
+      "EARTHQUAKE": 0.0011224600389859417,
+      "FIRE": 0.001096279476211115,
+      "ACCIDENT": 0.0026204518628478004,
+      "NON_EVENT": 0.06430601873845163
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_rumor_verified-0-N",
+    "text": "Video yang disebut banjir di Desa Wanasari diperiksa barusan. Rekaman itu hanya simulasi; peristiwa nyata tidak terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.004829907582365725,
+      "EARTHQUAKE": 0.0016218277696229844,
+      "FIRE": 0.0015650373683960155,
+      "ACCIDENT": 0.0004634220976076453,
+      "NON_EVENT": 0.9915198051820077
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_time_scope-0-P",
+    "text": "Banjir bukan terjadi minggu depan. Di Desa Wanasari, air sungai meluap dan merendam rumah penduduk barusan dan petugas sudah menanganinya.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9939472187319875,
+      "EARTHQUAKE": 0.0006148652214434494,
+      "FIRE": 0.000893364838826091,
+      "ACCIDENT": 0.00040295666630873496,
+      "NON_EVENT": 0.004141594541434133
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_time_scope-0-N",
+    "text": "Pembahasan barusan di Desa Wanasari mengenai persiapan menghadapi banjir minggu depan. Ini bukan laporan peristiwa yang sudah terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.001095385402673618,
+      "EARTHQUAKE": 0.0002269162005887545,
+      "FIRE": 0.0007337564458537626,
+      "ACCIDENT": 0.00010651167450729259,
+      "NON_EVENT": 0.9978374302763766
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_reality_correction-1-P",
+    "text": "Jangan dianggap adegan buatan: air sungai meluap dan merendam rumah penduduk di Kelurahan Gadingrejo tengah malam tadi. Bantuan untuk peristiwa nyata sudah dikirim.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9907426266788304,
+      "EARTHQUAKE": 0.0003286520816542499,
+      "FIRE": 0.0005792570618200733,
+      "ACCIDENT": 0.0006939348233800606,
+      "NON_EVENT": 0.007655529354315161
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_reality_correction-1-N",
+    "text": "Kabar banjir yang dikaitkan dengan Kelurahan Gadingrejo tengah malam tadi ternyata adegan buatan. Pengelola menegaskan tidak ada kejadian asli.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0026268885664931167,
+      "EARTHQUAKE": 0.0001187254056005741,
+      "FIRE": 0.0003237747853894918,
+      "ACCIDENT": 0.0002781780537656217,
+      "NON_EVENT": 0.9966524331887512
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_education_scope-1-P",
+    "text": "Bukan pertanyaan ujian, ini laporan langsung dari Kelurahan Gadingrejo: banjir baru terjadi tengah malam tadi dan warga memerlukan penanganan.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9561512086397805,
+      "EARTHQUAKE": 0.0009540474597798784,
+      "FIRE": 0.000395445445424311,
+      "ACCIDENT": 0.0017186707312970928,
+      "NON_EVENT": 0.040780627723718155
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_education_scope-1-N",
+    "text": "Pertanyaan ujian tengah malam tadi meminta siswa membayangkan banjir di Kelurahan Gadingrejo. Kalimat itu tidak merujuk kejadian sungguhan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0015373585745312097,
+      "EARTHQUAKE": 0.00016853458586837006,
+      "FIRE": 0.0009608243837816768,
+      "ACCIDENT": 0.00018571472141925454,
+      "NON_EVENT": 0.9971475677343995
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_drill_interrupted-1-P",
+    "text": "Walaupun lokasi dipakai berlatih menghadapi kebakaran, laporan tengah malam tadi dari Kelurahan Gadingrejo menyatakan air sungai meluap dan merendam rumah penduduk di luar rencana latihan.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9786389361499818,
+      "EARTHQUAKE": 0.0006813914218302867,
+      "FIRE": 0.006114268119813934,
+      "ACCIDENT": 0.0005104846419394695,
+      "NON_EVENT": 0.014054919666434563
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_drill_interrupted-1-N",
+    "text": "Di Kelurahan Gadingrejo, laporan latihan tengah malam tadi memakai skenario banjir. Kerusakan yang disebutkan hanya properti latihan dan semua peserta aman.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.002707440062822445,
+      "EARTHQUAKE": 0.00035537363275156146,
+      "FIRE": 0.0012562555791991621,
+      "ACCIDENT": 0.00021485410006414452,
+      "NON_EVENT": 0.9954660766251627
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_negation_target-1-P",
+    "text": "Tidak ada korban jiwa dalam banjir di Kelurahan Gadingrejo tengah malam tadi, tetapi air sungai meluap dan merendam rumah penduduk. Tim tanggap sedang bekerja.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9087647889620909,
+      "EARTHQUAKE": 0.0009898297626189782,
+      "FIRE": 0.0038566850249822427,
+      "ACCIDENT": 0.0021794519162932208,
+      "NON_EVENT": 0.08420924433401461
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_negation_target-1-N",
+    "text": "Pemeriksaan tengah malam tadi di Kelurahan Gadingrejo memastikan banjir tidak terjadi. Kalimat tentang korban hanyalah rumor yang dibantah.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.03537140485084341,
+      "EARTHQUAKE": 0.0003895340618794607,
+      "FIRE": 0.0005447685156738597,
+      "ACCIDENT": 0.0006922151166158898,
+      "NON_EVENT": 0.9630020774549873
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_suppressed_alternative-1-P",
+    "text": "Petugas menyebut bukan kebakaran penyebab keadaan di Kelurahan Gadingrejo tengah malam tadi. Terjadi banjir, dan air sungai meluap dan merendam rumah penduduk.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9912979784586713,
+      "EARTHQUAKE": 0.0003689685399779964,
+      "FIRE": 0.0018548261627065255,
+      "ACCIDENT": 0.000506479538037322,
+      "NON_EVENT": 0.005971747300606874
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_suppressed_alternative-1-N",
+    "text": "Petugas di Kelurahan Gadingrejo tengah malam tadi tidak melaporkan banjir; mereka hanya menerangkan prosedur penanganannya sebagai persiapan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.026851842974523216,
+      "EARTHQUAKE": 0.0001258897978458543,
+      "FIRE": 0.0003330739368561205,
+      "ACCIDENT": 0.0003722671052624675,
+      "NON_EVENT": 0.9723169261855124
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_multiple_sentences-1-P",
+    "text": "Berhenti menyebutnya lelucon. Di Kelurahan Gadingrejo tengah malam tadi, air sungai meluap dan merendam rumah penduduk. Warga sudah meminta pertolongan.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9921633716876166,
+      "EARTHQUAKE": 0.00038970214843419936,
+      "FIRE": 0.000892780927048745,
+      "ACCIDENT": 0.0006891389401328861,
+      "NON_EVENT": 0.005865006296767665
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_multiple_sentences-1-N",
+    "text": "Lelucon tentang banjir di Kelurahan Gadingrejo dibicarakan tengah malam tadi; penulisnya menjelaskan bahwa tidak ada peristiwa nyata yang dimaksud.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.003011197305970828,
+      "EARTHQUAKE": 0.00014107208163732836,
+      "FIRE": 0.0004752779420247538,
+      "ACCIDENT": 0.0002772427455262216,
+      "NON_EVENT": 0.9960952099248409
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_rumor_verified-1-P",
+    "text": "Dugaan bahwa video itu hanya simulasi dibantah. Peninjauan di Kelurahan Gadingrejo tengah malam tadi menemukan air sungai meluap dan merendam rumah penduduk, sehingga kejadian dikonfirmasi nyata.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9469223276915925,
+      "EARTHQUAKE": 0.001175266751277032,
+      "FIRE": 0.0010520631091849159,
+      "ACCIDENT": 0.0025382591643151914,
+      "NON_EVENT": 0.04831208328363055
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_rumor_verified-1-N",
+    "text": "Video yang disebut banjir di Kelurahan Gadingrejo diperiksa tengah malam tadi. Rekaman itu hanya simulasi; peristiwa nyata tidak terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.01085057078899215,
+      "EARTHQUAKE": 0.00222379411596796,
+      "FIRE": 0.0010635151828374762,
+      "ACCIDENT": 0.0014820458405807573,
+      "NON_EVENT": 0.9843800740716216
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_time_scope-1-P",
+    "text": "Banjir bukan terjadi minggu depan. Di Kelurahan Gadingrejo, air sungai meluap dan merendam rumah penduduk tengah malam tadi dan petugas sudah menanganinya.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9926055642191384,
+      "EARTHQUAKE": 0.0004824315501285554,
+      "FIRE": 0.0007453666210502911,
+      "ACCIDENT": 0.0005216413558380968,
+      "NON_EVENT": 0.0056449962538448065
+    }
+  },
+  {
+    "id": "SCOPE06-development-FLOOD-dev_time_scope-1-N",
+    "text": "Pembahasan tengah malam tadi di Kelurahan Gadingrejo mengenai persiapan menghadapi banjir minggu depan. Ini bukan laporan peristiwa yang sudah terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0015286112922137305,
+      "EARTHQUAKE": 0.00018499725465925286,
+      "FIRE": 0.0015163205571927674,
+      "ACCIDENT": 0.00018369953656989738,
+      "NON_EVENT": 0.9965863713593643
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_reality_correction-0-P",
+    "text": "Jangan dianggap adegan buatan: tanah bergetar keras dan dinding beberapa bangunan retak di Desa Wanasari barusan. Bantuan untuk peristiwa nyata sudah dikirim.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0022384190940217146,
+      "EARTHQUAKE": 0.9853310398243316,
+      "FIRE": 0.0020645770996640623,
+      "ACCIDENT": 0.0020120178183806233,
+      "NON_EVENT": 0.008353946163602029
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_reality_correction-0-N",
+    "text": "Kabar gempa yang dikaitkan dengan Desa Wanasari barusan ternyata adegan buatan. Pengelola menegaskan tidak ada kejadian asli.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00016281010993494092,
+      "EARTHQUAKE": 0.0005338478075277848,
+      "FIRE": 0.0006315817089673695,
+      "ACCIDENT": 0.00029390191729626304,
+      "NON_EVENT": 0.9983778584562737
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_education_scope-0-P",
+    "text": "Bukan pertanyaan ujian, ini laporan langsung dari Desa Wanasari: gempa baru terjadi barusan dan warga memerlukan penanganan.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0003397352104323752,
+      "EARTHQUAKE": 0.9779477871356372,
+      "FIRE": 0.0003058444012468323,
+      "ACCIDENT": 0.0010166768430641788,
+      "NON_EVENT": 0.02038995640961936
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_education_scope-0-N",
+    "text": "Pertanyaan ujian barusan meminta siswa membayangkan gempa di Desa Wanasari. Kalimat itu tidak merujuk kejadian sungguhan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0006583622542552322,
+      "EARTHQUAKE": 0.0007106817740950319,
+      "FIRE": 0.0019239605385897574,
+      "ACCIDENT": 0.00024373942208368165,
+      "NON_EVENT": 0.9964632560109763
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_drill_interrupted-0-P",
+    "text": "Walaupun lokasi dipakai berlatih menghadapi kecelakaan, laporan barusan dari Desa Wanasari menyatakan tanah bergetar keras dan dinding beberapa bangunan retak di luar rencana latihan.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0007717258476661363,
+      "EARTHQUAKE": 0.980581418205455,
+      "FIRE": 0.0012819475240331752,
+      "ACCIDENT": 0.005585823381449653,
+      "NON_EVENT": 0.011779085041396065
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_drill_interrupted-0-N",
+    "text": "Di Desa Wanasari, laporan latihan barusan memakai skenario gempa. Kerusakan yang disebutkan hanya properti latihan dan semua peserta aman.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00026927638657882856,
+      "EARTHQUAKE": 0.0025044361092977177,
+      "FIRE": 0.000756998343901136,
+      "ACCIDENT": 0.0001336078861961759,
+      "NON_EVENT": 0.9963356812740262
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_negation_target-0-P",
+    "text": "Tidak ada korban jiwa dalam gempa di Desa Wanasari barusan, tetapi tanah bergetar keras dan dinding beberapa bangunan retak. Tim tanggap sedang bekerja.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0008998372498141346,
+      "EARTHQUAKE": 0.96374162591891,
+      "FIRE": 0.0011698325942845473,
+      "ACCIDENT": 0.001015428429134373,
+      "NON_EVENT": 0.03317327580785694
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_negation_target-0-N",
+    "text": "Pemeriksaan barusan di Desa Wanasari memastikan gempa tidak terjadi. Kalimat tentang korban hanyalah rumor yang dibantah.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00030898453366148257,
+      "EARTHQUAKE": 0.004244349887413324,
+      "FIRE": 0.001810566850388305,
+      "ACCIDENT": 0.00038648507773591167,
+      "NON_EVENT": 0.993249613650801
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_suppressed_alternative-0-P",
+    "text": "Petugas menyebut bukan kecelakaan penyebab keadaan di Desa Wanasari barusan. Terjadi gempa, dan tanah bergetar keras dan dinding beberapa bangunan retak.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0005551092943557826,
+      "EARTHQUAKE": 0.9960694948336835,
+      "FIRE": 0.0004980698256983725,
+      "ACCIDENT": 0.0011542195543871921,
+      "NON_EVENT": 0.001723106491875231
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_suppressed_alternative-0-N",
+    "text": "Petugas di Desa Wanasari barusan tidak melaporkan gempa; mereka hanya menerangkan prosedur penanganannya sebagai persiapan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00027708843591713506,
+      "EARTHQUAKE": 0.0004787163608461826,
+      "FIRE": 0.00031985093819696044,
+      "ACCIDENT": 0.00014748622731199044,
+      "NON_EVENT": 0.9987768580377278
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_multiple_sentences-0-P",
+    "text": "Berhenti menyebutnya lelucon. Di Desa Wanasari barusan, tanah bergetar keras dan dinding beberapa bangunan retak. Warga sudah meminta pertolongan.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0020368140214795374,
+      "EARTHQUAKE": 0.9890420048262663,
+      "FIRE": 0.0035604491324946453,
+      "ACCIDENT": 0.0011890805116567627,
+      "NON_EVENT": 0.004171651508102827
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_multiple_sentences-0-N",
+    "text": "Lelucon tentang gempa di Desa Wanasari dibicarakan barusan; penulisnya menjelaskan bahwa tidak ada peristiwa nyata yang dimaksud.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0002323784691470879,
+      "EARTHQUAKE": 0.00037093481866391667,
+      "FIRE": 0.0003770979248019246,
+      "ACCIDENT": 0.00013719361264974907,
+      "NON_EVENT": 0.9988823951747373
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_rumor_verified-0-P",
+    "text": "Dugaan bahwa video itu hanya simulasi dibantah. Peninjauan di Desa Wanasari barusan menemukan tanah bergetar keras dan dinding beberapa bangunan retak, sehingga kejadian dikonfirmasi nyata.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0027093931564788273,
+      "EARTHQUAKE": 0.9414967557870797,
+      "FIRE": 0.00141075079808976,
+      "ACCIDENT": 0.004966598329147344,
+      "NON_EVENT": 0.049416501929204236
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_rumor_verified-0-N",
+    "text": "Video yang disebut gempa di Desa Wanasari diperiksa barusan. Rekaman itu hanya simulasi; peristiwa nyata tidak terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0004778050494071784,
+      "EARTHQUAKE": 0.008293776091881016,
+      "FIRE": 0.0010697841922472807,
+      "ACCIDENT": 0.0005991623692380832,
+      "NON_EVENT": 0.9895594722972264
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_time_scope-0-P",
+    "text": "Gempa bukan terjadi minggu depan. Di Desa Wanasari, tanah bergetar keras dan dinding beberapa bangunan retak barusan dan petugas sudah menanganinya.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0009026662618103614,
+      "EARTHQUAKE": 0.9958035342035592,
+      "FIRE": 0.0008175245521497317,
+      "ACCIDENT": 0.0004224595248413287,
+      "NON_EVENT": 0.0020538154576394455
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_time_scope-0-N",
+    "text": "Pembahasan barusan di Desa Wanasari mengenai persiapan menghadapi gempa minggu depan. Ini bukan laporan peristiwa yang sudah terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0002644715013042696,
+      "EARTHQUAKE": 0.0004180508607685383,
+      "FIRE": 0.0005758519979771434,
+      "ACCIDENT": 8.662111496845539e-05,
+      "NON_EVENT": 0.9986550045249816
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_reality_correction-1-P",
+    "text": "Jangan dianggap adegan buatan: tanah bergetar keras dan dinding beberapa bangunan retak di Kelurahan Gadingrejo tengah malam tadi. Bantuan untuk peristiwa nyata sudah dikirim.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.002873748410795,
+      "EARTHQUAKE": 0.9871434675342602,
+      "FIRE": 0.0018286221518324024,
+      "ACCIDENT": 0.0037360962643521027,
+      "NON_EVENT": 0.004418065638760347
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_reality_correction-1-N",
+    "text": "Kabar gempa yang dikaitkan dengan Kelurahan Gadingrejo tengah malam tadi ternyata adegan buatan. Pengelola menegaskan tidak ada kejadian asli.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00022004033855313853,
+      "EARTHQUAKE": 0.0008722036387727301,
+      "FIRE": 0.00030910714480765337,
+      "ACCIDENT": 0.0004001034831111377,
+      "NON_EVENT": 0.9981985453947554
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_education_scope-1-P",
+    "text": "Bukan pertanyaan ujian, ini laporan langsung dari Kelurahan Gadingrejo: gempa baru terjadi tengah malam tadi dan warga memerlukan penanganan.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00041023155802595134,
+      "EARTHQUAKE": 0.967822061832358,
+      "FIRE": 0.00039376103785213106,
+      "ACCIDENT": 0.0019511780148982595,
+      "NON_EVENT": 0.029422767556865587
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_education_scope-1-N",
+    "text": "Pertanyaan ujian tengah malam tadi meminta siswa membayangkan gempa di Kelurahan Gadingrejo. Kalimat itu tidak merujuk kejadian sungguhan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0005200401263330152,
+      "EARTHQUAKE": 0.00046241969439959657,
+      "FIRE": 0.000853693389571234,
+      "ACCIDENT": 0.00021456321852167,
+      "NON_EVENT": 0.9979492835711745
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_drill_interrupted-1-P",
+    "text": "Walaupun lokasi dipakai berlatih menghadapi kecelakaan, laporan tengah malam tadi dari Kelurahan Gadingrejo menyatakan tanah bergetar keras dan dinding beberapa bangunan retak di luar rencana latihan.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0014571319622189913,
+      "EARTHQUAKE": 0.982307230099672,
+      "FIRE": 0.001239230897896419,
+      "ACCIDENT": 0.007820439954803771,
+      "NON_EVENT": 0.0071759670854088424
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_drill_interrupted-1-N",
+    "text": "Di Kelurahan Gadingrejo, laporan latihan tengah malam tadi memakai skenario gempa. Kerusakan yang disebutkan hanya properti latihan dan semua peserta aman.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00017759360484296497,
+      "EARTHQUAKE": 0.0014600227204709234,
+      "FIRE": 0.0003944080556730763,
+      "ACCIDENT": 0.00019919997529670128,
+      "NON_EVENT": 0.9977687756437164
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_negation_target-1-P",
+    "text": "Tidak ada korban jiwa dalam gempa di Kelurahan Gadingrejo tengah malam tadi, tetapi tanah bergetar keras dan dinding beberapa bangunan retak. Tim tanggap sedang bekerja.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.000977161053103367,
+      "EARTHQUAKE": 0.9709975457230374,
+      "FIRE": 0.0011033541602422032,
+      "ACCIDENT": 0.0013234428302620052,
+      "NON_EVENT": 0.025598496233355042
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_negation_target-1-N",
+    "text": "Pemeriksaan tengah malam tadi di Kelurahan Gadingrejo memastikan gempa tidak terjadi. Kalimat tentang korban hanyalah rumor yang dibantah.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0003913984097562352,
+      "EARTHQUAKE": 0.018698047715205383,
+      "FIRE": 0.0007295734172900579,
+      "ACCIDENT": 0.0009109619505948499,
+      "NON_EVENT": 0.9792700185071535
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_suppressed_alternative-1-P",
+    "text": "Petugas menyebut bukan kecelakaan penyebab keadaan di Kelurahan Gadingrejo tengah malam tadi. Terjadi gempa, dan tanah bergetar keras dan dinding beberapa bangunan retak.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0007094240658235909,
+      "EARTHQUAKE": 0.9951709318153028,
+      "FIRE": 0.0004521463596066345,
+      "ACCIDENT": 0.0016057046072639454,
+      "NON_EVENT": 0.002061793152002927
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_suppressed_alternative-1-N",
+    "text": "Petugas di Kelurahan Gadingrejo tengah malam tadi tidak melaporkan gempa; mereka hanya menerangkan prosedur penanganannya sebagai persiapan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0002585181528036729,
+      "EARTHQUAKE": 0.0007131219708129581,
+      "FIRE": 0.00023512924801192037,
+      "ACCIDENT": 0.00016835536842991006,
+      "NON_EVENT": 0.9986248752599416
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_multiple_sentences-1-P",
+    "text": "Berhenti menyebutnya lelucon. Di Kelurahan Gadingrejo tengah malam tadi, tanah bergetar keras dan dinding beberapa bangunan retak. Warga sudah meminta pertolongan.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.002589419051677979,
+      "EARTHQUAKE": 0.9900949004887915,
+      "FIRE": 0.002560434199899621,
+      "ACCIDENT": 0.0019076415103340164,
+      "NON_EVENT": 0.002847604749296813
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_multiple_sentences-1-N",
+    "text": "Lelucon tentang gempa di Kelurahan Gadingrejo dibicarakan tengah malam tadi; penulisnya menjelaskan bahwa tidak ada peristiwa nyata yang dimaksud.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00024512099351946894,
+      "EARTHQUAKE": 0.000586670964746888,
+      "FIRE": 0.00033409337724104725,
+      "ACCIDENT": 0.00025952109393925413,
+      "NON_EVENT": 0.9985745935705533
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_rumor_verified-1-P",
+    "text": "Dugaan bahwa video itu hanya simulasi dibantah. Peninjauan di Kelurahan Gadingrejo tengah malam tadi menemukan tanah bergetar keras dan dinding beberapa bangunan retak, sehingga kejadian dikonfirmasi nyata.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.003870409975264321,
+      "EARTHQUAKE": 0.9146860486499617,
+      "FIRE": 0.0020497062050557485,
+      "ACCIDENT": 0.006806788124470656,
+      "NON_EVENT": 0.07258704704524749
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_rumor_verified-1-N",
+    "text": "Video yang disebut gempa di Kelurahan Gadingrejo diperiksa tengah malam tadi. Rekaman itu hanya simulasi; peristiwa nyata tidak terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0010448176935657309,
+      "EARTHQUAKE": 0.023537554457237493,
+      "FIRE": 0.0008641046999942533,
+      "ACCIDENT": 0.00191683481768719,
+      "NON_EVENT": 0.9726366883315154
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_time_scope-1-P",
+    "text": "Gempa bukan terjadi minggu depan. Di Kelurahan Gadingrejo, tanah bergetar keras dan dinding beberapa bangunan retak tengah malam tadi dan petugas sudah menanganinya.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0008803302376378932,
+      "EARTHQUAKE": 0.9944801896587431,
+      "FIRE": 0.0007561108194673883,
+      "ACCIDENT": 0.0005175717749841288,
+      "NON_EVENT": 0.0033657975091674636
+    }
+  },
+  {
+    "id": "SCOPE06-development-EARTHQUAKE-dev_time_scope-1-N",
+    "text": "Pembahasan tengah malam tadi di Kelurahan Gadingrejo mengenai persiapan menghadapi gempa minggu depan. Ini bukan laporan peristiwa yang sudah terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00036705556097794533,
+      "EARTHQUAKE": 0.00041593260666925497,
+      "FIRE": 0.0019400154709510674,
+      "ACCIDENT": 0.00020224612173266816,
+      "NON_EVENT": 0.9970747502396691
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_reality_correction-0-P",
+    "text": "Jangan dianggap adegan buatan: api membakar atap gudang dan asap pekat membubung di Desa Wanasari barusan. Bantuan untuk peristiwa nyata sudah dikirim.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0005632083683441219,
+      "EARTHQUAKE": 0.0011577144745657673,
+      "FIRE": 0.9805434789299065,
+      "ACCIDENT": 0.0009156717030332111,
+      "NON_EVENT": 0.016819926524150403
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_reality_correction-0-N",
+    "text": "Kabar kebakaran yang dikaitkan dengan Desa Wanasari barusan ternyata adegan buatan. Pengelola menegaskan tidak ada kejadian asli.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0002237511687722598,
+      "EARTHQUAKE": 0.0004168705107329201,
+      "FIRE": 0.01684224867344864,
+      "ACCIDENT": 0.0005299941998828678,
+      "NON_EVENT": 0.9819871354471633
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_education_scope-0-P",
+    "text": "Bukan pertanyaan ujian, ini laporan langsung dari Desa Wanasari: kebakaran baru terjadi barusan dan warga memerlukan penanganan.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0002829683811256054,
+      "EARTHQUAKE": 0.0012352898874332466,
+      "FIRE": 0.974900408402095,
+      "ACCIDENT": 0.0007579231008024495,
+      "NON_EVENT": 0.022823410228543742
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_education_scope-0-N",
+    "text": "Pertanyaan ujian barusan meminta siswa membayangkan kebakaran di Desa Wanasari. Kalimat itu tidak merujuk kejadian sungguhan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0005992182200036313,
+      "EARTHQUAKE": 0.000684799392951685,
+      "FIRE": 0.006940746138491747,
+      "ACCIDENT": 0.00022140248846281243,
+      "NON_EVENT": 0.9915538337600901
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_drill_interrupted-0-P",
+    "text": "Walaupun lokasi dipakai berlatih menghadapi banjir, laporan barusan dari Desa Wanasari menyatakan api membakar atap gudang dan asap pekat membubung di luar rencana latihan.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00042719523408119915,
+      "EARTHQUAKE": 0.0006614721144999544,
+      "FIRE": 0.9820212124589375,
+      "ACCIDENT": 0.0006208784534882189,
+      "NON_EVENT": 0.016269241738993048
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_drill_interrupted-0-N",
+    "text": "Di Desa Wanasari, laporan latihan barusan memakai skenario kebakaran. Kerusakan yang disebutkan hanya properti latihan dan semua peserta aman.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0002899824929547636,
+      "EARTHQUAKE": 0.0006724934034690248,
+      "FIRE": 0.009014622009615031,
+      "ACCIDENT": 0.00010928852812545944,
+      "NON_EVENT": 0.9899136135658357
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_negation_target-0-P",
+    "text": "Tidak ada korban jiwa dalam kebakaran di Desa Wanasari barusan, tetapi api membakar atap gudang dan asap pekat membubung. Tim tanggap sedang bekerja.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00028847040879749063,
+      "EARTHQUAKE": 0.0003818672012672068,
+      "FIRE": 0.995227781770535,
+      "ACCIDENT": 0.00028873438204229864,
+      "NON_EVENT": 0.003813146237357973
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_negation_target-0-N",
+    "text": "Pemeriksaan barusan di Desa Wanasari memastikan kebakaran tidak terjadi. Kalimat tentang korban hanyalah rumor yang dibantah.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0005306221351768322,
+      "EARTHQUAKE": 0.0014403673614222972,
+      "FIRE": 0.1431456933909969,
+      "ACCIDENT": 0.0005442929091091888,
+      "NON_EVENT": 0.8543390242032948
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_suppressed_alternative-0-P",
+    "text": "Petugas menyebut bukan banjir penyebab keadaan di Desa Wanasari barusan. Terjadi kebakaran, dan api membakar atap gudang dan asap pekat membubung.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.000278783458281751,
+      "EARTHQUAKE": 0.00031722957760819937,
+      "FIRE": 0.9962919169316641,
+      "ACCIDENT": 0.00031642375853548527,
+      "NON_EVENT": 0.0027956462739103767
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_suppressed_alternative-0-N",
+    "text": "Petugas di Desa Wanasari barusan tidak melaporkan kebakaran; mereka hanya menerangkan prosedur penanganannya sebagai persiapan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.000423649956805962,
+      "EARTHQUAKE": 0.00018984409612307713,
+      "FIRE": 0.012207322685684792,
+      "ACCIDENT": 0.00023860090619206998,
+      "NON_EVENT": 0.9869405823551941
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_multiple_sentences-0-P",
+    "text": "Berhenti menyebutnya lelucon. Di Desa Wanasari barusan, api membakar atap gudang dan asap pekat membubung. Warga sudah meminta pertolongan.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0003937872237965731,
+      "EARTHQUAKE": 0.0006344929631656539,
+      "FIRE": 0.9947779451958185,
+      "ACCIDENT": 0.0005187255295060065,
+      "NON_EVENT": 0.00367504908771323
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_multiple_sentences-0-N",
+    "text": "Lelucon tentang kebakaran di Desa Wanasari dibicarakan barusan; penulisnya menjelaskan bahwa tidak ada peristiwa nyata yang dimaksud.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00030097501408378366,
+      "EARTHQUAKE": 0.00031178076376061313,
+      "FIRE": 0.003580394543613473,
+      "ACCIDENT": 0.00017185448558640993,
+      "NON_EVENT": 0.9956349951929557
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_rumor_verified-0-P",
+    "text": "Dugaan bahwa video itu hanya simulasi dibantah. Peninjauan di Desa Wanasari barusan menemukan api membakar atap gudang dan asap pekat membubung, sehingga kejadian dikonfirmasi nyata.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0005509570288877934,
+      "EARTHQUAKE": 0.000903674099985124,
+      "FIRE": 0.9777577790264348,
+      "ACCIDENT": 0.0016060560765995113,
+      "NON_EVENT": 0.019181533768092764
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_rumor_verified-0-N",
+    "text": "Video yang disebut kebakaran di Desa Wanasari diperiksa barusan. Rekaman itu hanya simulasi; peristiwa nyata tidak terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00036685707253420564,
+      "EARTHQUAKE": 0.0019177706597401367,
+      "FIRE": 0.014531532829841768,
+      "ACCIDENT": 0.00027800128981045433,
+      "NON_EVENT": 0.9829058381480734
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_time_scope-0-P",
+    "text": "Kebakaran bukan terjadi minggu depan. Di Desa Wanasari, api membakar atap gudang dan asap pekat membubung barusan dan petugas sudah menanganinya.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0003520781842866134,
+      "EARTHQUAKE": 0.0004719533753439475,
+      "FIRE": 0.9963332134266211,
+      "ACCIDENT": 0.0003325658691111652,
+      "NON_EVENT": 0.002510189144637279
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_time_scope-0-N",
+    "text": "Pembahasan barusan di Desa Wanasari mengenai persiapan menghadapi kebakaran minggu depan. Ini bukan laporan peristiwa yang sudah terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0003316569609389989,
+      "EARTHQUAKE": 0.0002084273908307703,
+      "FIRE": 0.0019291537417872923,
+      "ACCIDENT": 0.00010674036195254298,
+      "NON_EVENT": 0.9974240215444904
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_reality_correction-1-P",
+    "text": "Jangan dianggap adegan buatan: api membakar atap gudang dan asap pekat membubung di Kelurahan Gadingrejo tengah malam tadi. Bantuan untuk peristiwa nyata sudah dikirim.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0008263545329386202,
+      "EARTHQUAKE": 0.0011519101078066014,
+      "FIRE": 0.9898827472872275,
+      "ACCIDENT": 0.000959392874960414,
+      "NON_EVENT": 0.007179595197066817
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_reality_correction-1-N",
+    "text": "Kabar kebakaran yang dikaitkan dengan Kelurahan Gadingrejo tengah malam tadi ternyata adegan buatan. Pengelola menegaskan tidak ada kejadian asli.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0005582733257355058,
+      "EARTHQUAKE": 0.0003826976212086577,
+      "FIRE": 0.032879833536905316,
+      "ACCIDENT": 0.0008795294932524386,
+      "NON_EVENT": 0.9652996660228981
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_education_scope-1-P",
+    "text": "Bukan pertanyaan ujian, ini laporan langsung dari Kelurahan Gadingrejo: kebakaran baru terjadi tengah malam tadi dan warga memerlukan penanganan.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00033591084232889487,
+      "EARTHQUAKE": 0.0009180827577554967,
+      "FIRE": 0.9802292366573644,
+      "ACCIDENT": 0.0015796216192188095,
+      "NON_EVENT": 0.016937148123332458
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_education_scope-1-N",
+    "text": "Pertanyaan ujian tengah malam tadi meminta siswa membayangkan kebakaran di Kelurahan Gadingrejo. Kalimat itu tidak merujuk kejadian sungguhan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0005600516784497015,
+      "EARTHQUAKE": 0.0003340899541876991,
+      "FIRE": 0.006802000224855276,
+      "ACCIDENT": 0.0002249275904362042,
+      "NON_EVENT": 0.9920789305520711
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_drill_interrupted-1-P",
+    "text": "Walaupun lokasi dipakai berlatih menghadapi banjir, laporan tengah malam tadi dari Kelurahan Gadingrejo menyatakan api membakar atap gudang dan asap pekat membubung di luar rencana latihan.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0005787630625685554,
+      "EARTHQUAKE": 0.0006410664683187212,
+      "FIRE": 0.9879534103648522,
+      "ACCIDENT": 0.000663280820768205,
+      "NON_EVENT": 0.010163479283492309
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_drill_interrupted-1-N",
+    "text": "Di Kelurahan Gadingrejo, laporan latihan tengah malam tadi memakai skenario kebakaran. Kerusakan yang disebutkan hanya properti latihan dan semua peserta aman.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0002577064344554719,
+      "EARTHQUAKE": 0.00029797791267950754,
+      "FIRE": 0.006898459685639208,
+      "ACCIDENT": 0.00015521208352498955,
+      "NON_EVENT": 0.9923906438837008
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_negation_target-1-P",
+    "text": "Tidak ada korban jiwa dalam kebakaran di Kelurahan Gadingrejo tengah malam tadi, tetapi api membakar atap gudang dan asap pekat membubung. Tim tanggap sedang bekerja.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0003668791596628774,
+      "EARTHQUAKE": 0.00029288870372101754,
+      "FIRE": 0.9949056886296367,
+      "ACCIDENT": 0.0003587360167415261,
+      "NON_EVENT": 0.004075807490237845
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_negation_target-1-N",
+    "text": "Pemeriksaan tengah malam tadi di Kelurahan Gadingrejo memastikan kebakaran tidak terjadi. Kalimat tentang korban hanyalah rumor yang dibantah.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0006329967475796683,
+      "EARTHQUAKE": 0.0010834493536334283,
+      "FIRE": 0.11943891368623999,
+      "ACCIDENT": 0.0012535039779606005,
+      "NON_EVENT": 0.8775911362345863
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_suppressed_alternative-1-P",
+    "text": "Petugas menyebut bukan banjir penyebab keadaan di Kelurahan Gadingrejo tengah malam tadi. Terjadi kebakaran, dan api membakar atap gudang dan asap pekat membubung.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00047499104143570325,
+      "EARTHQUAKE": 0.00031287002248387824,
+      "FIRE": 0.996266124515621,
+      "ACCIDENT": 0.0004192662836526619,
+      "NON_EVENT": 0.0025267481368066278
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_suppressed_alternative-1-N",
+    "text": "Petugas di Kelurahan Gadingrejo tengah malam tadi tidak melaporkan kebakaran; mereka hanya menerangkan prosedur penanganannya sebagai persiapan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0004361524554944858,
+      "EARTHQUAKE": 0.00013738163352598333,
+      "FIRE": 0.0060725124673138555,
+      "ACCIDENT": 0.0002853489108324788,
+      "NON_EVENT": 0.9930686045328332
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_multiple_sentences-1-P",
+    "text": "Berhenti menyebutnya lelucon. Di Kelurahan Gadingrejo tengah malam tadi, api membakar atap gudang dan asap pekat membubung. Warga sudah meminta pertolongan.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00044686552371354997,
+      "EARTHQUAKE": 0.0004842955685672051,
+      "FIRE": 0.9946036311542455,
+      "ACCIDENT": 0.0006746637578665074,
+      "NON_EVENT": 0.0037905439956072346
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_multiple_sentences-1-N",
+    "text": "Lelucon tentang kebakaran di Kelurahan Gadingrejo dibicarakan tengah malam tadi; penulisnya menjelaskan bahwa tidak ada peristiwa nyata yang dimaksud.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00044252664922247553,
+      "EARTHQUAKE": 0.0003643667857061538,
+      "FIRE": 0.009126915341962914,
+      "ACCIDENT": 0.0003127610801055676,
+      "NON_EVENT": 0.9897534301430029
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_rumor_verified-1-P",
+    "text": "Dugaan bahwa video itu hanya simulasi dibantah. Peninjauan di Kelurahan Gadingrejo tengah malam tadi menemukan api membakar atap gudang dan asap pekat membubung, sehingga kejadian dikonfirmasi nyata.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.000661730035398647,
+      "EARTHQUAKE": 0.001103627234073564,
+      "FIRE": 0.9795735882958369,
+      "ACCIDENT": 0.00177215110830471,
+      "NON_EVENT": 0.01688890332638622
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_rumor_verified-1-N",
+    "text": "Video yang disebut kebakaran di Kelurahan Gadingrejo diperiksa tengah malam tadi. Rekaman itu hanya simulasi; peristiwa nyata tidak terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.001574656373483181,
+      "EARTHQUAKE": 0.0049440455905792454,
+      "FIRE": 0.024848628330540044,
+      "ACCIDENT": 0.0020776786107490246,
+      "NON_EVENT": 0.9665549910946485
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_time_scope-1-P",
+    "text": "Kebakaran bukan terjadi minggu depan. Di Kelurahan Gadingrejo, api membakar atap gudang dan asap pekat membubung tengah malam tadi dan petugas sudah menanganinya.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0003336550900904258,
+      "EARTHQUAKE": 0.0003936366158648766,
+      "FIRE": 0.995440217267322,
+      "ACCIDENT": 0.00032858187915440064,
+      "NON_EVENT": 0.0035039091475683516
+    }
+  },
+  {
+    "id": "SCOPE06-development-FIRE-dev_time_scope-1-N",
+    "text": "Pembahasan tengah malam tadi di Kelurahan Gadingrejo mengenai persiapan menghadapi kebakaran minggu depan. Ini bukan laporan peristiwa yang sudah terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00031668359741199336,
+      "EARTHQUAKE": 0.00018237512600320678,
+      "FIRE": 0.002516700094485328,
+      "ACCIDENT": 0.0001542124341728768,
+      "NON_EVENT": 0.9968300287479266
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_reality_correction-0-P",
+    "text": "Jangan dianggap adegan buatan: sebuah mobil menabrak pohon dan pengemudinya terluka di Desa Wanasari barusan. Bantuan untuk peristiwa nyata sudah dikirim.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0005263916645647089,
+      "EARTHQUAKE": 0.0004620863587511949,
+      "FIRE": 0.0002658596865722513,
+      "ACCIDENT": 0.9928845479747319,
+      "NON_EVENT": 0.0058611143153799025
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_reality_correction-0-N",
+    "text": "Kabar kecelakaan yang dikaitkan dengan Desa Wanasari barusan ternyata adegan buatan. Pengelola menegaskan tidak ada kejadian asli.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0002002067024780775,
+      "EARTHQUAKE": 0.0002441658354294719,
+      "FIRE": 0.00043506137916434764,
+      "ACCIDENT": 0.0056430828853820045,
+      "NON_EVENT": 0.9934774831975461
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_education_scope-0-P",
+    "text": "Bukan pertanyaan ujian, ini laporan langsung dari Desa Wanasari: kecelakaan baru terjadi barusan dan warga memerlukan penanganan.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0002880255076034378,
+      "EARTHQUAKE": 0.0008898277096890426,
+      "FIRE": 0.0004104175305271227,
+      "ACCIDENT": 0.9909399253774314,
+      "NON_EVENT": 0.007471803874749029
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_education_scope-0-N",
+    "text": "Pertanyaan ujian barusan meminta siswa membayangkan kecelakaan di Desa Wanasari. Kalimat itu tidak merujuk kejadian sungguhan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0002479751670983534,
+      "EARTHQUAKE": 0.00037431334834313524,
+      "FIRE": 0.0003874883989213224,
+      "ACCIDENT": 0.001014899241559043,
+      "NON_EVENT": 0.9979753238440782
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_drill_interrupted-0-P",
+    "text": "Walaupun lokasi dipakai berlatih menghadapi gempa, laporan barusan dari Desa Wanasari menyatakan sebuah mobil menabrak pohon dan pengemudinya terluka di luar rencana latihan.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0005599784540695677,
+      "EARTHQUAKE": 0.0022652271300827114,
+      "FIRE": 0.0005798674119699785,
+      "ACCIDENT": 0.9886154963096225,
+      "NON_EVENT": 0.007979430694255269
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_drill_interrupted-0-N",
+    "text": "Di Desa Wanasari, laporan latihan barusan memakai skenario kecelakaan. Kerusakan yang disebutkan hanya properti latihan dan semua peserta aman.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00017471838463605126,
+      "EARTHQUAKE": 0.0007881358059559467,
+      "FIRE": 0.0006261197487291876,
+      "ACCIDENT": 0.0008722457990290839,
+      "NON_EVENT": 0.9975387802616498
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_negation_target-0-P",
+    "text": "Tidak ada korban jiwa dalam kecelakaan di Desa Wanasari barusan, tetapi sebuah mobil menabrak pohon dan pengemudinya terluka. Tim tanggap sedang bekerja.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0002496459494614566,
+      "EARTHQUAKE": 0.0002163192049327179,
+      "FIRE": 0.0003236415818835137,
+      "ACCIDENT": 0.9970817435904902,
+      "NON_EVENT": 0.002128649673232076
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_negation_target-0-N",
+    "text": "Pemeriksaan barusan di Desa Wanasari memastikan kecelakaan tidak terjadi. Kalimat tentang korban hanyalah rumor yang dibantah.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0003913499745769998,
+      "EARTHQUAKE": 0.0005888646268808432,
+      "FIRE": 0.0011500101557832016,
+      "ACCIDENT": 0.032443892062308265,
+      "NON_EVENT": 0.9654258831804505
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_suppressed_alternative-0-P",
+    "text": "Petugas menyebut bukan gempa penyebab keadaan di Desa Wanasari barusan. Terjadi kecelakaan, dan sebuah mobil menabrak pohon dan pengemudinya terluka.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0003410574222918331,
+      "EARTHQUAKE": 0.0004283433709782673,
+      "FIRE": 0.0006729680581048999,
+      "ACCIDENT": 0.9964607751666925,
+      "NON_EVENT": 0.0020968559819324138
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_suppressed_alternative-0-N",
+    "text": "Petugas di Desa Wanasari barusan tidak melaporkan kecelakaan; mereka hanya menerangkan prosedur penanganannya sebagai persiapan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0005037772326985026,
+      "EARTHQUAKE": 0.00021579785851438265,
+      "FIRE": 0.0004730925191002312,
+      "ACCIDENT": 0.011576483919781522,
+      "NON_EVENT": 0.9872308484699054
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_multiple_sentences-0-P",
+    "text": "Berhenti menyebutnya lelucon. Di Desa Wanasari barusan, sebuah mobil menabrak pohon dan pengemudinya terluka. Warga sudah meminta pertolongan.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00045362902430084214,
+      "EARTHQUAKE": 0.00033446958488406723,
+      "FIRE": 0.0006717946255040511,
+      "ACCIDENT": 0.9959046741372833,
+      "NON_EVENT": 0.0026354326280276573
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_multiple_sentences-0-N",
+    "text": "Lelucon tentang kecelakaan di Desa Wanasari dibicarakan barusan; penulisnya menjelaskan bahwa tidak ada peristiwa nyata yang dimaksud.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0002516747686638974,
+      "EARTHQUAKE": 0.00017773828233583837,
+      "FIRE": 0.0004976920191515855,
+      "ACCIDENT": 0.0005945806868504696,
+      "NON_EVENT": 0.9984783142429982
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_rumor_verified-0-P",
+    "text": "Dugaan bahwa video itu hanya simulasi dibantah. Peninjauan di Desa Wanasari barusan menemukan sebuah mobil menabrak pohon dan pengemudinya terluka, sehingga kejadian dikonfirmasi nyata.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0005750150414180051,
+      "EARTHQUAKE": 0.0010435055329092102,
+      "FIRE": 0.0006601523371506639,
+      "ACCIDENT": 0.9462385212668566,
+      "NON_EVENT": 0.05148280582166554
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_rumor_verified-0-N",
+    "text": "Video yang disebut kecelakaan di Desa Wanasari diperiksa barusan. Rekaman itu hanya simulasi; peristiwa nyata tidak terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.000668410732635218,
+      "EARTHQUAKE": 0.0034396989631843428,
+      "FIRE": 0.0012448015497864549,
+      "ACCIDENT": 0.07727932589755643,
+      "NON_EVENT": 0.9173677628568375
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_time_scope-0-P",
+    "text": "Kecelakaan bukan terjadi minggu depan. Di Desa Wanasari, sebuah mobil menabrak pohon dan pengemudinya terluka barusan dan petugas sudah menanganinya.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0003287431975020282,
+      "EARTHQUAKE": 0.0003005024784456477,
+      "FIRE": 0.0004392270389430024,
+      "ACCIDENT": 0.9976932736661671,
+      "NON_EVENT": 0.0012382536189421887
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_time_scope-0-N",
+    "text": "Pembahasan barusan di Desa Wanasari mengenai persiapan menghadapi kecelakaan minggu depan. Ini bukan laporan peristiwa yang sudah terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00027242983021976346,
+      "EARTHQUAKE": 0.0001897443639542918,
+      "FIRE": 0.0005082667471072036,
+      "ACCIDENT": 0.0003824805648867987,
+      "NON_EVENT": 0.9986470784938319
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_reality_correction-1-P",
+    "text": "Jangan dianggap adegan buatan: sebuah mobil menabrak pohon dan pengemudinya terluka di Kelurahan Gadingrejo tengah malam tadi. Bantuan untuk peristiwa nyata sudah dikirim.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0006453269205895711,
+      "EARTHQUAKE": 0.0005267198716401393,
+      "FIRE": 0.0002524678133060674,
+      "ACCIDENT": 0.9938446174861667,
+      "NON_EVENT": 0.004730867908297651
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_reality_correction-1-N",
+    "text": "Kabar kecelakaan yang dikaitkan dengan Kelurahan Gadingrejo tengah malam tadi ternyata adegan buatan. Pengelola menegaskan tidak ada kejadian asli.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00043700805380943197,
+      "EARTHQUAKE": 0.00025495634479300294,
+      "FIRE": 0.0005156670777878271,
+      "ACCIDENT": 0.020647946149501595,
+      "NON_EVENT": 0.9781444223741081
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_education_scope-1-P",
+    "text": "Bukan pertanyaan ujian, ini laporan langsung dari Kelurahan Gadingrejo: kecelakaan baru terjadi tengah malam tadi dan warga memerlukan penanganan.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00032635193310300085,
+      "EARTHQUAKE": 0.0008684084889751732,
+      "FIRE": 0.000379979748154752,
+      "ACCIDENT": 0.9865324530724816,
+      "NON_EVENT": 0.011892806757285457
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_education_scope-1-N",
+    "text": "Pertanyaan ujian tengah malam tadi meminta siswa membayangkan kecelakaan di Kelurahan Gadingrejo. Kalimat itu tidak merujuk kejadian sungguhan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00041642913343378985,
+      "EARTHQUAKE": 0.00022461389064247906,
+      "FIRE": 0.0007957253540447338,
+      "ACCIDENT": 0.0011879089793041479,
+      "NON_EVENT": 0.9973753226425749
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_drill_interrupted-1-P",
+    "text": "Walaupun lokasi dipakai berlatih menghadapi gempa, laporan tengah malam tadi dari Kelurahan Gadingrejo menyatakan sebuah mobil menabrak pohon dan pengemudinya terluka di luar rencana latihan.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0005346244972796991,
+      "EARTHQUAKE": 0.0031765028625202023,
+      "FIRE": 0.000549301799337338,
+      "ACCIDENT": 0.9886278663159468,
+      "NON_EVENT": 0.007111704524915945
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_drill_interrupted-1-N",
+    "text": "Di Kelurahan Gadingrejo, laporan latihan tengah malam tadi memakai skenario kecelakaan. Kerusakan yang disebutkan hanya properti latihan dan semua peserta aman.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00017182130426590623,
+      "EARTHQUAKE": 0.0005482277462253825,
+      "FIRE": 0.0004564579908668607,
+      "ACCIDENT": 0.0032825773543919945,
+      "NON_EVENT": 0.9955409156042498
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_negation_target-1-P",
+    "text": "Tidak ada korban jiwa dalam kecelakaan di Kelurahan Gadingrejo tengah malam tadi, tetapi sebuah mobil menabrak pohon dan pengemudinya terluka. Tim tanggap sedang bekerja.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00024742924113131356,
+      "EARTHQUAKE": 0.000224634910914253,
+      "FIRE": 0.00041003520372513306,
+      "ACCIDENT": 0.9966536845810796,
+      "NON_EVENT": 0.0024642160631495815
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_negation_target-1-N",
+    "text": "Pemeriksaan tengah malam tadi di Kelurahan Gadingrejo memastikan kecelakaan tidak terjadi. Kalimat tentang korban hanyalah rumor yang dibantah.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0008760098961581831,
+      "EARTHQUAKE": 0.0011454633163990693,
+      "FIRE": 0.0010673343528277343,
+      "ACCIDENT": 0.5265275996796009,
+      "NON_EVENT": 0.470383592755014
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_suppressed_alternative-1-P",
+    "text": "Petugas menyebut bukan gempa penyebab keadaan di Kelurahan Gadingrejo tengah malam tadi. Terjadi kecelakaan, dan sebuah mobil menabrak pohon dan pengemudinya terluka.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00042813848813982923,
+      "EARTHQUAKE": 0.0005983659625983034,
+      "FIRE": 0.0006868652857029269,
+      "ACCIDENT": 0.995496944663578,
+      "NON_EVENT": 0.002789685599980922
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_suppressed_alternative-1-N",
+    "text": "Petugas di Kelurahan Gadingrejo tengah malam tadi tidak melaporkan kecelakaan; mereka hanya menerangkan prosedur penanganannya sebagai persiapan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0005036974506679027,
+      "EARTHQUAKE": 0.00014100204338233257,
+      "FIRE": 0.00036598948757638817,
+      "ACCIDENT": 0.009389752532476217,
+      "NON_EVENT": 0.9895995584858972
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_multiple_sentences-1-P",
+    "text": "Berhenti menyebutnya lelucon. Di Kelurahan Gadingrejo tengah malam tadi, sebuah mobil menabrak pohon dan pengemudinya terluka. Warga sudah meminta pertolongan.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0004104456966639632,
+      "EARTHQUAKE": 0.0004113044278821341,
+      "FIRE": 0.0006381090666159832,
+      "ACCIDENT": 0.9959617268647217,
+      "NON_EVENT": 0.0025784139441161432
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_multiple_sentences-1-N",
+    "text": "Lelucon tentang kecelakaan di Kelurahan Gadingrejo dibicarakan tengah malam tadi; penulisnya menjelaskan bahwa tidak ada peristiwa nyata yang dimaksud.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00031806445110534715,
+      "EARTHQUAKE": 0.00016841637213259534,
+      "FIRE": 0.00039931753187053606,
+      "ACCIDENT": 0.0019259699779361511,
+      "NON_EVENT": 0.9971882316669554
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_rumor_verified-1-P",
+    "text": "Dugaan bahwa video itu hanya simulasi dibantah. Peninjauan di Kelurahan Gadingrejo tengah malam tadi menemukan sebuah mobil menabrak pohon dan pengemudinya terluka, sehingga kejadian dikonfirmasi nyata.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0006129249548501147,
+      "EARTHQUAKE": 0.0011415770910107978,
+      "FIRE": 0.0006279388784754561,
+      "ACCIDENT": 0.9631262871786563,
+      "NON_EVENT": 0.0344912718970073
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_rumor_verified-1-N",
+    "text": "Video yang disebut kecelakaan di Kelurahan Gadingrejo diperiksa tengah malam tadi. Rekaman itu hanya simulasi; peristiwa nyata tidak terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0022184845047161722,
+      "EARTHQUAKE": 0.0036566159411284636,
+      "FIRE": 0.0012566519954458652,
+      "ACCIDENT": 0.24694521910659992,
+      "NON_EVENT": 0.7459230284521096
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_time_scope-1-P",
+    "text": "Kecelakaan bukan terjadi minggu depan. Di Kelurahan Gadingrejo, sebuah mobil menabrak pohon dan pengemudinya terluka tengah malam tadi dan petugas sudah menanganinya.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0003342519376370067,
+      "EARTHQUAKE": 0.00028309756499352257,
+      "FIRE": 0.0004963683630887102,
+      "ACCIDENT": 0.9975385427159874,
+      "NON_EVENT": 0.0013477394182934744
+    }
+  },
+  {
+    "id": "SCOPE06-development-ACCIDENT-dev_time_scope-1-N",
+    "text": "Pembahasan tengah malam tadi di Kelurahan Gadingrejo mengenai persiapan menghadapi kecelakaan minggu depan. Ini bukan laporan peristiwa yang sudah terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0003779793246740922,
+      "EARTHQUAKE": 0.0002040387617972766,
+      "FIRE": 0.001784760042119629,
+      "ACCIDENT": 0.000540175050507284,
+      "NON_EVENT": 0.9970930468209017
+    }
+  }
+]

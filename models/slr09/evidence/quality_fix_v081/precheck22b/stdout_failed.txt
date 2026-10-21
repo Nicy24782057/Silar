@@ -1,0 +1,13 @@
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.1/models/slr09/code/quality_fix/fit_simulation_guard_v081.py", line 100
+    'finished_at':datetime.now(timezone.utc).isoformat())
+                 ^
+SyntaxError: positional argument follows keyword argument
+Notebook execution recorded: notebooks/22b_Penguatan_Kontras_Simulasi_v0.8.1_executed.ipynb
+Traceback (most recent call last):
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.1/models/slr09/code/quality_fix/execute_notebook_cells_v06.py", line 54, in <module>
+    execute(p.parse_args().notebook)
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.1/models/slr09/code/quality_fix/execute_notebook_cells_v06.py", line 36, in execute
+    exec(compile(cell.source,str(source)+f':cell{count}','exec'),namespace)
+  File "notebooks/22b_Penguatan_Kontras_Simulasi_v0.8.1.ipynb:cell2", line 1, in <module>
+  File "notebooks/22b_Penguatan_Kontras_Simulasi_v0.8.1.ipynb:cell1", line 8, in execute
+RuntimeError: Step failed; inspect saved evidence.

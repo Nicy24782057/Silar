@@ -1,0 +1,754 @@
+{
+  "status": "STRUCTURE_VALID_SEMANTIC_CLARIFICATION_REQUIRED",
+  "audited_at": "2026-10-20T13:48:42.693834+00:00",
+  "source_library_id": "libfile_ec5717efabf481918d3ee067f2a7e06d",
+  "source_name": "Review_Penerimaan_Akhir_SLR09_v0_8_3.xlsx",
+  "source_sha256": "6cca555c208bf5bfd430fffa083aafcf66786d49ca5116d2ba29461a12d5d0cf",
+  "original_kit_sha256": "43981ea74cbf3c00835804df7c7c9441bbd3545de211810c7c37fbad9082c585",
+  "reviewer": "Bintang",
+  "records": 50,
+  "tokens": 685,
+  "received_review_status": {
+    "APPROVED": 50
+  },
+  "structural_validation_passed": true,
+  "preflight": {
+    "records": 50,
+    "class_support": {
+      "FLOOD": 10,
+      "EARTHQUAKE": 10,
+      "FIRE": 10,
+      "ACCIDENT": 10,
+      "NON_EVENT": 10
+    },
+    "role_support": {
+      "FLOOD-EVENT": 10,
+      "INFORMATION-ARG": 50,
+      "AFFECTEDOBJECTS-ARG": 47,
+      "O": 272,
+      "PLACE-ARG": 86,
+      "TIME-ARG": 102,
+      "OFFICER-ARG": 28,
+      "REASON-ARG": 9,
+      "WOUNDVICTIM-ARG": 16,
+      "DEATHVICTIM-ARG": 12,
+      "EARTHQUAKE-EVENT": 11,
+      "FIRE-EVENT": 10,
+      "STREET-ARG": 12,
+      "ACCIDENT-EVENT": 10,
+      "FALSE-EVENT": 10
+    },
+    "sources": {
+      "ASSISTANT_AUTHORED_SYNTHETIC": 50
+    },
+    "excluded": [],
+    "known_data_overlap": "NO_NORMALIZED_EXACT_MATCH_IN_AVAILABLE_SOURCES",
+    "historical_initial_training_membership_verified": false,
+    "population_generalization_established": false
+  },
+  "narrative_and_token_text_unchanged": true,
+  "category_changes": 0,
+  "changed_records": [
+    "FINAL083-FLOOD-04",
+    "FINAL083-EARTHQUAKE-01",
+    "FINAL083-EARTHQUAKE-04",
+    "FINAL083-EARTHQUAKE-10",
+    "FINAL083-ACCIDENT-04",
+    "FINAL083-ACCIDENT-05",
+    "FINAL083-NON_EVENT-01"
+  ],
+  "changed_fields": [
+    {
+      "id": "FINAL083-FLOOD-04",
+      "field": "involved_parties",
+      "before": [],
+      "after": [
+        "Peserta latihan"
+      ]
+    },
+    {
+      "id": "FINAL083-FLOOD-04",
+      "field": "impacts",
+      "before": [
+        "merendam gudang beras"
+      ],
+      "after": [
+        "mengangkat perahu",
+        "merendam gudang beras"
+      ]
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-01",
+      "field": "impacts",
+      "before": [
+        "mengguncang Kecamatan Sukamanah"
+      ],
+      "after": [
+        "mengguncang",
+        "keluar dari rumah"
+      ]
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-04",
+      "field": "involved_parties",
+      "before": [],
+      "after": [
+        "Instruktur"
+      ]
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-04",
+      "field": "impacts",
+      "before": [
+        "meretakkan tembok kelas"
+      ],
+      "after": [
+        "menghentikan latihan",
+        "meretakkan tembok kelas"
+      ]
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-10",
+      "field": "impacts",
+      "before": [
+        "terasa"
+      ],
+      "after": [
+        "terasa",
+        "menunggu di luar"
+      ]
+    },
+    {
+      "id": "FINAL083-ACCIDENT-04",
+      "field": "impacts",
+      "before": [
+        "merusak mobil instruktur"
+      ],
+      "after": [
+        "Pelatihan dihentikan",
+        "merusak mobil instruktur"
+      ]
+    },
+    {
+      "id": "FINAL083-ACCIDENT-05",
+      "field": "impacts",
+      "before": [],
+      "after": [
+        "Rekaman latihan itu terputus"
+      ]
+    },
+    {
+      "id": "FINAL083-NON_EVENT-01",
+      "field": "involved_parties",
+      "before": [],
+      "after": [
+        "peserta"
+      ]
+    }
+  ],
+  "token_label_changes": [
+    {
+      "id": "FINAL083-FLOOD-04",
+      "position": 1,
+      "token": "Peserta",
+      "before": "O",
+      "after": "OFFICER-ARG",
+      "cell": "D38"
+    },
+    {
+      "id": "FINAL083-FLOOD-04",
+      "position": 2,
+      "token": "latihan",
+      "before": "O",
+      "after": "OFFICER-ARG",
+      "cell": "D39"
+    },
+    {
+      "id": "FINAL083-FLOOD-04",
+      "position": 3,
+      "token": "mengangkat",
+      "before": "O",
+      "after": "INFORMATION-ARG",
+      "cell": "D40"
+    },
+    {
+      "id": "FINAL083-FLOOD-04",
+      "position": 4,
+      "token": "perahu",
+      "before": "O",
+      "after": "INFORMATION-ARG",
+      "cell": "D41"
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-01",
+      "position": 9,
+      "token": "keluar",
+      "before": "O",
+      "after": "INFORMATION-ARG",
+      "cell": "D142"
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-01",
+      "position": 10,
+      "token": "dari",
+      "before": "O",
+      "after": "INFORMATION-ARG",
+      "cell": "D143"
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-01",
+      "position": 11,
+      "token": "rumah",
+      "before": "O",
+      "after": "INFORMATION-ARG",
+      "cell": "D144"
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-04",
+      "position": 1,
+      "token": "Instruktur",
+      "before": "O",
+      "after": "OFFICER-ARG",
+      "cell": "D170"
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-04",
+      "position": 2,
+      "token": "menghentikan",
+      "before": "O",
+      "after": "INFORMATION-ARG",
+      "cell": "D171"
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-04",
+      "position": 3,
+      "token": "latihan",
+      "before": "O",
+      "after": "INFORMATION-ARG",
+      "cell": "D172"
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-10",
+      "position": 11,
+      "token": "menunggu",
+      "before": "O",
+      "after": "INFORMATION-ARG",
+      "cell": "D263"
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-10",
+      "position": 12,
+      "token": "di",
+      "before": "O",
+      "after": "INFORMATION-ARG",
+      "cell": "D264"
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-10",
+      "position": 13,
+      "token": "luar",
+      "before": "O",
+      "after": "INFORMATION-ARG",
+      "cell": "D265"
+    },
+    {
+      "id": "FINAL083-ACCIDENT-04",
+      "position": 1,
+      "token": "Pelatihan",
+      "before": "O",
+      "after": "INFORMATION-ARG",
+      "cell": "D432"
+    },
+    {
+      "id": "FINAL083-ACCIDENT-04",
+      "position": 2,
+      "token": "dihentikan",
+      "before": "O",
+      "after": "INFORMATION-ARG",
+      "cell": "D433"
+    },
+    {
+      "id": "FINAL083-ACCIDENT-05",
+      "position": 1,
+      "token": "Rekaman",
+      "before": "O",
+      "after": "INFORMATION-ARG",
+      "cell": "D446"
+    },
+    {
+      "id": "FINAL083-ACCIDENT-05",
+      "position": 2,
+      "token": "latihan",
+      "before": "O",
+      "after": "INFORMATION-ARG",
+      "cell": "D447"
+    },
+    {
+      "id": "FINAL083-ACCIDENT-05",
+      "position": 3,
+      "token": "itu",
+      "before": "O",
+      "after": "INFORMATION-ARG",
+      "cell": "D448"
+    },
+    {
+      "id": "FINAL083-ACCIDENT-05",
+      "position": 4,
+      "token": "terputus",
+      "before": "O",
+      "after": "INFORMATION-ARG",
+      "cell": "D449"
+    }
+  ],
+  "changes": {
+    "records": 7,
+    "fields": 9,
+    "token_labels": 19
+  },
+  "known_data_normalized_exact_overlap": 0,
+  "binding_files_verified": 21,
+  "manual_context_review": [
+    {
+      "id": "FINAL083-FLOOD-01",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 10,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FLOOD-02",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 10,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FLOOD-03",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 12,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FLOOD-04",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 16,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FLOOD-05",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 16,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FLOOD-06",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 13,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FLOOD-07",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 11,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FLOOD-08",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 11,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FLOOD-09",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 16,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FLOOD-10",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 13,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-01",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 12,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-02",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 12,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-03",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 12,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-04",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 15,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-05",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 16,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-06",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 14,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-07",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 11,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-08",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 11,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-09",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 16,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-10",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 14,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FIRE-01",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 11,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FIRE-02",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 11,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FIRE-03",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 12,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FIRE-04",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 17,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FIRE-05",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 14,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FIRE-06",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 15,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FIRE-07",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 12,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FIRE-08",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 12,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FIRE-09",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 14,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-FIRE-10",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 12,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-ACCIDENT-01",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 10,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-ACCIDENT-02",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 12,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-ACCIDENT-03",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 13,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-ACCIDENT-04",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 14,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-ACCIDENT-05",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 17,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-ACCIDENT-06",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 14,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-ACCIDENT-07",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 12,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-ACCIDENT-08",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 11,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-ACCIDENT-09",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 14,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-ACCIDENT-10",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 11,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-NON_EVENT-01",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 18,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-NON_EVENT-02",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 18,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-NON_EVENT-03",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 16,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-NON_EVENT-04",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 17,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-NON_EVENT-05",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 16,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-NON_EVENT-06",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 17,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-NON_EVENT-07",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 18,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-NON_EVENT-08",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 14,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-NON_EVENT-09",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 16,
+      "non_event_or_real_during_exercise_context_preserved": true
+    },
+    {
+      "id": "FINAL083-NON_EVENT-10",
+      "category_context_checked": true,
+      "field_grounding_checked": true,
+      "token_context_checked": true,
+      "checked_tokens": 16,
+      "non_event_or_real_during_exercise_context_preserved": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "AUDIT083-01",
+      "record_id": "FINAL083-NON_EVENT-01",
+      "kind": "FIELD_TOKEN_CONTRADICTION",
+      "narrative_cell": "F46",
+      "token_cell": "D531",
+      "token_position": 7,
+      "token": "peserta",
+      "current_label": "O",
+      "proposed_label": "OFFICER-ARG",
+      "rationale": "Pihak memuat peserta, tetapi token peserta masih O. Pedoman OFFICER mencakup pihak terlibat, termasuk peserta.",
+      "initial_proposal_label": "O",
+      "user_changed_field": true,
+      "human_confirmation_pending": true
+    },
+    {
+      "id": "AUDIT083-02",
+      "record_id": "FINAL083-NON_EVENT-03",
+      "kind": "NEGATED_EVENT_ROLE_INCONSISTENCY",
+      "narrative_cell": "B48",
+      "token_cell": "D574",
+      "token_position": 14,
+      "token": "gempa",
+      "current_label": "O",
+      "proposed_label": "FALSE-EVENT",
+      "rationale": "Penyebutan kedua dalam bukan gempa sungguhan adalah kejadian yang dinegasikan. Definisi FALSE-EVENT mencakup negasi. Penyebutan pertama gempa sudah FALSE-EVENT.",
+      "initial_proposal_label": "O",
+      "issue_present_in_assistant_original_draft": true,
+      "human_confirmation_pending": true
+    }
+  ],
+  "proposed_reference_status": {
+    "APPROVED": 48,
+    "PENDING": 2
+  },
+  "unconfirmed_proposal_guard": "Acuan belum direview: FINAL083-NON_EVENT-01",
+  "model_inference_executed": false,
+  "reference_used_for_training": false,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "human_approval_rewritten": false
+}

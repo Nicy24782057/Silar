@@ -1,0 +1,351 @@
+{
+  "schema": "slr09-reader-metrics-0.8.4",
+  "dataset": "FINAL084",
+  "records": 50,
+  "reviewed_tokens": 692,
+  "quality_acceptance_scope": "MVP_ASSET_PILOT",
+  "source": "SAVED_EVALUATION_ARTIFACTS_NO_NEW_INFERENCE",
+  "sena": {
+    "accuracy": 0.98,
+    "correct": 49,
+    "macro_f1": 0.9799498746867169,
+    "per_class": {
+      "FLOOD": {
+        "precision": 0.9090909090909091,
+        "recall": 1.0,
+        "f1": 0.9523809523809523,
+        "support": 10
+      },
+      "EARTHQUAKE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "FIRE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "ACCIDENT": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "NON_EVENT": {
+        "precision": 1.0,
+        "recall": 0.9,
+        "f1": 0.9473684210526316,
+        "support": 10
+      }
+    },
+    "confusion_matrix": {
+      "FLOOD": {
+        "FLOOD": 10,
+        "EARTHQUAKE": 0,
+        "FIRE": 0,
+        "ACCIDENT": 0,
+        "NON_EVENT": 0
+      },
+      "EARTHQUAKE": {
+        "FLOOD": 0,
+        "EARTHQUAKE": 10,
+        "FIRE": 0,
+        "ACCIDENT": 0,
+        "NON_EVENT": 0
+      },
+      "FIRE": {
+        "FLOOD": 0,
+        "EARTHQUAKE": 0,
+        "FIRE": 10,
+        "ACCIDENT": 0,
+        "NON_EVENT": 0
+      },
+      "ACCIDENT": {
+        "FLOOD": 0,
+        "EARTHQUAKE": 0,
+        "FIRE": 0,
+        "ACCIDENT": 10,
+        "NON_EVENT": 0
+      },
+      "NON_EVENT": {
+        "FLOOD": 1,
+        "EARTHQUAKE": 0,
+        "FIRE": 0,
+        "ACCIDENT": 0,
+        "NON_EVENT": 9
+      }
+    },
+    "errors": [
+      {
+        "id": "FINAL084-NON_EVENT-08",
+        "text": "Gempa dan banjir hanya muncul dalam cerita yang dibaca guru di Sekolah Puspanirmala siang ini.",
+        "gold": "NON_EVENT",
+        "prediction": "FLOOD",
+        "confidence": 0.8179528713226318,
+        "low_confidence": true,
+        "family": "fiction",
+        "kind": "FALSE_EVENT"
+      }
+    ]
+  },
+  "nara": {
+    "macro_f1_all_14_non_o": 0.8530947290055312,
+    "exact_span_f1": 0.8185654008438819,
+    "span_precision_derived": 0.7729083665338645,
+    "span_recall_derived": 0.8699551569506726,
+    "span_counts": {
+      "tp": 194,
+      "fp": 57,
+      "fn": 29
+    },
+    "by_label": {
+      "O": {
+        "precision": 0.976,
+        "recall": 0.7947882736156352,
+        "f1": 0.8761220825852784,
+        "support": 307
+      },
+      "ACCIDENT-EVENT": {
+        "precision": 0.7692307692307693,
+        "recall": 1.0,
+        "f1": 0.8695652173913044,
+        "support": 10
+      },
+      "AFFECTEDOBJECTS-ARG": {
+        "precision": 0.9090909090909091,
+        "recall": 0.851063829787234,
+        "f1": 0.8791208791208791,
+        "support": 47
+      },
+      "DEATHVICTIM-ARG": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 12
+      },
+      "EARTHQUAKE-EVENT": {
+        "precision": 0.9090909090909091,
+        "recall": 1.0,
+        "f1": 0.9523809523809523,
+        "support": 10
+      },
+      "FALSE-EVENT": {
+        "precision": 1.0,
+        "recall": 0.36363636363636365,
+        "f1": 0.5333333333333333,
+        "support": 11
+      },
+      "FIRE-EVENT": {
+        "precision": 0.7142857142857143,
+        "recall": 1.0,
+        "f1": 0.8333333333333333,
+        "support": 10
+      },
+      "FLOOD-EVENT": {
+        "precision": 0.7692307692307693,
+        "recall": 1.0,
+        "f1": 0.8695652173913044,
+        "support": 10
+      },
+      "INFORMATION-ARG": {
+        "precision": 0.3287671232876712,
+        "recall": 0.7272727272727273,
+        "f1": 0.45283018867924524,
+        "support": 33
+      },
+      "OFFICER-ARG": {
+        "precision": 0.875,
+        "recall": 1.0,
+        "f1": 0.9333333333333333,
+        "support": 28
+      },
+      "PLACE-ARG": {
+        "precision": 0.8961038961038961,
+        "recall": 0.971830985915493,
+        "f1": 0.9324324324324325,
+        "support": 71
+      },
+      "REASON-ARG": {
+        "precision": 0.8181818181818182,
+        "recall": 1.0,
+        "f1": 0.9,
+        "support": 9
+      },
+      "STREET-ARG": {
+        "precision": 0.9259259259259259,
+        "recall": 1.0,
+        "f1": 0.9615384615384615,
+        "support": 25
+      },
+      "TIME-ARG": {
+        "precision": 0.9789473684210527,
+        "recall": 0.9587628865979382,
+        "f1": 0.96875,
+        "support": 97
+      },
+      "WOUNDVICTIM-ARG": {
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1": 0.8571428571428571,
+        "support": 12
+      }
+    }
+  },
+  "fields": {
+    "nonempty_exact": 0.875,
+    "nonempty_correct": 154,
+    "nonempty_denominator": 176,
+    "empty_spurious_rate": 0.05747126436781609,
+    "spurious_fields": 10,
+    "empty_denominator": 174,
+    "per_field": {
+      "location_text": {
+        "total": 50,
+        "exact_all": 44,
+        "nonempty_gold": 47,
+        "nonempty_exact": 42,
+        "empty_gold": 3,
+        "spurious": 1
+      },
+      "time_text": {
+        "total": 50,
+        "exact_all": 49,
+        "nonempty_gold": 47,
+        "nonempty_exact": 46,
+        "empty_gold": 3,
+        "spurious": 0
+      },
+      "occurred_at": {
+        "total": 50,
+        "exact_all": 50,
+        "empty_gold": 50,
+        "spurious": 0
+      },
+      "involved_parties": {
+        "total": 50,
+        "exact_all": 48,
+        "empty_gold": 26,
+        "spurious": 1,
+        "nonempty_gold": 24,
+        "nonempty_exact": 23
+      },
+      "impacts": {
+        "total": 50,
+        "exact_all": 33,
+        "nonempty_gold": 28,
+        "nonempty_exact": 16,
+        "empty_gold": 22,
+        "spurious": 5
+      },
+      "victims": {
+        "total": 50,
+        "exact_all": 50,
+        "empty_gold": 42,
+        "spurious": 0,
+        "nonempty_gold": 8,
+        "nonempty_exact": 8
+      },
+      "affected_objects": {
+        "total": 50,
+        "exact_all": 44,
+        "nonempty_gold": 22,
+        "nonempty_exact": 19,
+        "empty_gold": 28,
+        "spurious": 3
+      }
+    }
+  },
+  "acceptance": {
+    "original_limit": 0.05,
+    "revised_limit": 0.06,
+    "original_checks_passed": 8,
+    "revised_checks_passed": 9,
+    "checks_total": 9,
+    "checks": {
+      "sena_macro_f1": true,
+      "non_event_recall": true,
+      "all_event_class_recalls": true,
+      "nara_macro_f1_all_14_non_o": true,
+      "nara_exact_span_f1": true,
+      "fields_nonempty_exact": true,
+      "empty_field_spurious_rate": true,
+      "adapter_fusion_contract": true,
+      "simulation_vs_real_exercise_contrasts": true
+    },
+    "predictions_identical": true,
+    "target_changed_after_observing_result": true,
+    "new_training_executed": false,
+    "new_model_inference_executed": false
+  },
+  "models": {
+    "sena": {
+      "model_id": "SILAR_SENA_context_v084_20261020T144453Z",
+      "archive_name": "SILAR_SENA_context_v0.8.4_20261020.zip",
+      "archive_sha256": "6d9ed7b2705301602aa72b67c911843dd8451b115efce8739ae4f07bde3cd3e5",
+      "run_id": "20261020T144453Z",
+      "labels": [
+        "FLOOD",
+        "EARTHQUAKE",
+        "FIRE",
+        "ACCIDENT",
+        "NON_EVENT"
+      ],
+      "weights_sha256": "684568f6c2010a69b354231671596ccc490143d21c7d863482ea2ab50f3da12e",
+      "weight_identity_source": "DIRECT_ARCHIVE_AND_RUNTIME_FILE_HASH_VERIFICATION",
+      "archive_included_in_this_delivery": false,
+      "repository_archive_path": "models/sena/SILAR_SENA_context_v0.8.4_20261020.zip",
+      "archive_placement": "USER_UPLOAD_AFTER_EXTRACTION"
+    },
+    "nara": {
+      "model_id": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z",
+      "archive_name": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z.zip",
+      "archive_sha256": "bce9feba0dd2ae4518880708085f44286ae8d1dd7e50f4eb452e36824f967798",
+      "run_id": "20261018T001122_607337Z",
+      "labels": [
+        "O",
+        "ACCIDENT-EVENT",
+        "AFFECTEDOBJECTS-ARG",
+        "DEATHVICTIM-ARG",
+        "EARTHQUAKE-EVENT",
+        "FALSE-EVENT",
+        "FIRE-EVENT",
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "OFFICER-ARG",
+        "PLACE-ARG",
+        "REASON-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "WOUNDVICTIM-ARG"
+      ],
+      "weights_sha256": "ef84ccfeca2d116942c5d7f8882e064192279eabf92127e8adc1741933b60c29",
+      "weight_identity_source": "DIRECT_ARCHIVE_AND_RUNTIME_FILE_HASH_VERIFICATION",
+      "archive_included_in_this_delivery": false,
+      "repository_archive_path": "models/nara/SILAR_NARA_reviewed_pilot_20261018T001122_607337Z.zip",
+      "archive_placement": "USER_UPLOAD_AFTER_EXTRACTION"
+    }
+  },
+  "sources": [
+    {
+      "path": "evidence/acceptance_v084_confirmed_20261020/acceptance_FINAL084/original_run/evaluation.json",
+      "sha256": "0836a2cf182c14b78482a9e3d06fd0d7b5467bce7fa542f71216e5274f0591b5",
+      "section": "sena,nara,fields; original decision 8/9"
+    },
+    {
+      "path": "evidence/acceptance_FINAL084_target006_20261020/evaluation_under_limit006.json",
+      "sha256": "2fbc72d3ff46b9b989d7789c61b840c9c9d97ecba89d506b03730e222aff4c01",
+      "section": "sena,nara,fields,checks; revised decision 9/9"
+    }
+  ],
+  "limitations": [
+    "50 assistant-authored synthetic cases, ten per category; small purposive challenge set, not representative random field sampling.",
+    "Human review of category, all seven fields and token labels is mandatory before inference; proposals are not human gold.",
+    "Historical initial training corpus membership is unverified. Exact overlap with available sources is checked; semantic independence is not established.",
+    "All 14 non-O roles are scored; rare role support is disclosed per label. No general ambiguity detector or timestamp normalizer is claimed.",
+    "Pilot scoring does not authorize deployment, establish population generalization, or replace group acceptance. Wider MVP claims require representative new input.",
+    "Any acceptance test used to fix or tune the model becomes development evidence; replace the held-out test for the next acceptance round."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "status": "SUCCEEDED_ON_KNOWN_REGRESSION",
+  "selected_epoch": 1,
+  "training_unique": 1683,
+  "corrected_FINAL082_NON_EVENT_02": "NON_EVENT",
+  "all_known_class_gates_met": true,
+  "all_known_contrasts_met": true,
+  "context40_correct": true,
+  "seen_joint_regression_records": 150,
+  "contract_tests": 80,
+  "evaluator_tests": 23,
+  "new_acceptance_records": 0,
+  "next_reference_pending": 50,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "remote_push_executed": false,
+  "production_deployed": false
+}

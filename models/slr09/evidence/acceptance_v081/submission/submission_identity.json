@@ -1,0 +1,15 @@
+{
+  "schema": "slr09-human-review-submission-0.8.1",
+  "received_at": "2026-10-19T11:16:36.458315+00:00",
+  "review_library_file_id": "libfile_e0c043006e048191bdf3e781fa9a49da",
+  "review_file_id": "file_00000000649481f58e8f1256195ed109",
+  "uploaded_name": "Review_Penerimaan_Akhir_SLR09_v0.8.1.xlsx",
+  "sha256": "2bc6e42c8111aa2fdc80206e6c0720a892c59000c4780733cd0831f7ea27cafc",
+  "reviewer": "bintang",
+  "approved_records": 50,
+  "deferred_records": 0,
+  "tokens": 762,
+  "model_inference_executed_at_freeze": false,
+  "notebook23_code_cells_unchanged": true,
+  "notebook23_original_pending_metadata_archived": true
+}

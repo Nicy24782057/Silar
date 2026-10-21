@@ -1,0 +1,14 @@
+{
+  "status": "SUCCEEDED",
+  "original_evaluation_recomputed_from_frozen_predictions_matches": true,
+  "candidate_binding_still_matches": true,
+  "notebook25_actual_execution_succeeded": true,
+  "notebook_code_cells_unchanged": true,
+  "spreadsheet_counts_and_states_verified": true,
+  "all_50_texts_gold_predictions_and_review_notes_preserved": true,
+  "xlsx_crc_and_5_native_tables_verified": true,
+  "numeric_targets_met": true,
+  "all_required_checks_met": false,
+  "quality_acceptance_approved": false,
+  "card_done": false
+}

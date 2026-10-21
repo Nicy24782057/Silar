@@ -1,0 +1,11 @@
+{
+  "status": "SUCCEEDED",
+  "archive_name": "SLR09_Notebook_dan_Data_Evaluasi_FINAL084_v0.8.4.zip",
+  "files": 73,
+  "bound_source_files_identical": 21,
+  "original_notebook31_unchanged": true,
+  "original_review_unchanged": true,
+  "models_separately_verified_against_locked_archives": true,
+  "new_model_inference_executed": false,
+  "new_training_executed": false
+}

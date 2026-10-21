@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-10-20T14:55:24.094496+00:00",
+  "known_texts": 2991,
+  "records": 50,
+  "tokens": 692,
+  "normalized_exact_overlap": 0,
+  "reference_sha256": "9cf047cc2d6f1299ecda31ab662324ac6dbe2f8a50f2b02d16f35a02f786a767",
+  "bundle_sha256": "5ac0ab086067a794a6ac8de2d33af1ab7e8cbf0e949b66930a05c4981188be3c",
+  "status": "50_PENDING",
+  "new_acceptance_inference_executed": false,
+  "quality_acceptance_approved": false
+}

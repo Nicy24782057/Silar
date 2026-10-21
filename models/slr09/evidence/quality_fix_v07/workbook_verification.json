@@ -1,0 +1,11 @@
+{
+  "review_data_all_values_and_formulas_unchanged": true,
+  "field_detail_values_and_formulas_unchanged": true,
+  "unrelated_sheet_views_validations_protection_preserved": true,
+  "pending_review_rows": 40,
+  "new_diagnostic_rows": 50,
+  "formula_boundary_checks_passed": true,
+  "formula_errors_detected": 0,
+  "visual_review_completed": true,
+  "native_excel_application_recalculation_tested": false
+}

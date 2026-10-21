@@ -1,0 +1,15 @@
+{
+  "schema": "slr09-context-correction-0.8.1",
+  "status": "FAILED",
+  "source": "PRESERVED_V08_WITH_INHERITED_BIAS2.5",
+  "training_executed": false,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "human130_used_for_training": false,
+  "v07_assistant50_used_for_weak_training": true,
+  "pilot50_used_for_training": false,
+  "pilot50_used_for_regression_selection": true,
+  "new_acceptance_reference_read_or_inferred": false,
+  "started_at": "2026-10-19T10:23:48.067084+00:00",
+  "error": "'AUX-FLOOD-0-N'"
+}

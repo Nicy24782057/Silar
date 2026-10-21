@@ -1,0 +1,13 @@
+{
+  "training_status": "FAILED",
+  "selected_diagnostic_epoch": 3,
+  "known_constraints_met": false,
+  "groups": 9,
+  "stage_rows": 36,
+  "error_rows_with_overlapping_groups": 37,
+  "formulas_match_actual_state": true,
+  "formula_errors": 0,
+  "independent_acceptance_claimed": false,
+  "quality_acceptance_approved": false,
+  "filename": "SLR09_Hasil_Lanjutan_v0.8.3_2026-10-20.xlsx"
+}

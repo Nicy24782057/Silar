@@ -1,0 +1,565 @@
+{
+  "comparison": [
+    1.0,
+    1.0,
+    0.8850632111299132,
+    0.8672199170124482,
+    0.9162303664921466,
+    0.012578616352201259
+  ],
+  "dev": {
+    "macro_f1": 0.9787875882785286,
+    "non_event_recall": 0.9642857142857143,
+    "min_event_recall": 0.9629629629629629
+  },
+  "epoch": 1,
+  "v07": {
+    "macro_f1": 0.9595959595959596,
+    "non_event_recall": 1.0,
+    "min_event_recall": 0.8
+  },
+  "baseline": {
+    "macro_f1": 0.8827935222672064,
+    "non_event_recall": 1.0,
+    "min_event_recall": 0.6
+  },
+  "sets": [
+    [
+      "Manusia130 di luar latihan",
+      130,
+      0.9787875882785286,
+      0.9642857142857143,
+      0.9629629629629629,
+      "Development untuk seleksi"
+    ],
+    [
+      "Label sumber asli146",
+      146,
+      0.9361228262441184,
+      0.9032258064516129,
+      0.875,
+      "Regresi;15 masuk training"
+    ],
+    [
+      "Acuan hasil review145",
+      145,
+      0.9482049376810686,
+      0.90625,
+      0.9333333333333333,
+      "Regresi;15 masuk training"
+    ],
+    [
+      "Usulan50 v0.6",
+      50,
+      0.923391812865497,
+      1.0,
+      0.8,
+      "Development usulan asisten"
+    ]
+  ],
+  "errors": [
+    {
+      "scope": "Asli146 (15 masuk training)",
+      "id": "BAN-01186",
+      "text": "banjir di aceh peneliti zaiyana putri : sekolah & ; outdoor & ; juga menarik",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9985729528790076
+    },
+    {
+      "scope": "Asli146 (15 masuk training)",
+      "id": "BAN-01703",
+      "text": "abang tolongin ini muti mau plng dari acara tadi dari metmall hujan deras banget mana banjir tolonginnnnn haha angkot nya lama nih mana masih jauh rumah mutiabang pokoknya sih you ya di event selanjutnya",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9997225075717772
+    },
+    {
+      "scope": "Asli146 (15 masuk training)",
+      "id": "BAN-01984",
+      "text": "asli ngeri-ngeri sedap naf eug beberapa kali bikin kegiatan sosial open donasi dari banjir 2014 kelud sinabung bencana asap dan ada beberapa kegiatan sosial lainnya wajib banget share dana yang masuk & keluar sampai terakir bikin lpj itu kalo di komunitas",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9999459784084906
+    },
+    {
+      "scope": "Asli146 (15 masuk training)",
+      "id": "BAN-01640",
+      "text": "waspadai hujan deras disertai angin kencang petir dan kilat pada musim transisi saat ini awan cumulonimbus tumbuh menjulang menghasilkan hujan deras sesaat ini kondisi banjir di cawang pada 2/4/2019 sekitar 1500 - 0:18 wib banjir segera surut saya ikut terjebak banjir",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.8313983401488995
+    },
+    {
+      "scope": "Asli146 (15 masuk training)",
+      "id": "GEM-01323",
+      "text": "sebelum gempa bumi yang begitu dahsat begitu indah ya pemandang di kator inch setiap ada kegiatan apa saja pasti di tempat inich orang berkumpul tapi sayang itu semua tinggal kenangan belaka saja karena sok di hempas",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.6719713751069133
+    },
+    {
+      "scope": "Asli146 (15 masuk training)",
+      "id": "KEB-00264",
+      "text": "1 . kebakaran hutan dan lahan ( ) saat ini sudah mulai dilakukan penanggulangan dan pencegahan nya oleh tim manggala agni klhk , tni dan polri di daerah riau . via",
+      "gold": "FIRE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9534161035905354
+    },
+    {
+      "scope": "Asli146 (15 masuk training)",
+      "id": "KEB-00527",
+      "text": "video - proses pemadaman kebakaran lahan gambut di aceh barat",
+      "gold": "FIRE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.5908971407815677
+    },
+    {
+      "scope": "Asli146 (15 masuk training)",
+      "id": "BAN-01692",
+      "text": "banjir dukungan di injury time",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.5078029927417762
+    },
+    {
+      "scope": "Asli146 (15 masuk training)",
+      "id": "BAN-01512",
+      "text": "hari ini bu risma melakukan kunjungan ke beberapa lokasi kunjungan ini terkait cara pemkot mengatasi banjir di surabaya di titik ujung timur dan barat surabaya",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.8572167415789527
+    },
+    {
+      "scope": "Asli146 (15 masuk training)",
+      "id": "KEC-01006",
+      "text": "4 kecelakaan maut dan mengerikan di dunia karena hal sepele",
+      "gold": "NON_EVENT",
+      "prediction": "ACCIDENT",
+      "confidence": 0.6247928857992179
+    },
+    {
+      "scope": "Development50 v0.6 (usulan)",
+      "id": "NEW06-FLOOD-05",
+      "text": "Warga mengira kabar itu lelucon. Petugas kemudian mengonfirmasi banjir nyata di Desa Walikukun.",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.7071246950743395
+    },
+    {
+      "scope": "Development50 v0.6 (usulan)",
+      "id": "NEW06-FLOOD-07",
+      "text": "Tidak ada kebakaran di pasar. Yang terjadi adalah banjir, dengan air setinggi lutut para pedagang.",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.7810403494776929
+    },
+    {
+      "scope": "Development50 v0.6 (usulan)",
+      "id": "NEW06-EARTHQUAKE-09",
+      "text": "Kabar gempa awalnya diragukan, tetapi tim lapangan memastikan guncangan nyata dan menemukan rumah rusak.",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9111121956907816
+    },
+    {
+      "scope": "Development50 v0.6 (usulan)",
+      "id": "NEW06-ACCIDENT-08",
+      "text": "Kabar kecelakaan semula dibantah, tetapi polisi di lokasi kemudian mengonfirmasi tabrakan dan dua korban luka.",
+      "gold": "ACCIDENT",
+      "prediction": "NON_EVENT",
+      "confidence": 0.6496496825231028
+    },
+    {
+      "scope": "Regresi50 v0.7 (training lemah)",
+      "id": "NEW07-FLOOD-05",
+      "text": "Foto permukiman terendam itu sempat disebut palsu. Relawan di lokasi memastikan banjir benar terjadi dan membawa warga keluar.",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.535789595537563
+    },
+    {
+      "scope": "Regresi50 v0.7 (training lemah)",
+      "id": "NEW07-FLOOD-09",
+      "text": "Kabar gempa di kampung kami salah. Justru banjir yang sedang terjadi, dengan jalan dan halaman rumah tergenang.",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.8895046388733279
+    }
+  ],
+  "archive_name": "SILAR_SENA_context_guard_v0.8.1_20261019.zip",
+  "notebooks": [
+    [
+      "17 (riwayat v0.8)",
+      "Eksperimen sebelum pemulihan; bobot/metadata yang tersimpan dipertahankan.",
+      "Output notebook asli tidak tersedia setelah sesi terputus; tidak direka ulang.",
+      "Riwayat percakapan, bukan bukti eksekusi notebook yang dipulihkan."
+    ],
+    [
+      "17b (riwayat v0.8)",
+      "Eksperimen sebelum pemulihan; bobot/metadata yang tersimpan dipertahankan.",
+      "Output notebook asli tidak tersedia setelah sesi terputus; tidak direka ulang.",
+      "Riwayat percakapan, bukan bukti eksekusi notebook yang dipulihkan."
+    ],
+    [
+      "18 (riwayat v0.8)",
+      "Eksperimen sebelum pemulihan; bobot/metadata yang tersimpan dipertahankan.",
+      "Output notebook asli tidak tersedia setelah sesi terputus; tidak direka ulang.",
+      "Riwayat percakapan, bukan bukti eksekusi notebook yang dipulihkan."
+    ],
+    [
+      "17c (riwayat v0.8)",
+      "Eksperimen sebelum pemulihan; bobot/metadata yang tersimpan dipertahankan.",
+      "Output notebook asli tidak tersedia setelah sesi terputus; tidak direka ulang.",
+      "Riwayat percakapan, bukan bukti eksekusi notebook yang dipulihkan."
+    ],
+    [
+      "17d (riwayat v0.8)",
+      "Eksperimen sebelum pemulihan; bobot/metadata yang tersimpan dipertahankan.",
+      "Output notebook asli tidak tersedia setelah sesi terputus; tidak direka ulang.",
+      "Riwayat percakapan, bukan bukti eksekusi notebook yang dipulihkan."
+    ],
+    [
+      "17e (riwayat v0.8)",
+      "Eksperimen sebelum pemulihan; bobot/metadata yang tersimpan dipertahankan.",
+      "Output notebook asli tidak tersedia setelah sesi terputus; tidak direka ulang.",
+      "Riwayat percakapan, bukan bukti eksekusi notebook yang dipulihkan."
+    ],
+    [
+      "20_Verifikasi_Bobot_Dipulihkan_v0.8.1.ipynb",
+      "Verifikasi baru model v0.8 yang benar-benar tersimpan.",
+      "SUCCEEDED: sel CPython; salinan _executed disimpan.",
+      "Development/regresi, belum penerimaan akhir."
+    ],
+    [
+      "21_Koreksi_Konteks_SENA_CPU_v0.8.1.ipynb",
+      "Training aktual 1 epoch; 1.249 contoh unik, pemilihan development.",
+      "SUCCEEDED: sel CPython; salinan _executed disimpan.",
+      "Development/regresi, belum penerimaan akhir."
+    ],
+    [
+      "22_Verifikasi_Kandidat_SLR09_v0.8.1.ipynb",
+      "Ekspor dan verifikasi kandidat pertama; digantikan penjagaan22b.",
+      "SUCCEEDED: sel CPython; salinan _executed disimpan.",
+      "Development/regresi, belum penerimaan akhir."
+    ],
+    [
+      "22b_Penguatan_Kontras_Simulasi_v0.8.1.ipynb",
+      "Pemilihan bias dengan seluruh kontras yang tersedia; ekspor, 71 tes dan verifikasi final.",
+      "SUCCEEDED: sel CPython; salinan _executed disimpan.",
+      "Development/regresi, belum penerimaan akhir."
+    ],
+    [
+      "23_Uji_Penerimaan_Akhir_SLR09_v0.8.1.ipynb",
+      "Impor Excel yang sudah direview, validasi acuan, lalu inferensi dan penilaian.",
+      "BELUM DIJALANKAN: 50 acuan baru masih PENDING.",
+      "Dijalankan di sini sesudah review; tidak meminta pengguna menjalankan di laptop."
+    ]
+  ],
+  "v07_predictions": [
+    {
+      "id": "NEW07-FLOOD-01",
+      "label": "FLOOD",
+      "confidence": 0.989914059638977
+    },
+    {
+      "id": "NEW07-FLOOD-02",
+      "label": "FLOOD",
+      "confidence": 0.9868710041046143
+    },
+    {
+      "id": "NEW07-FLOOD-03",
+      "label": "FLOOD",
+      "confidence": 0.9864939451217651
+    },
+    {
+      "id": "NEW07-FLOOD-04",
+      "label": "FLOOD",
+      "confidence": 0.9893837571144104
+    },
+    {
+      "id": "NEW07-FLOOD-05",
+      "label": "NON_EVENT",
+      "confidence": 0.5357893109321594
+    },
+    {
+      "id": "NEW07-FLOOD-06",
+      "label": "FLOOD",
+      "confidence": 0.846811830997467
+    },
+    {
+      "id": "NEW07-FLOOD-07",
+      "label": "FLOOD",
+      "confidence": 0.989589512348175
+    },
+    {
+      "id": "NEW07-FLOOD-08",
+      "label": "FLOOD",
+      "confidence": 0.9502712488174438
+    },
+    {
+      "id": "NEW07-FLOOD-09",
+      "label": "NON_EVENT",
+      "confidence": 0.8895045518875122
+    },
+    {
+      "id": "NEW07-FLOOD-10",
+      "label": "FLOOD",
+      "confidence": 0.8743125796318054
+    },
+    {
+      "id": "NEW07-EARTHQUAKE-01",
+      "label": "EARTHQUAKE",
+      "confidence": 0.9957186579704285
+    },
+    {
+      "id": "NEW07-EARTHQUAKE-02",
+      "label": "EARTHQUAKE",
+      "confidence": 0.9953708052635193
+    },
+    {
+      "id": "NEW07-EARTHQUAKE-03",
+      "label": "EARTHQUAKE",
+      "confidence": 0.9943727254867554
+    },
+    {
+      "id": "NEW07-EARTHQUAKE-04",
+      "label": "EARTHQUAKE",
+      "confidence": 0.9853663444519043
+    },
+    {
+      "id": "NEW07-EARTHQUAKE-05",
+      "label": "EARTHQUAKE",
+      "confidence": 0.9872831106185913
+    },
+    {
+      "id": "NEW07-EARTHQUAKE-06",
+      "label": "EARTHQUAKE",
+      "confidence": 0.993111252784729
+    },
+    {
+      "id": "NEW07-EARTHQUAKE-07",
+      "label": "EARTHQUAKE",
+      "confidence": 0.9949560761451721
+    },
+    {
+      "id": "NEW07-EARTHQUAKE-08",
+      "label": "EARTHQUAKE",
+      "confidence": 0.9742692112922668
+    },
+    {
+      "id": "NEW07-EARTHQUAKE-09",
+      "label": "EARTHQUAKE",
+      "confidence": 0.9923571348190308
+    },
+    {
+      "id": "NEW07-EARTHQUAKE-10",
+      "label": "EARTHQUAKE",
+      "confidence": 0.9948626160621643
+    },
+    {
+      "id": "NEW07-FIRE-01",
+      "label": "FIRE",
+      "confidence": 0.9950287938117981
+    },
+    {
+      "id": "NEW07-FIRE-02",
+      "label": "FIRE",
+      "confidence": 0.9934185743331909
+    },
+    {
+      "id": "NEW07-FIRE-03",
+      "label": "FIRE",
+      "confidence": 0.9947505593299866
+    },
+    {
+      "id": "NEW07-FIRE-04",
+      "label": "FIRE",
+      "confidence": 0.9914141297340393
+    },
+    {
+      "id": "NEW07-FIRE-05",
+      "label": "FIRE",
+      "confidence": 0.9697704911231995
+    },
+    {
+      "id": "NEW07-FIRE-06",
+      "label": "FIRE",
+      "confidence": 0.9946240782737732
+    },
+    {
+      "id": "NEW07-FIRE-07",
+      "label": "FIRE",
+      "confidence": 0.9923536777496338
+    },
+    {
+      "id": "NEW07-FIRE-08",
+      "label": "FIRE",
+      "confidence": 0.9925093650817871
+    },
+    {
+      "id": "NEW07-FIRE-09",
+      "label": "FIRE",
+      "confidence": 0.9919666051864624
+    },
+    {
+      "id": "NEW07-FIRE-10",
+      "label": "FIRE",
+      "confidence": 0.9940111041069031
+    },
+    {
+      "id": "NEW07-ACCIDENT-01",
+      "label": "ACCIDENT",
+      "confidence": 0.9949094653129578
+    },
+    {
+      "id": "NEW07-ACCIDENT-02",
+      "label": "ACCIDENT",
+      "confidence": 0.994592010974884
+    },
+    {
+      "id": "NEW07-ACCIDENT-03",
+      "label": "ACCIDENT",
+      "confidence": 0.9595232605934143
+    },
+    {
+      "id": "NEW07-ACCIDENT-04",
+      "label": "ACCIDENT",
+      "confidence": 0.9946916699409485
+    },
+    {
+      "id": "NEW07-ACCIDENT-05",
+      "label": "ACCIDENT",
+      "confidence": 0.9379249811172485
+    },
+    {
+      "id": "NEW07-ACCIDENT-06",
+      "label": "ACCIDENT",
+      "confidence": 0.9913405776023865
+    },
+    {
+      "id": "NEW07-ACCIDENT-07",
+      "label": "ACCIDENT",
+      "confidence": 0.9923140406608582
+    },
+    {
+      "id": "NEW07-ACCIDENT-08",
+      "label": "ACCIDENT",
+      "confidence": 0.9943033456802368
+    },
+    {
+      "id": "NEW07-ACCIDENT-09",
+      "label": "ACCIDENT",
+      "confidence": 0.983065128326416
+    },
+    {
+      "id": "NEW07-ACCIDENT-10",
+      "label": "ACCIDENT",
+      "confidence": 0.9616611003875732
+    },
+    {
+      "id": "NEW07-NON_EVENT-01",
+      "label": "NON_EVENT",
+      "confidence": 0.9999797344207764
+    },
+    {
+      "id": "NEW07-NON_EVENT-02",
+      "label": "NON_EVENT",
+      "confidence": 0.9999047517776489
+    },
+    {
+      "id": "NEW07-NON_EVENT-03",
+      "label": "NON_EVENT",
+      "confidence": 0.9999828338623047
+    },
+    {
+      "id": "NEW07-NON_EVENT-04",
+      "label": "NON_EVENT",
+      "confidence": 0.999992847442627
+    },
+    {
+      "id": "NEW07-NON_EVENT-05",
+      "label": "NON_EVENT",
+      "confidence": 0.9999481439590454
+    },
+    {
+      "id": "NEW07-NON_EVENT-06",
+      "label": "NON_EVENT",
+      "confidence": 0.4985272288322449
+    },
+    {
+      "id": "NEW07-NON_EVENT-07",
+      "label": "NON_EVENT",
+      "confidence": 0.9999744892120361
+    },
+    {
+      "id": "NEW07-NON_EVENT-08",
+      "label": "NON_EVENT",
+      "confidence": 0.999988317489624
+    },
+    {
+      "id": "NEW07-NON_EVENT-09",
+      "label": "NON_EVENT",
+      "confidence": 0.9999842643737793
+    },
+    {
+      "id": "NEW07-NON_EVENT-10",
+      "label": "NON_EVENT",
+      "confidence": 0.9999954700469971
+    }
+  ],
+  "remaining_seen_regression_errors": [
+    {
+      "id": "NEW07-FLOOD-05",
+      "text": "Foto permukiman terendam itu sempat disebut palsu. Relawan di lokasi memastikan banjir benar terjadi dan membawa warga keluar.",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.5357893109321594,
+      "low_confidence": true,
+      "family": "rumor_verified",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "id": "NEW07-FLOOD-09",
+      "text": "Kabar gempa di kampung kami salah. Justru banjir yang sedang terjadi, dengan jalan dan halaman rumah tergenang.",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.8895045518875122,
+      "low_confidence": true,
+      "family": "other_event_denied",
+      "kind": "FALSE_NON_EVENT"
+    }
+  ],
+  "first_candidate_dev": {
+    "macro_f1": 0.9854497354497355,
+    "non_event_recall": 0.9642857142857143,
+    "min_event_recall": 0.9629629629629629
+  },
+  "known_contrasts": {
+    "human130": {
+      "support": 0,
+      "errors": []
+    },
+    "original146": {
+      "support": 0,
+      "errors": []
+    },
+    "adjudicated145": {
+      "support": 0,
+      "errors": []
+    },
+    "scope50": {
+      "support": 5,
+      "errors": []
+    },
+    "seen_v07_50": {
+      "support": 5,
+      "errors": []
+    },
+    "human_regression50": {
+      "support": 4,
+      "errors": []
+    }
+  },
+  "v07_remaining_note": "Regresi v0.7 masih salah 2/50. Target numerik dan seluruh kontras simulasi/latihan pada set yang sudah dilihat terpenuhi. Ini tetap development/regresi, bukan penerimaan akhir."
+}

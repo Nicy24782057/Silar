@@ -1,0 +1,7 @@
+{
+  "tests_run": 20,
+  "all_passed": true,
+  "scope": "SYNTHETIC_FIXTURES_AND_MOCK_DRIVER_NOT_NEURAL_MODEL_QUALITY",
+  "training_executed": false,
+  "new_neural_inference_executed": false
+}

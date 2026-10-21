@@ -1,0 +1,13 @@
+{
+  "source": "LIBRARY_RESTORED_SHORT_V08_FITTED",
+  "manual_non_event_bias_to_remove": 0.0,
+  "inherited_manual_non_event_bias": 2.5,
+  "files": {
+    "config.json": "febb4294e220615be653133104562be26236ea97165c5103dc7b6d377277da9a",
+    "model.safetensors": "5773c3c8f5f330ee0de10f2b2ee19ed85c24d53d58d27adf401bb114223f5a30",
+    "tokenizer.json": "93684d1d5cc282613006dbee78d38882487365cdd378d087e21e755ac157ca63",
+    "tokenizer_config.json": "6c7af3e1d0c166292dc68cece6e6bb2be29945b8a45b39c804f65e9602a78429",
+    "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+    "vocab.txt": "343bf28a78f7efeda6419fa610f553184a6dcd29aae726f46850cd05e3167dc3"
+  }
+}

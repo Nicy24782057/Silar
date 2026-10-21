@@ -1,0 +1,1754 @@
+[
+  {
+    "id": "BAN-01186",
+    "text": "banjir di aceh peneliti zaiyana putri : sekolah & ; outdoor & ; juga menarik",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.23336329958519283,
+      "EARTHQUAKE": 0.0002677248748211748,
+      "FIRE": 0.000633825579982222,
+      "ACCIDENT": 0.0017457354510141444,
+      "NON_EVENT": 0.7639894145089897
+    }
+  },
+  {
+    "id": "BAN-01703",
+    "text": "abang tolongin ini muti mau plng dari acara tadi dari metmall hujan deras banget mana banjir tolonginnnnn haha angkot nya lama nih mana masih jauh rumah mutiabang pokoknya sih you ya di event selanjutnya",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.024925959795122285,
+      "EARTHQUAKE": 0.000297735892323898,
+      "FIRE": 0.0002684992733697088,
+      "ACCIDENT": 0.011531886015247517,
+      "NON_EVENT": 0.9629759190239366
+    }
+  },
+  {
+    "id": "BAN-01721",
+    "text": "sebagian banjir sudah surut di jakarta sebagian warga kembali ke rumahnya saat ini pengungsi 338 kakak dan 1317 jiwa lokasi pengungsi berada berada di 10 titik lokasi 7 titik di wilayah jakarta timur 2 titik di wilayah jakarta selatan dan 1 titik di wilayah jakarta barat",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9946355013301836,
+      "EARTHQUAKE": 0.0004958477195728327,
+      "FIRE": 0.00011153291374423997,
+      "ACCIDENT": 0.0004289665869788503,
+      "NON_EVENT": 0.004328151449520349
+    }
+  },
+  {
+    "id": "BAN-01483",
+    "text": "bapak bupati stay sejak bencana banjir sampai hari ini banser siap di belakang bapak bupati madiun",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9825922856466247,
+      "EARTHQUAKE": 0.001509357196408068,
+      "FIRE": 0.0001183617124397823,
+      "ACCIDENT": 0.00043553951290615925,
+      "NON_EVENT": 0.015344455931621297
+    }
+  },
+  {
+    "id": "BAN-01390",
+    "text": "selain telan korban jebolnya tanggul pasirjati bandung berdampak banjir di",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9882404047749579,
+      "EARTHQUAKE": 0.0006285967528506714,
+      "FIRE": 0.0006541294768988108,
+      "ACCIDENT": 0.0009861102991070975,
+      "NON_EVENT": 0.009490758696185564
+    }
+  },
+  {
+    "id": "BAN-01308",
+    "text": "setelah banjir bandang yang menimpa sulawesi selatan sejak selasa ( 22/1 ) hingga hari ini ( 23/1 ) kantor lembaga layanan pendidikan tinggi ( lldikti ) wilayah ix sulawesi dan gorontalo di kota makassar terendam banjir setinggi orang dewasa",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.996615115408131,
+      "EARTHQUAKE": 0.0011877537290822054,
+      "FIRE": 0.0003686216894174483,
+      "ACCIDENT": 0.00044966154496820865,
+      "NON_EVENT": 0.0013788476284011435
+    }
+  },
+  {
+    "id": "BAN-01935",
+    "text": "kesigapan polri salurkan bantuan untuk korban banjir di konawe utara polri memberikan bantuan untuk korban bencana banjir bandang di wilayah konawe utara sulawesi tenggara",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9949978543325597,
+      "EARTHQUAKE": 0.0024072287111842586,
+      "FIRE": 0.0002267910018450225,
+      "ACCIDENT": 0.0006305826479017972,
+      "NON_EVENT": 0.0017375433065092167
+    }
+  },
+  {
+    "id": "BAN-01761",
+    "text": "luapan sungai lamong sebabkan banjir terparah di kecamatan cerme",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9955268326998014,
+      "EARTHQUAKE": 0.0003111435166607077,
+      "FIRE": 0.00025233312757301746,
+      "ACCIDENT": 0.0004926121584041571,
+      "NON_EVENT": 0.003417078497560698
+    }
+  },
+  {
+    "id": "BAN-01984",
+    "text": "asli ngeri-ngeri sedap naf eug beberapa kali bikin kegiatan sosial open donasi dari banjir 2014 kelud sinabung bencana asap dan ada beberapa kegiatan sosial lainnya wajib banget share dana yang masuk & keluar sampai terakir bikin lpj itu kalo di komunitas",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.01284381137827557,
+      "EARTHQUAKE": 0.0027866761774850155,
+      "FIRE": 0.001556441367428396,
+      "ACCIDENT": 0.0005376151014752443,
+      "NON_EVENT": 0.9822754559753357
+    }
+  },
+  {
+    "id": "BAN-01503",
+    "text": "polri distribusikan air bersih untuk korban banjir polres madiun polda jatim kerahkan mobil air bersih ke lokasi terdampak banjir di plumpung madiun jawa timur pasca banjir warga minim air bersih untuk kebutuhan konsumsi",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9953236743858074,
+      "EARTHQUAKE": 0.00038257293186864027,
+      "FIRE": 0.00016566710402495988,
+      "ACCIDENT": 0.00034905623040233516,
+      "NON_EVENT": 0.0037790293478966418
+    }
+  },
+  {
+    "id": "BAN-01058",
+    "text": "butuh karung pasir dari wan badud sabaaar ini ujian air pasang banjir rob rendam kampung nelayan di penjaringan",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9867109369502971,
+      "EARTHQUAKE": 0.0002911002404550287,
+      "FIRE": 0.00015716714908074706,
+      "ACCIDENT": 0.00023572824493376575,
+      "NON_EVENT": 0.012605067415233305
+    }
+  },
+  {
+    "id": "BAN-01516",
+    "text": "aksi dramatis aiptu sujadi anggota satlantas polres kediri menyelamatkan keluarga korban banjir di tepi tol ngawi-kertosono mendapat penghargaan dari gubernur jawa timur khofifah indar parawansa",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9877116074548078,
+      "EARTHQUAKE": 0.0004761840985931505,
+      "FIRE": 0.00021755748277630223,
+      "ACCIDENT": 0.00425670212341888,
+      "NON_EVENT": 0.007337948840403883
+    }
+  },
+  {
+    "id": "BAN-01251",
+    "text": "kader pks bagikan bantuan kepada masyarakat yang terkena banjir di jayapura",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9938727196264162,
+      "EARTHQUAKE": 0.00035512897169665545,
+      "FIRE": 0.0003690663602198628,
+      "ACCIDENT": 0.00024157658920549103,
+      "NON_EVENT": 0.005161508452461877
+    }
+  },
+  {
+    "id": "BAN-01407",
+    "text": "banjir bandang di queensland 500 ribu sapi mati",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9968503680718914,
+      "EARTHQUAKE": 0.00045205112002132055,
+      "FIRE": 0.00016451842870063527,
+      "ACCIDENT": 0.000460698910924582,
+      "NON_EVENT": 0.0020723634684619366
+    }
+  },
+  {
+    "id": "BAN-01812",
+    "text": "kondisi terkini banjir di kawasan industri jatake kamis ( 16/5/2019 ) sore karyawan yang ingin pulang harus melawan arus banjir",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9965798239712677,
+      "EARTHQUAKE": 0.0003818324641230586,
+      "FIRE": 0.00011016340018327067,
+      "ACCIDENT": 0.0005252086995617974,
+      "NON_EVENT": 0.0024029714648643088
+    }
+  },
+  {
+    "id": "BAN-01862",
+    "text": "jalan rusak di poros bone-wajo banjir di sidrap netizen pertanyakan keberadaan gubernur nya",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9919956078388907,
+      "EARTHQUAKE": 0.00016007086878282444,
+      "FIRE": 0.00030845553515678,
+      "ACCIDENT": 0.0004481410779916444,
+      "NON_EVENT": 0.007087724679177986
+    }
+  },
+  {
+    "id": "BAN-01755",
+    "text": "banjir di pakal tertangani dengan cepat",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9898947949656125,
+      "EARTHQUAKE": 0.00018369920131159508,
+      "FIRE": 0.00028480746168927084,
+      "ACCIDENT": 0.0002888792497823317,
+      "NON_EVENT": 0.0093478191216044
+    }
+  },
+  {
+    "id": "BAN-01324",
+    "text": "hujan lebat yang mengguyur makassar mengakibatkan banjir di berbagai daerah di sana dan banyak warga yang mengungsi di beberapa titik pengungsian karena rumah mereka terendam banjir untuk saat ini bantuan sangat di butuhkan baik tim medis maupun ban",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9942761868451094,
+      "EARTHQUAKE": 0.0010692834774717586,
+      "FIRE": 0.0002462563598399417,
+      "ACCIDENT": 0.00047919582326159054,
+      "NON_EVENT": 0.003929077494317281
+    }
+  },
+  {
+    "id": "BAN-01596",
+    "text": "overflow jadi penyebab banjir bandang di sentani",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9945902948460099,
+      "EARTHQUAKE": 0.0004941927294356738,
+      "FIRE": 0.0001786297153387714,
+      "ACCIDENT": 0.0006093757162895653,
+      "NON_EVENT": 0.004127506992926019
+    }
+  },
+  {
+    "id": "BAN-01189",
+    "text": "kado akhir tahun dari banjir rob rendam 4 rt di jakarta utara dan jakarta barat lewat",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9969163599869408,
+      "EARTHQUAKE": 0.0006073838652373344,
+      "FIRE": 0.0002738328099384978,
+      "ACCIDENT": 0.00028774987303696245,
+      "NON_EVENT": 0.0019146734648463034
+    }
+  },
+  {
+    "id": "BAN-01229",
+    "text": "banjir hingga 2 meter rendam permukiman warga di labuan banten",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9964165311349554,
+      "EARTHQUAKE": 0.0004348678754192388,
+      "FIRE": 0.00020402169921350866,
+      "ACCIDENT": 0.000403638747298919,
+      "NON_EVENT": 0.002540940543112838
+    }
+  },
+  {
+    "id": "BAN-01316",
+    "text": "from sedekahkreatif - bismillah assalamu'alaykum warahmatullahi wabarakatuh telah terjadi bencana banjir yang melanda sebagian kota di sulawesi selatan data sementara bnpb mencatat",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9850111535301301,
+      "EARTHQUAKE": 0.003797371504684796,
+      "FIRE": 0.0002114392936722275,
+      "ACCIDENT": 0.0028993663474795412,
+      "NON_EVENT": 0.008080669324033268
+    }
+  },
+  {
+    "id": "BAN-01947",
+    "text": "pertamina lubricants tanggap akan bencana dengan membantu memulihkan kondisi motor dan mobil para korban banjir di samarinda sejak 7 juni 2019 melalui program ganti oli gratis penggantian oli untuk motor dilakukan di bengkel enduro express ujung pero samarinda",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9938738174844165,
+      "EARTHQUAKE": 0.0027119969957429095,
+      "FIRE": 0.00033623321945395714,
+      "ACCIDENT": 0.0007118576432624818,
+      "NON_EVENT": 0.0023660946571241403
+    }
+  },
+  {
+    "id": "BAN-01274",
+    "text": "genangan/ banjir di desa rangkah kecamatan buayan rabu ( 16/1 ) pagi ini sebagian masuk ke rumah penduduk foto : kasiman iman/ fb",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9968356408983334,
+      "EARTHQUAKE": 0.0004911970934262308,
+      "FIRE": 0.00023874923521650202,
+      "ACCIDENT": 0.0005203078660347714,
+      "NON_EVENT": 0.0019141049069891492
+    }
+  },
+  {
+    "id": "BAN-01782",
+    "text": "selamat siang tim emergency response groups ( erg ) pt timah tbk tanggal 9 mei 2019 kemarin hingga saat ini masih berada di tengah-tengah korban bencana banjir dan tanah longsor di bengkulu",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.989604490799999,
+      "EARTHQUAKE": 0.0069071691169258435,
+      "FIRE": 0.00044100502475430647,
+      "ACCIDENT": 0.0015940149236232744,
+      "NON_EVENT": 0.0014533201346976525
+    }
+  },
+  {
+    "id": "BAN-01640",
+    "text": "waspadai hujan deras disertai angin kencang petir dan kilat pada musim transisi saat ini awan cumulonimbus tumbuh menjulang menghasilkan hujan deras sesaat ini kondisi banjir di cawang pada 2/4/2019 sekitar 1500 - 0:18 wib banjir segera surut saya ikut terjebak banjir",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9642521555815827,
+      "EARTHQUAKE": 0.0011693020920800503,
+      "FIRE": 0.00011980355999535039,
+      "ACCIDENT": 0.001002530212473479,
+      "NON_EVENT": 0.03345620855386838
+    }
+  },
+  {
+    "id": "BAN-01945",
+    "text": "salam sehat berikut adalah informasi terkait dengan banjir yang terjadi di kabupaten konawe utara update tanggal 25 juni 2019",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9911771475767709,
+      "EARTHQUAKE": 0.0011140251788480768,
+      "FIRE": 0.00012917834135955377,
+      "ACCIDENT": 0.0006237248526168173,
+      "NON_EVENT": 0.006955924050404728
+    }
+  },
+  {
+    "id": "BAN-01498",
+    "text": "polri evakuasi korban banjir dan tanah longsor di ntt telah terjadi banjir dan tanah longsor di dusun gorontalo dan dusun nanganae kecamatan komodo kabupaten mabar ntt",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9972615832868743,
+      "EARTHQUAKE": 0.0005118835226406528,
+      "FIRE": 0.00030658464854580803,
+      "ACCIDENT": 0.0004267309701766031,
+      "NON_EVENT": 0.0014932175717627576
+    }
+  },
+  {
+    "id": "BAN-01307",
+    "text": "update banjir di sulawesi selatan bnpb catat 8 orang meninggal 4 orang hilang via",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9956476206435395,
+      "EARTHQUAKE": 0.0002835291919357529,
+      "FIRE": 0.0001655076530495305,
+      "ACCIDENT": 0.0005344950405622558,
+      "NON_EVENT": 0.003368847470912968
+    }
+  },
+  {
+    "id": "BAN-01964",
+    "text": "bantu korban banjir anggota polres purworejo membantu evakuasi korban banjir luapan sungai bogowonto di dusun jambu desa dadirejo kecamatan bagelen senin 18 maret 2019",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9971036540462048,
+      "EARTHQUAKE": 0.0004132500919378455,
+      "FIRE": 0.0001655689598289337,
+      "ACCIDENT": 0.000623829227884381,
+      "NON_EVENT": 0.0016936976741439961
+    }
+  },
+  {
+    "id": "BAN-01534",
+    "text": "beberapa lokasi titik banjir di wilayah kabupaten bantul dampak hujan tanggal 17/3/19",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9942180165120613,
+      "EARTHQUAKE": 0.0010131626083416654,
+      "FIRE": 0.00018131963401343354,
+      "ACCIDENT": 0.0003109683591719839,
+      "NON_EVENT": 0.004276532886411462
+    }
+  },
+  {
+    "id": "BAN-01448",
+    "text": "banjir lumpur di cilumuh bukan karena ada penembangan pohon di perhutani via",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9848646498732001,
+      "EARTHQUAKE": 0.00041898176433786597,
+      "FIRE": 0.0002716224149118234,
+      "ACCIDENT": 0.0002896795787098458,
+      "NON_EVENT": 0.014155066368840362
+    }
+  },
+  {
+    "id": "GEM-01232",
+    "text": "850 satu gempa bumi sederhana dengan kekuatan 71 pada skala richter dilaporkan berlaku di barat laut sumatera indonesia awal pagi tadi tiada ancaman tsunami kepada malaysia - selamat malaysia",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00019722718862312842,
+      "EARTHQUAKE": 0.9825955343057955,
+      "FIRE": 0.00029542350591929724,
+      "ACCIDENT": 0.0006698635869328877,
+      "NON_EVENT": 0.016241951412729178
+    }
+  },
+  {
+    "id": "GEM-01037",
+    "text": "pasca gempa bumi dan tsunami yang melanda kota palu dan sekitarnya kisah-kisah tentang karomah bermunculan gempa berkekuatan 7 4 sr disertai tsunami yang terjadi pada jumat ( 28/9/2018 ) itu telah meluluhlantakkan beberapa wilayah di kota palu",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0007940860052584262,
+      "EARTHQUAKE": 0.9970064119442812,
+      "FIRE": 0.0001943002079825556,
+      "ACCIDENT": 0.000680125564080307,
+      "NON_EVENT": 0.0013250762783975738
+    }
+  },
+  {
+    "id": "GEM-01306",
+    "text": "ibm indonesia bersama dengan perwakilan dari pureheart wahana visi indonesia igegama iabie dan juga bppt datang mengunjungi tempat pengusian dari korban bencana alam gempa bumi di",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0017423587787863764,
+      "EARTHQUAKE": 0.9951259825485401,
+      "FIRE": 0.00041302421416370853,
+      "ACCIDENT": 0.000701361465196565,
+      "NON_EVENT": 0.0020172729933132507
+    }
+  },
+  {
+    "id": "GEM-01059",
+    "text": "gempa bumi sempat mengguncang kabupaten situbondo jawa timur pada kamis dini hari ( 11/10 ) menurut badan nasional penanggulangan bencana guncangan gempa tersebut bahkan terasa di",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00032688419123705825,
+      "EARTHQUAKE": 0.9971450221870728,
+      "FIRE": 0.0001373617153547184,
+      "ACCIDENT": 0.0004980582817958082,
+      "NON_EVENT": 0.001892673624539673
+    }
+  },
+  {
+    "id": "GEM-01244",
+    "text": "gempa bumi tidak ganggu pertanian di parigi - medcom id",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00031897034895383503,
+      "EARTHQUAKE": 0.9862073853834387,
+      "FIRE": 0.0004034413228017354,
+      "ACCIDENT": 0.0007629327151558932,
+      "NON_EVENT": 0.01230727022964984
+    }
+  },
+  {
+    "id": "GEM-01005",
+    "text": "tiga maut gempa bumi landa bali dan pulau jawa berita penuh di",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0005606292734439899,
+      "EARTHQUAKE": 0.9970161392628706,
+      "FIRE": 0.00023625951499732682,
+      "ACCIDENT": 0.000358671507383923,
+      "NON_EVENT": 0.0018283004413041143
+    }
+  },
+  {
+    "id": "GEM-01344",
+    "text": "selain personel perlengkapan dan alat berat yang digunakan dalam membantu korban bencana gempa bumi di ntb seperti 1 unit excavator",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.000756636754390674,
+      "EARTHQUAKE": 0.9972202716908263,
+      "FIRE": 0.00033893668388322357,
+      "ACCIDENT": 0.00043875429009967087,
+      "NON_EVENT": 0.001245400580800248
+    }
+  },
+  {
+    "id": "GEM-01003",
+    "text": "kementerian kesehatan ri turut berduka cita atas musibah bencana gempa bumi yang terjadi di jawa timur semoga saudara-saudara kita diberikan kekuatan dan nikmat kesehatan",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0008584956301461552,
+      "EARTHQUAKE": 0.9964072631212736,
+      "FIRE": 0.00046466651935196435,
+      "ACCIDENT": 0.0007338225794387265,
+      "NON_EVENT": 0.001535752149789417
+    }
+  },
+  {
+    "id": "GEM-01180",
+    "text": "duka sulteng adalah duka kita foto : bu dokter stephanie saat mengunjungi para pengungsi korban gempa bumi dan tsunami di sulawesi tengah",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0007922177456352587,
+      "EARTHQUAKE": 0.9965714976457561,
+      "FIRE": 0.00042757830329445646,
+      "ACCIDENT": 0.0008607379920882079,
+      "NON_EVENT": 0.0013479683132259755
+    }
+  },
+  {
+    "id": "GEM-01572",
+    "text": "dipicu gempa bumi magnitudo 9 1 di samudera hindia gempa bumi terbesar ketiga di dunia ini mengakibatkan tsunami setinggi 30 meter korban tewas 286000 orang dari 14 negara indonesia sekitar 170000 tewas dan 50000 hilang",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0009799437379845498,
+      "EARTHQUAKE": 0.9965601012781424,
+      "FIRE": 0.00013455607121737383,
+      "ACCIDENT": 0.0007947485801945055,
+      "NON_EVENT": 0.0015306503324610374
+    }
+  },
+  {
+    "id": "GEM-01075",
+    "text": "presiden menyambut baik keputusan untuk menyederhanakan prosedur pengambilan uang bagi korban gempa bumi di lombok ntb dari 17 menjadi tinggal 1 prosedur saja yang diikuti sehingga di lapangan betul-betul bisa dilaksanakan pembagian uang bantuan pembangunan rumah itu",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0005931981489033276,
+      "EARTHQUAKE": 0.9566865991673829,
+      "FIRE": 0.0011045702207799835,
+      "ACCIDENT": 0.0022366695713800073,
+      "NON_EVENT": 0.03937896289155376
+    }
+  },
+  {
+    "id": "GEM-01246",
+    "text": "tahun lalu kita mengalami gempa bumi dua kali di tanggal 31 oktober",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0003771002013181294,
+      "EARTHQUAKE": 0.9937992666212145,
+      "FIRE": 0.0001551996929230362,
+      "ACCIDENT": 0.0007116413718408184,
+      "NON_EVENT": 0.0049567921127034835
+    }
+  },
+  {
+    "id": "GEM-01573",
+    "text": "saleum takziah kepada mangsa gempa bumi & tsunami di darussalam 26 december 2004-2018 ( 14 tahun ) uroe moelia mati syahed al fatihah",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0002936840183010002,
+      "EARTHQUAKE": 0.9950749713122341,
+      "FIRE": 0.00031936977524169604,
+      "ACCIDENT": 0.0017789503013803264,
+      "NON_EVENT": 0.0025330245928428044
+    }
+  },
+  {
+    "id": "GEM-01525",
+    "text": "alhamdulillah ! 699 hunian sementara dibangun untuk korban gempa bumi-tsunami di palu",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.000698949664745603,
+      "EARTHQUAKE": 0.9968932300505058,
+      "FIRE": 0.0005436794658516803,
+      "ACCIDENT": 0.0006261813950631178,
+      "NON_EVENT": 0.0012379594238338782
+    }
+  },
+  {
+    "id": "GEM-01591",
+    "text": "gempa bumi bermagnitud 61 pada skala richter menggoncang wilayah papua barat di indonesia menurut badan meteorologi klimatologi dan geofisika indonesia ( bmkg ) gempa itu terjadi pukul 0:10:03 pagi waktu indonesia barat berpusat di 55km di tenggara manokwarisel papua barat",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00041240082437250266,
+      "EARTHQUAKE": 0.9972067002910332,
+      "FIRE": 0.00015057097043925013,
+      "ACCIDENT": 0.00042030715581456223,
+      "NON_EVENT": 0.001810020758340534
+    }
+  },
+  {
+    "id": "GEM-01414",
+    "text": "pusat gempa bumi berada di laut 275 kilometer timur laut maluku barat daya",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0004617594496256516,
+      "EARTHQUAKE": 0.9964967760977326,
+      "FIRE": 0.00022743197768756787,
+      "ACCIDENT": 0.0003812428417640146,
+      "NON_EVENT": 0.0024327896331902458
+    }
+  },
+  {
+    "id": "GEM-01485",
+    "text": "setelah kemarin ada yang tetap nekad meneruskan shalat ketika gempa bumi dan masjid tempat shalatnya bergoyang kemudian ada yang shalat berjamaah di halte busway ada pula yang shalat di tengah gang gerbong kereta",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0013970439983939293,
+      "EARTHQUAKE": 0.9291116295615361,
+      "FIRE": 0.0014938320384147825,
+      "ACCIDENT": 0.005303241270918174,
+      "NON_EVENT": 0.06269425313073701
+    }
+  },
+  {
+    "id": "GEM-01323",
+    "text": "sebelum gempa bumi yang begitu dahsat begitu indah ya pemandang di kator inch setiap ada kegiatan apa saja pasti di tempat inich orang berkumpul tapi sayang itu semua tinggal kenangan belaka saja karena sok di hempas",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0004639900906350041,
+      "EARTHQUAKE": 0.11260611298718398,
+      "FIRE": 0.0010177148848070946,
+      "ACCIDENT": 0.0009894933702078988,
+      "NON_EVENT": 0.8849226886671661
+    }
+  },
+  {
+    "id": "GEM-01261",
+    "text": "rumah zakat siap bangun 500 huntara untuk korban bencana sulawesi tengah palu pasca bencana gempa bumi dan tsunami di palu - donggala rumah zakat menginisiasi program penangan bencana",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0004739452572101609,
+      "EARTHQUAKE": 0.9975027835334664,
+      "FIRE": 0.00021353667514091107,
+      "ACCIDENT": 0.00034504692447523514,
+      "NON_EVENT": 0.0014646876097072702
+    }
+  },
+  {
+    "id": "GEM-01248",
+    "text": "gempa bumi di timur laut kobisonta",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00035320376515018655,
+      "EARTHQUAKE": 0.9969765959000015,
+      "FIRE": 0.0002455177283073495,
+      "ACCIDENT": 0.00038334898390670583,
+      "NON_EVENT": 0.0020413336226341823
+    }
+  },
+  {
+    "id": "GEM-01649",
+    "text": "gempa terjadi di maluku utara kali ini bermagnitudo 4 4 jakarta | realitas - gempa bumi kembali tercatat terjadi di maluku utara kali ini gempa yang terjadi bermagnitudo 4 4 dilihat detikcom dari situs bmkg sabtu ( 5/1/2019 ) gempa itu terjadi pada pukul 12:02 wib pusat enggak",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0005035947370704583,
+      "EARTHQUAKE": 0.9968343636758249,
+      "FIRE": 0.00017117460592603367,
+      "ACCIDENT": 0.0004984644091003734,
+      "NON_EVENT": 0.0019924025720781885
+    }
+  },
+  {
+    "id": "GEM-01394",
+    "text": "penanggulangan bencana gempa bumi tsunami dan likuifaksi membantu pembangunan sekolah dasar bagi anak-anak korban bencana alam yang terjadi di sulawesi tengah",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.002186862879821735,
+      "EARTHQUAKE": 0.992510138808714,
+      "FIRE": 0.0005725238639313636,
+      "ACCIDENT": 0.00029687730206217066,
+      "NON_EVENT": 0.004433597145470881
+    }
+  },
+  {
+    "id": "GEM-01207",
+    "text": "gempa magnitudo 3 2 guncang palu gempa bumi berkekuatan magnitudo 3 2 terjadi di",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00048342987063279227,
+      "EARTHQUAKE": 0.9963879855872095,
+      "FIRE": 0.0002315595504323223,
+      "ACCIDENT": 0.0006390723267595834,
+      "NON_EVENT": 0.00225795266496565
+    }
+  },
+  {
+    "id": "GEM-01476",
+    "text": "gempa bumi dengan magnitudo 5 2 terjadi di kepulauan mentawai sumatera barat gempa tersebut tidak berpotensi menimbulkan tsunami",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00035764589970604184,
+      "EARTHQUAKE": 0.9967753450906364,
+      "FIRE": 0.00021053568176514312,
+      "ACCIDENT": 0.00044016729925916827,
+      "NON_EVENT": 0.0022163060286333
+    }
+  },
+  {
+    "id": "KEB-00509",
+    "text": "kebakaran melahap rumah tinggal di penjaringan , jakarta utara , minggu ( 28/6/2020 ) dini hari . 10 unit mobil pemadam kebakaran dikerahkan ke lokasi kejadian .",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0003053283912421794,
+      "EARTHQUAKE": 0.0004518880247514868,
+      "FIRE": 0.9974087004840112,
+      "ACCIDENT": 0.0002629842131173945,
+      "NON_EVENT": 0.001571098886877769
+    }
+  },
+  {
+    "id": "KEB-00831",
+    "text": "jadi cerita nya ada kebakaran , trus pemadam dateng , pemandm nya langsung nyiremin rumah2 di samping rumah yg lagi kebakaran nya trus pemadam kebakaran nya di lemparin batu warga , kata nya pemadam nya malah bercanda wkwk dasar orang2 tolol lu kira api nabun bisa di pademin pake aer",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0006707882538746718,
+      "EARTHQUAKE": 0.0005815337106175786,
+      "FIRE": 0.21413599291320215,
+      "ACCIDENT": 0.0013433888271594506,
+      "NON_EVENT": 0.7832682962951462
+    }
+  },
+  {
+    "id": "KEB-00971",
+    "text": "kebakaran di padang habiskan tiga rumah dan delapankontrakan",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00044914745557279114,
+      "EARTHQUAKE": 0.00043677536219800984,
+      "FIRE": 0.9973685641444431,
+      "ACCIDENT": 0.00026933930122980136,
+      "NON_EVENT": 0.0014761737365564405
+    }
+  },
+  {
+    "id": "KEB-00264",
+    "text": "1 . kebakaran hutan dan lahan ( ) saat ini sudah mulai dilakukan penanggulangan dan pencegahan nya oleh tim manggala agni klhk , tni dan polri di daerah riau . via",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0007621094097416359,
+      "EARTHQUAKE": 0.0008141650618430344,
+      "FIRE": 0.0706388297183095,
+      "ACCIDENT": 0.00047330106699217675,
+      "NON_EVENT": 0.9273115947431136
+    }
+  },
+  {
+    "id": "KEB-00359",
+    "text": "semalam kebakaran di dekat es masuk gajahan . . @ solo , jawa tengah",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00020057068044528853,
+      "EARTHQUAKE": 0.0006651930576608395,
+      "FIRE": 0.9924368433711498,
+      "ACCIDENT": 0.0004570279134917762,
+      "NON_EVENT": 0.006240364977252287
+    }
+  },
+  {
+    "id": "KEB-00773",
+    "text": "telah terjadi kebakaran di kp . leweng gede parahu , sukamulya balaraja sampai informasi ini di dapatkan masih belum di ketahui penyebab kebakaran nya , yang tau info nya bisa komen di kolam komentar dm via sobatnet",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00024938270711333726,
+      "EARTHQUAKE": 0.0003978697117951646,
+      "FIRE": 0.9954084386172946,
+      "ACCIDENT": 0.00022749645689948915,
+      "NON_EVENT": 0.003716812506897465
+    }
+  },
+  {
+    "id": "KEB-00695",
+    "text": "gedung telkom ada yg kebakaran gi kata nya di pekanbaru , makanya jaringan langsung pada keputus .",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0005934170959432608,
+      "EARTHQUAKE": 0.001142497741513061,
+      "FIRE": 0.5638535158066592,
+      "ACCIDENT": 0.0010378990303841111,
+      "NON_EVENT": 0.43337267032550036
+    }
+  },
+  {
+    "id": "KEB-00375",
+    "text": "kebakaran rumah kosong di daerah kupang jaya ( ngesong ) surabaya , sudah ada petugas pmk kota surabaya dan api sudah dipadamkan .",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00018853717687489845,
+      "EARTHQUAKE": 0.0002703968881676888,
+      "FIRE": 0.9970473612735563,
+      "ACCIDENT": 0.0002650566914071686,
+      "NON_EVENT": 0.0022286479699939665
+    }
+  },
+  {
+    "id": "KEB-00990",
+    "text": "kebakaran pemukiman di distrik-9 jayapura utara kota jayapura ratusan rumah warga dilahap si jago merah . semoga tidak ada kaitan dengan separatis . .",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00031243727499373453,
+      "EARTHQUAKE": 0.0004063059940446084,
+      "FIRE": 0.9972010823529098,
+      "ACCIDENT": 0.00023611141953467502,
+      "NON_EVENT": 0.0018440629585171485
+    }
+  },
+  {
+    "id": "KEB-00613",
+    "text": "sabtu ( 25/7 ) sekitar pukul 5.1 wita terjadi kebakaran gudang garmen dan sablon di jalan gunung ringin raya , tegal harum denpasar barat . kebakaran diduga terjadi akibat percikan api sisa pembakaran sampah . tidak ada korban jiwa dalam peristiwa ini . . info",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00020981804163589326,
+      "EARTHQUAKE": 0.0004144037992463093,
+      "FIRE": 0.9970535593923902,
+      "ACCIDENT": 0.0003411944234460147,
+      "NON_EVENT": 0.001981024343281597
+    }
+  },
+  {
+    "id": "KEB-00753",
+    "text": "malam kak felim . jawin informasikan perihal jaringan internet nya , setelah di lakukan pengecekkan saat ini team teknisi sedang dalam progress pemulihan layanan jaringan internet nya pasca kebakaran yang terjadi di sto pekanbaru . terima kasih - jawin",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00032205957699434285,
+      "EARTHQUAKE": 0.0007890705220552602,
+      "FIRE": 0.9749154215620656,
+      "ACCIDENT": 0.0006387224170971902,
+      "NON_EVENT": 0.023334725921787737
+    }
+  },
+  {
+    "id": "KEB-00666",
+    "text": "kebakaran di gunung kemendur balikpapan , 2 petugas damkar dilarikan ke rs kebaka",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00032443045573121146,
+      "EARTHQUAKE": 0.00028446794972242863,
+      "FIRE": 0.9970520596388129,
+      "ACCIDENT": 0.000603521426880428,
+      "NON_EVENT": 0.0017355205288531088
+    }
+  },
+  {
+    "id": "KEB-01022",
+    "text": "gardu listrik di fatmawati jaksel meledak , polisi : sudah ditangani pln : gardu listrik di dekat traffic light ( tl ) fatmawati , jakarta selatan meledak siang tadi . ledakan menyebabkan terjadi nya kebakaran di gardu listrik tersebut .",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00046574144202774203,
+      "EARTHQUAKE": 0.0006857083773362533,
+      "FIRE": 0.9932161514688935,
+      "ACCIDENT": 0.0022798099905986325,
+      "NON_EVENT": 0.0033525887211438314
+    }
+  },
+  {
+    "id": "KEB-01031",
+    "text": "kebakaran di jl . dahlia , bjm . 0 : 40 wita 04/11 @ banjarmasin",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0002509859202223546,
+      "EARTHQUAKE": 0.00032665381910959015,
+      "FIRE": 0.9970515425575048,
+      "ACCIDENT": 0.0004349844438180565,
+      "NON_EVENT": 0.0019358332593451548
+    }
+  },
+  {
+    "id": "KEB-00955",
+    "text": "kebakaran di desa tumbang bahan , api melahap balai desa dan panggungadat",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00032300736867195754,
+      "EARTHQUAKE": 0.00041826321680844396,
+      "FIRE": 0.9971846709846954,
+      "ACCIDENT": 0.000217130693442836,
+      "NON_EVENT": 0.0018569277363814152
+    }
+  },
+  {
+    "id": "KEB-00793",
+    "text": "kebakaran di kejaksaan agung | | kejagung kebakaran | | kejagung jakarta selatan kebakaran | trending in indonesia asian networkmedia",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0001802640742853717,
+      "EARTHQUAKE": 0.00024692362806213146,
+      "FIRE": 0.9952755746392251,
+      "ACCIDENT": 0.0002756274570643376,
+      "NON_EVENT": 0.004021610201363014
+    }
+  },
+  {
+    "id": "KEB-01056",
+    "text": "kapolsek jatiwangi turun langsung bantu padamkan api bersama petugas damkar dan warga polres majalengka-personil polsek jatiwangi di pimpin langsung kapolsek jatiwangi kompol asep saepudin fiqih . sh . mh , ikut membantu memadamkan api kebakaran rumah di",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0004781914128086465,
+      "EARTHQUAKE": 0.00047857005642185264,
+      "FIRE": 0.9930810290592035,
+      "ACCIDENT": 0.00045462935331290146,
+      "NON_EVENT": 0.0055075801182530625
+    }
+  },
+  {
+    "id": "KEB-00908",
+    "text": "15 unit mobil pemadam kebakaran dikerahkan untuk memadamkan api yang melalap pabrik mesin bubut di cengkareng , jakarta barat .",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0004985018823213849,
+      "EARTHQUAKE": 0.0002885355234207244,
+      "FIRE": 0.9952464057368907,
+      "ACCIDENT": 0.000274128053035387,
+      "NON_EVENT": 0.0036924288043316744
+    }
+  },
+  {
+    "id": "KEB-00527",
+    "text": "video - proses pemadaman kebakaran lahan gambut di aceh barat",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0016818130709703712,
+      "EARTHQUAKE": 0.0015415569316622746,
+      "FIRE": 0.8596077622580838,
+      "ACCIDENT": 0.000571002023633634,
+      "NON_EVENT": 0.1365978657156499
+    }
+  },
+  {
+    "id": "KEB-00924",
+    "text": "beri semangat , undunsyah datangi korban tanah longsor dan kebakaran di tarakan",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.044299408659514386,
+      "EARTHQUAKE": 0.007490034895946135,
+      "FIRE": 0.9068623341431988,
+      "ACCIDENT": 0.003470652255282741,
+      "NON_EVENT": 0.03787757004605786
+    }
+  },
+  {
+    "id": "KEB-00659",
+    "text": "terjadi kebakaran pd tumpukan pallet pkl . 5.14 di jl . dr . soemarno kelurahan pulogebang kecamatan cakung jakarta timur . pengerahan 3 unit . unit tiba pkl . 5.2 . dalam penanganan petugas ( 1/8/2020 ) .",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00036514777881828305,
+      "EARTHQUAKE": 0.00046521743884421935,
+      "FIRE": 0.9971439149259637,
+      "ACCIDENT": 0.0003686198726491277,
+      "NON_EVENT": 0.0016570999837247488
+    }
+  },
+  {
+    "id": "KEB-00482",
+    "text": "mari bantu korban kebakaran di mantraman , mereka sangat membutuhkan uluran tangan kita sudah jatuh tertimpa tangga , kira-kira begitu lah nasib 25 keluarga di rw 3 mantraman , menteng , jakarta . rumah bilik yang mereka tempati terpaksa mereka relakan habis dilahap si jago api .",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0006579713897667112,
+      "EARTHQUAKE": 0.000725153800094974,
+      "FIRE": 0.9567267399142518,
+      "ACCIDENT": 0.0003605855041798077,
+      "NON_EVENT": 0.04152954939170657
+    }
+  },
+  {
+    "id": "KEB-00539",
+    "text": "video - kebakaran hanguskan delapan ruko di pasar bina usaha aceh barat , sejumlah warga pingsan",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0003380842030275786,
+      "EARTHQUAKE": 0.0005426762304120474,
+      "FIRE": 0.9968649845081837,
+      "ACCIDENT": 0.0004944069657282261,
+      "NON_EVENT": 0.0017598480926484402
+    }
+  },
+  {
+    "id": "KEB-00694",
+    "text": "kantor nya kebakaran di pekanbaru",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0003517293828072915,
+      "EARTHQUAKE": 0.0004442652393771906,
+      "FIRE": 0.9958361197680363,
+      "ACCIDENT": 0.0001769635697424555,
+      "NON_EVENT": 0.003190922040036792
+    }
+  },
+  {
+    "id": "KEB-00439",
+    "text": "damkar banda aceh : kebakaran rumah berkonstruksi kayu di gampong keuramat",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00040942641274040203,
+      "EARTHQUAKE": 0.0006412008228682751,
+      "FIRE": 0.9970034984394572,
+      "ACCIDENT": 0.0003376982167804494,
+      "NON_EVENT": 0.0016081761081536518
+    }
+  },
+  {
+    "id": "KEB-00615",
+    "text": "kebakaran 7 rumah di morokrembangan surabaya diduga karena korsleting : kebakaran 7 rumah di jalan tambak asri bunga rampai 5 , rw 6 , morokrembangan , surabaya , diduga dipicu oleh korsleting di salah satu rumah",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0004038706174712962,
+      "EARTHQUAKE": 0.00031767369758785747,
+      "FIRE": 0.9970037251063906,
+      "ACCIDENT": 0.0005766096964783098,
+      "NON_EVENT": 0.0016981208820719483
+    }
+  },
+  {
+    "id": "KEB-00739",
+    "text": "si tambahan untuk wilayah pekanbaru sedang terjadi gangguan yang disebabkan karena ada nya kebakaran di sto pekanbaru , dan tadi sempat terjadi gangguan nasional beberapa saat , namun kami dapat informasikan layanan mulai kembali normal . terima kasih - arvi ( 2/2 )",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0027630186258188246,
+      "EARTHQUAKE": 0.002554965094664856,
+      "FIRE": 0.7187375627242417,
+      "ACCIDENT": 0.0018783885467755037,
+      "NON_EVENT": 0.2740660650084991
+    }
+  },
+  {
+    "id": "KEB-00668",
+    "text": "kebakaran di polewali mandar , selengkapnya di :",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0003491078748169237,
+      "EARTHQUAKE": 0.00032950958118974,
+      "FIRE": 0.9959105790823981,
+      "ACCIDENT": 0.00024773332901755694,
+      "NON_EVENT": 0.003163070132577616
+    }
+  },
+  {
+    "id": "KEB-00745",
+    "text": "mahkamah tinggi kuala lumpur memerintahkan seorang remaja lelaki ditahan di penjara selama diperkenankan yang di-pertuan agong setelah didapati bersalah membunuh 23 individu dalam kebakaran di pusat tahfiz darul",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0014253720849891356,
+      "EARTHQUAKE": 0.0014611678214362198,
+      "FIRE": 0.9835649578814308,
+      "ACCIDENT": 0.0030848065304423748,
+      "NON_EVENT": 0.010463695681701447
+    }
+  },
+  {
+    "id": "KEB-01124",
+    "text": "detik detik kebakaran ruko ratu ku di jalan iskandar tsani kota langsa aceh",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0004551798352732072,
+      "EARTHQUAKE": 0.0006275391961914846,
+      "FIRE": 0.9801061841548525,
+      "ACCIDENT": 0.00022527470599999623,
+      "NON_EVENT": 0.018585822107682917
+    }
+  },
+  {
+    "id": "KEB-00557",
+    "text": "video kebakaran gudang di jl mulawarman rt 59 no . 49 kel . sepinggan kec . balikpapan selatan kota balikpapan kaltim video lengkap nya di youtobe . . link : jangan lupa di subcribe , like",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00021460948545229928,
+      "EARTHQUAKE": 0.0004534982309657031,
+      "FIRE": 0.9969595972234587,
+      "ACCIDENT": 0.0003355736674593952,
+      "NON_EVENT": 0.0020367213926637587
+    }
+  },
+  {
+    "id": "KEB-00904",
+    "text": "pmi bantu korban kebakaran rumah di baran rt . 13 doyong kec . miri sragen yang terjadi pd senin pk . 19 ( 21/9/20 ) bantuan diserahkan pada selasa siang ( 22/9/20 ) berupa uang tunai , paket hygine kit , paket sembako , matras dan sarung . semoga bermanfaat",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0006070129846586977,
+      "EARTHQUAKE": 0.0012344649185419933,
+      "FIRE": 0.9958231920160219,
+      "ACCIDENT": 0.0004702403558008871,
+      "NON_EVENT": 0.0018650897249764202
+    }
+  },
+  {
+    "id": "KEB-00546",
+    "text": "seorang warga tewas akibat kebakaran di makassar",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0057612466270632445,
+      "EARTHQUAKE": 0.0011169576430166944,
+      "FIRE": 0.8644096658298864,
+      "ACCIDENT": 0.11938538320590815,
+      "NON_EVENT": 0.00932674669412545
+    }
+  },
+  {
+    "id": "KEB-00693",
+    "text": "kebakaran lahan di ogan ilir .",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.000725046950830729,
+      "EARTHQUAKE": 0.00037527227224655593,
+      "FIRE": 0.9903523922937931,
+      "ACCIDENT": 0.0003464246253490672,
+      "NON_EVENT": 0.008200863857780549
+    }
+  },
+  {
+    "id": "KEB-00940",
+    "text": ". . . . kavling dpr di sidoarjo udah kebakaran semalem . baru tau di story ig . bener-bener bakalan banyak api mulai hari ini .",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.0003928941843738813,
+      "EARTHQUAKE": 0.0004915448667824365,
+      "FIRE": 0.1106968768415508,
+      "ACCIDENT": 0.0005669964778230785,
+      "NON_EVENT": 0.8878516876294698
+    }
+  },
+  {
+    "id": "KEC-01261",
+    "text": "terjadi kecelakaan 1 mobil vs 3 motor di pajaresuk pringsewu lampung mobil menabrak 3 motor be 2516 gue mobil kijang grand abu-abu be 2427 nr vixion f3885 ninja putih matik xxxxx di duga supir mengantuk terjadi macet panjang sudah ada polisi",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0002994374453639585,
+      "EARTHQUAKE": 0.00013857966981567588,
+      "FIRE": 0.00015347653383469798,
+      "ACCIDENT": 0.9954570248710343,
+      "NON_EVENT": 0.0039514814799514785
+    }
+  },
+  {
+    "id": "KEC-01307",
+    "text": "533 : kecelakaan melibatkan 2 mobil sedan 1 diantaranya terbalik di jalan marsekal surya darma depan aeropolis tangerang belum ada petugas di lokasi arus lalin masih lancar namun berpotensi timbulkan kemacetan ( p rahman )",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00035625575670812025,
+      "EARTHQUAKE": 0.00010521628889942428,
+      "FIRE": 0.0001539048966472381,
+      "ACCIDENT": 0.9973723116563508,
+      "NON_EVENT": 0.0020123114013943983
+    }
+  },
+  {
+    "id": "KEC-00299",
+    "text": "kecelakaan maut di subang kecelakaan maut terjadi di tanjakan emen subang jawa barat pada sabtu ( 10/2 ) sore direktur lalu lintas polda jabar kombes prahoro mengatakan kecelakaan maut itu terjadi pada pukul 0:17 wib foto : yusup suparman/pasundan ekspres",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0002600074864335585,
+      "EARTHQUAKE": 0.00012845479130499724,
+      "FIRE": 0.0001779863563001775,
+      "ACCIDENT": 0.9967805667613329,
+      "NON_EVENT": 0.0026529846046283614
+    }
+  },
+  {
+    "id": "KEC-01051",
+    "text": "-kakak perempuannya meninggal diakibatkan kecelakaan saat ini celyn duduk di bangku sama dia bukanlah siswi yang pintar dan memiliki banyak prestasi tapi celyn merupakan siswi yang aktif dalam organisasi dia adalah wakil ketua osis di sekolahnya-",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.001011514342674883,
+      "EARTHQUAKE": 0.0005585454415566303,
+      "FIRE": 0.000516688096061124,
+      "ACCIDENT": 0.9442712011907407,
+      "NON_EVENT": 0.053642050928966754
+    }
+  },
+  {
+    "id": "KEC-01072",
+    "text": "terjadi kecelakaan lalu lintas di jalan tol japek sekitaran km 2 arah cikampek sellau hati-hati sobat",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00027865454963032046,
+      "EARTHQUAKE": 0.00012261847999631923,
+      "FIRE": 0.00016603795393953943,
+      "ACCIDENT": 0.9968166210340604,
+      "NON_EVENT": 0.0026160679823734254
+    }
+  },
+  {
+    "id": "KEC-00318",
+    "text": "akun fanbase cska indonesia turut berduka atas kecelakaan pesawat an-148 milik saratov airlines yang jatuh di daerah moskwa semalam dan menewaskan seluruh penumpang dan kru semoga 71 korban mendapat tempat terbaik di sisi tuhan",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0007817590697650594,
+      "EARTHQUAKE": 0.003198800789598831,
+      "FIRE": 0.0006137338175150645,
+      "ACCIDENT": 0.9934635714754154,
+      "NON_EVENT": 0.001942134847705597
+    }
+  },
+  {
+    "id": "KEC-01449",
+    "text": "beranda fbku dipenuhi oleh foto - foto korban kecelakaan kapal di kabupaten selayar sulawesi selatan turut sedih melihatnya semoga keluarga korban diberikan kesabaran dan ketabahan !",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.000575388850581746,
+      "EARTHQUAKE": 0.0012537099060876073,
+      "FIRE": 0.0012672670573803345,
+      "ACCIDENT": 0.9881871299314209,
+      "NON_EVENT": 0.008716504254529413
+    }
+  },
+  {
+    "id": "KEC-01197",
+    "text": "0:04:21 wib kuningan km 5 - semanggi km 7 padat ada penanganan kecelakaan di lajur 1/kiri dan bahu jalan cengkareng - pluit - tomang - cawang lancar",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0003087684415761926,
+      "EARTHQUAKE": 0.00012752340894325065,
+      "FIRE": 0.00017831790833787366,
+      "ACCIDENT": 0.9971013968418261,
+      "NON_EVENT": 0.0022839933993166685
+    }
+  },
+  {
+    "id": "KEC-01442",
+    "text": "kecelakaan tunggal bawah jembatan layang trosobo korban meninggal di tempat dugaan sementara sopir terkena serangan jantung dan mengakibatkan banting setir ke kiri dan menabrak tempat",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00024351889454770495,
+      "EARTHQUAKE": 0.00013871081720503778,
+      "FIRE": 0.00010995775338221545,
+      "ACCIDENT": 0.9976046830738226,
+      "NON_EVENT": 0.0019031294610425851
+    }
+  },
+  {
+    "id": "KEC-01170",
+    "text": "kecelakaan sepeda motor di madiun tiga orang tewas -",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0004348594069531912,
+      "EARTHQUAKE": 0.00016076876078320164,
+      "FIRE": 0.00028161494526298515,
+      "ACCIDENT": 0.9964346417415666,
+      "NON_EVENT": 0.0026881151454340437
+    }
+  },
+  {
+    "id": "KEC-01424",
+    "text": "radio andika 603 kecelakaan sepeda motor di ngantru tulungagung dini hari tadi akp maga fidri isdiawan kapolsek ngantru tulungagung yang dikonfirmasi gatekeeper radio andika menyampaikan kecelakaan ini adalah",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00025525467715218627,
+      "EARTHQUAKE": 0.0001625529899908504,
+      "FIRE": 0.0001242913775377023,
+      "ACCIDENT": 0.9974815377187677,
+      "NON_EVENT": 0.0019763632365516295
+    }
+  },
+  {
+    "id": "KEC-01107",
+    "text": "kronologi kecelakaan truk di brebes yang tewaskan 12 orang",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00029628646735602773,
+      "EARTHQUAKE": 0.0001630157614042664,
+      "FIRE": 0.00019561685638820828,
+      "ACCIDENT": 0.9973121703423706,
+      "NON_EVENT": 0.0020329105724809075
+    }
+  },
+  {
+    "id": "KEC-01047",
+    "text": "kecelakaan di jalan dramaga",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0002883709911337829,
+      "EARTHQUAKE": 0.00014574501157861482,
+      "FIRE": 0.00023001928173798898,
+      "ACCIDENT": 0.9956365119343478,
+      "NON_EVENT": 0.003699352781201824
+    }
+  },
+  {
+    "id": "KEC-01086",
+    "text": "radio andika 607 telah terjadi kecelakaan lalu lintas di dusun beji desa wonorejo kecamatan wates kabupaten kediri sekitar jam 0:20:30 wib tadi malam kecelakaan melibatkan sepeda motor honda supra nopol ag - 2817 - oc",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00023731920297263403,
+      "EARTHQUAKE": 0.00015451406640361,
+      "FIRE": 0.0001557369245875343,
+      "ACCIDENT": 0.9973753066133796,
+      "NON_EVENT": 0.0020771231926565823
+    }
+  },
+  {
+    "id": "KEC-01109",
+    "text": "kecelakaan maut di bumiayu - brebes 11 warga meninggal",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0003212082226090475,
+      "EARTHQUAKE": 0.000167917330053962,
+      "FIRE": 0.00025605994696519256,
+      "ACCIDENT": 0.9969041416887418,
+      "NON_EVENT": 0.002350672811629993
+    }
+  },
+  {
+    "id": "KEC-01385",
+    "text": "630 ayani arah waru macet ada kecelakaan kayaknya di sebelum bundaran waru",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0002620440056252666,
+      "EARTHQUAKE": 0.00013867912106216678,
+      "FIRE": 0.00014260380378471927,
+      "ACCIDENT": 0.996552452251401,
+      "NON_EVENT": 0.0029042208181268756
+    }
+  },
+  {
+    "id": "KEC-01322",
+    "text": "kecelakaan di km 241 tol pejagan arah jakarta antara 2 mobil sudah dalam penanganan petugas",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00031196355890646783,
+      "EARTHQUAKE": 0.00015020798431505527,
+      "FIRE": 0.00022022994364235524,
+      "ACCIDENT": 0.9968863734776622,
+      "NON_EVENT": 0.00243122503547405
+    }
+  },
+  {
+    "id": "KEC-00263",
+    "text": "4 pengendara sepeda motor terlibat kecelakaan di dairi",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0004145186313144158,
+      "EARTHQUAKE": 0.00016364310813237663,
+      "FIRE": 0.00019938881674174387,
+      "ACCIDENT": 0.9956306736795819,
+      "NON_EVENT": 0.003591775764229659
+    }
+  },
+  {
+    "id": "KEC-01258",
+    "text": "633 : : evakuasi kecelakaan 3 mobil di tol merak km 41 arah ke jakarta masih penanganan lalu lintas padat",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0003328566806635013,
+      "EARTHQUAKE": 0.00014204389742101685,
+      "FIRE": 0.0001567626111024639,
+      "ACCIDENT": 0.996525677199113,
+      "NON_EVENT": 0.0028426596117000877
+    }
+  },
+  {
+    "id": "KEC-00352",
+    "text": "radio andika 629 pak puguh septianto telah terjadi kecelakaan lalu lintas di jalur malang blitar tepatnya di",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0002192069030634445,
+      "EARTHQUAKE": 0.00015494618926854421,
+      "FIRE": 9.855809933173022e-05,
+      "ACCIDENT": 0.9956584536065093,
+      "NON_EVENT": 0.003868835201826944
+    }
+  },
+  {
+    "id": "KEC-01231",
+    "text": "0:06:15 wib cibitung - tambun km 23 padat ada penanganan kecelakaan kendaraan elf terbalik miring di lajur 2/kiri diduga menabrak ban yang terjatuh dari kendaraan lain",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0003056352481911076,
+      "EARTHQUAKE": 0.00015426808063905554,
+      "FIRE": 0.00015098965822871605,
+      "ACCIDENT": 0.9966777934994502,
+      "NON_EVENT": 0.002711313513491022
+    }
+  },
+  {
+    "id": "KEC-00260",
+    "text": "ada kecelakaan di km 21 jalan tol waru arah sidoarjo macet",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00042104582189329636,
+      "EARTHQUAKE": 0.00015693306861879166,
+      "FIRE": 0.00020138348495844365,
+      "ACCIDENT": 0.9960957551648483,
+      "NON_EVENT": 0.00312488245968111
+    }
+  },
+  {
+    "id": "KEC-01282",
+    "text": "kecelakaan tunggal jam 340wib krian arah prambon mobil xenia hitam dah di tangani oleh polsek krian",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00021577439733134123,
+      "EARTHQUAKE": 0.0001295262030540658,
+      "FIRE": 0.0001499981797829041,
+      "ACCIDENT": 0.9974059073467775,
+      "NON_EVENT": 0.002098793873054222
+    }
+  },
+  {
+    "id": "KEC-01160",
+    "text": "radio andika 615 pak agus senkom tol jombang mojokerto mengabarkan sekitar jam 40 wib ada kecelakaan di jalan raya tol jombang mojokerto kamu 693+100 a kecelakaan melibatkan kendaraan truck brmuatan alat berat nopol b",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00025552962800158807,
+      "EARTHQUAKE": 0.00012929446712929479,
+      "FIRE": 0.00012613444900508872,
+      "ACCIDENT": 0.9964954143736072,
+      "NON_EVENT": 0.002993627082256835
+    }
+  },
+  {
+    "id": "KEC-01048",
+    "text": "( operasi patuh jaya 2018 polisi berharap tekan nomor kecelakaan ) di detiknews |",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00032539690901307796,
+      "EARTHQUAKE": 0.0002159329034248439,
+      "FIRE": 0.0002870421266578775,
+      "ACCIDENT": 0.0073620723687525935,
+      "NON_EVENT": 0.9918095556921516
+    }
+  },
+  {
+    "id": "GEM-01043",
+    "text": "dulu itu manusia dijadikan tumbal agar tuhan tidak membuat gunung meletus ombak laut tetap tenang dan tak ada gempa bumi sekarang ini di jaman yang katanya modern kaum lgbt dikriminalkan agar tuhan tidak murka it 's the same primitive bullshit !",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00023035019509229108,
+      "EARTHQUAKE": 0.0019427488328182547,
+      "FIRE": 0.00048395106160468906,
+      "ACCIDENT": 0.00039672971207446245,
+      "NON_EVENT": 0.9969462201984103
+    }
+  },
+  {
+    "id": "BAN-01157",
+    "text": "banjir dukungan untuk mewakili indonesia di ajang miss universe cinta laura justru tak tertarik",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0019290362022579529,
+      "EARTHQUAKE": 0.00016024705378785175,
+      "FIRE": 0.00026844577155645764,
+      "ACCIDENT": 0.0012092662818401748,
+      "NON_EVENT": 0.9964330046905575
+    }
+  },
+  {
+    "id": "BAN-01692",
+    "text": "banjir dukungan di injury time",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.9694025048560054,
+      "EARTHQUAKE": 0.00046608415547850525,
+      "FIRE": 0.001084148987243557,
+      "ACCIDENT": 0.00022293096392680606,
+      "NON_EVENT": 0.028824331037345656
+    }
+  },
+  {
+    "id": "GEM-01545",
+    "text": "iya din jadi bagaimana ya ini bencana alam yang termasuk baru begitu biasanya kan tsunami gara-gara gempa bumi tapi kata bmkg bukan gara-gara gempa coba lihat di twtnya bmkg deh",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00012843512204800252,
+      "EARTHQUAKE": 0.0005400201443592437,
+      "FIRE": 0.00020957182166688652,
+      "ACCIDENT": 0.0004765124498408631,
+      "NON_EVENT": 0.998645460462085
+    }
+  },
+  {
+    "id": "KEB-00565",
+    "text": "awas , 7 hutan di solo raya diminta tingkatkan kewaspadaan kebakaran . kph surakarta sebut di antaranya lereng lawu , tangen sragen hinggawonogiri !",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00022867082305075956,
+      "EARTHQUAKE": 0.00045665002082108565,
+      "FIRE": 0.005260748657084119,
+      "ACCIDENT": 0.00010959830484473912,
+      "NON_EVENT": 0.9939443321941993
+    }
+  },
+  {
+    "id": "GEM-01574",
+    "text": "`` kompleksnya tektonik selat sunda membuatnya memiliki potensi tsunamigenik yang beragam yaitu tsunamigenik dari gempa bumi erupsi gunung api bawah laut longsoran di pantai dan longsoran bawah laut -- yudhicara dan ke budiono ( 2008 )",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00048371422683861305,
+      "EARTHQUAKE": 0.4026247778756264,
+      "FIRE": 0.003100609271593536,
+      "ACCIDENT": 0.0015099371563807675,
+      "NON_EVENT": 0.5922809614695607
+    }
+  },
+  {
+    "id": "GEM-01170",
+    "text": "bukan kpg kamu ke itu wak gempa bumi betatus kali di jepun itu apa pula ya wak ? ? wak alim kucing kali usah cukup boleh bila kurang ilmu",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0001592702657513854,
+      "EARTHQUAKE": 0.04020219370803498,
+      "FIRE": 0.0007704513879054002,
+      "ACCIDENT": 0.0011913455701592916,
+      "NON_EVENT": 0.957676739068149
+    }
+  },
+  {
+    "id": "BAN-01221",
+    "text": "tahh lamun bandung banjir ieu salah sahiji mobil nu jadi sebabna ngeunah pisan di jalan bengawan parkir nyatu kacang sabari runtahna dipiceun dijalan mikirrrrr ath",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.8549816907646526,
+      "EARTHQUAKE": 0.0003275202926371882,
+      "FIRE": 0.0004512671439954102,
+      "ACCIDENT": 0.007317967200384025,
+      "NON_EVENT": 0.1369215545983308
+    }
+  },
+  {
+    "id": "BAN-01955",
+    "text": "jokowi banjir ucapan selamat menang pilpres dari pemimpin dunia di g20",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.05962561370471656,
+      "EARTHQUAKE": 0.00027962335666388967,
+      "FIRE": 0.0003347360498339184,
+      "ACCIDENT": 0.0027315578812594924,
+      "NON_EVENT": 0.9370284690075261
+    }
+  },
+  {
+    "id": "KEC-01450",
+    "text": "dalam 1 pekan ini telah terjadi 3 kecelakaan kapal penyebrangan warning bagi pemerintah untuk segera mengevaluasi bagaimana pengawasan transportasi penyebrangan di lapangan",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0013180460498113471,
+      "EARTHQUAKE": 0.002667318240872741,
+      "FIRE": 0.0006569074932355067,
+      "ACCIDENT": 0.4778313291166946,
+      "NON_EVENT": 0.5175263990993858
+    }
+  },
+  {
+    "id": "BAN-01763",
+    "text": "guna antisipasi banjir dan situasi kamtibmas yang aman dan kondusif kapolsek bukit intan akp madi putra sh mah beserta kasubnit reskrim ipda imam sh dan personil polsek bukit intan memantau debit air di perumahan warga yang rawan terdampak banjir di kelurahan parit lalang",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.9641703027289166,
+      "EARTHQUAKE": 0.0003385667578810505,
+      "FIRE": 0.00025575840488287183,
+      "ACCIDENT": 0.0003299385276352353,
+      "NON_EVENT": 0.034905433580684375
+    }
+  },
+  {
+    "id": "BAN-01125",
+    "text": "sejak lama ya ternyata banjir di malang problem sosial sejak era kolonial",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.010801278657212863,
+      "EARTHQUAKE": 0.00021235353762680435,
+      "FIRE": 0.0006080274627877931,
+      "ACCIDENT": 0.0005015894676491178,
+      "NON_EVENT": 0.9878767508747234
+    }
+  },
+  {
+    "id": "GEM-01201",
+    "text": "gempa bumi & tsunami di negara barat = bala '' dari tuhan gempa bumi & tsunami di negara islam = `` ujian '' dari tuhan ini tonight 's vim article ahmad reza highlights the hypocrisy of some malaysians who just love playing god cc :",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00032614161405845074,
+      "EARTHQUAKE": 0.6052821465934584,
+      "FIRE": 0.0032853319832961336,
+      "ACCIDENT": 0.0014648867660103399,
+      "NON_EVENT": 0.3896414930431766
+    }
+  },
+  {
+    "id": "BAN-01513",
+    "text": "zayn malik ig-nya banyak foto selfie likenya jutaan dan banjir pujian gantenglah lucu lah keren lah gua ngepost foto selfie di ig langsung di bully `` laki kok selfie mulu '' hidup memang tergantung muka",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0002626901844331207,
+      "EARTHQUAKE": 0.00010538586891515074,
+      "FIRE": 0.0002947727980460051,
+      "ACCIDENT": 0.0009454776689067895,
+      "NON_EVENT": 0.9983916734796989
+    }
+  },
+  {
+    "id": "GEM-01249",
+    "text": "andai ada peringatan gempa bumi susulan andai alarm tsunami berbunyi dan andai penanggulangan bencana cepat dilakukan -- di alkhairaat",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00018681120491173165,
+      "EARTHQUAKE": 0.01599529179373931,
+      "FIRE": 0.0003318846485078701,
+      "ACCIDENT": 0.0002506268467741302,
+      "NON_EVENT": 0.9832353855060669
+    }
+  },
+  {
+    "id": "BAN-01512",
+    "text": "hari ini bu risma melakukan kunjungan ke beberapa lokasi kunjungan ini terkait cara pemkot mengatasi banjir di surabaya di titik ujung timur dan barat surabaya",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.9629399239118551,
+      "EARTHQUAKE": 0.0002909590552768195,
+      "FIRE": 0.0004277824894412905,
+      "ACCIDENT": 0.00047423852137277436,
+      "NON_EVENT": 0.03586709602205403
+    }
+  },
+  {
+    "id": "KEB-00588",
+    "text": "para pelaku kebakaran hutan dan lahan di bontang , catatan hingga juli 2020 ada 26 kasus",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0019442040757480209,
+      "EARTHQUAKE": 0.0006557054067666088,
+      "FIRE": 0.1615843944079095,
+      "ACCIDENT": 0.00042010549519965455,
+      "NON_EVENT": 0.8353955906143762
+    }
+  },
+  {
+    "id": "KEC-01454",
+    "text": "turut berduka atas semua kecelakaan & amp bencana yang membawa kesedihan cuman muak saja lihat kelakuan para politisi `` penunggang '' bencana di tahun politik ketulusan itu bukan dilihat tapi dirasakan",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.004998171539107915,
+      "EARTHQUAKE": 0.005357227073543508,
+      "FIRE": 0.0004332961617484814,
+      "ACCIDENT": 0.010042662471552959,
+      "NON_EVENT": 0.9791686427540471
+    }
+  },
+  {
+    "id": "KEB-00350",
+    "text": "kebakaran hutan dan lahan di aceh harus diwaspadai |",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.000813816502193231,
+      "EARTHQUAKE": 0.0003207430119896022,
+      "FIRE": 0.059842421713617346,
+      "ACCIDENT": 0.0002954334562810175,
+      "NON_EVENT": 0.9387275853159188
+    }
+  },
+  {
+    "id": "BAN-01925",
+    "text": "banjir dikit menyalahkan pemerintah kalo kau masih buang puntung rokok sama bungkus permen di jalan enggak usah menyalahkan orang lain karena banjir ! !",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.8354024466145593,
+      "EARTHQUAKE": 0.00043052933478942136,
+      "FIRE": 0.0005276814272650336,
+      "ACCIDENT": 0.0012202157753359178,
+      "NON_EVENT": 0.16241912684805043
+    }
+  },
+  {
+    "id": "KEB-00561",
+    "text": "bupati gelar apel siaga hadapi kebakaran hutan dan lahan di kuningan",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.002425486282948311,
+      "EARTHQUAKE": 0.0008811369434858815,
+      "FIRE": 0.08210304373565226,
+      "ACCIDENT": 0.0004291696177062178,
+      "NON_EVENT": 0.9141611634202074
+    }
+  },
+  {
+    "id": "KEC-01277",
+    "text": "tak hanya memberikan respon saat terjadi kecelakaan ( pertolongan pertama dan ambulans ) kami juga memberikan pelayanan kesehatan dan rest area untuk sahabat pmi yang sedang mudik lebaran pos pp pmi kabupaten klaten di depan masjid al aqsho",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.010392633572441592,
+      "EARTHQUAKE": 0.004951249771258595,
+      "FIRE": 0.0017908590403438785,
+      "ACCIDENT": 0.15612261213137466,
+      "NON_EVENT": 0.8267426454845813
+    }
+  },
+  {
+    "id": "GEM-01439",
+    "text": "faktor gempa bumi di negara indonesia",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0004946808949514783,
+      "EARTHQUAKE": 0.6631713771696373,
+      "FIRE": 0.0007992879118900127,
+      "ACCIDENT": 0.0006469813458688227,
+      "NON_EVENT": 0.3348876726776525
+    }
+  },
+  {
+    "id": "KEC-01006",
+    "text": "4 kecelakaan maut dan mengerikan di dunia karena hal sepele",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00043480543483049233,
+      "EARTHQUAKE": 0.00018026463127689834,
+      "FIRE": 0.00029431704913405305,
+      "ACCIDENT": 0.9739315446048221,
+      "NON_EVENT": 0.02515906827993649
+    }
+  },
+  {
+    "id": "BAN-01048",
+    "text": "p mau pantun boleh ? boleh ya waktu semarang kaline banjir seng di sayang ratau mikir",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.4277973185566691,
+      "EARTHQUAKE": 0.00046074352561638267,
+      "FIRE": 0.0006639535419680782,
+      "ACCIDENT": 0.003407424998180545,
+      "NON_EVENT": 0.5676705593775659
+    }
+  },
+  {
+    "id": "BAN-01006",
+    "text": "antisipasi banjir malam-malam anies sidak di cipinang melayu",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.06662169784177693,
+      "EARTHQUAKE": 0.00020642698895496415,
+      "FIRE": 0.0008924311839268834,
+      "ACCIDENT": 0.00030937676576649886,
+      "NON_EVENT": 0.9319700672195748
+    }
+  },
+  {
+    "id": "GEM-01441",
+    "text": "kabtegal - jateng ( 5/12 ) sama n 1 slawi bersama bpbd dan pmi kabtegal adakan simulasi penanganan bencana gempa bumi di lingkungan sekolah",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0009804403648309109,
+      "EARTHQUAKE": 0.6764003431195342,
+      "FIRE": 0.000862532049901876,
+      "ACCIDENT": 0.0014905321190712805,
+      "NON_EVENT": 0.3202661523466617
+    }
+  },
+  {
+    "id": "BAN-01797",
+    "text": "kalteng atau kaltim cocok buat ibu kota negara lahan yang luas bebas gempa & banjir & garis pantai yang panjang dan yang penting terletak di tengah wilayah nkri",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0005531410803036354,
+      "EARTHQUAKE": 0.0014604367402586032,
+      "FIRE": 0.0002940139889808331,
+      "ACCIDENT": 0.00010368680591351016,
+      "NON_EVENT": 0.9975887213845435
+    }
+  },
+  {
+    "id": "KEB-00295",
+    "text": "dokter dan perawat itu persis pemadam kebakaran yg mendekat ke api disaat yg lain berlari menjauh . tanpa apd yg lengkap , sama dengan bunuh diri . . . ( di video ini ungkapan dari seorang dokter senior dari wilayah indonesia timur )",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0006382297133140814,
+      "EARTHQUAKE": 0.000365005298992913,
+      "FIRE": 0.026659474026945764,
+      "ACCIDENT": 0.00031671363578405815,
+      "NON_EVENT": 0.972020577324963
+    }
+  },
+  {
+    "id": "BAN-01619",
+    "text": "ini super kereeeeeeeeeeen banjir boneka di pertandingan piala presiden",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.7172304138689548,
+      "EARTHQUAKE": 0.0006276928778246099,
+      "FIRE": 0.000346493873513886,
+      "ACCIDENT": 0.0009872744417237997,
+      "NON_EVENT": 0.2808081249379829
+    }
+  }
+]

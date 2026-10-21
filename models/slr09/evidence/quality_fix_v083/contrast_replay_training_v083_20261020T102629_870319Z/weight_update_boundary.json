@@ -1,0 +1,33 @@
+{
+  "status": "SUCCEEDED",
+  "changed_tensors": [
+    "bert.encoder.layer.11.attention.output.LayerNorm.bias",
+    "bert.encoder.layer.11.attention.output.LayerNorm.weight",
+    "bert.encoder.layer.11.attention.output.dense.bias",
+    "bert.encoder.layer.11.attention.output.dense.weight",
+    "bert.encoder.layer.11.attention.self.key.bias",
+    "bert.encoder.layer.11.attention.self.key.weight",
+    "bert.encoder.layer.11.attention.self.query.bias",
+    "bert.encoder.layer.11.attention.self.query.weight",
+    "bert.encoder.layer.11.attention.self.value.bias",
+    "bert.encoder.layer.11.attention.self.value.weight",
+    "bert.encoder.layer.11.intermediate.dense.bias",
+    "bert.encoder.layer.11.intermediate.dense.weight",
+    "bert.encoder.layer.11.output.LayerNorm.bias",
+    "bert.encoder.layer.11.output.LayerNorm.weight",
+    "bert.encoder.layer.11.output.dense.bias",
+    "bert.encoder.layer.11.output.dense.weight",
+    "bert.pooler.dense.bias",
+    "bert.pooler.dense.weight",
+    "classifier.bias",
+    "classifier.weight"
+  ],
+  "unchanged_tensor_count": 181,
+  "allowed_prefixes": [
+    "bert.encoder.layer.11.",
+    "bert.pooler.",
+    "classifier."
+  ],
+  "frozen_layers_bit_identical": true,
+  "warm_start_weight_sha256": "d7a8035b2db81d5ad2d166162fb0633327ce7cb8b52047a24fbc4c2ba164e6f5"
+}

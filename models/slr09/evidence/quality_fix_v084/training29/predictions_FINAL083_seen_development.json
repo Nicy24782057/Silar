@@ -1,0 +1,602 @@
+[
+  {
+    "id": "FINAL083-FLOOD-01",
+    "text": "Banjir memutus akses pasar di Kelurahan Puspanala sejak subuh.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9996672868728638,
+      "EARTHQUAKE": 8.289859579235781e-06,
+      "FIRE": 1.4997846847109031e-05,
+      "ACCIDENT": 2.011516880884301e-05,
+      "NON_EVENT": 0.0002892373304348439
+    }
+  },
+  {
+    "id": "FINAL083-FLOOD-02",
+    "text": "Tiga rumah terendam banjir malam kemarin di Dusun Gintungasri.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9996669292449951,
+      "EARTHQUAKE": 1.9560835426091217e-05,
+      "FIRE": 2.0217323253746144e-05,
+      "ACCIDENT": 1.4637861568189692e-05,
+      "NON_EVENT": 0.000278588937362656
+    }
+  },
+  {
+    "id": "FINAL083-FLOOD-03",
+    "text": "Regu SAR mengungsikan penduduk dari Desa Sekarwangi akibat banjir pagi ini.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9994654059410095,
+      "EARTHQUAKE": 5.467732989927754e-06,
+      "FIRE": 8.057929335336667e-06,
+      "ACCIDENT": 1.7467285942984745e-05,
+      "NON_EVENT": 0.0005034753703512251
+    }
+  },
+  {
+    "id": "FINAL083-FLOOD-04",
+    "text": "Peserta latihan mengangkat perahu ketika banjir sungguhan merendam gudang beras di Dusun Waringinreja sore tadi.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9996315240859985,
+      "EARTHQUAKE": 1.4155293683870696e-05,
+      "FIRE": 1.7577882317709737e-05,
+      "ACCIDENT": 2.38168504438363e-05,
+      "NON_EVENT": 0.00031284053693525493
+    }
+  },
+  {
+    "id": "FINAL083-FLOOD-05",
+    "text": "Petugas kelurahan mengonfirmasi banjir di Kelurahan Mekarnala malam ini; informasi tersebut bukan skenario latihan.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9513485431671143,
+      "EARTHQUAKE": 2.5957471734727733e-05,
+      "FIRE": 2.4121598471538164e-05,
+      "ACCIDENT": 1.1086960512329824e-05,
+      "NON_EVENT": 0.048590194433927536
+    }
+  },
+  {
+    "id": "FINAL083-FLOOD-06",
+    "text": "Luapan sungai menyebabkan banjir menggenangi kebun sayur di Desa Karangnusa siang tadi.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9993497729301453,
+      "EARTHQUAKE": 8.151993824867532e-06,
+      "FIRE": 2.1514153559110127e-05,
+      "ACCIDENT": 2.002263136091642e-05,
+      "NON_EVENT": 0.0006005386239849031
+    }
+  },
+  {
+    "id": "FINAL083-FLOOD-07",
+    "text": "Banjir di Desa Palaswangi kemarin malam mengakibatkan seorang warga terluka.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.999704897403717,
+      "EARTHQUAKE": 1.1451023965491913e-05,
+      "FIRE": 2.2635415007243864e-05,
+      "ACCIDENT": 2.7064550522482023e-05,
+      "NON_EVENT": 0.00023390418209601194
+    }
+  },
+  {
+    "id": "FINAL083-FLOOD-08",
+    "text": "Dua nelayan meninggal saat banjir di Kampung Rengganala pagi tadi.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9991463422775269,
+      "EARTHQUAKE": 5.129602413944667e-06,
+      "FIRE": 5.600096847047098e-05,
+      "ACCIDENT": 4.4262320443522185e-05,
+      "NON_EVENT": 0.0007482374203391373
+    }
+  },
+  {
+    "id": "FINAL083-FLOOD-09",
+    "text": "Tak ada korban jiwa, tetapi banjir merusak pagar puskesmas di Desa Manggalarum sore ini.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9994900226593018,
+      "EARTHQUAKE": 1.224463358084904e-05,
+      "FIRE": 3.1091971322894096e-05,
+      "ACCIDENT": 1.6723666703910567e-05,
+      "NON_EVENT": 0.00044995281496085227
+    }
+  },
+  {
+    "id": "FINAL083-FLOOD-10",
+    "text": "Sejak tadi malam, banjir masih menggenangi jalan desa di Kampung Cikareja.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9987338185310364,
+      "EARTHQUAKE": 8.491008884448092e-06,
+      "FIRE": 4.6250901505118236e-05,
+      "ACCIDENT": 1.321205036219908e-05,
+      "NON_EVENT": 0.0011983758304268122
+    }
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-01",
+    "text": "Gempa mengguncang Kecamatan Sukamanah siang ini; warga keluar dari rumah.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 6.971825496293604e-05,
+      "EARTHQUAKE": 0.9997639060020447,
+      "FIRE": 8.596687621320598e-06,
+      "ACCIDENT": 1.4522988749376964e-05,
+      "NON_EVENT": 0.00014325174561236054
+    }
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-02",
+    "text": "Atap balai warga ambruk akibat gempa subuh tadi di Desa Ciparanti.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 6.0873459005961195e-05,
+      "EARTHQUAKE": 0.9998106360435486,
+      "FIRE": 3.454376565059647e-05,
+      "ACCIDENT": 2.835488339769654e-05,
+      "NON_EVENT": 6.554441642947495e-05
+    }
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-03",
+    "text": "Setelah gempa di Dusun Sindangnala pagi tadi, relawan mendirikan tenda.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 3.171018761349842e-05,
+      "EARTHQUAKE": 0.9998577833175659,
+      "FIRE": 8.280391739390325e-06,
+      "ACCIDENT": 1.779769445420243e-05,
+      "NON_EVENT": 8.45398535602726e-05
+    }
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-04",
+    "text": "Instruktur menghentikan latihan karena gempa betulan meretakkan tembok kelas di Sekolah Binarasa siang tadi.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 3.073825064348057e-05,
+      "EARTHQUAKE": 0.9998536109924316,
+      "FIRE": 1.1596749573072884e-05,
+      "ACCIDENT": 2.442847835482098e-05,
+      "NON_EVENT": 7.959402864798903e-05
+    }
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-05",
+    "text": "Tim BPBD memastikan kabar gempa di Desa Kertanala tadi malam benar; satu rumah rusak.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 3.9857361116446555e-05,
+      "EARTHQUAKE": 0.9997041821479797,
+      "FIRE": 1.2712586794805247e-05,
+      "ACCIDENT": 3.549750545062125e-05,
+      "NON_EVENT": 0.0002076765667879954
+    }
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-06",
+    "text": "Akibat pergeseran sesar, gempa merusak menara air di Kelurahan Tirtanala sore ini.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 3.693507460411638e-05,
+      "EARTHQUAKE": 0.9998431205749512,
+      "FIRE": 2.0484838387346826e-05,
+      "ACCIDENT": 1.417494877387071e-05,
+      "NON_EVENT": 8.526571764377877e-05
+    }
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-07",
+    "text": "Dua pedagang terluka dalam gempa di Pasar Ciburuan kemarin pagi.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 4.041268039145507e-05,
+      "EARTHQUAKE": 0.9998363256454468,
+      "FIRE": 1.536023773951456e-05,
+      "ACCIDENT": 2.557695552241057e-05,
+      "NON_EVENT": 8.224193152273074e-05
+    }
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-08",
+    "text": "Gempa di Desa Langlangreja malam tadi menimbulkan satu korban meninggal.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 2.776490327960346e-05,
+      "EARTHQUAKE": 0.9998260140419006,
+      "FIRE": 5.280071945890086e-06,
+      "ACCIDENT": 1.2857603906013537e-05,
+      "NON_EVENT": 0.00012817673268727958
+    }
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-09",
+    "text": "Tidak ada korban luka setelah gempa sore tadi di Kampung Pasirnala; dinding musala retak.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00010558248322922736,
+      "EARTHQUAKE": 0.999708354473114,
+      "FIRE": 2.718946780078113e-05,
+      "ACCIDENT": 6.944630149519071e-05,
+      "NON_EVENT": 8.942289423430339e-05
+    }
+  },
+  {
+    "id": "FINAL083-EARTHQUAKE-10",
+    "text": "Gempa susulan terasa di Desa Wanasukma malam ini dan warga menunggu di luar.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 2.9606288080685772e-05,
+      "EARTHQUAKE": 0.9998233914375305,
+      "FIRE": 3.5514924547896953e-06,
+      "ACCIDENT": 9.253968528355472e-06,
+      "NON_EVENT": 0.00013415745343081653
+    }
+  },
+  {
+    "id": "FINAL083-FIRE-01",
+    "text": "Kebakaran melalap kios buah di Pasar Palagan dini hari tadi.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 4.735282345791347e-06,
+      "EARTHQUAKE": 9.816581041377503e-06,
+      "FIRE": 0.9997046589851379,
+      "ACCIDENT": 9.857089025899768e-06,
+      "NON_EVENT": 0.0002708877727854997
+    }
+  },
+  {
+    "id": "FINAL083-FIRE-02",
+    "text": "Dua bengkel hangus dalam kebakaran di Jalan Nataraya kemarin sore.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 5.7392949202039745e-06,
+      "EARTHQUAKE": 8.00542147771921e-06,
+      "FIRE": 0.9997255206108093,
+      "ACCIDENT": 1.2761908692482393e-05,
+      "NON_EVENT": 0.000247949588811025
+    }
+  },
+  {
+    "id": "FINAL083-FIRE-03",
+    "text": "Regu damkar memadamkan api saat kebakaran di Gudang Puspalaras siang ini.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 7.0728415266785305e-06,
+      "EARTHQUAKE": 3.3029195947165135e-06,
+      "FIRE": 0.999190628528595,
+      "ACCIDENT": 7.697438377363142e-06,
+      "NON_EVENT": 0.0007913162698969245
+    }
+  },
+  {
+    "id": "FINAL083-FIRE-04",
+    "text": "Bukan alat peraga yang terbakar: kebakaran sungguhan merusak kantin di Pusat Latihan Wiranala pagi ini.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 4.811401595361531e-06,
+      "EARTHQUAKE": 1.1631012966972776e-05,
+      "FIRE": 0.9996547698974609,
+      "ACCIDENT": 1.2111259820812847e-05,
+      "NON_EVENT": 0.0003166472597513348
+    }
+  },
+  {
+    "id": "FINAL083-FIRE-05",
+    "text": "Pemeriksaan petugas desa membuktikan kebakaran di Desa Bayumanah tadi malam merupakan kejadian nyata.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 6.312201549008023e-06,
+      "EARTHQUAKE": 6.270783615036635e-06,
+      "FIRE": 0.9677335023880005,
+      "ACCIDENT": 9.46937689150218e-06,
+      "NON_EVENT": 0.03224446251988411
+    }
+  },
+  {
+    "id": "FINAL083-FIRE-06",
+    "text": "Tabung gas bocor memicu kebakaran yang menghanguskan dapur warung di Kampung Nusaloka sore tadi.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 1.0318415661458857e-05,
+      "EARTHQUAKE": 3.1445661079487763e-06,
+      "FIRE": 0.9996371269226074,
+      "ACCIDENT": 9.761428373167291e-06,
+      "NON_EVENT": 0.00033958122367039323
+    }
+  },
+  {
+    "id": "FINAL083-FIRE-07",
+    "text": "Kebakaran subuh tadi di Kelurahan Ringinmanah mengakibatkan satu pemilik rumah terluka.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 8.997279110189993e-06,
+      "EARTHQUAKE": 7.642155651410576e-06,
+      "FIRE": 0.9997969269752502,
+      "ACCIDENT": 1.3631817637360655e-05,
+      "NON_EVENT": 0.00017282454064115882
+    }
+  },
+  {
+    "id": "FINAL083-FIRE-08",
+    "text": "Dalam kebakaran di Desa Cikamulya malam kemarin, seorang pekerja meninggal.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 4.620585968950763e-06,
+      "EARTHQUAKE": 7.388423455267912e-06,
+      "FIRE": 0.9997114539146423,
+      "ACCIDENT": 1.1061611985496711e-05,
+      "NON_EVENT": 0.00026537058874964714
+    }
+  },
+  {
+    "id": "FINAL083-FIRE-09",
+    "text": "Kebakaran merusak ruang penyimpanan di Balai Naramukti siang tadi; semua orang selamat.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 6.4492655837966595e-06,
+      "EARTHQUAKE": 1.1768693184421863e-05,
+      "FIRE": 0.99960857629776,
+      "ACCIDENT": 2.293760007887613e-05,
+      "NON_EVENT": 0.0003503127954900265
+    }
+  },
+  {
+    "id": "FINAL083-FIRE-10",
+    "text": "Malam ini, api masih membakar tumpukan kayu di Dusun Ciparayasih.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 4.595704922394361e-06,
+      "EARTHQUAKE": 8.18748139863601e-06,
+      "FIRE": 0.9993228912353516,
+      "ACCIDENT": 7.85688007454155e-06,
+      "NON_EVENT": 0.0006565770599991083
+    }
+  },
+  {
+    "id": "FINAL083-ACCIDENT-01",
+    "text": "Kecelakaan melibatkan sepeda motor di Jalan Sindangarum pagi tadi.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 2.674629467946943e-05,
+      "EARTHQUAKE": 4.353124040790135e-06,
+      "FIRE": 2.0634317479562014e-05,
+      "ACCIDENT": 0.9971678853034973,
+      "NON_EVENT": 0.002780442824587226
+    }
+  },
+  {
+    "id": "FINAL083-ACCIDENT-02",
+    "text": "Mobil pengangkut telur terbalik dalam kecelakaan di Desa Bantarwulan siang ini.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 2.800978472805582e-05,
+      "EARTHQUAKE": 4.555045052256901e-06,
+      "FIRE": 2.9766311854473315e-05,
+      "ACCIDENT": 0.9979004859924316,
+      "NON_EVENT": 0.0020371703431010246
+    }
+  },
+  {
+    "id": "FINAL083-ACCIDENT-03",
+    "text": "Petugas polisi mengatur lalu lintas setelah kecelakaan di Jalan Madunala kemarin sore.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 2.319402301509399e-05,
+      "EARTHQUAKE": 4.478055416257121e-06,
+      "FIRE": 2.3629185307072476e-05,
+      "ACCIDENT": 0.9949370622634888,
+      "NON_EVENT": 0.005011620000004768
+    }
+  },
+  {
+    "id": "FINAL083-ACCIDENT-04",
+    "text": "Pelatihan dihentikan ketika kecelakaan nyata merusak mobil instruktur di Lapangan Sekarnala sore tadi.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 2.141347977158148e-05,
+      "EARTHQUAKE": 1.3464225048664957e-05,
+      "FIRE": 7.791184179950505e-05,
+      "ACCIDENT": 0.9996516704559326,
+      "NON_EVENT": 0.00023558367684017867
+    }
+  },
+  {
+    "id": "FINAL083-ACCIDENT-05",
+    "text": "Rekaman latihan itu terputus oleh kecelakaan sungguhan di Jalan Giriarum pagi ini; seorang pengendara terluka.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 5.059889008407481e-05,
+      "EARTHQUAKE": 1.3130580555298366e-05,
+      "FIRE": 5.5010023061186075e-05,
+      "ACCIDENT": 0.9987092018127441,
+      "NON_EVENT": 0.001172044430859387
+    }
+  },
+  {
+    "id": "FINAL083-ACCIDENT-06",
+    "text": "Ban pecah memicu kecelakaan di Desa Wanamanah malam tadi; satu truk rusak.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 4.195806832285598e-05,
+      "EARTHQUAKE": 4.68137886855402e-06,
+      "FIRE": 6.17704281467013e-05,
+      "ACCIDENT": 0.9974754452705383,
+      "NON_EVENT": 0.002416094532236457
+    }
+  },
+  {
+    "id": "FINAL083-ACCIDENT-07",
+    "text": "Akibat kecelakaan di Jalan Sukawening subuh tadi, dua penumpang terluka.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 2.243853305117227e-05,
+      "EARTHQUAKE": 5.015731858293293e-06,
+      "FIRE": 7.389172242255881e-05,
+      "ACCIDENT": 0.9984973669052124,
+      "NON_EVENT": 0.0014013983309268951
+    }
+  },
+  {
+    "id": "FINAL083-ACCIDENT-08",
+    "text": "Seorang sopir meninggal pada kecelakaan di Kampung Palawana kemarin malam.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 4.085639739059843e-05,
+      "EARTHQUAKE": 4.269829332770314e-06,
+      "FIRE": 0.00012884371972177178,
+      "ACCIDENT": 0.9982959628105164,
+      "NON_EVENT": 0.0015300993109121919
+    }
+  },
+  {
+    "id": "FINAL083-ACCIDENT-09",
+    "text": "Kecelakaan merusak dua motor di Jalan Puspasukma siang tadi, tanpa korban luka.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 7.009783439571038e-05,
+      "EARTHQUAKE": 6.133421720733168e-06,
+      "FIRE": 0.0001331491075688973,
+      "ACCIDENT": 0.9949951171875,
+      "NON_EVENT": 0.00479553546756506
+    }
+  },
+  {
+    "id": "FINAL083-ACCIDENT-10",
+    "text": "Tadi sore, kecelakaan melibatkan bus sekolah di Kelurahan Mekarwening.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 2.403073631285224e-05,
+      "EARTHQUAKE": 6.715818472002866e-06,
+      "FIRE": 0.00010569088772172108,
+      "ACCIDENT": 0.9986440539360046,
+      "NON_EVENT": 0.0012195386225357652
+    }
+  },
+  {
+    "id": "FINAL083-NON_EVENT-01",
+    "text": "Di Balai Sukmanala siang ini, peserta memperagakan kecelakaan dengan kendaraan tiruan; seluruh adegan hanya latihan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 3.2492069294676185e-05,
+      "EARTHQUAKE": 4.204874130664393e-05,
+      "FIRE": 0.000299201812595129,
+      "ACCIDENT": 0.033193282783031464,
+      "NON_EVENT": 0.9664329290390015
+    }
+  },
+  {
+    "id": "FINAL083-NON_EVENT-02",
+    "text": "Regu damkar menggunakan layar untuk simulasi kebakaran di Aula Giriwening pagi tadi; tidak ada kejadian nyata.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 7.409801128233084e-07,
+      "EARTHQUAKE": 2.735817759003112e-07,
+      "FIRE": 1.1144187510581105e-06,
+      "ACCIDENT": 2.0239734510596463e-07,
+      "NON_EVENT": 0.999997615814209
+    }
+  },
+  {
+    "id": "FINAL083-NON_EVENT-03",
+    "text": "Getaran buatan menandai peragaan gempa di Pusat Belajar Naramerta sore ini, bukan gempa sungguhan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 7.721611837041564e-06,
+      "EARTHQUAKE": 0.03494773432612419,
+      "FIRE": 8.013337355805561e-05,
+      "ACCIDENT": 1.6108798490677145e-06,
+      "NON_EVENT": 0.9649628400802612
+    }
+  },
+  {
+    "id": "FINAL083-NON_EVENT-04",
+    "text": "Banjir pada latihan di Lapangan Kertamanah kemarin pagi ditiru dengan kolam kecil; permukiman tetap kering.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.025522617623209953,
+      "EARTHQUAKE": 6.343566951727553e-07,
+      "FIRE": 1.7679622033028863e-05,
+      "ACCIDENT": 3.897314854839351e-06,
+      "NON_EVENT": 0.9744551777839661
+    }
+  },
+  {
+    "id": "FINAL083-NON_EVENT-05",
+    "text": "Petugas membahas potensi banjir di Desa Nusalintang pekan depan; sampai kini belum ada kejadian.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 4.036787140648812e-05,
+      "EARTHQUAKE": 1.4747524801350664e-07,
+      "FIRE": 3.152382248572394e-07,
+      "ACCIDENT": 8.978704357787137e-08,
+      "NON_EVENT": 0.9999591112136841
+    }
+  },
+  {
+    "id": "FINAL083-NON_EVENT-06",
+    "text": "Kepala dusun membantah kabar kebakaran di Dusun Girimadu malam tadi; pemeriksaan tidak menemukan peristiwa tersebut.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 6.4916575865936466e-06,
+      "EARTHQUAKE": 7.84082840254996e-06,
+      "FIRE": 0.0019629255402833223,
+      "ACCIDENT": 3.028778337466065e-06,
+      "NON_EVENT": 0.9980196952819824
+    }
+  },
+  {
+    "id": "FINAL083-NON_EVENT-07",
+    "text": "Guru menguraikan teori penyebab gempa di Sekolah Wanasukma pagi ini; ini pelajaran, tanpa peristiwa tertentu.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 2.330546919893095e-07,
+      "EARTHQUAKE": 1.91918593372975e-06,
+      "FIRE": 2.421697672616574e-06,
+      "ACCIDENT": 1.4082199584208865e-07,
+      "NON_EVENT": 0.999995231628418
+    }
+  },
+  {
+    "id": "FINAL083-NON_EVENT-08",
+    "text": "Pedagang berkata tokonya banjir pesanan hari ini; ungkapan itu berarti banyak pembeli.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 3.7564627746178303e-06,
+      "EARTHQUAKE": 6.401485563856113e-08,
+      "FIRE": 8.03715465735877e-06,
+      "ACCIDENT": 3.097190699463681e-07,
+      "NON_EVENT": 0.9999878406524658
+    }
+  },
+  {
+    "id": "FINAL083-NON_EVENT-09",
+    "text": "Cerita pendek tentang kecelakaan di negeri rekaan dibacakan peserta kelas sore tadi; kisahnya fiksi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 4.498254384088796e-06,
+      "EARTHQUAKE": 1.3000194485357497e-06,
+      "FIRE": 6.012949143041624e-06,
+      "ACCIDENT": 5.647818852594355e-06,
+      "NON_EVENT": 0.9999825954437256
+    }
+  },
+  {
+    "id": "FINAL083-NON_EVENT-10",
+    "text": "Peneliti menyajikan statistik kebakaran tahunan di Gedung Wanasukma siang tadi, tanpa melaporkan kejadian baru.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 5.3798257795278914e-06,
+      "EARTHQUAKE": 4.659515980165452e-06,
+      "FIRE": 0.006973255891352892,
+      "ACCIDENT": 8.145935339598509e-07,
+      "NON_EVENT": 0.9930158853530884
+    }
+  }
+]

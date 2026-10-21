@@ -1,0 +1,21 @@
+{
+  "status": "SUCCEEDED",
+  "training_executed": true,
+  "independent_acceptance_test_executed": false,
+  "pilot50_used_for_training_or_checkpoint_selection": false,
+  "source": "BASELINE_SENA_V1_NOT_MISSING_PREVIOUS_CANDIDATE",
+  "started_at": "2026-10-19T02:07:36.043289+00:00",
+  "trainable_parameters": 14770181,
+  "training_records": 648,
+  "validation_records": 146,
+  "epoch": 3,
+  "step": 80,
+  "steps_in_epoch": 81,
+  "loss": 0.5328494310379028,
+  "best_epoch": 2,
+  "finished_at": "2026-10-19T02:12:47.255904+00:00",
+  "epochs_completed": 3,
+  "best_development_selection": 0.6093189964157706,
+  "model_exported": true,
+  "quality_acceptance_approved": false
+}

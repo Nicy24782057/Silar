@@ -1,0 +1,1434 @@
+{
+  "comparison": [
+    {
+      "metric": "SENA macro F1",
+      "before": 0.8298570994223168,
+      "after": 1.0,
+      "target": 0.85,
+      "direction": ">="
+    },
+    {
+      "metric": "Recall NON_EVENT",
+      "before": 0.3,
+      "after": 1.0,
+      "target": 0.9,
+      "direction": ">="
+    },
+    {
+      "metric": "NARA token macro F1",
+      "before": 0.8850632111299132,
+      "after": 0.8850632111299132,
+      "target": 0.75,
+      "direction": ">="
+    },
+    {
+      "metric": "NARA span F1",
+      "before": 0.8672199170124482,
+      "after": 0.8672199170124482,
+      "target": 0.6,
+      "direction": ">="
+    },
+    {
+      "metric": "Ketepatan field nonkosong",
+      "before": 0.7539267015706806,
+      "after": 0.9162303664921466,
+      "target": 0.8,
+      "direction": ">="
+    },
+    {
+      "metric": "Isi berlebih pada field kosong",
+      "before": 0.05660377358490566,
+      "after": 0.012578616352201259,
+      "target": 0.05,
+      "direction": "<="
+    }
+  ],
+  "development": [
+    {
+      "name": "Pelatihan 1",
+      "macro_f1": 0.8524114362468668,
+      "non_event_recall": 0.5483870967741935,
+      "min_event_recall": 0.9166666666666666,
+      "best_epoch": 2
+    },
+    {
+      "name": "Pelatihan 2",
+      "macro_f1": 0.9080445955133785,
+      "non_event_recall": 0.7741935483870968,
+      "min_event_recall": 0.9142857142857143,
+      "best_epoch": 2
+    },
+    {
+      "name": "Penyesuaian bias dev",
+      "macro_f1": 0.8988168570955457,
+      "non_event_recall": 0.9032258064516129,
+      "min_event_recall": 0.84375,
+      "best_epoch": 2
+    }
+  ],
+  "sena_errors": [
+    {
+      "scope": "Pengembangan 146",
+      "id": "BAN-01186",
+      "text": "banjir di aceh peneliti zaiyana putri : sekolah & ; outdoor & ; juga menarik",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.6815784573554993,
+      "high_confidence": false
+    },
+    {
+      "scope": "Pengembangan 146",
+      "id": "BAN-01703",
+      "text": "abang tolongin ini muti mau plng dari acara tadi dari metmall hujan deras banget mana banjir tolonginnnnn haha angkot nya lama nih mana masih jauh rumah mutiabang pokoknya sih you ya di event selanjutnya",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9942564368247986,
+      "high_confidence": true
+    },
+    {
+      "scope": "Pengembangan 146",
+      "id": "BAN-01483",
+      "text": "bapak bupati stay sejak bencana banjir sampai hari ini banser siap di belakang bapak bupati madiun",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.6373773217201233,
+      "high_confidence": false
+    },
+    {
+      "scope": "Pengembangan 146",
+      "id": "BAN-01984",
+      "text": "asli ngeri-ngeri sedap naf eug beberapa kali bikin kegiatan sosial open donasi dari banjir 2014 kelud sinabung bencana asap dan ada beberapa kegiatan sosial lainnya wajib banget share dana yang masuk & keluar sampai terakir bikin lpj itu kalo di komunitas",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9962115287780762,
+      "high_confidence": true
+    },
+    {
+      "scope": "Pengembangan 146",
+      "id": "BAN-01058",
+      "text": "butuh karung pasir dari wan badud sabaaar ini ujian air pasang banjir rob rendam kampung nelayan di penjaringan",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.6730996370315552,
+      "high_confidence": false
+    },
+    {
+      "scope": "Pengembangan 146",
+      "id": "GEM-01075",
+      "text": "presiden menyambut baik keputusan untuk menyederhanakan prosedur pengambilan uang bagi korban gempa bumi di lombok ntb dari 17 menjadi tinggal 1 prosedur saja yang diikuti sehingga di lapangan betul-betul bisa dilaksanakan pembagian uang bantuan pembangunan rumah itu",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.5401856899261475,
+      "high_confidence": false
+    },
+    {
+      "scope": "Pengembangan 146",
+      "id": "GEM-01485",
+      "text": "setelah kemarin ada yang tetap nekad meneruskan shalat ketika gempa bumi dan masjid tempat shalatnya bergoyang kemudian ada yang shalat berjamaah di halte busway ada pula yang shalat di tengah gang gerbong kereta",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9974634647369385,
+      "high_confidence": true
+    },
+    {
+      "scope": "Pengembangan 146",
+      "id": "GEM-01323",
+      "text": "sebelum gempa bumi yang begitu dahsat begitu indah ya pemandang di kator inch setiap ada kegiatan apa saja pasti di tempat inich orang berkumpul tapi sayang itu semua tinggal kenangan belaka saja karena sok di hempas",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9972445964813232,
+      "high_confidence": true
+    },
+    {
+      "scope": "Pengembangan 146",
+      "id": "KEB-00831",
+      "text": "jadi cerita nya ada kebakaran , trus pemadam dateng , pemandm nya langsung nyiremin rumah2 di samping rumah yg lagi kebakaran nya trus pemadam kebakaran nya di lemparin batu warga , kata nya pemadam nya malah bercanda wkwk dasar orang2 tolol lu kira api nabun bisa di pademin pake aer",
+      "gold": "FIRE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9696552753448486,
+      "high_confidence": true
+    },
+    {
+      "scope": "Pengembangan 146",
+      "id": "KEB-00264",
+      "text": "1 . kebakaran hutan dan lahan ( ) saat ini sudah mulai dilakukan penanggulangan dan pencegahan nya oleh tim manggala agni klhk , tni dan polri di daerah riau . via",
+      "gold": "FIRE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9611583948135376,
+      "high_confidence": true
+    },
+    {
+      "scope": "Pengembangan 146",
+      "id": "KEB-00695",
+      "text": "gedung telkom ada yg kebakaran gi kata nya di pekanbaru , makanya jaringan langsung pada keputus .",
+      "gold": "FIRE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.7674385905265808,
+      "high_confidence": false
+    },
+    {
+      "scope": "Pengembangan 146",
+      "id": "KEB-00940",
+      "text": ". . . . kavling dpr di sidoarjo udah kebakaran semalem . baru tau di story ig . bener-bener bakalan banyak api mulai hari ini .",
+      "gold": "FIRE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.958015501499176,
+      "high_confidence": true
+    },
+    {
+      "scope": "Pengembangan 146",
+      "id": "KEC-01051",
+      "text": "-kakak perempuannya meninggal diakibatkan kecelakaan saat ini celyn duduk di bangku sama dia bukanlah siswi yang pintar dan memiliki banyak prestasi tapi celyn merupakan siswi yang aktif dalam organisasi dia adalah wakil ketua osis di sekolahnya-",
+      "gold": "ACCIDENT",
+      "prediction": "NON_EVENT",
+      "confidence": 0.7705873847007751,
+      "high_confidence": false
+    },
+    {
+      "scope": "Pengembangan 146",
+      "id": "BAN-01692",
+      "text": "banjir dukungan di injury time",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.5250157117843628,
+      "high_confidence": false
+    },
+    {
+      "scope": "Pengembangan 146",
+      "id": "BAN-01763",
+      "text": "guna antisipasi banjir dan situasi kamtibmas yang aman dan kondusif kapolsek bukit intan akp madi putra sh mah beserta kasubnit reskrim ipda imam sh dan personil polsek bukit intan memantau debit air di perumahan warga yang rawan terdampak banjir di kelurahan parit lalang",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.722780168056488,
+      "high_confidence": false
+    },
+    {
+      "scope": "Pengembangan 146",
+      "id": "KEC-01006",
+      "text": "4 kecelakaan maut dan mengerikan di dunia karena hal sepele",
+      "gold": "NON_EVENT",
+      "prediction": "ACCIDENT",
+      "confidence": 0.7847549915313721,
+      "high_confidence": false
+    },
+    {
+      "scope": "Tambahan 24 (usulan)",
+      "high_confidence": false,
+      "id": "FRESH-05-005",
+      "text": "Ketika siswa berlatih berlindung, gempa sungguhan mengguncang sekolah hingga lampu jatuh.",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.6504347920417786,
+      "low_confidence": true,
+      "family": "real_during_exercise",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "scope": "Tambahan 24 (usulan)",
+      "high_confidence": true,
+      "id": "FRESH-05-006",
+      "text": "Ini bukan contoh soal. Gempa baru saja merobohkan pagar rumah kami.",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.997796893119812,
+      "low_confidence": false,
+      "family": "real_with_negation",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "scope": "Tambahan 24 (usulan)",
+      "high_confidence": false,
+      "id": "FRESH-05-009",
+      "text": "Bukan simulasi, dapur restoran sedang kebakaran; asap pekat keluar dari atap.",
+      "gold": "FIRE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.7664832472801208,
+      "low_confidence": true,
+      "family": "real_with_negation",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "scope": "Tambahan 24 (usulan)",
+      "high_confidence": true,
+      "id": "FRESH-05-024",
+      "text": "Petugas mengklarifikasi kabar kecelakaan di Jalan Kamboja: kendaraan berhenti biasa dan tidak saling menabrak.",
+      "gold": "NON_EVENT",
+      "prediction": "ACCIDENT",
+      "confidence": 0.9823868274688721,
+      "low_confidence": false,
+      "family": "denial",
+      "kind": "FALSE_EVENT"
+    }
+  ],
+  "field_changes": [
+    {
+      "id": "MVP-NEW-002",
+      "field": "impacts",
+      "gold": [
+        "mengevakuasi warga"
+      ],
+      "before": [
+        "Petugas mengevakuasi warga"
+      ],
+      "after": [
+        "mengevakuasi warga"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-004",
+      "field": "involved_parties",
+      "gold": [
+        "seorang warga"
+      ],
+      "before": [],
+      "after": [
+        "seorang warga"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-004",
+      "field": "impacts",
+      "gold": [
+        "menyebabkan seorang warga terluka"
+      ],
+      "before": [
+        "menyebabkan"
+      ],
+      "after": [
+        "menyebabkan seorang warga terluka"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-004",
+      "field": "victims",
+      "gold": [
+        "seorang warga terluka"
+      ],
+      "before": [
+        "warga terluka"
+      ],
+      "after": [
+        "seorang warga terluka"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-006",
+      "field": "impacts",
+      "gold": [
+        "melanda Desa Mulyasari"
+      ],
+      "before": [
+        "tanpa korban jiwa"
+      ],
+      "after": [],
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-007",
+      "field": "impacts",
+      "gold": [
+        "membersihkan lumpur"
+      ],
+      "before": [
+        "Warga membersihkan lumpur"
+      ],
+      "after": [
+        "membersihkan lumpur"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-009",
+      "field": "impacts",
+      "gold": [
+        "menutup Jalan Pahlawan"
+      ],
+      "before": [
+        "Laporan warga",
+        "menutup"
+      ],
+      "after": [
+        "menutup Jalan Pahlawan"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-009",
+      "field": "affected_objects",
+      "gold": [
+        "Jalan Pahlawan"
+      ],
+      "before": [],
+      "after": [],
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-010",
+      "field": "time_text",
+      "gold": "sekarang",
+      "before": null,
+      "after": "sekarang",
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-010",
+      "field": "impacts",
+      "gold": [
+        "masuk tiga rumah"
+      ],
+      "before": [
+        "sudah masuk tiga rumah"
+      ],
+      "after": [
+        "sudah masuk tiga rumah"
+      ],
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-011",
+      "field": "impacts",
+      "gold": [
+        "mengguncang Desa Waringin"
+      ],
+      "before": [],
+      "after": [],
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-013",
+      "field": "involved_parties",
+      "gold": [
+        "seorang anak"
+      ],
+      "before": [],
+      "after": [
+        "seorang anak"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-013",
+      "field": "impacts",
+      "gold": [
+        "menyebabkan seorang anak terluka"
+      ],
+      "before": [
+        "menyebabkan"
+      ],
+      "after": [
+        "menyebabkan seorang anak terluka"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-013",
+      "field": "victims",
+      "gold": [
+        "seorang anak terluka"
+      ],
+      "before": [
+        "terluka"
+      ],
+      "after": [
+        "seorang anak terluka"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-015",
+      "field": "impacts",
+      "gold": [
+        "mengevakuasi warga"
+      ],
+      "before": [
+        "Tim penyelamat mengevakuasi warga"
+      ],
+      "after": [
+        "mengevakuasi warga"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-016",
+      "field": "impacts",
+      "gold": [],
+      "before": [
+        "terasa",
+        "tanpa kerusakan bangunan"
+      ],
+      "after": [
+        "terasa"
+      ],
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-016",
+      "field": "affected_objects",
+      "gold": [],
+      "before": [
+        "bangunan"
+      ],
+      "after": [],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-017",
+      "field": "impacts",
+      "gold": [
+        "mengungsi",
+        "mengguncang Desa Mekarwangi"
+      ],
+      "before": [
+        "Warga mengungsi"
+      ],
+      "after": [
+        "mengungsi"
+      ],
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-020",
+      "field": "impacts",
+      "gold": [
+        "berlarian keluar"
+      ],
+      "before": [
+        "kuat terasa",
+        "warga berlarian keluar"
+      ],
+      "after": [
+        "kuat terasa",
+        "berlarian keluar"
+      ],
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-023",
+      "field": "involved_parties",
+      "gold": [
+        "dua pedagang"
+      ],
+      "before": [],
+      "after": [
+        "dua pedagang"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-023",
+      "field": "impacts",
+      "gold": [
+        "menyebabkan dua pedagang terluka"
+      ],
+      "before": [
+        "menyebabkan"
+      ],
+      "after": [
+        "menyebabkan dua pedagang terluka"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-023",
+      "field": "victims",
+      "gold": [
+        "dua pedagang terluka"
+      ],
+      "before": [
+        "terluka"
+      ],
+      "after": [
+        "dua pedagang terluka"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-024",
+      "field": "involved_parties",
+      "gold": [
+        "seorang penghuni"
+      ],
+      "before": [],
+      "after": [
+        "seorang penghuni"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-024",
+      "field": "impacts",
+      "gold": [
+        "mengakibatkan seorang penghuni meninggal"
+      ],
+      "before": [
+        "mengakibatkan"
+      ],
+      "after": [
+        "mengakibatkan seorang penghuni meninggal"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-024",
+      "field": "victims",
+      "gold": [
+        "seorang penghuni meninggal"
+      ],
+      "before": [
+        "meninggal"
+      ],
+      "after": [
+        "seorang penghuni meninggal"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-025",
+      "field": "impacts",
+      "gold": [
+        "memadamkan kebakaran"
+      ],
+      "before": [
+        "Pemadam memadamkan"
+      ],
+      "after": [
+        "memadamkan"
+      ],
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-026",
+      "field": "impacts",
+      "gold": [
+        "melanda gudang"
+      ],
+      "before": [
+        "melanda gudang",
+        "tanpa korban luka"
+      ],
+      "after": [
+        "melanda gudang"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-026",
+      "field": "victims",
+      "gold": [],
+      "before": [
+        "korban luka"
+      ],
+      "after": [],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-027",
+      "field": "impacts",
+      "gold": [
+        "menghanguskan gudang"
+      ],
+      "before": [
+        "latihan evakuasi",
+        "menghanguskan gudang"
+      ],
+      "after": [
+        "menghanguskan gudang"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-028",
+      "field": "impacts",
+      "gold": [
+        "membersihkan puing rumah"
+      ],
+      "before": [
+        "Warga membersihkan puing rumah"
+      ],
+      "after": [
+        "membersihkan puing rumah"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-030",
+      "field": "time_text",
+      "gold": "sekarang",
+      "before": null,
+      "after": "sekarang",
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-030",
+      "field": "impacts",
+      "gold": [
+        "menghanguskan satu rumah"
+      ],
+      "before": [
+        "sudah menghanguskan satu rumah"
+      ],
+      "after": [
+        "sudah menghanguskan satu rumah"
+      ],
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-031",
+      "field": "impacts",
+      "gold": [
+        "melibatkan dua motor"
+      ],
+      "before": [],
+      "after": [],
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-032",
+      "field": "involved_parties",
+      "gold": [
+        "satu pengendara"
+      ],
+      "before": [],
+      "after": [
+        "satu pengendara"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-033",
+      "field": "impacts",
+      "gold": [
+        "mengakibatkan dua penumpang meninggal"
+      ],
+      "before": [],
+      "after": [],
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-034",
+      "field": "impacts",
+      "gold": [
+        "mengevakuasi korban"
+      ],
+      "before": [
+        "Polisi mengevakuasi korban"
+      ],
+      "after": [
+        "mengevakuasi korban"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-036",
+      "field": "impacts",
+      "gold": [
+        "melibatkan truk"
+      ],
+      "before": [
+        "tanpa korban jiwa"
+      ],
+      "after": [],
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-037",
+      "field": "impacts",
+      "gold": [
+        "membersihkan puing"
+      ],
+      "before": [
+        "Petugas membersihkan puing"
+      ],
+      "after": [
+        "membersihkan puing"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-037",
+      "field": "affected_objects",
+      "gold": [
+        "puing"
+      ],
+      "before": [],
+      "after": [],
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-038",
+      "field": "impacts",
+      "gold": [
+        "merusak mobil"
+      ],
+      "before": [],
+      "after": [],
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-039",
+      "field": "impacts",
+      "gold": [
+        "melibatkan angkot"
+      ],
+      "before": [],
+      "after": [],
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-040",
+      "field": "time_text",
+      "gold": "sekarang",
+      "before": null,
+      "after": "sekarang",
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-040",
+      "field": "involved_parties",
+      "gold": [
+        "seorang pejalan kaki"
+      ],
+      "before": [],
+      "after": [
+        "seorang pejalan kaki"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-040",
+      "field": "impacts",
+      "gold": [
+        "menyebabkan seorang pejalan kaki terluka"
+      ],
+      "before": [
+        "Tolong",
+        "menyebabkan"
+      ],
+      "after": [
+        "menyebabkan seorang pejalan kaki terluka"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-040",
+      "field": "victims",
+      "gold": [
+        "seorang pejalan kaki terluka"
+      ],
+      "before": [
+        "terluka"
+      ],
+      "after": [
+        "seorang pejalan kaki terluka"
+      ],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-042",
+      "field": "location_text",
+      "gold": "sekolah",
+      "before": null,
+      "after": null,
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-042",
+      "field": "time_text",
+      "gold": "hari ini",
+      "before": "ini",
+      "after": "hari ini",
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-043",
+      "field": "impacts",
+      "gold": [],
+      "before": [
+        "Warga mengikuti penyuluhan"
+      ],
+      "after": [],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-046",
+      "field": "time_text",
+      "gold": "setiap akhir bulan",
+      "before": "akhir bulan",
+      "after": "setiap akhir bulan",
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-046",
+      "field": "involved_parties",
+      "gold": [],
+      "before": [
+        "dompet saya"
+      ],
+      "after": [
+        "dompet saya"
+      ],
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-047",
+      "field": "impacts",
+      "gold": [],
+      "before": [
+        "Petugas memastikan"
+      ],
+      "after": [],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-048",
+      "field": "time_text",
+      "gold": "selama lima tahun terakhir",
+      "before": "lima tahun terakhir",
+      "after": "selama lima tahun terakhir",
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-048",
+      "field": "impacts",
+      "gold": [],
+      "before": [
+        "dibahas"
+      ],
+      "after": [],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-049",
+      "field": "impacts",
+      "gold": [],
+      "before": [
+        "Warga diminta bersiap menghadapi"
+      ],
+      "after": [],
+      "after_exact": true
+    },
+    {
+      "id": "MVP-NEW-050",
+      "field": "location_text",
+      "gold": "lapangan kecamatan",
+      "before": "lapangan kecamatan sore",
+      "after": "lapangan kecamatan sore",
+      "after_exact": false
+    },
+    {
+      "id": "MVP-NEW-050",
+      "field": "impacts",
+      "gold": [],
+      "before": [
+        "Polisi menggelar simulasi penanganan"
+      ],
+      "after": [],
+      "after_exact": true
+    }
+  ],
+  "notebooks": [
+    {
+      "name": "11_Perbaikan_SENA_CPU_v0.5.ipynb",
+      "usage": "Pelatihan baru dari baseline",
+      "execution": "Dijalankan di sini",
+      "scope": "Split pengembangan 146, bukan test akhir"
+    },
+    {
+      "name": "11b_SENA_Fokus_NON_EVENT_CPU_v0.5.ipynb",
+      "usage": "Pelatihan lanjutan, empat layer akhir",
+      "execution": "Dijalankan di sini",
+      "scope": "Pengembangan sama, early stopping"
+    },
+    {
+      "name": "12_Verifikasi_Perbaikan_SLR09_v0.5.ipynb",
+      "usage": "Fit satu bias head pada dev, tes dan inferensi",
+      "execution": "Dijalankan di sini",
+      "scope": "71 tes kontrak, regresi 50 dan diagnostik 24"
+    },
+    {
+      "name": "09_Uji_Pemuatan_Kandidat_SLR09_v0.2.ipynb",
+      "usage": "Bukti pemuatan kandidat terdahulu",
+      "execution": "Historis, tidak diulang",
+      "scope": "Tidak diklaim sebagai run saya saat ini"
+    },
+    {
+      "name": "10_Evaluasi_Penerimaan_SLR09_v0.4.ipynb",
+      "usage": "Run 50 narasi yang pengguna kirim",
+      "execution": "Historis, tidak diulang",
+      "scope": "Sumber acuan dan hasil awal yang dibandingkan"
+    }
+  ],
+  "fresh": {
+    "records": 24,
+    "macro_f1": 0.8006593406593406,
+    "non_event_recall": 0.9166666666666666,
+    "min_event_recall": 0.3333333333333333
+  },
+  "fresh_records": [
+    {
+      "id": "FRESH-05-001",
+      "text": "Laporan posko: air sungai meluap dan merendam kios-kios di Kampung Anggrek sejak subuh.",
+      "gold_label": "FLOOD",
+      "family": "real",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-002",
+      "text": "Sesi latihan dihentikan: air sungguhan meluap masuk asrama dan petugas mengevakuasi penghuni.",
+      "gold_label": "FLOOD",
+      "family": "real_during_exercise",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-003",
+      "text": "Tidak ada latihan hari ini; banjir benar-benar menutup akses jembatan di Desa Kenanga.",
+      "gold_label": "FLOOD",
+      "family": "real_with_negation",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-004",
+      "text": "Warga Kabupaten Mandala merasakan gempa pukul dua; tembok sekolah roboh.",
+      "gold_label": "EARTHQUAKE",
+      "family": "real",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-005",
+      "text": "Ketika siswa berlatih berlindung, gempa sungguhan mengguncang sekolah hingga lampu jatuh.",
+      "gold_label": "EARTHQUAKE",
+      "family": "real_during_exercise",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-006",
+      "text": "Ini bukan contoh soal. Gempa baru saja merobohkan pagar rumah kami.",
+      "gold_label": "EARTHQUAKE",
+      "family": "real_with_negation",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-007",
+      "text": "Api membesar di bengkel las Jalan Delima dan membakar dua kendaraan malam tadi.",
+      "gold_label": "FIRE",
+      "family": "real",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-008",
+      "text": "Skenario latihan dibatalkan karena gudang di sebelahnya benar-benar terbakar dan dua pekerja cedera.",
+      "gold_label": "FIRE",
+      "family": "real_during_exercise",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-009",
+      "text": "Bukan simulasi, dapur restoran sedang kebakaran; asap pekat keluar dari atap.",
+      "gold_label": "FIRE",
+      "family": "real_with_negation",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-010",
+      "text": "Sepeda motor menabrak pejalan kaki di simpang Jalan Kapuk; korban dibawa ke puskesmas.",
+      "gold_label": "ACCIDENT",
+      "family": "real",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-011",
+      "text": "Latihan lalu lintas terhenti setelah truk sungguhan menabrak peserta di pintu gerbang.",
+      "gold_label": "ACCIDENT",
+      "family": "real_during_exercise",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-012",
+      "text": "Tidak ada tabrakan beruntun, tetapi sebuah bus menabrak pohon dan satu penumpang terluka.",
+      "gold_label": "ACCIDENT",
+      "family": "real_with_negation",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-013",
+      "text": "Bahan lokakarya berjudul Hidup Bersama Banjir dibagikan kepada peserta; semua contoh hanya ilustrasi.",
+      "gold_label": "NON_EVENT",
+      "family": "education",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-014",
+      "text": "Panitia berencana berlatih evakuasi banjir bulan depan; pengumuman ini tidak melaporkan kejadian.",
+      "gold_label": "NON_EVENT",
+      "family": "planning",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-015",
+      "text": "Banjir hadiah untuk tim juara, begitu bunyi candaan pembawa acara.",
+      "gold_label": "NON_EVENT",
+      "family": "metaphor",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-016",
+      "text": "Dosen menguraikan teori lempeng penyebab gempa dalam rekaman kuliah.",
+      "gold_label": "NON_EVENT",
+      "family": "education",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-017",
+      "text": "Pesan berantai tentang gempa di sini dibantah: pemeriksaan menyatakan guncangan itu tidak terjadi.",
+      "gold_label": "NON_EVENT",
+      "family": "denial",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-018",
+      "text": "Dalam novel fantasi itu kerajaan dihancurkan gempa buatan naga.",
+      "gold_label": "NON_EVENT",
+      "family": "fiction",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-019",
+      "text": "Api tiruan dan mesin asap digunakan dalam peragaan keselamatan; tidak ada kebakaran sungguhan.",
+      "gold_label": "NON_EVENT",
+      "family": "simulation",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-020",
+      "text": "Audit mencatat dua belas kebakaran selama tiga tahun terakhir sebagai angka statistik.",
+      "gold_label": "NON_EVENT",
+      "family": "aggregate",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-021",
+      "text": "Jika gudang kebakaran, jalur mana yang harus dipakai? Ini pertanyaan ujian.",
+      "gold_label": "NON_EVENT",
+      "family": "hypothetical",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-022",
+      "text": "Poster layanan masyarakat memuat kiat mencegah kecelakaan saat libur panjang.",
+      "gold_label": "NON_EVENT",
+      "family": "prevention",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-023",
+      "text": "Aktor merekam adegan kecelakaan menggunakan mobil properti; tidak ada insiden nyata.",
+      "gold_label": "NON_EVENT",
+      "family": "fiction",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    },
+    {
+      "id": "FRESH-05-024",
+      "text": "Petugas mengklarifikasi kabar kecelakaan di Jalan Kamboja: kendaraan berhenti biasa dan tidak saling menabrak.",
+      "gold_label": "NON_EVENT",
+      "family": "denial",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD"
+    }
+  ],
+  "tests": "71/71 lulus",
+  "status": "IN REVIEW",
+  "next_action": "SENA masih keliru pada kejadian nyata dengan negasi atau saat latihan. Data baru perlu direview.",
+  "review_records": [
+    {
+      "id": "BAN-01186",
+      "text": "banjir di aceh peneliti zaiyana putri : sekolah & ; outdoor & ; juga menarik",
+      "gold_label": "FLOOD",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "BAN-01703",
+      "text": "abang tolongin ini muti mau plng dari acara tadi dari metmall hujan deras banget mana banjir tolonginnnnn haha angkot nya lama nih mana masih jauh rumah mutiabang pokoknya sih you ya di event selanjutnya",
+      "gold_label": "FLOOD",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "BAN-01483",
+      "text": "bapak bupati stay sejak bencana banjir sampai hari ini banser siap di belakang bapak bupati madiun",
+      "gold_label": "FLOOD",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "BAN-01984",
+      "text": "asli ngeri-ngeri sedap naf eug beberapa kali bikin kegiatan sosial open donasi dari banjir 2014 kelud sinabung bencana asap dan ada beberapa kegiatan sosial lainnya wajib banget share dana yang masuk & keluar sampai terakir bikin lpj itu kalo di komunitas",
+      "gold_label": "FLOOD",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "BAN-01058",
+      "text": "butuh karung pasir dari wan badud sabaaar ini ujian air pasang banjir rob rendam kampung nelayan di penjaringan",
+      "gold_label": "FLOOD",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "GEM-01075",
+      "text": "presiden menyambut baik keputusan untuk menyederhanakan prosedur pengambilan uang bagi korban gempa bumi di lombok ntb dari 17 menjadi tinggal 1 prosedur saja yang diikuti sehingga di lapangan betul-betul bisa dilaksanakan pembagian uang bantuan pembangunan rumah itu",
+      "gold_label": "EARTHQUAKE",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "GEM-01485",
+      "text": "setelah kemarin ada yang tetap nekad meneruskan shalat ketika gempa bumi dan masjid tempat shalatnya bergoyang kemudian ada yang shalat berjamaah di halte busway ada pula yang shalat di tengah gang gerbong kereta",
+      "gold_label": "EARTHQUAKE",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "GEM-01323",
+      "text": "sebelum gempa bumi yang begitu dahsat begitu indah ya pemandang di kator inch setiap ada kegiatan apa saja pasti di tempat inich orang berkumpul tapi sayang itu semua tinggal kenangan belaka saja karena sok di hempas",
+      "gold_label": "EARTHQUAKE",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "KEB-00831",
+      "text": "jadi cerita nya ada kebakaran , trus pemadam dateng , pemandm nya langsung nyiremin rumah2 di samping rumah yg lagi kebakaran nya trus pemadam kebakaran nya di lemparin batu warga , kata nya pemadam nya malah bercanda wkwk dasar orang2 tolol lu kira api nabun bisa di pademin pake aer",
+      "gold_label": "FIRE",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "KEB-00264",
+      "text": "1 . kebakaran hutan dan lahan ( ) saat ini sudah mulai dilakukan penanggulangan dan pencegahan nya oleh tim manggala agni klhk , tni dan polri di daerah riau . via",
+      "gold_label": "FIRE",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "KEB-00695",
+      "text": "gedung telkom ada yg kebakaran gi kata nya di pekanbaru , makanya jaringan langsung pada keputus .",
+      "gold_label": "FIRE",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "KEB-00940",
+      "text": ". . . . kavling dpr di sidoarjo udah kebakaran semalem . baru tau di story ig . bener-bener bakalan banyak api mulai hari ini .",
+      "gold_label": "FIRE",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "KEC-01051",
+      "text": "-kakak perempuannya meninggal diakibatkan kecelakaan saat ini celyn duduk di bangku sama dia bukanlah siswi yang pintar dan memiliki banyak prestasi tapi celyn merupakan siswi yang aktif dalam organisasi dia adalah wakil ketua osis di sekolahnya-",
+      "gold_label": "ACCIDENT",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "BAN-01692",
+      "text": "banjir dukungan di injury time",
+      "gold_label": "NON_EVENT",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "BAN-01763",
+      "text": "guna antisipasi banjir dan situasi kamtibmas yang aman dan kondusif kapolsek bukit intan akp madi putra sh mah beserta kasubnit reskrim ipda imam sh dan personil polsek bukit intan memantau debit air di perumahan warga yang rawan terdampak banjir di kelurahan parit lalang",
+      "gold_label": "NON_EVENT",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "KEC-01006",
+      "text": "4 kecelakaan maut dan mengerikan di dunia karena hal sepele",
+      "gold_label": "NON_EVENT",
+      "origin": "Acuan development terdahulu"
+    },
+    {
+      "id": "FRESH-05-001",
+      "text": "Laporan posko: air sungai meluap dan merendam kios-kios di Kampung Anggrek sejak subuh.",
+      "gold_label": "FLOOD",
+      "family": "real",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-002",
+      "text": "Sesi latihan dihentikan: air sungguhan meluap masuk asrama dan petugas mengevakuasi penghuni.",
+      "gold_label": "FLOOD",
+      "family": "real_during_exercise",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-003",
+      "text": "Tidak ada latihan hari ini; banjir benar-benar menutup akses jembatan di Desa Kenanga.",
+      "gold_label": "FLOOD",
+      "family": "real_with_negation",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-004",
+      "text": "Warga Kabupaten Mandala merasakan gempa pukul dua; tembok sekolah roboh.",
+      "gold_label": "EARTHQUAKE",
+      "family": "real",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-005",
+      "text": "Ketika siswa berlatih berlindung, gempa sungguhan mengguncang sekolah hingga lampu jatuh.",
+      "gold_label": "EARTHQUAKE",
+      "family": "real_during_exercise",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-006",
+      "text": "Ini bukan contoh soal. Gempa baru saja merobohkan pagar rumah kami.",
+      "gold_label": "EARTHQUAKE",
+      "family": "real_with_negation",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-007",
+      "text": "Api membesar di bengkel las Jalan Delima dan membakar dua kendaraan malam tadi.",
+      "gold_label": "FIRE",
+      "family": "real",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-008",
+      "text": "Skenario latihan dibatalkan karena gudang di sebelahnya benar-benar terbakar dan dua pekerja cedera.",
+      "gold_label": "FIRE",
+      "family": "real_during_exercise",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-009",
+      "text": "Bukan simulasi, dapur restoran sedang kebakaran; asap pekat keluar dari atap.",
+      "gold_label": "FIRE",
+      "family": "real_with_negation",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-010",
+      "text": "Sepeda motor menabrak pejalan kaki di simpang Jalan Kapuk; korban dibawa ke puskesmas.",
+      "gold_label": "ACCIDENT",
+      "family": "real",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-011",
+      "text": "Latihan lalu lintas terhenti setelah truk sungguhan menabrak peserta di pintu gerbang.",
+      "gold_label": "ACCIDENT",
+      "family": "real_during_exercise",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-012",
+      "text": "Tidak ada tabrakan beruntun, tetapi sebuah bus menabrak pohon dan satu penumpang terluka.",
+      "gold_label": "ACCIDENT",
+      "family": "real_with_negation",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-013",
+      "text": "Bahan lokakarya berjudul Hidup Bersama Banjir dibagikan kepada peserta; semua contoh hanya ilustrasi.",
+      "gold_label": "NON_EVENT",
+      "family": "education",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-014",
+      "text": "Panitia berencana berlatih evakuasi banjir bulan depan; pengumuman ini tidak melaporkan kejadian.",
+      "gold_label": "NON_EVENT",
+      "family": "planning",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-015",
+      "text": "Banjir hadiah untuk tim juara, begitu bunyi candaan pembawa acara.",
+      "gold_label": "NON_EVENT",
+      "family": "metaphor",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-016",
+      "text": "Dosen menguraikan teori lempeng penyebab gempa dalam rekaman kuliah.",
+      "gold_label": "NON_EVENT",
+      "family": "education",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-017",
+      "text": "Pesan berantai tentang gempa di sini dibantah: pemeriksaan menyatakan guncangan itu tidak terjadi.",
+      "gold_label": "NON_EVENT",
+      "family": "denial",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-018",
+      "text": "Dalam novel fantasi itu kerajaan dihancurkan gempa buatan naga.",
+      "gold_label": "NON_EVENT",
+      "family": "fiction",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-019",
+      "text": "Api tiruan dan mesin asap digunakan dalam peragaan keselamatan; tidak ada kebakaran sungguhan.",
+      "gold_label": "NON_EVENT",
+      "family": "simulation",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-020",
+      "text": "Audit mencatat dua belas kebakaran selama tiga tahun terakhir sebagai angka statistik.",
+      "gold_label": "NON_EVENT",
+      "family": "aggregate",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-021",
+      "text": "Jika gudang kebakaran, jalur mana yang harus dipakai? Ini pertanyaan ujian.",
+      "gold_label": "NON_EVENT",
+      "family": "hypothetical",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-022",
+      "text": "Poster layanan masyarakat memuat kiat mencegah kecelakaan saat libur panjang.",
+      "gold_label": "NON_EVENT",
+      "family": "prevention",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-023",
+      "text": "Aktor merekam adegan kecelakaan menggunakan mobil properti; tidak ada insiden nyata.",
+      "gold_label": "NON_EVENT",
+      "family": "fiction",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    },
+    {
+      "id": "FRESH-05-024",
+      "text": "Petugas mengklarifikasi kabar kecelakaan di Jalan Kamboja: kendaraan berhenti biasa dan tidak saling menabrak.",
+      "gold_label": "NON_EVENT",
+      "family": "denial",
+      "reference_origin": "ASSISTANT_AUTHORED_NOT_HUMAN_GOLD",
+      "origin": "Usulan asisten"
+    }
+  ]
+}

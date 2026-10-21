@@ -1,0 +1,9 @@
+{
+  "grid_step": 0.1,
+  "feasible_grid_values": [
+    2.5
+  ],
+  "feasible_grid_count": 1,
+  "broad_robustness_established": false,
+  "independent_acceptance_required": true
+}

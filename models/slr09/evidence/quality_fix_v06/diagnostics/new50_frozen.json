@@ -1,0 +1,358 @@
+{
+  "schema": "slr09-new-diagnostic-0.6",
+  "status": "ASSISTANT_PROPOSED_REFERENCE_NOT_HUMAN_ACCEPTED",
+  "frozen_before_training": true,
+  "used_for_training_or_checkpoint_selection": false,
+  "records": [
+    {
+      "id": "NEW06-FLOOD-01",
+      "text": "Banjir menerjang Dusun Sawangan tadi malam dan merendam belasan rumah.",
+      "gold_label": "FLOOD",
+      "family": "plain",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FLOOD-02",
+      "text": "Tolong jangan dikira gladi evakuasi. Banjir sedang merendam rumah kami di Gang Merica.",
+      "gold_label": "FLOOD",
+      "family": "negated_simulation",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FLOOD-03",
+      "text": "Banjir menggenangi Perumahan Arunika, tetapi tidak ada korban jiwa menurut laporan posko.",
+      "gold_label": "FLOOD",
+      "family": "victim_denial",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FLOOD-04",
+      "text": "Peserta simulasi kebakaran harus keluar gedung karena banjir sungguhan masuk ke lantai dasar.",
+      "gold_label": "FLOOD",
+      "family": "real_during_exercise",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FLOOD-05",
+      "text": "Warga mengira kabar itu lelucon. Petugas kemudian mengonfirmasi banjir nyata di Desa Walikukun.",
+      "gold_label": "FLOOD",
+      "family": "clarified_reality",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FLOOD-06",
+      "text": "Tanggul jebol barusan; air sungai meluap melewati jendela rumah dan warga naik ke atap.",
+      "gold_label": "FLOOD",
+      "family": "nonkeyword_effect",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FLOOD-07",
+      "text": "Tidak ada kebakaran di pasar. Yang terjadi adalah banjir, dengan air setinggi lutut para pedagang.",
+      "gold_label": "FLOOD",
+      "family": "alternative_denied",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FLOOD-08",
+      "text": "Banjir itu bukan prediksi untuk besok: hari ini air sudah menenggelamkan ruang kelas.",
+      "gold_label": "FLOOD",
+      "family": "future_negation",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FLOOD-09",
+      "text": "Ini bukan pertanyaan dalam buku pelajaran. Banjir baru saja memutus akses Kampung Randu.",
+      "gold_label": "FLOOD",
+      "family": "negated_education",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FLOOD-10",
+      "text": "Meski pengumuman awal hanya peringatan, banjir kini benar-benar terjadi dan menyeret dua gerobak.",
+      "gold_label": "FLOOD",
+      "family": "after_warning",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-EARTHQUAKE-01",
+      "text": "Gempa mengguncang Kabupaten Lembah Jernih pukul 03.15 dan meretakkan dinding beberapa rumah.",
+      "gold_label": "EARTHQUAKE",
+      "family": "plain",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-EARTHQUAKE-02",
+      "text": "Jangan sebut cerita khayalan, gempa sungguhan baru mengguncang rumah kami sampai lemari terjatuh.",
+      "gold_label": "EARTHQUAKE",
+      "family": "negated_fiction",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-EARTHQUAKE-03",
+      "text": "Gempa merobohkan pagar balai warga pagi tadi. Syukurlah tidak ada orang yang terluka.",
+      "gold_label": "EARTHQUAKE",
+      "family": "victim_denial",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-EARTHQUAKE-04",
+      "text": "Praktik berlindung di bawah meja terhenti ketika gempa asli mengguncang sekolah dan memecahkan kaca.",
+      "gold_label": "EARTHQUAKE",
+      "family": "real_during_exercise",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-EARTHQUAKE-05",
+      "text": "Gempa terjadi pukul dua tadi; setelah itu tidak ada gempa susulan hingga laporan ini dikirim.",
+      "gold_label": "EARTHQUAKE",
+      "family": "aftershock_negation",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-EARTHQUAKE-06",
+      "text": "Tanah berguncang kuat, lampu bergoyang, dan dinding rumah retak; warga sekampung keluar ke jalan.",
+      "gold_label": "EARTHQUAKE",
+      "family": "nonkeyword_effect",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-EARTHQUAKE-07",
+      "text": "Bukan kecelakaan kendaraan yang membuat warga keluar. Gempa sedang mengguncang kawasan perumahan.",
+      "gold_label": "EARTHQUAKE",
+      "family": "alternative_denied",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-EARTHQUAKE-08",
+      "text": "Tidak sedang membicarakan teori. Gempa betulan baru terjadi di Desa Sumberjati dan atap balai rusak.",
+      "gold_label": "EARTHQUAKE",
+      "family": "negated_education",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-EARTHQUAKE-09",
+      "text": "Kabar gempa awalnya diragukan, tetapi tim lapangan memastikan guncangan nyata dan menemukan rumah rusak.",
+      "gold_label": "EARTHQUAKE",
+      "family": "rumor_verified",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-EARTHQUAKE-10",
+      "text": "Peringatan ini bukan bagian simulasi: gempa baru terasa keras di gedung kantor dan para pegawai berlarian.",
+      "gold_label": "EARTHQUAKE",
+      "family": "negated_simulation",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FIRE-01",
+      "text": "Kebakaran melalap gudang kain di Jalan Seruni sore ini dan petugas sedang menyemprotkan air.",
+      "gold_label": "FIRE",
+      "family": "plain",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FIRE-02",
+      "text": "Jangan menganggap peragaan pemadam. Dapur kantin benar-benar kebakaran dan api menjalar ke atap.",
+      "gold_label": "FIRE",
+      "family": "negated_simulation",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FIRE-03",
+      "text": "Kebakaran menghanguskan satu kios di Pasar Lazuardi tanpa menimbulkan korban luka.",
+      "gold_label": "FIRE",
+      "family": "victim_denial",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FIRE-04",
+      "text": "Pelatihan antigempa dihentikan karena kebakaran asli muncul di gudang bahan bakar sebelah lokasi.",
+      "gold_label": "FIRE",
+      "family": "real_during_exercise",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FIRE-05",
+      "text": "Kebakaran yang sedang kami laporkan bukan adegan film. Dua rumah terbakar dan warga membutuhkan pemadam.",
+      "gold_label": "FIRE",
+      "family": "negated_fiction",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FIRE-06",
+      "text": "Api menyambar atap rumah kontrakan, asap mengepul tebal, dan penghuni bergegas keluar meminta bantuan.",
+      "gold_label": "FIRE",
+      "family": "nonkeyword_effect",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FIRE-07",
+      "text": "Bukan banjir di pabrik itu; kebakaran sedang berlangsung dan asap hitam terlihat dari jalan besar.",
+      "gold_label": "FIRE",
+      "family": "alternative_denied",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FIRE-08",
+      "text": "Peringatan risiko kemarin kini menjadi kejadian: kebakaran terjadi di lereng bukit dan petugas memadamkan api.",
+      "gold_label": "FIRE",
+      "family": "forecast_versus_actual",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FIRE-09",
+      "text": "Ini bukan latihan soal keselamatan. Bengkel di depan rumah saya kebakaran sejak beberapa menit lalu.",
+      "gold_label": "FIRE",
+      "family": "negated_education",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-FIRE-10",
+      "text": "Kebakaran bukan di sekolah seperti kabar awal, melainkan di gudang sebelahnya; petugas sudah tiba.",
+      "gold_label": "FIRE",
+      "family": "location_negation",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-ACCIDENT-01",
+      "text": "Kecelakaan terjadi di simpang Jalan Tanjung; sepeda motor menabrak sedan dan satu orang terluka.",
+      "gold_label": "ACCIDENT",
+      "family": "plain",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-ACCIDENT-02",
+      "text": "Ini bukan demonstrasi cara berkendara. Bus menabrak pembatas di depan terminal dan penumpangnya cedera.",
+      "gold_label": "ACCIDENT",
+      "family": "negated_simulation",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-ACCIDENT-03",
+      "text": "Kecelakaan dua mobil di Jalan Bambu tidak menimbulkan korban jiwa, tetapi kedua kendaraan rusak.",
+      "gold_label": "ACCIDENT",
+      "family": "victim_denial",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-ACCIDENT-04",
+      "text": "Latihan pengaturan jalan terhenti setelah sebuah motor sungguhan menabrak peserta di pintu masuk.",
+      "gold_label": "ACCIDENT",
+      "family": "real_during_exercise",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-ACCIDENT-05",
+      "text": "Tabrakan di depan bioskop bukan adegan syuting. Pengendara motor menabrak pejalan kaki dan ambulans dipanggil.",
+      "gold_label": "ACCIDENT",
+      "family": "negated_fiction",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-ACCIDENT-06",
+      "text": "Truk oleng lalu menghantam warung di tikungan; sopir terjepit dan tim penolong berusaha mengeluarkannya.",
+      "gold_label": "ACCIDENT",
+      "family": "nonkeyword_effect",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-ACCIDENT-07",
+      "text": "Tidak ada gempa di jembatan itu. Sebuah kecelakaan baru terjadi ketika dua truk bertabrakan.",
+      "gold_label": "ACCIDENT",
+      "family": "alternative_denied",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-ACCIDENT-08",
+      "text": "Kabar kecelakaan semula dibantah, tetapi polisi di lokasi kemudian mengonfirmasi tabrakan dan dua korban luka.",
+      "gold_label": "ACCIDENT",
+      "family": "source_correction",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-ACCIDENT-09",
+      "text": "Bukan soal ujian mengemudi: barusan mobil menabrak pagar sekolah dan pengemudinya terluka.",
+      "gold_label": "ACCIDENT",
+      "family": "negated_education",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-ACCIDENT-10",
+      "text": "Motor pertama tidak menabrak siapa pun, tetapi mobil di belakangnya menabrak pohon hingga penumpangnya terluka.",
+      "gold_label": "ACCIDENT",
+      "family": "negation_scope",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-NON_EVENT-01",
+      "text": "Pengecekan polisi memastikan kabar kecelakaan di Jalan Melati keliru; mobil-mobil sedang parkir dan tidak ada tabrakan.",
+      "gold_label": "NON_EVENT",
+      "family": "denial",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-NON_EVENT-02",
+      "text": "Kabar kebakaran kantor dibantah oleh pengelola; tidak ada api dan peristiwa tersebut tidak terjadi.",
+      "gold_label": "NON_EVENT",
+      "family": "denial",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-NON_EVENT-03",
+      "text": "Guru meminta murid menjelaskan penyebab gempa melalui gambar di papan tulis. Tidak ada peristiwa gempa yang dilaporkan.",
+      "gold_label": "NON_EVENT",
+      "family": "education",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-NON_EVENT-04",
+      "text": "Peta perkiraan menandai potensi banjir pekan depan. Warga diminta menyiapkan perlengkapan sebelum ada kejadian.",
+      "gold_label": "NON_EVENT",
+      "family": "forecast",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-NON_EVENT-05",
+      "text": "Pemain film merekam tabrakan menggunakan kendaraan mainan; adegan kecelakaan itu sepenuhnya rekaan.",
+      "gold_label": "NON_EVENT",
+      "family": "fiction",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-NON_EVENT-06",
+      "text": "Panitia menggelar simulasi kebakaran dengan api tiruan dan pemeran korban. Semua peserta aman, tanpa kejadian sungguhan.",
+      "gold_label": "NON_EVENT",
+      "family": "simulation",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-NON_EVENT-07",
+      "text": "Bagaimana bila gempa merobohkan rumah? Kalimat ini hanya ilustrasi dalam modul pelatihan.",
+      "gold_label": "NON_EVENT",
+      "family": "hypothetical",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-NON_EVENT-08",
+      "text": "Rapat mengevaluasi jumlah kecelakaan selama lima tahun sebagai statistik umum, tanpa laporan peristiwa tertentu.",
+      "gold_label": "NON_EVENT",
+      "family": "aggregate",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-NON_EVENT-09",
+      "text": "Penyiar bercanda bahwa akun sang juara kebanjiran ucapan selamat; ia tidak sedang memberitakan bencana.",
+      "gold_label": "NON_EVENT",
+      "family": "metaphor",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    },
+    {
+      "id": "NEW06-NON_EVENT-10",
+      "text": "Bukan penanganan banjir yang sudah terjadi. Undangan ini hanya menjadwalkan latihan evakuasi untuk bulan depan.",
+      "gold_label": "NON_EVENT",
+      "family": "planning",
+      "reference_source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED"
+    }
+  ]
+}

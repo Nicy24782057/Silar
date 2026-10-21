@@ -1,0 +1,445 @@
+{
+  "records": [
+    {
+      "id": "BAN-01692",
+      "text": "banjir dukungan di injury time",
+      "gold": "NON_EVENT",
+      "label_origin": "KNOWN_HUMAN_ADJUDICATED_NOW_TRAINING"
+    },
+    {
+      "id": "BAN-01763",
+      "text": "guna antisipasi banjir dan situasi kamtibmas yang aman dan kondusif kapolsek bukit intan akp madi putra sh mah beserta kasubnit reskrim ipda imam sh dan personil polsek bukit intan memantau debit air di perumahan warga yang rawan terdampak banjir di kelurahan parit lalang",
+      "gold": "NON_EVENT",
+      "label_origin": "KNOWN_HUMAN_ADJUDICATED_NOW_TRAINING"
+    },
+    {
+      "id": "KEC-01006",
+      "text": "4 kecelakaan maut dan mengerikan di dunia karena hal sepele",
+      "gold": "NON_EVENT",
+      "label_origin": "KNOWN_HUMAN_ADJUDICATED_NOW_TRAINING"
+    },
+    {
+      "id": "NEW07-FLOOD-04",
+      "text": "Petugas sedang berlatih menolong korban gempa ketika air banjir betulan menerobos tempat latihan dan mereka harus pindah.",
+      "gold": "FLOOD",
+      "label_origin": "ASSISTANT_SEEN_V07"
+    },
+    {
+      "id": "NEW07-EARTHQUAKE-04",
+      "text": "Latihan menghadapi banjir mendadak berhenti. Tanah benar-benar berguncang akibat gempa dan peserta keluar dari gedung.",
+      "gold": "EARTHQUAKE",
+      "label_origin": "ASSISTANT_SEEN_V07"
+    },
+    {
+      "id": "NEW07-FIRE-04",
+      "text": "Saat warga mengikuti simulasi evakuasi banjir, tabung di kantin bocor dan kebakaran nyata terjadi di dapur.",
+      "gold": "FIRE",
+      "label_origin": "ASSISTANT_SEEN_V07"
+    },
+    {
+      "id": "NEW07-ACCIDENT-04",
+      "text": "Praktik penyeberangan sekolah dihentikan setelah motor sungguhan menabrak pagar dan pengendaranya terluka.",
+      "gold": "ACCIDENT",
+      "label_origin": "ASSISTANT_SEEN_V07"
+    },
+    {
+      "id": "NEW07-NON_EVENT-06",
+      "text": "Suara benturan dalam latihan kecelakaan berasal dari pengeras suara. Mobil rusak dan korban merupakan properti serta pemeran simulasi.",
+      "gold": "NON_EVENT",
+      "label_origin": "ASSISTANT_SEEN_V07"
+    },
+    {
+      "id": "BAN-01221",
+      "text": "tahh lamun bandung banjir ieu salah sahiji mobil nu jadi sebabna ngeunah pisan di jalan bengawan parkir nyatu kacang sabari runtahna dipiceun dijalan mikirrrrr ath",
+      "gold": "NON_EVENT",
+      "label_origin": "KNOWN_HUMAN_ADJUDICATED_NOW_TRAINING"
+    },
+    {
+      "id": "BAN-01512",
+      "text": "hari ini bu risma melakukan kunjungan ke beberapa lokasi kunjungan ini terkait cara pemkot mengatasi banjir di surabaya di titik ujung timur dan barat surabaya",
+      "gold": "NON_EVENT",
+      "label_origin": "KNOWN_HUMAN_ADJUDICATED_NOW_TRAINING"
+    },
+    {
+      "id": "BAN-01925",
+      "text": "banjir dikit menyalahkan pemerintah kalo kau masih buang puntung rokok sama bungkus permen di jalan enggak usah menyalahkan orang lain karena banjir ! !",
+      "gold": "NON_EVENT",
+      "label_origin": "KNOWN_HUMAN_ADJUDICATED_NOW_TRAINING"
+    },
+    {
+      "id": "NEW06-FLOOD-04",
+      "text": "Peserta simulasi kebakaran harus keluar gedung karena banjir sungguhan masuk ke lantai dasar.",
+      "gold": "FLOOD",
+      "label_origin": "KNOWN_ASSISTANT_SCOPE_NOW_TRAINING"
+    },
+    {
+      "id": "NEW06-EARTHQUAKE-04",
+      "text": "Praktik berlindung di bawah meja terhenti ketika gempa asli mengguncang sekolah dan memecahkan kaca.",
+      "gold": "EARTHQUAKE",
+      "label_origin": "KNOWN_ASSISTANT_SCOPE_NOW_TRAINING"
+    },
+    {
+      "id": "NEW06-FIRE-04",
+      "text": "Pelatihan antigempa dihentikan karena kebakaran asli muncul di gudang bahan bakar sebelah lokasi.",
+      "gold": "FIRE",
+      "label_origin": "KNOWN_ASSISTANT_SCOPE_NOW_TRAINING"
+    },
+    {
+      "id": "NEW06-ACCIDENT-04",
+      "text": "Latihan pengaturan jalan terhenti setelah sebuah motor sungguhan menabrak peserta di pintu masuk.",
+      "gold": "ACCIDENT",
+      "label_origin": "KNOWN_ASSISTANT_SCOPE_NOW_TRAINING"
+    },
+    {
+      "id": "NEW06-NON_EVENT-06",
+      "text": "Panitia menggelar simulasi kebakaran dengan api tiruan dan pemeran korban. Semua peserta aman, tanpa kejadian sungguhan.",
+      "gold": "NON_EVENT",
+      "label_origin": "KNOWN_ASSISTANT_SCOPE_NOW_TRAINING"
+    },
+    {
+      "id": "MVP-NEW-027",
+      "text": "Saat latihan evakuasi, kebakaran sungguhan menghanguskan gudang di Desa Karangrejo siang ini.",
+      "gold": "FIRE",
+      "label_origin": "KNOWN_HUMAN_REGRESSION_NOW_TRAINING"
+    },
+    {
+      "id": "MVP-NEW-038",
+      "text": "Saat simulasi lalu lintas, kecelakaan sungguhan merusak mobil di Jalan Pemuda pagi tadi.",
+      "gold": "ACCIDENT",
+      "label_origin": "KNOWN_HUMAN_REGRESSION_NOW_TRAINING"
+    },
+    {
+      "id": "MVP-NEW-041",
+      "text": "Petugas mengadakan simulasi kebakaran di halaman kantor kelurahan pagi ini.",
+      "gold": "NON_EVENT",
+      "label_origin": "KNOWN_HUMAN_REGRESSION_NOW_TRAINING"
+    },
+    {
+      "id": "MVP-NEW-050",
+      "text": "Polisi menggelar simulasi penanganan kecelakaan di lapangan kecamatan sore ini.",
+      "gold": "NON_EVENT",
+      "label_origin": "KNOWN_HUMAN_REGRESSION_NOW_TRAINING"
+    },
+    {
+      "id": "FINAL081-FLOOD-08",
+      "text": "Di tengah latihan evakuasi, Banjir sungguhan menggenangi tiga rumah di Desa Beringinwangi Utara pagi tadi.",
+      "gold": "FLOOD",
+      "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+    },
+    {
+      "id": "FINAL081-EARTHQUAKE-08",
+      "text": "Di tengah latihan evakuasi, Gempa sungguhan merusak dinding sekolah di Desa Beringinwangi Selatan pagi tadi.",
+      "gold": "EARTHQUAKE",
+      "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+    },
+    {
+      "id": "FINAL081-FIRE-08",
+      "text": "Di tengah latihan evakuasi, Kebakaran sungguhan menghanguskan satu warung di Desa Beringinwangi Barat pagi tadi.",
+      "gold": "FIRE",
+      "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+    },
+    {
+      "id": "FINAL081-ACCIDENT-08",
+      "text": "Di tengah latihan evakuasi, Kecelakaan sungguhan merusak dua sepeda motor di Desa Beringinwangi Tengah pagi tadi.",
+      "gold": "ACCIDENT",
+      "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+    },
+    {
+      "id": "FINAL081-NON_EVENT-01",
+      "text": "Petugas BPBD menggelar simulasi kebakaran di lapangan Kalimurni sore ini.",
+      "gold": "NON_EVENT",
+      "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+    },
+    {
+      "id": "FINAL081-NON_EVENT-02",
+      "text": "Latihan penanganan kecelakaan diselenggarakan di balai pelatihan Puspasari pagi ini.",
+      "gold": "NON_EVENT",
+      "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+    },
+    {
+      "id": "FINAL081-NON_EVENT-06",
+      "text": "Tim kelurahan menyiapkan jalur evakuasi untuk mengantisipasi banjir di Kampung Manggala.",
+      "gold": "NON_EVENT",
+      "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+    },
+    {
+      "id": "FINAL082-FLOOD-07",
+      "text": "Saat latihan pertolongan, banjir nyata merusak jembatan kayu di Desa Bantarasih siang tadi.",
+      "gold": "FLOOD",
+      "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+    },
+    {
+      "id": "FINAL082-EARTHQUAKE-07",
+      "text": "Latihan evakuasi dihentikan karena gempa sungguhan mengguncang Kampung Cendrawana sore ini.",
+      "gold": "EARTHQUAKE",
+      "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+    },
+    {
+      "id": "FINAL082-FIRE-07",
+      "text": "Di tengah latihan damkar, kebakaran nyata merusak satu mobil di Lapangan Mekarjaya siang ini.",
+      "gold": "FIRE",
+      "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+    },
+    {
+      "id": "FINAL082-ACCIDENT-07",
+      "text": "Saat latihan pertolongan, kecelakaan sungguhan merusak mobil petugas di Lapangan Binamarga sore ini.",
+      "gold": "ACCIDENT",
+      "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+    },
+    {
+      "id": "FINAL082-NON_EVENT-01",
+      "text": "Tim damkar hanya menggelar simulasi kebakaran di Halaman Purnawana pagi tadi.",
+      "gold": "NON_EVENT",
+      "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+    },
+    {
+      "id": "FINAL082-NON_EVENT-02",
+      "text": "Kecelakaan dalam latihan di Balai Suryalaya sore ini memakai mobil properti, tanpa kejadian sungguhan.",
+      "gold": "NON_EVENT",
+      "label_origin": "REVIEWED_FINAL_NOW_TRAINING"
+    },
+    {
+      "id": "DIAG083-FLOOD-01",
+      "text": "Latihan penyelamatan dihentikan: banjir yang sesungguhnya baru terjadi dan warga dievakuasi.",
+      "gold": "FLOOD",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-FLOOD-02",
+      "text": "Tidak ada korban jiwa, tetapi banjir benar-benar terjadi dan petugas memeriksa bangunan rusak.",
+      "gold": "FLOOD",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-FLOOD-03",
+      "text": "Semua orang selamat setelah banjir terjadi di sebelah pusat pelatihan. Bantuan sedang dikirim.",
+      "gold": "FLOOD",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-FLOOD-04",
+      "text": "Informasi banjir telah diperiksa di lokasi dan ternyata benar; pesan ini bukan pengumuman latihan.",
+      "gold": "FLOOD",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-FLOOD-05",
+      "text": "Skenario yang dibaca peserta berbeda dari banjir sungguhan yang sedang ditangani di luar gedung.",
+      "gold": "FLOOD",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-FLOOD-06",
+      "text": "Tadi malam banjir merusak fasilitas di kampung, meskipun tidak ada orang yang terluka.",
+      "gold": "FLOOD",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-FLOOD-07",
+      "text": "Tim yang semula mengira hanya latihan menemukan banjir nyata dan meminta bantuan segera.",
+      "gold": "FLOOD",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-FLOOD-08",
+      "text": "Peristiwa banjir memang terjadi pagi ini. Kabar bahwa semuanya hanya peragaan sudah dibantah petugas.",
+      "gold": "FLOOD",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-EARTHQUAKE-01",
+      "text": "Latihan penyelamatan dihentikan: gempa yang sesungguhnya baru terjadi dan warga dievakuasi.",
+      "gold": "EARTHQUAKE",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-EARTHQUAKE-02",
+      "text": "Tidak ada korban jiwa, tetapi gempa benar-benar terjadi dan petugas memeriksa bangunan rusak.",
+      "gold": "EARTHQUAKE",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-EARTHQUAKE-03",
+      "text": "Semua orang selamat setelah gempa terjadi di sebelah pusat pelatihan. Bantuan sedang dikirim.",
+      "gold": "EARTHQUAKE",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-EARTHQUAKE-04",
+      "text": "Informasi gempa telah diperiksa di lokasi dan ternyata benar; pesan ini bukan pengumuman latihan.",
+      "gold": "EARTHQUAKE",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-EARTHQUAKE-05",
+      "text": "Skenario yang dibaca peserta berbeda dari gempa sungguhan yang sedang ditangani di luar gedung.",
+      "gold": "EARTHQUAKE",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-EARTHQUAKE-06",
+      "text": "Tadi malam gempa merusak fasilitas di kampung, meskipun tidak ada orang yang terluka.",
+      "gold": "EARTHQUAKE",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-EARTHQUAKE-07",
+      "text": "Tim yang semula mengira hanya latihan menemukan gempa nyata dan meminta bantuan segera.",
+      "gold": "EARTHQUAKE",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-EARTHQUAKE-08",
+      "text": "Peristiwa gempa memang terjadi pagi ini. Kabar bahwa semuanya hanya peragaan sudah dibantah petugas.",
+      "gold": "EARTHQUAKE",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-FIRE-01",
+      "text": "Latihan penyelamatan dihentikan: kebakaran yang sesungguhnya baru terjadi dan warga dievakuasi.",
+      "gold": "FIRE",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-FIRE-02",
+      "text": "Tidak ada korban jiwa, tetapi kebakaran benar-benar terjadi dan petugas memeriksa bangunan rusak.",
+      "gold": "FIRE",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-FIRE-03",
+      "text": "Semua orang selamat setelah kebakaran terjadi di sebelah pusat pelatihan. Bantuan sedang dikirim.",
+      "gold": "FIRE",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-FIRE-04",
+      "text": "Informasi kebakaran telah diperiksa di lokasi dan ternyata benar; pesan ini bukan pengumuman latihan.",
+      "gold": "FIRE",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-FIRE-05",
+      "text": "Skenario yang dibaca peserta berbeda dari kebakaran sungguhan yang sedang ditangani di luar gedung.",
+      "gold": "FIRE",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-FIRE-06",
+      "text": "Tadi malam kebakaran merusak fasilitas di kampung, meskipun tidak ada orang yang terluka.",
+      "gold": "FIRE",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-FIRE-07",
+      "text": "Tim yang semula mengira hanya latihan menemukan kebakaran nyata dan meminta bantuan segera.",
+      "gold": "FIRE",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-FIRE-08",
+      "text": "Peristiwa kebakaran memang terjadi pagi ini. Kabar bahwa semuanya hanya peragaan sudah dibantah petugas.",
+      "gold": "FIRE",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-ACCIDENT-01",
+      "text": "Latihan penyelamatan dihentikan: kecelakaan yang sesungguhnya baru terjadi dan warga dievakuasi.",
+      "gold": "ACCIDENT",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-ACCIDENT-02",
+      "text": "Tidak ada korban jiwa, tetapi kecelakaan benar-benar terjadi dan petugas memeriksa bangunan rusak.",
+      "gold": "ACCIDENT",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-ACCIDENT-03",
+      "text": "Semua orang selamat setelah kecelakaan terjadi di sebelah pusat pelatihan. Bantuan sedang dikirim.",
+      "gold": "ACCIDENT",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-ACCIDENT-04",
+      "text": "Informasi kecelakaan telah diperiksa di lokasi dan ternyata benar; pesan ini bukan pengumuman latihan.",
+      "gold": "ACCIDENT",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-ACCIDENT-05",
+      "text": "Skenario yang dibaca peserta berbeda dari kecelakaan sungguhan yang sedang ditangani di luar gedung.",
+      "gold": "ACCIDENT",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-ACCIDENT-06",
+      "text": "Tadi malam kecelakaan merusak fasilitas di kampung, meskipun tidak ada orang yang terluka.",
+      "gold": "ACCIDENT",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-ACCIDENT-07",
+      "text": "Tim yang semula mengira hanya latihan menemukan kecelakaan nyata dan meminta bantuan segera.",
+      "gold": "ACCIDENT",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-ACCIDENT-08",
+      "text": "Peristiwa kecelakaan memang terjadi pagi ini. Kabar bahwa semuanya hanya peragaan sudah dibantah petugas.",
+      "gold": "ACCIDENT",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-NON_EVENT-01",
+      "text": "Panitia memastikan benturan mobil dalam latihan kecelakaan hanyalah peragaan; tidak berlangsung kejadian nyata.",
+      "gold": "NON_EVENT",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-NON_EVENT-02",
+      "text": "Simulasi gempa memakai efek getaran. Pernyataan tentang bangunan runtuh hanya bagian naskah kegiatan.",
+      "gold": "NON_EVENT",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-NON_EVENT-03",
+      "text": "Air untuk latihan banjir disiapkan dalam kolam buatan; tidak terjadi banjir sungguhan di kampung.",
+      "gold": "NON_EVENT",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-NON_EVENT-04",
+      "text": "Adegan kebakaran pada pelatihan menggunakan alat peraga, tanpa adanya peristiwa nyata.",
+      "gold": "NON_EVENT",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-NON_EVENT-05",
+      "text": "Kendaraan yang tampak rusak itu properti kelas pertolongan kecelakaan, bukan akibat kecelakaan sungguhan.",
+      "gold": "NON_EVENT",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-NON_EVENT-06",
+      "text": "Tulisan gempa sungguhan pada contoh formulir hanya bahan belajar dan tidak melaporkan suatu kejadian.",
+      "gold": "NON_EVENT",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-NON_EVENT-07",
+      "text": "Petugas menyelesaikan peragaan tanggap banjir. Kerusakan dan korban yang ditampilkan semuanya tiruan.",
+      "gold": "NON_EVENT",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    },
+    {
+      "id": "DIAG083-NON_EVENT-08",
+      "text": "Suara ledakan dan api di layar adalah rekaman latihan kebakaran; petugas memastikan lokasi sekarang aman tanpa kejadian nyata.",
+      "gold": "NON_EVENT",
+      "label_origin": "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING"
+    }
+  ],
+  "selection_basis": "KNOWN_CONTRASTS_AND_PREVIOUSLY_SEEN_HUMAN_FALSE_EVENT_ERRORS_NOT_FRESH_ACCEPTANCE",
+  "unique_hard_records": 73,
+  "new_acceptance_inputs_read": false
+}

@@ -1,0 +1,16 @@
+{
+  "changed_runtime_modules": [
+    "silar_ai_adapter.py",
+    "silar_nara_composition.py",
+    "silar_postprocessing.py",
+    "silar_victim_guard.py",
+    "slr09_candidate_runtime.py",
+    "slr09_runtime.py"
+  ],
+  "changed_runtime_module_count": 6,
+  "review_rows": 40,
+  "review_source_values_preserved": true,
+  "all_review_rows_pending": true,
+  "new_model_archive_and_runtime_hashes_verified": true,
+  "quality_source_syntax_valid": true
+}

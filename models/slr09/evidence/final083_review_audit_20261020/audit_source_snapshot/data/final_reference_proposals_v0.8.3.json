@@ -1,0 +1,2215 @@
+{
+  "schema": "slr09-fresh-reference-proposals-0.8.3",
+  "created_at": "2026-10-20T09:49:11.914024+00:00",
+  "records": [
+    {
+      "id": "FINAL083-FLOOD-01",
+      "text": "Banjir memutus akses pasar di Kelurahan Puspanala sejak subuh.",
+      "family": "plain",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Kelurahan Puspanala",
+        "time_text": "sejak subuh",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "memutus akses pasar"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "akses pasar"
+        ]
+      },
+      "gold_nara_labels": [
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FLOOD-02",
+      "text": "Tiga rumah terendam banjir malam kemarin di Dusun Gintungasri.",
+      "family": "object_first",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Dusun Gintungasri",
+        "time_text": "malam kemarin",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "Tiga rumah terendam"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "Tiga rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "INFORMATION-ARG",
+        "FLOOD-EVENT",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FLOOD-03",
+      "text": "Regu SAR mengungsikan penduduk dari Desa Sekarwangi akibat banjir pagi ini.",
+      "family": "response",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Desa Sekarwangi",
+        "time_text": "pagi ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Regu SAR"
+        ],
+        "impacts": [
+          "mengungsikan penduduk"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "OFFICER-ARG",
+        "INFORMATION-ARG",
+        "INFORMATION-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "O",
+        "FLOOD-EVENT",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FLOOD-04",
+      "text": "Peserta latihan mengangkat perahu ketika banjir sungguhan merendam gudang beras di Dusun Waringinreja sore tadi.",
+      "family": "real_during_exercise",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Dusun Waringinreja",
+        "time_text": "sore tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merendam gudang beras"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "gudang beras"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "FLOOD-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FLOOD-05",
+      "text": "Petugas kelurahan mengonfirmasi banjir di Kelurahan Mekarnala malam ini; informasi tersebut bukan skenario latihan.",
+      "family": "rumor_verified",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Kelurahan Mekarnala",
+        "time_text": "malam ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Petugas kelurahan"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "OFFICER-ARG",
+        "O",
+        "FLOOD-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FLOOD-06",
+      "text": "Luapan sungai menyebabkan banjir menggenangi kebun sayur di Desa Karangnusa siang tadi.",
+      "family": "cause",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Desa Karangnusa",
+        "time_text": "siang tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menggenangi kebun sayur"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "kebun sayur"
+        ]
+      },
+      "gold_nara_labels": [
+        "REASON-ARG",
+        "REASON-ARG",
+        "O",
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FLOOD-07",
+      "text": "Banjir di Desa Palaswangi kemarin malam mengakibatkan seorang warga terluka.",
+      "family": "victim",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Desa Palaswangi",
+        "time_text": "kemarin malam",
+        "occurred_at": null,
+        "involved_parties": [
+          "seorang warga"
+        ],
+        "impacts": [],
+        "victims": [
+          "seorang warga terluka"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "FLOOD-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FLOOD-08",
+      "text": "Dua nelayan meninggal saat banjir di Kampung Rengganala pagi tadi.",
+      "family": "death",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Kampung Rengganala",
+        "time_text": "pagi tadi",
+        "occurred_at": null,
+        "involved_parties": [
+          "Dua nelayan"
+        ],
+        "impacts": [],
+        "victims": [
+          "Dua nelayan meninggal"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "O",
+        "FLOOD-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FLOOD-09",
+      "text": "Tak ada korban jiwa, tetapi banjir merusak pagar puskesmas di Desa Manggalarum sore ini.",
+      "family": "local_negation",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Desa Manggalarum",
+        "time_text": "sore ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak pagar puskesmas"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "pagar puskesmas"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FLOOD-10",
+      "text": "Sejak tadi malam, banjir masih menggenangi jalan desa di Kampung Cikareja.",
+      "family": "ongoing",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Kampung Cikareja",
+        "time_text": "Sejak tadi malam",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menggenangi jalan desa"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "jalan desa"
+        ]
+      },
+      "gold_nara_labels": [
+        "TIME-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "FLOOD-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-01",
+      "text": "Gempa mengguncang Kecamatan Sukamanah siang ini; warga keluar dari rumah.",
+      "family": "plain",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Kecamatan Sukamanah",
+        "time_text": "siang ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "warga"
+        ],
+        "impacts": [
+          "mengguncang Kecamatan Sukamanah"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "EARTHQUAKE-EVENT",
+        "INFORMATION-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-02",
+      "text": "Atap balai warga ambruk akibat gempa subuh tadi di Desa Ciparanti.",
+      "family": "object_first",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Desa Ciparanti",
+        "time_text": "subuh tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "Atap balai warga ambruk"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "Atap balai warga"
+        ]
+      },
+      "gold_nara_labels": [
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "INFORMATION-ARG",
+        "O",
+        "EARTHQUAKE-EVENT",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-03",
+      "text": "Setelah gempa di Dusun Sindangnala pagi tadi, relawan mendirikan tenda.",
+      "family": "response",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Dusun Sindangnala",
+        "time_text": "pagi tadi",
+        "occurred_at": null,
+        "involved_parties": [
+          "relawan"
+        ],
+        "impacts": [
+          "mendirikan tenda"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "EARTHQUAKE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "OFFICER-ARG",
+        "INFORMATION-ARG",
+        "INFORMATION-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-04",
+      "text": "Instruktur menghentikan latihan karena gempa betulan meretakkan tembok kelas di Sekolah Binarasa siang tadi.",
+      "family": "real_during_exercise",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Sekolah Binarasa",
+        "time_text": "siang tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "meretakkan tembok kelas"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "tembok kelas"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "EARTHQUAKE-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-05",
+      "text": "Tim BPBD memastikan kabar gempa di Desa Kertanala tadi malam benar; satu rumah rusak.",
+      "family": "rumor_verified",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Desa Kertanala",
+        "time_text": "tadi malam",
+        "occurred_at": null,
+        "involved_parties": [
+          "Tim BPBD"
+        ],
+        "impacts": [
+          "satu rumah rusak"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "satu rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "EARTHQUAKE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "INFORMATION-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-06",
+      "text": "Akibat pergeseran sesar, gempa merusak menara air di Kelurahan Tirtanala sore ini.",
+      "family": "cause",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Kelurahan Tirtanala",
+        "time_text": "sore ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak menara air"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "menara air"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "REASON-ARG",
+        "REASON-ARG",
+        "O",
+        "EARTHQUAKE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-07",
+      "text": "Dua pedagang terluka dalam gempa di Pasar Ciburuan kemarin pagi.",
+      "family": "victim",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Pasar Ciburuan",
+        "time_text": "kemarin pagi",
+        "occurred_at": null,
+        "involved_parties": [
+          "Dua pedagang"
+        ],
+        "impacts": [],
+        "victims": [
+          "Dua pedagang terluka"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "O",
+        "EARTHQUAKE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-08",
+      "text": "Gempa di Desa Langlangreja malam tadi menimbulkan satu korban meninggal.",
+      "family": "death",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Desa Langlangreja",
+        "time_text": "malam tadi",
+        "occurred_at": null,
+        "involved_parties": [
+          "satu korban"
+        ],
+        "impacts": [],
+        "victims": [
+          "satu korban meninggal"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "EARTHQUAKE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-09",
+      "text": "Tidak ada korban luka setelah gempa sore tadi di Kampung Pasirnala; dinding musala retak.",
+      "family": "local_negation",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Kampung Pasirnala",
+        "time_text": "sore tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "dinding musala retak"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dinding musala"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "EARTHQUAKE-EVENT",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "O",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "INFORMATION-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-10",
+      "text": "Gempa susulan terasa di Desa Wanasukma malam ini dan warga menunggu di luar.",
+      "family": "ongoing",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Desa Wanasukma",
+        "time_text": "malam ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "warga"
+        ],
+        "impacts": [
+          "terasa"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "EARTHQUAKE-EVENT",
+        "EARTHQUAKE-EVENT",
+        "INFORMATION-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FIRE-01",
+      "text": "Kebakaran melalap kios buah di Pasar Palagan dini hari tadi.",
+      "family": "plain",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Pasar Palagan",
+        "time_text": "dini hari tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "melalap kios buah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "kios buah"
+        ]
+      },
+      "gold_nara_labels": [
+        "FIRE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FIRE-02",
+      "text": "Dua bengkel hangus dalam kebakaran di Jalan Nataraya kemarin sore.",
+      "family": "object_first",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Jalan Nataraya",
+        "time_text": "kemarin sore",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "Dua bengkel hangus"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "Dua bengkel"
+        ]
+      },
+      "gold_nara_labels": [
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "INFORMATION-ARG",
+        "O",
+        "FIRE-EVENT",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FIRE-03",
+      "text": "Regu damkar memadamkan api saat kebakaran di Gudang Puspalaras siang ini.",
+      "family": "response",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Gudang Puspalaras",
+        "time_text": "siang ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Regu damkar"
+        ],
+        "impacts": [
+          "memadamkan api"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "OFFICER-ARG",
+        "INFORMATION-ARG",
+        "INFORMATION-ARG",
+        "O",
+        "FIRE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FIRE-04",
+      "text": "Bukan alat peraga yang terbakar: kebakaran sungguhan merusak kantin di Pusat Latihan Wiranala pagi ini.",
+      "family": "real_during_exercise",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Pusat Latihan Wiranala",
+        "time_text": "pagi ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak kantin"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "kantin"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "FIRE-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FIRE-05",
+      "text": "Pemeriksaan petugas desa membuktikan kebakaran di Desa Bayumanah tadi malam merupakan kejadian nyata.",
+      "family": "rumor_verified",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Desa Bayumanah",
+        "time_text": "tadi malam",
+        "occurred_at": null,
+        "involved_parties": [
+          "petugas desa"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "OFFICER-ARG",
+        "OFFICER-ARG",
+        "O",
+        "FIRE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FIRE-06",
+      "text": "Tabung gas bocor memicu kebakaran yang menghanguskan dapur warung di Kampung Nusaloka sore tadi.",
+      "family": "cause",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Kampung Nusaloka",
+        "time_text": "sore tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menghanguskan dapur warung"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dapur warung"
+        ]
+      },
+      "gold_nara_labels": [
+        "REASON-ARG",
+        "REASON-ARG",
+        "REASON-ARG",
+        "O",
+        "FIRE-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FIRE-07",
+      "text": "Kebakaran subuh tadi di Kelurahan Ringinmanah mengakibatkan satu pemilik rumah terluka.",
+      "family": "victim",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Kelurahan Ringinmanah",
+        "time_text": "subuh tadi",
+        "occurred_at": null,
+        "involved_parties": [
+          "satu pemilik rumah"
+        ],
+        "impacts": [],
+        "victims": [
+          "satu pemilik rumah terluka"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "FIRE-EVENT",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "O",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FIRE-08",
+      "text": "Dalam kebakaran di Desa Cikamulya malam kemarin, seorang pekerja meninggal.",
+      "family": "death",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Desa Cikamulya",
+        "time_text": "malam kemarin",
+        "occurred_at": null,
+        "involved_parties": [
+          "seorang pekerja"
+        ],
+        "impacts": [],
+        "victims": [
+          "seorang pekerja meninggal"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "FIRE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FIRE-09",
+      "text": "Kebakaran merusak ruang penyimpanan di Balai Naramukti siang tadi; semua orang selamat.",
+      "family": "local_negation",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Balai Naramukti",
+        "time_text": "siang tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak ruang penyimpanan"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "ruang penyimpanan"
+        ]
+      },
+      "gold_nara_labels": [
+        "FIRE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-FIRE-10",
+      "text": "Malam ini, api masih membakar tumpukan kayu di Dusun Ciparayasih.",
+      "family": "ongoing",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Dusun Ciparayasih",
+        "time_text": "Malam ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "membakar tumpukan kayu"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "tumpukan kayu"
+        ]
+      },
+      "gold_nara_labels": [
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "FIRE-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-ACCIDENT-01",
+      "text": "Kecelakaan melibatkan sepeda motor di Jalan Sindangarum pagi tadi.",
+      "family": "plain",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Jalan Sindangarum",
+        "time_text": "pagi tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "melibatkan sepeda motor"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "sepeda motor"
+        ]
+      },
+      "gold_nara_labels": [
+        "ACCIDENT-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-ACCIDENT-02",
+      "text": "Mobil pengangkut telur terbalik dalam kecelakaan di Desa Bantarwulan siang ini.",
+      "family": "object_first",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Desa Bantarwulan",
+        "time_text": "siang ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "Mobil pengangkut telur terbalik"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "Mobil pengangkut telur"
+        ]
+      },
+      "gold_nara_labels": [
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "INFORMATION-ARG",
+        "O",
+        "ACCIDENT-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-ACCIDENT-03",
+      "text": "Petugas polisi mengatur lalu lintas setelah kecelakaan di Jalan Madunala kemarin sore.",
+      "family": "response",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Jalan Madunala",
+        "time_text": "kemarin sore",
+        "occurred_at": null,
+        "involved_parties": [
+          "Petugas polisi"
+        ],
+        "impacts": [
+          "mengatur lalu lintas"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "OFFICER-ARG",
+        "INFORMATION-ARG",
+        "INFORMATION-ARG",
+        "INFORMATION-ARG",
+        "O",
+        "ACCIDENT-EVENT",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-ACCIDENT-04",
+      "text": "Pelatihan dihentikan ketika kecelakaan nyata merusak mobil instruktur di Lapangan Sekarnala sore tadi.",
+      "family": "real_during_exercise",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Lapangan Sekarnala",
+        "time_text": "sore tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak mobil instruktur"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "mobil instruktur"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "ACCIDENT-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-ACCIDENT-05",
+      "text": "Rekaman latihan itu terputus oleh kecelakaan sungguhan di Jalan Giriarum pagi ini; seorang pengendara terluka.",
+      "family": "rumor_verified",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Jalan Giriarum",
+        "time_text": "pagi ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "seorang pengendara"
+        ],
+        "impacts": [],
+        "victims": [
+          "seorang pengendara terluka"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "ACCIDENT-EVENT",
+        "O",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-ACCIDENT-06",
+      "text": "Ban pecah memicu kecelakaan di Desa Wanamanah malam tadi; satu truk rusak.",
+      "family": "cause",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Desa Wanamanah",
+        "time_text": "malam tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "satu truk rusak"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "satu truk"
+        ]
+      },
+      "gold_nara_labels": [
+        "REASON-ARG",
+        "REASON-ARG",
+        "O",
+        "ACCIDENT-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "INFORMATION-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-ACCIDENT-07",
+      "text": "Akibat kecelakaan di Jalan Sukawening subuh tadi, dua penumpang terluka.",
+      "family": "victim",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Jalan Sukawening",
+        "time_text": "subuh tadi",
+        "occurred_at": null,
+        "involved_parties": [
+          "dua penumpang"
+        ],
+        "impacts": [],
+        "victims": [
+          "dua penumpang terluka"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "ACCIDENT-EVENT",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-ACCIDENT-08",
+      "text": "Seorang sopir meninggal pada kecelakaan di Kampung Palawana kemarin malam.",
+      "family": "death",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Kampung Palawana",
+        "time_text": "kemarin malam",
+        "occurred_at": null,
+        "involved_parties": [
+          "Seorang sopir"
+        ],
+        "impacts": [],
+        "victims": [
+          "Seorang sopir meninggal"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "O",
+        "ACCIDENT-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-ACCIDENT-09",
+      "text": "Kecelakaan merusak dua motor di Jalan Puspasukma siang tadi, tanpa korban luka.",
+      "family": "local_negation",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Jalan Puspasukma",
+        "time_text": "siang tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dua motor"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dua motor"
+        ]
+      },
+      "gold_nara_labels": [
+        "ACCIDENT-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-ACCIDENT-10",
+      "text": "Tadi sore, kecelakaan melibatkan bus sekolah di Kelurahan Mekarwening.",
+      "family": "plain",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Kelurahan Mekarwening",
+        "time_text": "Tadi sore",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "melibatkan bus sekolah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "bus sekolah"
+        ]
+      },
+      "gold_nara_labels": [
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "ACCIDENT-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-NON_EVENT-01",
+      "text": "Di Balai Sukmanala siang ini, peserta memperagakan kecelakaan dengan kendaraan tiruan; seluruh adegan hanya latihan.",
+      "family": "exercise_only",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "Balai Sukmanala",
+        "time_text": "siang ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-NON_EVENT-02",
+      "text": "Regu damkar menggunakan layar untuk simulasi kebakaran di Aula Giriwening pagi tadi; tidak ada kejadian nyata.",
+      "family": "simulation",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "Aula Giriwening",
+        "time_text": "pagi tadi",
+        "occurred_at": null,
+        "involved_parties": [
+          "Regu damkar"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-NON_EVENT-03",
+      "text": "Getaran buatan menandai peragaan gempa di Pusat Belajar Naramerta sore ini, bukan gempa sungguhan.",
+      "family": "exercise_only",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "Pusat Belajar Naramerta",
+        "time_text": "sore ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-NON_EVENT-04",
+      "text": "Banjir pada latihan di Lapangan Kertamanah kemarin pagi ditiru dengan kolam kecil; permukiman tetap kering.",
+      "family": "simulation",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "Lapangan Kertamanah",
+        "time_text": "kemarin pagi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "FALSE-EVENT",
+        "O",
+        "O",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-NON_EVENT-05",
+      "text": "Petugas membahas potensi banjir di Desa Nusalintang pekan depan; sampai kini belum ada kejadian.",
+      "family": "forecast",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "Desa Nusalintang",
+        "time_text": "pekan depan",
+        "occurred_at": null,
+        "involved_parties": [
+          "Petugas"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-NON_EVENT-06",
+      "text": "Kepala dusun membantah kabar kebakaran di Dusun Girimadu malam tadi; pemeriksaan tidak menemukan peristiwa tersebut.",
+      "family": "denial",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "Dusun Girimadu",
+        "time_text": "malam tadi",
+        "occurred_at": null,
+        "involved_parties": [
+          "Kepala dusun"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-NON_EVENT-07",
+      "text": "Guru menguraikan teori penyebab gempa di Sekolah Wanasukma pagi ini; ini pelajaran, tanpa peristiwa tertentu.",
+      "family": "education",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "Sekolah Wanasukma",
+        "time_text": "pagi ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Guru"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-NON_EVENT-08",
+      "text": "Pedagang berkata tokonya banjir pesanan hari ini; ungkapan itu berarti banyak pembeli.",
+      "family": "metaphor",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": null,
+        "time_text": "hari ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Pedagang"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-NON_EVENT-09",
+      "text": "Cerita pendek tentang kecelakaan di negeri rekaan dibacakan peserta kelas sore tadi; kisahnya fiksi.",
+      "family": "fiction",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": null,
+        "time_text": "sore tadi",
+        "occurred_at": null,
+        "involved_parties": [
+          "peserta kelas"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "O",
+        "O",
+        "O",
+        "OFFICER-ARG",
+        "OFFICER-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL083-NON_EVENT-10",
+      "text": "Peneliti menyajikan statistik kebakaran tahunan di Gedung Wanasukma siang tadi, tanpa melaporkan kejadian baru.",
+      "family": "statistics",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "Gedung Wanasukma",
+        "time_text": "siang tadi",
+        "occurred_at": null,
+        "involved_parties": [
+          "Peneliti"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "New v0.8.3 synthetic proposal. No model prediction used to author this reference; not a field report."
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    }
+  ],
+  "model_inference_executed": false,
+  "source": "ASSISTANT_SYNTHETIC_PENDING_HUMAN_REVIEW"
+}

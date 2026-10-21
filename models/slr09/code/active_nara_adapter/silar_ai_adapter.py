@@ -14,11 +14,12 @@ from typing import Any
 
 from silar_postprocessing import (
     POSTPROCESSING_VERSION, filter_negated_fallback_times, filter_spatial_information,
+    filter_nonimpact_information, filter_explicitly_unaffected_objects,
 )
 from silar_nara_composition import compose_fields
 
 
-ADAPTER_VERSION = "silar-adapter-0.4.0"
+ADAPTER_VERSION = "silar-adapter-0.5.3"
 FUSION_VERSION = "silar-fusion-a4.22-0.1.0"
 EVENT_CATEGORIES = ("FLOOD", "EARTHQUAKE", "FIRE", "ACCIDENT", "NON_EVENT")
 NARA_LABELS = (
@@ -234,6 +235,10 @@ def adapt_legacy_ai_output(
 
     impacts, removed = filter_spatial_information(narrative, roles["INFORMATION-ARG"])
     filtered_values.extend(removed)
+    impacts, removed = filter_nonimpact_information(narrative, impacts)
+    filtered_values.extend(removed)
+    affected_objects, removed = filter_explicitly_unaffected_objects(narrative, roles['AFFECTEDOBJECTS-ARG'])
+    filtered_values.extend(removed)
     if impacts:
         warnings.append({"code": "INFORMATION_AS_IMPACT_SUGGESTION", "field": "impacts"})
     normalized = {
@@ -243,7 +248,7 @@ def adapt_legacy_ai_output(
         "involved_parties": roles["OFFICER-ARG"],
         "impacts": impacts,
         "victims": _unique(roles["DEATHVICTIM-ARG"] + roles["WOUNDVICTIM-ARG"]),
-        "affected_objects": roles["AFFECTEDOBJECTS-ARG"],
+        "affected_objects": affected_objects,
     }
     normalized, composition = compose_fields(narrative, raw["srl_token_predictions"], normalized)
     _validate_extraction(normalized)

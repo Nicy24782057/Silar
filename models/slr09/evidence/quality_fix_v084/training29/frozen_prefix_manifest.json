@@ -1,0 +1,27 @@
+{
+  "status": "SUCCEEDED",
+  "inputs": 1734,
+  "source_texts": 1734,
+  "warm_start_weight_sha256": "63609492125314dd0d1b3e420164006523122043e5e9cd2789eec4a095433980",
+  "features_sha256": "088158bc46811fa48f7d8a36b60260cd5daf0b971dd431c6dc4dbb8d815deb6b",
+  "index_sha256": "a701e22f5b36685561bb6d7f78fb2bd7183d1464bb4d61fdd6f4549022e7c3ed",
+  "full_forward_comparisons": [
+    {
+      "batch_offset": 0,
+      "max_probability_delta": 0.0
+    },
+    {
+      "batch_offset": 16,
+      "max_probability_delta": 0.0
+    },
+    {
+      "batch_offset": 32,
+      "max_probability_delta": 0.0
+    }
+  ],
+  "training_records_sha256": "a8cc76d2caebd22bc13fb0feff22e0bd2d43771e64977bb7a8a285b6490dbf7c",
+  "scoring_sets_sha256": "595d70b13c89b21fe79f56245b0ba2fc3367ce9e9124d039393549ea625f16a5",
+  "cached_layers": "EMBEDDINGS_AND_ENCODER_0_TO_10_EVAL_MODE",
+  "independent_acceptance_inputs_read": false,
+  "new_gradient_training_executed": false
+}

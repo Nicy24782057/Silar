@@ -1,0 +1,8 @@
+{
+  "records": 50,
+  "tokens": 762,
+  "all_pending": true,
+  "reviewer_blank": true,
+  "readiness_boundaries_verified": true,
+  "model_inference_executed": false
+}

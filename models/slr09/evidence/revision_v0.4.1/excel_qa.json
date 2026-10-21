@@ -1,0 +1,28 @@
+{
+  "checks": [
+    "Blank reviewer rejected",
+    "50 category proposals round-trip",
+    "All seven fields round-trip",
+    "546 token labels round-trip",
+    "User target approval retained",
+    "Target approval does not approve labels",
+    "Pending labels rejected",
+    "Reviewed fixture passes preflight",
+    "Approved target cannot silently change",
+    "Duplicate token position rejected",
+    "Invalid token label rejected",
+    "Formula reviewer rejected",
+    "Source narrative modification rejected",
+    "XLSX CRC valid",
+    "Sheet 2 frozen header and ID columns",
+    "Sheet 2 dropdowns exported",
+    "Sheet 3 frozen header and ID columns",
+    "Sheet 3 dropdowns exported",
+    "Two native filter tables exported",
+    "Notebook initial outputs empty",
+    "Notebook imports Excel directly"
+  ],
+  "all_passed": true,
+  "scope": "XLSX_ROUNDTRIP_AND_REVIEW_FIXTURES_NOT_REAL_HUMAN_LABEL_REVIEW",
+  "neural_inference_executed": false
+}

@@ -1,0 +1,7 @@
+# Profil dari versi Colab yang tercatat; smoke test kandidat di lingkungan tujuan masih diperlukan.
+# Untuk CPU/CUDA, gunakan build PyTorch yang sesuai; local suffix dicatat pada log.
+torch==2.11.0
+transformers==4.57.1
+tokenizers==0.22.1
+safetensors==0.8.0
+numpy==2.1.3

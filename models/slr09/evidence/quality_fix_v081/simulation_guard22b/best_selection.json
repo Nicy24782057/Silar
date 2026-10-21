@@ -1,0 +1,45 @@
+{
+  "epoch": 1,
+  "additional_bias": 2.5,
+  "inherited_bias": 2.5,
+  "delta_from_first_candidate": 0.3999999999999999,
+  "selection_basis": "MIN_ABS_ADDITIONAL_BIAS_WITH_ALL_SIX_NUMERIC_GATES_AND_ALL_KNOWN_SIMULATION_EXERCISE_CONTRASTS",
+  "selection_was_added_after_observing_a_known_development_simulation_error": true,
+  "exploratory_development_selection_not_independent_validation": true,
+  "known_contrasts": {
+    "human130": {
+      "support": 0,
+      "errors": []
+    },
+    "original146": {
+      "support": 0,
+      "errors": []
+    },
+    "adjudicated145": {
+      "support": 0,
+      "errors": []
+    },
+    "scope50": {
+      "support": 5,
+      "errors": []
+    },
+    "seen_v07_50": {
+      "support": 5,
+      "errors": []
+    },
+    "human_regression50": {
+      "support": 4,
+      "errors": []
+    }
+  },
+  "all_development_targets_met": true,
+  "feasible_bias_values": [
+    2.5,
+    2.6,
+    2.7,
+    2.8,
+    2.9,
+    3.0
+  ],
+  "quality_acceptance_approved": false
+}

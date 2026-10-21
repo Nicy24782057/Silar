@@ -1,0 +1,18 @@
+{
+  "training_unique": 1249,
+  "human_training": 623,
+  "assistant_weak_training": 626,
+  "untouched_human_development": 130,
+  "training_overlap_by_scoring_set": {
+    "human130": 0,
+    "original146": 15,
+    "adjudicated145": 15,
+    "scope50": 0,
+    "seen_v07_50": 50,
+    "human_regression50": 0
+  },
+  "original146_is_mixed_seen_regression": true,
+  "original146_labels_unchanged": true,
+  "v07_50_role": "ASSISTANT_WEAK_TRAINING_AND_SEEN_REGRESSION_NOT_BLIND_TEST",
+  "new_final_reference_read_or_inferred": false
+}

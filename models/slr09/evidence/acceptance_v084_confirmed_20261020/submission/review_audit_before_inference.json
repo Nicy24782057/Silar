@@ -1,0 +1,1072 @@
+{
+  "status": "PREFLIGHT_SUCCEEDED",
+  "created_at": "2026-10-20T15:38:08.152175+00:00",
+  "source_library_file_id": "libfile_b7ac2e98b434819198947090b9085eb1",
+  "source_workbook_name": "Review_Penerimaan_Akhir_SLR09_v0_8_4.xlsx",
+  "source_workbook_sha256": "046e468d3b9cb137d39ce5886dbc0eee0325cc5d406902de745b980f02253ad4",
+  "reviewer": "Bintang",
+  "records": 50,
+  "tokens": 692,
+  "all_50_statuses_approved": true,
+  "semantic_changes": [
+    {
+      "id": "FINAL084-EARTHQUAKE-01",
+      "field": "gold_fields",
+      "proposal": {
+        "location_text": "Kecamatan Puspareja",
+        "time_text": "Menjelang fajar",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "mengguncang Kecamatan Puspareja"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "reviewed": {
+        "location_text": "Kecamatan Puspareja",
+        "time_text": "Menjelang fajar",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "mengguncang"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "reviewer_note": "Dampak dikoreksi: Kecamatan Puspareja sudah dilabeli PLACE-ARG dan tercatat di Lokasi, jadi tidak diulang di Dampak."
+    },
+    {
+      "id": "FINAL084-EARTHQUAKE-10",
+      "field": "gold_nara_labels",
+      "proposal": [
+        "EARTHQUAKE-EVENT",
+        "EARTHQUAKE-EVENT",
+        "INFORMATION-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "reviewed": [
+        "EARTHQUAKE-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "reviewer_note": "Label token susulan dikoreksi dari EARTHQUAKE-EVENT ke O; pemicu kejadian hanya kata gempa.",
+      "token_changes": [
+        {
+          "position": 2,
+          "token": "susulan",
+          "proposal": "EARTHQUAKE-EVENT",
+          "reviewed": "O"
+        }
+      ]
+    }
+  ],
+  "cell_changes": [
+    {
+      "sheet": "Mulai",
+      "cell": "B10",
+      "before": [
+        "0",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B11",
+      "before": [
+        "50",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B12",
+      "before": [
+        "692",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B14",
+      "before": [
+        "PERLU REVIEW ACUAN",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B29",
+      "before": [
+        "0",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B30",
+      "before": [
+        "0",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B31",
+      "before": [
+        "0",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B32",
+      "before": [
+        "0",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B33",
+      "before": [
+        "0",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B37",
+      "before": [
+        "10",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B38",
+      "before": [
+        "47",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B39",
+      "before": [
+        "12",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B40",
+      "before": [
+        "11",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B41",
+      "before": [
+        "11",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B42",
+      "before": [
+        "10",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B43",
+      "before": [
+        "10",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B44",
+      "before": [
+        "33",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B45",
+      "before": [
+        "28",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B46",
+      "before": [
+        "71",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B47",
+      "before": [
+        "9",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B48",
+      "before": [
+        "25",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B49",
+      "before": [
+        "97",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B5",
+      "before": [
+        "",
+        false
+      ],
+      "after": [
+        "Bintang",
+        false
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B50",
+      "before": [
+        "12",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Mulai",
+      "cell": "B9",
+      "before": [
+        "0",
+        true
+      ],
+      "after": [
+        "",
+        true
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "G16",
+      "before": [
+        "mengguncang Kecamatan Puspareja",
+        false
+      ],
+      "after": [
+        "mengguncang",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J10",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J11",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J12",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J13",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J14",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J15",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J16",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J17",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J18",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J19",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J20",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J21",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J22",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J23",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J24",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J25",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J26",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J27",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J28",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J29",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J30",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J31",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J32",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J33",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J34",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J35",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J36",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J37",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J38",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J39",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J40",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J41",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J42",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J43",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J44",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J45",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J46",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J47",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J48",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J49",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J50",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J51",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J52",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J53",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J54",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J55",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J6",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J7",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J8",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "J9",
+      "before": [
+        "PENDING",
+        false
+      ],
+      "after": [
+        "APPROVED",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "K16",
+      "before": [
+        "",
+        false
+      ],
+      "after": [
+        "Dampak dikoreksi: Kecamatan Puspareja sudah dilabeli PLACE-ARG dan tercatat di Lokasi, jadi tidak diulang di Dampak.",
+        false
+      ]
+    },
+    {
+      "sheet": "Narasi",
+      "cell": "K25",
+      "before": [
+        "",
+        false
+      ],
+      "after": [
+        "Label token susulan dikoreksi dari EARTHQUAKE-EVENT ke O; pemicu kejadian hanya kata gempa.",
+        false
+      ]
+    },
+    {
+      "sheet": "Token",
+      "cell": "D257",
+      "before": [
+        "EARTHQUAKE-EVENT",
+        false
+      ],
+      "after": [
+        "O",
+        false
+      ]
+    }
+  ],
+  "preflight": {
+    "records": 50,
+    "class_support": {
+      "FLOOD": 10,
+      "EARTHQUAKE": 10,
+      "FIRE": 10,
+      "ACCIDENT": 10,
+      "NON_EVENT": 10
+    },
+    "role_support": {
+      "TIME-ARG": 97,
+      "O": 307,
+      "FLOOD-EVENT": 10,
+      "INFORMATION-ARG": 33,
+      "AFFECTEDOBJECTS-ARG": 47,
+      "PLACE-ARG": 71,
+      "OFFICER-ARG": 28,
+      "REASON-ARG": 9,
+      "WOUNDVICTIM-ARG": 12,
+      "DEATHVICTIM-ARG": 12,
+      "EARTHQUAKE-EVENT": 10,
+      "FIRE-EVENT": 10,
+      "STREET-ARG": 25,
+      "ACCIDENT-EVENT": 10,
+      "FALSE-EVENT": 11
+    },
+    "sources": {
+      "ASSISTANT_AUTHORED_SYNTHETIC": 50
+    },
+    "excluded": [],
+    "known_data_overlap": "NO_NORMALIZED_EXACT_MATCH_IN_AVAILABLE_SOURCES",
+    "historical_initial_training_membership_verified": false,
+    "population_generalization_established": false
+  },
+  "human_gold_modified_by_assistant": false,
+  "new_model_inference_executed": false,
+  "annotation_note": "The shortened impact and trigger boundary are accepted as this reviewer's reference. The rationale about PLACE does not impose a global ban on source-grounded overlap between different output fields. No adapter or metric is changed to match these corrections."
+}

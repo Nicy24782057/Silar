@@ -1,0 +1,12 @@
+{
+  "status": "SUCCEEDED",
+  "archive": "/workspace/scratch/89b81e051aff/silar_delivery_v084_20261020/SILAR_SENA_context_v0.8.4_20261020.zip",
+  "archive_sha256": "6d9ed7b2705301602aa72b67c911843dd8451b115efce8739ae4f07bde3cd3e5",
+  "bytes": 412184854,
+  "model_id": "SILAR_SENA_context_v084_20261020T144453Z",
+  "selected_epoch": 1,
+  "changed_tensors": 20,
+  "unchanged_tensors": 181,
+  "quality_acceptance_approved": false,
+  "card_done": false
+}

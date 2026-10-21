@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/89b81e051aff/silar_work/models/slr09/code/quality_fix/continue_full_contrast_replay_v083.py", line 38, in <module>
+    os.kill(pid,signal.SIGINT)
+ProcessLookupError: [Errno 3] No such process

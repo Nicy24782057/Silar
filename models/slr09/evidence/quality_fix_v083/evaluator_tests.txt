@@ -1,0 +1,28 @@
+test_approved_fixture_validates_full_coverage (test_acceptance.AcceptanceTests.test_approved_fixture_validates_full_coverage) ... ok
+test_archive_failure_exports_failed_after_freezing_review (test_acceptance.AcceptanceTests.test_archive_failure_exports_failed_after_freezing_review) ... ok
+test_deferred_preserved_and_coverage_cannot_silently_drop (test_acceptance.AcceptanceTests.test_deferred_preserved_and_coverage_cannot_silently_drop) ... ok
+test_draft_rejected_before_model_load (test_acceptance.AcceptanceTests.test_draft_rejected_before_model_load) ... ok
+test_driver_fixture_end_to_end_does_not_auto_accept (test_acceptance.AcceptanceTests.test_driver_fixture_end_to_end_does_not_auto_accept) ... ok
+test_duplicates_rejected_even_with_new_id (test_acceptance.AcceptanceTests.test_duplicates_rejected_even_with_new_id) ... ok
+test_empty_binding_cannot_disable_identity_guard (test_acceptance.AcceptanceTests.test_empty_binding_cannot_disable_identity_guard) ... ok
+test_empty_matches_do_not_hide_missing_nonempty_fields (test_acceptance.AcceptanceTests.test_empty_matches_do_not_hide_missing_nonempty_fields) ... ok
+test_failures_export_failed_without_inference_claim (test_acceptance.AcceptanceTests.test_failures_export_failed_without_inference_claim) ... ok
+test_invalid_uncertain_flag_detected (test_acceptance.AcceptanceTests.test_invalid_uncertain_flag_detected) ... ok
+test_known_input_cannot_become_held_out (test_acceptance.AcceptanceTests.test_known_input_cannot_become_held_out) ... ok
+test_misclassification_calibration_diagnostics_have_correct_denominator (test_acceptance.AcceptanceTests.test_misclassification_calibration_diagnostics_have_correct_denominator) ... ok
+test_perfect_fixture_meets_metrics_without_auto_acceptance (test_acceptance.AcceptanceTests.test_perfect_fixture_meets_metrics_without_auto_acceptance) ... ok
+test_synthetic_false_event_fails_critical_contrast (test_acceptance.AcceptanceTests.test_synthetic_false_event_fails_critical_contrast) ... ok
+test_threshold_equality_does_not_flag_low (test_acceptance.AcceptanceTests.test_threshold_equality_does_not_flag_low) ... ok
+test_tokenization_matches_active_serving (test_acceptance.AcceptanceTests.test_tokenization_matches_active_serving) ... ok
+test_truncation_refuses_quality_pass (test_acceptance.AcceptanceTests.test_truncation_refuses_quality_pass) ... ok
+test_unfounded_field_rejected (test_acceptance.AcceptanceTests.test_unfounded_field_rejected) ... ok
+test_unreviewed_row_cannot_be_silently_omitted (test_acceptance.AcceptanceTests.test_unreviewed_row_cannot_be_silently_omitted) ... ok
+test_wrong_input_hash_refused (test_acceptance.AcceptanceTests.test_wrong_input_hash_refused) ... ok
+test_human_reference_validator_remains_strict (test_scoring_field_validation.FieldScoringTests.test_human_reference_validator_remains_strict) ... ok
+test_invented_model_value_is_a_contract_failure_not_a_scoring_exception (test_scoring_field_validation.FieldScoringTests.test_invented_model_value_is_a_contract_failure_not_a_scoring_exception) ... ok
+test_joined_grounded_prediction_counts_as_wrong_field_instead_of_crashing (test_scoring_field_validation.FieldScoringTests.test_joined_grounded_prediction_counts_as_wrong_field_instead_of_crashing) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.464s
+
+OK

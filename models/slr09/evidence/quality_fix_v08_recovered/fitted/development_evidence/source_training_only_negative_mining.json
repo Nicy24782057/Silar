@@ -1,0 +1,3512 @@
+{
+  "training_source_records": 584,
+  "human_non_event_training_records": 124,
+  "selected_hard_negative_records": 31,
+  "development_or_regression_used": false,
+  "records": [
+    {
+      "id": "BAN-01646",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.13936376571655273,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01796",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00019935742602683604,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01369",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0003048107901122421,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01337",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0002794387983158231,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01850",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00036500912392511964,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01317",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0003659481299109757,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01279",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.001403945148922503,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01219",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00048738555051386356,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01142",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0005553510272875428,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01352",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0006727816653437912,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01327",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00027060211868956685,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01791",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0006431961664929986,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01597",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0002606755297165364,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01136",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0003946985525544733,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01604",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00042113286326639354,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01440",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0006137044983915985,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01775",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0006996181327849627,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01171",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0004390663525555283,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01986",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0004006396629847586,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01297",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00020999483240302652,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01011",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0004960619262419641,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01639",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0012686867266893387,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01168",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0003943421470467001,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01649",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0018094175029546022,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01936",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0004552593163680285,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01172",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0004085147229488939,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01110",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0004170270694885403,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01336",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.000265586277237162,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01757",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0009246685076504946,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01105",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00056027015671134,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01391",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00022254983196035028,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01541",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.000568078423384577,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01313",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.000882316438946873,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01670",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0017584349261596799,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01066",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00048676878213882446,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01106",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0002249081153422594,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01644",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00510335573926568,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01978",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.004367847926914692,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01566",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00024907616898417473,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01320",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00021498004207387567,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01545",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00042565210605971515,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01372",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00023973382485564798,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01778",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0003917827270925045,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01368",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0004615000798366964,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01641",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0010933588491752744,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01872",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0013395630521699786,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01014",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0005343157681636512,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01668",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.000491552404128015,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01866",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00036012069904245436,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01075",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0048383199609816074,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01520",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0004458495823200792,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01519",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.000574775505810976,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01246",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0012480627046898007,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01449",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00291474093683064,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01375",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0017635392723605037,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01885",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.003701275447383523,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01900",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.004081044811755419,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01232",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0006345912697724998,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01086",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.012796485796570778,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01781",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.022803403437137604,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01895",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0005801310762763023,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01107",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00027866303571499884,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01546",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.000313185912091285,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01411",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0004238312249071896,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01652",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0006560448673553765,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01549",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00023860267538111657,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01329",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00023660078295506537,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01285",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00032382033532485366,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01803",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00036817940417677164,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01005",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0002413346664980054,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01633",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0009590815170668066,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01201",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0007209554314613342,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01669",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0005378543864935637,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01577",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.000644123530946672,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01849",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00046640323125757277,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01147",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0004947155248373747,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01257",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0004905882524326444,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01983",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.03143608197569847,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01852",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00026753582642413676,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01645",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00028071500128135085,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01351",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.004973181057721376,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01461",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.09329814463853836,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01793",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.002434780355542898,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01190",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00037414446705952287,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01280",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.002320187631994486,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01068",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.002607630332931876,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01901",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.052505701780319214,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01363",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0002779996721073985,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01783",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.04688790813088417,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01287",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.004421775229275227,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01255",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.001138066640123725,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01654",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.003473043441772461,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01061",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00030618096934631467,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01374",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00032562739215791225,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01928",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0007743710884824395,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01164",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0005383611423894763,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01484",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.022884098812937737,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01355",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00044977833749726415,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01338",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0022156129125505686,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01738",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0026814069133251905,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01707",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.002486990764737129,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01595",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00026199803687632084,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01524",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.000248693919274956,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01387",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.003927723970264196,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01871",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0006057691643945873,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01152",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0003896229318343103,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01113",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00033794401679188013,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01473",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00966581329703331,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01795",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00019760819850489497,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01052",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.05883348360657692,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01264",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.005095296073704958,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01370",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0004394137649796903,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01457",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0068480768240988255,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01458",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0004125421983189881,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01359",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0003431128861848265,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01033",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0005678126472048461,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01124",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.019467230886220932,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01948",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0009720862726680934,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01902",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0002801996888592839,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01616",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.000259351305430755,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01127",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0008271824335679412,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01073",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.009144702926278114,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01479",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.001553165027871728,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01752",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00042886307346634567,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01180",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0003234927717130631,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01302",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.00020472636970225722,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01273",
+      "source_label": "FLOOD",
+      "non_event_probability": 0.0003987547243013978,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01295",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.000137819311930798,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01241",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0008284107898361981,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01098",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00018958993314299732,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01277",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00020579903502948582,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01534",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00019695454102475196,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01324",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.000425212609115988,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01320",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0003269078442826867,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01217",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0002777237386908382,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01132",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.000642003898974508,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01570",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00025081424973905087,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01645",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.000114287126052659,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01567",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0009066190104931593,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01128",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0002037084341282025,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01340",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0001609960600035265,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01641",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00010627547453623265,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01161",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00024282089725602418,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01007",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00020373842562548816,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01643",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0001699725689832121,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01107",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00040341034764423966,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01196",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00016829854575917125,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01589",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00021810438192915171,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01288",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0013129040598869324,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01461",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.004790416918694973,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01195",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00029308005468919873,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01578",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0001185639703180641,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01365",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00024577611475251615,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01501",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0002043107378995046,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01408",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00023606694594491273,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01210",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00253103906288743,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01630",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.013064665719866753,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01373",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0002263418718939647,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01498",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00021770462626591325,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01400",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0003303415433038026,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01535",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00017105406732298434,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01045",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0001540195371489972,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01088",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0002224428317276761,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01369",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 9.909487562254071e-05,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01385",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 9.353065252071247e-05,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01474",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00034746542223729193,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01504",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.020702967420220375,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01463",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0005469513707794249,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01012",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00015640168567188084,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01254",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.004610439296811819,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01017",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0003894027613569051,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01223",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00023656051780562848,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01470",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00011433684994699433,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01285",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00048644174239598215,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01014",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00014767504762858152,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01252",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.000292113923933357,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01317",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00024200697953347117,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01605",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0003864143800456077,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01051",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00011166177864652127,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01378",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0011892076581716537,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01303",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00020269247761461884,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01631",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.03426114469766617,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01265",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00015382852870970964,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01533",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0010486517567187548,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01560",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00045609608059749007,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01512",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0005936569650657475,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01087",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00014505416038446128,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01410",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00830907840281725,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01624",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00019185473502147943,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01272",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0008375754114240408,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01134",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00022067505051381886,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01381",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.001865089638158679,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01508",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00022468699899036437,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01586",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0013397434959188104,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01520",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00026685031480155885,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01442",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0002186056663049385,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01321",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00013333026436157525,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01110",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00016025712830014527,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01418",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00016123679233714938,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01425",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00022221627295948565,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01215",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00027672279975377023,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01366",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0015346657019108534,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01606",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.000869003648404032,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01136",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00022670571343041956,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01228",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00010146039130631834,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01388",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.007161612156778574,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01287",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0005665848148055375,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01115",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00032998682581819594,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01111",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0003645304823294282,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01583",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00029481842648237944,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01540",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0009836569661274552,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01642",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0005618518916890025,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01612",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0001328703510807827,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01353",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0002683491329662502,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01178",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.002658332232385874,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01061",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0003186273097526282,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01047",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 9.856844553723931e-05,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01416",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00025530060520395637,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01050",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0009467348572798073,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01155",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00013278807455208153,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01151",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.00016697215323802084,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01211",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0014705253997817636,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01200",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0001698709966149181,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01160",
+      "source_label": "EARTHQUAKE",
+      "non_event_probability": 0.0003130534023512155,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00342",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002009514719247818,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00465",
+      "source_label": "FIRE",
+      "non_event_probability": 0.008969418704509735,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00627",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00022445531794801354,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00492",
+      "source_label": "FIRE",
+      "non_event_probability": 0.44221019744873047,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00670",
+      "source_label": "FIRE",
+      "non_event_probability": 0.01657787710428238,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00833",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0003056577406823635,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00898",
+      "source_label": "FIRE",
+      "non_event_probability": 0.002037854166701436,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00617",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0014998246915638447,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00998",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0008701960905455053,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00609",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002525370509829372,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00454",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00021885211754124612,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00989",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002109470369759947,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00677",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00025206117425113916,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00869",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0003238362551201135,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00408",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00020377735199872404,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00461",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0019110824214294553,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00862",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00024334332556463778,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00528",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002527073083911091,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00930",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0005445759161375463,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00639",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0013840589672327042,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00843",
+      "source_label": "FIRE",
+      "non_event_probability": 0.002182711148634553,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00459",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002367090346524492,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01086",
+      "source_label": "FIRE",
+      "non_event_probability": 0.023505713790655136,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00743",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0003569897380657494,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00391",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0004627523885574192,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00499",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00148768222425133,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00448",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00034045445499941707,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00868",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002886503643821925,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01017",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0006204592064023018,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00434",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0019974377937614918,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00871",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00032144683063961565,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00758",
+      "source_label": "FIRE",
+      "non_event_probability": 0.11721194535493851,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00969",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0006983942585065961,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00891",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002456331567373127,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00320",
+      "source_label": "FIRE",
+      "non_event_probability": 0.002059239661321044,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00737",
+      "source_label": "FIRE",
+      "non_event_probability": 0.26371583342552185,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01100",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0005242471816018224,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01064",
+      "source_label": "FIRE",
+      "non_event_probability": 0.018482482060790062,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00913",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0011469559976831079,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00379",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00029216473922133446,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00705",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0008236736757680774,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01088",
+      "source_label": "FIRE",
+      "non_event_probability": 0.000257751380559057,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00653",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00019393317052163184,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00895",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00021502390154637396,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00941",
+      "source_label": "FIRE",
+      "non_event_probability": 0.02088087983429432,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00633",
+      "source_label": "FIRE",
+      "non_event_probability": 0.000391310197301209,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01049",
+      "source_label": "FIRE",
+      "non_event_probability": 0.8510403037071228,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00356",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00047887684195302427,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01074",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00033937854459509254,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00355",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00022394103871192783,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00277",
+      "source_label": "FIRE",
+      "non_event_probability": 0.002245377516373992,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01007",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00029274277039803565,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00428",
+      "source_label": "FIRE",
+      "non_event_probability": 0.008322659879922867,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00698",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0021525465417653322,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00886",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00019672770577017218,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00291",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00018621646449901164,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00584",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002849171869456768,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01004",
+      "source_label": "FIRE",
+      "non_event_probability": 0.007717861793935299,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00542",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00038273268728516996,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00872",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0018265391699969769,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00298",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002255043073091656,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00829",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0009947518119588494,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00297",
+      "source_label": "FIRE",
+      "non_event_probability": 0.3315301537513733,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01016",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0003112841513939202,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00506",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00024360980023629963,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00260",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0018202409846708179,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00522",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00045713112922385335,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00273",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002335902681807056,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00341",
+      "source_label": "FIRE",
+      "non_event_probability": 0.000608080648817122,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00834",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00021957518765702844,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00832",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0006040666485205293,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01081",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00034581730142235756,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00363",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0007255293894559145,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00663",
+      "source_label": "FIRE",
+      "non_event_probability": 0.01189451850950718,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00756",
+      "source_label": "FIRE",
+      "non_event_probability": 0.008754533715546131,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00901",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00025904382346197963,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00740",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002251204423373565,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00844",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0005207084468565881,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00909",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00025215145433321595,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00543",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002880890970118344,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00962",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0007527392008341849,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00984",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0004049513954669237,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00386",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0003898155700881034,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00573",
+      "source_label": "FIRE",
+      "non_event_probability": 0.005291554145514965,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00647",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0006417973199859262,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00431",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0005576704861596227,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01077",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00022499638726003468,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00970",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00034535801387391984,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00746",
+      "source_label": "FIRE",
+      "non_event_probability": 0.005574879702180624,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00406",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0020811641588807106,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00388",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0004180984979029745,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00774",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0003039479779545218,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00330",
+      "source_label": "FIRE",
+      "non_event_probability": 0.010286571457982063,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00489",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002544370072428137,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00272",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0005637849099002779,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00783",
+      "source_label": "FIRE",
+      "non_event_probability": 0.003372296690940857,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01121",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00018489536887500435,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01002",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0003384519077371806,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00460",
+      "source_label": "FIRE",
+      "non_event_probability": 0.000365429965313524,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01092",
+      "source_label": "FIRE",
+      "non_event_probability": 0.01712672971189022,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00786",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00034901557955890894,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00393",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00037433678517118096,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00630",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00022499168699141592,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00864",
+      "source_label": "FIRE",
+      "non_event_probability": 0.001864024205133319,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00910",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0006676163757219911,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01060",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00022052145504858345,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00553",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002304391673533246,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00530",
+      "source_label": "FIRE",
+      "non_event_probability": 0.3142687976360321,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00828",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0004358658043202013,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00880",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00048101527499966323,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00749",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00026782852364704013,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00759",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00420337961986661,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00270",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0003245402767788619,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00364",
+      "source_label": "FIRE",
+      "non_event_probability": 0.007988667115569115,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00993",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00024009618209674954,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00365",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00029307467048056424,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01126",
+      "source_label": "FIRE",
+      "non_event_probability": 0.000292146229185164,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01051",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002620430022943765,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00938",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00018703669775277376,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00806",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00024672714062035084,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00906",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00022120839275885373,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00409",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0007792420801706612,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00764",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002307065878994763,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01093",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00019557755149435252,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00830",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002816666674334556,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00472",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0001924143434735015,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00490",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0004481390933506191,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00861",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0005944379372522235,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00814",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0019513539737090468,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00401",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00023531915212515742,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01099",
+      "source_label": "FIRE",
+      "non_event_probability": 0.012701885774731636,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00967",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00040406265179626644,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00475",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0012226555263623595,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00590",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0002992045774590224,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00360",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0005733874859288335,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00581",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0004103867104277015,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00496",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00027160640456713736,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00744",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0003043509495910257,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00306",
+      "source_label": "FIRE",
+      "non_event_probability": 0.0004333328106440604,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00579",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00033200191683135927,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01006",
+      "source_label": "FIRE",
+      "non_event_probability": 0.00019139653886668384,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01157",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0011141560971736908,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01250",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.00153323111589998,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00289",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0010837229201570153,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01065",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.000860750675201416,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00309",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.001090516336262226,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01493",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0008672373951412737,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01132",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.002521753776818514,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00310",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0009818950202316046,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00359",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.001066913246177137,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00314",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0008749857661314309,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01287",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0012899425346404314,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01185",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.005672061815857887,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00287",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0008969106711447239,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01404",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0005257173907011747,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01431",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.000762121519073844,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01142",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0006672569434158504,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01457",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.002115853363648057,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01398",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0008432166650891304,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00340",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0009589100955054164,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00323",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0010193303460255265,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01487",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0037669942248612642,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01052",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0008232624968513846,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01302",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0008350936695933342,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01461",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.000980140408501029,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01383",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0014495326904579997,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00356",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.001248242100700736,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01414",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.003793194191530347,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01237",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0012996806763112545,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01016",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0011757132597267628,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01191",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0016598368529230356,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00349",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0006956476718187332,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01469",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.00035710050724446774,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01159",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0013051965506747365,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01200",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.006330924574285746,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00321",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0006623517838306725,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01372",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0010554015170782804,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01061",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0014114611549302936,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01272",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0013975688489153981,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01266",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.00302487681619823,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01029",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0006936577847227454,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01034",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0010573504259809852,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01156",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0006629540002904832,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01306",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.002665071515366435,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01141",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0009260322549380362,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01075",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.001397640211507678,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01045",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0013387528015300632,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01030",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.002569334115833044,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01229",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0005261744372546673,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01098",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.000844381342176348,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00300",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0005073830252513289,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00365",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0018693988677114248,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01043",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0010115541517734528,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00298",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0006747448933310807,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00311",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0006105838692747056,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00328",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0013994245091453195,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01288",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0009303780389018357,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01295",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.009016078896820545,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01429",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.001023246324621141,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01492",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0010163325350731611,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01176",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0008083103457465768,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01325",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.005474360194057226,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01116",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0013525423128157854,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01220",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0004704266902990639,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00325",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.002256070263683796,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00280",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0013879897305741906,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00286",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.00514227943494916,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00348",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0015168102690950036,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01267",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0010832375846803188,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01039",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.000775350141339004,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01183",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0010849761310964823,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01453",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0013396716676652431,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00304",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0015668607084080577,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01162",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0009699336369521916,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01352",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0005752554861828685,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00361",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.001853934139944613,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01190",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0011424437398090959,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01467",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0009668496204540133,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00308",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.027320878580212593,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00265",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0009747659787535667,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01037",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0016827825456857681,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00351",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.05701923742890358,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01346",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.001136561157181859,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01494",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0010617111111059785,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01348",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.00048483043792657554,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01412",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.000774320971686393,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01203",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0005980702117085457,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01313",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0023775696754455566,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01318",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0007000099867582321,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01441",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0032119019888341427,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00255",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.0010716341203078628,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01059",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.001851893961429596,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00254",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.004107008688151836,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01470",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.001092198770493269,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01144",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.030925001949071884,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01423",
+      "source_label": "ACCIDENT",
+      "non_event_probability": 0.005567675456404686,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01477",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9958872199058533,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01769",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.49658170342445374,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "GEM-01040",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.987334132194519,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01163",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9943406581878662,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01361",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.0745479166507721,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01571",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9669497013092041,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01398",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.16762897372245789,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01344",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9966045618057251,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01062",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9928118586540222,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01565",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9982890486717224,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01706",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9755841493606567,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01628",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9544218182563782,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01396",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9876664876937866,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00714",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.8025890588760376,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00586",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9906949996948242,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01716",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9378131031990051,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01380",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9802834391593933,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01985",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9978011250495911,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01729",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9724518656730652,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01617",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.8698972463607788,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01445",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.018201828002929688,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "GEM-01046",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.7591661810874939,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01216",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9166504144668579,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01820",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.951890766620636,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01334",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9976442456245422,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01063",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.06558910757303238,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "KEB-00296",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9594215154647827,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01092",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9140236377716064,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01223",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9928714632987976,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01181",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.03266621008515358,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "GEM-01202",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9905251860618591,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00445",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9697317481040955,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00755",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.21545258164405823,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "KEC-01254",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.1195916086435318,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01261",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9927822351455688,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00598",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.6111032962799072,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "KEC-01196",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.996004045009613,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01059",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9785319566726685,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00344",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9020575284957886,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01510",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9967992305755615,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01246",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9952593445777893,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01053",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9362127780914307,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01497",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9207050204277039,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01931",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.7931886911392212,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01786",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9761058688163757,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01561",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9895364046096802,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01577",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9880026578903198,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01969",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.08963439613580704,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "GEM-01430",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9950780868530273,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01171",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9799752831459045,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01838",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9348363280296326,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01724",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.13682769238948822,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01621",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9906076192855835,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01492",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.006528016645461321,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01825",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.085931695997715,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "KEB-00885",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9774035215377808,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01992",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.32612958550453186,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01517",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.7574762105941772,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "KEB-00500",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9433103203773499,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01238",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9884862899780273,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01788",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.03163584694266319,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "KEC-01247",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9919414520263672,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01950",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.895440936088562,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01173",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9155833125114441,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01735",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.6939656138420105,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01098",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.08072211593389511,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "KEB-00789",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9197371602058411,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01021",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.0030066045001149178,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01420",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.2614964246749878,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01960",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.5103234648704529,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01628",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9788958430290222,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01340",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.8669552803039551,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00636",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9735268354415894,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01053",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.959011435508728,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01331",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.8352677822113037,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01815",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9970664381980896,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01439",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.02293180115520954,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01854",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9680891036987305,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01253",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.954346776008606,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01003",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.992039680480957,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01213",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.08691786229610443,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01927",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9868418574333191,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00599",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9274057745933533,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01008",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9847993850708008,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01328",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.995779275894165,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01405",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9967958331108093,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01316",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9942246079444885,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01754",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.09854715317487717,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01245",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.8529697060585022,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00715",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.990878164768219,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00402",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9519335627555847,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00810",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9263295531272888,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01154",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9261805415153503,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00815",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.984509289264679,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00966",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9499611258506775,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01012",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9901406168937683,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00462",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9753034114837646,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01074",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.12906280159950256,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "KEB-01103",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.8618831038475037,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01275",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9474000930786133,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00571",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9831746220588684,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01167",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9905741810798645,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01695",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.24217748641967773,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "KEB-00284",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.980280339717865,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00333",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.986283004283905,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01395",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.02605576254427433,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01743",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9713517427444458,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01155",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9421383738517761,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01562",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9873106479644775,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01272",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9941509366035461,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-00942",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9744665026664734,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01109",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.5064521431922913,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01430",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9635108709335327,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01207",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.3938044011592865,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01016",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.8854005336761475,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-00282",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.7827932834625244,
+      "selected_as_hard_training_negative": true
+    },
+    {
+      "id": "BAN-01691",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.8291965126991272,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEB-01000",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9755717515945435,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01746",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9295466542243958,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01215",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9854812026023865,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "GEM-01224",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.9924283623695374,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01160",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.991709291934967,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "BAN-01840",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.8991214632987976,
+      "selected_as_hard_training_negative": false
+    },
+    {
+      "id": "KEC-01209",
+      "source_label": "NON_EVENT",
+      "non_event_probability": 0.8914287090301514,
+      "selected_as_hard_training_negative": false
+    }
+  ]
+}

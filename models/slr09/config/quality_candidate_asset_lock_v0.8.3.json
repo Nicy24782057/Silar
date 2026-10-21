@@ -1,0 +1,90 @@
+{
+  "schema": "slr09-context-assets-0.8.3",
+  "status": "DEVELOPMENT_CANDIDATE_NOT_ACCEPTED",
+  "models": {
+    "sena": {
+      "model_id": "SILAR_SENA_context_v083_20261020T102653Z",
+      "run_id": "20261020T102653Z",
+      "archive_name": "SILAR_SENA_context_v0.8.3_20261020.zip",
+      "labels": [
+        "FLOOD",
+        "EARTHQUAKE",
+        "FIRE",
+        "ACCIDENT",
+        "NON_EVENT"
+      ],
+      "files": {
+        "config.json": "febb4294e220615be653133104562be26236ea97165c5103dc7b6d377277da9a",
+        "model.safetensors": "63609492125314dd0d1b3e420164006523122043e5e9cd2789eec4a095433980",
+        "tokenizer.json": "54a2750d24145cb7924b3061e60bd2f14ba863634726e22d4959f65fc5973d7d",
+        "tokenizer_config.json": "6c7af3e1d0c166292dc68cece6e6bb2be29945b8a45b39c804f65e9602a78429",
+        "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+        "vocab.txt": "343bf28a78f7efeda6419fa610f553184a6dcd29aae726f46850cd05e3167dc3"
+      },
+      "selected_epoch": 1,
+      "trainable_modules": "LAST_ENCODER_BLOCK_POOLER_CLASSIFIER",
+      "training_unique": 1683,
+      "training_origins": {
+        "HUMAN_SOURCE": 584,
+        "KNOWN_HUMAN_ADJUDICATED_NOW_TRAINING": 145,
+        "OWNER_APPROVED": 24,
+        "ASSISTANT_OTHER": 576,
+        "ASSISTANT_SEEN_V07": 50,
+        "KNOWN_ASSISTANT_SCOPE_NOW_TRAINING": 50,
+        "KNOWN_HUMAN_REGRESSION_NOW_TRAINING": 50,
+        "REVIEWED_FINAL_NOW_TRAINING": 100,
+        "NEW_ASSISTANT_WEAK_TRAINING": 64,
+        "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING": 40
+      },
+      "training_draws_per_epoch": 2395,
+      "gradient_method": "DETERMINISTIC_FROZEN_PREFIX_CACHE_LAST_BLOCK_BACKPROP",
+      "warm_start_archive_sha256": "760a79f6951fc8c380aeed6779006444e3b1992ae7d720af9d80f2be4c24a20d",
+      "human130_never_used_for_training": false,
+      "human130_now_training_and_seen_selection": true,
+      "FINAL081_FINAL082_retired_to_training_and_seen_regression": true,
+      "new_gradient_training_executed": true,
+      "new_manual_bias_fit_executed": false,
+      "quality_acceptance_approved": false,
+      "production_model_selected": false,
+      "independent_acceptance_test_executed": false,
+      "archive_sha256": "a3a141b26d17360d79279d79f8a07681098eb7a7fa1f80880521ac401d0fe1cb"
+    },
+    "nara": {
+      "model_id": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z",
+      "run_id": "20261018T001122_607337Z",
+      "archive_name": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z.zip",
+      "archive_sha256": "bce9feba0dd2ae4518880708085f44286ae8d1dd7e50f4eb452e36824f967798",
+      "labels": [
+        "O",
+        "ACCIDENT-EVENT",
+        "AFFECTEDOBJECTS-ARG",
+        "DEATHVICTIM-ARG",
+        "EARTHQUAKE-EVENT",
+        "FALSE-EVENT",
+        "FIRE-EVENT",
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "OFFICER-ARG",
+        "PLACE-ARG",
+        "REASON-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "WOUNDVICTIM-ARG"
+      ],
+      "files": {
+        "config.json": "fa5336688409b42cb5e0baa58c039bb4ddc8c9253c4fc812625ac807c2e2d058",
+        "model.safetensors": "ef84ccfeca2d116942c5d7f8882e064192279eabf92127e8adc1741933b60c29",
+        "tokenizer.json": "9fe770007d1727a8cacfec0b467e2b6d6f60d7ff93f3b0be692d63c62ccc856d",
+        "tokenizer_config.json": "4375ee5167df42507f6c3253ea0b6f65b04f7339ff8d6312754e37084e68ce9e",
+        "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+        "vocab.txt": "343bf28a78f7efeda6419fa610f553184a6dcd29aae726f46850cd05e3167dc3"
+      },
+      "export_report": "sources/SLR09_NARA_Hasil_FineTune_20261018T001122_607337Z.zip",
+      "export_report_sha256": "879b3205419a9897075145a64c94e29c1f3b81b558af170a8181f55fdfa63bfb"
+    }
+  },
+  "quality_acceptance_approved": false,
+  "pipeline_revision": "0.8.3",
+  "nara_weights_unchanged": true,
+  "new_gradient_training_executed": true
+}

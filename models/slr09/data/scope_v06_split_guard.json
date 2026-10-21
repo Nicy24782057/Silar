@@ -1,0 +1,7 @@
+{
+  "new50_no_normalized_exact_overlap": true,
+  "new50_sha256": "74c13044004b1732ffe3cddd30e1f4e83c571e4b214ab130cebd0d61963ef958",
+  "new50_used_for_training_or_selection": false,
+  "old24_retired_to_seen_development": true,
+  "new_human_review_completed": false
+}

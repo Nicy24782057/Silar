@@ -1,0 +1,27 @@
+{
+  "candidate_version": "0.8.2",
+  "files_sha256": {
+    "acceptance/known_inputs.json": "c9f1ffe632a3b2a35ba91d771aeba131b656b2b802152831ada8a4faf02d762e",
+    "asset_manifest.json": "fcd28e2324d9c3979f41fd6120c6f75be0c7e49552df276a6e8894ee5f9ced97",
+    "code/acceptance/evaluate_acceptance.py": "0911fdef1538e5ff36084983a63b5f527bd7680da82d2443c250c44d7142ad6c",
+    "code/acceptance/import_review_xlsx.py": "51dd1853839bd251bde7f724ed6af15250aa797c49c050635de5678a597f93af",
+    "code/active_nara_adapter/legacy_postprocessing.py": "06275b3aa338718689fba66984626754e6b34739156f65e378ceaad4b06bfa9f",
+    "code/active_nara_adapter/nara_data.py": "eea1124afd1d0628b7a96c3d9dbca43a116f8bed0fef76f2c67718e7ff2e4a29",
+    "code/active_nara_adapter/nara_experiment.py": "734e9c15a13ac967a72a482c68a9fc777e6632a75957ffd854b0863894a28409",
+    "code/active_nara_adapter/nara_metrics.py": "8f74d058db3e613c77df83c772b5142f2b504dfde542455284754e4c8ceefcb7",
+    "code/active_nara_adapter/silar_ai_adapter.py": "bf40328a40383e57e0e0d5165c29d752ef003b79ec8c8d019ba6e926b00ea2e1",
+    "code/active_nara_adapter/silar_nara_composition.py": "056cbfd41418bc5b863b90340c93c89c1fefb88d67eb3c44f7c9e86950c4fcd8",
+    "code/active_nara_adapter/silar_postprocessing.py": "61e466d891a952c3fe560b7f3b99b9942bab7766871f18ad8969d464e60e5899",
+    "code/active_nara_adapter/silar_victim_guard.py": "691c8d9a74c15d91720e8ca8672d6ce1fa575542ceb55858ff81f050bd100ac9",
+    "code/active_nara_adapter/slr09_candidate_runtime.py": "c54e9f66f6e36d0099c4bbe323ebe23744479a3b1d0296c1c1b0a98114e60105",
+    "code/active_nara_adapter/slr09_runtime.py": "f0dc27fab23ef99046d615f24b5ea4c0d7fba5010314f3769ad0d730404a085d",
+    "config/SLR09_Konfigurasi_Integrasi_v0.7.json": "c3373c77ab20a763eca026b8e91be007d3a0124cafc1b0c59d739eeac214547a",
+    "config/inference_environment.json": "d2f235f7b5b3f4d7cb445fa5870cfc6b0b49f9f1a429e8518075c4ff53955bbd",
+    "config/quality_candidate_asset_lock_v0.8.2.json": "7f317ad97648b96ef400b0c9cc6547e54689400154c466ef7bee503ad50e5e41",
+    "config/requirements-inference.txt": "1e496aa6408ac46bd8545e395a6f960edcf5b5bc85aa3d165632da37421823f8",
+    "data/development_review_v0.8.json": "76203e7d658b175c0d62b7e4b8f8acb097903b97ff047b24d1c5f9503a62763f",
+    "data/final_reference_identity_v0.8.2.json": "a722eea1a3648e08dcc26b706b97a9291e1a2b30acde7295b80863d777a0179f",
+    "data/final_reference_proposals_v0.8.2.json": "146479d8d6ca17a82db37ecc9a7791eb04c2371ef0ea59cd3abd0573bbe0989e",
+    "data/retirement_after_FINAL081_v0.8.2.json": "3f3a3ed1e7ceff2a9e8496638c455a507ff22993ed894b3f9284d69c81ff3970"
+  }
+}

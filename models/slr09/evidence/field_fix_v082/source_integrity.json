@@ -1,0 +1,45 @@
+{
+  "source_files": [
+    {
+      "path": "data/sena_train_reviewed.jsonl",
+      "sha256": "0e97bdd197442821d5da02cbe4f2ab863781f037e411eb70fddceed1f62d0c18",
+      "unchanged_from_delivered_v081": true
+    },
+    {
+      "path": "data/sena_validation_reviewed.jsonl",
+      "sha256": "8055d15c77b0d30ca33f2427e64c6a1d2daf085b6dabd37e8983911fd36e7fc0",
+      "unchanged_from_delivered_v081": true
+    },
+    {
+      "path": "code/active_nara_adapter/legacy_postprocessing.py",
+      "sha256": "06275b3aa338718689fba66984626754e6b34739156f65e378ceaad4b06bfa9f",
+      "unchanged_from_delivered_v081": true
+    },
+    {
+      "path": "code/active_nara_adapter/nara_data.py",
+      "sha256": "eea1124afd1d0628b7a96c3d9dbca43a116f8bed0fef76f2c67718e7ff2e4a29",
+      "unchanged_from_delivered_v081": true
+    },
+    {
+      "path": "code/active_nara_adapter/nara_experiment.py",
+      "sha256": "734e9c15a13ac967a72a482c68a9fc777e6632a75957ffd854b0863894a28409",
+      "unchanged_from_delivered_v081": true
+    },
+    {
+      "path": "code/active_nara_adapter/nara_metrics.py",
+      "sha256": "8f74d058db3e613c77df83c772b5142f2b504dfde542455284754e4c8ceefcb7",
+      "unchanged_from_delivered_v081": true
+    }
+  ],
+  "original_source_records": 730,
+  "sena_nara_weight_identities_unchanged": true,
+  "source730_unchanged": true,
+  "legacy_nara_algorithms_unchanged": true,
+  "pre_inference_snapshot_hashes_verified": true,
+  "snapshot_collection_basis": "Collected after failed workflow from unchanged files matching pre-inference pinned hashes; no earlier snapshot creation time claimed.",
+  "raw_predictions_unchanged": true,
+  "human_gold_unchanged": true,
+  "neural_inference_in_v082": false,
+  "new_reference_inference_executed": false,
+  "quality_acceptance_approved": false
+}

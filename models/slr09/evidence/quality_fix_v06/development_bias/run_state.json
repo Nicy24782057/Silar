@@ -1,0 +1,19 @@
+{
+  "schema": "slr09-scope-intercept-fit-0.6",
+  "status": "SUCCEEDED",
+  "source": "SCOPE_TRAINED_CPU_MODEL_WITH_JOINT_DEVELOPMENT_INTERCEPT_FIT",
+  "started_at": "2026-10-19T05:32:47.715630+00:00",
+  "training_executed": false,
+  "parameter_fit_executed": true,
+  "source_gradient_training_executed": true,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "seen24_used_for_training_or_selection": false,
+  "new50_used_for_training_or_selection": false,
+  "assistant_examples_human_reviewed": false,
+  "model_exported": true,
+  "selected_additional_bias": 1.9,
+  "selected_total_bias": 3.4,
+  "best_joint_score": 0.967741935483871,
+  "finished_at": "2026-10-19T05:32:54.234907+00:00"
+}

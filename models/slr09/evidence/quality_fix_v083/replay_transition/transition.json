@@ -1,0 +1,16 @@
+{
+  "source_status": "INTERRUPTED_FOR_REPLAY_CORRECTION",
+  "completed_epochs": 2,
+  "selected_epoch": 2,
+  "tool_session_exit_code": 130,
+  "namespace_process_lookup_attempt_failed_without_interrupting_job": true,
+  "source_best_model_sha256": "a37fc3eb79dd9f48166aabb58c0aee488c24b7338b67e2544d1943bb03026411",
+  "quality_acceptance_approved": false,
+  "notebook26b_executed_output_available": false,
+  "notebook26b_output_not_reconstructed": true,
+  "actual_evidence": [
+    "notebook26b_execution.stdout.txt",
+    "cached_context_training_v083_20261020T101722_298188Z/training_history.json",
+    "cached_context_training_v083_20261020T101722_298188Z/run_state.json"
+  ]
+}

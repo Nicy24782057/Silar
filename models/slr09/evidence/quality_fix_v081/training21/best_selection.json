@@ -1,0 +1,21 @@
+{
+  "epoch": 1,
+  "additional_bias": 2.1,
+  "inherited_bias": 2.5,
+  "joint_score": 1.0,
+  "contrast_accuracy": 1.0,
+  "feasible_bias_values": [
+    2.1,
+    2.2,
+    2.3,
+    2.4,
+    2.5,
+    2.6,
+    2.7,
+    2.8,
+    2.9,
+    3.0
+  ],
+  "all_development_targets_met": true,
+  "quality_acceptance_approved": false
+}

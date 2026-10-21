@@ -1,0 +1,10 @@
+{
+  "sheets": 3,
+  "records": 50,
+  "tokens": 546,
+  "target_user_approval_recorded": true,
+  "per_record_approved": 0,
+  "formula_edit_test_passed": true,
+  "source": "Synthetic pilot proposals plus explicit user approval of targets",
+  "model_inference_executed": false
+}

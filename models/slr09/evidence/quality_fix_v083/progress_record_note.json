@@ -1,0 +1,7 @@
+{
+  "run_status": "SUCCEEDED",
+  "periodic_progress_step": 251,
+  "completed_epoch_batches": 300,
+  "basis": "COMPLETED_EPOCH_LOOP_AND_FROZEN_DRAW_COUNT; step in run_state is the last periodic progress write, not an early stop",
+  "quality_acceptance_approved": false
+}

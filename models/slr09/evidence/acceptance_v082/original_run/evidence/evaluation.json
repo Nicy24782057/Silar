@@ -1,0 +1,2418 @@
+{
+  "sena": {
+    "records": 50,
+    "accuracy": 0.98,
+    "macro_f1": 0.9799498746867169,
+    "per_class": {
+      "FLOOD": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "EARTHQUAKE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "FIRE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "ACCIDENT": {
+        "precision": 0.9090909090909091,
+        "recall": 1.0,
+        "f1": 0.9523809523809523,
+        "support": 10
+      },
+      "NON_EVENT": {
+        "precision": 1.0,
+        "recall": 0.9,
+        "f1": 0.9473684210526316,
+        "support": 10
+      }
+    },
+    "confusion_matrix": {
+      "FLOOD": {
+        "FLOOD": 10,
+        "EARTHQUAKE": 0,
+        "FIRE": 0,
+        "ACCIDENT": 0,
+        "NON_EVENT": 0
+      },
+      "EARTHQUAKE": {
+        "FLOOD": 0,
+        "EARTHQUAKE": 10,
+        "FIRE": 0,
+        "ACCIDENT": 0,
+        "NON_EVENT": 0
+      },
+      "FIRE": {
+        "FLOOD": 0,
+        "EARTHQUAKE": 0,
+        "FIRE": 10,
+        "ACCIDENT": 0,
+        "NON_EVENT": 0
+      },
+      "ACCIDENT": {
+        "FLOOD": 0,
+        "EARTHQUAKE": 0,
+        "FIRE": 0,
+        "ACCIDENT": 10,
+        "NON_EVENT": 0
+      },
+      "NON_EVENT": {
+        "FLOOD": 0,
+        "EARTHQUAKE": 0,
+        "FIRE": 0,
+        "ACCIDENT": 1,
+        "NON_EVENT": 9
+      }
+    },
+    "errors": [
+      {
+        "id": "FINAL082-NON_EVENT-02",
+        "text": "Kecelakaan dalam latihan di Balai Suryalaya sore ini memakai mobil properti, tanpa kejadian sungguhan.",
+        "gold": "NON_EVENT",
+        "prediction": "ACCIDENT",
+        "confidence": 0.928926944732666,
+        "low_confidence": true,
+        "family": "exercise_only",
+        "kind": "FALSE_EVENT"
+      }
+    ],
+    "false_event": 1,
+    "false_non_event": 0,
+    "high_confidence_errors": 0,
+    "threshold_analysis": {
+      "cutoff": 0.95,
+      "flagged": 1,
+      "errors_flagged": 1,
+      "errors_remaining_at_or_above": 0,
+      "coverage": 0.98
+    },
+    "reliability": {
+      "ten_bin_ece": 0.010808832645416322,
+      "multiclass_brier_sum_over_classes": 0.03472515241705477,
+      "bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "n": 0,
+          "mean_confidence": 0.0,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "n": 0,
+          "mean_confidence": 0.0,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "n": 0,
+          "mean_confidence": 0.0,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "n": 0,
+          "mean_confidence": 0.0,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "n": 0,
+          "mean_confidence": 0.0,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "n": 0,
+          "mean_confidence": 0.0,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.7,
+          "n": 0,
+          "mean_confidence": 0.0,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.7,
+          "upper": 0.8,
+          "n": 0,
+          "mean_confidence": 0.0,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "n": 0,
+          "mean_confidence": 0.0,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "n": 50,
+          "mean_confidence": 0.9908088326454163,
+          "accuracy": 0.98
+        }
+      ],
+      "probability_calibration_established": false,
+      "scope": "DIAGNOSTIC_ON_APPROVED_PILOT_NOT_PROOF_OF_95_PERCENT_CORRECTNESS"
+    }
+  },
+  "nara": {
+    "macro_f1_all_14_non_o": 0.8641419874646844,
+    "exact_span_f1": 0.8515625,
+    "span_counts": {
+      "tp": 218,
+      "fp": 42,
+      "fn": 34
+    },
+    "by_label": {
+      "O": {
+        "precision": 0.9324324324324325,
+        "recall": 0.8483606557377049,
+        "f1": 0.8884120171673819,
+        "support": 244
+      },
+      "ACCIDENT-EVENT": {
+        "precision": 0.8333333333333334,
+        "recall": 1.0,
+        "f1": 0.9090909090909091,
+        "support": 10
+      },
+      "AFFECTEDOBJECTS-ARG": {
+        "precision": 0.8771929824561403,
+        "recall": 0.9615384615384616,
+        "f1": 0.9174311926605504,
+        "support": 52
+      },
+      "DEATHVICTIM-ARG": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 12
+      },
+      "EARTHQUAKE-EVENT": {
+        "precision": 0.8461538461538461,
+        "recall": 1.0,
+        "f1": 0.9166666666666666,
+        "support": 11
+      },
+      "FALSE-EVENT": {
+        "precision": 1.0,
+        "recall": 0.2727272727272727,
+        "f1": 0.42857142857142855,
+        "support": 11
+      },
+      "FIRE-EVENT": {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1": 0.8,
+        "support": 10
+      },
+      "FLOOD-EVENT": {
+        "precision": 0.8333333333333334,
+        "recall": 1.0,
+        "f1": 0.9090909090909091,
+        "support": 10
+      },
+      "INFORMATION-ARG": {
+        "precision": 0.5303030303030303,
+        "recall": 0.813953488372093,
+        "f1": 0.6422018348623852,
+        "support": 43
+      },
+      "OFFICER-ARG": {
+        "precision": 0.9696969696969697,
+        "recall": 1.0,
+        "f1": 0.9846153846153847,
+        "support": 32
+      },
+      "PLACE-ARG": {
+        "precision": 0.9878048780487805,
+        "recall": 0.9642857142857143,
+        "f1": 0.9759036144578312,
+        "support": 84
+      },
+      "REASON-ARG": {
+        "precision": 0.7857142857142857,
+        "recall": 0.9166666666666666,
+        "f1": 0.8461538461538461,
+        "support": 12
+      },
+      "STREET-ARG": {
+        "precision": 0.8235294117647058,
+        "recall": 1.0,
+        "f1": 0.9032258064516129,
+        "support": 14
+      },
+      "TIME-ARG": {
+        "precision": 1.0,
+        "recall": 0.8648648648648649,
+        "f1": 0.927536231884058,
+        "support": 111
+      },
+      "WOUNDVICTIM-ARG": {
+        "precision": 0.8823529411764706,
+        "recall": 1.0,
+        "f1": 0.9375,
+        "support": 15
+      }
+    },
+    "confusion_matrix": {
+      "O": {
+        "O": 207,
+        "ACCIDENT-EVENT": 1,
+        "AFFECTEDOBJECTS-ARG": 2,
+        "DEATHVICTIM-ARG": 0,
+        "EARTHQUAKE-EVENT": 0,
+        "FALSE-EVENT": 0,
+        "FIRE-EVENT": 0,
+        "FLOOD-EVENT": 0,
+        "INFORMATION-ARG": 29,
+        "OFFICER-ARG": 0,
+        "PLACE-ARG": 0,
+        "REASON-ARG": 3,
+        "STREET-ARG": 0,
+        "TIME-ARG": 0,
+        "WOUNDVICTIM-ARG": 2
+      },
+      "ACCIDENT-EVENT": {
+        "O": 0,
+        "ACCIDENT-EVENT": 10,
+        "AFFECTEDOBJECTS-ARG": 0,
+        "DEATHVICTIM-ARG": 0,
+        "EARTHQUAKE-EVENT": 0,
+        "FALSE-EVENT": 0,
+        "FIRE-EVENT": 0,
+        "FLOOD-EVENT": 0,
+        "INFORMATION-ARG": 0,
+        "OFFICER-ARG": 0,
+        "PLACE-ARG": 0,
+        "REASON-ARG": 0,
+        "STREET-ARG": 0,
+        "TIME-ARG": 0,
+        "WOUNDVICTIM-ARG": 0
+      },
+      "AFFECTEDOBJECTS-ARG": {
+        "O": 0,
+        "ACCIDENT-EVENT": 0,
+        "AFFECTEDOBJECTS-ARG": 50,
+        "DEATHVICTIM-ARG": 0,
+        "EARTHQUAKE-EVENT": 0,
+        "FALSE-EVENT": 0,
+        "FIRE-EVENT": 0,
+        "FLOOD-EVENT": 0,
+        "INFORMATION-ARG": 0,
+        "OFFICER-ARG": 0,
+        "PLACE-ARG": 0,
+        "REASON-ARG": 0,
+        "STREET-ARG": 2,
+        "TIME-ARG": 0,
+        "WOUNDVICTIM-ARG": 0
+      },
+      "DEATHVICTIM-ARG": {
+        "O": 0,
+        "ACCIDENT-EVENT": 0,
+        "AFFECTEDOBJECTS-ARG": 0,
+        "DEATHVICTIM-ARG": 12,
+        "EARTHQUAKE-EVENT": 0,
+        "FALSE-EVENT": 0,
+        "FIRE-EVENT": 0,
+        "FLOOD-EVENT": 0,
+        "INFORMATION-ARG": 0,
+        "OFFICER-ARG": 0,
+        "PLACE-ARG": 0,
+        "REASON-ARG": 0,
+        "STREET-ARG": 0,
+        "TIME-ARG": 0,
+        "WOUNDVICTIM-ARG": 0
+      },
+      "EARTHQUAKE-EVENT": {
+        "O": 0,
+        "ACCIDENT-EVENT": 0,
+        "AFFECTEDOBJECTS-ARG": 0,
+        "DEATHVICTIM-ARG": 0,
+        "EARTHQUAKE-EVENT": 11,
+        "FALSE-EVENT": 0,
+        "FIRE-EVENT": 0,
+        "FLOOD-EVENT": 0,
+        "INFORMATION-ARG": 0,
+        "OFFICER-ARG": 0,
+        "PLACE-ARG": 0,
+        "REASON-ARG": 0,
+        "STREET-ARG": 0,
+        "TIME-ARG": 0,
+        "WOUNDVICTIM-ARG": 0
+      },
+      "FALSE-EVENT": {
+        "O": 0,
+        "ACCIDENT-EVENT": 1,
+        "AFFECTEDOBJECTS-ARG": 0,
+        "DEATHVICTIM-ARG": 0,
+        "EARTHQUAKE-EVENT": 2,
+        "FALSE-EVENT": 3,
+        "FIRE-EVENT": 3,
+        "FLOOD-EVENT": 2,
+        "INFORMATION-ARG": 0,
+        "OFFICER-ARG": 0,
+        "PLACE-ARG": 0,
+        "REASON-ARG": 0,
+        "STREET-ARG": 0,
+        "TIME-ARG": 0,
+        "WOUNDVICTIM-ARG": 0
+      },
+      "FIRE-EVENT": {
+        "O": 0,
+        "ACCIDENT-EVENT": 0,
+        "AFFECTEDOBJECTS-ARG": 0,
+        "DEATHVICTIM-ARG": 0,
+        "EARTHQUAKE-EVENT": 0,
+        "FALSE-EVENT": 0,
+        "FIRE-EVENT": 10,
+        "FLOOD-EVENT": 0,
+        "INFORMATION-ARG": 0,
+        "OFFICER-ARG": 0,
+        "PLACE-ARG": 0,
+        "REASON-ARG": 0,
+        "STREET-ARG": 0,
+        "TIME-ARG": 0,
+        "WOUNDVICTIM-ARG": 0
+      },
+      "FLOOD-EVENT": {
+        "O": 0,
+        "ACCIDENT-EVENT": 0,
+        "AFFECTEDOBJECTS-ARG": 0,
+        "DEATHVICTIM-ARG": 0,
+        "EARTHQUAKE-EVENT": 0,
+        "FALSE-EVENT": 0,
+        "FIRE-EVENT": 0,
+        "FLOOD-EVENT": 10,
+        "INFORMATION-ARG": 0,
+        "OFFICER-ARG": 0,
+        "PLACE-ARG": 0,
+        "REASON-ARG": 0,
+        "STREET-ARG": 0,
+        "TIME-ARG": 0,
+        "WOUNDVICTIM-ARG": 0
+      },
+      "INFORMATION-ARG": {
+        "O": 3,
+        "ACCIDENT-EVENT": 0,
+        "AFFECTEDOBJECTS-ARG": 3,
+        "DEATHVICTIM-ARG": 0,
+        "EARTHQUAKE-EVENT": 0,
+        "FALSE-EVENT": 0,
+        "FIRE-EVENT": 2,
+        "FLOOD-EVENT": 0,
+        "INFORMATION-ARG": 35,
+        "OFFICER-ARG": 0,
+        "PLACE-ARG": 0,
+        "REASON-ARG": 0,
+        "STREET-ARG": 0,
+        "TIME-ARG": 0,
+        "WOUNDVICTIM-ARG": 0
+      },
+      "OFFICER-ARG": {
+        "O": 0,
+        "ACCIDENT-EVENT": 0,
+        "AFFECTEDOBJECTS-ARG": 0,
+        "DEATHVICTIM-ARG": 0,
+        "EARTHQUAKE-EVENT": 0,
+        "FALSE-EVENT": 0,
+        "FIRE-EVENT": 0,
+        "FLOOD-EVENT": 0,
+        "INFORMATION-ARG": 0,
+        "OFFICER-ARG": 32,
+        "PLACE-ARG": 0,
+        "REASON-ARG": 0,
+        "STREET-ARG": 0,
+        "TIME-ARG": 0,
+        "WOUNDVICTIM-ARG": 0
+      },
+      "PLACE-ARG": {
+        "O": 1,
+        "ACCIDENT-EVENT": 0,
+        "AFFECTEDOBJECTS-ARG": 2,
+        "DEATHVICTIM-ARG": 0,
+        "EARTHQUAKE-EVENT": 0,
+        "FALSE-EVENT": 0,
+        "FIRE-EVENT": 0,
+        "FLOOD-EVENT": 0,
+        "INFORMATION-ARG": 0,
+        "OFFICER-ARG": 0,
+        "PLACE-ARG": 81,
+        "REASON-ARG": 0,
+        "STREET-ARG": 0,
+        "TIME-ARG": 0,
+        "WOUNDVICTIM-ARG": 0
+      },
+      "REASON-ARG": {
+        "O": 0,
+        "ACCIDENT-EVENT": 0,
+        "AFFECTEDOBJECTS-ARG": 0,
+        "DEATHVICTIM-ARG": 0,
+        "EARTHQUAKE-EVENT": 0,
+        "FALSE-EVENT": 0,
+        "FIRE-EVENT": 0,
+        "FLOOD-EVENT": 0,
+        "INFORMATION-ARG": 0,
+        "OFFICER-ARG": 0,
+        "PLACE-ARG": 0,
+        "REASON-ARG": 11,
+        "STREET-ARG": 1,
+        "TIME-ARG": 0,
+        "WOUNDVICTIM-ARG": 0
+      },
+      "STREET-ARG": {
+        "O": 0,
+        "ACCIDENT-EVENT": 0,
+        "AFFECTEDOBJECTS-ARG": 0,
+        "DEATHVICTIM-ARG": 0,
+        "EARTHQUAKE-EVENT": 0,
+        "FALSE-EVENT": 0,
+        "FIRE-EVENT": 0,
+        "FLOOD-EVENT": 0,
+        "INFORMATION-ARG": 0,
+        "OFFICER-ARG": 0,
+        "PLACE-ARG": 0,
+        "REASON-ARG": 0,
+        "STREET-ARG": 14,
+        "TIME-ARG": 0,
+        "WOUNDVICTIM-ARG": 0
+      },
+      "TIME-ARG": {
+        "O": 11,
+        "ACCIDENT-EVENT": 0,
+        "AFFECTEDOBJECTS-ARG": 0,
+        "DEATHVICTIM-ARG": 0,
+        "EARTHQUAKE-EVENT": 0,
+        "FALSE-EVENT": 0,
+        "FIRE-EVENT": 0,
+        "FLOOD-EVENT": 0,
+        "INFORMATION-ARG": 2,
+        "OFFICER-ARG": 1,
+        "PLACE-ARG": 1,
+        "REASON-ARG": 0,
+        "STREET-ARG": 0,
+        "TIME-ARG": 96,
+        "WOUNDVICTIM-ARG": 0
+      },
+      "WOUNDVICTIM-ARG": {
+        "O": 0,
+        "ACCIDENT-EVENT": 0,
+        "AFFECTEDOBJECTS-ARG": 0,
+        "DEATHVICTIM-ARG": 0,
+        "EARTHQUAKE-EVENT": 0,
+        "FALSE-EVENT": 0,
+        "FIRE-EVENT": 0,
+        "FLOOD-EVENT": 0,
+        "INFORMATION-ARG": 0,
+        "OFFICER-ARG": 0,
+        "PLACE-ARG": 0,
+        "REASON-ARG": 0,
+        "STREET-ARG": 0,
+        "TIME-ARG": 0,
+        "WOUNDVICTIM-ARG": 15
+      }
+    },
+    "errors": [
+      {
+        "id": "FINAL082-FLOOD-01",
+        "text": "Relawan melaporkan banjir yang merendam dua warung di Kelurahan Suramerta siang ini.",
+        "tokens": [
+          "Relawan",
+          "melaporkan",
+          "banjir",
+          "yang",
+          "merendam",
+          "dua",
+          "warung",
+          "di",
+          "Kelurahan",
+          "Suramerta",
+          "siang",
+          "ini",
+          "."
+        ],
+        "gold": [
+          "OFFICER-ARG",
+          "O",
+          "FLOOD-EVENT",
+          "O",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ],
+        "prediction": [
+          "OFFICER-ARG",
+          "INFORMATION-ARG",
+          "FLOOD-EVENT",
+          "O",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-FLOOD-03",
+        "text": "Akibat tanggul jebol, banjir menutup jalan utama di Kampung Selangwangi tadi malam.",
+        "tokens": [
+          "Akibat",
+          "tanggul",
+          "jebol",
+          ",",
+          "banjir",
+          "menutup",
+          "jalan",
+          "utama",
+          "di",
+          "Kampung",
+          "Selangwangi",
+          "tadi",
+          "malam",
+          "."
+        ],
+        "gold": [
+          "O",
+          "REASON-ARG",
+          "REASON-ARG",
+          "O",
+          "FLOOD-EVENT",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ],
+        "prediction": [
+          "REASON-ARG",
+          "REASON-ARG",
+          "REASON-ARG",
+          "O",
+          "FLOOD-EVENT",
+          "INFORMATION-ARG",
+          "STREET-ARG",
+          "STREET-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-FLOOD-06",
+        "text": "Banjir merendam tiga kios di Jalan Mahadewi malam tadi, tetapi tidak ada korban.",
+        "tokens": [
+          "Banjir",
+          "merendam",
+          "tiga",
+          "kios",
+          "di",
+          "Jalan",
+          "Mahadewi",
+          "malam",
+          "tadi",
+          ",",
+          "tetapi",
+          "tidak",
+          "ada",
+          "korban",
+          "."
+        ],
+        "gold": [
+          "FLOOD-EVENT",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "STREET-ARG",
+          "STREET-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O"
+        ],
+        "prediction": [
+          "FLOOD-EVENT",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "STREET-ARG",
+          "STREET-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "O",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-FLOOD-07",
+        "text": "Saat latihan pertolongan, banjir nyata merusak jembatan kayu di Desa Bantarasih siang tadi.",
+        "tokens": [
+          "Saat",
+          "latihan",
+          "pertolongan",
+          ",",
+          "banjir",
+          "nyata",
+          "merusak",
+          "jembatan",
+          "kayu",
+          "di",
+          "Desa",
+          "Bantarasih",
+          "siang",
+          "tadi",
+          "."
+        ],
+        "gold": [
+          "TIME-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "FLOOD-EVENT",
+          "O",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ],
+        "prediction": [
+          "O",
+          "O",
+          "INFORMATION-ARG",
+          "O",
+          "FLOOD-EVENT",
+          "O",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-FLOOD-10",
+        "text": "Banjir melanda Kampung Panyawangan malam ini. Wilayah di bukit tetap kering.",
+        "tokens": [
+          "Banjir",
+          "melanda",
+          "Kampung",
+          "Panyawangan",
+          "malam",
+          "ini",
+          ".",
+          "Wilayah",
+          "di",
+          "bukit",
+          "tetap",
+          "kering",
+          "."
+        ],
+        "gold": [
+          "FLOOD-EVENT",
+          "INFORMATION-ARG",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "O",
+          "O",
+          "O"
+        ],
+        "prediction": [
+          "FLOOD-EVENT",
+          "INFORMATION-ARG",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "PLACE-ARG",
+          "O",
+          "PLACE-ARG",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-EARTHQUAKE-01",
+        "text": "Tadi pagi, gempa mengguncang Kelurahan Batuwangi dan warga berlarian keluar.",
+        "tokens": [
+          "Tadi",
+          "pagi",
+          ",",
+          "gempa",
+          "mengguncang",
+          "Kelurahan",
+          "Batuwangi",
+          "dan",
+          "warga",
+          "berlarian",
+          "keluar",
+          "."
+        ],
+        "gold": [
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "EARTHQUAKE-EVENT",
+          "INFORMATION-ARG",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "O",
+          "OFFICER-ARG",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "O"
+        ],
+        "prediction": [
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "EARTHQUAKE-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "O",
+          "OFFICER-ARG",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-EARTHQUAKE-04",
+        "text": "Pergerakan sesar memicu gempa di Desa Linggawana sore tadi; dua rumah rusak.",
+        "tokens": [
+          "Pergerakan",
+          "sesar",
+          "memicu",
+          "gempa",
+          "di",
+          "Desa",
+          "Linggawana",
+          "sore",
+          "tadi",
+          ";",
+          "dua",
+          "rumah",
+          "rusak",
+          "."
+        ],
+        "gold": [
+          "REASON-ARG",
+          "REASON-ARG",
+          "O",
+          "EARTHQUAKE-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "INFORMATION-ARG",
+          "O"
+        ],
+        "prediction": [
+          "REASON-ARG",
+          "REASON-ARG",
+          "O",
+          "EARTHQUAKE-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-EARTHQUAKE-06",
+        "text": "Tak ada korban jiwa dalam gempa siang tadi di Desa Cikawana, tetapi pagar sekolah roboh.",
+        "tokens": [
+          "Tak",
+          "ada",
+          "korban",
+          "jiwa",
+          "dalam",
+          "gempa",
+          "siang",
+          "tadi",
+          "di",
+          "Desa",
+          "Cikawana",
+          ",",
+          "tetapi",
+          "pagar",
+          "sekolah",
+          "roboh",
+          "."
+        ],
+        "gold": [
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "EARTHQUAKE-EVENT",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "O",
+          "O",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "INFORMATION-ARG",
+          "O"
+        ],
+        "prediction": [
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "O",
+          "EARTHQUAKE-EVENT",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "O",
+          "O",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-EARTHQUAKE-07",
+        "text": "Latihan evakuasi dihentikan karena gempa sungguhan mengguncang Kampung Cendrawana sore ini.",
+        "tokens": [
+          "Latihan",
+          "evakuasi",
+          "dihentikan",
+          "karena",
+          "gempa",
+          "sungguhan",
+          "mengguncang",
+          "Kampung",
+          "Cendrawana",
+          "sore",
+          "ini",
+          "."
+        ],
+        "gold": [
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "O",
+          "EARTHQUAKE-EVENT",
+          "O",
+          "INFORMATION-ARG",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ],
+        "prediction": [
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "O",
+          "EARTHQUAKE-EVENT",
+          "O",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-FIRE-01",
+        "text": "Api menghanguskan dua kios di Pasar Rengganis subuh tadi.",
+        "tokens": [
+          "Api",
+          "menghanguskan",
+          "dua",
+          "kios",
+          "di",
+          "Pasar",
+          "Rengganis",
+          "subuh",
+          "tadi",
+          "."
+        ],
+        "gold": [
+          "FIRE-EVENT",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ],
+        "prediction": [
+          "FIRE-EVENT",
+          "FIRE-EVENT",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-FIRE-03",
+        "text": "Kebakaran terjadi di Gudang Suryamurni malam tadi; dua pekerja terluka.",
+        "tokens": [
+          "Kebakaran",
+          "terjadi",
+          "di",
+          "Gudang",
+          "Suryamurni",
+          "malam",
+          "tadi",
+          ";",
+          "dua",
+          "pekerja",
+          "terluka",
+          "."
+        ],
+        "gold": [
+          "FIRE-EVENT",
+          "O",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "WOUNDVICTIM-ARG",
+          "WOUNDVICTIM-ARG",
+          "WOUNDVICTIM-ARG",
+          "O"
+        ],
+        "prediction": [
+          "FIRE-EVENT",
+          "O",
+          "O",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "WOUNDVICTIM-ARG",
+          "WOUNDVICTIM-ARG",
+          "WOUNDVICTIM-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-FIRE-06",
+        "text": "Kebakaran menghanguskan gudang kayu di Desa Babakanasri kemarin malam; tidak ada korban.",
+        "tokens": [
+          "Kebakaran",
+          "menghanguskan",
+          "gudang",
+          "kayu",
+          "di",
+          "Desa",
+          "Babakanasri",
+          "kemarin",
+          "malam",
+          ";",
+          "tidak",
+          "ada",
+          "korban",
+          "."
+        ],
+        "gold": [
+          "FIRE-EVENT",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O"
+        ],
+        "prediction": [
+          "FIRE-EVENT",
+          "FIRE-EVENT",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-FIRE-07",
+        "text": "Di tengah latihan damkar, kebakaran nyata merusak satu mobil di Lapangan Mekarjaya siang ini.",
+        "tokens": [
+          "Di",
+          "tengah",
+          "latihan",
+          "damkar",
+          ",",
+          "kebakaran",
+          "nyata",
+          "merusak",
+          "satu",
+          "mobil",
+          "di",
+          "Lapangan",
+          "Mekarjaya",
+          "siang",
+          "ini",
+          "."
+        ],
+        "gold": [
+          "TIME-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "FIRE-EVENT",
+          "O",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ],
+        "prediction": [
+          "O",
+          "O",
+          "PLACE-ARG",
+          "OFFICER-ARG",
+          "O",
+          "FIRE-EVENT",
+          "O",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-FIRE-10",
+        "text": "Karena korsleting listrik, api melalap satu toko di Pasar Wanasari malam ini.",
+        "tokens": [
+          "Karena",
+          "korsleting",
+          "listrik",
+          ",",
+          "api",
+          "melalap",
+          "satu",
+          "toko",
+          "di",
+          "Pasar",
+          "Wanasari",
+          "malam",
+          "ini",
+          "."
+        ],
+        "gold": [
+          "O",
+          "REASON-ARG",
+          "REASON-ARG",
+          "O",
+          "FIRE-EVENT",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ],
+        "prediction": [
+          "REASON-ARG",
+          "REASON-ARG",
+          "REASON-ARG",
+          "O",
+          "FIRE-EVENT",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-ACCIDENT-01",
+        "text": "Kecelakaan melibatkan dua motor di Jalan Sidomurni pagi ini.",
+        "tokens": [
+          "Kecelakaan",
+          "melibatkan",
+          "dua",
+          "motor",
+          "di",
+          "Jalan",
+          "Sidomurni",
+          "pagi",
+          "ini",
+          "."
+        ],
+        "gold": [
+          "ACCIDENT-EVENT",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "STREET-ARG",
+          "STREET-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ],
+        "prediction": [
+          "ACCIDENT-EVENT",
+          "O",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "STREET-ARG",
+          "STREET-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-ACCIDENT-02",
+        "text": "Akibat rem blong, kecelakaan merusak satu bus di Desa Lembahreja siang tadi.",
+        "tokens": [
+          "Akibat",
+          "rem",
+          "blong",
+          ",",
+          "kecelakaan",
+          "merusak",
+          "satu",
+          "bus",
+          "di",
+          "Desa",
+          "Lembahreja",
+          "siang",
+          "tadi",
+          "."
+        ],
+        "gold": [
+          "O",
+          "REASON-ARG",
+          "REASON-ARG",
+          "O",
+          "ACCIDENT-EVENT",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ],
+        "prediction": [
+          "REASON-ARG",
+          "REASON-ARG",
+          "REASON-ARG",
+          "O",
+          "ACCIDENT-EVENT",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-ACCIDENT-06",
+        "text": "Tidak ada korban luka dalam kecelakaan di Desa Tegalwangi siang ini, tetapi dua mobil rusak.",
+        "tokens": [
+          "Tidak",
+          "ada",
+          "korban",
+          "luka",
+          "dalam",
+          "kecelakaan",
+          "di",
+          "Desa",
+          "Tegalwangi",
+          "siang",
+          "ini",
+          ",",
+          "tetapi",
+          "dua",
+          "mobil",
+          "rusak",
+          "."
+        ],
+        "gold": [
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "ACCIDENT-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "O",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "INFORMATION-ARG",
+          "O"
+        ],
+        "prediction": [
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "WOUNDVICTIM-ARG",
+          "WOUNDVICTIM-ARG",
+          "O",
+          "ACCIDENT-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "O",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-ACCIDENT-07",
+        "text": "Saat latihan pertolongan, kecelakaan sungguhan merusak mobil petugas di Lapangan Binamarga sore ini.",
+        "tokens": [
+          "Saat",
+          "latihan",
+          "pertolongan",
+          ",",
+          "kecelakaan",
+          "sungguhan",
+          "merusak",
+          "mobil",
+          "petugas",
+          "di",
+          "Lapangan",
+          "Binamarga",
+          "sore",
+          "ini",
+          "."
+        ],
+        "gold": [
+          "TIME-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "ACCIDENT-EVENT",
+          "O",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ],
+        "prediction": [
+          "O",
+          "O",
+          "INFORMATION-ARG",
+          "O",
+          "ACCIDENT-EVENT",
+          "O",
+          "INFORMATION-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-ACCIDENT-10",
+        "text": "Kecelakaan dipicu jalan licin di Jalan Cempakaluyu malam ini; seorang sopir terluka.",
+        "tokens": [
+          "Kecelakaan",
+          "dipicu",
+          "jalan",
+          "licin",
+          "di",
+          "Jalan",
+          "Cempakaluyu",
+          "malam",
+          "ini",
+          ";",
+          "seorang",
+          "sopir",
+          "terluka",
+          "."
+        ],
+        "gold": [
+          "ACCIDENT-EVENT",
+          "O",
+          "REASON-ARG",
+          "REASON-ARG",
+          "O",
+          "STREET-ARG",
+          "STREET-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "WOUNDVICTIM-ARG",
+          "WOUNDVICTIM-ARG",
+          "WOUNDVICTIM-ARG",
+          "O"
+        ],
+        "prediction": [
+          "ACCIDENT-EVENT",
+          "O",
+          "STREET-ARG",
+          "REASON-ARG",
+          "O",
+          "STREET-ARG",
+          "STREET-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "WOUNDVICTIM-ARG",
+          "WOUNDVICTIM-ARG",
+          "WOUNDVICTIM-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-NON_EVENT-01",
+        "text": "Tim damkar hanya menggelar simulasi kebakaran di Halaman Purnawana pagi tadi.",
+        "tokens": [
+          "Tim",
+          "damkar",
+          "hanya",
+          "menggelar",
+          "simulasi",
+          "kebakaran",
+          "di",
+          "Halaman",
+          "Purnawana",
+          "pagi",
+          "tadi",
+          "."
+        ],
+        "gold": [
+          "OFFICER-ARG",
+          "OFFICER-ARG",
+          "O",
+          "O",
+          "O",
+          "FALSE-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ],
+        "prediction": [
+          "OFFICER-ARG",
+          "OFFICER-ARG",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "FIRE-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-NON_EVENT-02",
+        "text": "Kecelakaan dalam latihan di Balai Suryalaya sore ini memakai mobil properti, tanpa kejadian sungguhan.",
+        "tokens": [
+          "Kecelakaan",
+          "dalam",
+          "latihan",
+          "di",
+          "Balai",
+          "Suryalaya",
+          "sore",
+          "ini",
+          "memakai",
+          "mobil",
+          "properti",
+          ",",
+          "tanpa",
+          "kejadian",
+          "sungguhan",
+          "."
+        ],
+        "gold": [
+          "FALSE-EVENT",
+          "O",
+          "O",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O"
+        ],
+        "prediction": [
+          "ACCIDENT-EVENT",
+          "O",
+          "O",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "AFFECTEDOBJECTS-ARG",
+          "AFFECTEDOBJECTS-ARG",
+          "O",
+          "O",
+          "ACCIDENT-EVENT",
+          "O",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-NON_EVENT-03",
+        "text": "Petugas mengingatkan potensi banjir di Desa Wanamerta besok pagi; belum ada laporan kejadian.",
+        "tokens": [
+          "Petugas",
+          "mengingatkan",
+          "potensi",
+          "banjir",
+          "di",
+          "Desa",
+          "Wanamerta",
+          "besok",
+          "pagi",
+          ";",
+          "belum",
+          "ada",
+          "laporan",
+          "kejadian",
+          "."
+        ],
+        "gold": [
+          "OFFICER-ARG",
+          "O",
+          "O",
+          "FALSE-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O"
+        ],
+        "prediction": [
+          "OFFICER-ARG",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "FLOOD-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-NON_EVENT-04",
+        "text": "Kepala desa menyatakan tidak terjadi gempa di Desa Renggawana tadi malam.",
+        "tokens": [
+          "Kepala",
+          "desa",
+          "menyatakan",
+          "tidak",
+          "terjadi",
+          "gempa",
+          "di",
+          "Desa",
+          "Renggawana",
+          "tadi",
+          "malam",
+          "."
+        ],
+        "gold": [
+          "OFFICER-ARG",
+          "OFFICER-ARG",
+          "O",
+          "O",
+          "O",
+          "FALSE-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ],
+        "prediction": [
+          "OFFICER-ARG",
+          "OFFICER-ARG",
+          "O",
+          "O",
+          "O",
+          "EARTHQUAKE-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-NON_EVENT-05",
+        "text": "Pemilik toko menyebut banjir pesanan sejak pagi ini; itu promosi dagangan.",
+        "tokens": [
+          "Pemilik",
+          "toko",
+          "menyebut",
+          "banjir",
+          "pesanan",
+          "sejak",
+          "pagi",
+          "ini",
+          ";",
+          "itu",
+          "promosi",
+          "dagangan",
+          "."
+        ],
+        "gold": [
+          "OFFICER-ARG",
+          "OFFICER-ARG",
+          "O",
+          "FALSE-EVENT",
+          "O",
+          "TIME-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O"
+        ],
+        "prediction": [
+          "OFFICER-ARG",
+          "OFFICER-ARG",
+          "O",
+          "FLOOD-EVENT",
+          "O",
+          "O",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-NON_EVENT-06",
+        "text": "Relawan sekolah membahas pencegahan kebakaran di Balai Cikartika siang ini.",
+        "tokens": [
+          "Relawan",
+          "sekolah",
+          "membahas",
+          "pencegahan",
+          "kebakaran",
+          "di",
+          "Balai",
+          "Cikartika",
+          "siang",
+          "ini",
+          "."
+        ],
+        "gold": [
+          "OFFICER-ARG",
+          "OFFICER-ARG",
+          "O",
+          "O",
+          "FALSE-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ],
+        "prediction": [
+          "OFFICER-ARG",
+          "OFFICER-ARG",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "FIRE-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-NON_EVENT-07",
+        "text": "Guru menjelaskan prosedur menghadapi gempa di Sekolah Melatijaya pagi tadi, tanpa kejadian nyata.",
+        "tokens": [
+          "Guru",
+          "menjelaskan",
+          "prosedur",
+          "menghadapi",
+          "gempa",
+          "di",
+          "Sekolah",
+          "Melatijaya",
+          "pagi",
+          "tadi",
+          ",",
+          "tanpa",
+          "kejadian",
+          "nyata",
+          "."
+        ],
+        "gold": [
+          "OFFICER-ARG",
+          "O",
+          "O",
+          "O",
+          "FALSE-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O"
+        ],
+        "prediction": [
+          "OFFICER-ARG",
+          "O",
+          "O",
+          "O",
+          "EARTHQUAKE-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-NON_EVENT-08",
+        "text": "Peneliti membahas angka kecelakaan tahunan; tidak ada satu kejadian tertentu yang dilaporkan.",
+        "tokens": [
+          "Peneliti",
+          "membahas",
+          "angka",
+          "kecelakaan",
+          "tahunan",
+          ";",
+          "tidak",
+          "ada",
+          "satu",
+          "kejadian",
+          "tertentu",
+          "yang",
+          "dilaporkan",
+          "."
+        ],
+        "gold": [
+          "OFFICER-ARG",
+          "O",
+          "O",
+          "FALSE-EVENT",
+          "TIME-ARG",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O"
+        ],
+        "prediction": [
+          "OFFICER-ARG",
+          "O",
+          "O",
+          "FALSE-EVENT",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-NON_EVENT-09",
+        "text": "Panitia sosial mengumpulkan donasi bagi penyintas banjir dan gempa dari beragam tahun, tanpa laporan peristiwa baru.",
+        "tokens": [
+          "Panitia",
+          "sosial",
+          "mengumpulkan",
+          "donasi",
+          "bagi",
+          "penyintas",
+          "banjir",
+          "dan",
+          "gempa",
+          "dari",
+          "beragam",
+          "tahun",
+          ",",
+          "tanpa",
+          "laporan",
+          "peristiwa",
+          "baru",
+          "."
+        ],
+        "gold": [
+          "OFFICER-ARG",
+          "OFFICER-ARG",
+          "O",
+          "O",
+          "O",
+          "OFFICER-ARG",
+          "FALSE-EVENT",
+          "O",
+          "FALSE-EVENT",
+          "TIME-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O"
+        ],
+        "prediction": [
+          "OFFICER-ARG",
+          "OFFICER-ARG",
+          "INFORMATION-ARG",
+          "INFORMATION-ARG",
+          "O",
+          "OFFICER-ARG",
+          "FALSE-EVENT",
+          "O",
+          "FALSE-EVENT",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O"
+        ]
+      },
+      {
+        "id": "FINAL082-NON_EVENT-10",
+        "text": "Para pemain memeragakan kebakaran di panggung Teater Nawasena malam ini; seluruh adegan fiksi.",
+        "tokens": [
+          "Para",
+          "pemain",
+          "memeragakan",
+          "kebakaran",
+          "di",
+          "panggung",
+          "Teater",
+          "Nawasena",
+          "malam",
+          "ini",
+          ";",
+          "seluruh",
+          "adegan",
+          "fiksi",
+          "."
+        ],
+        "gold": [
+          "OFFICER-ARG",
+          "OFFICER-ARG",
+          "O",
+          "FALSE-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O"
+        ],
+        "prediction": [
+          "OFFICER-ARG",
+          "OFFICER-ARG",
+          "INFORMATION-ARG",
+          "FIRE-EVENT",
+          "O",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "PLACE-ARG",
+          "TIME-ARG",
+          "TIME-ARG",
+          "O",
+          "O",
+          "O",
+          "O",
+          "O"
+        ]
+      }
+    ],
+    "alignment": "SERVING_REGEX_TOKENS_FIRST_WORDPIECE",
+    "all_input_tokens_processed": true,
+    "comparability": "NEW_PILOT_NOT_DIRECTLY_COMPARABLE_TO_CORPUS_TOKENIZATION_OF_HISTORICAL_79"
+  },
+  "fields": {
+    "per_field": {
+      "location_text": {
+        "total": 50,
+        "exact_all": 45,
+        "nonempty_gold": 47,
+        "nonempty_exact": 42,
+        "empty_gold": 3,
+        "spurious": 0
+      },
+      "time_text": {
+        "total": 50,
+        "exact_all": 48,
+        "nonempty_gold": 50,
+        "nonempty_exact": 48
+      },
+      "occurred_at": {
+        "total": 50,
+        "exact_all": 50,
+        "empty_gold": 50,
+        "spurious": 0
+      },
+      "involved_parties": {
+        "total": 50,
+        "exact_all": 49,
+        "nonempty_gold": 27,
+        "nonempty_exact": 27,
+        "empty_gold": 23,
+        "spurious": 1
+      },
+      "impacts": {
+        "total": 50,
+        "exact_all": 34,
+        "nonempty_gold": 35,
+        "nonempty_exact": 23,
+        "empty_gold": 15,
+        "spurious": 4
+      },
+      "victims": {
+        "total": 50,
+        "exact_all": 50,
+        "empty_gold": 41,
+        "spurious": 0,
+        "nonempty_gold": 9,
+        "nonempty_exact": 9
+      },
+      "affected_objects": {
+        "total": 50,
+        "exact_all": 44,
+        "nonempty_gold": 25,
+        "nonempty_exact": 21,
+        "empty_gold": 25,
+        "spurious": 2
+      }
+    },
+    "nonempty_exact": 0.8808290155440415,
+    "nonempty_denominator": 193,
+    "empty_spurious_rate": 0.044585987261146494,
+    "empty_denominator": 157,
+    "errors": [
+      {
+        "id": "FINAL082-FLOOD-03",
+        "field": "location_text",
+        "gold": "Kampung Selangwangi",
+        "prediction": "Kampung Selangwangi; jalan utama"
+      },
+      {
+        "id": "FINAL082-FLOOD-03",
+        "field": "affected_objects",
+        "gold": [
+          "jalan utama"
+        ],
+        "prediction": []
+      },
+      {
+        "id": "FINAL082-FLOOD-06",
+        "field": "impacts",
+        "gold": [
+          "merendam tiga kios"
+        ],
+        "prediction": [
+          "merendam tiga kios",
+          "tidak ada korban"
+        ]
+      },
+      {
+        "id": "FINAL082-FLOOD-07",
+        "field": "impacts",
+        "gold": [
+          "merusak jembatan kayu"
+        ],
+        "prediction": [
+          "pertolongan",
+          "merusak jembatan kayu"
+        ]
+      },
+      {
+        "id": "FINAL082-FLOOD-10",
+        "field": "location_text",
+        "gold": "Kampung Panyawangan",
+        "prediction": "Kampung Panyawangan; Wilayah; bukit"
+      },
+      {
+        "id": "FINAL082-FLOOD-10",
+        "field": "impacts",
+        "gold": [
+          "melanda Kampung Panyawangan"
+        ],
+        "prediction": [
+          "melanda Kampung Panyawangan",
+          "tetap kering"
+        ]
+      },
+      {
+        "id": "FINAL082-EARTHQUAKE-01",
+        "field": "impacts",
+        "gold": [
+          "mengguncang Kelurahan Batuwangi",
+          "berlarian keluar"
+        ],
+        "prediction": [
+          "berlarian keluar"
+        ]
+      },
+      {
+        "id": "FINAL082-EARTHQUAKE-04",
+        "field": "impacts",
+        "gold": [
+          "dua rumah rusak"
+        ],
+        "prediction": []
+      },
+      {
+        "id": "FINAL082-EARTHQUAKE-04",
+        "field": "affected_objects",
+        "gold": [
+          "dua rumah"
+        ],
+        "prediction": [
+          "dua rumah rusak"
+        ]
+      },
+      {
+        "id": "FINAL082-EARTHQUAKE-06",
+        "field": "impacts",
+        "gold": [
+          "pagar sekolah roboh"
+        ],
+        "prediction": [
+          "Tak ada korban jiwa"
+        ]
+      },
+      {
+        "id": "FINAL082-EARTHQUAKE-06",
+        "field": "affected_objects",
+        "gold": [
+          "pagar sekolah"
+        ],
+        "prediction": [
+          "pagar sekolah roboh"
+        ]
+      },
+      {
+        "id": "FINAL082-EARTHQUAKE-07",
+        "field": "impacts",
+        "gold": [
+          "Latihan evakuasi dihentikan",
+          "mengguncang Kampung Cendrawana"
+        ],
+        "prediction": []
+      },
+      {
+        "id": "FINAL082-FIRE-03",
+        "field": "location_text",
+        "gold": "Gudang Suryamurni",
+        "prediction": null
+      },
+      {
+        "id": "FINAL082-FIRE-03",
+        "field": "affected_objects",
+        "gold": [],
+        "prediction": [
+          "Gudang Suryamurni"
+        ]
+      },
+      {
+        "id": "FINAL082-FIRE-04",
+        "field": "impacts",
+        "gold": [
+          "memadamkan kebakaran"
+        ],
+        "prediction": [
+          "memadamkan"
+        ]
+      },
+      {
+        "id": "FINAL082-FIRE-06",
+        "field": "impacts",
+        "gold": [
+          "menghanguskan gudang kayu"
+        ],
+        "prediction": [
+          "tidak ada korban",
+          "menghanguskan gudang kayu"
+        ]
+      },
+      {
+        "id": "FINAL082-FIRE-07",
+        "field": "location_text",
+        "gold": "Lapangan Mekarjaya",
+        "prediction": "latihan; Lapangan Mekarjaya"
+      },
+      {
+        "id": "FINAL082-FIRE-07",
+        "field": "involved_parties",
+        "gold": [],
+        "prediction": [
+          "damkar"
+        ]
+      },
+      {
+        "id": "FINAL082-ACCIDENT-01",
+        "field": "impacts",
+        "gold": [
+          "melibatkan dua motor"
+        ],
+        "prediction": []
+      },
+      {
+        "id": "FINAL082-ACCIDENT-06",
+        "field": "impacts",
+        "gold": [
+          "dua mobil rusak"
+        ],
+        "prediction": [
+          "Tidak ada"
+        ]
+      },
+      {
+        "id": "FINAL082-ACCIDENT-06",
+        "field": "affected_objects",
+        "gold": [
+          "dua mobil"
+        ],
+        "prediction": [
+          "dua mobil rusak"
+        ]
+      },
+      {
+        "id": "FINAL082-ACCIDENT-07",
+        "field": "impacts",
+        "gold": [
+          "merusak mobil petugas"
+        ],
+        "prediction": [
+          "pertolongan",
+          "merusak mobil petugas"
+        ]
+      },
+      {
+        "id": "FINAL082-ACCIDENT-10",
+        "field": "location_text",
+        "gold": "Jalan Cempakaluyu",
+        "prediction": "jalan; Jalan Cempakaluyu"
+      },
+      {
+        "id": "FINAL082-NON_EVENT-01",
+        "field": "impacts",
+        "gold": [],
+        "prediction": [
+          "hanya menggelar simulasi"
+        ]
+      },
+      {
+        "id": "FINAL082-NON_EVENT-02",
+        "field": "affected_objects",
+        "gold": [],
+        "prediction": [
+          "mobil properti"
+        ]
+      },
+      {
+        "id": "FINAL082-NON_EVENT-03",
+        "field": "impacts",
+        "gold": [],
+        "prediction": [
+          "mengingatkan potensi",
+          "belum ada laporan kejadian"
+        ]
+      },
+      {
+        "id": "FINAL082-NON_EVENT-08",
+        "field": "time_text",
+        "gold": "tahunan",
+        "prediction": null
+      },
+      {
+        "id": "FINAL082-NON_EVENT-09",
+        "field": "time_text",
+        "gold": "dari beragam tahun",
+        "prediction": null
+      },
+      {
+        "id": "FINAL082-NON_EVENT-09",
+        "field": "impacts",
+        "gold": [],
+        "prediction": [
+          "mengumpulkan donasi"
+        ]
+      },
+      {
+        "id": "FINAL082-NON_EVENT-10",
+        "field": "impacts",
+        "gold": [],
+        "prediction": [
+          "memeragakan"
+        ]
+      }
+    ],
+    "contract_errors": [],
+    "definition": "Exact casefold/whitespace; array order ignored, duplicates rejected; empty matches excluded from nonempty score",
+    "backend_submission_tested": false
+  },
+  "checks": {
+    "sena_macro_f1": true,
+    "non_event_recall": true,
+    "all_event_class_recalls": true,
+    "nara_macro_f1_all_14_non_o": true,
+    "nara_exact_span_f1": true,
+    "fields_nonempty_exact": true,
+    "empty_field_spurious_rate": true,
+    "adapter_fusion_contract": true,
+    "simulation_vs_real_exercise_contrasts": false
+  },
+  "metric_targets_met": false,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "decision": "REQUIRES_QUALITY_IMPROVEMENT",
+  "scope": "MVP_ASSET_PILOT",
+  "limitations": [
+    "50 assistant-authored synthetic cases, ten per category; small purposive challenge set, not representative random field sampling.",
+    "Human review of category, all seven fields and token labels is mandatory before inference; proposals are not human gold.",
+    "Historical initial training corpus membership is unverified. Exact overlap with available sources is checked; semantic independence is not established.",
+    "All 14 non-O roles are scored; rare role support is disclosed per label. No general ambiguity detector or timestamp normalizer is claimed.",
+    "Pilot scoring does not authorize deployment, establish population generalization, or replace group acceptance. Wider MVP claims require representative new input.",
+    "Any acceptance test used to fix or tune the model becomes development evidence; replace the held-out test for the next acceptance round."
+  ],
+  "preflight": {
+    "records": 50,
+    "class_support": {
+      "FLOOD": 10,
+      "EARTHQUAKE": 10,
+      "FIRE": 10,
+      "ACCIDENT": 10,
+      "NON_EVENT": 10
+    },
+    "role_support": {
+      "OFFICER-ARG": 32,
+      "O": 244,
+      "FLOOD-EVENT": 10,
+      "INFORMATION-ARG": 43,
+      "AFFECTEDOBJECTS-ARG": 52,
+      "PLACE-ARG": 84,
+      "TIME-ARG": 111,
+      "REASON-ARG": 12,
+      "WOUNDVICTIM-ARG": 15,
+      "STREET-ARG": 14,
+      "DEATHVICTIM-ARG": 12,
+      "EARTHQUAKE-EVENT": 11,
+      "FIRE-EVENT": 10,
+      "ACCIDENT-EVENT": 10,
+      "FALSE-EVENT": 11
+    },
+    "sources": {
+      "ASSISTANT_AUTHORED_SYNTHETIC": 50
+    },
+    "excluded": [],
+    "known_data_overlap": "NO_NORMALIZED_EXACT_MATCH_IN_AVAILABLE_SOURCES",
+    "historical_initial_training_membership_verified": false,
+    "population_generalization_established": false
+  },
+  "frozen_bundle_sha256": "bf4a23100c37dcfaaccb878fb58d3c4fd0c28bf05e27f98598bbc4b8392482dd",
+  "predictions_sha256": "feaa21e65079673b09175a0b5926d45bd058460d595d2e0a2ea981ce0f97c6b4"
+}

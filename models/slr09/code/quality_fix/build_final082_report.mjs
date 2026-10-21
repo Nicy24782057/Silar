@@ -1,0 +1,71 @@
+import fs from 'node:fs/promises';
+import {Workbook, SpreadsheetFile} from '@oai/artifact-tool';
+const [root,out]=process.argv.slice(2);
+if(!root||!out)throw Error('Use root output');
+const read=async p=>JSON.parse(await fs.readFile(p,'utf8'));
+const ev=`${root}/evidence/acceptance_v082/original_run/evidence`;
+const report=await read(`${ev}/evaluation.json`),bundle=await read(`${ev}/reviewed_bundle_frozen.json`);
+const summary=await read(`${root}/evidence/acceptance_v082/result_summary.json`);
+const predictions=(await fs.readFile(`${ev}/predictions.jsonl`,'utf8')).trim().split('\n').map(JSON.parse);
+const w=Workbook.create();
+const s=w.worksheets.add('Hasil'),n=w.worksheets.add('Narasi'),e=w.worksheets.add('Kesalahan'),nb=w.worksheets.add('Notebook');
+const navy='#18344B',ink='#172B3A',muted='#526372';
+function base(sheet,range,widths){sheet.showGridLines=false;sheet.getRange(range).format={font:{name:'Arial',size:10,color:ink},verticalAlignment:'center',rowHeight:24};for(const [col,width] of Object.entries(widths))sheet.getRange(`${col}1:${col}${range.match(/\d+$/)[0]}`).format.columnWidth=width;}
+function title(sheet,text,end){sheet.getRange('A2').values=[[text]];sheet.getRange('A2').format.font={name:'Arial',size:15,bold:true,color:ink};sheet.getRange(`A2:${end}2`).format.borders={bottom:{style:'thin',color:'#A9BBC9'}};}
+function header(sheet,range){sheet.getRange(range).format={fill:navy,font:{name:'Arial',size:10,bold:true,color:'#FFFFFF'},horizontalAlignment:'center',verticalAlignment:'center',rowHeight:32,wrapText:true};}
+function note(sheet,address,text){sheet.getRange(address).values=[[text]];sheet.getRange(address).format.font={name:'Arial',size:10,color:muted,italic:true};}
+function failure(sheet,range,text){sheet.getRange(range).conditionalFormats.add('containsText',{text,format:{fill:'#FCE6E6',font:{color:'#9A2424',bold:true}}});}
+const classes=['FLOOD','EARTHQUAKE','FIRE','ACCIDENT','NON_EVENT'];
+const roles=Object.keys(report.nara.by_label).filter(k=>k!=='O');
+const fields=Object.keys(report.fields.per_field);
+const nonemptyCorrect=Object.values(report.fields.per_field).reduce((a,b)=>a+(b.nonempty_exact||0),0);
+const spurious=Object.values(report.fields.per_field).reduce((a,b)=>a+(b.spurious||0),0);
+const contrasts=summary.simulation_contrasts,correctContrasts=contrasts.filter(r=>r.correct).length;
+base(s,'A1:F64',{A:49,B:20,C:18,D:18,E:19,F:20});title(s,'SLR_09: hasil penerimaan FINAL082','F');s.tabColor=navy;
+s.getRange('A4').formulas=[['=IF(COUNTIFS(E8:E16,"Lulus")=9,"SIAP PENERIMAAN MUTU","PERLU PERBAIKAN: SLR_09 IN REVIEW")']];s.getRange('A4').format.font={name:'Arial',size:10,bold:true,color:ink};
+note(s,'A5','50 acuan bintang; inferensi 50/50. Tujuh target angka lulus, delapan dari sembilan pemeriksaan lulus.');
+s.getRange('A7:E7').values=[['Penilaian','Hasil','Aturan','Target','Status']];header(s,'A7:E7');
+const metrics=[['SENA macro F1',report.sena.macro_f1,.85],['Recall NON_EVENT',report.sena.per_class.NON_EVENT.recall,.9],['Recall tiap kelas kejadian minimum',1,.8],['NARA macro F1 semua 14 non-O',report.nara.macro_f1_all_14_non_o,.75],['NARA exact span F1',report.nara.exact_span_f1,.6],['Ketepatan field nonkosong',report.fields.nonempty_exact,.8],['Isi berlebih pada field kosong',report.fields.empty_spurious_rate,.05]];
+s.getRange('A8:E14').values=metrics.map((r,i)=>[r[0],r[1],i===6?'≤':'≥',r[2],null]);s.getRange('B8:B14').setNumberFormat('0.00%');s.getRange('D8:D14').setNumberFormat('0.00%');
+s.getRange('B8').formulas=[['=AVERAGE(D26:D30)']];s.getRange('B9').formulas=[['=C30']];s.getRange('B10').formulas=[['=MIN(C26:C29)']];s.getRange('B11').formulas=[['=AVERAGE(D34:D47)']];s.getRange('B13').formulas=[['=B22/C22']];s.getRange('B14').formulas=[['=B23/C23']];
+s.getRange('E8:E14').formulas=metrics.map((_,i)=>[`=IF(AND(ISNUMBER(B${i+8}),B${i+8}${i===6?'<=':'>='}D${i+8}),"Lulus","Belum")`]);
+s.getRange('A15:E16').values=[['Kontrak adapter',report.checks.adapter_fusion_contract?'Benar':'Salah','Wajib','Benar',null],['Kontras simulasi/latihan benar',correctContrasts,'Semua',contrasts.length,null]];s.getRange('E15:E16').formulas=[['=IF(B15=D15,"Lulus","Belum")'],['=IF(B16=D16,"Lulus","Belum")']];s.getRange('C8:C16').format.horizontalAlignment='center';s.getRange('E8:E16').format.horizontalAlignment='center';failure(s,'E8:E16','Belum');
+note(s,'A18','Satu latihan kecelakaan salah dianggap nyata; confidence 92,89% sudah memicu flag <95%.');
+note(s,'A19','Flag verifikasi manusia tetap bekerja. Persyaratan kontras menilai ketepatan kategori.');
+s.getRange('A21:C21').values=[['Dasar hitung field','Jumlah tepat/berlebih','Jumlah acuan']];header(s,'A21:C21');s.getRange('A22:C23').values=[['Field nonkosong tepat',nonemptyCorrect,report.fields.nonempty_denominator],['Field kosong berisi berlebih',spurious,report.fields.empty_denominator]];
+s.getRange('A25:E25').values=[['Kategori SENA','Precision','Recall','F1','Narasi']];header(s,'A25:E25');s.getRange('A26:E30').values=classes.map(k=>{const r=report.sena.per_class[k];return[k,r.precision,r.recall,r.f1,r.support];});s.getRange('B26:D30').setNumberFormat('0.00%');
+s.getRange('A33:E33').values=[['Role NARA','Precision','Recall','F1','Token acuan']];header(s,'A33:E33');s.getRange('A34:E47').values=roles.map(k=>{const r=report.nara.by_label[k];return[k,r.precision,r.recall,r.f1,r.support];});s.getRange('B34:D47').setNumberFormat('0.00%');note(s,'A49','671 token. Macro F1 menggunakan 14 role non-O; label O tidak ikut rata-rata.');
+s.getRange('A51:F51').values=[['Field','Nonkosong tepat','Nonkosong acuan','Isi berlebih','Acuan kosong','Ketepatan nonkosong']];header(s,'A51:F51');s.getRange('A52:F58').values=fields.map(k=>{const r=report.fields.per_field[k];return[k,r.nonempty_exact||0,r.nonempty_gold||0,r.spurious||0,r.empty_gold||0,null];});s.getRange('F52:F58').formulas=fields.map((_,i)=>[`=IF(C${52+i}=0,"n.a.",B${52+i}/C${52+i})`]);s.getRange('F52:F58').setNumberFormat('0.00%');s.getRange('F52:F58').format.horizontalAlignment='right';
+note(s,'A60','occurred_at selalu kosong dan tidak menaikkan skor field nonkosong.');note(s,'A61','Sumber: review FINAL082 bintang, notebook 25 dan prediksi yang dibekukan, 19 Oktober 2026.');note(s,'A62','Bobot SENA/NARA, kode kandidat dan target tetap selama pengujian; tidak ada pelatihan.');note(s,'A63','Pilot sintetis kecil. Hasil ini belum menetapkan akurasi pada populasi laporan lapangan.');
+base(n,'A1:I55',{A:30,B:78,C:21,D:21,E:17,F:19,G:16,H:29,I:70});title(n,'Hasil per narasi FINAL082','I');note(n,'A3','Nilai acuan dari Excel reviewer dipertahankan; kolom prediksi berasal dari model aktual.');n.getRange('A5:I5').values=[['ID','Narasi','Acuan kelas','Prediksi SENA','Confidence','Flag <0,95','Reviewer','Keluarga','Catatan reviewer']];header(n,'A5:I5');n.getRange('A6:I55').values=bundle.records.map((r,i)=>[r.id,r.text,r.gold_label,predictions[i].event_classifier.label,predictions[i].event_classifier.confidence,null,r.review.reviewer,r.family,r.review.note]);n.getRange('F6:F55').formulas=bundle.records.map((_,i)=>[`=IF(E${i+6}<0.95,"Ya","Tidak")`]);n.getRange('E6:E55').setNumberFormat('0.00%');n.getRange('B6:I55').format.wrapText=true;n.getRange('A6:I55').format.rowHeight=72;n.getRange('F6:F55').format.horizontalAlignment='center';n.getRange('A6:I55').conditionalFormats.addCustom('$C6<>$D6',{fill:'#FCE6E6',font:{color:'#9A2424'}});n.tables.add('A5:I55',true,'Final082Narratives');n.freezePanes.freezeRows(5);n.freezePanes.freezeColumns(1);
+const tokenErrors=[];bundle.records.forEach((r,i)=>predictions[i].nara_tokens.forEach((t,j)=>{if(t.label!==r.gold_nara_labels[j])tokenErrors.push([r.id,j+1,t.original,r.gold_nara_labels[j],t.label,t.confidence]);}));
+const fieldStart=11,fieldEnd=fieldStart+report.fields.errors.length,tokenStart=fieldEnd+4,tokenEnd=tokenStart+tokenErrors.length;
+base(e,`A1:F${tokenEnd}`,{A:31,B:26,C:54,D:54,E:21,F:82});title(e,'Perbedaan yang ditemukan pada uji baru','F');note(e,'A3','1 kategori, 30 field, dan 74 label token berbeda. Acuan dan prediksi asli tidak diubah.');
+e.getRange('A5:F5').values=[['ID','Keluarga','Kategori acuan','Kategori model','Confidence','Narasi']];header(e,'A5:F5');e.getRange('A6:F6').values=report.sena.errors.map(r=>[r.id,r.family,r.gold,r.prediction,r.confidence,r.text]);e.getRange('A6:F6').format.wrapText=true;e.getRange('A6:F6').format.rowHeight=66;e.getRange('E6').setNumberFormat('0.00%');e.tables.add('A5:F6',true,'Final082ClassError');
+note(e,'A8','Kasus latihan diprediksi ACCIDENT; flag confidence rendah tidak mengubah kategori menjadi NON_EVENT.');
+const pretty=x=>x==null||Array.isArray(x)&&!x.length?'kosong':Array.isArray(x)?x.join(' | '):x;
+e.getRange(`A${fieldStart}:F${fieldStart}`).values=[['ID','Field','Acuan manusia','Hasil model','Jenis','Narasi']];header(e,`A${fieldStart}:F${fieldStart}`);const byId=new Map(bundle.records.map(r=>[r.id,r]));e.getRange(`A${fieldStart+1}:F${fieldEnd}`).values=report.fields.errors.map(r=>[r.id,r.field,pretty(r.gold),pretty(r.prediction),r.gold==null||Array.isArray(r.gold)&&!r.gold.length?'Isi berlebih':'Tidak tepat',byId.get(r.id).text]);e.getRange(`C${fieldStart+1}:F${fieldEnd}`).format.wrapText=true;e.getRange(`A${fieldStart+1}:F${fieldEnd}`).format.rowHeight=60;e.tables.add(`A${fieldStart}:F${fieldEnd}`,true,'Final082FieldErrors');
+note(e,`A${tokenStart-1}`,'Semua perbedaan label token mentah; perbaikan komposisi tidak mengubah label model.');e.getRange(`A${tokenStart}:F${tokenStart}`).values=[['ID','Posisi token','Token','Label acuan','Label model','Confidence token']];header(e,`A${tokenStart}:F${tokenStart}`);e.getRange(`A${tokenStart+1}:F${tokenEnd}`).values=tokenErrors;e.getRange(`F${tokenStart+1}:F${tokenEnd}`).setNumberFormat('0.00%');e.getRange(`B${tokenStart+1}:B${tokenEnd}`).format.horizontalAlignment='center';e.tables.add(`A${tokenStart}:F${tokenEnd}`,true,'Final082TokenErrors');e.freezePanes.freezeRows(5);e.freezePanes.freezeColumns(2);
+base(nb,'A1:D12',{A:62,B:64,C:55,D:56});title(nb,'Rekap eksekusi notebook','D');note(nb,'A3','Sel notebook dijalankan dengan CPython cell executor; seluruh keluaran aktual dipertahankan.');nb.getRange('A5:D5').values=[['Notebook/langkah','Pekerjaan','Hasil aktual','Makna hasil']];header(nb,'A5:D5');nb.getRange('A6:D10').values=[
+['23_Uji_Penerimaan_Akhir_SLR09_v0.8.1.ipynb','Inferensi 50 acuan FINAL081.','50/50 selesai; workflow gagal di SCORING.','Bukti asli tetap ada. Skor kemudian dilengkapi dari prediksi yang sama.'],
+['rescore_saved_acceptance_v081.py','Lengkapi penilaian FINAL081 tanpa inferensi baru.','CLI selesai; field 163/207 = 78,74%.','Uji pertama gagal target field 80%.'],
+['24_Verifikasi_Perbaikan_Field_v0.8.2.ipynb','Verifikasi replay perbaikan awal dan tes evaluator.','Sukses; field regresi 169/207 = 81,64%.','Acuan sudah digunakan untuk memperbaiki kode.'],
+['24b_Verifikasi_Komposisi_Predikat_v0.8.2.ipynb','Verifikasi replay akhir, 80 tes kontrak dan 23 tes evaluator.','Sukses; field regresi 177/207 = 85,51%.','Seluruh pemeriksaan pada data regresi terpenuhi.'],
+['25_Uji_Penerimaan_SLR09_v0.8.2.ipynb','Inferensi aktual 50 acuan FINAL082 setelah review bintang.','SUCCEEDED, 50/50; 19 Oktober 2026, 19:45 WIB.','7/7 target angka dan kontrak lulus; kontras latihan 5/6, sehingga 8/9 pemeriksaan.']];nb.getRange('A6:D10').format.wrapText=true;nb.getRange('A6:D10').format.rowHeight=76;nb.tables.add('A5:D10',true,'Final082NotebookRecord');
+// Verify actual values and meaningful acceptance boundaries, then restore them.
+const near=(a,b)=>Math.abs(a-b)<1e-12;
+for(let i=0;i<7;i++)if(!near(s.getRange(`B${8+i}`).values[0][0],metrics[i][1]))throw Error('Metric mismatch '+i);
+if(s.getRange('E16').values[0][0]!=='Belum'||!s.getRange('A4').values[0][0].includes('IN REVIEW'))throw Error('Failed contrast incorrectly accepted');
+const saved=s.getRange('B16').values;s.getRange('B16').values=[[contrasts.length]];if(s.getRange('A4').values[0][0]!=='SIAP PENERIMAAN MUTU')throw Error('Completion logic');s.getRange('B16').values=saved;
+const fieldSaved=s.getRange('B22').values;s.getRange('B22').values=[[.8*193]];if(s.getRange('E13').values[0][0]!=='Lulus')throw Error('Equality target');s.getRange('B22').values=[[.7999*193]];if(s.getRange('E13').values[0][0]!=='Belum')throw Error('Below target');s.getRange('B22').values=fieldSaved;
+w.recalculate();
+const inspected=await w.inspect({kind:'table',range:'Hasil!A7:E23',include:'values,formulas',tableMaxRows:17,tableMaxCols:5,maxChars:7000});
+const scan=await w.inspect({kind:'match',searchTerm:'#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A|#NUM!|#NULL!|#SPILL!|#CALC!',options:{useRegex:true,maxResults:50},maxChars:1000});
+if(!scan.ndjson.includes('Cell search matched 0 entries.'))throw Error(scan.ndjson);
+await fs.mkdir(out,{recursive:true});const name='SLR09_Hasil_Penerimaan_FINAL082_v0.8.2';
+await fs.writeFile(`${out}/${name}_formula_scan.ndjson`,scan.ndjson);await fs.writeFile(`${out}/${name}_inspection.ndjson`,inspected.ndjson);
+const views=[['Hasil','A1:F23','summary'],['Hasil','A25:E47','roles'],['Hasil','A49:F63','fields_summary'],['Narasi','A1:I9','narratives'],['Narasi','A44:I48','flagged'],['Kesalahan','A1:F8','classification'],['Kesalahan',`A${fieldStart}:F${fieldStart+5}`,'fields'],['Kesalahan',`A${tokenStart-1}:F${tokenStart+7}`,'tokens'],['Notebook','A1:D10','notebooks']];
+for(const [sheetName,range,label] of views){const image=await w.render({sheetName,range,scale:1,format:'png'});await fs.writeFile(`${out}/${name}_${label}.png`,new Uint8Array(await image.arrayBuffer()));}
+await (await SpreadsheetFile.exportXlsx(w)).save(`${out}/${name}.xlsx`);
+await fs.writeFile(`${out}/${name}_verification.json`,JSON.stringify({records:50,tokens:671,nonempty_correct:nonemptyCorrect,nonempty_denominator:193,empty_spurious:spurious,empty_denominator:157,numeric_targets_passed:7,required_checks_passed:8,required_checks_total:9,contrasts_correct:correctContrasts,contrasts_total:contrasts.length,field_errors:report.fields.errors.length,token_errors:tokenErrors.length,threshold_boundaries_verified:true,quality_acceptance_approved:false,card_done:false},null,2));
+console.log(JSON.stringify({output:`${out}/${name}.xlsx`,numeric_targets_met:true,all_required_checks_met:false,field_errors:report.fields.errors.length,token_errors:tokenErrors.length}));

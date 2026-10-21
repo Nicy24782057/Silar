@@ -1,0 +1,15 @@
+{
+  "schema": "slr09-quality-assessment-0.8.2",
+  "source": "AUTOMATED_METRIC_ASSESSMENT_NOT_OWNER_QUALITY_ACCEPTANCE",
+  "status": "IN_REVIEW",
+  "review_reference_owner": "bintang",
+  "reference_approval_scope": "FINAL081_CATEGORY_FIELDS_TOKENS_ONLY",
+  "initial_acceptance_metric_targets_met": false,
+  "initial_failure": "FIELDS_NONEMPTY_EXACT_163_OF207_BELOW0.80",
+  "latest_known_regression_targets_met": true,
+  "regression_field_exact": 0.855072463768116,
+  "fresh_reference_review_completed": false,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "next_notebook": "25_Uji_Penerimaan_SLR09_v0.8.2.ipynb"
+}

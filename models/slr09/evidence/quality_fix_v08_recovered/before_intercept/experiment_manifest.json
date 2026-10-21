@@ -1,0 +1,24 @@
+{
+  "model_id": "SILAR_SENA_short_training_v08_20261019T063559",
+  "run_id": "20261019T063559",
+  "archive_name": "SILAR_SENA_short_training_before_intercept_v0.8_20261019.zip",
+  "labels": [
+    "FLOOD",
+    "EARTHQUAKE",
+    "FIRE",
+    "ACCIDENT",
+    "NON_EVENT"
+  ],
+  "files": {
+    "config.json": "febb4294e220615be653133104562be26236ea97165c5103dc7b6d377277da9a",
+    "model.safetensors": "2509466a97152be9110262c19f4bc08610e401c575f426b20862f1653065fd8d",
+    "tokenizer.json": "93684d1d5cc282613006dbee78d38882487365cdd378d087e21e755ac157ca63",
+    "tokenizer_config.json": "6c7af3e1d0c166292dc68cece6e6bb2be29945b8a45b39c804f65e9602a78429",
+    "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+    "vocab.txt": "343bf28a78f7efeda6419fa610f553184a6dcd29aae726f46850cd05e3167dc3"
+  },
+  "origin": "VERIFIED_V07_WITH_MANUAL_BIAS_0.1_REMOVED",
+  "selection_scope": "DEVELOPMENT_VALIDATION_NOT_ACCEPTANCE",
+  "quality_acceptance_approved": false,
+  "production_model_selected": false
+}

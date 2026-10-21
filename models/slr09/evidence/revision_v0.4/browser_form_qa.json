@@ -1,0 +1,24 @@
+{
+  "scope": "BROWSER_FIXTURE_ONLY_NOT_HUMAN_REVIEW",
+  "render": {
+    "cases": 50,
+    "tokens": 546,
+    "progress": "0/50 APPROVED"
+  },
+  "export_fixture": {
+    "reviewed": 50,
+    "reviewer": "FIXTURE ONLY",
+    "targets": {
+      "sena_macro_f1": 0.85,
+      "non_event_recall": 0.9,
+      "event_class_recall": 0.8,
+      "nara_macro_f1_all_14_non_o": 0.75,
+      "nara_exact_span_f1": 0.6,
+      "fields_nonempty_exact": 0.8,
+      "empty_field_spurious_rate_max": 0.05
+    },
+    "status": "APPROVED",
+    "scope": "MVP_ASSET_PILOT"
+  },
+  "all_passed": true
+}

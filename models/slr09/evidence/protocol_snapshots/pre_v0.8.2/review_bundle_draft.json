@@ -1,0 +1,2379 @@
+{
+  "protocol": {
+    "schema": "slr09-acceptance-protocol-0.4",
+    "scope": "MVP_ASSET_PILOT",
+    "confidence_threshold": 0.95,
+    "minimum_per_class": 10,
+    "binding": {
+      "candidate_version": "0.8.1",
+      "files_sha256": {
+        "acceptance/known_inputs.json": "c4954277133a9f08d726eaa2223cdfa7774787869893dd454c8625dffe0dc19c",
+        "asset_manifest.json": "54559fbf581834068cc7d47ee4810043c8dd8fbe6693d19b76851e8fe90e4b62",
+        "code/acceptance/evaluate_acceptance.py": "5522b1c48ad129b6450ba37a09877dcfc985869a77fe40125930b9bc77c78359",
+        "code/acceptance/import_review_xlsx.py": "51dd1853839bd251bde7f724ed6af15250aa797c49c050635de5678a597f93af",
+        "code/active_nara_adapter/legacy_postprocessing.py": "06275b3aa338718689fba66984626754e6b34739156f65e378ceaad4b06bfa9f",
+        "code/active_nara_adapter/nara_data.py": "eea1124afd1d0628b7a96c3d9dbca43a116f8bed0fef76f2c67718e7ff2e4a29",
+        "code/active_nara_adapter/nara_experiment.py": "734e9c15a13ac967a72a482c68a9fc777e6632a75957ffd854b0863894a28409",
+        "code/active_nara_adapter/nara_metrics.py": "8f74d058db3e613c77df83c772b5142f2b504dfde542455284754e4c8ceefcb7",
+        "code/active_nara_adapter/silar_ai_adapter.py": "4243ad3d5f9dbae76c8f2b97b47b484ba65af9e5c57b618727591f851025b169",
+        "code/active_nara_adapter/silar_nara_composition.py": "085eb88ae4f448ff600c2beccc5ba74fd3d81678e1b66507f197a0978c7a9cbb",
+        "code/active_nara_adapter/silar_postprocessing.py": "61e466d891a952c3fe560b7f3b99b9942bab7766871f18ad8969d464e60e5899",
+        "code/active_nara_adapter/silar_victim_guard.py": "691c8d9a74c15d91720e8ca8672d6ce1fa575542ceb55858ff81f050bd100ac9",
+        "code/active_nara_adapter/slr09_candidate_runtime.py": "932b09fdf3acb5e036e5d61bc3b6c51f9e9a4c85e10ae669c0ffa0c4ec14cacd",
+        "code/active_nara_adapter/slr09_runtime.py": "f0dc27fab23ef99046d615f24b5ea4c0d7fba5010314f3769ad0d730404a085d",
+        "code/quality_fix/fit_simulation_guard_v081.py": "714c7989e79b9f148bb653b29a15e812ff49917b433fad062682b007c42cb233",
+        "code/quality_fix/train_context_correction_v081.py": "c9e43ce039022b1fa8d2f3270eaa597582a872de764b0da6f917178ae69a52b6",
+        "config/SLR09_Konfigurasi_Integrasi_v0.6.json": "75190adf63decc4203188b79ede9fe8bd747c46aa1af53895480401a81f9eb7e",
+        "config/inference_environment.json": "d2f235f7b5b3f4d7cb445fa5870cfc6b0b49f9f1a429e8518075c4ff53955bbd",
+        "config/quality_candidate_asset_lock_v0.8.1.json": "420703aa4abf34ba92339417d586b2ac175f880c780fc5976cc5e6d5c3d19f37",
+        "config/requirements-inference.txt": "1e496aa6408ac46bd8545e395a6f960edcf5b5bc85aa3d165632da37421823f8",
+        "data/development_review_v0.8.json": "76203e7d658b175c0d62b7e4b8f8acb097903b97ff047b24d1c5f9503a62763f",
+        "data/final_reference_identity_v0.8.1.json": "c876efcf6048b488e057adc9ea3ee091f93b0cf8753b26fbfa1dc0e0de29b9ed",
+        "data/final_reference_proposals_v0.8.1.json": "f47c5ca5b73bd3055bf5d499fd032ba483889ff4971223bdb932d2973836f7f0",
+        "evidence/quality_fix_v081/training21/executed_training_source.py": "c9e43ce039022b1fa8d2f3270eaa597582a872de764b0da6f917178ae69a52b6",
+        "evidence/quality_fix_v081/training21/training_records_frozen.json": "749a6040d03051b3256bfecf30f8c7ef63dc03327efa9c7175e250208cfb0900"
+      }
+    },
+    "targets": {
+      "sena_macro_f1": 0.85,
+      "non_event_recall": 0.9,
+      "event_class_recall": 0.8,
+      "nara_macro_f1_all_14_non_o": 0.75,
+      "nara_exact_span_f1": 0.6,
+      "fields_nonempty_exact": 0.8,
+      "empty_field_spurious_rate_max": 0.05
+    },
+    "target_status": "APPROVED_BY_USER_BEFORE_NEW_PILOT_INFERENCE",
+    "target_basis": "Engineering proposal for a small MVP asset pilot; informed by already-known validation, not a universal standard. NON_EVENT recall separately constrains false events; per-event recall protects against overblocking. New field target is a proposed engineering criterion, not previously measured performance.",
+    "approval": {
+      "status": "APPROVED",
+      "reviewer": "Pemilik proyek (persetujuan percakapan)",
+      "at": "2026-10-19T07:57:04+07:00",
+      "limitations_accepted": true,
+      "representativeness_accepted": true,
+      "rationale": "Pemilik proyek menyetujui usulan target dan pilot aset MVP pada percakapan 19 Oktober 2026. Persetujuan ini tidak menyatakan tiap label acuan sudah diperiksa atau mutu model sudah lulus."
+    },
+    "limitations": [
+      "50 assistant-authored synthetic cases, ten per category; small purposive challenge set, not representative random field sampling.",
+      "Human review of category, all seven fields and token labels is mandatory before inference; proposals are not human gold.",
+      "Historical initial training corpus membership is unverified. Exact overlap with available sources is checked; semantic independence is not established.",
+      "All 14 non-O roles are scored; rare role support is disclosed per label. No general ambiguity detector or timestamp normalizer is claimed.",
+      "Pilot scoring does not authorize deployment, establish population generalization, or replace group acceptance. Wider MVP claims require representative new input.",
+      "Any acceptance test used to fix or tune the model becomes development evidence; replace the held-out test for the next acceptance round."
+    ],
+    "reference_round": "FINAL081_PENDING_HUMAN_REVIEW_BEFORE_ACCEPTANCE_INFERENCE",
+    "prior_development_approval_does_not_approve_this_reference": true
+  },
+  "records": [
+    {
+      "id": "FINAL081-FLOOD-01",
+      "text": "Menurut warga, Banjir menggenangi tiga rumah di Desa Rimbakencana Utara subuh tadi.",
+      "family": "plain",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Desa Rimbakencana Utara",
+        "time_text": "subuh tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menggenangi tiga rumah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "tiga rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FLOOD-02",
+      "text": "Banjir menggenangi tiga rumah di Kelurahan Banyumadu Utara pagi ini; dua warga luka ringan.",
+      "family": "plain",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Kelurahan Banyumadu Utara",
+        "time_text": "pagi ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menggenangi tiga rumah"
+        ],
+        "victims": [
+          "dua warga luka ringan"
+        ],
+        "affected_objects": [
+          "tiga rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FLOOD-03",
+      "text": "Banjir menggenangi tiga rumah di Kampung Tirtajaya Utara tadi malam; seorang penjaga meninggal.",
+      "family": "plain",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Kampung Tirtajaya Utara",
+        "time_text": "tadi malam",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menggenangi tiga rumah"
+        ],
+        "victims": [
+          "seorang penjaga meninggal"
+        ],
+        "affected_objects": [
+          "tiga rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FLOOD-04",
+      "text": "Banjir dipicu hujan deras di Desa Cempakawana Utara siang tadi dan menggenangi tiga rumah.",
+      "family": "cause",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Desa Cempakawana Utara",
+        "time_text": "siang tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menggenangi tiga rumah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "tiga rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "FLOOD-EVENT",
+        "O",
+        "REASON-ARG",
+        "REASON-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FLOOD-05",
+      "text": "Petugas BPBD tiba di Kelurahan Sumberasri Utara sore ini setelah Banjir menggenangi tiga rumah.",
+      "family": "plain",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Kelurahan Sumberasri Utara",
+        "time_text": "sore ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Petugas BPBD"
+        ],
+        "impacts": [
+          "menggenangi tiga rumah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "tiga rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FLOOD-06",
+      "text": "Banjir di Jalan Lembayung Utara pukul sembilan menggenangi tiga rumah; jalur tersebut sekarang ditutup.",
+      "family": "street",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Jalan Lembayung Utara",
+        "time_text": "pukul sembilan",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menggenangi tiga rumah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "tiga rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "FLOOD-EVENT",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FLOOD-07",
+      "text": "Banjir menggenangi tiga rumah di Kampung Wanasetra Utara malam ini; petugas memastikan tidak ada korban.",
+      "family": "local_negation",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Kampung Wanasetra Utara",
+        "time_text": "malam ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "petugas"
+        ],
+        "impacts": [
+          "menggenangi tiga rumah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "tiga rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FLOOD-08",
+      "text": "Di tengah latihan evakuasi, Banjir sungguhan menggenangi tiga rumah di Desa Beringinwangi Utara pagi tadi.",
+      "family": "real_during_exercise",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Desa Beringinwangi Utara",
+        "time_text": "pagi tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menggenangi tiga rumah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "tiga rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "FLOOD-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FLOOD-09",
+      "text": "Bukan sekadar kabar: Banjir benar-benar menggenangi tiga rumah di Kelurahan Kartasena Utara sore tadi.",
+      "family": "rumor_verified",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Kelurahan Kartasena Utara",
+        "time_text": "sore tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menggenangi tiga rumah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "tiga rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "FLOOD-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FLOOD-10",
+      "text": "Rekaman ini bukan adegan film. Banjir menggenangi tiga rumah di Kampung Harumjaya Utara kemarin sore.",
+      "family": "fiction_denied",
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Kampung Harumjaya Utara",
+        "time_text": "kemarin sore",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menggenangi tiga rumah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "tiga rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-EARTHQUAKE-01",
+      "text": "Menurut warga, Gempa merusak dinding sekolah di Desa Rimbakencana Selatan subuh tadi.",
+      "family": "plain",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Desa Rimbakencana Selatan",
+        "time_text": "subuh tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dinding sekolah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dinding sekolah"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "EARTHQUAKE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-EARTHQUAKE-02",
+      "text": "Gempa merusak dinding sekolah di Kelurahan Banyumadu Selatan pagi ini; dua warga luka ringan.",
+      "family": "plain",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Kelurahan Banyumadu Selatan",
+        "time_text": "pagi ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dinding sekolah"
+        ],
+        "victims": [
+          "dua warga luka ringan"
+        ],
+        "affected_objects": [
+          "dinding sekolah"
+        ]
+      },
+      "gold_nara_labels": [
+        "EARTHQUAKE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-EARTHQUAKE-03",
+      "text": "Gempa merusak dinding sekolah di Kampung Tirtajaya Selatan tadi malam; seorang penjaga meninggal.",
+      "family": "plain",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Kampung Tirtajaya Selatan",
+        "time_text": "tadi malam",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dinding sekolah"
+        ],
+        "victims": [
+          "seorang penjaga meninggal"
+        ],
+        "affected_objects": [
+          "dinding sekolah"
+        ]
+      },
+      "gold_nara_labels": [
+        "EARTHQUAKE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-EARTHQUAKE-04",
+      "text": "Gempa dipicu pergeseran sesar di Desa Cempakawana Selatan siang tadi dan merusak dinding sekolah.",
+      "family": "cause",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Desa Cempakawana Selatan",
+        "time_text": "siang tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dinding sekolah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dinding sekolah"
+        ]
+      },
+      "gold_nara_labels": [
+        "EARTHQUAKE-EVENT",
+        "O",
+        "REASON-ARG",
+        "REASON-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-EARTHQUAKE-05",
+      "text": "Petugas BPBD tiba di Kelurahan Sumberasri Selatan sore ini setelah Gempa merusak dinding sekolah.",
+      "family": "plain",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Kelurahan Sumberasri Selatan",
+        "time_text": "sore ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Petugas BPBD"
+        ],
+        "impacts": [
+          "merusak dinding sekolah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dinding sekolah"
+        ]
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "EARTHQUAKE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-EARTHQUAKE-06",
+      "text": "Gempa di Jalan Lembayung Selatan pukul sembilan merusak dinding sekolah; jalur tersebut sekarang ditutup.",
+      "family": "street",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Jalan Lembayung Selatan",
+        "time_text": "pukul sembilan",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dinding sekolah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dinding sekolah"
+        ]
+      },
+      "gold_nara_labels": [
+        "EARTHQUAKE-EVENT",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-EARTHQUAKE-07",
+      "text": "Gempa merusak dinding sekolah di Kampung Wanasetra Selatan malam ini; petugas memastikan tidak ada korban.",
+      "family": "local_negation",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Kampung Wanasetra Selatan",
+        "time_text": "malam ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "petugas"
+        ],
+        "impacts": [
+          "merusak dinding sekolah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dinding sekolah"
+        ]
+      },
+      "gold_nara_labels": [
+        "EARTHQUAKE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-EARTHQUAKE-08",
+      "text": "Di tengah latihan evakuasi, Gempa sungguhan merusak dinding sekolah di Desa Beringinwangi Selatan pagi tadi.",
+      "family": "real_during_exercise",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Desa Beringinwangi Selatan",
+        "time_text": "pagi tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dinding sekolah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dinding sekolah"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "EARTHQUAKE-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-EARTHQUAKE-09",
+      "text": "Bukan sekadar kabar: Gempa benar-benar merusak dinding sekolah di Kelurahan Kartasena Selatan sore tadi.",
+      "family": "rumor_verified",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Kelurahan Kartasena Selatan",
+        "time_text": "sore tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dinding sekolah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dinding sekolah"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "EARTHQUAKE-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-EARTHQUAKE-10",
+      "text": "Rekaman ini bukan adegan film. Gempa merusak dinding sekolah di Kampung Harumjaya Selatan kemarin sore.",
+      "family": "fiction_denied",
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Kampung Harumjaya Selatan",
+        "time_text": "kemarin sore",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dinding sekolah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dinding sekolah"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "EARTHQUAKE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FIRE-01",
+      "text": "Menurut warga, Kebakaran menghanguskan satu warung di Desa Rimbakencana Barat subuh tadi.",
+      "family": "plain",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Desa Rimbakencana Barat",
+        "time_text": "subuh tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menghanguskan satu warung"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "satu warung"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "FIRE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FIRE-02",
+      "text": "Kebakaran menghanguskan satu warung di Kelurahan Banyumadu Barat pagi ini; dua warga luka ringan.",
+      "family": "plain",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Kelurahan Banyumadu Barat",
+        "time_text": "pagi ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menghanguskan satu warung"
+        ],
+        "victims": [
+          "dua warga luka ringan"
+        ],
+        "affected_objects": [
+          "satu warung"
+        ]
+      },
+      "gold_nara_labels": [
+        "FIRE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FIRE-03",
+      "text": "Kebakaran menghanguskan satu warung di Kampung Tirtajaya Barat tadi malam; seorang penjaga meninggal.",
+      "family": "plain",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Kampung Tirtajaya Barat",
+        "time_text": "tadi malam",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menghanguskan satu warung"
+        ],
+        "victims": [
+          "seorang penjaga meninggal"
+        ],
+        "affected_objects": [
+          "satu warung"
+        ]
+      },
+      "gold_nara_labels": [
+        "FIRE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FIRE-04",
+      "text": "Kebakaran dipicu korsleting listrik di Desa Cempakawana Barat siang tadi dan menghanguskan satu warung.",
+      "family": "cause",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Desa Cempakawana Barat",
+        "time_text": "siang tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menghanguskan satu warung"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "satu warung"
+        ]
+      },
+      "gold_nara_labels": [
+        "FIRE-EVENT",
+        "O",
+        "REASON-ARG",
+        "REASON-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FIRE-05",
+      "text": "Petugas BPBD tiba di Kelurahan Sumberasri Barat sore ini setelah Kebakaran menghanguskan satu warung.",
+      "family": "plain",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Kelurahan Sumberasri Barat",
+        "time_text": "sore ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Petugas BPBD"
+        ],
+        "impacts": [
+          "menghanguskan satu warung"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "satu warung"
+        ]
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "FIRE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FIRE-06",
+      "text": "Kebakaran di Jalan Lembayung Barat pukul sembilan menghanguskan satu warung; jalur tersebut sekarang ditutup.",
+      "family": "street",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Jalan Lembayung Barat",
+        "time_text": "pukul sembilan",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menghanguskan satu warung"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "satu warung"
+        ]
+      },
+      "gold_nara_labels": [
+        "FIRE-EVENT",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FIRE-07",
+      "text": "Kebakaran menghanguskan satu warung di Kampung Wanasetra Barat malam ini; petugas memastikan tidak ada korban.",
+      "family": "local_negation",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Kampung Wanasetra Barat",
+        "time_text": "malam ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "petugas"
+        ],
+        "impacts": [
+          "menghanguskan satu warung"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "satu warung"
+        ]
+      },
+      "gold_nara_labels": [
+        "FIRE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FIRE-08",
+      "text": "Di tengah latihan evakuasi, Kebakaran sungguhan menghanguskan satu warung di Desa Beringinwangi Barat pagi tadi.",
+      "family": "real_during_exercise",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Desa Beringinwangi Barat",
+        "time_text": "pagi tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menghanguskan satu warung"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "satu warung"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "FIRE-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FIRE-09",
+      "text": "Bukan sekadar kabar: Kebakaran benar-benar menghanguskan satu warung di Kelurahan Kartasena Barat sore tadi.",
+      "family": "rumor_verified",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Kelurahan Kartasena Barat",
+        "time_text": "sore tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menghanguskan satu warung"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "satu warung"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "FIRE-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-FIRE-10",
+      "text": "Rekaman ini bukan adegan film. Kebakaran menghanguskan satu warung di Kampung Harumjaya Barat kemarin sore.",
+      "family": "fiction_denied",
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Kampung Harumjaya Barat",
+        "time_text": "kemarin sore",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menghanguskan satu warung"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "satu warung"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "FIRE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-ACCIDENT-01",
+      "text": "Menurut warga, Kecelakaan merusak dua sepeda motor di Desa Rimbakencana Tengah subuh tadi.",
+      "family": "plain",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Desa Rimbakencana Tengah",
+        "time_text": "subuh tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dua sepeda motor"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dua sepeda motor"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "ACCIDENT-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-ACCIDENT-02",
+      "text": "Kecelakaan merusak dua sepeda motor di Kelurahan Banyumadu Tengah pagi ini; dua warga luka ringan.",
+      "family": "plain",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Kelurahan Banyumadu Tengah",
+        "time_text": "pagi ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dua sepeda motor"
+        ],
+        "victims": [
+          "dua warga luka ringan"
+        ],
+        "affected_objects": [
+          "dua sepeda motor"
+        ]
+      },
+      "gold_nara_labels": [
+        "ACCIDENT-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-ACCIDENT-03",
+      "text": "Kecelakaan merusak dua sepeda motor di Kampung Tirtajaya Tengah tadi malam; seorang penjaga meninggal.",
+      "family": "plain",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Kampung Tirtajaya Tengah",
+        "time_text": "tadi malam",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dua sepeda motor"
+        ],
+        "victims": [
+          "seorang penjaga meninggal"
+        ],
+        "affected_objects": [
+          "dua sepeda motor"
+        ]
+      },
+      "gold_nara_labels": [
+        "ACCIDENT-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-ACCIDENT-04",
+      "text": "Kecelakaan dipicu rem blong di Desa Cempakawana Tengah siang tadi dan merusak dua sepeda motor.",
+      "family": "cause",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Desa Cempakawana Tengah",
+        "time_text": "siang tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dua sepeda motor"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dua sepeda motor"
+        ]
+      },
+      "gold_nara_labels": [
+        "ACCIDENT-EVENT",
+        "O",
+        "REASON-ARG",
+        "REASON-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-ACCIDENT-05",
+      "text": "Petugas BPBD tiba di Kelurahan Sumberasri Tengah sore ini setelah Kecelakaan merusak dua sepeda motor.",
+      "family": "plain",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Kelurahan Sumberasri Tengah",
+        "time_text": "sore ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Petugas BPBD"
+        ],
+        "impacts": [
+          "merusak dua sepeda motor"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dua sepeda motor"
+        ]
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "ACCIDENT-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-ACCIDENT-06",
+      "text": "Kecelakaan di Jalan Lembayung Tengah pukul sembilan merusak dua sepeda motor; jalur tersebut sekarang ditutup.",
+      "family": "street",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Jalan Lembayung Tengah",
+        "time_text": "pukul sembilan",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dua sepeda motor"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dua sepeda motor"
+        ]
+      },
+      "gold_nara_labels": [
+        "ACCIDENT-EVENT",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-ACCIDENT-07",
+      "text": "Kecelakaan merusak dua sepeda motor di Kampung Wanasetra Tengah malam ini; petugas memastikan tidak ada korban.",
+      "family": "local_negation",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Kampung Wanasetra Tengah",
+        "time_text": "malam ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "petugas"
+        ],
+        "impacts": [
+          "merusak dua sepeda motor"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dua sepeda motor"
+        ]
+      },
+      "gold_nara_labels": [
+        "ACCIDENT-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-ACCIDENT-08",
+      "text": "Di tengah latihan evakuasi, Kecelakaan sungguhan merusak dua sepeda motor di Desa Beringinwangi Tengah pagi tadi.",
+      "family": "real_during_exercise",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Desa Beringinwangi Tengah",
+        "time_text": "pagi tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dua sepeda motor"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dua sepeda motor"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "ACCIDENT-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-ACCIDENT-09",
+      "text": "Bukan sekadar kabar: Kecelakaan benar-benar merusak dua sepeda motor di Kelurahan Kartasena Tengah sore tadi.",
+      "family": "rumor_verified",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Kelurahan Kartasena Tengah",
+        "time_text": "sore tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dua sepeda motor"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dua sepeda motor"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "ACCIDENT-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-ACCIDENT-10",
+      "text": "Rekaman ini bukan adegan film. Kecelakaan merusak dua sepeda motor di Kampung Harumjaya Tengah kemarin sore.",
+      "family": "fiction_denied",
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Kampung Harumjaya Tengah",
+        "time_text": "kemarin sore",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dua sepeda motor"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dua sepeda motor"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "ACCIDENT-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-NON_EVENT-01",
+      "text": "Petugas BPBD menggelar simulasi kebakaran di lapangan Kalimurni sore ini.",
+      "family": "simulation",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "lapangan Kalimurni",
+        "time_text": "sore ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Petugas BPBD"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-NON_EVENT-02",
+      "text": "Latihan penanganan kecelakaan diselenggarakan di balai pelatihan Puspasari pagi ini.",
+      "family": "exercise_only",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "balai pelatihan Puspasari",
+        "time_text": "pagi ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-NON_EVENT-03",
+      "text": "Besok ada prakiraan potensi banjir di Kelurahan Cendana Baru.",
+      "family": "forecast",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "Kelurahan Cendana Baru",
+        "time_text": "Besok",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-NON_EVENT-04",
+      "text": "Petugas memastikan tidak terjadi gempa di Desa Lazuardi siang tadi.",
+      "family": "denial",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "Desa Lazuardi",
+        "time_text": "siang tadi",
+        "occurred_at": null,
+        "involved_parties": [
+          "Petugas"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-NON_EVENT-05",
+      "text": "Unggahan toko itu menulis banjir pesanan sejak pagi tadi.",
+      "family": "metaphor",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": null,
+        "time_text": "pagi tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "O",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-NON_EVENT-06",
+      "text": "Tim kelurahan menyiapkan jalur evakuasi untuk mengantisipasi banjir di Kampung Manggala.",
+      "family": "prevention",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "Kampung Manggala",
+        "time_text": null,
+        "occurred_at": null,
+        "involved_parties": [
+          "Tim kelurahan"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-NON_EVENT-07",
+      "text": "Buku keselamatan menjelaskan cara menghindari kebakaran akibat kompor bocor.",
+      "family": "education",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": null,
+        "time_text": null,
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-NON_EVENT-08",
+      "text": "Artikel itu membahas sepuluh kecelakaan terburuk sepanjang dekade, tanpa laporan kejadian tertentu.",
+      "family": "statistics",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": null,
+        "time_text": null,
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-NON_EVENT-09",
+      "text": "Panitia membuka donasi tahunan untuk para penyintas gempa dan banjir dari beberapa tahun berbeda.",
+      "family": "donation_aggregate",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": null,
+        "time_text": null,
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    },
+    {
+      "id": "FINAL081-NON_EVENT-10",
+      "text": "Di panggung teater, para pemain memeragakan gempa menggunakan efek suara; penonton tetap duduk.",
+      "family": "fiction",
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": null,
+        "time_text": null,
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "v0.8.1 proposal, not a model prediction"
+      },
+      "review": {
+        "status": "PENDING",
+        "reviewer": "",
+        "at": "",
+        "note": ""
+      }
+    }
+  ]
+}

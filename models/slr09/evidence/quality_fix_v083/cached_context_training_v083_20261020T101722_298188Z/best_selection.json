@@ -1,0 +1,366 @@
+{
+  "metrics": {
+    "human130": {
+      "accuracy": 0.9769230769230769,
+      "macro_f1": 0.9781529294935452,
+      "per_class": {
+        "FLOOD": {
+          "support": 27,
+          "precision": 0.9,
+          "recall": 1.0,
+          "f1": 0.9473684210526315
+        },
+        "EARTHQUAKE": {
+          "support": 21,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "FIRE": {
+          "support": 31,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ACCIDENT": {
+          "support": 23,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "NON_EVENT": {
+          "support": 28,
+          "precision": 1.0,
+          "recall": 0.8928571428571429,
+          "f1": 0.9433962264150944
+        }
+      },
+      "predeclared_selection_metric": 0.9920634920634921,
+      "targets_met": false
+    },
+    "original146": {
+      "accuracy": 0.9246575342465754,
+      "macro_f1": 0.928456499460449,
+      "per_class": {
+        "FLOOD": {
+          "support": 32,
+          "precision": 0.8529411764705882,
+          "recall": 0.90625,
+          "f1": 0.8787878787878788
+        },
+        "EARTHQUAKE": {
+          "support": 24,
+          "precision": 1.0,
+          "recall": 0.9583333333333334,
+          "f1": 0.9787234042553191
+        },
+        "FIRE": {
+          "support": 35,
+          "precision": 1.0,
+          "recall": 0.9714285714285714,
+          "f1": 0.9855072463768116
+        },
+        "ACCIDENT": {
+          "support": 24,
+          "precision": 0.96,
+          "recall": 1.0,
+          "f1": 0.9795918367346939
+        },
+        "NON_EVENT": {
+          "support": 31,
+          "precision": 0.8333333333333334,
+          "recall": 0.8064516129032258,
+          "f1": 0.819672131147541
+        }
+      },
+      "predeclared_selection_metric": 0.8960573476702508,
+      "targets_met": false
+    },
+    "adjudicated145": {
+      "accuracy": 0.9379310344827586,
+      "macro_f1": 0.9405063007520533,
+      "per_class": {
+        "FLOOD": {
+          "support": 30,
+          "precision": 0.8529411764705882,
+          "recall": 0.9666666666666667,
+          "f1": 0.90625
+        },
+        "EARTHQUAKE": {
+          "support": 24,
+          "precision": 1.0,
+          "recall": 0.9583333333333334,
+          "f1": 0.9787234042553191
+        },
+        "FIRE": {
+          "support": 35,
+          "precision": 1.0,
+          "recall": 0.9714285714285714,
+          "f1": 0.9855072463768116
+        },
+        "ACCIDENT": {
+          "support": 24,
+          "precision": 0.96,
+          "recall": 1.0,
+          "f1": 0.9795918367346939
+        },
+        "NON_EVENT": {
+          "support": 32,
+          "precision": 0.896551724137931,
+          "recall": 0.8125,
+          "f1": 0.8524590163934426
+        }
+      },
+      "predeclared_selection_metric": 0.9027777777777778,
+      "targets_met": false
+    },
+    "scope50": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_class": {
+        "FLOOD": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "EARTHQUAKE": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "FIRE": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ACCIDENT": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "NON_EVENT": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "predeclared_selection_metric": 1.1111111111111112,
+      "targets_met": true
+    },
+    "seen_v07_50": {
+      "accuracy": 0.98,
+      "macro_f1": 0.9799498746867167,
+      "per_class": {
+        "FLOOD": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "EARTHQUAKE": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "FIRE": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ACCIDENT": {
+          "support": 10,
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "f1": 0.9523809523809523
+        },
+        "NON_EVENT": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9473684210526315
+        }
+      },
+      "predeclared_selection_metric": 1.0,
+      "targets_met": true
+    },
+    "human_regression50": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_class": {
+        "FLOOD": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "EARTHQUAKE": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "FIRE": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ACCIDENT": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "NON_EVENT": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "predeclared_selection_metric": 1.1111111111111112,
+      "targets_met": true
+    },
+    "FINAL081": {
+      "accuracy": 0.98,
+      "macro_f1": 0.9799498746867167,
+      "per_class": {
+        "FLOOD": {
+          "support": 10,
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "f1": 0.9523809523809523
+        },
+        "EARTHQUAKE": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "FIRE": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ACCIDENT": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "NON_EVENT": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9473684210526315
+        }
+      },
+      "predeclared_selection_metric": 1.0,
+      "targets_met": true
+    },
+    "FINAL082": {
+      "accuracy": 0.98,
+      "macro_f1": 0.9799498746867167,
+      "per_class": {
+        "FLOOD": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "EARTHQUAKE": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "FIRE": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ACCIDENT": {
+          "support": 10,
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "f1": 0.9523809523809523
+        },
+        "NON_EVENT": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9473684210526315
+        }
+      },
+      "predeclared_selection_metric": 1.0,
+      "targets_met": true
+    },
+    "context40_now_training": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_class": {
+        "FLOOD": {
+          "support": 8,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "EARTHQUAKE": {
+          "support": 8,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "FIRE": {
+          "support": 8,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ACCIDENT": {
+          "support": 8,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "NON_EVENT": {
+          "support": 8,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "predeclared_selection_metric": 1.1111111111111112,
+      "targets_met": true
+    }
+  },
+  "contrast_errors": {
+    "human130": [],
+    "original146": [],
+    "adjudicated145": [],
+    "scope50": [],
+    "seen_v07_50": [
+      "NEW07-NON_EVENT-06"
+    ],
+    "human_regression50": [],
+    "FINAL081": [],
+    "FINAL082": [
+      "FINAL082-NON_EVENT-02"
+    ],
+    "context40_now_training": []
+  },
+  "feasible": false,
+  "regressions_with_overlapping_sets": 10,
+  "epoch": 2,
+  "seconds": 199.63094151899986,
+  "training_loss_mean": 0.07445004225675282
+}

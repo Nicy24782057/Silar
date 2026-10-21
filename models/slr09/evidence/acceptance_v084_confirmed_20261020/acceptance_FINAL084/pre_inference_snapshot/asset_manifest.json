@@ -1,0 +1,94 @@
+{
+  "schema": "slr09-repository-asset-locations-0.8.4",
+  "status": "DEVELOPMENT_CANDIDATE_NOT_ACCEPTED",
+  "repository": "https://github.com/Nicy24782057/Silar",
+  "reference_commit": "f7943313fa01eb70c3b41c1ad3efe63d02430f8c",
+  "reference_commit_status": "HISTORICAL_NOT_RECHECKED_AGAINST_CURRENT_REMOTE",
+  "integration_config_path": "models/slr09/config/SLR09_Konfigurasi_Integrasi_v0.9.json",
+  "candidate_lock_path": "models/slr09/config/quality_candidate_asset_lock_v0.8.4.json",
+  "candidate_runtime_path": "models/slr09/code/active_nara_adapter/slr09_candidate_runtime.py",
+  "inference_environment_profile_path": "models/slr09/config/inference_environment.json",
+  "confidence_threshold": 0.95,
+  "probability_calibration_established": false,
+  "delivery_revision": "0.8.4",
+  "models": {
+    "sena": {
+      "model_id": "SILAR_SENA_context_v084_20261020T144453Z",
+      "archive_name": "SILAR_SENA_context_v0.8.4_20261020.zip",
+      "archive_sha256": "6d9ed7b2705301602aa72b67c911843dd8451b115efce8739ae4f07bde3cd3e5",
+      "run_id": "20261020T144453Z",
+      "labels": [
+        "FLOOD",
+        "EARTHQUAKE",
+        "FIRE",
+        "ACCIDENT",
+        "NON_EVENT"
+      ],
+      "weights_sha256": "684568f6c2010a69b354231671596ccc490143d21c7d863482ea2ab50f3da12e",
+      "weight_identity_source": "DIRECT_ARCHIVE_AND_RUNTIME_FILE_HASH_VERIFICATION",
+      "archive_included_in_this_delivery": false,
+      "repository_archive_path": "UNDECIDED_REQUIRES_USER_REPOSITORY_ZIP_COMPARISON"
+    },
+    "nara": {
+      "model_id": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z",
+      "archive_name": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z.zip",
+      "archive_sha256": "bce9feba0dd2ae4518880708085f44286ae8d1dd7e50f4eb452e36824f967798",
+      "run_id": "20261018T001122_607337Z",
+      "labels": [
+        "O",
+        "ACCIDENT-EVENT",
+        "AFFECTEDOBJECTS-ARG",
+        "DEATHVICTIM-ARG",
+        "EARTHQUAKE-EVENT",
+        "FALSE-EVENT",
+        "FIRE-EVENT",
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "OFFICER-ARG",
+        "PLACE-ARG",
+        "REASON-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "WOUNDVICTIM-ARG"
+      ],
+      "weights_sha256": "ef84ccfeca2d116942c5d7f8882e064192279eabf92127e8adc1741933b60c29",
+      "weight_identity_source": "DIRECT_ARCHIVE_AND_RUNTIME_FILE_HASH_VERIFICATION",
+      "archive_included_in_this_delivery": false,
+      "repository_archive_path": "models/nara/SILAR_NARA_reviewed_pilot_20261018T001122_607337Z.zip"
+    }
+  },
+  "weights_included_in_source_package": false,
+  "production_deployed": false,
+  "production_model_selected": false,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "remote_push_executed": false,
+  "target_vm_loading_and_joint_new_model_inference_verified": false,
+  "candidate_loading_evidence": {
+    "model_loading_verified": true,
+    "seen_joint_regression_records": 200,
+    "environment": "CODEX_CPU_REPRESENTATIVE",
+    "evidence_directory": "models/slr09/evidence/quality_fix_v084/export_verification30"
+  },
+  "acceptance_preparation": {
+    "protocol": "models/slr09/acceptance/review_bundle_draft.json",
+    "reference_workbook": "models/slr09/acceptance/Review_Penerimaan_Akhir_SLR09_v0.8.4.xlsx",
+    "status": "50_NEW_PENDING_HUMAN_REFERENCE_REVIEW",
+    "new_reference_inference_executed": false,
+    "new_synthetic_cases": 50,
+    "token_proposals": 692,
+    "previous_bintang_approval_does_not_approve_these50": true
+  },
+  "sena_and_nara_weights_unchanged_from_v081": false,
+  "new_gradient_training_executed": true,
+  "pipeline_verification": {
+    "revision": "0.8.4",
+    "method": "ACTUAL_EXPORTED_SENA_NARA_INFERENCE_ON_SEEN_REFERENCES",
+    "evidence_directory": "models/slr09/evidence/quality_fix_v084/export_verification30",
+    "new_neural_inference_executed": true,
+    "original_FINAL081_FINAL082_FINAL083_retired": true,
+    "quality_acceptance_approved": false
+  },
+  "nara_weights_unchanged_from_v081": true,
+  "new_v084_neural_inference_executed": true
+}

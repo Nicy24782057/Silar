@@ -1,0 +1,92 @@
+{
+  "schema": "slr09-repository-asset-locations-0.1",
+  "status": "CANDIDATES_FOR_INTEGRATION_NOT_PRODUCTION_ACCEPTANCE",
+  "repository": "https://github.com/Nicy24782057/Silar",
+  "reference_commit": "f7943313fa01eb70c3b41c1ad3efe63d02430f8c",
+  "integration_config_path": "models/slr09/config/SLR09_Konfigurasi_Integrasi_v0.1.json",
+  "threshold_decision_path": "models/slr09/config/threshold_decision.json",
+  "model_candidates_path": "models/slr09/config/model_candidates.json",
+  "adapter_directory": "models/slr09/code/active_nara_adapter",
+  "confidence_threshold": 0.95,
+  "calibration_reference": "SLR09_SENA_20261018T044447_926664Z:reviewed_validation620:cutoff_0.95",
+  "adapter_version": "silar-adapter-0.4.0",
+  "fusion_version": "silar-fusion-a4.22-0.1.0",
+  "models": {
+    "sena": {
+      "archive_name": "SILAR_SENA_reviewed_pilot_20261018T044447_926664Z.zip",
+      "archive_sha256": "144e13d1904f1f4beee56a5ac29fc4fc75cf6a424806ce3c9a0082bf6adf92a3",
+      "weights_sha256": "9512a4895de281f3696e6c53a86d1271ad45180339995af01cf2b886ddc0afad",
+      "run_id": "20261018T044447_926664Z",
+      "labels": [
+        "FLOOD",
+        "EARTHQUAKE",
+        "FIRE",
+        "ACCIDENT",
+        "NON_EVENT"
+      ],
+      "weight_identity_source": "COLAB_EXPORT_MANIFEST_NOT_DIRECT_WEIGHT_INSPECTION",
+      "repository_archive_path": "models/sena/SILAR_SENA_reviewed_pilot_20261018T044447_926664Z.zip",
+      "colab_drive_export_path": "MyDrive/SILAR_SLR09/SILAR_SENA_reviewed_pilot_20261018T044447_926664Z.zip",
+      "archive_included_in_this_delivery": false
+    },
+    "nara": {
+      "archive_name": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z.zip",
+      "archive_sha256": "bce9feba0dd2ae4518880708085f44286ae8d1dd7e50f4eb452e36824f967798",
+      "weights_sha256": "ef84ccfeca2d116942c5d7f8882e064192279eabf92127e8adc1741933b60c29",
+      "run_id": "20261018T001122_607337Z",
+      "labels": [
+        "O",
+        "ACCIDENT-EVENT",
+        "AFFECTEDOBJECTS-ARG",
+        "DEATHVICTIM-ARG",
+        "EARTHQUAKE-EVENT",
+        "FALSE-EVENT",
+        "FIRE-EVENT",
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "OFFICER-ARG",
+        "PLACE-ARG",
+        "REASON-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "WOUNDVICTIM-ARG"
+      ],
+      "weight_identity_source": "COLAB_EXPORT_MANIFEST_NOT_DIRECT_WEIGHT_INSPECTION",
+      "repository_archive_path": "models/nara/SILAR_NARA_reviewed_pilot_20261018T001122_607337Z.zip",
+      "colab_drive_export_path": "MyDrive/SILAR_SLR09/SILAR_NARA_reviewed_pilot_20261018T001122_607337Z.zip",
+      "archive_included_in_this_delivery": false
+    }
+  },
+  "production_deployed": false,
+  "quality_acceptance_approved": false,
+  "target_vm_loading_and_joint_new_model_inference_verified": false,
+  "delivery_revision": "0.4.1",
+  "candidate_runtime_path": "models/slr09/code/active_nara_adapter/slr09_candidate_runtime.py",
+  "candidate_lock_path": "models/slr09/config/candidate_asset_lock.json",
+  "inference_environment_profile_path": "models/slr09/config/inference_environment.json",
+  "revision_source_archive_sha256": "9eb32ae2be066b856882ae91ff4a68a0427099ec5689b45428c6f90716ab07d9",
+  "candidate_loading_evidence": {
+    "status": "SUCCEEDED",
+    "run_id": "20261018T224651Z_672df897",
+    "environment": "GOOGLE_COLAB_CPU",
+    "environment_scope": "REPRESENTATIVE",
+    "records_completed": 3,
+    "evidence_directory": "models/slr09/evidence/candidate_smoke_20261018T224651Z_672df897",
+    "verification_path": "models/slr09/evidence/candidate_smoke_20261018T224651Z_672df897/audit_verification.json",
+    "uploaded_archive_sha256": "ac024c59b4241b057ba95e2f4b8e53b1235c0c6980bc2c2822647b6ff9f9e020",
+    "source_package_sha256": "4d004d3e3f74cb8d698c67ee5571f03653b568e52455e28d025d1ff3dd78e2d6",
+    "target_vm_verified": false,
+    "quality_acceptance_approved": false
+  },
+  "acceptance_preparation": {
+    "protocol": "models/slr09/acceptance/review_bundle_draft.json",
+    "status": "TARGETS_USER_APPROVED_REFERENCE_REVIEW_PENDING",
+    "new_neural_evaluation_executed": false,
+    "training_executed": false,
+    "quality_acceptance_approved": false,
+    "new_synthetic_cases": 50,
+    "scope": "MVP_ASSET_PILOT_NOT_POPULATION_GENERALIZATION",
+    "reference_format": "XLSX",
+    "target_user_approval": "models/slr09/acceptance/target_user_decision.json"
+  }
+}

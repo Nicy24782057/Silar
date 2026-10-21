@@ -1,0 +1,74 @@
+Source SHA256: c9e43ce039022b1fa8d2f3270eaa597582a872de764b0da6f917178ae69a52b6
+epoch 1 step 1/210 loss 0.0094
+epoch 1 step 10/210 loss 0.6384
+epoch 1 step 20/210 loss 1.4223
+epoch 1 step 30/210 loss 0.0082
+epoch 1 step 40/210 loss 1.3173
+epoch 1 step 50/210 loss 0.0984
+epoch 1 step 60/210 loss 0.0551
+epoch 1 step 70/210 loss 0.4544
+epoch 1 step 80/210 loss 0.0109
+epoch 1 step 90/210 loss 1.2739
+epoch 1 step 100/210 loss 0.8015
+epoch 1 step 110/210 loss 0.0103
+epoch 1 step 120/210 loss 0.0046
+epoch 1 step 130/210 loss 0.0741
+epoch 1 step 140/210 loss 0.8376
+epoch 1 step 150/210 loss 0.0023
+epoch 1 step 160/210 loss 0.0687
+epoch 1 step 170/210 loss 1.2904
+epoch 1 step 180/210 loss 0.1407
+epoch 1 step 190/210 loss 3.3276
+epoch 1 step 200/210 loss 0.0043
+epoch 1 step 210/210 loss 0.0076
+{"epoch": 1, "joint_target_ratio": 1.0, "additional_bias": 2.1, "human130_ne": 0.9642857142857143, "v07_seen_flood": 0.9, "regression_ne": 1.0}
+{
+  "schema": "slr09-context-correction-0.8.1",
+  "status": "SUCCEEDED",
+  "source": "PRESERVED_V08_WITH_INHERITED_BIAS2.5",
+  "training_executed": true,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "human130_used_for_training": false,
+  "v07_assistant50_used_for_weak_training": true,
+  "pilot50_used_for_training": false,
+  "pilot50_used_for_regression_selection": true,
+  "new_acceptance_reference_read_or_inferred": false,
+  "started_at": "2026-10-19T10:24:27.650623+00:00",
+  "best_epoch": 1,
+  "best_joint_score": 1.0,
+  "training_unique_records": 1249,
+  "human_training": 623,
+  "weak_training": 626,
+  "human_development": 130,
+  "trainable_parameters": 28945925,
+  "epoch": 1,
+  "step": 210,
+  "steps_in_epoch": 210,
+  "loss": 0.007567616645246744,
+  "epochs_completed": 1,
+  "finished_at": "2026-10-19T10:29:15.216665+00:00"
+}
+{
+  "epoch": 1,
+  "additional_bias": 2.1,
+  "inherited_bias": 2.5,
+  "joint_score": 1.0,
+  "contrast_accuracy": 1.0,
+  "feasible_bias_values": [
+    2.1,
+    2.2,
+    2.3,
+    2.4,
+    2.5,
+    2.6,
+    2.7,
+    2.8,
+    2.9,
+    3.0
+  ],
+  "all_development_targets_met": true,
+  "quality_acceptance_approved": false
+}
+Final human acceptance remains pending.
+Notebook execution recorded: /workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.1/models/slr09/notebooks/21_Koreksi_Konteks_SENA_CPU_v0.8.1_executed.ipynb

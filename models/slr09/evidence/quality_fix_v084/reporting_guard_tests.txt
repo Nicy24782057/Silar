@@ -1,0 +1,16 @@
+test_absence_fragment_with_later_actual_effect_is_preserved (test_reporting_and_absence_fragments.ReportingAndAbsenceTests.test_absence_fragment_with_later_actual_effect_is_preserved) ... ok
+test_absence_of_incident_is_not_a_positive_impact (test_reporting_and_absence_fragments.ReportingAndAbsenceTests.test_absence_of_incident_is_not_a_positive_impact) ... ok
+test_absence_of_victims_is_not_a_positive_impact (test_reporting_and_absence_fragments.ReportingAndAbsenceTests.test_absence_of_victims_is_not_a_positive_impact) ... ok
+test_adapter_preserves_damage_and_raw_roles_when_filtering_reporting (test_reporting_and_absence_fragments.ReportingAndAbsenceTests.test_adapter_preserves_damage_and_raw_roles_when_filtering_reporting) ... ok
+test_confirmation_without_effect_is_not_an_impact (test_reporting_and_absence_fragments.ReportingAndAbsenceTests.test_confirmation_without_effect_is_not_an_impact) ... ok
+test_conjoined_actual_effect_is_not_erased_by_negation_prefix (test_reporting_and_absence_fragments.ReportingAndAbsenceTests.test_conjoined_actual_effect_is_not_erased_by_negation_prefix) ... ok
+test_connector_followed_by_actual_effect_is_preserved (test_reporting_and_absence_fragments.ReportingAndAbsenceTests.test_connector_followed_by_actual_effect_is_preserved) ... ok
+test_reporting_fragment_with_actual_damage_is_preserved (test_reporting_and_absence_fragments.ReportingAndAbsenceTests.test_reporting_fragment_with_actual_damage_is_preserved) ... ok
+test_reporting_subject_without_effect_is_not_an_impact (test_reporting_and_absence_fragments.ReportingAndAbsenceTests.test_reporting_subject_without_effect_is_not_an_impact) ... ok
+test_standalone_connector_is_not_a_positive_effect (test_reporting_and_absence_fragments.ReportingAndAbsenceTests.test_standalone_connector_is_not_a_positive_effect) ... ok
+test_unconscious_victim_condition_is_not_absence (test_reporting_and_absence_fragments.ReportingAndAbsenceTests.test_unconscious_victim_condition_is_not_absence) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.003s
+
+OK

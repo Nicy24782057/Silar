@@ -1,0 +1,21 @@
+{
+  "schema": "slr09-resume-preflight-0.8.3",
+  "at_utc": "2026-10-20T09:42:21.588484+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "training_unique": 1683,
+  "new_weak_contexts": 64,
+  "context_diagnostic_retired_to_training": 40,
+  "human130_all_in_training": true,
+  "FINAL081_FINAL082_all_retired": true,
+  "source_file_sha256": {
+    "data/sena_validation_reviewed.jsonl": "8055d15c77b0d30ca33f2427e64c6a1d2daf085b6dabd37e8983911fd36e7fc0",
+    "data/sena_train_reviewed.jsonl": "0e97bdd197442821d5da02cbe4f2ab863781f037e411eb70fddceed1f62d0c18",
+    "notebooks/26_Perbaikan_Konteks_SENA_v0.8.3.ipynb": "471fa728079f1c36f4499c41f08fb5d364295e064c0bf52e4f76c8275d09145b",
+    "code/quality_fix/train_context_last_layer_v083.py": "f3376c8648dca200dcc30cd73f2f48f271147d9090e1dee5c637eb7c5a6a9d85"
+  },
+  "warm_start_sha256": "760a79f6951fc8c380aeed6779006444e3b1992ae7d720af9d80f2be4c24a20d",
+  "checkpoint_sha256": "9c7414f9548fcf18b4ca22b82482f4d8a14d217d1f474a23c2b308ded8adea97",
+  "targets_and_cutoff_unchanged": true,
+  "independent_acceptance_claimed": false
+}

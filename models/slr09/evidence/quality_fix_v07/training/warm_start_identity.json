@@ -1,0 +1,12 @@
+{
+  "source": "V06_EPOCH1_SELECTED_TRAINING_MODEL",
+  "manual_non_event_bias_to_remove": 1.5,
+  "files": {
+    "config.json": "febb4294e220615be653133104562be26236ea97165c5103dc7b6d377277da9a",
+    "model.safetensors": "c9f3524a8a764ac488f95acaa5a1349440836ef3566f9ef23843a76fa36cc0d9",
+    "tokenizer.json": "93684d1d5cc282613006dbee78d38882487365cdd378d087e21e755ac157ca63",
+    "tokenizer_config.json": "6c7af3e1d0c166292dc68cece6e6bb2be29945b8a45b39c804f65e9602a78429",
+    "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+    "vocab.txt": "343bf28a78f7efeda6419fa610f553184a6dcd29aae726f46850cd05e3167dc3"
+  }
+}

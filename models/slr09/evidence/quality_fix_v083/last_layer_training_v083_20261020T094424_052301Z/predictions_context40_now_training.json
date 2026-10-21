@@ -1,0 +1,482 @@
+[
+  {
+    "id": "DIAG083-FLOOD-01",
+    "text": "Latihan penyelamatan dihentikan: banjir yang sesungguhnya baru terjadi dan warga dievakuasi.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9879399538040161,
+      "EARTHQUAKE": 3.3639094908721745e-05,
+      "FIRE": 8.865852578310296e-06,
+      "ACCIDENT": 8.055305806919932e-05,
+      "NON_EVENT": 0.011936974711716175
+    }
+  },
+  {
+    "id": "DIAG083-FLOOD-02",
+    "text": "Tidak ada korban jiwa, tetapi banjir benar-benar terjadi dan petugas memeriksa bangunan rusak.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.992308497428894,
+      "EARTHQUAKE": 5.571911606239155e-05,
+      "FIRE": 2.67835748672951e-05,
+      "ACCIDENT": 0.0005972620565444231,
+      "NON_EVENT": 0.007011775393038988
+    }
+  },
+  {
+    "id": "DIAG083-FLOOD-03",
+    "text": "Semua orang selamat setelah banjir terjadi di sebelah pusat pelatihan. Bantuan sedang dikirim.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9973185658454895,
+      "EARTHQUAKE": 0.0001381645124638453,
+      "FIRE": 2.8767726689693518e-05,
+      "ACCIDENT": 8.404817344853655e-05,
+      "NON_EVENT": 0.002430494874715805
+    }
+  },
+  {
+    "id": "DIAG083-FLOOD-04",
+    "text": "Informasi banjir telah diperiksa di lokasi dan ternyata benar; pesan ini bukan pengumuman latihan.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 9.681207302492112e-06,
+      "EARTHQUAKE": 1.591525142430328e-05,
+      "FIRE": 4.89386957269744e-06,
+      "ACCIDENT": 7.302380254259333e-06,
+      "NON_EVENT": 0.9999622106552124
+    }
+  },
+  {
+    "id": "DIAG083-FLOOD-05",
+    "text": "Skenario yang dibaca peserta berbeda dari banjir sungguhan yang sedang ditangani di luar gedung.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.8221901655197144,
+      "EARTHQUAKE": 5.0659651606110856e-05,
+      "FIRE": 6.674548058072105e-05,
+      "ACCIDENT": 2.9459415600285865e-05,
+      "NON_EVENT": 0.1776629537343979
+    }
+  },
+  {
+    "id": "DIAG083-FLOOD-06",
+    "text": "Tadi malam banjir merusak fasilitas di kampung, meskipun tidak ada orang yang terluka.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9965499639511108,
+      "EARTHQUAKE": 3.821767313638702e-05,
+      "FIRE": 2.8613834729185328e-05,
+      "ACCIDENT": 4.873229408985935e-05,
+      "NON_EVENT": 0.0033344717230647802
+    }
+  },
+  {
+    "id": "DIAG083-FLOOD-07",
+    "text": "Tim yang semula mengira hanya latihan menemukan banjir nyata dan meminta bantuan segera.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.5679585933685303,
+      "EARTHQUAKE": 0.00016105551912914962,
+      "FIRE": 3.2263429602608085e-05,
+      "ACCIDENT": 0.00010770950757432729,
+      "NON_EVENT": 0.43174031376838684
+    }
+  },
+  {
+    "id": "DIAG083-FLOOD-08",
+    "text": "Peristiwa banjir memang terjadi pagi ini. Kabar bahwa semuanya hanya peragaan sudah dibantah petugas.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.09394361078739166,
+      "EARTHQUAKE": 0.00018512472161091864,
+      "FIRE": 8.798368799034506e-05,
+      "ACCIDENT": 0.0030701097566634417,
+      "NON_EVENT": 0.9027131199836731
+    }
+  },
+  {
+    "id": "DIAG083-EARTHQUAKE-01",
+    "text": "Latihan penyelamatan dihentikan: gempa yang sesungguhnya baru terjadi dan warga dievakuasi.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 5.8776775404112414e-05,
+      "EARTHQUAKE": 0.8939613699913025,
+      "FIRE": 2.08662841032492e-05,
+      "ACCIDENT": 0.0003779073595069349,
+      "NON_EVENT": 0.10558104515075684
+    }
+  },
+  {
+    "id": "DIAG083-EARTHQUAKE-02",
+    "text": "Tidak ada korban jiwa, tetapi gempa benar-benar terjadi dan petugas memeriksa bangunan rusak.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 7.481480133719742e-05,
+      "EARTHQUAKE": 0.994576096534729,
+      "FIRE": 4.37393355241511e-05,
+      "ACCIDENT": 0.001718772342428565,
+      "NON_EVENT": 0.0035865260288119316
+    }
+  },
+  {
+    "id": "DIAG083-EARTHQUAKE-03",
+    "text": "Semua orang selamat setelah gempa terjadi di sebelah pusat pelatihan. Bantuan sedang dikirim.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00012658773630391806,
+      "EARTHQUAKE": 0.9985467791557312,
+      "FIRE": 4.849751348956488e-05,
+      "ACCIDENT": 0.00012456468539312482,
+      "NON_EVENT": 0.0011536864330992103
+    }
+  },
+  {
+    "id": "DIAG083-EARTHQUAKE-04",
+    "text": "Informasi gempa telah diperiksa di lokasi dan ternyata benar; pesan ini bukan pengumuman latihan.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 3.520102836773731e-06,
+      "EARTHQUAKE": 8.15284438431263e-05,
+      "FIRE": 1.2908607459394261e-05,
+      "ACCIDENT": 1.7521082554594614e-05,
+      "NON_EVENT": 0.9998844861984253
+    }
+  },
+  {
+    "id": "DIAG083-EARTHQUAKE-05",
+    "text": "Skenario yang dibaca peserta berbeda dari gempa sungguhan yang sedang ditangani di luar gedung.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 2.385361040069256e-05,
+      "EARTHQUAKE": 0.2511788308620453,
+      "FIRE": 0.0002614047843962908,
+      "ACCIDENT": 6.0532038332894444e-05,
+      "NON_EVENT": 0.7484753727912903
+    }
+  },
+  {
+    "id": "DIAG083-EARTHQUAKE-06",
+    "text": "Tadi malam gempa merusak fasilitas di kampung, meskipun tidak ada orang yang terluka.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 5.2194031013641506e-05,
+      "EARTHQUAKE": 0.9985142350196838,
+      "FIRE": 2.5856037609628402e-05,
+      "ACCIDENT": 4.879809057456441e-05,
+      "NON_EVENT": 0.0013589656446129084
+    }
+  },
+  {
+    "id": "DIAG083-EARTHQUAKE-07",
+    "text": "Tim yang semula mengira hanya latihan menemukan gempa nyata dan meminta bantuan segera.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 1.7353657312924042e-05,
+      "EARTHQUAKE": 0.07934301346540451,
+      "FIRE": 7.275104144355282e-05,
+      "ACCIDENT": 8.612590318080038e-05,
+      "NON_EVENT": 0.9204807281494141
+    }
+  },
+  {
+    "id": "DIAG083-EARTHQUAKE-08",
+    "text": "Peristiwa gempa memang terjadi pagi ini. Kabar bahwa semuanya hanya peragaan sudah dibantah petugas.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0006445192266255617,
+      "EARTHQUAKE": 0.036332614719867706,
+      "FIRE": 0.0002811913436744362,
+      "ACCIDENT": 0.007163220550864935,
+      "NON_EVENT": 0.9555785059928894
+    }
+  },
+  {
+    "id": "DIAG083-FIRE-01",
+    "text": "Latihan penyelamatan dihentikan: kebakaran yang sesungguhnya baru terjadi dan warga dievakuasi.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 5.17397238581907e-05,
+      "EARTHQUAKE": 4.111868838663213e-05,
+      "FIRE": 0.9909062385559082,
+      "ACCIDENT": 0.00013455389125738293,
+      "NON_EVENT": 0.0088663874194026
+    }
+  },
+  {
+    "id": "DIAG083-FIRE-02",
+    "text": "Tidak ada korban jiwa, tetapi kebakaran benar-benar terjadi dan petugas memeriksa bangunan rusak.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 7.238842954393476e-05,
+      "EARTHQUAKE": 5.4391526646213606e-05,
+      "FIRE": 0.9979273080825806,
+      "ACCIDENT": 0.00043505936628207564,
+      "NON_EVENT": 0.0015108166262507439
+    }
+  },
+  {
+    "id": "DIAG083-FIRE-03",
+    "text": "Semua orang selamat setelah kebakaran terjadi di sebelah pusat pelatihan. Bantuan sedang dikirim.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 4.740193980978802e-05,
+      "EARTHQUAKE": 8.753108704695478e-05,
+      "FIRE": 0.9984617233276367,
+      "ACCIDENT": 8.025948045542464e-05,
+      "NON_EVENT": 0.0013231132179498672
+    }
+  },
+  {
+    "id": "DIAG083-FIRE-04",
+    "text": "Informasi kebakaran telah diperiksa di lokasi dan ternyata benar; pesan ini bukan pengumuman latihan.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 5.47777517567738e-06,
+      "EARTHQUAKE": 3.845947139780037e-05,
+      "FIRE": 8.153541421052068e-05,
+      "ACCIDENT": 1.0554499567660969e-05,
+      "NON_EVENT": 0.9998639822006226
+    }
+  },
+  {
+    "id": "DIAG083-FIRE-05",
+    "text": "Skenario yang dibaca peserta berbeda dari kebakaran sungguhan yang sedang ditangani di luar gedung.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 2.8599724828382023e-05,
+      "EARTHQUAKE": 4.4810789404436946e-05,
+      "FIRE": 0.9534170031547546,
+      "ACCIDENT": 3.896876296494156e-05,
+      "NON_EVENT": 0.04647057503461838
+    }
+  },
+  {
+    "id": "DIAG083-FIRE-06",
+    "text": "Tadi malam kebakaran merusak fasilitas di kampung, meskipun tidak ada orang yang terluka.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 4.048596747452393e-05,
+      "EARTHQUAKE": 4.518866990110837e-05,
+      "FIRE": 0.9989012479782104,
+      "ACCIDENT": 4.299552529118955e-05,
+      "NON_EVENT": 0.0009700734517537057
+    }
+  },
+  {
+    "id": "DIAG083-FIRE-07",
+    "text": "Tim yang semula mengira hanya latihan menemukan kebakaran nyata dan meminta bantuan segera.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 4.972529859514907e-05,
+      "EARTHQUAKE": 0.00015903235180303454,
+      "FIRE": 0.20218533277511597,
+      "ACCIDENT": 0.00013504033267963678,
+      "NON_EVENT": 0.7974708676338196
+    }
+  },
+  {
+    "id": "DIAG083-FIRE-08",
+    "text": "Peristiwa kebakaran memang terjadi pagi ini. Kabar bahwa semuanya hanya peragaan sudah dibantah petugas.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 0.00026700590387918055,
+      "EARTHQUAKE": 0.0002280401240568608,
+      "FIRE": 0.9535473585128784,
+      "ACCIDENT": 0.0021526506170630455,
+      "NON_EVENT": 0.043804995715618134
+    }
+  },
+  {
+    "id": "DIAG083-ACCIDENT-01",
+    "text": "Latihan penyelamatan dihentikan: kecelakaan yang sesungguhnya baru terjadi dan warga dievakuasi.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00012066775525454432,
+      "EARTHQUAKE": 4.3005227780668065e-05,
+      "FIRE": 3.98781594412867e-05,
+      "ACCIDENT": 0.9839743971824646,
+      "NON_EVENT": 0.015822075307369232
+    }
+  },
+  {
+    "id": "DIAG083-ACCIDENT-02",
+    "text": "Tidak ada korban jiwa, tetapi kecelakaan benar-benar terjadi dan petugas memeriksa bangunan rusak.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 5.596379196504131e-05,
+      "EARTHQUAKE": 4.8022364353528246e-05,
+      "FIRE": 4.223590804031119e-05,
+      "ACCIDENT": 0.9925985336303711,
+      "NON_EVENT": 0.007255249191075563
+    }
+  },
+  {
+    "id": "DIAG083-ACCIDENT-03",
+    "text": "Semua orang selamat setelah kecelakaan terjadi di sebelah pusat pelatihan. Bantuan sedang dikirim.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 7.959588401718065e-05,
+      "EARTHQUAKE": 0.0004139452357776463,
+      "FIRE": 0.0002914012875407934,
+      "ACCIDENT": 0.9947570562362671,
+      "NON_EVENT": 0.004458087030798197
+    }
+  },
+  {
+    "id": "DIAG083-ACCIDENT-04",
+    "text": "Informasi kecelakaan telah diperiksa di lokasi dan ternyata benar; pesan ini bukan pengumuman latihan.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 3.42898260896618e-06,
+      "EARTHQUAKE": 2.7065110771218315e-05,
+      "FIRE": 8.873017577570863e-06,
+      "ACCIDENT": 9.103403135668486e-05,
+      "NON_EVENT": 0.9998695850372314
+    }
+  },
+  {
+    "id": "DIAG083-ACCIDENT-05",
+    "text": "Skenario yang dibaca peserta berbeda dari kecelakaan sungguhan yang sedang ditangani di luar gedung.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 4.5436579966917634e-05,
+      "EARTHQUAKE": 0.00011714678112184629,
+      "FIRE": 0.0003547648375388235,
+      "ACCIDENT": 0.9747664332389832,
+      "NON_EVENT": 0.024716179817914963
+    }
+  },
+  {
+    "id": "DIAG083-ACCIDENT-06",
+    "text": "Tadi malam kecelakaan merusak fasilitas di kampung, meskipun tidak ada orang yang terluka.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 7.100113725755364e-05,
+      "EARTHQUAKE": 8.617535786470398e-05,
+      "FIRE": 0.00012000064452877268,
+      "ACCIDENT": 0.9971532821655273,
+      "NON_EVENT": 0.002569497562944889
+    }
+  },
+  {
+    "id": "DIAG083-ACCIDENT-07",
+    "text": "Tim yang semula mengira hanya latihan menemukan kecelakaan nyata dan meminta bantuan segera.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 1.455769597669132e-05,
+      "EARTHQUAKE": 3.402666698093526e-05,
+      "FIRE": 5.917250018683262e-05,
+      "ACCIDENT": 0.019019536674022675,
+      "NON_EVENT": 0.9808727502822876
+    }
+  },
+  {
+    "id": "DIAG083-ACCIDENT-08",
+    "text": "Peristiwa kecelakaan memang terjadi pagi ini. Kabar bahwa semuanya hanya peragaan sudah dibantah petugas.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.000142873395816423,
+      "EARTHQUAKE": 8.935034566093236e-05,
+      "FIRE": 6.897740240674466e-05,
+      "ACCIDENT": 0.5712138414382935,
+      "NON_EVENT": 0.4284849464893341
+    }
+  },
+  {
+    "id": "DIAG083-NON_EVENT-01",
+    "text": "Panitia memastikan benturan mobil dalam latihan kecelakaan hanyalah peragaan; tidak berlangsung kejadian nyata.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 9.796267477213405e-07,
+      "EARTHQUAKE": 5.884261099708965e-06,
+      "FIRE": 1.6419481880802778e-06,
+      "ACCIDENT": 4.145017555856612e-06,
+      "NON_EVENT": 0.9999873638153076
+    }
+  },
+  {
+    "id": "DIAG083-NON_EVENT-02",
+    "text": "Simulasi gempa memakai efek getaran. Pernyataan tentang bangunan runtuh hanya bagian naskah kegiatan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 4.434641596162692e-06,
+      "EARTHQUAKE": 0.00013573038449976593,
+      "FIRE": 9.395871893502772e-05,
+      "ACCIDENT": 1.0573541658231989e-05,
+      "NON_EVENT": 0.999755322933197
+    }
+  },
+  {
+    "id": "DIAG083-NON_EVENT-03",
+    "text": "Air untuk latihan banjir disiapkan dalam kolam buatan; tidak terjadi banjir sungguhan di kampung.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0004779624578077346,
+      "EARTHQUAKE": 3.6989381442253944e-06,
+      "FIRE": 4.4970652197662275e-06,
+      "ACCIDENT": 5.1726065066759475e-06,
+      "NON_EVENT": 0.9995086193084717
+    }
+  },
+  {
+    "id": "DIAG083-NON_EVENT-04",
+    "text": "Adegan kebakaran pada pelatihan menggunakan alat peraga, tanpa adanya peristiwa nyata.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 1.92055813386105e-06,
+      "EARTHQUAKE": 8.909251846489497e-06,
+      "FIRE": 7.663285214221105e-05,
+      "ACCIDENT": 3.6627257031796034e-06,
+      "NON_EVENT": 0.9999089241027832
+    }
+  },
+  {
+    "id": "DIAG083-NON_EVENT-05",
+    "text": "Kendaraan yang tampak rusak itu properti kelas pertolongan kecelakaan, bukan akibat kecelakaan sungguhan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 5.621866421279265e-06,
+      "EARTHQUAKE": 2.7502735974849202e-05,
+      "FIRE": 2.7390497052692808e-05,
+      "ACCIDENT": 0.0004100817895960063,
+      "NON_EVENT": 0.9995293617248535
+    }
+  },
+  {
+    "id": "DIAG083-NON_EVENT-06",
+    "text": "Tulisan gempa sungguhan pada contoh formulir hanya bahan belajar dan tidak melaporkan suatu kejadian.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 2.054231572401477e-06,
+      "EARTHQUAKE": 9.309629604103975e-06,
+      "FIRE": 4.254238319845172e-06,
+      "ACCIDENT": 1.5528573840128956e-06,
+      "NON_EVENT": 0.9999828338623047
+    }
+  },
+  {
+    "id": "DIAG083-NON_EVENT-07",
+    "text": "Petugas menyelesaikan peragaan tanggap banjir. Kerusakan dan korban yang ditampilkan semuanya tiruan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.006434937007725239,
+      "EARTHQUAKE": 0.0006340252584777772,
+      "FIRE": 0.0014613585080951452,
+      "ACCIDENT": 2.387463791819755e-05,
+      "NON_EVENT": 0.991445779800415
+    }
+  },
+  {
+    "id": "DIAG083-NON_EVENT-08",
+    "text": "Suara ledakan dan api di layar adalah rekaman latihan kebakaran; petugas memastikan lokasi sekarang aman tanpa kejadian nyata.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 5.608083029073896e-06,
+      "EARTHQUAKE": 8.777531184023246e-05,
+      "FIRE": 0.0003697946376632899,
+      "ACCIDENT": 7.465726412192453e-06,
+      "NON_EVENT": 0.9995293617248535
+    }
+  }
+]

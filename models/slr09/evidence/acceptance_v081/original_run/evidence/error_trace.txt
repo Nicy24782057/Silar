@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.1/models/slr09/code/acceptance/evaluate_acceptance.py", line 395, in run
+    report = score(rows, predictions, bundle['protocol'])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.1/models/slr09/code/acceptance/evaluate_acceptance.py", line 313, in score
+    sena, nara, fields = classification(rows, predictions), nara_scores(rows, predictions), field_scores(rows, predictions)
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.1/models/slr09/code/acceptance/evaluate_acceptance.py", line 268, in field_scores
+    validate_fields(actual, row['text'])
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.1/models/slr09/code/acceptance/evaluate_acceptance.py", line 98, in validate_fields
+    raise ValueError('Acuan field tidak bersumber dari narasi: ' + key)
+ValueError: Acuan field tidak bersumber dari narasi: location_text

@@ -1,0 +1,116 @@
+{
+  "schema": "slr09-continuation-0.5",
+  "status": "IN_REVIEW",
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "constraints": {
+    "exclude_slr08_tracking_commits": true,
+    "ignore_local_filename_suffix_3": true,
+    "compare_prior_repository_zip_after_current_quality_work": true,
+    "excel_preferred": true,
+    "confidence_cutoff": 0.95,
+    "low_rule": "confidence < 0.95",
+    "category_from_sena_only": true,
+    "non_event_blocks": true,
+    "human_verification_always_required": true
+  },
+  "execution": {
+    "method": "CPYTHON_CELL_EXECUTOR_ACTUAL_EXECUTION_NOT_NATIVE_JUPYTER_KERNEL",
+    "notebooks": [
+      {
+        "path": "notebooks/11_Perbaikan_SENA_CPU_v0.5.ipynb",
+        "sha256": "3c9c4b3e9dd0154b0b03d3afc953b781da4768bb15f2783be7486d23fa06a137",
+        "executed": false
+      },
+      {
+        "path": "notebooks/11_Perbaikan_SENA_CPU_v0.5_executed.ipynb",
+        "sha256": "9959c2e6567fe06a9a020a4ec3a6d6d13371ee62abab9c2b3a0c2a086ceba171",
+        "executed": true
+      },
+      {
+        "path": "notebooks/11b_SENA_Fokus_NON_EVENT_CPU_v0.5.ipynb",
+        "sha256": "507e2a3cdd5fb0293428e5d6e8d9a10123be8557891430c8553ee28eb07d2104",
+        "executed": false
+      },
+      {
+        "path": "notebooks/11b_SENA_Fokus_NON_EVENT_CPU_v0.5_executed.ipynb",
+        "sha256": "d1b07b57ccc09b0e769e529465243efae1440e829b3b7c0467ea84e9a17a9d4f",
+        "executed": true
+      },
+      {
+        "path": "notebooks/12_Verifikasi_Perbaikan_SLR09_v0.5.ipynb",
+        "sha256": "35c15d0a05d61afb09ff4ce6ed756d08f00b2443891f1154171f0f1ab2e2d3c4",
+        "executed": false
+      },
+      {
+        "path": "notebooks/12_Verifikasi_Perbaikan_SLR09_v0.5_executed.ipynb",
+        "sha256": "996448cdba9cbe2d56b02b6ed328aa4daf0430d4909fdeeef1a97e6a19a19be3",
+        "executed": true
+      }
+    ],
+    "training_experiments": 2,
+    "head_bias_fit_on_development": 2.1,
+    "cpu_inference_old_pilot": 50,
+    "fresh_assistant_diagnostic": 24,
+    "contract_tests_passed": 71
+  },
+  "metrics": {
+    "seen50": {
+      "sena_macro_f1": 1.0,
+      "non_event_recall": 1.0,
+      "nara_token_macro_f1": 0.8850632111299132,
+      "nara_span_f1": 0.8672199170124482,
+      "field_nonempty_exact": 0.9162303664921466,
+      "empty_spurious_rate": 0.012578616352201259
+    },
+    "fresh24_assistant_labels_not_human_gold": {
+      "sena_macro_f1": 0.8006593406593406,
+      "non_event_recall": 0.9166666666666666,
+      "false_non_event": 3,
+      "false_event": 1
+    }
+  },
+  "assets": {
+    "baseline_sena_library_file_id": "libfile_902db34907b881918c55ac69bb2d1053",
+    "unchanged_nara_library_file_id": "libfile_8120ebef422081918e9fe73a5f672c9b",
+    "round1_library_file_id": "libfile_b1c10b28a340819187793238d9aaccda",
+    "focus_before_bias_library_file_id": "libfile_5df95b6e16c88191879f4b0abd746ed3",
+    "new_experimental_sena_library_file_id": "libfile_c13a599184588191b6c3e6728aa42437",
+    "previous_colab_sena_candidate_weights_available": false
+  },
+  "next_required": "Review 40 class-label cases for consistent development data; improve SENA then use a separate human-reviewed acceptance set. User need not rerun notebooks locally.",
+  "remote_push_executed": false,
+  "production_deployment_executed": false,
+  "saved_deliverables": [
+    {
+      "file_name": "SLR09_Hasil_Perbaikan_v0.5.xlsx",
+      "library_file_id": "libfile_e115f4b80a2c8191a76d468b663ab30b",
+      "current_version_number": 0
+    },
+    {
+      "file_name": "SLR09_Perbaikan_v0.5.md",
+      "library_file_id": "libfile_d39241af7e90819182aa0f590b6df4a9",
+      "current_version_number": 0
+    },
+    {
+      "file_name": "Catatan_Kelanjutan_SLR09_2026-10-19.md",
+      "library_file_id": "libfile_17f9ddbb4d6881919e1003f97c7fc018",
+      "current_version_number": 1
+    },
+    {
+      "file_name": "11_Perbaikan_SENA_CPU_v0.5_executed.ipynb",
+      "library_file_id": "libfile_122b7e1253348191a364761c6d5b4c04",
+      "current_version_number": 0
+    },
+    {
+      "file_name": "11b_SENA_Fokus_NON_EVENT_CPU_v0.5_executed.ipynb",
+      "library_file_id": "libfile_1159572b27ec819183b842639057deb1",
+      "current_version_number": 0
+    },
+    {
+      "file_name": "12_Verifikasi_Perbaikan_SLR09_v0.5_executed.ipynb",
+      "library_file_id": "libfile_0fd7aeaa962881918477e34736a06eee",
+      "current_version_number": 0
+    }
+  ]
+}

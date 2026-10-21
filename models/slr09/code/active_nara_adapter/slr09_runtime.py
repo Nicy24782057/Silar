@@ -1,4 +1,7 @@
-"""Runner SLR09: bobot lokal yang diaudit -> prediksi -> adapter pilihan A.
+"""Runner baseline historis SLR09 dan helper inferensi.
+
+Untuk kandidat fine-tune baru gunakan slr09_candidate_runtime.py; identitas
+asset_lock pada modul ini sengaja tetap milik baseline historis.
 
 Inferensi saja; tidak melakukan training, menyimpan database, atau menjalankan
 Fusion/Completeness lama. Impor PyTorch/Transformers ditunda hingga model dimuat.
@@ -25,7 +28,7 @@ from silar_ai_adapter import (
     adapt_legacy_ai_output,
 )
 
-RUNNER_VERSION = "silar-runtime-0.4.0"
+RUNNER_VERSION = "silar-runtime-0.5.0"
 MAX_LENGTH = 256
 HERE = Path(__file__).resolve().parent
 
@@ -164,7 +167,7 @@ def encode_nara_words(tokens, tokenizer, max_length=MAX_LENGTH):
 
 
 def build_adapter_input(text, event_prediction, nara_tokens):
-    """Gunakan span/fallback historis dan guard v0.4 tanpa keputusan Fusion lama."""
+    """Bangun input dari span mentah, guard lokal dan fallback waktu literal."""
     import legacy_postprocessing as legacy
     from silar_victim_guard import apply_reviewed_victim_safety, VICTIM_GUARD_VERSION
     spans_before_guard = legacy.all_srl_spans(nara_tokens)
@@ -173,6 +176,10 @@ def build_adapter_input(text, event_prediction, nara_tokens):
     time_source = "SRL"
     if not time_values:
         time_values = [legacy.normalize_display_text(item["text"]) for item in legacy.time_fallback(text)]
+        from silar_postprocessing import supplemental_time_fallback
+        extra = supplemental_time_fallback(text[:nara_tokens[-1]['end']] if nara_tokens else '')
+        time_values = [value for value in time_values if not any(value.casefold() in longer.casefold() for longer in extra if value.casefold()!=longer.casefold())]
+        time_values += [value for value in extra if value not in time_values]
         time_source = "DETERMINISTIC_FALLBACK" if time_values else "MISSING"
     return {
         "report_text": text,

@@ -1,0 +1,9 @@
+{
+  "records": 50,
+  "tokens": 685,
+  "all_values_and_token_labels_exact": true,
+  "all_pending": true,
+  "reviewer_blank": true,
+  "workbook_sha256": "43981ea74cbf3c00835804df7c7c9441bbd3545de211810c7c37fbad9082c585",
+  "new_acceptance_inference_executed": false
+}

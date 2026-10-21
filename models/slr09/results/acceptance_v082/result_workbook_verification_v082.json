@@ -1,0 +1,12 @@
+{
+  "records": 50,
+  "original_reference_tokens": 762,
+  "initial_field_correct": 163,
+  "repaired_field_correct": 177,
+  "nonempty_denominator": 207,
+  "field_difference_rows": 46,
+  "field_rows_repaired": 14,
+  "token_difference_rows": 90,
+  "threshold_boundaries_checked": true,
+  "quality_acceptance_approved": false
+}

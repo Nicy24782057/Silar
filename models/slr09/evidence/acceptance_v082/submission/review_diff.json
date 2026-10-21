@@ -1,0 +1,1718 @@
+[
+  {
+    "sheet": "Mulai",
+    "cell": "B11",
+    "before": [
+      "50",
+      true
+    ],
+    "after": [
+      "0",
+      true
+    ]
+  },
+  {
+    "sheet": "Mulai",
+    "cell": "B14",
+    "before": [
+      "PERLU REVIEW ACUAN",
+      true
+    ],
+    "after": [
+      "SIAP VALIDASI",
+      true
+    ]
+  },
+  {
+    "sheet": "Mulai",
+    "cell": "B29",
+    "before": [
+      "0",
+      true
+    ],
+    "after": [
+      "10",
+      true
+    ]
+  },
+  {
+    "sheet": "Mulai",
+    "cell": "B30",
+    "before": [
+      "0",
+      true
+    ],
+    "after": [
+      "10",
+      true
+    ]
+  },
+  {
+    "sheet": "Mulai",
+    "cell": "B31",
+    "before": [
+      "0",
+      true
+    ],
+    "after": [
+      "10",
+      true
+    ]
+  },
+  {
+    "sheet": "Mulai",
+    "cell": "B32",
+    "before": [
+      "0",
+      true
+    ],
+    "after": [
+      "10",
+      true
+    ]
+  },
+  {
+    "sheet": "Mulai",
+    "cell": "B33",
+    "before": [
+      "0",
+      true
+    ],
+    "after": [
+      "10",
+      true
+    ]
+  },
+  {
+    "sheet": "Mulai",
+    "cell": "B45",
+    "before": [
+      "28",
+      true
+    ],
+    "after": [
+      "32",
+      true
+    ]
+  },
+  {
+    "sheet": "Mulai",
+    "cell": "B46",
+    "before": [
+      "80",
+      true
+    ],
+    "after": [
+      "84",
+      true
+    ]
+  },
+  {
+    "sheet": "Mulai",
+    "cell": "B49",
+    "before": [
+      "98",
+      true
+    ],
+    "after": [
+      "111",
+      true
+    ]
+  },
+  {
+    "sheet": "Mulai",
+    "cell": "B5",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "bintang",
+      false
+    ]
+  },
+  {
+    "sheet": "Mulai",
+    "cell": "B9",
+    "before": [
+      "0",
+      true
+    ],
+    "after": [
+      "50",
+      true
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "D55",
+    "before": [
+      "Teater Nawasena",
+      false
+    ],
+    "after": [
+      "panggung Teater Nawasena",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "E54",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "dari beragam tahun",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "F10",
+    "before": [
+      "tim SAR",
+      false
+    ],
+    "after": [
+      "tim SAR | warga",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "F20",
+    "before": [
+      "Petugas BPBD",
+      false
+    ],
+    "after": [
+      "Petugas BPBD | warga",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "F39",
+    "before": [
+      "Polisi",
+      false
+    ],
+    "after": [
+      "Polisi | korban",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "F54",
+    "before": [
+      "Panitia sosial",
+      false
+    ],
+    "after": [
+      "Panitia sosial | penyintas",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "G22",
+    "before": [
+      "mengguncang Kampung Cendrawana",
+      false
+    ],
+    "after": [
+      "Latihan evakuasi dihentikan | mengguncang Kampung Cendrawana",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J10",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J11",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J12",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J13",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J14",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J15",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J16",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J17",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J18",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J19",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J20",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J21",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J22",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J23",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J24",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J25",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J26",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J27",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J28",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J29",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J30",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J31",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J32",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J33",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J34",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J35",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J36",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J37",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J38",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J39",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J40",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J41",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J42",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J43",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J44",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J45",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J46",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J47",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J48",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J49",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J50",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J51",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J52",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J53",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J54",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J55",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J6",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J7",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J8",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J9",
+    "before": [
+      "PENDING",
+      false
+    ],
+    "after": [
+      "APPROVED",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K10",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Warga yang dievakuasi dilabeli OFFICER dan ditambahkan sebagai pihak. Evakuasi tidak membuktikan luka.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K11",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Tidak ada korban adalah negasi korban. Banjir dan dampak pada tiga kios tetap dinyatakan terjadi.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K12",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Saat latihan pertolongan dilabeli TIME. Banjir dinyatakan nyata. Waktu utama tetap siang tadi.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K13",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Petugas desa menegaskan banjir terjadi. Air masuk dua toko adalah dampak literal yang disebut.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K14",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Kematian seorang penjaga disebut setelah banjir. Tidak menambahkan mekanisme atau penyebab kematiannya.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K15",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Wilayah di bukit dilabeli PLACE sebagai konteks pembanding. Lokasi banjir tetap Kampung Panyawangan yang disebut terdampak.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K16",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Guncangan dan reaksi berlarian disebut eksplisit. Warga menjadi pihak, tanpa menyimpulkan korban luka.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K17",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Dinding balai desa adalah objek yang roboh, bukan lokasi kejadian. Lokasi tetap Desa Kemuningasri.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K18",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Tiga warga terluka dinyatakan eksplisit. Dampak, pihak dan span korban sesuai teks.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K19",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Pergerakan sesar adalah penyebab eksplisit. Dua rumah dinyatakan rusak, tanpa menambah korban.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K20",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Warga yang dievakuasi dilabeli OFFICER dan ditambahkan sebagai pihak. Tidak menyimpulkan luka.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K21",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Tak ada korban jiwa menegasikan kematian, bukan gempa. Kerusakan pagar sekolah tetap dipertahankan.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K22",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Penghentian latihan ditambahkan sebagai dampak dan INFORMATION karena dinyatakan akibat gempa sungguhan.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K23",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Satu warung roboh dan satu pedagang meninggal disebut eksplisit. Tidak menambah pihak lain.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K24",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Gempa dinyatakan terjadi dan merusak atap sekolah. Konteks video tidak mengubah label kejadian.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K25",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Gempa susulan menjadi pemicu utuh. Terasa kuat dicatat literal. Mengungsi tidak menyatakan korban luka.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K26",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Api merupakan pemicu kebakaran nyata karena menghanguskan dua kios. Tidak ada klaim korban.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K27",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Kompor bocor merupakan penyebab eksplisit. Objek yang rusak adalah dapur sekolah.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K28",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Dua pekerja terluka disebut eksplisit. Gudang Suryamurni merupakan lokasi, tanpa klaim kerusakan seluruh gudang.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K29",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Petugas damkar dan tindakan pemadaman disebut eksplisit. Tidak menambahkan korban atau objek rusak.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K30",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Satu rumah dinyatakan hangus. Frasa objek dan dampak pasif dipertahankan sesuai teks.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K31",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Tidak ada korban adalah negasi korban, bukan penyangkalan kebakaran atau gudang yang hangus.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K32",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Di tengah latihan damkar dilabeli TIME. Kebakaran dinyatakan nyata, dengan satu mobil rusak.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K33",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Seorang penjaga meninggal dalam kebakaran disebut eksplisit. Tidak menambah jumlah korban.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K34",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Klausa setelah titik dua menegaskan kebakaran benar-benar terjadi. Kabar palsu tidak menegasikan klaim itu.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K35",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Korsleting listrik adalah penyebab eksplisit. Api melalap satu toko merupakan kejadian dan dampak nyata.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K36",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Dua motor terlibat eksplisit. Tidak menebak jumlah pengendara atau kondisi korban.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K37",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Rem blong merupakan penyebab eksplisit. Satu bus dinyatakan rusak.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K38",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Dua penumpang terluka disebut eksplisit. Seluruh frasa korban tetap satu span WOUND.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K39",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Korban yang dievakuasi dilabeli OFFICER dan ditambahkan sebagai pihak. Status luka atau meninggal tidak disebut.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K40",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Satu pengendara meninggal dinyatakan eksplisit. Pihak dan korban mengikuti kuantitas yang disebut.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K41",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Tidak ada korban luka menegasikan luka, bukan kecelakaan. Dua mobil dinyatakan rusak.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K42",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Saat latihan pertolongan dilabeli TIME. Mobil petugas tetap objek. Kepemilikan tidak membuktikan petugas menjadi korban.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K43",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Truk pengangkut pasir adalah satu frasa objek. Terguling disebut, tetapi kerusakan muatan dan korban tidak ditambahkan.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K44",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Bukan adegan film menyangkal konteks fiksi. Kecelakaan dan satu angkot rusak tetap dinyatakan nyata.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K45",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Jalan licin adalah penyebab, berbeda dari lokasi Jalan Cempakaluyu. Seorang sopir terluka disebut eksplisit.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K46",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Hanya simulasi kebakaran. Lokasi, waktu dan pihak kegiatan dipertahankan tanpa dampak kebakaran nyata.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K47",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Kecelakaan hanya diperagakan dengan mobil properti. Mobil tidak dinyatakan rusak oleh kejadian nyata.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K48",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Potensi banjir besok pagi adalah peringatan, bukan kejadian yang telah dilaporkan. Waktu tetap literal.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K49",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Tidak terjadi gempa merupakan negasi kejadian. Kepala desa adalah pihak pemberi pernyataan.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K50",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Banjir pesanan adalah metafora promosi. Pihak dan frasa waktu sejak pagi ini sesuai teks.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K51",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Pembahasan pencegahan tidak menyatakan kebakaran terjadi. Lokasi, waktu dan pihak kegiatan sesuai teks.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K52",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Prosedur menghadapi gempa adalah materi edukasi. Tidak ada kejadian nyata, dampak atau korban yang dinyatakan.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K53",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Angka tahunan adalah statistik agregat, bukan satu kecelakaan tertentu. Tahunan tetap waktu literal.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K54",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Penyintas ditambahkan sebagai pihak. Dari beragam tahun dilabeli TIME dan dicatat literal, tanpa menetapkan tanggal atau korban baru.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K55",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Lokasi diperjelas menjadi panggung Teater Nawasena dan seluruh frasanya dilabeli PLACE. Kebakaran hanya adegan fiksi.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K6",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Relawan adalah pihak pelapor. Warung, lokasi, waktu dan dampak sesuai klaim narasi.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K7",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Satu sekolah merupakan objek yang dinyatakan terendam. Frasa waktu sejak pagi dipertahankan utuh.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K8",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Tanggul jebol adalah penyebab eksplisit. Jalan utama menjadi objek yang tertutup, bukan nama lokasi jalan.",
+      false
+    ]
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K9",
+    "before": [
+      "",
+      false
+    ],
+    "after": [
+      "Dua warga terluka disebut eksplisit. Frasa korban tetap satu span WOUND, dengan pihak dua warga.",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D135",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "PLACE-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D136",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "PLACE-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D137",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "PLACE-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D193",
+    "before": [
+      "INFORMATION-ARG",
+      false
+    ],
+    "after": [
+      "OFFICER-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D219",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "INFORMATION-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D220",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "INFORMATION-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D221",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "INFORMATION-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D342",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "TIME-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D343",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "TIME-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D344",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "TIME-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D345",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "TIME-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D439",
+    "before": [
+      "INFORMATION-ARG",
+      false
+    ],
+    "after": [
+      "OFFICER-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D476",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "TIME-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D477",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "TIME-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D478",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "TIME-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D64",
+    "before": [
+      "INFORMATION-ARG",
+      false
+    ],
+    "after": [
+      "OFFICER-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D649",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "OFFICER-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D653",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "TIME-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D654",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "TIME-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D655",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "TIME-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D667",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "PLACE-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D85",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "TIME-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D86",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "TIME-ARG",
+      false
+    ]
+  },
+  {
+    "sheet": "Token",
+    "cell": "D87",
+    "before": [
+      "O",
+      false
+    ],
+    "after": [
+      "TIME-ARG",
+      false
+    ]
+  }
+]

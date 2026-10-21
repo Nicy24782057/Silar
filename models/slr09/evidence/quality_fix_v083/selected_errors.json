@@ -1,0 +1,340 @@
+{
+  "selected_diagnostic_epoch": 3,
+  "group_errors_may_overlap": true,
+  "records": [
+    {
+      "group": "human130",
+      "id": "KEC-01450",
+      "text": "dalam 1 pekan ini telah terjadi 3 kecelakaan kapal penyebrangan warning bagi pemerintah untuk segera mengevaluasi bagaimana pengawasan transportasi penyebrangan di lapangan",
+      "gold": "NON_EVENT",
+      "prediction": "ACCIDENT",
+      "confidence": 0.5350504517555237,
+      "low_confidence": true
+    },
+    {
+      "group": "human130",
+      "id": "BAN-01512",
+      "text": "hari ini bu risma melakukan kunjungan ke beberapa lokasi kunjungan ini terkait cara pemkot mengatasi banjir di surabaya di titik ujung timur dan barat surabaya",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.9750535488128662,
+      "low_confidence": false
+    },
+    {
+      "group": "human130",
+      "id": "BAN-01925",
+      "text": "banjir dikit menyalahkan pemerintah kalo kau masih buang puntung rokok sama bungkus permen di jalan enggak usah menyalahkan orang lain karena banjir ! !",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.7946829199790955,
+      "low_confidence": true
+    },
+    {
+      "group": "human130",
+      "id": "GEM-01441",
+      "text": "kabtegal - jateng ( 5/12 ) sama n 1 slawi bersama bpbd dan pmi kabtegal adakan simulasi penanganan bencana gempa bumi di lingkungan sekolah",
+      "gold": "NON_EVENT",
+      "prediction": "EARTHQUAKE",
+      "confidence": 0.6319692730903625,
+      "low_confidence": true
+    },
+    {
+      "group": "original146",
+      "id": "BAN-01186",
+      "text": "banjir di aceh peneliti zaiyana putri : sekolah & ; outdoor & ; juga menarik",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9371019005775452,
+      "low_confidence": true
+    },
+    {
+      "group": "original146",
+      "id": "BAN-01703",
+      "text": "abang tolongin ini muti mau plng dari acara tadi dari metmall hujan deras banget mana banjir tolonginnnnn haha angkot nya lama nih mana masih jauh rumah mutiabang pokoknya sih you ya di event selanjutnya",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9973475933074951,
+      "low_confidence": false
+    },
+    {
+      "group": "original146",
+      "id": "BAN-01984",
+      "text": "asli ngeri-ngeri sedap naf eug beberapa kali bikin kegiatan sosial open donasi dari banjir 2014 kelud sinabung bencana asap dan ada beberapa kegiatan sosial lainnya wajib banget share dana yang masuk & keluar sampai terakir bikin lpj itu kalo di komunitas",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.999849796295166,
+      "low_confidence": false
+    },
+    {
+      "group": "original146",
+      "id": "KEB-00264",
+      "text": "1 . kebakaran hutan dan lahan ( ) saat ini sudah mulai dilakukan penanggulangan dan pencegahan nya oleh tim manggala agni klhk , tni dan polri di daerah riau . via",
+      "gold": "FIRE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.7060673236846924,
+      "low_confidence": true
+    },
+    {
+      "group": "original146",
+      "id": "BAN-01692",
+      "text": "banjir dukungan di injury time",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.8981279730796814,
+      "low_confidence": true
+    },
+    {
+      "group": "original146",
+      "id": "KEC-01450",
+      "text": "dalam 1 pekan ini telah terjadi 3 kecelakaan kapal penyebrangan warning bagi pemerintah untuk segera mengevaluasi bagaimana pengawasan transportasi penyebrangan di lapangan",
+      "gold": "NON_EVENT",
+      "prediction": "ACCIDENT",
+      "confidence": 0.5350504517555237,
+      "low_confidence": true
+    },
+    {
+      "group": "original146",
+      "id": "BAN-01763",
+      "text": "guna antisipasi banjir dan situasi kamtibmas yang aman dan kondusif kapolsek bukit intan akp madi putra sh mah beserta kasubnit reskrim ipda imam sh dan personil polsek bukit intan memantau debit air di perumahan warga yang rawan terdampak banjir di kelurahan parit lalang",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.8534691333770752,
+      "low_confidence": true
+    },
+    {
+      "group": "original146",
+      "id": "BAN-01512",
+      "text": "hari ini bu risma melakukan kunjungan ke beberapa lokasi kunjungan ini terkait cara pemkot mengatasi banjir di surabaya di titik ujung timur dan barat surabaya",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.9750535488128662,
+      "low_confidence": false
+    },
+    {
+      "group": "original146",
+      "id": "BAN-01925",
+      "text": "banjir dikit menyalahkan pemerintah kalo kau masih buang puntung rokok sama bungkus permen di jalan enggak usah menyalahkan orang lain karena banjir ! !",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.7946829199790955,
+      "low_confidence": true
+    },
+    {
+      "group": "original146",
+      "id": "KEC-01006",
+      "text": "4 kecelakaan maut dan mengerikan di dunia karena hal sepele",
+      "gold": "NON_EVENT",
+      "prediction": "ACCIDENT",
+      "confidence": 0.9142454862594604,
+      "low_confidence": true
+    },
+    {
+      "group": "original146",
+      "id": "GEM-01441",
+      "text": "kabtegal - jateng ( 5/12 ) sama n 1 slawi bersama bpbd dan pmi kabtegal adakan simulasi penanganan bencana gempa bumi di lingkungan sekolah",
+      "gold": "NON_EVENT",
+      "prediction": "EARTHQUAKE",
+      "confidence": 0.6319692730903625,
+      "low_confidence": true
+    },
+    {
+      "group": "adjudicated145",
+      "id": "BAN-01703",
+      "text": "abang tolongin ini muti mau plng dari acara tadi dari metmall hujan deras banget mana banjir tolonginnnnn haha angkot nya lama nih mana masih jauh rumah mutiabang pokoknya sih you ya di event selanjutnya",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9973475933074951,
+      "low_confidence": false
+    },
+    {
+      "group": "adjudicated145",
+      "id": "KEB-00264",
+      "text": "1 . kebakaran hutan dan lahan ( ) saat ini sudah mulai dilakukan penanggulangan dan pencegahan nya oleh tim manggala agni klhk , tni dan polri di daerah riau . via",
+      "gold": "FIRE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.7060673236846924,
+      "low_confidence": true
+    },
+    {
+      "group": "adjudicated145",
+      "id": "BAN-01692",
+      "text": "banjir dukungan di injury time",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.8981279730796814,
+      "low_confidence": true
+    },
+    {
+      "group": "adjudicated145",
+      "id": "KEC-01450",
+      "text": "dalam 1 pekan ini telah terjadi 3 kecelakaan kapal penyebrangan warning bagi pemerintah untuk segera mengevaluasi bagaimana pengawasan transportasi penyebrangan di lapangan",
+      "gold": "NON_EVENT",
+      "prediction": "ACCIDENT",
+      "confidence": 0.5350504517555237,
+      "low_confidence": true
+    },
+    {
+      "group": "adjudicated145",
+      "id": "BAN-01763",
+      "text": "guna antisipasi banjir dan situasi kamtibmas yang aman dan kondusif kapolsek bukit intan akp madi putra sh mah beserta kasubnit reskrim ipda imam sh dan personil polsek bukit intan memantau debit air di perumahan warga yang rawan terdampak banjir di kelurahan parit lalang",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.8534691333770752,
+      "low_confidence": true
+    },
+    {
+      "group": "adjudicated145",
+      "id": "BAN-01512",
+      "text": "hari ini bu risma melakukan kunjungan ke beberapa lokasi kunjungan ini terkait cara pemkot mengatasi banjir di surabaya di titik ujung timur dan barat surabaya",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.9750535488128662,
+      "low_confidence": false
+    },
+    {
+      "group": "adjudicated145",
+      "id": "BAN-01925",
+      "text": "banjir dikit menyalahkan pemerintah kalo kau masih buang puntung rokok sama bungkus permen di jalan enggak usah menyalahkan orang lain karena banjir ! !",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.7946829199790955,
+      "low_confidence": true
+    },
+    {
+      "group": "adjudicated145",
+      "id": "KEC-01006",
+      "text": "4 kecelakaan maut dan mengerikan di dunia karena hal sepele",
+      "gold": "NON_EVENT",
+      "prediction": "ACCIDENT",
+      "confidence": 0.9142454862594604,
+      "low_confidence": true
+    },
+    {
+      "group": "adjudicated145",
+      "id": "GEM-01441",
+      "text": "kabtegal - jateng ( 5/12 ) sama n 1 slawi bersama bpbd dan pmi kabtegal adakan simulasi penanganan bencana gempa bumi di lingkungan sekolah",
+      "gold": "NON_EVENT",
+      "prediction": "EARTHQUAKE",
+      "confidence": 0.6319692730903625,
+      "low_confidence": true
+    },
+    {
+      "group": "seen_v07_50",
+      "id": "NEW07-NON_EVENT-06",
+      "text": "Suara benturan dalam latihan kecelakaan berasal dari pengeras suara. Mobil rusak dan korban merupakan properti serta pemeran simulasi.",
+      "gold": "NON_EVENT",
+      "prediction": "ACCIDENT",
+      "confidence": 0.963463306427002,
+      "low_confidence": false
+    },
+    {
+      "group": "FINAL081",
+      "id": "FINAL081-NON_EVENT-06",
+      "text": "Tim kelurahan menyiapkan jalur evakuasi untuk mengantisipasi banjir di Kampung Manggala.",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.5984328985214233,
+      "low_confidence": true
+    },
+    {
+      "group": "FINAL082",
+      "id": "FINAL082-NON_EVENT-02",
+      "text": "Kecelakaan dalam latihan di Balai Suryalaya sore ini memakai mobil properti, tanpa kejadian sungguhan.",
+      "gold": "NON_EVENT",
+      "prediction": "ACCIDENT",
+      "confidence": 0.9865832924842834,
+      "low_confidence": false
+    },
+    {
+      "group": "context40_now_training",
+      "id": "DIAG083-FLOOD-04",
+      "text": "Informasi banjir telah diperiksa di lokasi dan ternyata benar; pesan ini bukan pengumuman latihan.",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9999622106552124,
+      "low_confidence": false
+    },
+    {
+      "group": "context40_now_training",
+      "id": "DIAG083-FLOOD-08",
+      "text": "Peristiwa banjir memang terjadi pagi ini. Kabar bahwa semuanya hanya peragaan sudah dibantah petugas.",
+      "gold": "FLOOD",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9027131199836731,
+      "low_confidence": true
+    },
+    {
+      "group": "context40_now_training",
+      "id": "DIAG083-EARTHQUAKE-04",
+      "text": "Informasi gempa telah diperiksa di lokasi dan ternyata benar; pesan ini bukan pengumuman latihan.",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9998844861984253,
+      "low_confidence": false
+    },
+    {
+      "group": "context40_now_training",
+      "id": "DIAG083-EARTHQUAKE-05",
+      "text": "Skenario yang dibaca peserta berbeda dari gempa sungguhan yang sedang ditangani di luar gedung.",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.7484753727912903,
+      "low_confidence": true
+    },
+    {
+      "group": "context40_now_training",
+      "id": "DIAG083-EARTHQUAKE-07",
+      "text": "Tim yang semula mengira hanya latihan menemukan gempa nyata dan meminta bantuan segera.",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9204807281494141,
+      "low_confidence": true
+    },
+    {
+      "group": "context40_now_training",
+      "id": "DIAG083-EARTHQUAKE-08",
+      "text": "Peristiwa gempa memang terjadi pagi ini. Kabar bahwa semuanya hanya peragaan sudah dibantah petugas.",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9555785059928894,
+      "low_confidence": false
+    },
+    {
+      "group": "context40_now_training",
+      "id": "DIAG083-FIRE-04",
+      "text": "Informasi kebakaran telah diperiksa di lokasi dan ternyata benar; pesan ini bukan pengumuman latihan.",
+      "gold": "FIRE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9998639822006226,
+      "low_confidence": false
+    },
+    {
+      "group": "context40_now_training",
+      "id": "DIAG083-FIRE-07",
+      "text": "Tim yang semula mengira hanya latihan menemukan kebakaran nyata dan meminta bantuan segera.",
+      "gold": "FIRE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.7974708676338196,
+      "low_confidence": true
+    },
+    {
+      "group": "context40_now_training",
+      "id": "DIAG083-ACCIDENT-04",
+      "text": "Informasi kecelakaan telah diperiksa di lokasi dan ternyata benar; pesan ini bukan pengumuman latihan.",
+      "gold": "ACCIDENT",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9998695850372314,
+      "low_confidence": false
+    },
+    {
+      "group": "context40_now_training",
+      "id": "DIAG083-ACCIDENT-07",
+      "text": "Tim yang semula mengira hanya latihan menemukan kecelakaan nyata dan meminta bantuan segera.",
+      "gold": "ACCIDENT",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9808727502822876,
+      "low_confidence": false
+    }
+  ],
+  "independent_acceptance_executed": false
+}

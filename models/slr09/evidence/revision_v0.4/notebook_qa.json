@@ -1,0 +1,12 @@
+{
+  "code_cells": 5,
+  "all_cells_parse": true,
+  "outputs_initially_empty": true,
+  "bootstrap_and_upload_preflight_executed_with_review_fixture": true,
+  "failure_export_executed": true,
+  "failure_status": "FAILED",
+  "weights_in_export": false,
+  "new_neural_inference_executed": false,
+  "scope": "NOTEBOOK_FIXTURE_AND_MISSING_ARCHIVE_NEGATIVE_TEST_NOT_REAL_REVIEW",
+  "all_passed": true
+}

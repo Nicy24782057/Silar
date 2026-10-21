@@ -1,0 +1,28 @@
+{
+  "schema": "slr09-explicit-chat-reference-correction-approval-1",
+  "user_message": "oke setuju dan lanjut",
+  "user_message_at": "2026-10-20T21:10:35+07:00",
+  "recorded_at": "2026-10-20T14:16:33.565716+00:00",
+  "reviewer_name_from_workbook": "Bintang",
+  "scope": "Approve exactly two previously proposed token-label corrections, then continue acceptance testing",
+  "source_library_id": "libfile_ec5717efabf481918d3ee067f2a7e06d",
+  "source_workbook_sha256": "6cca555c208bf5bfd430fffa083aafcf66786d49ca5116d2ba29461a12d5d0cf",
+  "final_workbook_sha256": "2e9cfb9ee4b45ded92baa190d0348b55464fdc3c4b570da2436ef314a2adf352",
+  "approved_changes": [
+    {
+      "sheet": "Token",
+      "cell": "D574",
+      "before": "O",
+      "after": "FALSE-EVENT"
+    },
+    {
+      "sheet": "Token",
+      "cell": "D531",
+      "before": "O",
+      "after": "OFFICER-ARG"
+    }
+  ],
+  "all_other_review_values_unchanged": true,
+  "existing_50_APPROVED_review_decisions_retained": true,
+  "quality_acceptance_or_card_done_approved": false
+}

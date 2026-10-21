@@ -1,0 +1,14 @@
+{
+  "seed": 42,
+  "max_length": 192,
+  "batch_size": 8,
+  "max_epochs": 6,
+  "patience": 2,
+  "trainable_encoder_layers": "LAST_FOUR_ONLY",
+  "encoder_learning_rate": 2e-05,
+  "head_learning_rate": 5e-05,
+  "non_event_loss_weight_multiplier": 2.5,
+  "weight_decay": 0.01,
+  "selection": "max min(macroF1/.85, NON_EVENT recall/.90, min event recall/.80)",
+  "selection_data": "DEVELOPMENT_VALIDATION_ONLY"
+}

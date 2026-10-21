@@ -1,0 +1,15 @@
+{
+  "evidence_recomputed": true,
+  "gold_and_legacy_helper_unchanged": true,
+  "replayed_raw_predictions_unchanged": true,
+  "nara_token_labels_and_offsets_reproduced_exactly": true,
+  "nara_confidence_max_absolute_difference": 4.470348358154297e-06,
+  "nara_confidence_comparison_tolerance": 1e-05,
+  "exact_overlap_found": false,
+  "development_split_unchanged": true,
+  "seen_pilot_targets_met": true,
+  "fresh_assistant_challenge_macro_f1": 0.8006593406593406,
+  "fresh_challenge_human_reviewed": false,
+  "quality_acceptance_approved": false,
+  "card_done": false
+}

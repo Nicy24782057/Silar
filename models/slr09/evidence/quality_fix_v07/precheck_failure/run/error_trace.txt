@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/e5625dd03138/silar09-next-v06/revision_v0.6/models/slr09/code/quality_fix/train_matched_sena_v07.py", line 30, in run
+    if sha(warm/name)!=digest:raise ValueError('Warm identity changed: '+name)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Warm identity changed: model.safetensors

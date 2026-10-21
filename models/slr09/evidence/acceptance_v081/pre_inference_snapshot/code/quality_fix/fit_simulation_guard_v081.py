@@ -1,0 +1,126 @@
+"""Fit a development-only intercept with simulation guards across all known sets.
+
+No gradients or new acceptance inference. The first v0.8.1 candidate and its
+execution evidence remain intact. This selection is explicitly exploratory.
+"""
+import argparse
+from datetime import datetime,timezone
+import json
+import math
+from pathlib import Path
+import shutil
+import traceback
+import zipfile
+
+from train_sena_cpu import LABELS,write,sha
+from train_scope_sena_v06 import score_probs,shifted
+
+ROOT=Path(__file__).resolve().parents[2]
+SETS=('human130','original146','adjudicated145','scope50','seen_v07_50','human_regression50')
+CONTRASTS={'simulation','exercise_only','real_during_exercise','exercise_contrast'}
+FILES=('config.json','model.safetensors','tokenizer.json','tokenizer_config.json','special_tokens_map.json','vocab.txt')
+
+
+def load(p):return json.loads(p.read_text())
+
+
+def run(training,out,exports):
+    out.mkdir(parents=True,exist_ok=False);exports.mkdir(parents=True,exist_ok=False)
+    state={'schema':'slr09-known-simulation-guard-0.8.1','status':'RUNNING',
+        'started_at':datetime.now(timezone.utc).isoformat(),'training_executed':False,
+        'gradient_updates_executed':False,'source_gradient_training_notebook':21,
+        'development_bias_fitting_executed':True,'model_inference_executed':False,
+        'new_final_reference_read_or_inferred':False,'quality_acceptance_approved':False,'card_done':False}
+    write(out/'run_state.json',state)
+    try:
+        original_selection=load(training/'best_selection.json')
+        current=original_selection['additional_bias']
+        raw={};rows={}
+        for name in SETS:
+            rows[name]=load(training/f'frozen_{name}.json')
+            p=load(training/f'predictions_{name}.json')
+            assert [x['id'] for x in rows[name]]==[x['id'] for x in p]
+            raw[name]=[[r['probabilities'][c] for c in LABELS] for r in p]
+            shutil.copy2(training/f'frozen_{name}.json',out/f'frozen_{name}.json')
+        grid=[]
+        for bias in load(training/'training_config.json')['additional_bias_grid']:
+            probabilities={name:shifted(raw[name],bias-current) for name in SETS}
+            scores={name:score_probs(rows[name],probabilities[name]) for name in SETS}
+            contrast={}
+            for name in SETS:
+                selected=[(r,p) for r,p in zip(rows[name],probabilities[name]) if r.get('family') in CONTRASTS]
+                contrast[name]={'support':len(selected),'errors':[r['id'] for r,p in selected if LABELS[max(range(5),key=lambda i:p[i])]!=r['final']]}
+            valid=all(m['targets_met'] for m in scores.values()) and all(not x['errors'] for x in contrast.values())
+            grid.append({'additional_bias':bias,'delta_from_first_candidate':bias-current,
+                'all_numeric_targets_met':all(m['targets_met'] for m in scores.values()),
+                'known_contrasts':contrast,'feasible':valid,'scores':scores})
+        write(out/'grid_known_sets_and_contrasts.json',grid)
+        feasible=[g for g in grid if g['feasible']]
+        if not feasible:raise RuntimeError('No feasible bias in the existing development grid; no export')
+        chosen=min(feasible,key=lambda x:(abs(x['additional_bias']),-x['scores']['human130']['macro_f1']))
+        delta=chosen['delta_from_first_candidate']
+        selection={'epoch':original_selection['epoch'],'additional_bias':chosen['additional_bias'],
+            'inherited_bias':2.5,'delta_from_first_candidate':delta,
+            'selection_basis':'MIN_ABS_ADDITIONAL_BIAS_WITH_ALL_SIX_NUMERIC_GATES_AND_ALL_KNOWN_SIMULATION_EXERCISE_CONTRASTS',
+            'selection_was_added_after_observing_a_known_development_simulation_error':True,
+            'exploratory_development_selection_not_independent_validation':True,
+            'known_contrasts':chosen['known_contrasts'],'all_development_targets_met':True,
+            'feasible_bias_values':[g['additional_bias'] for g in feasible],
+            'quality_acceptance_approved':False}
+        write(out/'best_selection.json',selection);write(out/'metrics.json',chosen['scores'])
+        for name in SETS:
+            probabilities=shifted(raw[name],delta)
+            write(out/f'predictions_{name}.json',[{'id':r['id'],'text':r['text'],'gold':r['final'],
+                'probabilities':dict(zip(LABELS,p))} for r,p in zip(rows[name],probabilities)])
+        write(out/'lineage.json',{'training21_source_sha256':sha(training/'executed_training_source.py'),
+            'training21_weight_sha256':sha(training/'best_model/model.safetensors'),
+            'first_export_lock':load(ROOT/'config/quality_candidate_asset_lock_v0.8.1.json'),
+            'first_selection':original_selection,'cutoff_unchanged':.95,
+            'no_probability_calibration_claim':True,'final50_not_read':True})
+        import torch
+        from transformers import AutoModelForSequenceClassification
+        torch.set_num_threads(2)
+        model=AutoModelForSequenceClassification.from_pretrained(training/'best_model',local_files_only=True)
+        assert [model.config.id2label[i] for i in range(5)]==list(LABELS)
+        with torch.no_grad():model.classifier.bias[4]+=delta
+        model.save_pretrained(out/'best_model',safe_serialization=True)
+        for name in FILES:
+            if name not in {'config.json','model.safetensors'}:shutil.copy2(training/'best_model'/name,out/'best_model'/name)
+        run_id=state['started_at'].split('.')[0].replace('-','').replace(':','')
+        archive=exports/'SILAR_SENA_context_guard_v0.8.1_20261019.zip'
+        spec={'model_id':'SILAR_SENA_context_guard_v081_'+run_id,'run_id':run_id,
+            'archive_name':archive.name,'labels':list(LABELS),'files':{n:sha(out/'best_model'/n) for n in FILES},
+            'selected_epoch':1,'selected_checkpoint_has_gradient_from_training21':True,
+            'this_guard_fit_has_new_gradients':False,'inherited_manual_bias':2.5,
+            'additional_manual_bias':selection['additional_bias'],
+            'training_unique':1249,'human_training':623,'assistant_weak_training':626,
+            'v07_50_used_for_weak_training':True,'human130_never_used_for_training':True,
+            'known_simulation_guard_fitted':True,'quality_acceptance_approved':False,'production_model_selected':False}
+        state.update(status='SUCCEEDED',additional_bias=selection['additional_bias'],
+            finished_at=datetime.now(timezone.utc).isoformat())
+        write(out/'run_state.json',state)
+        shutil.copy2(Path(__file__),out/'executed_guard_source.py')
+        with zipfile.ZipFile(archive,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=1) as z:
+            for name in FILES:z.write(out/'best_model'/name,name)
+            z.writestr('experiment_manifest.json',json.dumps(spec,indent=2))
+            for p in sorted(out.iterdir()):
+                if p.is_file() and p.suffix in {'.json','.jsonl','.py'}:z.write(p,'development_evidence/'+p.name)
+        spec['archive_sha256']=sha(archive);write(archive.with_suffix('.manifest.json'),spec)
+        old=load(ROOT/'config/quality_candidate_asset_lock_v0.8.1.json')
+        old['models']['sena']=spec;write(ROOT/'config/quality_candidate_asset_lock_v0.8.1.json',old)
+        config=load(ROOT/'config/SLR09_Konfigurasi_Integrasi_v0.6.json')
+        config['sena']={k:spec[k] for k in ('archive_name','archive_sha256','run_id','labels')}
+        config['sena']['weights_sha256']=spec['files']['model.safetensors']
+        config['calibration_reference']=spec['model_id']+':OPERATING_CUTOFF_0.95_NOT_PROBABILITY_CALIBRATED'
+        write(ROOT/'config/SLR09_Konfigurasi_Integrasi_v0.6.json',config)
+        print(json.dumps({'archive':str(archive),'sha256':spec['archive_sha256'],'selection':selection,
+            'human130':chosen['scores']['human130'],'quality_acceptance_approved':False},indent=2),flush=True)
+    except Exception as error:
+        state.update(status='FAILED',error=str(error));write(out/'run_state.json',state)
+        (out/'error_trace.txt').write_text(traceback.format_exc());raise
+
+
+if __name__=='__main__':
+    p=argparse.ArgumentParser(description=__doc__)
+    for name in ('training-run','output','exports'):p.add_argument('--'+name,type=Path,required=True)
+    a=p.parse_args();run(a.training_run,a.output,a.exports)

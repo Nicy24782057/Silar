@@ -1,0 +1,11 @@
+{
+  "training_records": 480,
+  "assistant_development_records": 128,
+  "source_code_sha256": "3870a6521cdf7d8a295b0d5b61f29c814c1f2a5b11f9e83874c4a4b37af481d2",
+  "files_sha256": {
+    "training": "ef61d1a8d4e20fec960f284e9849e339a4b15d0f70b8f0026881216cb5417b4f",
+    "development": "491ab22f4425e17d4930e2bc603bf2961690352ba3f8991b90f345863c3edb1e"
+  },
+  "template_families_disjoint_between_training_and_development": true,
+  "human_review_of_new_examples_completed": false
+}

@@ -1,0 +1,7 @@
+{
+  "archive": "/workspace/scratch/89b81e051aff/silar_delivery_v084_20261020/SILAR_SENA_context_v0.8.4_20261020.zip",
+  "bytes": 412184854,
+  "sha256": "6d9ed7b2705301602aa72b67c911843dd8451b115efce8739ae4f07bde3cd3e5",
+  "changed_tensors": 20,
+  "unchanged_tensors": 181
+}

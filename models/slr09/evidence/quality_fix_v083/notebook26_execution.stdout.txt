@@ -1,0 +1,116 @@
+ACTUAL_TRAINING_OUTPUT /workspace/scratch/89b81e051aff/silar_work/models/slr09/evidence/quality_fix_v083/last_layer_training_v083_20261020T094424_052301Z
+Baseline inference on 1683 known training narratives
+epoch 1 step 1 / 211 loss 0.0195
+epoch 1 step 11 / 211 loss 0.0071
+epoch 1 step 21 / 211 loss 0.0363
+epoch 1 step 31 / 211 loss 0.071
+epoch 1 step 41 / 211 loss 0.0346
+epoch 1 step 51 / 211 loss 0.005
+epoch 1 step 61 / 211 loss 0.0321
+epoch 1 step 71 / 211 loss 0.0262
+epoch 1 step 81 / 211 loss 0.1769
+epoch 1 step 91 / 211 loss 0.0189
+epoch 1 step 101 / 211 loss 0.7087
+epoch 1 step 111 / 211 loss 0.0395
+epoch 1 step 121 / 211 loss 0.435
+epoch 1 step 131 / 211 loss 0.0095
+epoch 1 step 141 / 211 loss 0.0023
+epoch 1 step 151 / 211 loss 0.5912
+epoch 1 step 161 / 211 loss 0.0085
+epoch 1 step 171 / 211 loss 0.0086
+epoch 1 step 181 / 211 loss 0.3906
+epoch 1 step 191 / 211 loss 1.2094
+epoch 1 step 201 / 211 loss 0.0551
+epoch 1 step 211 / 211 loss 1.5037
+{"epoch": 1, "feasible": false, "contrast_errors": {"seen_v07_50": ["NEW07-NON_EVENT-06"], "FINAL081": ["FINAL081-NON_EVENT-01"], "FINAL082": ["FINAL082-NON_EVENT-02"]}, "context40": 0.7, "failed_class_sets": ["human130", "original146", "adjudicated145", "FINAL081", "context40_now_training"]}
+epoch 2 step 1 / 211 loss 0.0107
+epoch 2 step 11 / 211 loss 0.0109
+epoch 2 step 21 / 211 loss 0.0219
+epoch 2 step 31 / 211 loss 0.0029
+epoch 2 step 41 / 211 loss 0.0296
+epoch 2 step 51 / 211 loss 0.6437
+epoch 2 step 61 / 211 loss 0.0094
+epoch 2 step 71 / 211 loss 0.0762
+epoch 2 step 81 / 211 loss 0.0039
+epoch 2 step 91 / 211 loss 0.0122
+epoch 2 step 101 / 211 loss 0.0041
+epoch 2 step 111 / 211 loss 0.0049
+epoch 2 step 121 / 211 loss 0.0199
+epoch 2 step 131 / 211 loss 0.019
+epoch 2 step 141 / 211 loss 0.0044
+epoch 2 step 151 / 211 loss 1.3964
+epoch 2 step 161 / 211 loss 0.0026
+epoch 2 step 171 / 211 loss 0.1039
+epoch 2 step 181 / 211 loss 0.0077
+epoch 2 step 191 / 211 loss 0.0148
+epoch 2 step 201 / 211 loss 1.7721
+epoch 2 step 211 / 211 loss 0.0076
+{"epoch": 2, "feasible": false, "contrast_errors": {"seen_v07_50": ["NEW07-NON_EVENT-06"], "FINAL082": ["FINAL082-NON_EVENT-02"]}, "context40": 0.7, "failed_class_sets": ["human130", "original146", "adjudicated145", "context40_now_training"]}
+epoch 3 step 1 / 211 loss 0.1095
+epoch 3 step 11 / 211 loss 5.7081
+epoch 3 step 21 / 211 loss 0.0059
+epoch 3 step 31 / 211 loss 0.0626
+epoch 3 step 41 / 211 loss 0.0075
+epoch 3 step 51 / 211 loss 0.0048
+epoch 3 step 61 / 211 loss 0.2534
+epoch 3 step 71 / 211 loss 0.0081
+epoch 3 step 81 / 211 loss 0.0066
+epoch 3 step 91 / 211 loss 0.0273
+epoch 3 step 101 / 211 loss 0.0406
+epoch 3 step 111 / 211 loss 0.0131
+epoch 3 step 121 / 211 loss 0.0039
+epoch 3 step 131 / 211 loss 0.0385
+epoch 3 step 141 / 211 loss 0.0042
+epoch 3 step 151 / 211 loss 0.1162
+epoch 3 step 161 / 211 loss 1.8826
+epoch 3 step 171 / 211 loss 0.0075
+epoch 3 step 181 / 211 loss 0.0423
+epoch 3 step 191 / 211 loss 0.0033
+epoch 3 step 201 / 211 loss 0.0042
+epoch 3 step 211 / 211 loss 0.0036
+{"epoch": 3, "feasible": false, "contrast_errors": {"seen_v07_50": ["NEW07-NON_EVENT-06"], "FINAL082": ["FINAL082-NON_EVENT-02"]}, "context40": 0.75, "failed_class_sets": ["human130", "original146", "adjudicated145", "context40_now_training"]}
+{
+  "schema": "slr09-last-layer-context-0.8.3",
+  "status": "NO_FEASIBLE_CANDIDATE",
+  "started_at": "2026-10-20T09:44:24.272998+00:00",
+  "training_executed": true,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "new_acceptance_inference_executed": false,
+  "training_unique": 1683,
+  "training_origins": {
+    "HUMAN_SOURCE": 584,
+    "KNOWN_HUMAN_ADJUDICATED_NOW_TRAINING": 145,
+    "OWNER_APPROVED": 24,
+    "ASSISTANT_OTHER": 576,
+    "ASSISTANT_SEEN_V07": 50,
+    "KNOWN_ASSISTANT_SCOPE_NOW_TRAINING": 50,
+    "KNOWN_HUMAN_REGRESSION_NOW_TRAINING": 50,
+    "REVIEWED_FINAL_NOW_TRAINING": 100,
+    "NEW_ASSISTANT_WEAK_TRAINING": 64,
+    "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING": 40
+  },
+  "gradient_updates_executed": true,
+  "epoch": 3,
+  "step": 211,
+  "steps_per_epoch": 211,
+  "selected_epoch": 3,
+  "all_known_constraints_met": false,
+  "finished_at": "2026-10-20T10:17:13.074482+00:00"
+}
+Traceback (most recent call last):
+  File "/workspace/scratch/89b81e051aff/silar_work/models/slr09/code/quality_fix/train_context_last_layer_v083.py", line 186, in <module>
+    a=p.parse_args();run(a.root.resolve(),a.warm_start.resolve(),a.output.resolve())
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/89b81e051aff/silar_work/models/slr09/code/quality_fix/train_context_last_layer_v083.py", line 177, in run
+    if not selected['feasible']:raise RuntimeError('No candidate satisfies existing regression constraints; no candidate export.')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: No candidate satisfies existing regression constraints; no candidate export.
+Notebook execution recorded: /workspace/scratch/89b81e051aff/silar_work/models/slr09/notebooks/26_Perbaikan_Konteks_SENA_v0.8.3_executed.ipynb
+Traceback (most recent call last):
+  File "/workspace/scratch/89b81e051aff/silar_work/models/slr09/code/quality_fix/execute_notebook_cells_v06.py", line 54, in <module>
+    execute(p.parse_args().notebook)
+  File "/workspace/scratch/89b81e051aff/silar_work/models/slr09/code/quality_fix/execute_notebook_cells_v06.py", line 36, in execute
+    exec(compile(cell.source,str(source)+f':cell{count}','exec'),namespace)
+  File "/workspace/scratch/89b81e051aff/silar_work/models/slr09/notebooks/26_Perbaikan_Konteks_SENA_v0.8.3.ipynb:cell1", line 13, in <module>
+RuntimeError: Training did not satisfy regression requirements; retain run_state and error_trace.

@@ -1,0 +1,34 @@
+{
+  "records": 50,
+  "class_support": {
+    "FLOOD": 10,
+    "EARTHQUAKE": 10,
+    "FIRE": 10,
+    "ACCIDENT": 10,
+    "NON_EVENT": 10
+  },
+  "role_support": {
+    "FLOOD-EVENT": 10,
+    "INFORMATION-ARG": 50,
+    "AFFECTEDOBJECTS-ARG": 47,
+    "O": 270,
+    "PLACE-ARG": 86,
+    "TIME-ARG": 102,
+    "OFFICER-ARG": 29,
+    "REASON-ARG": 9,
+    "WOUNDVICTIM-ARG": 16,
+    "DEATHVICTIM-ARG": 12,
+    "EARTHQUAKE-EVENT": 11,
+    "FIRE-EVENT": 10,
+    "STREET-ARG": 12,
+    "ACCIDENT-EVENT": 10,
+    "FALSE-EVENT": 11
+  },
+  "sources": {
+    "ASSISTANT_AUTHORED_SYNTHETIC": 50
+  },
+  "excluded": [],
+  "known_data_overlap": "NO_NORMALIZED_EXACT_MATCH_IN_AVAILABLE_SOURCES",
+  "historical_initial_training_membership_verified": false,
+  "population_generalization_established": false
+}

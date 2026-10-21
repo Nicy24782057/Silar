@@ -1,0 +1,16 @@
+{
+  "schema": "slr09-development-replay-0.8.4",
+  "status": "SUCCEEDED",
+  "started_at": "2026-10-20T14:44:53.299008+00:00",
+  "training_executed": true,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "new_acceptance_inference_executed": false,
+  "gradient_updates_executed": true,
+  "epoch": 1,
+  "steps_completed": 309,
+  "steps_per_epoch": 309,
+  "training_unique": 1733,
+  "selected_epoch": 1,
+  "finished_at": "2026-10-20T14:46:04.924346+00:00"
+}

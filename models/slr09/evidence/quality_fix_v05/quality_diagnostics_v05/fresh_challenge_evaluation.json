@@ -1,0 +1,209 @@
+{
+  "records": 24,
+  "accuracy": 0.8333333333333334,
+  "macro_f1": 0.8006593406593406,
+  "per_class": {
+    "FLOOD": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "EARTHQUAKE": {
+      "precision": 1.0,
+      "recall": 0.3333333333333333,
+      "f1": 0.5,
+      "support": 3
+    },
+    "FIRE": {
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1": 0.8,
+      "support": 3
+    },
+    "ACCIDENT": {
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571,
+      "support": 3
+    },
+    "NON_EVENT": {
+      "precision": 0.7857142857142857,
+      "recall": 0.9166666666666666,
+      "f1": 0.8461538461538461,
+      "support": 12
+    }
+  },
+  "confusion_matrix": {
+    "FLOOD": {
+      "FLOOD": 3,
+      "EARTHQUAKE": 0,
+      "FIRE": 0,
+      "ACCIDENT": 0,
+      "NON_EVENT": 0
+    },
+    "EARTHQUAKE": {
+      "FLOOD": 0,
+      "EARTHQUAKE": 1,
+      "FIRE": 0,
+      "ACCIDENT": 0,
+      "NON_EVENT": 2
+    },
+    "FIRE": {
+      "FLOOD": 0,
+      "EARTHQUAKE": 0,
+      "FIRE": 2,
+      "ACCIDENT": 0,
+      "NON_EVENT": 1
+    },
+    "ACCIDENT": {
+      "FLOOD": 0,
+      "EARTHQUAKE": 0,
+      "FIRE": 0,
+      "ACCIDENT": 3,
+      "NON_EVENT": 0
+    },
+    "NON_EVENT": {
+      "FLOOD": 0,
+      "EARTHQUAKE": 0,
+      "FIRE": 0,
+      "ACCIDENT": 1,
+      "NON_EVENT": 11
+    }
+  },
+  "errors": [
+    {
+      "id": "FRESH-05-005",
+      "text": "Ketika siswa berlatih berlindung, gempa sungguhan mengguncang sekolah hingga lampu jatuh.",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.6504347920417786,
+      "low_confidence": true,
+      "family": "real_during_exercise",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "id": "FRESH-05-006",
+      "text": "Ini bukan contoh soal. Gempa baru saja merobohkan pagar rumah kami.",
+      "gold": "EARTHQUAKE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.997796893119812,
+      "low_confidence": false,
+      "family": "real_with_negation",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "id": "FRESH-05-009",
+      "text": "Bukan simulasi, dapur restoran sedang kebakaran; asap pekat keluar dari atap.",
+      "gold": "FIRE",
+      "prediction": "NON_EVENT",
+      "confidence": 0.7664832472801208,
+      "low_confidence": true,
+      "family": "real_with_negation",
+      "kind": "FALSE_NON_EVENT"
+    },
+    {
+      "id": "FRESH-05-024",
+      "text": "Petugas mengklarifikasi kabar kecelakaan di Jalan Kamboja: kendaraan berhenti biasa dan tidak saling menabrak.",
+      "gold": "NON_EVENT",
+      "prediction": "ACCIDENT",
+      "confidence": 0.9823868274688721,
+      "low_confidence": false,
+      "family": "denial",
+      "kind": "FALSE_EVENT"
+    }
+  ],
+  "false_event": 1,
+  "false_non_event": 3,
+  "high_confidence_errors": 2,
+  "threshold_analysis": {
+    "cutoff": 0.95,
+    "flagged": 10,
+    "errors_flagged": 2,
+    "errors_remaining_at_or_above": 2,
+    "coverage": 0.5833333333333334
+  },
+  "reliability": {
+    "ten_bin_ece": 0.13073219607273737,
+    "multiclass_brier_sum_over_classes": 0.28322550148748177,
+    "bins": [
+      {
+        "lower": 0.0,
+        "upper": 0.1,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.3,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.3,
+        "upper": 0.4,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "n": 0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6,
+        "n": 1,
+        "mean_confidence": 0.5477650165557861,
+        "accuracy": 1.0
+      },
+      {
+        "lower": 0.6,
+        "upper": 0.7,
+        "n": 1,
+        "mean_confidence": 0.6504347920417786,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.7,
+        "upper": 0.8,
+        "n": 4,
+        "mean_confidence": 0.7651615738868713,
+        "accuracy": 0.75
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "n": 2,
+        "mean_confidence": 0.8522032201290131,
+        "accuracy": 1.0
+      },
+      {
+        "lower": 0.9,
+        "upper": 1.0,
+        "n": 16,
+        "mean_confidence": 0.9799164421856403,
+        "accuracy": 0.875
+      }
+    ],
+    "probability_calibration_established": false,
+    "scope": "DIAGNOSTIC_ON_APPROVED_PILOT_NOT_PROOF_OF_95_PERCENT_CORRECTNESS"
+  },
+  "scope": "ONE_SHOT_FRESH_ASSISTANT_LABELED_CHALLENGE_NOT_ACCEPTANCE",
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "used_for_model_or_checkpoint_selection": false,
+  "human_reference_reviewed": false
+}

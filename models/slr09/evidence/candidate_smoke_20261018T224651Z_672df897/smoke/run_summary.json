@@ -1,0 +1,107 @@
+{
+  "schema": "slr09-candidate-smoke-0.2",
+  "runner_version": "silar-candidate-runtime-0.2.0",
+  "status": "SUCCEEDED",
+  "input_sha256": "3fc980a13c18d42195c7c734aaf9668f69d6e87dd3091996ad17887402216073",
+  "environment_label": "GOOGLE_COLAB_CPU",
+  "environment_scope": "REPRESENTATIVE",
+  "environment": {
+    "python": "3.13.16",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "cpu_count": 2,
+    "packages": {
+      "torch": "2.11.0+cpu",
+      "transformers": "4.57.1",
+      "tokenizers": "0.22.1",
+      "safetensors": "0.8.0",
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.6.1",
+      "iterative-stratification": null
+    },
+    "device": "cpu",
+    "peak_process_rss_bytes": 1983508480,
+    "measurement_scope": "PROCESS_ON_OBSERVED_ENVIRONMENT_NOT_AUTOMATIC_TARGET_VM_PROOF",
+    "torch_num_threads": 2,
+    "cuda_available": false,
+    "cuda_runtime": null
+  },
+  "training_executed": false,
+  "model_inference_executed": true,
+  "sena_inference_executed": true,
+  "nara_inference_executed": true,
+  "fusion_executed": true,
+  "records_expected": 3,
+  "records_completed": 3,
+  "production_deployed": false,
+  "quality_acceptance_approved_by_this_run": false,
+  "scope": "ASSET_LOADING_AND_SINGLE_PASS_INFERENCE_NOT_BACKEND_OR_QUALITY_ACCEPTANCE",
+  "confidence_threshold": 0.95,
+  "calibration_reference": "SLR09_SENA_20261018T044447_926664Z:reviewed_validation620:cutoff_0.95",
+  "configuration_sha256": "dbee386a46cae545ca565ca8c38617ee640c7cf86b42b71b9ca14e03684fdfe3",
+  "candidate_lock_sha256": "24e9348eee3cbc7821f7797202741e908e24d60db7e83c33c33c5037491e4aa2",
+  "models": {
+    "sena": {
+      "model_id": "SILAR_SENA_reviewed_pilot_20261018T044447_926664Z",
+      "run_id": "20261018T044447_926664Z",
+      "archive_sha256_expected": "144e13d1904f1f4beee56a5ac29fc4fc75cf6a424806ce3c9a0082bf6adf92a3",
+      "files": {
+        "config.json": "53190f6443cea17db8e8d152839916b640aac910ff6e50c6bcb7f8cc4729e431",
+        "model.safetensors": "9512a4895de281f3696e6c53a86d1271ad45180339995af01cf2b886ddc0afad",
+        "tokenizer.json": "9fe770007d1727a8cacfec0b467e2b6d6f60d7ff93f3b0be692d63c62ccc856d",
+        "tokenizer_config.json": "af1e05390d2f52f5c09553b0695dba1f047cadc875a0b12dca06c9e0fe039b21",
+        "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+        "vocab.txt": "343bf28a78f7efeda6419fa610f553184a6dcd29aae726f46850cd05e3167dc3"
+      },
+      "labels": [
+        "FLOOD",
+        "EARTHQUAKE",
+        "FIRE",
+        "ACCIDENT",
+        "NON_EVENT"
+      ],
+      "candidate_directory_verified": true
+    },
+    "nara": {
+      "model_id": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z",
+      "run_id": "20261018T001122_607337Z",
+      "archive_sha256_expected": "bce9feba0dd2ae4518880708085f44286ae8d1dd7e50f4eb452e36824f967798",
+      "files": {
+        "config.json": "fa5336688409b42cb5e0baa58c039bb4ddc8c9253c4fc812625ac807c2e2d058",
+        "model.safetensors": "ef84ccfeca2d116942c5d7f8882e064192279eabf92127e8adc1741933b60c29",
+        "tokenizer.json": "9fe770007d1727a8cacfec0b467e2b6d6f60d7ff93f3b0be692d63c62ccc856d",
+        "tokenizer_config.json": "4375ee5167df42507f6c3253ea0b6f65b04f7339ff8d6312754e37084e68ce9e",
+        "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+        "vocab.txt": "343bf28a78f7efeda6419fa610f553184a6dcd29aae726f46850cd05e3167dc3"
+      },
+      "labels": [
+        "O",
+        "ACCIDENT-EVENT",
+        "AFFECTEDOBJECTS-ARG",
+        "DEATHVICTIM-ARG",
+        "EARTHQUAKE-EVENT",
+        "FALSE-EVENT",
+        "FIRE-EVENT",
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "OFFICER-ARG",
+        "PLACE-ARG",
+        "REASON-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "WOUNDVICTIM-ARG"
+      ],
+      "candidate_directory_verified": true
+    }
+  },
+  "model_load_seconds": 5.848533432000011,
+  "wall_seconds_including_loading": 16.147557000000006,
+  "per_record_seconds": {
+    "min": 0.14866412700001774,
+    "median": 0.17110083700003997,
+    "max": 0.39252235600002905,
+    "scope": "SINGLE_PASS_INCLUDING_FIRST_RECORD_NOT_CAPACITY_BENCHMARK"
+  },
+  "predictions_sha256": "c8500d800641497cd1c4b5e6c0cf4afc28931d20a3d5b2f5bcbde82bb21c8da9"
+}

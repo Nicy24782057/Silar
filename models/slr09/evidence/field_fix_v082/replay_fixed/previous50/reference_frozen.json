@@ -1,0 +1,2158 @@
+{
+  "protocol": {
+    "schema": "slr09-acceptance-protocol-0.4",
+    "scope": "MVP_ASSET_PILOT",
+    "confidence_threshold": 0.95,
+    "minimum_per_class": 10,
+    "binding": {
+      "files_sha256": {
+        "acceptance/known_inputs.json": "eeabc22a8536aca4d7ee1bb30dbafddc3f85aa1a2fc82ec230de96066845829a",
+        "code/acceptance/evaluate_acceptance.py": "5522b1c48ad129b6450ba37a09877dcfc985869a77fe40125930b9bc77c78359",
+        "code/active_nara_adapter/legacy_postprocessing.py": "06275b3aa338718689fba66984626754e6b34739156f65e378ceaad4b06bfa9f",
+        "code/active_nara_adapter/nara_data.py": "eea1124afd1d0628b7a96c3d9dbca43a116f8bed0fef76f2c67718e7ff2e4a29",
+        "code/active_nara_adapter/nara_experiment.py": "734e9c15a13ac967a72a482c68a9fc777e6632a75957ffd854b0863894a28409",
+        "code/active_nara_adapter/nara_metrics.py": "8f74d058db3e613c77df83c772b5142f2b504dfde542455284754e4c8ceefcb7",
+        "code/active_nara_adapter/silar_ai_adapter.py": "1dead87540803429634cad961c4ce6ee192447d3d4610630f7105e221939b99c",
+        "code/active_nara_adapter/silar_nara_composition.py": "10a560b2bd8e14fb069695525023a43828638d4dd21ad721886c1fce1c852885",
+        "code/active_nara_adapter/silar_postprocessing.py": "38aaf3d18274a79bf056aac3591e922ae015f2d403a3eb0ed9a71060c1197abd",
+        "code/active_nara_adapter/silar_victim_guard.py": "7cdc7b355130252073e734f97ee65e0692d089cafdadc7eb0036c5806927e4e7",
+        "code/active_nara_adapter/slr09_candidate_runtime.py": "c260d6917f92978b888cbd4d564664053d034b191e2f9a05a30f50ae165247f1",
+        "code/active_nara_adapter/slr09_runtime.py": "64dbc7ea6864a64a94fe7f2886c02497a32719f80edf93c215a81d0695362f25",
+        "config/SLR09_Konfigurasi_Integrasi_v0.1.json": "dbee386a46cae545ca565ca8c38617ee640c7cf86b42b71b9ca14e03684fdfe3",
+        "config/candidate_asset_lock.json": "24e9348eee3cbc7821f7797202741e908e24d60db7e83c33c33c5037491e4aa2",
+        "config/inference_environment.json": "d2f235f7b5b3f4d7cb445fa5870cfc6b0b49f9f1a429e8518075c4ff53955bbd",
+        "config/requirements-inference.txt": "1e496aa6408ac46bd8545e395a6f960edcf5b5bc85aa3d165632da37421823f8",
+        "code/acceptance/import_review_xlsx.py": "51dd1853839bd251bde7f724ed6af15250aa797c49c050635de5678a597f93af"
+      }
+    },
+    "targets": {
+      "sena_macro_f1": 0.85,
+      "non_event_recall": 0.9,
+      "event_class_recall": 0.8,
+      "nara_macro_f1_all_14_non_o": 0.75,
+      "nara_exact_span_f1": 0.6,
+      "fields_nonempty_exact": 0.8,
+      "empty_field_spurious_rate_max": 0.05
+    },
+    "target_status": "APPROVED_BY_USER_BEFORE_NEW_PILOT_INFERENCE",
+    "target_basis": "Engineering proposal for a small MVP asset pilot; informed by already-known validation, not a universal standard. NON_EVENT recall separately constrains false events; per-event recall protects against overblocking. New field target is a proposed engineering criterion, not previously measured performance.",
+    "approval": {
+      "status": "APPROVED",
+      "reviewer": "Pemilik proyek (persetujuan percakapan)",
+      "at": "2026-10-19T07:57:04+07:00",
+      "limitations_accepted": true,
+      "representativeness_accepted": true,
+      "rationale": "Pemilik proyek menyetujui usulan target dan pilot aset MVP pada percakapan 19 Oktober 2026. Persetujuan ini tidak menyatakan tiap label acuan sudah diperiksa atau mutu model sudah lulus."
+    },
+    "limitations": [
+      "50 assistant-authored synthetic cases, ten per category; small purposive challenge set, not representative random field sampling.",
+      "Human review of category, all seven fields and token labels is mandatory before inference; proposals are not human gold.",
+      "Historical initial training corpus membership is unverified. Exact overlap with available sources is checked; semantic independence is not established.",
+      "All 14 non-O roles are scored; rare role support is disclosed per label. No general ambiguity detector or timestamp normalizer is claimed.",
+      "Pilot scoring does not authorize deployment, establish population generalization, or replace group acceptance. Wider MVP claims require representative new input.",
+      "Any acceptance test used to fix or tune the model becomes development evidence; replace the held-out test for the next acceptance round."
+    ]
+  },
+  "records": [
+    {
+      "id": "MVP-NEW-001",
+      "family": "plain",
+      "text": "Banjir merendam dua rumah di Kelurahan Sukamaju tadi pagi.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Kelurahan Sukamaju",
+        "time_text": "tadi pagi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merendam dua rumah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dua rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Kategori, lokasi, waktu, dampak, objek, dan seluruh token sesuai."
+      }
+    },
+    {
+      "id": "MVP-NEW-002",
+      "family": "response",
+      "text": "Petugas mengevakuasi warga akibat banjir di Kampung Melati malam ini.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Kampung Melati",
+        "time_text": "malam ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Petugas",
+          "warga"
+        ],
+        "impacts": [
+          "mengevakuasi warga"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "INFORMATION-ARG",
+        "OFFICER-ARG",
+        "O",
+        "FLOOD-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Warga yang dievakuasi adalah pihak: label OFFICER dan field Pihak ditambahkan. Tidak menyimpulkan luka."
+      }
+    },
+    {
+      "id": "MVP-NEW-003",
+      "family": "damage",
+      "text": "Banjir merusak jembatan di Desa Harapan kemarin sore.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Desa Harapan",
+        "time_text": "kemarin sore",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak jembatan"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "jembatan"
+        ]
+      },
+      "gold_nara_labels": [
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Jembatan disebut rusak secara eksplisit; tidak ada klaim korban."
+      }
+    },
+    {
+      "id": "MVP-NEW-004",
+      "family": "injury",
+      "text": "Banjir di Desa Kenanga menyebabkan seorang warga terluka pagi ini.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Desa Kenanga",
+        "time_text": "pagi ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "seorang warga"
+        ],
+        "impacts": [
+          "menyebabkan seorang warga terluka"
+        ],
+        "victims": [
+          "seorang warga terluka"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "FLOOD-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "INFORMATION-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Pihak seorang warga ditambahkan dari frasa korban eksplisit. Token korban tetap satu span WOUND."
+      }
+    },
+    {
+      "id": "MVP-NEW-005",
+      "family": "death",
+      "text": "Banjir di Kampung Cempaka mengakibatkan dua warga meninggal tadi malam.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Kampung Cempaka",
+        "time_text": "tadi malam",
+        "occurred_at": null,
+        "involved_parties": [
+          "dua warga"
+        ],
+        "impacts": [
+          "mengakibatkan dua warga meninggal"
+        ],
+        "victims": [
+          "dua warga meninggal"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "FLOOD-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "INFORMATION-ARG",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Pihak dua warga ditambahkan dari frasa korban meninggal. Tidak menambah jumlah atau kondisi lain."
+      }
+    },
+    {
+      "id": "MVP-NEW-006",
+      "family": "negated_victim",
+      "text": "Banjir melanda Desa Mulyasari siang ini tanpa korban jiwa.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Desa Mulyasari",
+        "time_text": "siang ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "melanda Desa Mulyasari"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Tanpa korban jiwa merupakan negasi; tidak diberi label korban meninggal."
+      }
+    },
+    {
+      "id": "MVP-NEW-007",
+      "family": "past_concrete",
+      "text": "Warga membersihkan lumpur sisa banjir di Kampung Anggrek kemarin.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Kampung Anggrek",
+        "time_text": "kemarin",
+        "occurred_at": null,
+        "involved_parties": [
+          "Warga"
+        ],
+        "impacts": [
+          "membersihkan lumpur"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "INFORMATION-ARG",
+        "INFORMATION-ARG",
+        "O",
+        "FLOOD-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Banjir yang telah terjadi tetap FLOOD. Membersihkan lumpur merupakan reaksi; warga bukan korban luka."
+      }
+    },
+    {
+      "id": "MVP-NEW-008",
+      "family": "cause",
+      "text": "Banjir akibat luapan sungai merendam sekolah di Desa Sumberrejo pagi tadi.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Desa Sumberrejo",
+        "time_text": "pagi tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merendam sekolah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "sekolah"
+        ]
+      },
+      "gold_nara_labels": [
+        "FLOOD-EVENT",
+        "O",
+        "REASON-ARG",
+        "REASON-ARG",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Luapan sungai adalah penyebab eksplisit. Sekolah merupakan objek terdampak."
+      }
+    },
+    {
+      "id": "MVP-NEW-009",
+      "family": "news_reference",
+      "text": "Laporan warga menyebut banjir menutup Jalan Pahlawan sejak subuh.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Jalan Pahlawan",
+        "time_text": "sejak subuh",
+        "occurred_at": null,
+        "involved_parties": [
+          "warga"
+        ],
+        "impacts": [
+          "menutup Jalan Pahlawan"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "Jalan Pahlawan"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "OFFICER-ARG",
+        "O",
+        "FLOOD-EVENT",
+        "INFORMATION-ARG",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Jalan Pahlawan juga ditambahkan sebagai objek yang tertutup. Token tetap STREET sesuai prioritas lokasi."
+      }
+    },
+    {
+      "id": "MVP-NEW-010",
+      "family": "informal",
+      "text": "Tolong, banjir sudah masuk tiga rumah di Kampung Pinus sekarang.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FLOOD",
+      "gold_fields": {
+        "location_text": "Kampung Pinus",
+        "time_text": "sekarang",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "masuk tiga rumah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "tiga rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "FLOOD-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Tiga rumah dinyatakan kemasukan banjir. Tidak menyimpulkan adanya korban."
+      }
+    },
+    {
+      "id": "MVP-NEW-011",
+      "family": "plain",
+      "text": "Gempa mengguncang Desa Waringin tadi pagi.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Desa Waringin",
+        "time_text": "tadi pagi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "mengguncang Desa Waringin"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "EARTHQUAKE-EVENT",
+        "INFORMATION-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Guncangan yang disebut dipertahankan literal; tidak menyimpulkan kerusakan atau korban."
+      }
+    },
+    {
+      "id": "MVP-NEW-012",
+      "family": "damage",
+      "text": "Gempa merusak dua rumah di Desa Sukadana malam ini.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Desa Sukadana",
+        "time_text": "malam ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak dua rumah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dua rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "EARTHQUAKE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Dua rumah dinyatakan rusak. Waktu relatif dipertahankan tanpa tanggal buatan."
+      }
+    },
+    {
+      "id": "MVP-NEW-013",
+      "family": "injury",
+      "text": "Gempa di Kecamatan Sumberjaya menyebabkan seorang anak terluka kemarin.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Kecamatan Sumberjaya",
+        "time_text": "kemarin",
+        "occurred_at": null,
+        "involved_parties": [
+          "seorang anak"
+        ],
+        "impacts": [
+          "menyebabkan seorang anak terluka"
+        ],
+        "victims": [
+          "seorang anak terluka"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "EARTHQUAKE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "INFORMATION-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Pihak seorang anak ditambahkan dari frasa korban eksplisit. Token korban tetap WOUND."
+      }
+    },
+    {
+      "id": "MVP-NEW-014",
+      "family": "death",
+      "text": "Gempa di Desa Tanjungsari mengakibatkan satu warga meninggal tadi malam.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Desa Tanjungsari",
+        "time_text": "tadi malam",
+        "occurred_at": null,
+        "involved_parties": [
+          "satu warga"
+        ],
+        "impacts": [
+          "mengakibatkan satu warga meninggal"
+        ],
+        "victims": [
+          "satu warga meninggal"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "EARTHQUAKE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "INFORMATION-ARG",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Pihak satu warga ditambahkan dari frasa korban meninggal yang eksplisit."
+      }
+    },
+    {
+      "id": "MVP-NEW-015",
+      "family": "response",
+      "text": "Tim penyelamat mengevakuasi warga setelah gempa di Desa Cendana pagi ini.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Desa Cendana",
+        "time_text": "pagi ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Tim penyelamat",
+          "warga"
+        ],
+        "impacts": [
+          "mengevakuasi warga"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "OFFICER-ARG",
+        "INFORMATION-ARG",
+        "OFFICER-ARG",
+        "O",
+        "EARTHQUAKE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Warga yang dievakuasi adalah pihak: label OFFICER dan field Pihak dilengkapi. Tidak menyimpulkan luka."
+      }
+    },
+    {
+      "id": "MVP-NEW-016",
+      "family": "negated_damage",
+      "text": "Gempa terasa di Kelurahan Cibiru siang ini tanpa kerusakan bangunan.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Kelurahan Cibiru",
+        "time_text": "siang ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "EARTHQUAKE-EVENT",
+        "INFORMATION-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Terasa menyatakan persepsi guncangan, tanpa dampak kerusakan yang disebut. Korban dan objek tetap kosong."
+      }
+    },
+    {
+      "id": "MVP-NEW-017",
+      "family": "past_concrete",
+      "text": "Warga mengungsi setelah gempa mengguncang Desa Mekarwangi kemarin sore.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Desa Mekarwangi",
+        "time_text": "kemarin sore",
+        "occurred_at": null,
+        "involved_parties": [
+          "Warga"
+        ],
+        "impacts": [
+          "mengungsi",
+          "mengguncang Desa Mekarwangi"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "INFORMATION-ARG",
+        "O",
+        "EARTHQUAKE-EVENT",
+        "INFORMATION-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Informasi mengguncang Desa Mekarwangi dilengkapi bersama reaksi mengungsi. Mengungsi bukan bukti luka."
+      }
+    },
+    {
+      "id": "MVP-NEW-018",
+      "family": "aftershock",
+      "text": "Gempa susulan merobohkan tembok di Desa Pagersari sore ini.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Desa Pagersari",
+        "time_text": "sore ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merobohkan tembok"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "tembok"
+        ]
+      },
+      "gold_nara_labels": [
+        "EARTHQUAKE-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Susulan merupakan kualifikasi gempa; pemicu tetap Gempa. Tembok dinyatakan roboh."
+      }
+    },
+    {
+      "id": "MVP-NEW-019",
+      "family": "news_reference",
+      "text": "Petugas melaporkan gempa merusak sekolah di Desa Wanasari sejak pagi.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Desa Wanasari",
+        "time_text": "sejak pagi",
+        "occurred_at": null,
+        "involved_parties": [
+          "Petugas"
+        ],
+        "impacts": [
+          "merusak sekolah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "sekolah"
+        ]
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "O",
+        "EARTHQUAKE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Petugas adalah pihak pelapor; sekolah merupakan objek yang dinyatakan rusak."
+      }
+    },
+    {
+      "id": "MVP-NEW-020",
+      "family": "informal",
+      "text": "Barusan gempa kuat terasa di Kampung Nangka, warga berlarian keluar.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "EARTHQUAKE",
+      "gold_fields": {
+        "location_text": "Kampung Nangka",
+        "time_text": "Barusan",
+        "occurred_at": null,
+        "involved_parties": [
+          "warga"
+        ],
+        "impacts": [
+          "berlarian keluar"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "TIME-ARG",
+        "EARTHQUAKE-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "O",
+        "OFFICER-ARG",
+        "INFORMATION-ARG",
+        "INFORMATION-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Terasa diselaraskan menjadi INFORMATION. Dampak tetap berlarian keluar; tidak menyimpulkan kerusakan."
+      }
+    },
+    {
+      "id": "MVP-NEW-021",
+      "family": "plain",
+      "text": "Kebakaran menghanguskan kios di Pasar Sentosa tadi pagi.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Pasar Sentosa",
+        "time_text": "tadi pagi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menghanguskan kios"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "kios"
+        ]
+      },
+      "gold_nara_labels": [
+        "FIRE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Kios dinyatakan hangus. Tidak ada klaim korban."
+      }
+    },
+    {
+      "id": "MVP-NEW-022",
+      "family": "cause",
+      "text": "Kebakaran akibat korsleting listrik merusak gudang di Desa Kertajaya malam ini.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Desa Kertajaya",
+        "time_text": "malam ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak gudang"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "gudang"
+        ]
+      },
+      "gold_nara_labels": [
+        "FIRE-EVENT",
+        "O",
+        "REASON-ARG",
+        "REASON-ARG",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Korsleting listrik merupakan penyebab eksplisit; gudang dinyatakan rusak."
+      }
+    },
+    {
+      "id": "MVP-NEW-023",
+      "family": "injury",
+      "text": "Kebakaran di Kelurahan Babakan menyebabkan dua pedagang terluka pagi ini.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Kelurahan Babakan",
+        "time_text": "pagi ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "dua pedagang"
+        ],
+        "impacts": [
+          "menyebabkan dua pedagang terluka"
+        ],
+        "victims": [
+          "dua pedagang terluka"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "FIRE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "INFORMATION-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Pihak dua pedagang ditambahkan dari frasa korban terluka. Token korban tetap WOUND."
+      }
+    },
+    {
+      "id": "MVP-NEW-024",
+      "family": "death",
+      "text": "Kebakaran di Desa Margasari mengakibatkan seorang penghuni meninggal kemarin.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Desa Margasari",
+        "time_text": "kemarin",
+        "occurred_at": null,
+        "involved_parties": [
+          "seorang penghuni"
+        ],
+        "impacts": [
+          "mengakibatkan seorang penghuni meninggal"
+        ],
+        "victims": [
+          "seorang penghuni meninggal"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "FIRE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "INFORMATION-ARG",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Pihak seorang penghuni ditambahkan dari frasa korban meninggal yang eksplisit."
+      }
+    },
+    {
+      "id": "MVP-NEW-025",
+      "family": "response",
+      "text": "Pemadam memadamkan kebakaran di Pasar Pagi sejak subuh.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Pasar Pagi",
+        "time_text": "sejak subuh",
+        "occurred_at": null,
+        "involved_parties": [
+          "Pemadam"
+        ],
+        "impacts": [
+          "memadamkan kebakaran"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "INFORMATION-ARG",
+        "FIRE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Pagi dalam Pasar Pagi adalah bagian nama tempat, bukan TIME. Waktu tetap sejak subuh."
+      }
+    },
+    {
+      "id": "MVP-NEW-026",
+      "family": "negated_victim",
+      "text": "Kebakaran melanda gudang di Desa Cikole sore ini tanpa korban luka.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Desa Cikole",
+        "time_text": "sore ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "melanda gudang"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "gudang"
+        ]
+      },
+      "gold_nara_labels": [
+        "FIRE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Tanpa korban luka adalah negasi. Gudang terdampak, tetapi tidak ada korban luka positif."
+      }
+    },
+    {
+      "id": "MVP-NEW-027",
+      "family": "real_during_exercise",
+      "text": "Saat latihan evakuasi, kebakaran sungguhan menghanguskan gudang di Desa Karangrejo siang ini.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Desa Karangrejo",
+        "time_text": "siang ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menghanguskan gudang"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "gudang"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "FIRE-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Kebakaran dinyatakan sungguhan meskipun berlangsung saat latihan; kategori FIRE dipertahankan."
+      }
+    },
+    {
+      "id": "MVP-NEW-028",
+      "family": "past_concrete",
+      "text": "Warga membersihkan puing rumah setelah kebakaran di Desa Sukamurni kemarin malam.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Desa Sukamurni",
+        "time_text": "kemarin malam",
+        "occurred_at": null,
+        "involved_parties": [
+          "Warga"
+        ],
+        "impacts": [
+          "membersihkan puing rumah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "puing rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "FIRE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Objek diperjelas menjadi frasa utuh puing rumah; token puing diselaraskan sebagai AFFECTEDOBJECTS."
+      }
+    },
+    {
+      "id": "MVP-NEW-029",
+      "family": "news_reference",
+      "text": "Petugas melaporkan kebakaran merusak tiga toko di Pasar Anyar pagi tadi.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Pasar Anyar",
+        "time_text": "pagi tadi",
+        "occurred_at": null,
+        "involved_parties": [
+          "Petugas"
+        ],
+        "impacts": [
+          "merusak tiga toko"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "tiga toko"
+        ]
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "O",
+        "FIRE-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Tiga toko dinyatakan rusak. Pihak pelapor dipertahankan."
+      }
+    },
+    {
+      "id": "MVP-NEW-030",
+      "family": "informal",
+      "text": "Tolong, kebakaran di Jalan Merdeka sudah menghanguskan satu rumah sekarang.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "FIRE",
+      "gold_fields": {
+        "location_text": "Jalan Merdeka",
+        "time_text": "sekarang",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "menghanguskan satu rumah"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "satu rumah"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "FIRE-EVENT",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Kebakaran nyata dengan satu rumah hangus. Jalan Merdeka tetap STREET."
+      }
+    },
+    {
+      "id": "MVP-NEW-031",
+      "family": "plain",
+      "text": "Kecelakaan melibatkan dua motor di Jalan Diponegoro tadi pagi.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Jalan Diponegoro",
+        "time_text": "tadi pagi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "melibatkan dua motor"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "dua motor"
+        ]
+      },
+      "gold_nara_labels": [
+        "ACCIDENT-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Dua motor terlibat eksplisit; tidak menyimpulkan adanya korban luka."
+      }
+    },
+    {
+      "id": "MVP-NEW-032",
+      "family": "injury",
+      "text": "Kecelakaan di Jalan Kartini menyebabkan satu pengendara terluka malam ini.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Jalan Kartini",
+        "time_text": "malam ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "satu pengendara"
+        ],
+        "impacts": [
+          "menyebabkan satu pengendara terluka"
+        ],
+        "victims": [
+          "satu pengendara terluka"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "ACCIDENT-EVENT",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "INFORMATION-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Pihak satu pengendara ditambahkan dari frasa korban terluka yang eksplisit."
+      }
+    },
+    {
+      "id": "MVP-NEW-033",
+      "family": "death",
+      "text": "Kecelakaan di Jalan Sudirman mengakibatkan dua penumpang meninggal kemarin sore.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Jalan Sudirman",
+        "time_text": "kemarin sore",
+        "occurred_at": null,
+        "involved_parties": [
+          "dua penumpang"
+        ],
+        "impacts": [
+          "mengakibatkan dua penumpang meninggal"
+        ],
+        "victims": [
+          "dua penumpang meninggal"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "ACCIDENT-EVENT",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "INFORMATION-ARG",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "DEATHVICTIM-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Pihak dua penumpang ditambahkan dari frasa korban meninggal yang eksplisit."
+      }
+    },
+    {
+      "id": "MVP-NEW-034",
+      "family": "response",
+      "text": "Polisi mengevakuasi korban kecelakaan di Jalan Veteran pagi ini.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Jalan Veteran",
+        "time_text": "pagi ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Polisi",
+          "korban"
+        ],
+        "impacts": [
+          "mengevakuasi korban"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "INFORMATION-ARG",
+        "OFFICER-ARG",
+        "ACCIDENT-EVENT",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Korban yang dievakuasi dilabeli OFFICER dan ditambahkan sebagai pihak. Status luka/meninggal tidak disebut."
+      }
+    },
+    {
+      "id": "MVP-NEW-035",
+      "family": "cause",
+      "text": "Kecelakaan akibat rem blong merusak bus di Jalan Siliwangi tadi malam.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Jalan Siliwangi",
+        "time_text": "tadi malam",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak bus"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "bus"
+        ]
+      },
+      "gold_nara_labels": [
+        "ACCIDENT-EVENT",
+        "O",
+        "REASON-ARG",
+        "REASON-ARG",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Rem blong merupakan penyebab eksplisit. Bus dinyatakan rusak."
+      }
+    },
+    {
+      "id": "MVP-NEW-036",
+      "family": "negated_victim",
+      "text": "Kecelakaan melibatkan truk di Jalan Ahmad Yani siang ini tanpa korban jiwa.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Jalan Ahmad Yani",
+        "time_text": "siang ini",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "melibatkan truk"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "truk"
+        ]
+      },
+      "gold_nara_labels": [
+        "ACCIDENT-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Tanpa korban jiwa adalah negasi. Truk terlibat, bukan bukti korban meninggal."
+      }
+    },
+    {
+      "id": "MVP-NEW-037",
+      "family": "past_concrete",
+      "text": "Petugas membersihkan puing setelah kecelakaan di Jalan Imam Bonjol kemarin.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Jalan Imam Bonjol",
+        "time_text": "kemarin",
+        "occurred_at": null,
+        "involved_parties": [
+          "Petugas"
+        ],
+        "impacts": [
+          "membersihkan puing"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "puing"
+        ]
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "ACCIDENT-EVENT",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Objek hanya puing yang disebut, tanpa menebak kendaraan asalnya. Token puing menjadi AFFECTEDOBJECTS."
+      }
+    },
+    {
+      "id": "MVP-NEW-038",
+      "family": "real_during_exercise",
+      "text": "Saat simulasi lalu lintas, kecelakaan sungguhan merusak mobil di Jalan Pemuda pagi tadi.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Jalan Pemuda",
+        "time_text": "pagi tadi",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [
+          "merusak mobil"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "mobil"
+        ]
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "ACCIDENT-EVENT",
+        "O",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Kecelakaan dinyatakan sungguhan meskipun terjadi saat simulasi; kategori ACCIDENT dipertahankan."
+      }
+    },
+    {
+      "id": "MVP-NEW-039",
+      "family": "news_reference",
+      "text": "Warga melaporkan kecelakaan melibatkan angkot di Jalan Cendrawasih sore ini.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Jalan Cendrawasih",
+        "time_text": "sore ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Warga"
+        ],
+        "impacts": [
+          "melibatkan angkot"
+        ],
+        "victims": [],
+        "affected_objects": [
+          "angkot"
+        ]
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "O",
+        "ACCIDENT-EVENT",
+        "INFORMATION-ARG",
+        "AFFECTEDOBJECTS-ARG",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Angkot terlibat eksplisit. Tidak menyimpulkan identitas atau kondisi penumpangnya."
+      }
+    },
+    {
+      "id": "MVP-NEW-040",
+      "family": "informal",
+      "text": "Tolong, kecelakaan di Jalan Mangga menyebabkan seorang pejalan kaki terluka sekarang.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "ACCIDENT",
+      "gold_fields": {
+        "location_text": "Jalan Mangga",
+        "time_text": "sekarang",
+        "occurred_at": null,
+        "involved_parties": [
+          "seorang pejalan kaki"
+        ],
+        "impacts": [
+          "menyebabkan seorang pejalan kaki terluka"
+        ],
+        "victims": [
+          "seorang pejalan kaki terluka"
+        ],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "ACCIDENT-EVENT",
+        "O",
+        "STREET-ARG",
+        "STREET-ARG",
+        "INFORMATION-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "WOUNDVICTIM-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Pihak seorang pejalan kaki ditambahkan dari korban terluka. Seluruh frasa korban tetap satu span WOUND."
+      }
+    },
+    {
+      "id": "MVP-NEW-041",
+      "family": "simulation",
+      "text": "Petugas mengadakan simulasi kebakaran di halaman kantor kelurahan pagi ini.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "halaman kantor kelurahan",
+        "time_text": "pagi ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Petugas"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Simulasi, bukan kebakaran nyata. Pemicu FALSE-EVENT; tidak menambahkan dampak atau korban."
+      }
+    },
+    {
+      "id": "MVP-NEW-042",
+      "family": "education",
+      "text": "Guru menjelaskan penyebab gempa dalam pelajaran di sekolah hari ini.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "sekolah",
+        "time_text": "hari ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Guru"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "O",
+        "O",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Pembahasan edukasi, bukan kejadian gempa tertentu. Kata penyebab tidak menyatakan penyebab konkret."
+      }
+    },
+    {
+      "id": "MVP-NEW-043",
+      "family": "prevention",
+      "text": "Warga mengikuti penyuluhan pencegahan banjir di balai desa pagi tadi.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "balai desa",
+        "time_text": "pagi tadi",
+        "occurred_at": null,
+        "involved_parties": [
+          "Warga"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Penyuluhan pencegahan, bukan banjir yang dinyatakan terjadi."
+      }
+    },
+    {
+      "id": "MVP-NEW-044",
+      "family": "hypothetical",
+      "text": "Bagaimana cara menghindari kecelakaan apabila rem kendaraan rusak?",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": null,
+        "time_text": null,
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Pertanyaan bersyarat, bukan laporan kecelakaan. Kondisi rem tidak dipromosikan menjadi kerusakan aktual."
+      }
+    },
+    {
+      "id": "MVP-NEW-045",
+      "family": "fiction",
+      "text": "Film itu menampilkan kebakaran fiktif di sebuah kota khayalan.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "sebuah kota khayalan",
+        "time_text": null,
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Lokasi fiktif dilabeli dan dicatat literal sebagai sebuah kota khayalan. Tidak menetapkan kota nyata; NON_EVENT tetap."
+      }
+    },
+    {
+      "id": "MVP-NEW-046",
+      "family": "joke",
+      "text": "Katanya dompet saya mengalami gempa setiap akhir bulan, cuma bercanda.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": null,
+        "time_text": "setiap akhir bulan",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "TIME-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Frasa setiap akhir bulan dilabeli TIME dan dicatat literal. Konteks tetap candaan, bukan gempa nyata."
+      }
+    },
+    {
+      "id": "MVP-NEW-047",
+      "family": "explicit_negation",
+      "text": "Petugas memastikan tidak terjadi banjir di Desa Beringin pagi ini.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "Desa Beringin",
+        "time_text": "pagi ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Petugas"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Tidak terjadi banjir adalah negasi kejadian. Pemicu FALSE-EVENT; tidak membuat dampak atau korban."
+      }
+    },
+    {
+      "id": "MVP-NEW-048",
+      "family": "aggregate_statistic",
+      "text": "Jumlah kecelakaan selama lima tahun terakhir dibahas dalam seminar keselamatan.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": null,
+        "time_text": "selama lima tahun terakhir",
+        "occurred_at": null,
+        "involved_parties": [],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "O",
+        "FALSE-EVENT",
+        "TIME-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Rentang selama lima tahun terakhir dilabeli TIME dan dicatat literal. Statistik tetap NON_EVENT, bukan satu kejadian."
+      }
+    },
+    {
+      "id": "MVP-NEW-049",
+      "family": "forecast",
+      "text": "Warga diminta bersiap menghadapi kemungkinan banjir minggu depan.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": null,
+        "time_text": "minggu depan",
+        "occurred_at": null,
+        "involved_parties": [
+          "Warga"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Kemungkinan banjir adalah hipotesis. Minggu depan hanya waktu literal yang disebut, tanpa tanggal kejadian buatan."
+      }
+    },
+    {
+      "id": "MVP-NEW-050",
+      "family": "exercise_only",
+      "text": "Polisi menggelar simulasi penanganan kecelakaan di lapangan kecamatan sore ini.",
+      "origin": {
+        "kind": "ASSISTANT_AUTHORED_SYNTHETIC",
+        "reference": "Authored for SLR09 pilot 2026-10-19; not field reports; no candidate predictions inspected"
+      },
+      "gold_label": "NON_EVENT",
+      "gold_fields": {
+        "location_text": "lapangan kecamatan",
+        "time_text": "sore ini",
+        "occurred_at": null,
+        "involved_parties": [
+          "Polisi"
+        ],
+        "impacts": [],
+        "victims": [],
+        "affected_objects": []
+      },
+      "gold_nara_labels": [
+        "OFFICER-ARG",
+        "O",
+        "O",
+        "O",
+        "FALSE-EVENT",
+        "O",
+        "PLACE-ARG",
+        "PLACE-ARG",
+        "TIME-ARG",
+        "TIME-ARG",
+        "O"
+      ],
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "bintang",
+        "at": "2026-10-19T01:39:09.195285+00:00",
+        "note": "Simulasi penanganan, bukan kecelakaan nyata. Tidak menambahkan dampak atau korban."
+      }
+    }
+  ],
+  "excel_import": {
+    "source_name": "Review_Acuan_SLR09.xlsx",
+    "imported_at": "2026-10-19T01:39:09.195285+00:00",
+    "reviewer_from": "Mulai!B5",
+    "review_time_basis": "Import timestamp after user-set row statuses; not an asserted Excel edit timestamp"
+  }
+}

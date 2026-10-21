@@ -1,0 +1,21 @@
+{
+  "status": "SUCCEEDED",
+  "training_executed": true,
+  "independent_acceptance_test_executed": false,
+  "pilot50_used_for_training_or_checkpoint_selection": false,
+  "source": "WARM_START_FROM_NEW_CPU_EXPERIMENT_ROUND1_NOT_MISSING_PREVIOUS_CANDIDATE",
+  "started_at": "2026-10-19T02:14:32.962871+00:00",
+  "trainable_parameters": 28945925,
+  "training_records": 648,
+  "validation_records": 146,
+  "best_epoch": 2,
+  "epoch": 4,
+  "step": 80,
+  "steps_in_epoch": 81,
+  "loss": 0.008020834997296333,
+  "finished_at": "2026-10-19T02:22:55.600245+00:00",
+  "epochs_completed": 4,
+  "best_development_selection": 0.8602150537634408,
+  "model_exported": true,
+  "quality_acceptance_approved": false
+}

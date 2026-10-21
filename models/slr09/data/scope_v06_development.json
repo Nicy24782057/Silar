@@ -1,0 +1,1542 @@
+{
+  "schema": "slr09-scope-auxiliary-0.6",
+  "human_reference": false,
+  "records": [
+    {
+      "id": "SCOPE06-development-FLOOD-dev_reality_correction-0-P",
+      "text": "Jangan dianggap adegan buatan: air sungai meluap dan merendam rumah penduduk di Desa Wanasari barusan. Bantuan untuk peristiwa nyata sudah dikirim.",
+      "final": "FLOOD",
+      "family": "dev_reality_correction",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_reality_correction-0-N",
+      "text": "Kabar banjir yang dikaitkan dengan Desa Wanasari barusan ternyata adegan buatan. Pengelola menegaskan tidak ada kejadian asli.",
+      "final": "NON_EVENT",
+      "family": "dev_reality_correction",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_education_scope-0-P",
+      "text": "Bukan pertanyaan ujian, ini laporan langsung dari Desa Wanasari: banjir baru terjadi barusan dan warga memerlukan penanganan.",
+      "final": "FLOOD",
+      "family": "dev_education_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_education_scope-0-N",
+      "text": "Pertanyaan ujian barusan meminta siswa membayangkan banjir di Desa Wanasari. Kalimat itu tidak merujuk kejadian sungguhan.",
+      "final": "NON_EVENT",
+      "family": "dev_education_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_drill_interrupted-0-P",
+      "text": "Walaupun lokasi dipakai berlatih menghadapi kebakaran, laporan barusan dari Desa Wanasari menyatakan air sungai meluap dan merendam rumah penduduk di luar rencana latihan.",
+      "final": "FLOOD",
+      "family": "dev_drill_interrupted",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_drill_interrupted-0-N",
+      "text": "Di Desa Wanasari, laporan latihan barusan memakai skenario banjir. Kerusakan yang disebutkan hanya properti latihan dan semua peserta aman.",
+      "final": "NON_EVENT",
+      "family": "dev_drill_interrupted",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_negation_target-0-P",
+      "text": "Tidak ada korban jiwa dalam banjir di Desa Wanasari barusan, tetapi air sungai meluap dan merendam rumah penduduk. Tim tanggap sedang bekerja.",
+      "final": "FLOOD",
+      "family": "dev_negation_target",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_negation_target-0-N",
+      "text": "Pemeriksaan barusan di Desa Wanasari memastikan banjir tidak terjadi. Kalimat tentang korban hanyalah rumor yang dibantah.",
+      "final": "NON_EVENT",
+      "family": "dev_negation_target",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_suppressed_alternative-0-P",
+      "text": "Petugas menyebut bukan kebakaran penyebab keadaan di Desa Wanasari barusan. Terjadi banjir, dan air sungai meluap dan merendam rumah penduduk.",
+      "final": "FLOOD",
+      "family": "dev_suppressed_alternative",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_suppressed_alternative-0-N",
+      "text": "Petugas di Desa Wanasari barusan tidak melaporkan banjir; mereka hanya menerangkan prosedur penanganannya sebagai persiapan.",
+      "final": "NON_EVENT",
+      "family": "dev_suppressed_alternative",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_multiple_sentences-0-P",
+      "text": "Berhenti menyebutnya lelucon. Di Desa Wanasari barusan, air sungai meluap dan merendam rumah penduduk. Warga sudah meminta pertolongan.",
+      "final": "FLOOD",
+      "family": "dev_multiple_sentences",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_multiple_sentences-0-N",
+      "text": "Lelucon tentang banjir di Desa Wanasari dibicarakan barusan; penulisnya menjelaskan bahwa tidak ada peristiwa nyata yang dimaksud.",
+      "final": "NON_EVENT",
+      "family": "dev_multiple_sentences",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_rumor_verified-0-P",
+      "text": "Dugaan bahwa video itu hanya simulasi dibantah. Peninjauan di Desa Wanasari barusan menemukan air sungai meluap dan merendam rumah penduduk, sehingga kejadian dikonfirmasi nyata.",
+      "final": "FLOOD",
+      "family": "dev_rumor_verified",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_rumor_verified-0-N",
+      "text": "Video yang disebut banjir di Desa Wanasari diperiksa barusan. Rekaman itu hanya simulasi; peristiwa nyata tidak terjadi.",
+      "final": "NON_EVENT",
+      "family": "dev_rumor_verified",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_time_scope-0-P",
+      "text": "Banjir bukan terjadi minggu depan. Di Desa Wanasari, air sungai meluap dan merendam rumah penduduk barusan dan petugas sudah menanganinya.",
+      "final": "FLOOD",
+      "family": "dev_time_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_time_scope-0-N",
+      "text": "Pembahasan barusan di Desa Wanasari mengenai persiapan menghadapi banjir minggu depan. Ini bukan laporan peristiwa yang sudah terjadi.",
+      "final": "NON_EVENT",
+      "family": "dev_time_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_reality_correction-1-P",
+      "text": "Jangan dianggap adegan buatan: air sungai meluap dan merendam rumah penduduk di Kelurahan Gadingrejo tengah malam tadi. Bantuan untuk peristiwa nyata sudah dikirim.",
+      "final": "FLOOD",
+      "family": "dev_reality_correction",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_reality_correction-1-N",
+      "text": "Kabar banjir yang dikaitkan dengan Kelurahan Gadingrejo tengah malam tadi ternyata adegan buatan. Pengelola menegaskan tidak ada kejadian asli.",
+      "final": "NON_EVENT",
+      "family": "dev_reality_correction",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_education_scope-1-P",
+      "text": "Bukan pertanyaan ujian, ini laporan langsung dari Kelurahan Gadingrejo: banjir baru terjadi tengah malam tadi dan warga memerlukan penanganan.",
+      "final": "FLOOD",
+      "family": "dev_education_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_education_scope-1-N",
+      "text": "Pertanyaan ujian tengah malam tadi meminta siswa membayangkan banjir di Kelurahan Gadingrejo. Kalimat itu tidak merujuk kejadian sungguhan.",
+      "final": "NON_EVENT",
+      "family": "dev_education_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_drill_interrupted-1-P",
+      "text": "Walaupun lokasi dipakai berlatih menghadapi kebakaran, laporan tengah malam tadi dari Kelurahan Gadingrejo menyatakan air sungai meluap dan merendam rumah penduduk di luar rencana latihan.",
+      "final": "FLOOD",
+      "family": "dev_drill_interrupted",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_drill_interrupted-1-N",
+      "text": "Di Kelurahan Gadingrejo, laporan latihan tengah malam tadi memakai skenario banjir. Kerusakan yang disebutkan hanya properti latihan dan semua peserta aman.",
+      "final": "NON_EVENT",
+      "family": "dev_drill_interrupted",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_negation_target-1-P",
+      "text": "Tidak ada korban jiwa dalam banjir di Kelurahan Gadingrejo tengah malam tadi, tetapi air sungai meluap dan merendam rumah penduduk. Tim tanggap sedang bekerja.",
+      "final": "FLOOD",
+      "family": "dev_negation_target",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_negation_target-1-N",
+      "text": "Pemeriksaan tengah malam tadi di Kelurahan Gadingrejo memastikan banjir tidak terjadi. Kalimat tentang korban hanyalah rumor yang dibantah.",
+      "final": "NON_EVENT",
+      "family": "dev_negation_target",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_suppressed_alternative-1-P",
+      "text": "Petugas menyebut bukan kebakaran penyebab keadaan di Kelurahan Gadingrejo tengah malam tadi. Terjadi banjir, dan air sungai meluap dan merendam rumah penduduk.",
+      "final": "FLOOD",
+      "family": "dev_suppressed_alternative",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_suppressed_alternative-1-N",
+      "text": "Petugas di Kelurahan Gadingrejo tengah malam tadi tidak melaporkan banjir; mereka hanya menerangkan prosedur penanganannya sebagai persiapan.",
+      "final": "NON_EVENT",
+      "family": "dev_suppressed_alternative",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_multiple_sentences-1-P",
+      "text": "Berhenti menyebutnya lelucon. Di Kelurahan Gadingrejo tengah malam tadi, air sungai meluap dan merendam rumah penduduk. Warga sudah meminta pertolongan.",
+      "final": "FLOOD",
+      "family": "dev_multiple_sentences",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_multiple_sentences-1-N",
+      "text": "Lelucon tentang banjir di Kelurahan Gadingrejo dibicarakan tengah malam tadi; penulisnya menjelaskan bahwa tidak ada peristiwa nyata yang dimaksud.",
+      "final": "NON_EVENT",
+      "family": "dev_multiple_sentences",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_rumor_verified-1-P",
+      "text": "Dugaan bahwa video itu hanya simulasi dibantah. Peninjauan di Kelurahan Gadingrejo tengah malam tadi menemukan air sungai meluap dan merendam rumah penduduk, sehingga kejadian dikonfirmasi nyata.",
+      "final": "FLOOD",
+      "family": "dev_rumor_verified",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_rumor_verified-1-N",
+      "text": "Video yang disebut banjir di Kelurahan Gadingrejo diperiksa tengah malam tadi. Rekaman itu hanya simulasi; peristiwa nyata tidak terjadi.",
+      "final": "NON_EVENT",
+      "family": "dev_rumor_verified",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_time_scope-1-P",
+      "text": "Banjir bukan terjadi minggu depan. Di Kelurahan Gadingrejo, air sungai meluap dan merendam rumah penduduk tengah malam tadi dan petugas sudah menanganinya.",
+      "final": "FLOOD",
+      "family": "dev_time_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FLOOD-dev_time_scope-1-N",
+      "text": "Pembahasan tengah malam tadi di Kelurahan Gadingrejo mengenai persiapan menghadapi banjir minggu depan. Ini bukan laporan peristiwa yang sudah terjadi.",
+      "final": "NON_EVENT",
+      "family": "dev_time_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_reality_correction-0-P",
+      "text": "Jangan dianggap adegan buatan: tanah bergetar keras dan dinding beberapa bangunan retak di Desa Wanasari barusan. Bantuan untuk peristiwa nyata sudah dikirim.",
+      "final": "EARTHQUAKE",
+      "family": "dev_reality_correction",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_reality_correction-0-N",
+      "text": "Kabar gempa yang dikaitkan dengan Desa Wanasari barusan ternyata adegan buatan. Pengelola menegaskan tidak ada kejadian asli.",
+      "final": "NON_EVENT",
+      "family": "dev_reality_correction",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_education_scope-0-P",
+      "text": "Bukan pertanyaan ujian, ini laporan langsung dari Desa Wanasari: gempa baru terjadi barusan dan warga memerlukan penanganan.",
+      "final": "EARTHQUAKE",
+      "family": "dev_education_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_education_scope-0-N",
+      "text": "Pertanyaan ujian barusan meminta siswa membayangkan gempa di Desa Wanasari. Kalimat itu tidak merujuk kejadian sungguhan.",
+      "final": "NON_EVENT",
+      "family": "dev_education_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_drill_interrupted-0-P",
+      "text": "Walaupun lokasi dipakai berlatih menghadapi kecelakaan, laporan barusan dari Desa Wanasari menyatakan tanah bergetar keras dan dinding beberapa bangunan retak di luar rencana latihan.",
+      "final": "EARTHQUAKE",
+      "family": "dev_drill_interrupted",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_drill_interrupted-0-N",
+      "text": "Di Desa Wanasari, laporan latihan barusan memakai skenario gempa. Kerusakan yang disebutkan hanya properti latihan dan semua peserta aman.",
+      "final": "NON_EVENT",
+      "family": "dev_drill_interrupted",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_negation_target-0-P",
+      "text": "Tidak ada korban jiwa dalam gempa di Desa Wanasari barusan, tetapi tanah bergetar keras dan dinding beberapa bangunan retak. Tim tanggap sedang bekerja.",
+      "final": "EARTHQUAKE",
+      "family": "dev_negation_target",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_negation_target-0-N",
+      "text": "Pemeriksaan barusan di Desa Wanasari memastikan gempa tidak terjadi. Kalimat tentang korban hanyalah rumor yang dibantah.",
+      "final": "NON_EVENT",
+      "family": "dev_negation_target",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_suppressed_alternative-0-P",
+      "text": "Petugas menyebut bukan kecelakaan penyebab keadaan di Desa Wanasari barusan. Terjadi gempa, dan tanah bergetar keras dan dinding beberapa bangunan retak.",
+      "final": "EARTHQUAKE",
+      "family": "dev_suppressed_alternative",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_suppressed_alternative-0-N",
+      "text": "Petugas di Desa Wanasari barusan tidak melaporkan gempa; mereka hanya menerangkan prosedur penanganannya sebagai persiapan.",
+      "final": "NON_EVENT",
+      "family": "dev_suppressed_alternative",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_multiple_sentences-0-P",
+      "text": "Berhenti menyebutnya lelucon. Di Desa Wanasari barusan, tanah bergetar keras dan dinding beberapa bangunan retak. Warga sudah meminta pertolongan.",
+      "final": "EARTHQUAKE",
+      "family": "dev_multiple_sentences",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_multiple_sentences-0-N",
+      "text": "Lelucon tentang gempa di Desa Wanasari dibicarakan barusan; penulisnya menjelaskan bahwa tidak ada peristiwa nyata yang dimaksud.",
+      "final": "NON_EVENT",
+      "family": "dev_multiple_sentences",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_rumor_verified-0-P",
+      "text": "Dugaan bahwa video itu hanya simulasi dibantah. Peninjauan di Desa Wanasari barusan menemukan tanah bergetar keras dan dinding beberapa bangunan retak, sehingga kejadian dikonfirmasi nyata.",
+      "final": "EARTHQUAKE",
+      "family": "dev_rumor_verified",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_rumor_verified-0-N",
+      "text": "Video yang disebut gempa di Desa Wanasari diperiksa barusan. Rekaman itu hanya simulasi; peristiwa nyata tidak terjadi.",
+      "final": "NON_EVENT",
+      "family": "dev_rumor_verified",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_time_scope-0-P",
+      "text": "Gempa bukan terjadi minggu depan. Di Desa Wanasari, tanah bergetar keras dan dinding beberapa bangunan retak barusan dan petugas sudah menanganinya.",
+      "final": "EARTHQUAKE",
+      "family": "dev_time_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_time_scope-0-N",
+      "text": "Pembahasan barusan di Desa Wanasari mengenai persiapan menghadapi gempa minggu depan. Ini bukan laporan peristiwa yang sudah terjadi.",
+      "final": "NON_EVENT",
+      "family": "dev_time_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_reality_correction-1-P",
+      "text": "Jangan dianggap adegan buatan: tanah bergetar keras dan dinding beberapa bangunan retak di Kelurahan Gadingrejo tengah malam tadi. Bantuan untuk peristiwa nyata sudah dikirim.",
+      "final": "EARTHQUAKE",
+      "family": "dev_reality_correction",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_reality_correction-1-N",
+      "text": "Kabar gempa yang dikaitkan dengan Kelurahan Gadingrejo tengah malam tadi ternyata adegan buatan. Pengelola menegaskan tidak ada kejadian asli.",
+      "final": "NON_EVENT",
+      "family": "dev_reality_correction",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_education_scope-1-P",
+      "text": "Bukan pertanyaan ujian, ini laporan langsung dari Kelurahan Gadingrejo: gempa baru terjadi tengah malam tadi dan warga memerlukan penanganan.",
+      "final": "EARTHQUAKE",
+      "family": "dev_education_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_education_scope-1-N",
+      "text": "Pertanyaan ujian tengah malam tadi meminta siswa membayangkan gempa di Kelurahan Gadingrejo. Kalimat itu tidak merujuk kejadian sungguhan.",
+      "final": "NON_EVENT",
+      "family": "dev_education_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_drill_interrupted-1-P",
+      "text": "Walaupun lokasi dipakai berlatih menghadapi kecelakaan, laporan tengah malam tadi dari Kelurahan Gadingrejo menyatakan tanah bergetar keras dan dinding beberapa bangunan retak di luar rencana latihan.",
+      "final": "EARTHQUAKE",
+      "family": "dev_drill_interrupted",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_drill_interrupted-1-N",
+      "text": "Di Kelurahan Gadingrejo, laporan latihan tengah malam tadi memakai skenario gempa. Kerusakan yang disebutkan hanya properti latihan dan semua peserta aman.",
+      "final": "NON_EVENT",
+      "family": "dev_drill_interrupted",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_negation_target-1-P",
+      "text": "Tidak ada korban jiwa dalam gempa di Kelurahan Gadingrejo tengah malam tadi, tetapi tanah bergetar keras dan dinding beberapa bangunan retak. Tim tanggap sedang bekerja.",
+      "final": "EARTHQUAKE",
+      "family": "dev_negation_target",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_negation_target-1-N",
+      "text": "Pemeriksaan tengah malam tadi di Kelurahan Gadingrejo memastikan gempa tidak terjadi. Kalimat tentang korban hanyalah rumor yang dibantah.",
+      "final": "NON_EVENT",
+      "family": "dev_negation_target",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_suppressed_alternative-1-P",
+      "text": "Petugas menyebut bukan kecelakaan penyebab keadaan di Kelurahan Gadingrejo tengah malam tadi. Terjadi gempa, dan tanah bergetar keras dan dinding beberapa bangunan retak.",
+      "final": "EARTHQUAKE",
+      "family": "dev_suppressed_alternative",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_suppressed_alternative-1-N",
+      "text": "Petugas di Kelurahan Gadingrejo tengah malam tadi tidak melaporkan gempa; mereka hanya menerangkan prosedur penanganannya sebagai persiapan.",
+      "final": "NON_EVENT",
+      "family": "dev_suppressed_alternative",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_multiple_sentences-1-P",
+      "text": "Berhenti menyebutnya lelucon. Di Kelurahan Gadingrejo tengah malam tadi, tanah bergetar keras dan dinding beberapa bangunan retak. Warga sudah meminta pertolongan.",
+      "final": "EARTHQUAKE",
+      "family": "dev_multiple_sentences",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_multiple_sentences-1-N",
+      "text": "Lelucon tentang gempa di Kelurahan Gadingrejo dibicarakan tengah malam tadi; penulisnya menjelaskan bahwa tidak ada peristiwa nyata yang dimaksud.",
+      "final": "NON_EVENT",
+      "family": "dev_multiple_sentences",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_rumor_verified-1-P",
+      "text": "Dugaan bahwa video itu hanya simulasi dibantah. Peninjauan di Kelurahan Gadingrejo tengah malam tadi menemukan tanah bergetar keras dan dinding beberapa bangunan retak, sehingga kejadian dikonfirmasi nyata.",
+      "final": "EARTHQUAKE",
+      "family": "dev_rumor_verified",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_rumor_verified-1-N",
+      "text": "Video yang disebut gempa di Kelurahan Gadingrejo diperiksa tengah malam tadi. Rekaman itu hanya simulasi; peristiwa nyata tidak terjadi.",
+      "final": "NON_EVENT",
+      "family": "dev_rumor_verified",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_time_scope-1-P",
+      "text": "Gempa bukan terjadi minggu depan. Di Kelurahan Gadingrejo, tanah bergetar keras dan dinding beberapa bangunan retak tengah malam tadi dan petugas sudah menanganinya.",
+      "final": "EARTHQUAKE",
+      "family": "dev_time_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-EARTHQUAKE-dev_time_scope-1-N",
+      "text": "Pembahasan tengah malam tadi di Kelurahan Gadingrejo mengenai persiapan menghadapi gempa minggu depan. Ini bukan laporan peristiwa yang sudah terjadi.",
+      "final": "NON_EVENT",
+      "family": "dev_time_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_reality_correction-0-P",
+      "text": "Jangan dianggap adegan buatan: api membakar atap gudang dan asap pekat membubung di Desa Wanasari barusan. Bantuan untuk peristiwa nyata sudah dikirim.",
+      "final": "FIRE",
+      "family": "dev_reality_correction",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_reality_correction-0-N",
+      "text": "Kabar kebakaran yang dikaitkan dengan Desa Wanasari barusan ternyata adegan buatan. Pengelola menegaskan tidak ada kejadian asli.",
+      "final": "NON_EVENT",
+      "family": "dev_reality_correction",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_education_scope-0-P",
+      "text": "Bukan pertanyaan ujian, ini laporan langsung dari Desa Wanasari: kebakaran baru terjadi barusan dan warga memerlukan penanganan.",
+      "final": "FIRE",
+      "family": "dev_education_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_education_scope-0-N",
+      "text": "Pertanyaan ujian barusan meminta siswa membayangkan kebakaran di Desa Wanasari. Kalimat itu tidak merujuk kejadian sungguhan.",
+      "final": "NON_EVENT",
+      "family": "dev_education_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_drill_interrupted-0-P",
+      "text": "Walaupun lokasi dipakai berlatih menghadapi banjir, laporan barusan dari Desa Wanasari menyatakan api membakar atap gudang dan asap pekat membubung di luar rencana latihan.",
+      "final": "FIRE",
+      "family": "dev_drill_interrupted",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_drill_interrupted-0-N",
+      "text": "Di Desa Wanasari, laporan latihan barusan memakai skenario kebakaran. Kerusakan yang disebutkan hanya properti latihan dan semua peserta aman.",
+      "final": "NON_EVENT",
+      "family": "dev_drill_interrupted",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_negation_target-0-P",
+      "text": "Tidak ada korban jiwa dalam kebakaran di Desa Wanasari barusan, tetapi api membakar atap gudang dan asap pekat membubung. Tim tanggap sedang bekerja.",
+      "final": "FIRE",
+      "family": "dev_negation_target",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_negation_target-0-N",
+      "text": "Pemeriksaan barusan di Desa Wanasari memastikan kebakaran tidak terjadi. Kalimat tentang korban hanyalah rumor yang dibantah.",
+      "final": "NON_EVENT",
+      "family": "dev_negation_target",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_suppressed_alternative-0-P",
+      "text": "Petugas menyebut bukan banjir penyebab keadaan di Desa Wanasari barusan. Terjadi kebakaran, dan api membakar atap gudang dan asap pekat membubung.",
+      "final": "FIRE",
+      "family": "dev_suppressed_alternative",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_suppressed_alternative-0-N",
+      "text": "Petugas di Desa Wanasari barusan tidak melaporkan kebakaran; mereka hanya menerangkan prosedur penanganannya sebagai persiapan.",
+      "final": "NON_EVENT",
+      "family": "dev_suppressed_alternative",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_multiple_sentences-0-P",
+      "text": "Berhenti menyebutnya lelucon. Di Desa Wanasari barusan, api membakar atap gudang dan asap pekat membubung. Warga sudah meminta pertolongan.",
+      "final": "FIRE",
+      "family": "dev_multiple_sentences",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_multiple_sentences-0-N",
+      "text": "Lelucon tentang kebakaran di Desa Wanasari dibicarakan barusan; penulisnya menjelaskan bahwa tidak ada peristiwa nyata yang dimaksud.",
+      "final": "NON_EVENT",
+      "family": "dev_multiple_sentences",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_rumor_verified-0-P",
+      "text": "Dugaan bahwa video itu hanya simulasi dibantah. Peninjauan di Desa Wanasari barusan menemukan api membakar atap gudang dan asap pekat membubung, sehingga kejadian dikonfirmasi nyata.",
+      "final": "FIRE",
+      "family": "dev_rumor_verified",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_rumor_verified-0-N",
+      "text": "Video yang disebut kebakaran di Desa Wanasari diperiksa barusan. Rekaman itu hanya simulasi; peristiwa nyata tidak terjadi.",
+      "final": "NON_EVENT",
+      "family": "dev_rumor_verified",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_time_scope-0-P",
+      "text": "Kebakaran bukan terjadi minggu depan. Di Desa Wanasari, api membakar atap gudang dan asap pekat membubung barusan dan petugas sudah menanganinya.",
+      "final": "FIRE",
+      "family": "dev_time_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_time_scope-0-N",
+      "text": "Pembahasan barusan di Desa Wanasari mengenai persiapan menghadapi kebakaran minggu depan. Ini bukan laporan peristiwa yang sudah terjadi.",
+      "final": "NON_EVENT",
+      "family": "dev_time_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_reality_correction-1-P",
+      "text": "Jangan dianggap adegan buatan: api membakar atap gudang dan asap pekat membubung di Kelurahan Gadingrejo tengah malam tadi. Bantuan untuk peristiwa nyata sudah dikirim.",
+      "final": "FIRE",
+      "family": "dev_reality_correction",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_reality_correction-1-N",
+      "text": "Kabar kebakaran yang dikaitkan dengan Kelurahan Gadingrejo tengah malam tadi ternyata adegan buatan. Pengelola menegaskan tidak ada kejadian asli.",
+      "final": "NON_EVENT",
+      "family": "dev_reality_correction",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_education_scope-1-P",
+      "text": "Bukan pertanyaan ujian, ini laporan langsung dari Kelurahan Gadingrejo: kebakaran baru terjadi tengah malam tadi dan warga memerlukan penanganan.",
+      "final": "FIRE",
+      "family": "dev_education_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_education_scope-1-N",
+      "text": "Pertanyaan ujian tengah malam tadi meminta siswa membayangkan kebakaran di Kelurahan Gadingrejo. Kalimat itu tidak merujuk kejadian sungguhan.",
+      "final": "NON_EVENT",
+      "family": "dev_education_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_drill_interrupted-1-P",
+      "text": "Walaupun lokasi dipakai berlatih menghadapi banjir, laporan tengah malam tadi dari Kelurahan Gadingrejo menyatakan api membakar atap gudang dan asap pekat membubung di luar rencana latihan.",
+      "final": "FIRE",
+      "family": "dev_drill_interrupted",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_drill_interrupted-1-N",
+      "text": "Di Kelurahan Gadingrejo, laporan latihan tengah malam tadi memakai skenario kebakaran. Kerusakan yang disebutkan hanya properti latihan dan semua peserta aman.",
+      "final": "NON_EVENT",
+      "family": "dev_drill_interrupted",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_negation_target-1-P",
+      "text": "Tidak ada korban jiwa dalam kebakaran di Kelurahan Gadingrejo tengah malam tadi, tetapi api membakar atap gudang dan asap pekat membubung. Tim tanggap sedang bekerja.",
+      "final": "FIRE",
+      "family": "dev_negation_target",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_negation_target-1-N",
+      "text": "Pemeriksaan tengah malam tadi di Kelurahan Gadingrejo memastikan kebakaran tidak terjadi. Kalimat tentang korban hanyalah rumor yang dibantah.",
+      "final": "NON_EVENT",
+      "family": "dev_negation_target",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_suppressed_alternative-1-P",
+      "text": "Petugas menyebut bukan banjir penyebab keadaan di Kelurahan Gadingrejo tengah malam tadi. Terjadi kebakaran, dan api membakar atap gudang dan asap pekat membubung.",
+      "final": "FIRE",
+      "family": "dev_suppressed_alternative",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_suppressed_alternative-1-N",
+      "text": "Petugas di Kelurahan Gadingrejo tengah malam tadi tidak melaporkan kebakaran; mereka hanya menerangkan prosedur penanganannya sebagai persiapan.",
+      "final": "NON_EVENT",
+      "family": "dev_suppressed_alternative",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_multiple_sentences-1-P",
+      "text": "Berhenti menyebutnya lelucon. Di Kelurahan Gadingrejo tengah malam tadi, api membakar atap gudang dan asap pekat membubung. Warga sudah meminta pertolongan.",
+      "final": "FIRE",
+      "family": "dev_multiple_sentences",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_multiple_sentences-1-N",
+      "text": "Lelucon tentang kebakaran di Kelurahan Gadingrejo dibicarakan tengah malam tadi; penulisnya menjelaskan bahwa tidak ada peristiwa nyata yang dimaksud.",
+      "final": "NON_EVENT",
+      "family": "dev_multiple_sentences",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_rumor_verified-1-P",
+      "text": "Dugaan bahwa video itu hanya simulasi dibantah. Peninjauan di Kelurahan Gadingrejo tengah malam tadi menemukan api membakar atap gudang dan asap pekat membubung, sehingga kejadian dikonfirmasi nyata.",
+      "final": "FIRE",
+      "family": "dev_rumor_verified",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_rumor_verified-1-N",
+      "text": "Video yang disebut kebakaran di Kelurahan Gadingrejo diperiksa tengah malam tadi. Rekaman itu hanya simulasi; peristiwa nyata tidak terjadi.",
+      "final": "NON_EVENT",
+      "family": "dev_rumor_verified",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_time_scope-1-P",
+      "text": "Kebakaran bukan terjadi minggu depan. Di Kelurahan Gadingrejo, api membakar atap gudang dan asap pekat membubung tengah malam tadi dan petugas sudah menanganinya.",
+      "final": "FIRE",
+      "family": "dev_time_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-FIRE-dev_time_scope-1-N",
+      "text": "Pembahasan tengah malam tadi di Kelurahan Gadingrejo mengenai persiapan menghadapi kebakaran minggu depan. Ini bukan laporan peristiwa yang sudah terjadi.",
+      "final": "NON_EVENT",
+      "family": "dev_time_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_reality_correction-0-P",
+      "text": "Jangan dianggap adegan buatan: sebuah mobil menabrak pohon dan pengemudinya terluka di Desa Wanasari barusan. Bantuan untuk peristiwa nyata sudah dikirim.",
+      "final": "ACCIDENT",
+      "family": "dev_reality_correction",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_reality_correction-0-N",
+      "text": "Kabar kecelakaan yang dikaitkan dengan Desa Wanasari barusan ternyata adegan buatan. Pengelola menegaskan tidak ada kejadian asli.",
+      "final": "NON_EVENT",
+      "family": "dev_reality_correction",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_education_scope-0-P",
+      "text": "Bukan pertanyaan ujian, ini laporan langsung dari Desa Wanasari: kecelakaan baru terjadi barusan dan warga memerlukan penanganan.",
+      "final": "ACCIDENT",
+      "family": "dev_education_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_education_scope-0-N",
+      "text": "Pertanyaan ujian barusan meminta siswa membayangkan kecelakaan di Desa Wanasari. Kalimat itu tidak merujuk kejadian sungguhan.",
+      "final": "NON_EVENT",
+      "family": "dev_education_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_drill_interrupted-0-P",
+      "text": "Walaupun lokasi dipakai berlatih menghadapi gempa, laporan barusan dari Desa Wanasari menyatakan sebuah mobil menabrak pohon dan pengemudinya terluka di luar rencana latihan.",
+      "final": "ACCIDENT",
+      "family": "dev_drill_interrupted",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_drill_interrupted-0-N",
+      "text": "Di Desa Wanasari, laporan latihan barusan memakai skenario kecelakaan. Kerusakan yang disebutkan hanya properti latihan dan semua peserta aman.",
+      "final": "NON_EVENT",
+      "family": "dev_drill_interrupted",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_negation_target-0-P",
+      "text": "Tidak ada korban jiwa dalam kecelakaan di Desa Wanasari barusan, tetapi sebuah mobil menabrak pohon dan pengemudinya terluka. Tim tanggap sedang bekerja.",
+      "final": "ACCIDENT",
+      "family": "dev_negation_target",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_negation_target-0-N",
+      "text": "Pemeriksaan barusan di Desa Wanasari memastikan kecelakaan tidak terjadi. Kalimat tentang korban hanyalah rumor yang dibantah.",
+      "final": "NON_EVENT",
+      "family": "dev_negation_target",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_suppressed_alternative-0-P",
+      "text": "Petugas menyebut bukan gempa penyebab keadaan di Desa Wanasari barusan. Terjadi kecelakaan, dan sebuah mobil menabrak pohon dan pengemudinya terluka.",
+      "final": "ACCIDENT",
+      "family": "dev_suppressed_alternative",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_suppressed_alternative-0-N",
+      "text": "Petugas di Desa Wanasari barusan tidak melaporkan kecelakaan; mereka hanya menerangkan prosedur penanganannya sebagai persiapan.",
+      "final": "NON_EVENT",
+      "family": "dev_suppressed_alternative",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_multiple_sentences-0-P",
+      "text": "Berhenti menyebutnya lelucon. Di Desa Wanasari barusan, sebuah mobil menabrak pohon dan pengemudinya terluka. Warga sudah meminta pertolongan.",
+      "final": "ACCIDENT",
+      "family": "dev_multiple_sentences",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_multiple_sentences-0-N",
+      "text": "Lelucon tentang kecelakaan di Desa Wanasari dibicarakan barusan; penulisnya menjelaskan bahwa tidak ada peristiwa nyata yang dimaksud.",
+      "final": "NON_EVENT",
+      "family": "dev_multiple_sentences",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_rumor_verified-0-P",
+      "text": "Dugaan bahwa video itu hanya simulasi dibantah. Peninjauan di Desa Wanasari barusan menemukan sebuah mobil menabrak pohon dan pengemudinya terluka, sehingga kejadian dikonfirmasi nyata.",
+      "final": "ACCIDENT",
+      "family": "dev_rumor_verified",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_rumor_verified-0-N",
+      "text": "Video yang disebut kecelakaan di Desa Wanasari diperiksa barusan. Rekaman itu hanya simulasi; peristiwa nyata tidak terjadi.",
+      "final": "NON_EVENT",
+      "family": "dev_rumor_verified",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_time_scope-0-P",
+      "text": "Kecelakaan bukan terjadi minggu depan. Di Desa Wanasari, sebuah mobil menabrak pohon dan pengemudinya terluka barusan dan petugas sudah menanganinya.",
+      "final": "ACCIDENT",
+      "family": "dev_time_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_time_scope-0-N",
+      "text": "Pembahasan barusan di Desa Wanasari mengenai persiapan menghadapi kecelakaan minggu depan. Ini bukan laporan peristiwa yang sudah terjadi.",
+      "final": "NON_EVENT",
+      "family": "dev_time_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_reality_correction-1-P",
+      "text": "Jangan dianggap adegan buatan: sebuah mobil menabrak pohon dan pengemudinya terluka di Kelurahan Gadingrejo tengah malam tadi. Bantuan untuk peristiwa nyata sudah dikirim.",
+      "final": "ACCIDENT",
+      "family": "dev_reality_correction",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_reality_correction-1-N",
+      "text": "Kabar kecelakaan yang dikaitkan dengan Kelurahan Gadingrejo tengah malam tadi ternyata adegan buatan. Pengelola menegaskan tidak ada kejadian asli.",
+      "final": "NON_EVENT",
+      "family": "dev_reality_correction",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_education_scope-1-P",
+      "text": "Bukan pertanyaan ujian, ini laporan langsung dari Kelurahan Gadingrejo: kecelakaan baru terjadi tengah malam tadi dan warga memerlukan penanganan.",
+      "final": "ACCIDENT",
+      "family": "dev_education_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_education_scope-1-N",
+      "text": "Pertanyaan ujian tengah malam tadi meminta siswa membayangkan kecelakaan di Kelurahan Gadingrejo. Kalimat itu tidak merujuk kejadian sungguhan.",
+      "final": "NON_EVENT",
+      "family": "dev_education_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_drill_interrupted-1-P",
+      "text": "Walaupun lokasi dipakai berlatih menghadapi gempa, laporan tengah malam tadi dari Kelurahan Gadingrejo menyatakan sebuah mobil menabrak pohon dan pengemudinya terluka di luar rencana latihan.",
+      "final": "ACCIDENT",
+      "family": "dev_drill_interrupted",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_drill_interrupted-1-N",
+      "text": "Di Kelurahan Gadingrejo, laporan latihan tengah malam tadi memakai skenario kecelakaan. Kerusakan yang disebutkan hanya properti latihan dan semua peserta aman.",
+      "final": "NON_EVENT",
+      "family": "dev_drill_interrupted",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_negation_target-1-P",
+      "text": "Tidak ada korban jiwa dalam kecelakaan di Kelurahan Gadingrejo tengah malam tadi, tetapi sebuah mobil menabrak pohon dan pengemudinya terluka. Tim tanggap sedang bekerja.",
+      "final": "ACCIDENT",
+      "family": "dev_negation_target",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_negation_target-1-N",
+      "text": "Pemeriksaan tengah malam tadi di Kelurahan Gadingrejo memastikan kecelakaan tidak terjadi. Kalimat tentang korban hanyalah rumor yang dibantah.",
+      "final": "NON_EVENT",
+      "family": "dev_negation_target",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_suppressed_alternative-1-P",
+      "text": "Petugas menyebut bukan gempa penyebab keadaan di Kelurahan Gadingrejo tengah malam tadi. Terjadi kecelakaan, dan sebuah mobil menabrak pohon dan pengemudinya terluka.",
+      "final": "ACCIDENT",
+      "family": "dev_suppressed_alternative",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_suppressed_alternative-1-N",
+      "text": "Petugas di Kelurahan Gadingrejo tengah malam tadi tidak melaporkan kecelakaan; mereka hanya menerangkan prosedur penanganannya sebagai persiapan.",
+      "final": "NON_EVENT",
+      "family": "dev_suppressed_alternative",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_multiple_sentences-1-P",
+      "text": "Berhenti menyebutnya lelucon. Di Kelurahan Gadingrejo tengah malam tadi, sebuah mobil menabrak pohon dan pengemudinya terluka. Warga sudah meminta pertolongan.",
+      "final": "ACCIDENT",
+      "family": "dev_multiple_sentences",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_multiple_sentences-1-N",
+      "text": "Lelucon tentang kecelakaan di Kelurahan Gadingrejo dibicarakan tengah malam tadi; penulisnya menjelaskan bahwa tidak ada peristiwa nyata yang dimaksud.",
+      "final": "NON_EVENT",
+      "family": "dev_multiple_sentences",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_rumor_verified-1-P",
+      "text": "Dugaan bahwa video itu hanya simulasi dibantah. Peninjauan di Kelurahan Gadingrejo tengah malam tadi menemukan sebuah mobil menabrak pohon dan pengemudinya terluka, sehingga kejadian dikonfirmasi nyata.",
+      "final": "ACCIDENT",
+      "family": "dev_rumor_verified",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_rumor_verified-1-N",
+      "text": "Video yang disebut kecelakaan di Kelurahan Gadingrejo diperiksa tengah malam tadi. Rekaman itu hanya simulasi; peristiwa nyata tidak terjadi.",
+      "final": "NON_EVENT",
+      "family": "dev_rumor_verified",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_time_scope-1-P",
+      "text": "Kecelakaan bukan terjadi minggu depan. Di Kelurahan Gadingrejo, sebuah mobil menabrak pohon dan pengemudinya terluka tengah malam tadi dan petugas sudah menanganinya.",
+      "final": "ACCIDENT",
+      "family": "dev_time_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "SCOPE06-development-ACCIDENT-dev_time_scope-1-N",
+      "text": "Pembahasan tengah malam tadi di Kelurahan Gadingrejo mengenai persiapan menghadapi kecelakaan minggu depan. Ini bukan laporan peristiwa yang sudah terjadi.",
+      "final": "NON_EVENT",
+      "family": "dev_time_scope",
+      "source": "ASSISTANT_AUTHORED_NOT_HUMAN_REVIEWED",
+      "purpose": "development",
+      "review": {
+        "status": "PENDING",
+        "reviewer": null
+      }
+    }
+  ]
+}

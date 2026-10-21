@@ -1,0 +1,24 @@
+{
+  "model_id": "SILAR_SENA_quality_cpu_focus_20261019T021432",
+  "run_id": "20261019T021432",
+  "archive_name": "SILAR_SENA_quality_cpu_focus_before_bias_20261019.zip",
+  "labels": [
+    "FLOOD",
+    "EARTHQUAKE",
+    "FIRE",
+    "ACCIDENT",
+    "NON_EVENT"
+  ],
+  "files": {
+    "config.json": "febb4294e220615be653133104562be26236ea97165c5103dc7b6d377277da9a",
+    "model.safetensors": "db3ddde741ab8d4628fc0495c0a97835c2914cb26bdd5339aba600f578b0658d",
+    "tokenizer.json": "93684d1d5cc282613006dbee78d38882487365cdd378d087e21e755ac157ca63",
+    "tokenizer_config.json": "6c7af3e1d0c166292dc68cece6e6bb2be29945b8a45b39c804f65e9602a78429",
+    "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+    "vocab.txt": "343bf28a78f7efeda6419fa610f553184a6dcd29aae726f46850cd05e3167dc3"
+  },
+  "origin": "WARM_START_FROM_NEW_CPU_EXPERIMENT_ROUND1_NOT_MISSING_PREVIOUS_CANDIDATE",
+  "selection_scope": "DEVELOPMENT_VALIDATION_NOT_ACCEPTANCE",
+  "quality_acceptance_approved": false,
+  "production_model_selected": false
+}

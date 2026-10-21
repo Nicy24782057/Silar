@@ -1,0 +1,458 @@
+[
+  {
+    "id": "FRESH-05-001",
+    "event_classifier": {
+      "label": "FLOOD",
+      "confidence": 0.8625736236572266,
+      "probabilities": {
+        "FLOOD": 0.8625736236572266,
+        "EARTHQUAKE": 0.000658021483104676,
+        "FIRE": 0.0037736704107373953,
+        "ACCIDENT": 0.0017928481101989746,
+        "NON_EVENT": 0.131201833486557
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 19,
+      "processed_wordpieces_with_special_tokens": 19,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-002",
+    "event_classifier": {
+      "label": "FLOOD",
+      "confidence": 0.5477650165557861,
+      "probabilities": {
+        "FLOOD": 0.5477650165557861,
+        "EARTHQUAKE": 0.0005901030963286757,
+        "FIRE": 0.0031755368690937757,
+        "ACCIDENT": 0.010285286232829094,
+        "NON_EVENT": 0.43818411231040955
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 17,
+      "processed_wordpieces_with_special_tokens": 17,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-003",
+    "event_classifier": {
+      "label": "FLOOD",
+      "confidence": 0.7696276903152466,
+      "probabilities": {
+        "FLOOD": 0.7696276903152466,
+        "EARTHQUAKE": 0.0004085783730261028,
+        "FIRE": 0.0025358155835419893,
+        "ACCIDENT": 0.001467732829041779,
+        "NON_EVENT": 0.2259601354598999
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 20,
+      "processed_wordpieces_with_special_tokens": 20,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-004",
+    "event_classifier": {
+      "label": "EARTHQUAKE",
+      "confidence": 0.9878161549568176,
+      "probabilities": {
+        "FLOOD": 0.0017667532665655017,
+        "EARTHQUAKE": 0.9878161549568176,
+        "FIRE": 0.0007266593165695667,
+        "ACCIDENT": 0.0013593895127996802,
+        "NON_EVENT": 0.008331039920449257
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 14,
+      "processed_wordpieces_with_special_tokens": 14,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-005",
+    "event_classifier": {
+      "label": "NON_EVENT",
+      "confidence": 0.6504347920417786,
+      "probabilities": {
+        "FLOOD": 0.0012603986542671919,
+        "EARTHQUAKE": 0.34453704953193665,
+        "FIRE": 0.002294569741934538,
+        "ACCIDENT": 0.0014731752453371882,
+        "NON_EVENT": 0.6504347920417786
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 16,
+      "processed_wordpieces_with_special_tokens": 16,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-006",
+    "event_classifier": {
+      "label": "NON_EVENT",
+      "confidence": 0.997796893119812,
+      "probabilities": {
+        "FLOOD": 0.0004520445072557777,
+        "EARTHQUAKE": 0.0005820530350320041,
+        "FIRE": 0.0006277599022723734,
+        "ACCIDENT": 0.0005412924219854176,
+        "NON_EVENT": 0.997796893119812
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 15,
+      "processed_wordpieces_with_special_tokens": 15,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-007",
+    "event_classifier": {
+      "label": "FIRE",
+      "confidence": 0.9799168109893799,
+      "probabilities": {
+        "FLOOD": 0.0004876443708781153,
+        "EARTHQUAKE": 0.00046037029824219644,
+        "FIRE": 0.9799168109893799,
+        "ACCIDENT": 0.0005274316645227373,
+        "NON_EVENT": 0.01860767789185047
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 17,
+      "processed_wordpieces_with_special_tokens": 17,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-008",
+    "event_classifier": {
+      "label": "FIRE",
+      "confidence": 0.7709627747535706,
+      "probabilities": {
+        "FLOOD": 0.0022776664700359106,
+        "EARTHQUAKE": 0.00042351806769147515,
+        "FIRE": 0.7709627747535706,
+        "ACCIDENT": 0.012139939703047276,
+        "NON_EVENT": 0.21419604122638702
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 18,
+      "processed_wordpieces_with_special_tokens": 18,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-009",
+    "event_classifier": {
+      "label": "NON_EVENT",
+      "confidence": 0.7664832472801208,
+      "probabilities": {
+        "FLOOD": 0.0006694885087199509,
+        "EARTHQUAKE": 0.00037442060420289636,
+        "FIRE": 0.23106145858764648,
+        "ACCIDENT": 0.0014113703509792686,
+        "NON_EVENT": 0.7664832472801208
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 16,
+      "processed_wordpieces_with_special_tokens": 16,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-010",
+    "event_classifier": {
+      "label": "ACCIDENT",
+      "confidence": 0.9094575047492981,
+      "probabilities": {
+        "FLOOD": 0.004508431069552898,
+        "EARTHQUAKE": 0.0004399734316393733,
+        "FIRE": 0.007474521175026894,
+        "ACCIDENT": 0.9094575047492981,
+        "NON_EVENT": 0.07811954617500305
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 17,
+      "processed_wordpieces_with_special_tokens": 17,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-011",
+    "event_classifier": {
+      "label": "ACCIDENT",
+      "confidence": 0.8418328166007996,
+      "probabilities": {
+        "FLOOD": 0.0018336072098463774,
+        "EARTHQUAKE": 0.0002716505550779402,
+        "FIRE": 0.0011195192346349359,
+        "ACCIDENT": 0.8418328166007996,
+        "NON_EVENT": 0.15494239330291748
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 16,
+      "processed_wordpieces_with_special_tokens": 16,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-012",
+    "event_classifier": {
+      "label": "ACCIDENT",
+      "confidence": 0.9612051844596863,
+      "probabilities": {
+        "FLOOD": 0.0007623943965882063,
+        "EARTHQUAKE": 0.0002752965083345771,
+        "FIRE": 0.0008734341245144606,
+        "ACCIDENT": 0.9612051844596863,
+        "NON_EVENT": 0.03688367083668709
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 17,
+      "processed_wordpieces_with_special_tokens": 17,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-013",
+    "event_classifier": {
+      "label": "NON_EVENT",
+      "confidence": 0.9976900815963745,
+      "probabilities": {
+        "FLOOD": 0.0017292107222601771,
+        "EARTHQUAKE": 0.0001077048436854966,
+        "FIRE": 0.00022651806648354977,
+        "ACCIDENT": 0.0002464854915160686,
+        "NON_EVENT": 0.9976900815963745
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 17,
+      "processed_wordpieces_with_special_tokens": 17,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-014",
+    "event_classifier": {
+      "label": "NON_EVENT",
+      "confidence": 0.7535725831985474,
+      "probabilities": {
+        "FLOOD": 0.2445804476737976,
+        "EARTHQUAKE": 0.00022378734138328582,
+        "FIRE": 0.0008607927593402565,
+        "ACCIDENT": 0.0007623561541549861,
+        "NON_EVENT": 0.7535725831985474
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 16,
+      "processed_wordpieces_with_special_tokens": 16,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-015",
+    "event_classifier": {
+      "label": "NON_EVENT",
+      "confidence": 0.9939312934875488,
+      "probabilities": {
+        "FLOOD": 0.002832845551893115,
+        "EARTHQUAKE": 7.720683061052114e-05,
+        "FIRE": 0.002854949561879039,
+        "ACCIDENT": 0.00030375478672795,
+        "NON_EVENT": 0.9939312934875488
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 15,
+      "processed_wordpieces_with_special_tokens": 15,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-016",
+    "event_classifier": {
+      "label": "NON_EVENT",
+      "confidence": 0.9987208247184753,
+      "probabilities": {
+        "FLOOD": 0.0003329523024149239,
+        "EARTHQUAKE": 0.00020630563085433096,
+        "FIRE": 0.0006226463592611253,
+        "ACCIDENT": 0.00011718272435246035,
+        "NON_EVENT": 0.9987208247184753
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 12,
+      "processed_wordpieces_with_special_tokens": 12,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-017",
+    "event_classifier": {
+      "label": "NON_EVENT",
+      "confidence": 0.9951820969581604,
+      "probabilities": {
+        "FLOOD": 0.00027090575895272195,
+        "EARTHQUAKE": 0.00390224508009851,
+        "FIRE": 0.000124226207844913,
+        "ACCIDENT": 0.0005204632761888206,
+        "NON_EVENT": 0.9951820969581604
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 17,
+      "processed_wordpieces_with_special_tokens": 17,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-018",
+    "event_classifier": {
+      "label": "NON_EVENT",
+      "confidence": 0.9974356293678284,
+      "probabilities": {
+        "FLOOD": 0.00034786571632139385,
+        "EARTHQUAKE": 0.00019349184003658593,
+        "FIRE": 0.0017954405630007386,
+        "ACCIDENT": 0.0002276460436405614,
+        "NON_EVENT": 0.9974356293678284
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 12,
+      "processed_wordpieces_with_special_tokens": 12,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-019",
+    "event_classifier": {
+      "label": "NON_EVENT",
+      "confidence": 0.9744322896003723,
+      "probabilities": {
+        "FLOOD": 0.0004637515521608293,
+        "EARTHQUAKE": 0.0002482047420926392,
+        "FIRE": 0.02436431497335434,
+        "ACCIDENT": 0.000491414510179311,
+        "NON_EVENT": 0.9744322896003723
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 18,
+      "processed_wordpieces_with_special_tokens": 18,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-020",
+    "event_classifier": {
+      "label": "NON_EVENT",
+      "confidence": 0.9943729639053345,
+      "probabilities": {
+        "FLOOD": 0.0004994173068553209,
+        "EARTHQUAKE": 7.437600288540125e-05,
+        "FIRE": 0.0047072600573301315,
+        "ACCIDENT": 0.00034592472366057336,
+        "NON_EVENT": 0.9943729639053345
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 15,
+      "processed_wordpieces_with_special_tokens": 15,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-021",
+    "event_classifier": {
+      "label": "NON_EVENT",
+      "confidence": 0.9954490065574646,
+      "probabilities": {
+        "FLOOD": 0.0005390136502683163,
+        "EARTHQUAKE": 0.00015629513654857874,
+        "FIRE": 0.003264200408011675,
+        "ACCIDENT": 0.0005915005458518863,
+        "NON_EVENT": 0.9954490065574646
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 16,
+      "processed_wordpieces_with_special_tokens": 16,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-022",
+    "event_classifier": {
+      "label": "NON_EVENT",
+      "confidence": 0.9988093376159668,
+      "probabilities": {
+        "FLOOD": 0.0003317934169899672,
+        "EARTHQUAKE": 6.76532945362851e-05,
+        "FIRE": 0.000407300831284374,
+        "ACCIDENT": 0.00038395405863411725,
+        "NON_EVENT": 0.9988093376159668
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 13,
+      "processed_wordpieces_with_special_tokens": 13,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-023",
+    "event_classifier": {
+      "label": "NON_EVENT",
+      "confidence": 0.9140601754188538,
+      "probabilities": {
+        "FLOOD": 0.0007302435114979744,
+        "EARTHQUAKE": 0.0002233698032796383,
+        "FIRE": 0.0010193868074566126,
+        "ACCIDENT": 0.08396685123443604,
+        "NON_EVENT": 0.9140601754188538
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 15,
+      "processed_wordpieces_with_special_tokens": 15,
+      "truncated": false
+    }
+  },
+  {
+    "id": "FRESH-05-024",
+    "event_classifier": {
+      "label": "ACCIDENT",
+      "confidence": 0.9823868274688721,
+      "probabilities": {
+        "FLOOD": 0.0005401914240792394,
+        "EARTHQUAKE": 0.00017627178749535233,
+        "FIRE": 0.00043903154437430203,
+        "ACCIDENT": 0.9823868274688721,
+        "NON_EVENT": 0.016457632184028625
+      }
+    },
+    "sena_token_coverage": {
+      "source_wordpieces_with_special_tokens": 18,
+      "processed_wordpieces_with_special_tokens": 18,
+      "truncated": false
+    }
+  }
+]

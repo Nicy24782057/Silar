@@ -1,0 +1,535 @@
+{
+  "schema": "slr09-development-adjudication-0.8",
+  "source_user_message": "oke setuju dan lanjut",
+  "source_user_message_at": "2026-10-19T13:29:17+07:00",
+  "approval_scope": "PRECEDING_PROPOSAL_38_KEEP_1_DEFER_1_NON_EVENT_FOR_DEVELOPMENT_ONLY",
+  "source_workbook_library_file_id": "libfile_e115f4b80a2c8191a76d468b663ab30b",
+  "source_workbook_version": 1,
+  "old_evaluation_labels_and_scores_preserved": true,
+  "fresh_acceptance_reference": false,
+  "quality_acceptance_approved": false,
+  "approved_records": 39,
+  "deferred_records": 1,
+  "records": [
+    {
+      "id": "BAN-01186",
+      "text": "banjir di aceh peneliti zaiyana putri : sekolah & ; outdoor & ; juga menarik",
+      "source_label": "FLOOD",
+      "final": null,
+      "origin": "Acuan development terdahulu",
+      "review": {
+        "status": "DEFERRED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Konteks narasi terpotong; ditunda sampai sumber lengkap tersedia."
+      }
+    },
+    {
+      "id": "BAN-01703",
+      "text": "abang tolongin ini muti mau plng dari acara tadi dari metmall hujan deras banget mana banjir tolonginnnnn haha angkot nya lama nih mana masih jauh rumah mutiabang pokoknya sih you ya di event selanjutnya",
+      "source_label": "FLOOD",
+      "final": "FLOOD",
+      "origin": "Acuan development terdahulu",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "BAN-01483",
+      "text": "bapak bupati stay sejak bencana banjir sampai hari ini banser siap di belakang bapak bupati madiun",
+      "source_label": "FLOOD",
+      "final": "FLOOD",
+      "origin": "Acuan development terdahulu",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "BAN-01984",
+      "text": "asli ngeri-ngeri sedap naf eug beberapa kali bikin kegiatan sosial open donasi dari banjir 2014 kelud sinabung bencana asap dan ada beberapa kegiatan sosial lainnya wajib banget share dana yang masuk & keluar sampai terakir bikin lpj itu kalo di komunitas",
+      "source_label": "FLOOD",
+      "final": "NON_EVENT",
+      "origin": "Acuan development terdahulu",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Koreksi pengembangan disetujui: ringkasan donasi lintas bencana, bukan laporan satu kejadian."
+      }
+    },
+    {
+      "id": "BAN-01058",
+      "text": "butuh karung pasir dari wan badud sabaaar ini ujian air pasang banjir rob rendam kampung nelayan di penjaringan",
+      "source_label": "FLOOD",
+      "final": "FLOOD",
+      "origin": "Acuan development terdahulu",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "GEM-01075",
+      "text": "presiden menyambut baik keputusan untuk menyederhanakan prosedur pengambilan uang bagi korban gempa bumi di lombok ntb dari 17 menjadi tinggal 1 prosedur saja yang diikuti sehingga di lapangan betul-betul bisa dilaksanakan pembagian uang bantuan pembangunan rumah itu",
+      "source_label": "EARTHQUAKE",
+      "final": "EARTHQUAKE",
+      "origin": "Acuan development terdahulu",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "GEM-01485",
+      "text": "setelah kemarin ada yang tetap nekad meneruskan shalat ketika gempa bumi dan masjid tempat shalatnya bergoyang kemudian ada yang shalat berjamaah di halte busway ada pula yang shalat di tengah gang gerbong kereta",
+      "source_label": "EARTHQUAKE",
+      "final": "EARTHQUAKE",
+      "origin": "Acuan development terdahulu",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "GEM-01323",
+      "text": "sebelum gempa bumi yang begitu dahsat begitu indah ya pemandang di kator inch setiap ada kegiatan apa saja pasti di tempat inich orang berkumpul tapi sayang itu semua tinggal kenangan belaka saja karena sok di hempas",
+      "source_label": "EARTHQUAKE",
+      "final": "EARTHQUAKE",
+      "origin": "Acuan development terdahulu",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "KEB-00831",
+      "text": "jadi cerita nya ada kebakaran , trus pemadam dateng , pemandm nya langsung nyiremin rumah2 di samping rumah yg lagi kebakaran nya trus pemadam kebakaran nya di lemparin batu warga , kata nya pemadam nya malah bercanda wkwk dasar orang2 tolol lu kira api nabun bisa di pademin pake aer",
+      "source_label": "FIRE",
+      "final": "FIRE",
+      "origin": "Acuan development terdahulu",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "KEB-00264",
+      "text": "1 . kebakaran hutan dan lahan ( ) saat ini sudah mulai dilakukan penanggulangan dan pencegahan nya oleh tim manggala agni klhk , tni dan polri di daerah riau . via",
+      "source_label": "FIRE",
+      "final": "FIRE",
+      "origin": "Acuan development terdahulu",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "KEB-00695",
+      "text": "gedung telkom ada yg kebakaran gi kata nya di pekanbaru , makanya jaringan langsung pada keputus .",
+      "source_label": "FIRE",
+      "final": "FIRE",
+      "origin": "Acuan development terdahulu",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "KEB-00940",
+      "text": ". . . . kavling dpr di sidoarjo udah kebakaran semalem . baru tau di story ig . bener-bener bakalan banyak api mulai hari ini .",
+      "source_label": "FIRE",
+      "final": "FIRE",
+      "origin": "Acuan development terdahulu",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "KEC-01051",
+      "text": "-kakak perempuannya meninggal diakibatkan kecelakaan saat ini celyn duduk di bangku sama dia bukanlah siswi yang pintar dan memiliki banyak prestasi tapi celyn merupakan siswi yang aktif dalam organisasi dia adalah wakil ketua osis di sekolahnya-",
+      "source_label": "ACCIDENT",
+      "final": "ACCIDENT",
+      "origin": "Acuan development terdahulu",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "BAN-01692",
+      "text": "banjir dukungan di injury time",
+      "source_label": "NON_EVENT",
+      "final": "NON_EVENT",
+      "origin": "Acuan development terdahulu",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "BAN-01763",
+      "text": "guna antisipasi banjir dan situasi kamtibmas yang aman dan kondusif kapolsek bukit intan akp madi putra sh mah beserta kasubnit reskrim ipda imam sh dan personil polsek bukit intan memantau debit air di perumahan warga yang rawan terdampak banjir di kelurahan parit lalang",
+      "source_label": "NON_EVENT",
+      "final": "NON_EVENT",
+      "origin": "Acuan development terdahulu",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "KEC-01006",
+      "text": "4 kecelakaan maut dan mengerikan di dunia karena hal sepele",
+      "source_label": "NON_EVENT",
+      "final": "NON_EVENT",
+      "origin": "Acuan development terdahulu",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-001",
+      "text": "Laporan posko: air sungai meluap dan merendam kios-kios di Kampung Anggrek sejak subuh.",
+      "source_label": "FLOOD",
+      "final": "FLOOD",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-002",
+      "text": "Sesi latihan dihentikan: air sungguhan meluap masuk asrama dan petugas mengevakuasi penghuni.",
+      "source_label": "FLOOD",
+      "final": "FLOOD",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-003",
+      "text": "Tidak ada latihan hari ini; banjir benar-benar menutup akses jembatan di Desa Kenanga.",
+      "source_label": "FLOOD",
+      "final": "FLOOD",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-004",
+      "text": "Warga Kabupaten Mandala merasakan gempa pukul dua; tembok sekolah roboh.",
+      "source_label": "EARTHQUAKE",
+      "final": "EARTHQUAKE",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-005",
+      "text": "Ketika siswa berlatih berlindung, gempa sungguhan mengguncang sekolah hingga lampu jatuh.",
+      "source_label": "EARTHQUAKE",
+      "final": "EARTHQUAKE",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-006",
+      "text": "Ini bukan contoh soal. Gempa baru saja merobohkan pagar rumah kami.",
+      "source_label": "EARTHQUAKE",
+      "final": "EARTHQUAKE",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-007",
+      "text": "Api membesar di bengkel las Jalan Delima dan membakar dua kendaraan malam tadi.",
+      "source_label": "FIRE",
+      "final": "FIRE",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-008",
+      "text": "Skenario latihan dibatalkan karena gudang di sebelahnya benar-benar terbakar dan dua pekerja cedera.",
+      "source_label": "FIRE",
+      "final": "FIRE",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-009",
+      "text": "Bukan simulasi, dapur restoran sedang kebakaran; asap pekat keluar dari atap.",
+      "source_label": "FIRE",
+      "final": "FIRE",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-010",
+      "text": "Sepeda motor menabrak pejalan kaki di simpang Jalan Kapuk; korban dibawa ke puskesmas.",
+      "source_label": "ACCIDENT",
+      "final": "ACCIDENT",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-011",
+      "text": "Latihan lalu lintas terhenti setelah truk sungguhan menabrak peserta di pintu gerbang.",
+      "source_label": "ACCIDENT",
+      "final": "ACCIDENT",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-012",
+      "text": "Tidak ada tabrakan beruntun, tetapi sebuah bus menabrak pohon dan satu penumpang terluka.",
+      "source_label": "ACCIDENT",
+      "final": "ACCIDENT",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-013",
+      "text": "Bahan lokakarya berjudul Hidup Bersama Banjir dibagikan kepada peserta; semua contoh hanya ilustrasi.",
+      "source_label": "NON_EVENT",
+      "final": "NON_EVENT",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-014",
+      "text": "Panitia berencana berlatih evakuasi banjir bulan depan; pengumuman ini tidak melaporkan kejadian.",
+      "source_label": "NON_EVENT",
+      "final": "NON_EVENT",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-015",
+      "text": "Banjir hadiah untuk tim juara, begitu bunyi candaan pembawa acara.",
+      "source_label": "NON_EVENT",
+      "final": "NON_EVENT",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-016",
+      "text": "Dosen menguraikan teori lempeng penyebab gempa dalam rekaman kuliah.",
+      "source_label": "NON_EVENT",
+      "final": "NON_EVENT",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-017",
+      "text": "Pesan berantai tentang gempa di sini dibantah: pemeriksaan menyatakan guncangan itu tidak terjadi.",
+      "source_label": "NON_EVENT",
+      "final": "NON_EVENT",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-018",
+      "text": "Dalam novel fantasi itu kerajaan dihancurkan gempa buatan naga.",
+      "source_label": "NON_EVENT",
+      "final": "NON_EVENT",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-019",
+      "text": "Api tiruan dan mesin asap digunakan dalam peragaan keselamatan; tidak ada kebakaran sungguhan.",
+      "source_label": "NON_EVENT",
+      "final": "NON_EVENT",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-020",
+      "text": "Audit mencatat dua belas kebakaran selama tiga tahun terakhir sebagai angka statistik.",
+      "source_label": "NON_EVENT",
+      "final": "NON_EVENT",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-021",
+      "text": "Jika gudang kebakaran, jalur mana yang harus dipakai? Ini pertanyaan ujian.",
+      "source_label": "NON_EVENT",
+      "final": "NON_EVENT",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-022",
+      "text": "Poster layanan masyarakat memuat kiat mencegah kecelakaan saat libur panjang.",
+      "source_label": "NON_EVENT",
+      "final": "NON_EVENT",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-023",
+      "text": "Aktor merekam adegan kecelakaan menggunakan mobil properti; tidak ada insiden nyata.",
+      "source_label": "NON_EVENT",
+      "final": "NON_EVENT",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    },
+    {
+      "id": "FRESH-05-024",
+      "text": "Petugas mengklarifikasi kabar kecelakaan di Jalan Kamboja: kendaraan berhenti biasa dan tidak saling menabrak.",
+      "source_label": "NON_EVENT",
+      "final": "NON_EVENT",
+      "origin": "Usulan asisten",
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Pemilik proyek (persetujuan percakapan)",
+        "at": "2026-10-19T13:29:17+07:00",
+        "note": "Disetujui untuk mempertahankan label sumber sesuai usulan review dalam percakapan."
+      }
+    }
+  ]
+}

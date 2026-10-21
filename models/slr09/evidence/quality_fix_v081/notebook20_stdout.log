@@ -1,0 +1,12 @@
+Known human regression 10 /50
+Known human regression 20 /50
+Known human regression 30 /50
+Known human regression 40 /50
+Known human regression 50 /50
+{
+  "old_human50_targets": true,
+  "old_human50_sena": 1.0,
+  "v07_seen_flood": 0.6,
+  "quality_acceptance_approved": false
+}
+Notebook execution recorded: /workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.1/models/slr09/notebooks/20_Verifikasi_Bobot_Dipulihkan_v0.8.1_executed.ipynb

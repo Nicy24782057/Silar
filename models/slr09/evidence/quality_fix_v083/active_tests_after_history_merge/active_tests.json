@@ -1,0 +1,12 @@
+{
+  "schema": "slr09-active-contract-tests-0.2",
+  "tests_run": 80,
+  "failures": [],
+  "errors": [],
+  "skipped": 0,
+  "all_passed": true,
+  "python": "3.12.14",
+  "model_inference_executed": false,
+  "training_executed": false,
+  "scope": "SYNTHETIC_CONTRACT_AND_PACKAGE_IDENTITY_NOT_NEURAL_ACCURACY"
+}

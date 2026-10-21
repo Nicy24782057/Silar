@@ -1,0 +1,19 @@
+{
+  "seed": 384,
+  "cpu_threads": 2,
+  "max_epochs": 6,
+  "batch_size": 8,
+  "encoder_lr": 1e-05,
+  "head_lr": 5e-05,
+  "teacher_kl": 0.5,
+  "trainable": "LAST_ENCODER_BLOCK_POOLER_CLASSIFIER",
+  "gradient_method": "DETERMINISTIC_FROZEN_PREFIX_CACHE_LAST_BLOCK_BACKPROP",
+  "hard_replay_unique": 123,
+  "additional_draws_per_hard_example": 6,
+  "draws_per_epoch": 2471,
+  "confidence_cutoff_unchanged": 0.95,
+  "independent_validation_or_acceptance_claimed": false,
+  "selection": "ALL_PRIOR_CLASS_GATES_ALL_PRIOR_CONTRASTS_CONTEXT40_AND_FINAL083_ACCURACY_1",
+  "parent_weight_sha256": "63609492125314dd0d1b3e420164006523122043e5e9cd2789eec4a095433980",
+  "training_source_sha256": "df06ae8199195058f665ec66527b89bbb18b94dd51e4cd881e58695eac27e990"
+}

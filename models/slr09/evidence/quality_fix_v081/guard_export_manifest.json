@@ -1,0 +1,34 @@
+{
+  "model_id": "SILAR_SENA_context_guard_v081_20261019T104620",
+  "run_id": "20261019T104620",
+  "archive_name": "SILAR_SENA_context_guard_v0.8.1_20261019.zip",
+  "labels": [
+    "FLOOD",
+    "EARTHQUAKE",
+    "FIRE",
+    "ACCIDENT",
+    "NON_EVENT"
+  ],
+  "files": {
+    "config.json": "febb4294e220615be653133104562be26236ea97165c5103dc7b6d377277da9a",
+    "model.safetensors": "d7a8035b2db81d5ad2d166162fb0633327ce7cb8b52047a24fbc4c2ba164e6f5",
+    "tokenizer.json": "93684d1d5cc282613006dbee78d38882487365cdd378d087e21e755ac157ca63",
+    "tokenizer_config.json": "6c7af3e1d0c166292dc68cece6e6bb2be29945b8a45b39c804f65e9602a78429",
+    "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+    "vocab.txt": "343bf28a78f7efeda6419fa610f553184a6dcd29aae726f46850cd05e3167dc3"
+  },
+  "selected_epoch": 1,
+  "selected_checkpoint_has_gradient_from_training21": true,
+  "this_guard_fit_has_new_gradients": false,
+  "inherited_manual_bias": 2.5,
+  "additional_manual_bias": 2.5,
+  "training_unique": 1249,
+  "human_training": 623,
+  "assistant_weak_training": 626,
+  "v07_50_used_for_weak_training": true,
+  "human130_never_used_for_training": true,
+  "known_simulation_guard_fitted": true,
+  "quality_acceptance_approved": false,
+  "production_model_selected": false,
+  "archive_sha256": "760a79f6951fc8c380aeed6779006444e3b1992ae7d720af9d80f2be4c24a20d"
+}

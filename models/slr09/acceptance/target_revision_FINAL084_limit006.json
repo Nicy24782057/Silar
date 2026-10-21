@@ -1,0 +1,33 @@
+{
+  "schema": "slr09-explicit-user-target-revision-0.8.4",
+  "created_at": "2026-10-20T15:56:16.304383+00:00",
+  "status": "APPROVED_BY_EXPLICIT_USER_CHAT",
+  "user_message": "hmm kalau standar Isi berlebih pada field kosong kita ubah menjadi ≤6% bagaimana? apakah ada perubahan yang signifikan? jadi kita cukupkan training dan test nya kemudian anda berikan model sena dan nara versi paling terbaru yang digunakan tadi. dan juga notebook dan data riview yang dipakai untuk mengevaluasi ini",
+  "user_message_at": "2026-10-20T22:51:37+07:00",
+  "approver": "USER_VIA_CHAT_IDENTITY_NOT_INFERRED_FROM_REVIEWER_NAME",
+  "metric": "empty_field_spurious_rate_max",
+  "old_target": 0.05,
+  "new_target": 0.06,
+  "changed_after_original_result_was_observed": true,
+  "original_acceptance_result_preserved": true,
+  "all_other_targets_unchanged": true,
+  "confidence_threshold_unchanged": 0.95,
+  "human_annotations_unchanged": true,
+  "model_weights_and_inference_code_unchanged": true,
+  "training_and_testing_phase_closed": true,
+  "additional_training_requested": false,
+  "additional_model_inference_requested": false,
+  "quality_acceptance_scope": "MVP_ASSET_PILOT",
+  "quality_acceptance_basis": "USER_REQUEST_TO_FINISH_TRAINING_AND_TESTING_WITH_REVISED_6_PERCENT_LIMIT",
+  "production_deployed": false,
+  "target_vm_verified": false,
+  "card_done": false,
+  "original_evidence_sha256": {
+    "evaluation.json": "0836a2cf182c14b78482a9e3d06fd0d7b5467bce7fa542f71216e5274f0591b5",
+    "reviewed_bundle_frozen.json": "84e51a84727b7825e6aeb8ec3739429c3bfd9cf3ca032130bb3a60688d671c31",
+    "predictions.jsonl": "69f54659b3d634ef8c96be18c7e338db49b4723f1c3b7f876899eb9ae13ab8ae",
+    "evaluation_lock.json": "4c02e001986828193b5204b39545fbdf3bef000ab763fe83494e213d8d4b5d15",
+    "workflow_result.json": "c30222aa82332875ed623ffcc1c21257510253f2993bf49d0681f8a1037a64ec"
+  },
+  "original_source_workbook_sha256": "046e468d3b9cb137d39ce5886dbc0eee0325cc5d406902de745b980f02253ad4"
+}

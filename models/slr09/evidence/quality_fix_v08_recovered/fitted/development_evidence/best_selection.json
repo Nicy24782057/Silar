@@ -1,0 +1,9 @@
+{
+  "epoch": 1,
+  "bias": 2.5,
+  "joint_score": 1.0,
+  "regression_contrast_accuracy": 1.0,
+  "all_development_targets_met": true,
+  "exploratory_development_parameter_fit": true,
+  "quality_acceptance_approved": false
+}

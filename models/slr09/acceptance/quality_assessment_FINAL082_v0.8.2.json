@@ -1,0 +1,89 @@
+{
+  "schema": "slr09-final082-actual-acceptance-result-1",
+  "recorded_at_utc": "2026-10-19T12:48:09.396719+00:00",
+  "run_started_at_utc": "2026-10-19T12:45:30.232041+00:00",
+  "run_finished_at_utc": "2026-10-19T12:45:54.228895+00:00",
+  "status": "IN_REVIEW",
+  "workflow_status": "SUCCEEDED",
+  "records": 50,
+  "tokens": 671,
+  "reviewer": [
+    "bintang"
+  ],
+  "model_inference_executed": true,
+  "training_executed": false,
+  "numeric_targets_met": true,
+  "numeric_targets_passed": 7,
+  "numeric_targets_total": 7,
+  "required_checks_passed": 8,
+  "required_checks_total": 9,
+  "all_required_checks_met": false,
+  "original_evaluator_metric_targets_met_includes_non_numeric_checks": true,
+  "decision": "REQUIRES_QUALITY_IMPROVEMENT",
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "model_code_config_changed_after_review": false,
+  "reference_used_for_repairs_or_checkpoint_selection": false,
+  "review_sha256": "63a640669960173f52edb87f2cbdf6b3907741fd14bea41d0a96cebe5735c36b",
+  "bundle_sha256": "bf4a23100c37dcfaaccb878fb58d3c4fd0c28bf05e27f98598bbc4b8392482dd",
+  "predictions_sha256": "feaa21e65079673b09175a0b5926d45bd058460d595d2e0a2ea981ce0f97c6b4",
+  "simulation_contrasts": [
+    {
+      "id": "FINAL082-FLOOD-07",
+      "text": "Saat latihan pertolongan, banjir nyata merusak jembatan kayu di Desa Bantarasih siang tadi.",
+      "family": "real_during_exercise",
+      "gold_label": "FLOOD",
+      "prediction": "FLOOD",
+      "confidence": 0.9922822117805481,
+      "correct": true
+    },
+    {
+      "id": "FINAL082-EARTHQUAKE-07",
+      "text": "Latihan evakuasi dihentikan karena gempa sungguhan mengguncang Kampung Cendrawana sore ini.",
+      "family": "real_during_exercise",
+      "gold_label": "EARTHQUAKE",
+      "prediction": "EARTHQUAKE",
+      "confidence": 0.9954553842544556,
+      "correct": true
+    },
+    {
+      "id": "FINAL082-FIRE-07",
+      "text": "Di tengah latihan damkar, kebakaran nyata merusak satu mobil di Lapangan Mekarjaya siang ini.",
+      "family": "real_during_exercise",
+      "gold_label": "FIRE",
+      "prediction": "FIRE",
+      "confidence": 0.9949066042900085,
+      "correct": true
+    },
+    {
+      "id": "FINAL082-ACCIDENT-07",
+      "text": "Saat latihan pertolongan, kecelakaan sungguhan merusak mobil petugas di Lapangan Binamarga sore ini.",
+      "family": "real_during_exercise",
+      "gold_label": "ACCIDENT",
+      "prediction": "ACCIDENT",
+      "confidence": 0.9953917264938354,
+      "correct": true
+    },
+    {
+      "id": "FINAL082-NON_EVENT-01",
+      "text": "Tim damkar hanya menggelar simulasi kebakaran di Halaman Purnawana pagi tadi.",
+      "family": "simulation",
+      "gold_label": "NON_EVENT",
+      "prediction": "NON_EVENT",
+      "confidence": 0.9758681058883667,
+      "correct": true
+    },
+    {
+      "id": "FINAL082-NON_EVENT-02",
+      "text": "Kecelakaan dalam latihan di Balai Suryalaya sore ini memakai mobil properti, tanpa kejadian sungguhan.",
+      "family": "exercise_only",
+      "gold_label": "NON_EVENT",
+      "prediction": "ACCIDENT",
+      "confidence": 0.928926944732666,
+      "correct": false
+    }
+  ],
+  "next_step": "Resolve the failed exercise-only contrast under the existing protocol before quality acceptance; do not lower targets or relabel the frozen reference.",
+  "remote_push_executed": false,
+  "production_deployed": false
+}

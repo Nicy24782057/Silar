@@ -1,0 +1,602 @@
+[
+  {
+    "id": "MVP-NEW-001",
+    "text": "Banjir merendam dua rumah di Kelurahan Sukamaju tadi pagi.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9974787831306458,
+      "EARTHQUAKE": 3.477153950370848e-05,
+      "FIRE": 7.947149424580857e-05,
+      "ACCIDENT": 5.849972149007954e-05,
+      "NON_EVENT": 0.0023486209101974964
+    }
+  },
+  {
+    "id": "MVP-NEW-002",
+    "text": "Petugas mengevakuasi warga akibat banjir di Kampung Melati malam ini.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9965870380401611,
+      "EARTHQUAKE": 2.055349796137307e-05,
+      "FIRE": 5.59782529307995e-05,
+      "ACCIDENT": 7.333193207159638e-05,
+      "NON_EVENT": 0.0032630988862365484
+    }
+  },
+  {
+    "id": "MVP-NEW-003",
+    "text": "Banjir merusak jembatan di Desa Harapan kemarin sore.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9976078271865845,
+      "EARTHQUAKE": 5.360810973797925e-05,
+      "FIRE": 0.00010059499618364498,
+      "ACCIDENT": 6.765851139789447e-05,
+      "NON_EVENT": 0.0021702488884329796
+    }
+  },
+  {
+    "id": "MVP-NEW-004",
+    "text": "Banjir di Desa Kenanga menyebabkan seorang warga terluka pagi ini.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.997461199760437,
+      "EARTHQUAKE": 2.8119016860728152e-05,
+      "FIRE": 7.360640302067623e-05,
+      "ACCIDENT": 9.321898687630892e-05,
+      "NON_EVENT": 0.00234388280659914
+    }
+  },
+  {
+    "id": "MVP-NEW-005",
+    "text": "Banjir di Kampung Cempaka mengakibatkan dua warga meninggal tadi malam.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9972214698791504,
+      "EARTHQUAKE": 2.3638604034204036e-05,
+      "FIRE": 6.147482781670988e-05,
+      "ACCIDENT": 9.499920270172879e-05,
+      "NON_EVENT": 0.0025984877720475197
+    }
+  },
+  {
+    "id": "MVP-NEW-006",
+    "text": "Banjir melanda Desa Mulyasari siang ini tanpa korban jiwa.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.997427761554718,
+      "EARTHQUAKE": 4.288508353056386e-05,
+      "FIRE": 3.653227395261638e-05,
+      "ACCIDENT": 6.869545904919505e-05,
+      "NON_EVENT": 0.0024240289349108934
+    }
+  },
+  {
+    "id": "MVP-NEW-007",
+    "text": "Warga membersihkan lumpur sisa banjir di Kampung Anggrek kemarin.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9961277842521667,
+      "EARTHQUAKE": 2.692273847060278e-05,
+      "FIRE": 4.116604759474285e-05,
+      "ACCIDENT": 7.500001083826646e-05,
+      "NON_EVENT": 0.003729047253727913
+    }
+  },
+  {
+    "id": "MVP-NEW-008",
+    "text": "Banjir akibat luapan sungai merendam sekolah di Desa Sumberrejo pagi tadi.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9965918064117432,
+      "EARTHQUAKE": 2.499258698662743e-05,
+      "FIRE": 4.6074437705101445e-05,
+      "ACCIDENT": 6.26746186753735e-05,
+      "NON_EVENT": 0.003274455200880766
+    }
+  },
+  {
+    "id": "MVP-NEW-009",
+    "text": "Laporan warga menyebut banjir menutup Jalan Pahlawan sejak subuh.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9870350956916809,
+      "EARTHQUAKE": 2.3203110686154105e-05,
+      "FIRE": 1.867833998403512e-05,
+      "ACCIDENT": 3.6996763810748234e-05,
+      "NON_EVENT": 0.01288605760782957
+    }
+  },
+  {
+    "id": "MVP-NEW-010",
+    "text": "Tolong, banjir sudah masuk tiga rumah di Kampung Pinus sekarang.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9962778687477112,
+      "EARTHQUAKE": 4.117264325032011e-05,
+      "FIRE": 8.170622459147125e-05,
+      "ACCIDENT": 4.422153506311588e-05,
+      "NON_EVENT": 0.0035549711901694536
+    }
+  },
+  {
+    "id": "MVP-NEW-011",
+    "text": "Gempa mengguncang Desa Waringin tadi pagi.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 9.755192877491936e-05,
+      "EARTHQUAKE": 0.9988341927528381,
+      "FIRE": 4.68607759103179e-05,
+      "ACCIDENT": 0.00010048015974462032,
+      "NON_EVENT": 0.0009208419360220432
+    }
+  },
+  {
+    "id": "MVP-NEW-012",
+    "text": "Gempa merusak dua rumah di Desa Sukadana malam ini.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0002863037516362965,
+      "EARTHQUAKE": 0.9986605644226074,
+      "FIRE": 0.00019958842312917113,
+      "ACCIDENT": 8.179312862921506e-05,
+      "NON_EVENT": 0.0007717035477980971
+    }
+  },
+  {
+    "id": "MVP-NEW-013",
+    "text": "Gempa di Kecamatan Sumberjaya menyebabkan seorang anak terluka kemarin.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0003719500091392547,
+      "EARTHQUAKE": 0.9983123540878296,
+      "FIRE": 0.00016692662029527128,
+      "ACCIDENT": 0.0003473582910373807,
+      "NON_EVENT": 0.0008014120976440609
+    }
+  },
+  {
+    "id": "MVP-NEW-014",
+    "text": "Gempa di Desa Tanjungsari mengakibatkan satu warga meninggal tadi malam.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0004835339786950499,
+      "EARTHQUAKE": 0.9981424808502197,
+      "FIRE": 6.685246626148e-05,
+      "ACCIDENT": 0.00035296654095873237,
+      "NON_EVENT": 0.0009541919571347535
+    }
+  },
+  {
+    "id": "MVP-NEW-015",
+    "text": "Tim penyelamat mengevakuasi warga setelah gempa di Desa Cendana pagi ini.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00017684978956822306,
+      "EARTHQUAKE": 0.998673677444458,
+      "FIRE": 4.9419071729062125e-05,
+      "ACCIDENT": 0.00019007532682735473,
+      "NON_EVENT": 0.000910049129743129
+    }
+  },
+  {
+    "id": "MVP-NEW-016",
+    "text": "Gempa terasa di Kelurahan Cibiru siang ini tanpa kerusakan bangunan.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 7.944956450955942e-05,
+      "EARTHQUAKE": 0.9977648258209229,
+      "FIRE": 2.268533717142418e-05,
+      "ACCIDENT": 4.125545092392713e-05,
+      "NON_EVENT": 0.002091701840981841
+    }
+  },
+  {
+    "id": "MVP-NEW-017",
+    "text": "Warga mengungsi setelah gempa mengguncang Desa Mekarwangi kemarin sore.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00028543052030727267,
+      "EARTHQUAKE": 0.9987786412239075,
+      "FIRE": 9.35689386096783e-05,
+      "ACCIDENT": 0.00013530287833418697,
+      "NON_EVENT": 0.0007070984574966133
+    }
+  },
+  {
+    "id": "MVP-NEW-018",
+    "text": "Gempa susulan merobohkan tembok di Desa Pagersari sore ini.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0003263248363509774,
+      "EARTHQUAKE": 0.998559296131134,
+      "FIRE": 0.00015860800340306014,
+      "ACCIDENT": 7.37104273866862e-05,
+      "NON_EVENT": 0.0008821390219964087
+    }
+  },
+  {
+    "id": "MVP-NEW-019",
+    "text": "Petugas melaporkan gempa merusak sekolah di Desa Wanasari sejak pagi.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0001128535732277669,
+      "EARTHQUAKE": 0.9988343119621277,
+      "FIRE": 3.257332355133258e-05,
+      "ACCIDENT": 6.399077392416075e-05,
+      "NON_EVENT": 0.00095629773568362
+    }
+  },
+  {
+    "id": "MVP-NEW-020",
+    "text": "Barusan gempa kuat terasa di Kampung Nangka, warga berlarian keluar.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 4.279523636796512e-05,
+      "EARTHQUAKE": 0.9988982677459717,
+      "FIRE": 3.675627522170544e-05,
+      "ACCIDENT": 5.651821629726328e-05,
+      "NON_EVENT": 0.0009655544417910278
+    }
+  },
+  {
+    "id": "MVP-NEW-021",
+    "text": "Kebakaran menghanguskan kios di Pasar Sentosa tadi pagi.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 4.79996160720475e-05,
+      "EARTHQUAKE": 2.6457746571395546e-05,
+      "FIRE": 0.9989832043647766,
+      "ACCIDENT": 3.629910497693345e-05,
+      "NON_EVENT": 0.0009060720331035554
+    }
+  },
+  {
+    "id": "MVP-NEW-022",
+    "text": "Kebakaran akibat korsleting listrik merusak gudang di Desa Kertajaya malam ini.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 4.162982804700732e-05,
+      "EARTHQUAKE": 3.158587423968129e-05,
+      "FIRE": 0.9991136193275452,
+      "ACCIDENT": 4.607720620697364e-05,
+      "NON_EVENT": 0.0007669972255825996
+    }
+  },
+  {
+    "id": "MVP-NEW-023",
+    "text": "Kebakaran di Kelurahan Babakan menyebabkan dua pedagang terluka pagi ini.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 9.104476339416578e-05,
+      "EARTHQUAKE": 3.867996565531939e-05,
+      "FIRE": 0.9989952445030212,
+      "ACCIDENT": 5.868444713996723e-05,
+      "NON_EVENT": 0.0008164130849763751
+    }
+  },
+  {
+    "id": "MVP-NEW-024",
+    "text": "Kebakaran di Desa Margasari mengakibatkan seorang penghuni meninggal kemarin.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 6.459801079472527e-05,
+      "EARTHQUAKE": 2.089591907861177e-05,
+      "FIRE": 0.9988309741020203,
+      "ACCIDENT": 9.564828360453248e-05,
+      "NON_EVENT": 0.0009879368590191007
+    }
+  },
+  {
+    "id": "MVP-NEW-025",
+    "text": "Pemadam memadamkan kebakaran di Pasar Pagi sejak subuh.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 8.011827594600618e-05,
+      "EARTHQUAKE": 2.1035737518104725e-05,
+      "FIRE": 0.9985203146934509,
+      "ACCIDENT": 2.7925902031711303e-05,
+      "NON_EVENT": 0.0013505334500223398
+    }
+  },
+  {
+    "id": "MVP-NEW-026",
+    "text": "Kebakaran melanda gudang di Desa Cikole sore ini tanpa korban luka.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 2.8683791242656298e-05,
+      "EARTHQUAKE": 2.6026680643553846e-05,
+      "FIRE": 0.9988910555839539,
+      "ACCIDENT": 4.7726302000228316e-05,
+      "NON_EVENT": 0.001006506965495646
+    }
+  },
+  {
+    "id": "MVP-NEW-027",
+    "text": "Saat latihan evakuasi, kebakaran sungguhan menghanguskan gudang di Desa Karangrejo siang ini.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 3.786179513554089e-05,
+      "EARTHQUAKE": 3.6302913940744475e-05,
+      "FIRE": 0.9989431500434875,
+      "ACCIDENT": 5.214906923356466e-05,
+      "NON_EVENT": 0.0009305310086347163
+    }
+  },
+  {
+    "id": "MVP-NEW-028",
+    "text": "Warga membersihkan puing rumah setelah kebakaran di Desa Sukamurni kemarin malam.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 7.77291352278553e-05,
+      "EARTHQUAKE": 2.7950671210419387e-05,
+      "FIRE": 0.9987637996673584,
+      "ACCIDENT": 5.897214577998966e-05,
+      "NON_EVENT": 0.0010715373791754246
+    }
+  },
+  {
+    "id": "MVP-NEW-029",
+    "text": "Petugas melaporkan kebakaran merusak tiga toko di Pasar Anyar pagi tadi.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 6.0585553001146764e-05,
+      "EARTHQUAKE": 2.590736221463885e-05,
+      "FIRE": 0.9988622665405273,
+      "ACCIDENT": 3.6464505683397874e-05,
+      "NON_EVENT": 0.0010148745495826006
+    }
+  },
+  {
+    "id": "MVP-NEW-030",
+    "text": "Tolong, kebakaran di Jalan Merdeka sudah menghanguskan satu rumah sekarang.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 4.860570334130898e-05,
+      "EARTHQUAKE": 2.3536011212854646e-05,
+      "FIRE": 0.9988473653793335,
+      "ACCIDENT": 3.6438934330362827e-05,
+      "NON_EVENT": 0.0010439736070111394
+    }
+  },
+  {
+    "id": "MVP-NEW-031",
+    "text": "Kecelakaan melibatkan dua motor di Jalan Diponegoro tadi pagi.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 7.595296483486891e-05,
+      "EARTHQUAKE": 1.7524931536172517e-05,
+      "FIRE": 9.945759666152298e-05,
+      "ACCIDENT": 0.9955933690071106,
+      "NON_EVENT": 0.0042136358097195625
+    }
+  },
+  {
+    "id": "MVP-NEW-032",
+    "text": "Kecelakaan di Jalan Kartini menyebabkan satu pengendara terluka malam ini.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 8.217000140575692e-05,
+      "EARTHQUAKE": 2.315356323379092e-05,
+      "FIRE": 5.409787263488397e-05,
+      "ACCIDENT": 0.996337890625,
+      "NON_EVENT": 0.003502702107653022
+    }
+  },
+  {
+    "id": "MVP-NEW-033",
+    "text": "Kecelakaan di Jalan Sudirman mengakibatkan dua penumpang meninggal kemarin sore.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 8.468250598525628e-05,
+      "EARTHQUAKE": 2.434436282783281e-05,
+      "FIRE": 0.00011623897444223985,
+      "ACCIDENT": 0.9965609908103943,
+      "NON_EVENT": 0.0032138118986040354
+    }
+  },
+  {
+    "id": "MVP-NEW-034",
+    "text": "Polisi mengevakuasi korban kecelakaan di Jalan Veteran pagi ini.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00012165519001428038,
+      "EARTHQUAKE": 2.7726933694793843e-05,
+      "FIRE": 0.00012051717931171879,
+      "ACCIDENT": 0.9963071346282959,
+      "NON_EVENT": 0.0034230684395879507
+    }
+  },
+  {
+    "id": "MVP-NEW-035",
+    "text": "Kecelakaan akibat rem blong merusak bus di Jalan Siliwangi tadi malam.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 5.5515673011541367e-05,
+      "EARTHQUAKE": 2.6835872631636448e-05,
+      "FIRE": 6.196559115778655e-05,
+      "ACCIDENT": 0.9973610043525696,
+      "NON_EVENT": 0.0024945938494056463
+    }
+  },
+  {
+    "id": "MVP-NEW-036",
+    "text": "Kecelakaan melibatkan truk di Jalan Ahmad Yani siang ini tanpa korban jiwa.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 5.965631498838775e-05,
+      "EARTHQUAKE": 2.385443622188177e-05,
+      "FIRE": 5.1753202569670975e-05,
+      "ACCIDENT": 0.9963988065719604,
+      "NON_EVENT": 0.003465822199359536
+    }
+  },
+  {
+    "id": "MVP-NEW-037",
+    "text": "Petugas membersihkan puing setelah kecelakaan di Jalan Imam Bonjol kemarin.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0001118375948863104,
+      "EARTHQUAKE": 8.138663542922586e-05,
+      "FIRE": 0.00010434287105454132,
+      "ACCIDENT": 0.9954767823219299,
+      "NON_EVENT": 0.004225586075335741
+    }
+  },
+  {
+    "id": "MVP-NEW-038",
+    "text": "Saat simulasi lalu lintas, kecelakaan sungguhan merusak mobil di Jalan Pemuda pagi tadi.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 4.095868644071743e-05,
+      "EARTHQUAKE": 5.5963660997804254e-05,
+      "FIRE": 8.781577344052494e-05,
+      "ACCIDENT": 0.9965695142745972,
+      "NON_EVENT": 0.0032457448542118073
+    }
+  },
+  {
+    "id": "MVP-NEW-039",
+    "text": "Warga melaporkan kecelakaan melibatkan angkot di Jalan Cendrawasih sore ini.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00010000760084949434,
+      "EARTHQUAKE": 1.7691236280370504e-05,
+      "FIRE": 9.864999447017908e-05,
+      "ACCIDENT": 0.9968900084495544,
+      "NON_EVENT": 0.0028936434537172318
+    }
+  },
+  {
+    "id": "MVP-NEW-040",
+    "text": "Tolong, kecelakaan di Jalan Mangga menyebabkan seorang pejalan kaki terluka sekarang.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 7.47371741454117e-05,
+      "EARTHQUAKE": 3.402907896088436e-05,
+      "FIRE": 0.000142970762681216,
+      "ACCIDENT": 0.9978808760643005,
+      "NON_EVENT": 0.0018674122402444482
+    }
+  },
+  {
+    "id": "MVP-NEW-041",
+    "text": "Petugas mengadakan simulasi kebakaran di halaman kantor kelurahan pagi ini.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 8.676856668898836e-05,
+      "EARTHQUAKE": 7.11728134774603e-05,
+      "FIRE": 0.21357853710651398,
+      "ACCIDENT": 2.082183345919475e-05,
+      "NON_EVENT": 0.786242663860321
+    }
+  },
+  {
+    "id": "MVP-NEW-042",
+    "text": "Guru menjelaskan penyebab gempa dalam pelajaran di sekolah hari ini.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 2.6656391582946526e-06,
+      "EARTHQUAKE": 0.0003366357705090195,
+      "FIRE": 2.2057623937143944e-05,
+      "ACCIDENT": 3.737052566066268e-06,
+      "NON_EVENT": 0.999634861946106
+    }
+  },
+  {
+    "id": "MVP-NEW-043",
+    "text": "Warga mengikuti penyuluhan pencegahan banjir di balai desa pagi tadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0001366088108625263,
+      "EARTHQUAKE": 1.291214630327886e-06,
+      "FIRE": 3.43607462127693e-06,
+      "ACCIDENT": 1.9483618416415993e-06,
+      "NON_EVENT": 0.99985671043396
+    }
+  },
+  {
+    "id": "MVP-NEW-044",
+    "text": "Bagaimana cara menghindari kecelakaan apabila rem kendaraan rusak?",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 1.650410581532924e-06,
+      "EARTHQUAKE": 2.0974184735678136e-06,
+      "FIRE": 2.9971583899168763e-06,
+      "ACCIDENT": 4.7613397327950224e-05,
+      "NON_EVENT": 0.9999456405639648
+    }
+  },
+  {
+    "id": "MVP-NEW-045",
+    "text": "Film itu menampilkan kebakaran fiktif di sebuah kota khayalan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 8.823320058581885e-06,
+      "EARTHQUAKE": 1.3062152902421076e-05,
+      "FIRE": 0.0005793150630779564,
+      "ACCIDENT": 4.355755663709715e-06,
+      "NON_EVENT": 0.999394416809082
+    }
+  },
+  {
+    "id": "MVP-NEW-046",
+    "text": "Katanya dompet saya mengalami gempa setiap akhir bulan, cuma bercanda.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 1.0535436558711808e-06,
+      "EARTHQUAKE": 0.00026219512801617384,
+      "FIRE": 1.608276397746522e-05,
+      "ACCIDENT": 1.6635250403851387e-06,
+      "NON_EVENT": 0.999718964099884
+    }
+  },
+  {
+    "id": "MVP-NEW-047",
+    "text": "Petugas memastikan tidak terjadi banjir di Desa Beringin pagi ini.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0022096377797424793,
+      "EARTHQUAKE": 6.699541245325236e-06,
+      "FIRE": 3.7444931422214722e-06,
+      "ACCIDENT": 7.406160420941887e-06,
+      "NON_EVENT": 0.9977725148200989
+    }
+  },
+  {
+    "id": "MVP-NEW-048",
+    "text": "Jumlah kecelakaan selama lima tahun terakhir dibahas dalam seminar keselamatan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 1.134022909354826e-06,
+      "EARTHQUAKE": 4.906929916614899e-06,
+      "FIRE": 2.6874107788898982e-05,
+      "ACCIDENT": 1.3736328128288733e-06,
+      "NON_EVENT": 0.9999656677246094
+    }
+  },
+  {
+    "id": "MVP-NEW-049",
+    "text": "Warga diminta bersiap menghadapi kemungkinan banjir minggu depan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.03008756972849369,
+      "EARTHQUAKE": 1.1521089618327096e-05,
+      "FIRE": 7.675893357372843e-06,
+      "ACCIDENT": 1.9383180188015103e-05,
+      "NON_EVENT": 0.9698739051818848
+    }
+  },
+  {
+    "id": "MVP-NEW-050",
+    "text": "Polisi menggelar simulasi penanganan kecelakaan di lapangan kecamatan sore ini.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 3.500466846162453e-05,
+      "EARTHQUAKE": 9.562499144522008e-06,
+      "FIRE": 0.00011823239765362814,
+      "ACCIDENT": 4.833132334169932e-05,
+      "NON_EVENT": 0.9997889399528503
+    }
+  }
+]

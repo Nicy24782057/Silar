@@ -1,0 +1,12 @@
+{
+  "sena": {
+    "name": "SILAR_SENA_context_v0.8.3_20261020.zip",
+    "bytes": 412166828,
+    "sha256": "a3a141b26d17360d79279d79f8a07681098eb7a7fa1f80880521ac401d0fe1cb"
+  },
+  "nara": {
+    "name": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z.zip",
+    "bytes": 408238634,
+    "sha256": "bce9feba0dd2ae4518880708085f44286ae8d1dd7e50f4eb452e36824f967798"
+  }
+}

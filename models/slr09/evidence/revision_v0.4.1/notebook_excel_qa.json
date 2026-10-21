@@ -1,0 +1,10 @@
+{
+  "bootstrap_executed": true,
+  "xlsx_upload_executed": true,
+  "pending_review_rejected": true,
+  "approved_review_fixture_preflight_passed": true,
+  "missing_archive_failure_exported": true,
+  "original_xlsx_in_export": true,
+  "all_passed": true,
+  "scope": "NOTEBOOK_FIXTURE_ONLY_NOT_HUMAN_REVIEW_OR_NEURAL_EVALUATION"
+}

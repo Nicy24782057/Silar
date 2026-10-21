@@ -1,0 +1,38 @@
+{
+  "verified_files": [
+    {
+      "path": "data/sena_train_reviewed.jsonl",
+      "sha256": "0e97bdd197442821d5da02cbe4f2ab863781f037e411eb70fddceed1f62d0c18",
+      "unchanged_from": "DELIVERED_V0.5"
+    },
+    {
+      "path": "data/sena_validation_reviewed.jsonl",
+      "sha256": "8055d15c77b0d30ca33f2427e64c6a1d2daf085b6dabd37e8983911fd36e7fc0",
+      "unchanged_from": "DELIVERED_V0.5"
+    },
+    {
+      "path": "code/active_nara_adapter/legacy_postprocessing.py",
+      "sha256": "06275b3aa338718689fba66984626754e6b34739156f65e378ceaad4b06bfa9f",
+      "unchanged_from": "DELIVERED_V0.5"
+    },
+    {
+      "path": "code/active_nara_adapter/nara_data.py",
+      "sha256": "eea1124afd1d0628b7a96c3d9dbca43a116f8bed0fef76f2c67718e7ff2e4a29",
+      "unchanged_from": "DELIVERED_V0.5"
+    },
+    {
+      "path": "code/active_nara_adapter/nara_experiment.py",
+      "sha256": "734e9c15a13ac967a72a482c68a9fc777e6632a75957ffd854b0863894a28409",
+      "unchanged_from": "DELIVERED_V0.5"
+    },
+    {
+      "path": "code/active_nara_adapter/nara_metrics.py",
+      "sha256": "8f74d058db3e613c77df83c772b5142f2b504dfde542455284754e4c8ceefcb7",
+      "unchanged_from": "DELIVERED_V0.5"
+    }
+  ],
+  "old_human_pilot_frozen_sha256": "925ac703b6ed92987146ea260e055a5e6e5d70147ee475d95b979c1c0d21ee68",
+  "old_human_pilot_rows": 50,
+  "old_human_pilot_records_unchanged_from_v05": true,
+  "training_source_matches_executed_copy": true
+}

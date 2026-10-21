@@ -1,0 +1,6 @@
+{
+  "old24_and_v06_new50_now_development": true,
+  "reason": "Failures and intercept ablation have been inspected; these sets must not be presented as unseen acceptance again.",
+  "new_human_review_completed": false,
+  "training_pairs_sha256": "a55d6687311ea6c40026ddd148435e51ea61d4f8b8fa16a4d2b80c411551b6c4"
+}

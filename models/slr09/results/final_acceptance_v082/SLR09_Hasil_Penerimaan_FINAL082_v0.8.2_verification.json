@@ -1,0 +1,18 @@
+{
+  "records": 50,
+  "tokens": 671,
+  "nonempty_correct": 170,
+  "nonempty_denominator": 193,
+  "empty_spurious": 7,
+  "empty_denominator": 157,
+  "numeric_targets_passed": 7,
+  "required_checks_passed": 8,
+  "required_checks_total": 9,
+  "contrasts_correct": 5,
+  "contrasts_total": 6,
+  "field_errors": 30,
+  "token_errors": 74,
+  "threshold_boundaries_verified": true,
+  "quality_acceptance_approved": false,
+  "card_done": false
+}

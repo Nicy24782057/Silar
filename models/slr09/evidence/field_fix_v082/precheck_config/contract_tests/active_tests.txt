@@ -1,0 +1,116 @@
+test_explicit_breathing_condition_is_kept (test_candidate_runtime.ActiveNormalizationTests.test_explicit_breathing_condition_is_kept) ... ok
+test_literal_impact_still_maps_to_impact (test_candidate_runtime.ActiveNormalizationTests.test_literal_impact_still_maps_to_impact) ... ok
+test_negated_breathing_condition_is_not_positive_victim (test_candidate_runtime.ActiveNormalizationTests.test_negated_breathing_condition_is_not_positive_victim) ... ok
+test_unconscious_condition_is_not_misread_as_negation (test_candidate_runtime.ActiveNormalizationTests.test_unconscious_condition_is_not_misread_as_negation) ... ok
+test_candidate_directory_has_explicit_identity_and_hashes (test_candidate_runtime.CandidateAssetTests.test_candidate_directory_has_explicit_identity_and_hashes) ... ok
+test_config_labels_must_match_even_if_hash_was_updated (test_candidate_runtime.CandidateAssetTests.test_config_labels_must_match_even_if_hash_was_updated) ... ok
+test_different_weights_cannot_be_accepted_as_candidate (test_candidate_runtime.CandidateAssetTests.test_different_weights_cannot_be_accepted_as_candidate) ... ok
+test_duplicate_archive_member_is_rejected (test_candidate_runtime.CandidateAssetTests.test_duplicate_archive_member_is_rejected) ... ok
+test_extraction_uses_only_hashed_runtime_files (test_candidate_runtime.CandidateAssetTests.test_extraction_uses_only_hashed_runtime_files) ... ok
+test_missing_tokenizer_is_rejected (test_candidate_runtime.CandidateAssetTests.test_missing_tokenizer_is_rejected) ... ok
+test_symlink_weight_is_rejected (test_candidate_runtime.CandidateAssetTests.test_symlink_weight_is_rejected) ... ok
+test_wrong_archive_hash_is_rejected_before_extracting (test_candidate_runtime.CandidateAssetTests.test_wrong_archive_hash_is_rejected_before_extracting) ... ok
+test_committed_lock_matches_selected_candidates_and_adapter (test_candidate_runtime.CandidateConfigurationTests.test_committed_lock_matches_selected_candidates_and_adapter) ... ERROR
+test_dependency_guard_accepts_matching_cuda_local_suffix (test_candidate_runtime.CandidateConfigurationTests.test_dependency_guard_accepts_matching_cuda_local_suffix) ... ok
+test_dependency_guard_rejects_different_version (test_candidate_runtime.CandidateConfigurationTests.test_dependency_guard_rejects_different_version) ... ok
+test_dependency_guard_reports_missing_package (test_candidate_runtime.CandidateConfigurationTests.test_dependency_guard_reports_missing_package) ... ok
+test_inconsistent_lock_and_integration_configuration_is_rejected (test_candidate_runtime.CandidateConfigurationTests.test_inconsistent_lock_and_integration_configuration_is_rejected) ... FAIL
+test_missing_weights_are_recorded_as_failed_without_inference_claim (test_candidate_runtime.CandidateConfigurationTests.test_missing_weights_are_recorded_as_failed_without_inference_claim) ... ok
+test_record_identifies_candidate_versions_and_keeps_fusion_separate (test_candidate_runtime.CandidateConfigurationTests.test_record_identifies_candidate_versions_and_keeps_fusion_separate) ... ERROR
+test_ambiguous_repeated_object_is_not_expanded (test_field_quantity_and_parties.LiteralFieldTests.test_ambiguous_repeated_object_is_not_expanded) ... ok
+test_guarded_watchmen_become_parties_without_losing_victim_condition (test_field_quantity_and_parties.LiteralFieldTests.test_guarded_watchmen_become_parties_without_losing_victim_condition) ... ok
+test_location_name_with_quantity_word_is_preserved (test_field_quantity_and_parties.LiteralFieldTests.test_location_name_with_quantity_word_is_preserved) ... ok
+test_quantity_before_object_is_not_a_second_location (test_field_quantity_and_parties.LiteralFieldTests.test_quantity_before_object_is_not_a_second_location) ... ok
+test_victim_removed_by_guard_is_not_reintroduced_from_tokens (test_field_quantity_and_parties.LiteralFieldTests.test_victim_removed_by_guard_is_not_reintroduced_from_tokens) ... ok
+test_actor_is_not_added_to_impact_but_damaged_object_is (test_quality_fix.QualityFixRegressionTests.test_actor_is_not_added_to_impact_but_damaged_object_is) ... ok
+test_adjacent_human_quantity_restored_from_literal_source (test_quality_fix.QualityFixRegressionTests.test_adjacent_human_quantity_restored_from_literal_source) ... ok
+test_ambulance_is_not_injury_evidence (test_quality_fix.QualityFixRegressionTests.test_ambulance_is_not_injury_evidence) ... ok
+test_denial_does_not_cross_clause_boundary (test_quality_fix.QualityFixRegressionTests.test_denial_does_not_cross_clause_boundary) ... ok
+test_explicitly_unaffected_object_is_removed_locally (test_quality_fix.QualityFixRegressionTests.test_explicitly_unaffected_object_is_removed_locally) ... ok
+test_local_nonimpact_and_real_effect_are_distinguished (test_quality_fix.QualityFixRegressionTests.test_local_nonimpact_and_real_effect_are_distinguished) ... ok
+test_negated_victims_with_quantities_are_suppressed (test_quality_fix.QualityFixRegressionTests.test_negated_victims_with_quantities_are_suppressed) ... ok
+test_real_injury_during_training_is_preserved (test_quality_fix.QualityFixRegressionTests.test_real_injury_during_training_is_preserved) ... ok
+test_time_fallback_keeps_literal_text_and_null_timestamp (test_quality_fix.QualityFixRegressionTests.test_time_fallback_keeps_literal_text_and_null_timestamp) ... ok
+test_time_modifier_does_not_consume_uppercase_place_name (test_quality_fix.QualityFixRegressionTests.test_time_modifier_does_not_consume_uppercase_place_name) ... ok
+test_without_is_not_a_blanket_impact_suppression (test_quality_fix.QualityFixRegressionTests.test_without_is_not_a_blanket_impact_suppression) ... ok
+test_all_15_configured_labels_are_accepted (test_silar_ai_adapter.AdapterContractTests.test_all_15_configured_labels_are_accepted) ... ok
+test_category_stays_sena_when_nara_event_differs (test_silar_ai_adapter.AdapterContractTests.test_category_stays_sena_when_nara_event_differs) ... ok
+test_confidence_below_and_at_threshold (test_silar_ai_adapter.AdapterContractTests.test_confidence_below_and_at_threshold) ... ok
+test_empty_extraction_does_not_create_uncertainty_or_completeness (test_silar_ai_adapter.AdapterContractTests.test_empty_extraction_does_not_create_uncertainty_or_completeness) ... ok
+test_empty_tokens_unknown_label_and_bad_offsets_are_rejected (test_silar_ai_adapter.AdapterContractTests.test_empty_tokens_unknown_label_and_bad_offsets_are_rejected) ... ok
+test_existing_time_fallback_is_preserved_and_marked (test_silar_ai_adapter.AdapterContractTests.test_existing_time_fallback_is_preserved_and_marked) ... ok
+test_false_event_role_does_not_override_sena (test_silar_ai_adapter.AdapterContractTests.test_false_event_role_does_not_override_sena) ... ok
+test_fused_data_has_exactly_eight_fields_without_auto_verification (test_silar_ai_adapter.AdapterContractTests.test_fused_data_has_exactly_eight_fields_without_auto_verification) ... ok
+test_fusion_has_no_alias_to_adapted_record (test_silar_ai_adapter.AdapterContractTests.test_fusion_has_no_alias_to_adapted_record) ... ok
+test_legacy_punctuation_spacing_is_accepted (test_silar_ai_adapter.AdapterContractTests.test_legacy_punctuation_spacing_is_accepted) ... ok
+test_missing_calibration_is_rejected (test_silar_ai_adapter.AdapterContractTests.test_missing_calibration_is_rejected) ... ok
+test_missing_span_role_and_ungrounded_span_are_rejected (test_silar_ai_adapter.AdapterContractTests.test_missing_span_role_and_ungrounded_span_are_rejected) ... ok
+test_mixed_narratives_and_modified_sena_projection_are_rejected (test_silar_ai_adapter.AdapterContractTests.test_mixed_narratives_and_modified_sena_projection_are_rejected) ... ok
+test_nan_boolean_and_inconsistent_probabilities_are_rejected (test_silar_ai_adapter.AdapterContractTests.test_nan_boolean_and_inconsistent_probabilities_are_rejected) ... ok
+test_no_input_mutation (test_silar_ai_adapter.AdapterContractTests.test_no_input_mutation) ... ok
+test_non_event_blocks_even_when_confidence_is_low (test_silar_ai_adapter.AdapterContractTests.test_non_event_blocks_even_when_confidence_is_low) ... ok
+test_old_fusion_and_completeness_outputs_are_ignored (test_silar_ai_adapter.AdapterContractTests.test_old_fusion_and_completeness_outputs_are_ignored) ... ok
+test_partial_token_coverage_is_recorded (test_silar_ai_adapter.AdapterContractTests.test_partial_token_coverage_is_recorded) ... ok
+test_projection_has_exactly_seven_extraction_fields (test_silar_ai_adapter.AdapterContractTests.test_projection_has_exactly_seven_extraction_fields) ... ok
+test_raw_output_has_no_alias_to_input_or_normalized_values (test_silar_ai_adapter.AdapterContractTests.test_raw_output_has_no_alias_to_input_or_normalized_values) ... ok
+test_reason_remains_in_raw_without_new_schema_field (test_silar_ai_adapter.AdapterContractTests.test_reason_remains_in_raw_without_new_schema_field) ... ok
+test_relative_time_does_not_become_timestamp (test_silar_ai_adapter.AdapterContractTests.test_relative_time_does_not_become_timestamp) ... ok
+test_role_mapping_for_location_time_parties_objects_and_victims (test_silar_ai_adapter.AdapterContractTests.test_role_mapping_for_location_time_parties_objects_and_victims) ... ok
+test_schema_injection_and_unverified_ambiguity_are_rejected (test_silar_ai_adapter.AdapterContractTests.test_schema_injection_and_unverified_ambiguity_are_rejected) ... ok
+test_spatial_information_is_not_projected_as_impact (test_silar_ai_adapter.AdapterContractTests.test_spatial_information_is_not_projected_as_impact) ... ok
+test_substring_inside_another_word_is_not_grounding (test_silar_ai_adapter.AdapterContractTests.test_substring_inside_another_word_is_not_grounding) ... ok
+test_unsupported_time_fallback_or_ungrounded_value_is_rejected (test_silar_ai_adapter.AdapterContractTests.test_unsupported_time_fallback_or_ungrounded_value_is_rejected) ... ok
+test_victim_suppressed_by_upstream_guard_is_not_reintroduced (test_silar_ai_adapter.AdapterContractTests.test_victim_suppressed_by_upstream_guard_is_not_reintroduced) ... ok
+test_exact_256_limit_omits_later_words (test_slr09_runtime.RuntimeContractTests.test_exact_256_limit_omits_later_words) ... ok
+test_first_wordpiece_positions_and_unknown_token (test_slr09_runtime.RuntimeContractTests.test_first_wordpiece_positions_and_unknown_token) ... ok
+test_invalid_probability_map_cannot_be_calibrated (test_slr09_runtime.RuntimeContractTests.test_invalid_probability_map_cannot_be_calibrated) ... ok
+test_records_reject_duplicate_ids_and_empty_narrative (test_slr09_runtime.RuntimeContractTests.test_records_reject_duplicate_ids_and_empty_narrative) ... ok
+test_threshold_equality_and_non_event_errors_are_counted (test_slr09_runtime.RuntimeContractTests.test_threshold_equality_and_non_event_errors_are_counted) ... ok
+test_victim_guard_does_not_overwrite_raw_tokens_or_before_guard_trace (test_slr09_runtime.RuntimeContractTests.test_victim_guard_does_not_overwrite_raw_tokens_or_before_guard_trace) ... ok
+test_wordpiece_limit_preserves_sep_and_reports_partial_word (test_slr09_runtime.RuntimeContractTests.test_wordpiece_limit_preserves_sep_and_reports_partial_word) ... ok
+test_changed_prediction_bytes_rejected (test_slr09_runtime.ThresholdEvidenceTests.test_changed_prediction_bytes_rejected) ... ok
+test_foreign_duplicate_missing_or_mismatched_text_prediction_rejected (test_slr09_runtime.ThresholdEvidenceTests.test_foreign_duplicate_missing_or_mismatched_text_prediction_rejected) ... ok
+test_incomplete_or_unexecuted_model_run_rejected (test_slr09_runtime.ThresholdEvidenceTests.test_incomplete_or_unexecuted_model_run_rejected) ... ok
+test_metrics_calculate_from_all_five_classes_without_selecting_threshold (test_slr09_runtime.ThresholdEvidenceTests.test_metrics_calculate_from_all_five_classes_without_selecting_threshold) ... ok
+test_train_overlap_rejected_even_if_manifest_hash_updated (test_slr09_runtime.ThresholdEvidenceTests.test_train_overlap_rejected_even_if_manifest_hash_updated) ... ok
+test_wrong_model_weights_rejected (test_slr09_runtime.ThresholdEvidenceTests.test_wrong_model_weights_rejected) ... ok
+
+======================================================================
+ERROR: test_committed_lock_matches_selected_candidates_and_adapter (test_candidate_runtime.CandidateConfigurationTests.test_committed_lock_matches_selected_candidates_and_adapter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.2/models/slr09/code/tests/test_candidate_runtime.py", line 106, in test_committed_lock_matches_selected_candidates_and_adapter
+    config, lock, _ = selected_assets()
+                      ^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.2/models/slr09/code/active_nara_adapter/slr09_candidate_runtime.py", line 43, in selected_assets
+    raise ValueError("Versi adapter/Fusion tidak cocok dengan konfigurasi kandidat")
+ValueError: Versi adapter/Fusion tidak cocok dengan konfigurasi kandidat
+
+======================================================================
+ERROR: test_record_identifies_candidate_versions_and_keeps_fusion_separate (test_candidate_runtime.CandidateConfigurationTests.test_record_identifies_candidate_versions_and_keeps_fusion_separate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.2/models/slr09/code/tests/test_candidate_runtime.py", line 143, in test_record_identifies_candidate_versions_and_keeps_fusion_separate
+    config, lock, _ = selected_assets()
+                      ^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.2/models/slr09/code/active_nara_adapter/slr09_candidate_runtime.py", line 43, in selected_assets
+    raise ValueError("Versi adapter/Fusion tidak cocok dengan konfigurasi kandidat")
+ValueError: Versi adapter/Fusion tidak cocok dengan konfigurasi kandidat
+
+======================================================================
+FAIL: test_inconsistent_lock_and_integration_configuration_is_rejected (test_candidate_runtime.CandidateConfigurationTests.test_inconsistent_lock_and_integration_configuration_is_rejected)
+----------------------------------------------------------------------
+ValueError: Versi adapter/Fusion tidak cocok dengan konfigurasi kandidat
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.2/models/slr09/code/tests/test_candidate_runtime.py", line 123, in test_inconsistent_lock_and_integration_configuration_is_rejected
+    with self.assertRaisesRegex(ValueError, 'hash bobot kandidat'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "hash bobot kandidat" does not match "Versi adapter/Fusion tidak cocok dengan konfigurasi kandidat"
+
+----------------------------------------------------------------------
+Ran 76 tests in 0.123s
+
+FAILED (failures=1, errors=2)

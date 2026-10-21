@@ -1,0 +1,388 @@
+{
+  "status": "QUALITY_IMPROVEMENT_REQUIRED",
+  "current_acceptance_immutable": true,
+  "current_FINAL084_reference_used_for_tuning": false,
+  "current_FINAL084_reference_retired_to_development": false,
+  "primary_failure": "EMPTY_FIELD_SPURIOUS_RATE_10_OF_174_EXCEEDS_0.05",
+  "sena_false_events": [
+    {
+      "id": "FINAL084-NON_EVENT-08",
+      "text": "Gempa dan banjir hanya muncul dalam cerita yang dibaca guru di Sekolah Puspanirmala siang ini.",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.8179528713226318,
+      "low_confidence": true,
+      "family": "fiction",
+      "kind": "FALSE_EVENT"
+    }
+  ],
+  "spurious_fields": [
+    {
+      "id": "FINAL084-FLOOD-08",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "menyebabkan dua warga meninggal"
+      ]
+    },
+    {
+      "id": "FINAL084-FLOOD-10",
+      "field": "location_text",
+      "gold": null,
+      "prediction": "halaman rumah"
+    },
+    {
+      "id": "FINAL084-EARTHQUAKE-03",
+      "field": "affected_objects",
+      "gold": [],
+      "prediction": [
+        "bangunan"
+      ]
+    },
+    {
+      "id": "FINAL084-FIRE-07",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "membuat dua penghuni terluka"
+      ]
+    },
+    {
+      "id": "FINAL084-FIRE-09",
+      "field": "involved_parties",
+      "gold": [],
+      "prediction": [
+        "seluruh penghuni selamat"
+      ]
+    },
+    {
+      "id": "FINAL084-ACCIDENT-03",
+      "field": "affected_objects",
+      "gold": [],
+      "prediction": [
+        "kendaraan"
+      ]
+    },
+    {
+      "id": "FINAL084-NON_EVENT-01",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "memimpin"
+      ]
+    },
+    {
+      "id": "FINAL084-NON_EVENT-05",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "membatalkan"
+      ]
+    },
+    {
+      "id": "FINAL084-NON_EVENT-05",
+      "field": "affected_objects",
+      "gold": [],
+      "prediction": [
+        "Gudang Weningjati"
+      ]
+    },
+    {
+      "id": "FINAL084-NON_EVENT-09",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "membuka loket"
+      ]
+    }
+  ],
+  "all_field_discrepancies": [
+    {
+      "id": "FINAL084-FLOOD-01",
+      "field": "location_text",
+      "gold": "Kelurahan Renggapada",
+      "prediction": "taman kota; Kelurahan Renggapada"
+    },
+    {
+      "id": "FINAL084-FLOOD-01",
+      "field": "affected_objects",
+      "gold": [
+        "taman kota"
+      ],
+      "prediction": []
+    },
+    {
+      "id": "FINAL084-FLOOD-03",
+      "field": "involved_parties",
+      "gold": [
+        "Relawan desa"
+      ],
+      "prediction": [
+        "Relawan desa",
+        "warga"
+      ]
+    },
+    {
+      "id": "FINAL084-FLOOD-04",
+      "field": "impacts",
+      "gold": [
+        "merendam ruang arsip"
+      ],
+      "prediction": [
+        "Sesi latihan dihentikan",
+        "merendam ruang arsip"
+      ]
+    },
+    {
+      "id": "FINAL084-FLOOD-06",
+      "field": "location_text",
+      "gold": "Desa Purnatirta",
+      "prediction": "terminal; Desa Purnatirta; jalan menuju"
+    },
+    {
+      "id": "FINAL084-FLOOD-06",
+      "field": "affected_objects",
+      "gold": [
+        "jalan menuju terminal"
+      ],
+      "prediction": []
+    },
+    {
+      "id": "FINAL084-FLOOD-08",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "menyebabkan dua warga meninggal"
+      ]
+    },
+    {
+      "id": "FINAL084-FLOOD-09",
+      "field": "impacts",
+      "gold": [
+        "Pagar sekolah roboh"
+      ],
+      "prediction": [
+        "Pagar sekolah roboh diterjang"
+      ]
+    },
+    {
+      "id": "FINAL084-FLOOD-10",
+      "field": "location_text",
+      "gold": null,
+      "prediction": "halaman rumah"
+    },
+    {
+      "id": "FINAL084-FLOOD-10",
+      "field": "impacts",
+      "gold": [
+        "menggenangi halaman rumah"
+      ],
+      "prediction": [
+        "masih menggenangi halaman rumah",
+        "lokasi",
+        "waktunya tidak disebutkan"
+      ]
+    },
+    {
+      "id": "FINAL084-FLOOD-10",
+      "field": "affected_objects",
+      "gold": [
+        "halaman rumah"
+      ],
+      "prediction": []
+    },
+    {
+      "id": "FINAL084-EARTHQUAKE-01",
+      "field": "impacts",
+      "gold": [
+        "mengguncang"
+      ],
+      "prediction": []
+    },
+    {
+      "id": "FINAL084-EARTHQUAKE-03",
+      "field": "affected_objects",
+      "gold": [],
+      "prediction": [
+        "bangunan"
+      ]
+    },
+    {
+      "id": "FINAL084-EARTHQUAKE-04",
+      "field": "time_text",
+      "gold": "pagi tadi",
+      "prediction": "pagi tadi; tepat saat"
+    },
+    {
+      "id": "FINAL084-EARTHQUAKE-09",
+      "field": "location_text",
+      "gold": "Dusun Padmanala",
+      "prediction": "Dusun Padmanala sore"
+    },
+    {
+      "id": "FINAL084-EARTHQUAKE-09",
+      "field": "impacts",
+      "gold": [
+        "merusak atap pos ronda"
+      ],
+      "prediction": [
+        "Tidak ada yang terluka",
+        "merusak atap pos ronda"
+      ]
+    },
+    {
+      "id": "FINAL084-EARTHQUAKE-10",
+      "field": "impacts",
+      "gold": [
+        "terasa"
+      ],
+      "prediction": [
+        "terasa",
+        "berkumpul"
+      ]
+    },
+    {
+      "id": "FINAL084-FIRE-03",
+      "field": "impacts",
+      "gold": [
+        "memadamkan api"
+      ],
+      "prediction": [
+        "memadamkan"
+      ]
+    },
+    {
+      "id": "FINAL084-FIRE-04",
+      "field": "impacts",
+      "gold": [
+        "menghanguskan ruang genset"
+      ],
+      "prediction": [
+        "menghanguskan ruang genset",
+        "dihentikan"
+      ]
+    },
+    {
+      "id": "FINAL084-FIRE-07",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "membuat dua penghuni terluka"
+      ]
+    },
+    {
+      "id": "FINAL084-FIRE-09",
+      "field": "involved_parties",
+      "gold": [],
+      "prediction": [
+        "seluruh penghuni selamat"
+      ]
+    },
+    {
+      "id": "FINAL084-FIRE-10",
+      "field": "impacts",
+      "gold": [
+        "Sebuah bengkel hangus"
+      ],
+      "prediction": [
+        "Sebuah bengkel hangus",
+        "Belum ada keterangan lokasi",
+        "waktu"
+      ]
+    },
+    {
+      "id": "FINAL084-ACCIDENT-01",
+      "field": "impacts",
+      "gold": [
+        "melibatkan bus kota"
+      ],
+      "prediction": []
+    },
+    {
+      "id": "FINAL084-ACCIDENT-03",
+      "field": "affected_objects",
+      "gold": [],
+      "prediction": [
+        "kendaraan"
+      ]
+    },
+    {
+      "id": "FINAL084-ACCIDENT-04",
+      "field": "impacts",
+      "gold": [
+        "mobil katering terbalik"
+      ],
+      "prediction": []
+    },
+    {
+      "id": "FINAL084-ACCIDENT-10",
+      "field": "impacts",
+      "gold": [
+        "melibatkan dua mobil"
+      ],
+      "prediction": [
+        "belum diberikan"
+      ]
+    },
+    {
+      "id": "FINAL084-NON_EVENT-01",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "memimpin"
+      ]
+    },
+    {
+      "id": "FINAL084-NON_EVENT-04",
+      "field": "location_text",
+      "gold": "Lapangan Puspasena",
+      "prediction": "Lapangan Puspasena; lingkungan sekitar"
+    },
+    {
+      "id": "FINAL084-NON_EVENT-05",
+      "field": "location_text",
+      "gold": "Gudang Weningjati",
+      "prediction": null
+    },
+    {
+      "id": "FINAL084-NON_EVENT-05",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "membatalkan"
+      ]
+    },
+    {
+      "id": "FINAL084-NON_EVENT-05",
+      "field": "affected_objects",
+      "gold": [],
+      "prediction": [
+        "Gudang Weningjati"
+      ]
+    },
+    {
+      "id": "FINAL084-NON_EVENT-09",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "membuka loket"
+      ]
+    }
+  ],
+  "targets_unchanged": {
+    "sena_macro_f1": 0.85,
+    "non_event_recall": 0.9,
+    "event_class_recall": 0.8,
+    "nara_macro_f1_all_14_non_o": 0.75,
+    "nara_exact_span_f1": 0.6,
+    "fields_nonempty_exact": 0.8,
+    "empty_field_spurious_rate_max": 0.05
+  },
+  "required_next_actions": [
+    "Reduce spurious impact descriptions for non-event activities and duplicated victim consequences.",
+    "Distinguish an inspected or mentioned object from an object actually affected by the event.",
+    "Preserve valid impacts, actual victims, SENA-only category, cutoff 0.95 and mandatory human verification.",
+    "If FINAL084 informs any code/weight selection, retire it before tuning and require a new human-reviewed reference for the next acceptance."
+  ],
+  "must_not_change": "Do not rewrite reviewed gold, original predictions, metric targets or the first acceptance result to produce a pass."
+}

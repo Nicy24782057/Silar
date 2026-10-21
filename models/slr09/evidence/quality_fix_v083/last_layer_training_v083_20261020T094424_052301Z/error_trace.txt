@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/89b81e051aff/silar_work/models/slr09/code/quality_fix/train_context_last_layer_v083.py", line 177, in run
+    if not selected['feasible']:raise RuntimeError('No candidate satisfies existing regression constraints; no candidate export.')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: No candidate satisfies existing regression constraints; no candidate export.

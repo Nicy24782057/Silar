@@ -1,0 +1,134 @@
+{
+  "status": "QUALITY_IMPROVEMENT_REQUIRED",
+  "original_acceptance_result_immutable": true,
+  "candidate_has_been_tuned_on_FINAL083": false,
+  "reference_has_been_retired_to_development": false,
+  "sena_false_events": [
+    {
+      "id": "FINAL083-NON_EVENT-03",
+      "text": "Getaran buatan menandai peragaan gempa di Pusat Belajar Naramerta sore ini, bukan gempa sungguhan.",
+      "gold": "NON_EVENT",
+      "prediction": "EARTHQUAKE",
+      "confidence": 0.665245532989502,
+      "low_confidence": true,
+      "family": "exercise_only",
+      "kind": "FALSE_EVENT"
+    },
+    {
+      "id": "FINAL083-NON_EVENT-04",
+      "text": "Banjir pada latihan di Lapangan Kertamanah kemarin pagi ditiru dengan kolam kecil; permukiman tetap kering.",
+      "gold": "NON_EVENT",
+      "prediction": "FLOOD",
+      "confidence": 0.7296069860458374,
+      "low_confidence": true,
+      "family": "simulation",
+      "kind": "FALSE_EVENT"
+    }
+  ],
+  "spurious_fields": [
+    {
+      "id": "FINAL083-FLOOD-05",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "mengonfirmasi"
+      ]
+    },
+    {
+      "id": "FINAL083-FLOOD-07",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "mengakibatkan seorang warga terluka"
+      ]
+    },
+    {
+      "id": "FINAL083-EARTHQUAKE-08",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "menimbulkan satu korban meninggal"
+      ]
+    },
+    {
+      "id": "FINAL083-FIRE-05",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "Pemeriksaan petugas desa"
+      ]
+    },
+    {
+      "id": "FINAL083-FIRE-07",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "mengakibatkan satu pemilik rumah terluka"
+      ]
+    },
+    {
+      "id": "FINAL083-FIRE-09",
+      "field": "involved_parties",
+      "gold": [],
+      "prediction": [
+        "semua orang"
+      ]
+    },
+    {
+      "id": "FINAL083-NON_EVENT-01",
+      "field": "affected_objects",
+      "gold": [],
+      "prediction": [
+        "kendaraan"
+      ]
+    },
+    {
+      "id": "FINAL083-NON_EVENT-04",
+      "field": "affected_objects",
+      "gold": [],
+      "prediction": [
+        "permukiman"
+      ]
+    },
+    {
+      "id": "FINAL083-NON_EVENT-05",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "sampai",
+        "belum ada kejadian"
+      ]
+    },
+    {
+      "id": "FINAL083-NON_EVENT-06",
+      "field": "impacts",
+      "gold": [],
+      "prediction": [
+        "membantah",
+        "pemeriksaan tidak menemukan"
+      ]
+    },
+    {
+      "id": "FINAL083-NON_EVENT-09",
+      "field": "location_text",
+      "gold": null,
+      "prediction": "negeri rekaan"
+    }
+  ],
+  "required_actions": [
+    "Improve SENA discrimination of peragaan/getaran buatan/bukan gempa sungguhan versus a real earthquake.",
+    "Improve SENA discrimination of banjir pada latihan/ditiru/permukiman tetap kering versus actual flooding.",
+    "Reduce NARA reporting-only, negated, synthetic-object and fictional-location extractions using the existing role/field contract.",
+    "Preserve true event classes, literal victims, cutoff 0.95, NARA extraction and human verification contracts."
+  ],
+  "rule_before_tuning": "Before using these errors to change weights/code, retire FINAL083 to development, preserve its original human labels and results, and prepare a new human-reviewed reference before another acceptance run.",
+  "acceptance_targets_unchanged": {
+    "sena_macro_f1": 0.85,
+    "non_event_recall": 0.9,
+    "event_class_recall": 0.8,
+    "nara_macro_f1_all_14_non_o": 0.75,
+    "nara_exact_span_f1": 0.6,
+    "fields_nonempty_exact": 0.8,
+    "empty_field_spurious_rate_max": 0.05
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "files_sha256": {
+    "config.json": "febb4294e220615be653133104562be26236ea97165c5103dc7b6d377277da9a",
+    "model.safetensors": "10d3e584929d3404d5e695f08462041593603b8c03ff1ac402e4b1444bc3481c",
+    "tokenizer.json": "93684d1d5cc282613006dbee78d38882487365cdd378d087e21e755ac157ca63",
+    "tokenizer_config.json": "af1e05390d2f52f5c09553b0695dba1f047cadc875a0b12dca06c9e0fe039b21",
+    "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+    "vocab.txt": "343bf28a78f7efeda6419fa610f553184a6dcd29aae726f46850cd05e3167dc3"
+  },
+  "source_run": "training_run_20261019_cpu",
+  "selection_scope": "DEVELOPMENT_NOT_ACCEPTANCE"
+}

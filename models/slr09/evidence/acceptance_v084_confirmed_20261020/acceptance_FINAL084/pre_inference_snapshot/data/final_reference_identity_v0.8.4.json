@@ -1,0 +1,31 @@
+{
+  "records": 50,
+  "tokens": 692,
+  "counts": {
+    "FLOOD": 10,
+    "EARTHQUAKE": 10,
+    "FIRE": 10,
+    "ACCIDENT": 10,
+    "NON_EVENT": 10
+  },
+  "role_support": {
+    "TIME-ARG": 97,
+    "O": 306,
+    "FLOOD-EVENT": 10,
+    "INFORMATION-ARG": 33,
+    "AFFECTEDOBJECTS-ARG": 47,
+    "PLACE-ARG": 71,
+    "OFFICER-ARG": 28,
+    "REASON-ARG": 9,
+    "WOUNDVICTIM-ARG": 12,
+    "DEATHVICTIM-ARG": 12,
+    "EARTHQUAKE-EVENT": 11,
+    "FIRE-EVENT": 10,
+    "STREET-ARG": 25,
+    "ACCIDENT-EVENT": 10,
+    "FALSE-EVENT": 11
+  },
+  "proposal_sha256": "9cf047cc2d6f1299ecda31ab662324ac6dbe2f8a50f2b02d16f35a02f786a767",
+  "new_reference_inference_executed": false,
+  "quality_acceptance_approved": false
+}

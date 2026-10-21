@@ -1,0 +1,45 @@
+{
+  "audited_at": "2026-10-20T13:43:56.774357+00:00",
+  "source_library_id": "libfile_ec5717efabf481918d3ee067f2a7e06d",
+  "workbook_sha256": "6cca555c208bf5bfd430fffa083aafcf66786d49ca5116d2ba29461a12d5d0cf",
+  "bytes": 35601,
+  "reviewer": "Bintang",
+  "records": 50,
+  "tokens": 685,
+  "statuses": {
+    "APPROVED": 50
+  },
+  "classes": {
+    "FLOOD": 10,
+    "EARTHQUAKE": 10,
+    "FIRE": 10,
+    "ACCIDENT": 10,
+    "NON_EVENT": 10
+  },
+  "role_support": {
+    "FLOOD-EVENT": 10,
+    "INFORMATION-ARG": 50,
+    "AFFECTEDOBJECTS-ARG": 47,
+    "O": 272,
+    "PLACE-ARG": 86,
+    "TIME-ARG": 102,
+    "OFFICER-ARG": 28,
+    "REASON-ARG": 9,
+    "WOUNDVICTIM-ARG": 16,
+    "DEATHVICTIM-ARG": 12,
+    "EARTHQUAKE-EVENT": 11,
+    "FIRE-EVENT": 10,
+    "STREET-ARG": 12,
+    "ACCIDENT-EVENT": 10,
+    "FALSE-EVENT": 10
+  },
+  "changed_cells": 86,
+  "changes_by_sheet": {
+    "Mulai": 1,
+    "Narasi": 66,
+    "Token": 19
+  },
+  "structural_error": null,
+  "ready_error": null,
+  "model_inference_executed": false
+}

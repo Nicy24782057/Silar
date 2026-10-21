@@ -1,0 +1,15 @@
+{
+  "status": "SUCCEEDED",
+  "at": "2026-10-19T11:27:54.950910+00:00",
+  "model_inference_executed": false,
+  "actual_neural_outputs_reused": true,
+  "training_executed": false,
+  "sena_and_nara_weights_unchanged": true,
+  "current50_retired_to_development": true,
+  "before_nonempty_exact": 0.7874396135265701,
+  "after_nonempty_exact": 0.8164251207729468,
+  "previous50_regression_targets_met": true,
+  "current50_regression_targets_met": true,
+  "quality_acceptance_approved": false,
+  "card_done": false
+}

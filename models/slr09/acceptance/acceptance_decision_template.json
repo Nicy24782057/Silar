@@ -1,0 +1,19 @@
+{
+  "schema": "slr09-final-human-acceptance-0.4",
+  "status": "NOT_DECIDED",
+  "reviewer": null,
+  "reviewed_at": null,
+  "frozen_bundle_sha256": null,
+  "evaluation_report_sha256": null,
+  "metric_targets_met": null,
+  "decision_rationale": null,
+  "limitations_accepted": null,
+  "colab_representative_loading_accepted": null,
+  "weights_recipient_access_verified": null,
+  "repository_commit_sha": null,
+  "repository_commit_url": null,
+  "quality_acceptance_approved": false,
+  "target_vm_verified": false,
+  "production_deployed": false,
+  "note": "Template only. Fill from real review/evidence. A fixture PASS or successful model loading is not group acceptance."
+}

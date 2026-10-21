@@ -1,0 +1,43 @@
+{
+  "seed": 89,
+  "cpu_threads": 2,
+  "max_length": 192,
+  "batch_size_maximum": 8,
+  "max_epochs": 3,
+  "patience": 2,
+  "trainable_encoder_layers": "LAST_FOUR_ONLY",
+  "encoder_learning_rate": 5e-06,
+  "head_learning_rate": 1.5e-05,
+  "non_event_cross_entropy_multiplier": 2.0,
+  "assistant_loss_weight": 0.5,
+  "hard_human_non_event_quantile": 0.25,
+  "hard_human_non_event_loss_multiplier": 2.0,
+  "hard_negative_mining_data": "HUMAN_TRAIN584_ONLY_BEFORE_FIRST_GRADIENT",
+  "pair_loss_coefficient": 0.35,
+  "pair_margin": 2.0,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.05,
+  "manual_warm_bias_removed": 0.1,
+  "additional_manual_bias": 0.0,
+  "intercept_fitting_executed": false,
+  "selection": "MAX_WORST_TARGET_RATIO_THEN_MEAN_CAPPED_RATIO_THEN_ORIGINAL_HUMAN_F1",
+  "selection_sets": [
+    "ORIGINAL_HUMAN146",
+    "ADJUDICATED_HUMAN145",
+    "MIXED_RETIRED74",
+    "SEEN_HUMAN_REGRESSION50_AND_CONTRASTS"
+  ],
+  "targets_unchanged": {
+    "macro_f1": 0.85,
+    "non_event_recall": 0.9,
+    "event_class_recall": 0.8,
+    "regression_contrast_accuracy": 1.0
+  },
+  "confidence_cutoff_unchanged": 0.95,
+  "probability_calibration_established": false,
+  "training_source_sha256": "7bc566edc762a124796ed03eaebbf46876316097f65b8fa0883e105f7dbfd7f2",
+  "short_training_sha256": "6fbf7a5db30709cf8f2a7e69c9dca5cd258870a1736d9dc84e2b6f325b056095",
+  "approval_sha256": "76203e7d658b175c0d62b7e4b8f8acb097903b97ff047b24d1c5f9503a62763f",
+  "v07_diagnostic50_used_for_fitting_or_selection": false,
+  "new_independent_acceptance_executed": false
+}

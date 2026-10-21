@@ -1,0 +1,16 @@
+{
+  "status": "SUCCEEDED",
+  "source": "DEVELOPMENT_FITTED_NON_EVENT_HEAD_INTERCEPT_FROM_CPU_FOCUS_RUN",
+  "training_executed": false,
+  "parameter_fit_executed": true,
+  "encoder_gradient_training_executed": false,
+  "development_is_used_for_fitting": true,
+  "pilot50_used_for_training_or_checkpoint_selection": false,
+  "fresh_challenge_used_for_selection": false,
+  "independent_acceptance_test_executed": false,
+  "quality_acceptance_approved": false,
+  "started_at": "2026-10-19T02:25:09.546158+00:00",
+  "selected_non_event_head_bias": 2.1,
+  "model_exported": true,
+  "finished_at": "2026-10-19T02:25:22.888180+00:00"
+}

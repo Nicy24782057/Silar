@@ -1,0 +1,10 @@
+{
+  "epoch": 1,
+  "bias": 3.4,
+  "initial_bias": 1.5,
+  "additional_bias": 1.9,
+  "joint_score": 0.967741935483871,
+  "all_development_targets_met": false,
+  "human_reference_approval_of_auxiliary": false,
+  "exploratory_development_fit": true
+}

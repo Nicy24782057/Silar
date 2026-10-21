@@ -1,0 +1,27 @@
+{
+  "seed": 183,
+  "cpu_threads": 2,
+  "max_epochs": 3,
+  "batch_size": 8,
+  "training_max_length": 192,
+  "inference_max_length": 512,
+  "trainable": "LAST_ENCODER_BLOCK_POOLER_CLASSIFIER",
+  "encoder_lr": 5e-06,
+  "head_lr": 3e-05,
+  "preserve_correct_teacher_kl": 0.5,
+  "weak_weight": 0.25,
+  "new_context_weight": 3.0,
+  "human_weight": 1.0,
+  "reviewed_final_weight": 2.0,
+  "selection": "ALL_EIGHT_KNOWN_CLASS_GATES_AND_ALL_CONTRASTS_AND_CONTEXT40_CORRECT_THEN_MIN_REGRESSIONS_THEN_MAX_MEAN_F1",
+  "all_existing_references_used_for_training_or_selection": true,
+  "human130_now_used_for_training": true,
+  "independent_validation_or_acceptance_claimed": false,
+  "confidence_cutoff_unchanged": 0.95,
+  "targets_unchanged": {
+    "macro_f1": 0.85,
+    "non_event_recall": 0.9,
+    "each_event_recall": 0.8
+  },
+  "source_sha256": "f3376c8648dca200dcc30cd73f2f48f271147d9090e1dee5c637eb7c5a6a9d85"
+}

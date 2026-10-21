@@ -1,0 +1,17 @@
+Source SHA256: db027d563d1c89de0016eb4c433a43b506022a72ba05c913cbbdb06cae30f57a
+Traceback (most recent call last):
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.1/models/slr09/code/quality_fix/train_context_correction_v081.py", line 152, in <module>
+    a=p.parse_args();print(json.dumps(run(a.root,a.warm_start,a.output),indent=2))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.1/models/slr09/code/quality_fix/train_context_correction_v081.py", line 31, in run
+    human_train=[dict(source[i],label_origin='HUMAN_SOURCE') for i in split['training_ids']]
+                      ~~~~~~^^^
+KeyError: 'AUX-FLOOD-0-N'
+Notebook execution recorded: /workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.1/models/slr09/notebooks/21_Koreksi_Konteks_SENA_CPU_v0.8.1_executed.ipynb
+Traceback (most recent call last):
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.1/models/slr09/code/quality_fix/execute_notebook_cells_v06.py", line 54, in <module>
+    execute(p.parse_args().notebook)
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.1/models/slr09/code/quality_fix/execute_notebook_cells_v06.py", line 36, in execute
+    exec(compile(cell.source,str(source)+f':cell{count}','exec'),namespace)
+  File "/workspace/scratch/e5625dd03138/silar09-v08-recovered/revision_v0.8.1/models/slr09/notebooks/21_Koreksi_Konteks_SENA_CPU_v0.8.1.ipynb:cell2", line 4, in <module>
+RuntimeError: Training failed; inspect actual evidence.

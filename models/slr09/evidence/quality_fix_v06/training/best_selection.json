@@ -1,0 +1,7 @@
+{
+  "epoch": 1,
+  "bias": 1.5,
+  "joint_score": 0.7526881720430106,
+  "all_development_targets_met": false,
+  "human_reference_approval_of_auxiliary": false
+}

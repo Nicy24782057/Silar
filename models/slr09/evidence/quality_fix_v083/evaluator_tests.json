@@ -1,0 +1,10 @@
+{
+  "tests_run": 23,
+  "all_passed": true,
+  "failures": [],
+  "errors": [],
+  "skipped": 0,
+  "scope": "SYNTHETIC_EVALUATOR_FIXTURES_NOT_HUMAN_REFERENCE_APPROVAL",
+  "model_inference_executed": false,
+  "quality_acceptance_approved": false
+}

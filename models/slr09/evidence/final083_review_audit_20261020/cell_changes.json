@@ -1,0 +1,690 @@
+[
+  {
+    "sheet": "Mulai",
+    "cell": "B5",
+    "before": "",
+    "after": "Bintang",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "F19",
+    "before": "",
+    "after": "Instruktur",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "F46",
+    "before": "",
+    "after": "peserta",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "F9",
+    "before": "",
+    "after": "Peserta latihan",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "G16",
+    "before": "mengguncang Kecamatan Sukamanah",
+    "after": "mengguncang | keluar dari rumah",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "G19",
+    "before": "meretakkan tembok kelas",
+    "after": "menghentikan latihan | meretakkan tembok kelas",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "G25",
+    "before": "terasa",
+    "after": "terasa | menunggu di luar",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "G39",
+    "before": "merusak mobil instruktur",
+    "after": "Pelatihan dihentikan | merusak mobil instruktur",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "G40",
+    "before": "",
+    "after": "Rekaman latihan itu terputus",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "G9",
+    "before": "merendam gudang beras",
+    "after": "mengangkat perahu | merendam gudang beras",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J10",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J11",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J12",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J13",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J14",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J15",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J16",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J17",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J18",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J19",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J20",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J21",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J22",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J23",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J24",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J25",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J26",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J27",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J28",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J29",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J30",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J31",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J32",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J33",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J34",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J35",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J36",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J37",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J38",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J39",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J40",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J41",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J42",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J43",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J44",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J45",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J46",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J47",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J48",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J49",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J50",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J51",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J52",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J53",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J54",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J55",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J6",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J7",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J8",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "J9",
+    "before": "PENDING",
+    "after": "APPROVED",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K16",
+    "before": "",
+    "after": "Dampak dikoreksi: nama tempat dikeluarkan (sudah di Lokasi); tindakan warga keluar dari rumah ditambahkan.",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K19",
+    "before": "",
+    "after": "Ditambahkan: Instruktur sebagai Pihak dan tindakan menghentikan latihan sebagai Dampak. Gempa nyata (betulan), jadi tetap EARTHQUAKE.",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K25",
+    "before": "",
+    "after": "Ditambahkan: tindakan warga menunggu di luar sebagai Dampak.",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K39",
+    "before": "",
+    "after": "Ditambahkan: Pelatihan dihentikan sebagai Dampak. Kecelakaan nyata, jadi tetap ACCIDENT.",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K40",
+    "before": "",
+    "after": "Ditambahkan: terputusnya rekaman latihan sebagai Dampak. Kecelakaan sungguhan, jadi tetap ACCIDENT.",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K46",
+    "before": "",
+    "after": "Ditambahkan: peserta sebagai Pihak. Hanya peragaan/latihan, jadi NON_EVENT.",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Narasi",
+    "cell": "K9",
+    "before": "",
+    "after": "Ditambahkan: Peserta latihan sebagai Pihak dan tindakan mengangkat perahu sebagai Dampak. Banjir nyata (bukan latihan), jadi tetap FLOOD.",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D142",
+    "before": "O",
+    "after": "INFORMATION-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D143",
+    "before": "O",
+    "after": "INFORMATION-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D144",
+    "before": "O",
+    "after": "INFORMATION-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D170",
+    "before": "O",
+    "after": "OFFICER-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D171",
+    "before": "O",
+    "after": "INFORMATION-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D172",
+    "before": "O",
+    "after": "INFORMATION-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D263",
+    "before": "O",
+    "after": "INFORMATION-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D264",
+    "before": "O",
+    "after": "INFORMATION-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D265",
+    "before": "O",
+    "after": "INFORMATION-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D38",
+    "before": "O",
+    "after": "OFFICER-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D39",
+    "before": "O",
+    "after": "OFFICER-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D40",
+    "before": "O",
+    "after": "INFORMATION-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D41",
+    "before": "O",
+    "after": "INFORMATION-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D432",
+    "before": "O",
+    "after": "INFORMATION-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D433",
+    "before": "O",
+    "after": "INFORMATION-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D446",
+    "before": "O",
+    "after": "INFORMATION-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D447",
+    "before": "O",
+    "after": "INFORMATION-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D448",
+    "before": "O",
+    "after": "INFORMATION-ARG",
+    "formula_before": false,
+    "formula_after": false
+  },
+  {
+    "sheet": "Token",
+    "cell": "D449",
+    "before": "O",
+    "after": "INFORMATION-ARG",
+    "formula_before": false,
+    "formula_after": false
+  }
+]

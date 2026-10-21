@@ -1,0 +1,36 @@
+{
+  "schema": "slr09-standards-review-0.8.4",
+  "created_at": "2026-10-20T15:02:30.954125+00:00",
+  "user_question": "oke lanjut. dan apakah kita seharusnya menurunkan standar? karena yang namanya model pasti ada bias kan",
+  "disposition": "TARGETS_AND_CUTOFF_UNCHANGED",
+  "user_approved_lower_targets": false,
+  "targets": {
+    "sena_macro_f1": 0.85,
+    "non_event_recall": 0.9,
+    "event_class_recall": 0.8,
+    "nara_macro_f1_all_14_non_o": 0.75,
+    "nara_exact_span_f1": 0.6,
+    "fields_nonempty_exact": 0.8,
+    "empty_field_spurious_rate_max": 0.05
+  },
+  "confidence_threshold": 0.95,
+  "reasoning": [
+    "Possible model bias must be measured; observed mistakes alone do not establish systematic bias.",
+    "NON_EVENT target 0.90 on ten cases already permits one error; one case changes observed recall by ten percentage points.",
+    "Review tolerances against operational error costs and verification burden before a new evaluation, not after seeing a failed result merely to obtain a pass.",
+    "Confidence cutoff 0.95 is an operating rule, not a guarantee of 95 percent correctness; no probability calibration has been established.",
+    "Known cases used to train or select a candidate remain development evidence; a fresh human-reviewed reference is required."
+  ],
+  "sources": [
+    {
+      "title": "NIST AI RMF 1.0",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+      "use": "Risk tolerance depends on application and context; validity limits and deployment conditions must be documented."
+    },
+    {
+      "title": "On Calibration of Modern Neural Networks (Guo et al., 2017)",
+      "url": "https://proceedings.mlr.press/v70/guo17a.html",
+      "use": "Neural-network confidence may be poorly calibrated; a softmax threshold is distinct from established accuracy."
+    }
+  ]
+}

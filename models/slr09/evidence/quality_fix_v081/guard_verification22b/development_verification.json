@@ -1,0 +1,26 @@
+{
+  "human130": {
+    "labels_identical": true,
+    "max_probability_delta": 1.425084984463254e-07
+  },
+  "original146": {
+    "labels_identical": true,
+    "max_probability_delta": 1.5990358515072245e-07
+  },
+  "adjudicated145": {
+    "labels_identical": true,
+    "max_probability_delta": 1.5990358515072245e-07
+  },
+  "scope50": {
+    "labels_identical": true,
+    "max_probability_delta": 1.7508863291437748e-06
+  },
+  "seen_v07_50": {
+    "labels_identical": true,
+    "max_probability_delta": 1.357631504994572e-07
+  },
+  "human_regression50": {
+    "labels_identical": true,
+    "max_probability_delta": 3.217614567008198e-07
+  }
+}

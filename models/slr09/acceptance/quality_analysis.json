@@ -1,0 +1,127 @@
+{
+  "scope": "REANALYSIS_OF_EXISTING_EVIDENCE_NOT_NEW_MODEL_EVALUATION",
+  "sena": {
+    "baseline_false_event": 10,
+    "candidate_false_event": 45,
+    "gold_non_event": 131,
+    "baseline_false_non_event": 213,
+    "candidate_false_non_event": 28,
+    "gold_event": 489,
+    "candidate_macro_f1": 0.8807164532997971,
+    "error_types": {
+      "FALSE_EVENT": 45,
+      "FALSE_NON_EVENT": 28,
+      "WRONG_EVENT_TYPE": 1
+    },
+    "errors_high_confidence": 23
+  },
+  "nara_priorities": [
+    {
+      "label": "O",
+      "gold_tokens": 733,
+      "gold_narratives": 79,
+      "finetuned_f1": 0.8445901639344262,
+      "priority_reason": "MONITOR"
+    },
+    {
+      "label": "ACCIDENT-EVENT",
+      "gold_tokens": 22,
+      "gold_narratives": 17,
+      "finetuned_f1": 0.8095238095238095,
+      "priority_reason": "MONITOR"
+    },
+    {
+      "label": "AFFECTEDOBJECTS-ARG",
+      "gold_tokens": 60,
+      "gold_narratives": 23,
+      "finetuned_f1": 0.7924528301886793,
+      "priority_reason": "MONITOR"
+    },
+    {
+      "label": "DEATHVICTIM-ARG",
+      "gold_tokens": 12,
+      "gold_narratives": 4,
+      "finetuned_f1": 0.9090909090909091,
+      "priority_reason": "SMALL_SUPPORT"
+    },
+    {
+      "label": "EARTHQUAKE-EVENT",
+      "gold_tokens": 37,
+      "gold_narratives": 15,
+      "finetuned_f1": 0.9863013698630138,
+      "priority_reason": "MONITOR"
+    },
+    {
+      "label": "FALSE-EVENT",
+      "gold_tokens": 29,
+      "gold_narratives": 15,
+      "finetuned_f1": 0.6428571428571429,
+      "priority_reason": "LOW_F1"
+    },
+    {
+      "label": "FIRE-EVENT",
+      "gold_tokens": 23,
+      "gold_narratives": 18,
+      "finetuned_f1": 0.851063829787234,
+      "priority_reason": "MONITOR"
+    },
+    {
+      "label": "FLOOD-EVENT",
+      "gold_tokens": 24,
+      "gold_narratives": 18,
+      "finetuned_f1": 0.8636363636363635,
+      "priority_reason": "MONITOR"
+    },
+    {
+      "label": "INFORMATION-ARG",
+      "gold_tokens": 170,
+      "gold_narratives": 47,
+      "finetuned_f1": 0.5776397515527951,
+      "priority_reason": "LOW_F1"
+    },
+    {
+      "label": "OFFICER-ARG",
+      "gold_tokens": 140,
+      "gold_narratives": 40,
+      "finetuned_f1": 0.8283582089552239,
+      "priority_reason": "MONITOR"
+    },
+    {
+      "label": "PLACE-ARG",
+      "gold_tokens": 269,
+      "gold_narratives": 64,
+      "finetuned_f1": 0.8816793893129771,
+      "priority_reason": "MONITOR"
+    },
+    {
+      "label": "REASON-ARG",
+      "gold_tokens": 13,
+      "gold_narratives": 3,
+      "finetuned_f1": 0.33333333333333337,
+      "priority_reason": "LOW_F1"
+    },
+    {
+      "label": "STREET-ARG",
+      "gold_tokens": 70,
+      "gold_narratives": 14,
+      "finetuned_f1": 0.8219178082191781,
+      "priority_reason": "MONITOR"
+    },
+    {
+      "label": "TIME-ARG",
+      "gold_tokens": 94,
+      "gold_narratives": 30,
+      "finetuned_f1": 0.8066298342541435,
+      "priority_reason": "MONITOR"
+    },
+    {
+      "label": "WOUNDVICTIM-ARG",
+      "gold_tokens": 5,
+      "gold_narratives": 2,
+      "finetuned_f1": 1.0,
+      "priority_reason": "SMALL_SUPPORT"
+    }
+  ],
+  "training_executed": false,
+  "neural_inference_executed": false
+}

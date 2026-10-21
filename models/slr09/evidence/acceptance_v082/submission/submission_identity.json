@@ -1,0 +1,58 @@
+{
+  "schema": "slr09-final082-submission-1",
+  "prepared_at_utc": "2026-10-19T12:45:21.145022+00:00",
+  "source_sha256": "63a640669960173f52edb87f2cbdf6b3907741fd14bea41d0a96cebe5735c36b",
+  "frozen_copy_sha256": "63a640669960173f52edb87f2cbdf6b3907741fd14bea41d0a96cebe5735c36b",
+  "submitted_library_file_id": "libfile_90eebecf95348191b40ff5e32251d8cd",
+  "submitted_file_id": "file_00000000db74820b92203967a7d3bf1b",
+  "reviewer": [
+    "bintang"
+  ],
+  "review_statuses": {
+    "APPROVED": 50
+  },
+  "changed_cells_by_sheet": {
+    "Mulai": 12,
+    "Narasi": 107,
+    "Token": 24
+  },
+  "preflight": {
+    "records": 50,
+    "class_support": {
+      "FLOOD": 10,
+      "EARTHQUAKE": 10,
+      "FIRE": 10,
+      "ACCIDENT": 10,
+      "NON_EVENT": 10
+    },
+    "role_support": {
+      "OFFICER-ARG": 32,
+      "O": 244,
+      "FLOOD-EVENT": 10,
+      "INFORMATION-ARG": 43,
+      "AFFECTEDOBJECTS-ARG": 52,
+      "PLACE-ARG": 84,
+      "TIME-ARG": 111,
+      "REASON-ARG": 12,
+      "WOUNDVICTIM-ARG": 15,
+      "STREET-ARG": 14,
+      "DEATHVICTIM-ARG": 12,
+      "EARTHQUAKE-EVENT": 11,
+      "FIRE-EVENT": 10,
+      "ACCIDENT-EVENT": 10,
+      "FALSE-EVENT": 11
+    },
+    "sources": {
+      "ASSISTANT_AUTHORED_SYNTHETIC": 50
+    },
+    "excluded": [],
+    "known_data_overlap": "NO_NORMALIZED_EXACT_MATCH_IN_AVAILABLE_SOURCES",
+    "historical_initial_training_membership_verified": false,
+    "population_generalization_established": false
+  },
+  "snapshot_created_before_model_inference": true,
+  "notebook_code_cells_changed": false,
+  "review_timestamps_are_import_times_not_asserted_excel_edit_times": true,
+  "quality_acceptance_approved": false,
+  "card_done": false
+}

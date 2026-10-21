@@ -1,0 +1,251 @@
+[
+  {
+    "epoch": 1,
+    "training_loss": 0.2492135189315106,
+    "seconds": 153.30798649787903,
+    "bias": 1.5,
+    "joint_score": 0.7526881720430106,
+    "human": {
+      "accuracy": 0.8835616438356164,
+      "macro_f1": 0.8864703531804828,
+      "per_class": {
+        "FLOOD": {
+          "support": 32,
+          "precision": 0.8285714285714286,
+          "recall": 0.90625,
+          "f1": 0.8656716417910447
+        },
+        "EARTHQUAKE": {
+          "support": 24,
+          "precision": 0.8846153846153846,
+          "recall": 0.9583333333333334,
+          "f1": 0.92
+        },
+        "FIRE": {
+          "support": 35,
+          "precision": 1.0,
+          "recall": 0.9142857142857143,
+          "f1": 0.9552238805970149
+        },
+        "ACCIDENT": {
+          "support": 24,
+          "precision": 0.96,
+          "recall": 1.0,
+          "f1": 0.9795918367346939
+        },
+        "NON_EVENT": {
+          "support": 31,
+          "precision": 0.75,
+          "recall": 0.6774193548387096,
+          "f1": 0.711864406779661
+        }
+      },
+      "predeclared_selection_metric": 0.7526881720430106,
+      "targets_met": false
+    },
+    "scope": {
+      "accuracy": 0.9921875,
+      "macro_f1": 0.9923645907897877,
+      "per_class": {
+        "FLOOD": {
+          "support": 16,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "EARTHQUAKE": {
+          "support": 16,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "FIRE": {
+          "support": 16,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ACCIDENT": {
+          "support": 16,
+          "precision": 0.9411764705882353,
+          "recall": 1.0,
+          "f1": 0.9696969696969697
+        },
+        "NON_EVENT": {
+          "support": 64,
+          "precision": 1.0,
+          "recall": 0.984375,
+          "f1": 0.9921259842519685
+        }
+      },
+      "predeclared_selection_metric": 1.09375,
+      "targets_met": true
+    }
+  },
+  {
+    "epoch": 2,
+    "training_loss": 0.1157888414995441,
+    "seconds": 170.13601970672607,
+    "bias": 0.8,
+    "joint_score": 0.7168458781362007,
+    "human": {
+      "accuracy": 0.8835616438356164,
+      "macro_f1": 0.8839133768196987,
+      "per_class": {
+        "FLOOD": {
+          "support": 32,
+          "precision": 0.8285714285714286,
+          "recall": 0.90625,
+          "f1": 0.8656716417910447
+        },
+        "EARTHQUAKE": {
+          "support": 24,
+          "precision": 0.8518518518518519,
+          "recall": 0.9583333333333334,
+          "f1": 0.9019607843137255
+        },
+        "FIRE": {
+          "support": 35,
+          "precision": 1.0,
+          "recall": 0.9428571428571428,
+          "f1": 0.9705882352941176
+        },
+        "ACCIDENT": {
+          "support": 24,
+          "precision": 0.96,
+          "recall": 1.0,
+          "f1": 0.9795918367346939
+        },
+        "NON_EVENT": {
+          "support": 31,
+          "precision": 0.7692307692307693,
+          "recall": 0.6451612903225806,
+          "f1": 0.7017543859649122
+        }
+      },
+      "predeclared_selection_metric": 0.7168458781362007,
+      "targets_met": false
+    },
+    "scope": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_class": {
+        "FLOOD": {
+          "support": 16,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "EARTHQUAKE": {
+          "support": 16,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "FIRE": {
+          "support": 16,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ACCIDENT": {
+          "support": 16,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "NON_EVENT": {
+          "support": 64,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "predeclared_selection_metric": 1.1111111111111112,
+      "targets_met": true
+    }
+  },
+  {
+    "epoch": 3,
+    "training_loss": 0.09483203243510467,
+    "seconds": 158.88208508491516,
+    "bias": 1.5,
+    "joint_score": 0.7526881720430106,
+    "human": {
+      "accuracy": 0.8835616438356164,
+      "macro_f1": 0.8864703531804828,
+      "per_class": {
+        "FLOOD": {
+          "support": 32,
+          "precision": 0.8285714285714286,
+          "recall": 0.90625,
+          "f1": 0.8656716417910447
+        },
+        "EARTHQUAKE": {
+          "support": 24,
+          "precision": 0.8846153846153846,
+          "recall": 0.9583333333333334,
+          "f1": 0.92
+        },
+        "FIRE": {
+          "support": 35,
+          "precision": 1.0,
+          "recall": 0.9142857142857143,
+          "f1": 0.9552238805970149
+        },
+        "ACCIDENT": {
+          "support": 24,
+          "precision": 0.96,
+          "recall": 1.0,
+          "f1": 0.9795918367346939
+        },
+        "NON_EVENT": {
+          "support": 31,
+          "precision": 0.75,
+          "recall": 0.6774193548387096,
+          "f1": 0.711864406779661
+        }
+      },
+      "predeclared_selection_metric": 0.7526881720430106,
+      "targets_met": false
+    },
+    "scope": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_class": {
+        "FLOOD": {
+          "support": 16,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "EARTHQUAKE": {
+          "support": 16,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "FIRE": {
+          "support": 16,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ACCIDENT": {
+          "support": 16,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "NON_EVENT": {
+          "support": 64,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "predeclared_selection_metric": 1.1111111111111112,
+      "targets_met": true
+    }
+  }
+]

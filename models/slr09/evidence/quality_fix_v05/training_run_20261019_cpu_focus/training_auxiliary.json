@@ -1,0 +1,386 @@
+[
+  {
+    "id": "AUX-FLOOD-0-N",
+    "text": "Peserta mengikuti simulasi banjir di kompleks pelatihan. Tidak ada kejadian nyata.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FLOOD-0-P",
+    "text": "Saat simulasi di kompleks pelatihan, banjir sungguhan terjadi dan menimbulkan kerusakan.",
+    "final": "FLOOD",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FLOOD-1-N",
+    "text": "Materi kelas membahas cara menghadapi banjir, tanpa melaporkan peristiwa tertentu.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FLOOD-1-P",
+    "text": "Kelas diliburkan karena banjir terjadi pagi tadi dan bangunan harus diperiksa.",
+    "final": "FLOOD",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FLOOD-2-N",
+    "text": "Tidak terjadi banjir di wilayah itu, menurut laporan pemeriksaan petugas.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FLOOD-2-P",
+    "text": "Petugas menyatakan banjir terjadi di wilayah itu dan sedang ditangani.",
+    "final": "FLOOD",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FLOOD-3-N",
+    "text": "Warga berlatih mencegah banjir. Kegiatan ini hanya persiapan, bukan laporan peristiwa.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FLOOD-3-P",
+    "text": "Warga sedang bersiap saat banjir benar-benar terjadi di sekitar permukiman.",
+    "final": "FLOOD",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FLOOD-4-N",
+    "text": "Bagaimana jika terjadi banjir? Pertanyaan ini hanya contoh dalam diskusi.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FLOOD-4-P",
+    "text": "Diskusi dihentikan setelah warga melaporkan banjir yang baru terjadi di sekitar lokasi.",
+    "final": "FLOOD",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FLOOD-5-N",
+    "text": "Sebuah cerita rekaan menampilkan banjir di negeri khayalan. Semua adegan bersifat fiksi.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FLOOD-5-P",
+    "text": "Di dekat lokasi syuting film, banjir nyata terjadi dan petugas melakukan penanganan.",
+    "final": "FLOOD",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FLOOD-6-N",
+    "text": "Kemungkinan banjir masih berupa peringatan untuk pekan berikutnya. Belum ada peristiwa yang dilaporkan.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FLOOD-6-P",
+    "text": "Setelah peringatan pekan lalu, banjir terjadi kemarin dan merusak fasilitas warga.",
+    "final": "FLOOD",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FLOOD-7-N",
+    "text": "Jumlah banjir tahunan dibahas sebagai statistik umum, bukan laporan peristiwa tertentu.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FLOOD-7-P",
+    "text": "Data petugas mencatat banjir baru di Desa Puspasari tadi malam dengan korban terluka.",
+    "final": "FLOOD",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-EARTHQUAKE-0-N",
+    "text": "Peserta mengikuti simulasi gempa di kompleks pelatihan. Tidak ada kejadian nyata.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-EARTHQUAKE-0-P",
+    "text": "Saat simulasi di kompleks pelatihan, gempa sungguhan terjadi dan menimbulkan kerusakan.",
+    "final": "EARTHQUAKE",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-EARTHQUAKE-1-N",
+    "text": "Materi kelas membahas cara menghadapi gempa, tanpa melaporkan peristiwa tertentu.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-EARTHQUAKE-1-P",
+    "text": "Kelas diliburkan karena gempa terjadi pagi tadi dan bangunan harus diperiksa.",
+    "final": "EARTHQUAKE",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-EARTHQUAKE-2-N",
+    "text": "Tidak terjadi gempa di wilayah itu, menurut laporan pemeriksaan petugas.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-EARTHQUAKE-2-P",
+    "text": "Petugas menyatakan gempa terjadi di wilayah itu dan sedang ditangani.",
+    "final": "EARTHQUAKE",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-EARTHQUAKE-3-N",
+    "text": "Warga berlatih mencegah gempa. Kegiatan ini hanya persiapan, bukan laporan peristiwa.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-EARTHQUAKE-3-P",
+    "text": "Warga sedang bersiap saat gempa benar-benar terjadi di sekitar permukiman.",
+    "final": "EARTHQUAKE",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-EARTHQUAKE-4-N",
+    "text": "Bagaimana jika terjadi gempa? Pertanyaan ini hanya contoh dalam diskusi.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-EARTHQUAKE-4-P",
+    "text": "Diskusi dihentikan setelah warga melaporkan gempa yang baru terjadi di sekitar lokasi.",
+    "final": "EARTHQUAKE",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-EARTHQUAKE-5-N",
+    "text": "Sebuah cerita rekaan menampilkan gempa di negeri khayalan. Semua adegan bersifat fiksi.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-EARTHQUAKE-5-P",
+    "text": "Di dekat lokasi syuting film, gempa nyata terjadi dan petugas melakukan penanganan.",
+    "final": "EARTHQUAKE",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-EARTHQUAKE-6-N",
+    "text": "Kemungkinan gempa masih berupa peringatan untuk pekan berikutnya. Belum ada peristiwa yang dilaporkan.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-EARTHQUAKE-6-P",
+    "text": "Setelah peringatan pekan lalu, gempa terjadi kemarin dan merusak fasilitas warga.",
+    "final": "EARTHQUAKE",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-EARTHQUAKE-7-N",
+    "text": "Jumlah gempa tahunan dibahas sebagai statistik umum, bukan laporan peristiwa tertentu.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-EARTHQUAKE-7-P",
+    "text": "Data petugas mencatat gempa baru di Desa Puspasari tadi malam dengan korban terluka.",
+    "final": "EARTHQUAKE",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FIRE-0-N",
+    "text": "Peserta mengikuti simulasi kebakaran di kompleks pelatihan. Tidak ada kejadian nyata.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FIRE-0-P",
+    "text": "Saat simulasi di kompleks pelatihan, kebakaran sungguhan terjadi dan menimbulkan kerusakan.",
+    "final": "FIRE",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FIRE-1-N",
+    "text": "Materi kelas membahas cara menghadapi kebakaran, tanpa melaporkan peristiwa tertentu.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FIRE-1-P",
+    "text": "Kelas diliburkan karena kebakaran terjadi pagi tadi dan bangunan harus diperiksa.",
+    "final": "FIRE",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FIRE-2-N",
+    "text": "Tidak terjadi kebakaran di wilayah itu, menurut laporan pemeriksaan petugas.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FIRE-2-P",
+    "text": "Petugas menyatakan kebakaran terjadi di wilayah itu dan sedang ditangani.",
+    "final": "FIRE",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FIRE-3-N",
+    "text": "Warga berlatih mencegah kebakaran. Kegiatan ini hanya persiapan, bukan laporan peristiwa.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FIRE-3-P",
+    "text": "Warga sedang bersiap saat kebakaran benar-benar terjadi di sekitar permukiman.",
+    "final": "FIRE",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FIRE-4-N",
+    "text": "Bagaimana jika terjadi kebakaran? Pertanyaan ini hanya contoh dalam diskusi.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FIRE-4-P",
+    "text": "Diskusi dihentikan setelah warga melaporkan kebakaran yang baru terjadi di sekitar lokasi.",
+    "final": "FIRE",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FIRE-5-N",
+    "text": "Sebuah cerita rekaan menampilkan kebakaran di negeri khayalan. Semua adegan bersifat fiksi.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FIRE-5-P",
+    "text": "Di dekat lokasi syuting film, kebakaran nyata terjadi dan petugas melakukan penanganan.",
+    "final": "FIRE",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FIRE-6-N",
+    "text": "Kemungkinan kebakaran masih berupa peringatan untuk pekan berikutnya. Belum ada peristiwa yang dilaporkan.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FIRE-6-P",
+    "text": "Setelah peringatan pekan lalu, kebakaran terjadi kemarin dan merusak fasilitas warga.",
+    "final": "FIRE",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FIRE-7-N",
+    "text": "Jumlah kebakaran tahunan dibahas sebagai statistik umum, bukan laporan peristiwa tertentu.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-FIRE-7-P",
+    "text": "Data petugas mencatat kebakaran baru di Desa Puspasari tadi malam dengan korban terluka.",
+    "final": "FIRE",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-ACCIDENT-0-N",
+    "text": "Peserta mengikuti simulasi kecelakaan di kompleks pelatihan. Tidak ada kejadian nyata.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-ACCIDENT-0-P",
+    "text": "Saat simulasi di kompleks pelatihan, kecelakaan sungguhan terjadi dan menimbulkan kerusakan.",
+    "final": "ACCIDENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-ACCIDENT-1-N",
+    "text": "Materi kelas membahas cara menghadapi kecelakaan, tanpa melaporkan peristiwa tertentu.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-ACCIDENT-1-P",
+    "text": "Kelas diliburkan karena kecelakaan terjadi pagi tadi dan bangunan harus diperiksa.",
+    "final": "ACCIDENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-ACCIDENT-2-N",
+    "text": "Tidak terjadi kecelakaan di wilayah itu, menurut laporan pemeriksaan petugas.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-ACCIDENT-2-P",
+    "text": "Petugas menyatakan kecelakaan terjadi di wilayah itu dan sedang ditangani.",
+    "final": "ACCIDENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-ACCIDENT-3-N",
+    "text": "Warga berlatih mencegah kecelakaan. Kegiatan ini hanya persiapan, bukan laporan peristiwa.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-ACCIDENT-3-P",
+    "text": "Warga sedang bersiap saat kecelakaan benar-benar terjadi di sekitar permukiman.",
+    "final": "ACCIDENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-ACCIDENT-4-N",
+    "text": "Bagaimana jika terjadi kecelakaan? Pertanyaan ini hanya contoh dalam diskusi.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-ACCIDENT-4-P",
+    "text": "Diskusi dihentikan setelah warga melaporkan kecelakaan yang baru terjadi di sekitar lokasi.",
+    "final": "ACCIDENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-ACCIDENT-5-N",
+    "text": "Sebuah cerita rekaan menampilkan kecelakaan di negeri khayalan. Semua adegan bersifat fiksi.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-ACCIDENT-5-P",
+    "text": "Di dekat lokasi syuting film, kecelakaan nyata terjadi dan petugas melakukan penanganan.",
+    "final": "ACCIDENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-ACCIDENT-6-N",
+    "text": "Kemungkinan kecelakaan masih berupa peringatan untuk pekan berikutnya. Belum ada peristiwa yang dilaporkan.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-ACCIDENT-6-P",
+    "text": "Setelah peringatan pekan lalu, kecelakaan terjadi kemarin dan merusak fasilitas warga.",
+    "final": "ACCIDENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-ACCIDENT-7-N",
+    "text": "Jumlah kecelakaan tahunan dibahas sebagai statistik umum, bukan laporan peristiwa tertentu.",
+    "final": "NON_EVENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  },
+  {
+    "id": "AUX-ACCIDENT-7-P",
+    "text": "Data petugas mencatat kecelakaan baru di Desa Puspasari tadi malam dengan korban terluka.",
+    "final": "ACCIDENT",
+    "source": "ASSISTANT_AUTHORED_TRAINING_AUXILIARY_NOT_HUMAN_GOLD"
+  }
+]

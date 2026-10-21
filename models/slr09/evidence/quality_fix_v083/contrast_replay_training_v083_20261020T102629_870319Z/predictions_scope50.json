@@ -1,0 +1,602 @@
+[
+  {
+    "id": "NEW06-FLOOD-01",
+    "text": "Banjir menerjang Dusun Sawangan tadi malam dan merendam belasan rumah.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9986743927001953,
+      "EARTHQUAKE": 2.4058961571427062e-05,
+      "FIRE": 6.772716005798429e-05,
+      "ACCIDENT": 3.970720717916265e-05,
+      "NON_EVENT": 0.0011940973345190287
+    }
+  },
+  {
+    "id": "NEW06-FLOOD-02",
+    "text": "Tolong jangan dikira gladi evakuasi. Banjir sedang merendam rumah kami di Gang Merica.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9970322847366333,
+      "EARTHQUAKE": 1.2197680007375311e-05,
+      "FIRE": 2.7790703825303353e-05,
+      "ACCIDENT": 3.3369713491993025e-05,
+      "NON_EVENT": 0.0028942800126969814
+    }
+  },
+  {
+    "id": "NEW06-FLOOD-03",
+    "text": "Banjir menggenangi Perumahan Arunika, tetapi tidak ada korban jiwa menurut laporan posko.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9964564442634583,
+      "EARTHQUAKE": 1.1072506822529249e-05,
+      "FIRE": 4.4443877413868904e-05,
+      "ACCIDENT": 1.989640441024676e-05,
+      "NON_EVENT": 0.003468229901045561
+    }
+  },
+  {
+    "id": "NEW06-FLOOD-04",
+    "text": "Peserta simulasi kebakaran harus keluar gedung karena banjir sungguhan masuk ke lantai dasar.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9947592616081238,
+      "EARTHQUAKE": 9.442341251997277e-06,
+      "FIRE": 2.0312534616095945e-05,
+      "ACCIDENT": 2.2938689653528854e-05,
+      "NON_EVENT": 0.005188031122088432
+    }
+  },
+  {
+    "id": "NEW06-FLOOD-05",
+    "text": "Warga mengira kabar itu lelucon. Petugas kemudian mengonfirmasi banjir nyata di Desa Walikukun.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9683187007904053,
+      "EARTHQUAKE": 9.748588126967661e-06,
+      "FIRE": 7.73544525145553e-05,
+      "ACCIDENT": 4.8244077333947644e-05,
+      "NON_EVENT": 0.031546007841825485
+    }
+  },
+  {
+    "id": "NEW06-FLOOD-06",
+    "text": "Tanggul jebol barusan; air sungai meluap melewati jendela rumah dan warga naik ke atap.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9957897067070007,
+      "EARTHQUAKE": 1.6264471923932433e-05,
+      "FIRE": 7.574028859380633e-05,
+      "ACCIDENT": 3.7464174965862185e-05,
+      "NON_EVENT": 0.004080831538885832
+    }
+  },
+  {
+    "id": "NEW06-FLOOD-07",
+    "text": "Tidak ada kebakaran di pasar. Yang terjadi adalah banjir, dengan air setinggi lutut para pedagang.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9344847798347473,
+      "EARTHQUAKE": 1.3854049939254764e-05,
+      "FIRE": 4.3473366531543434e-05,
+      "ACCIDENT": 1.1263520718785003e-05,
+      "NON_EVENT": 0.06544677168130875
+    }
+  },
+  {
+    "id": "NEW06-FLOOD-08",
+    "text": "Banjir itu bukan prediksi untuk besok: hari ini air sudah menenggelamkan ruang kelas.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.989981472492218,
+      "EARTHQUAKE": 8.612433884991333e-05,
+      "FIRE": 1.0429849680804182e-05,
+      "ACCIDENT": 2.516982021916192e-05,
+      "NON_EVENT": 0.00989680364727974
+    }
+  },
+  {
+    "id": "NEW06-FLOOD-09",
+    "text": "Ini bukan pertanyaan dalam buku pelajaran. Banjir baru saja memutus akses Kampung Randu.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9984222650527954,
+      "EARTHQUAKE": 3.9370195736410096e-05,
+      "FIRE": 3.854274109471589e-05,
+      "ACCIDENT": 6.236916669877246e-05,
+      "NON_EVENT": 0.0014374172315001488
+    }
+  },
+  {
+    "id": "NEW06-FLOOD-10",
+    "text": "Meski pengumuman awal hanya peringatan, banjir kini benar-benar terjadi dan menyeret dua gerobak.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9967089891433716,
+      "EARTHQUAKE": 1.5938781871227548e-05,
+      "FIRE": 1.3154656699043699e-05,
+      "ACCIDENT": 6.155549635877833e-05,
+      "NON_EVENT": 0.0032002816442400217
+    }
+  },
+  {
+    "id": "NEW06-EARTHQUAKE-01",
+    "text": "Gempa mengguncang Kabupaten Lembah Jernih pukul 03.15 dan meretakkan dinding beberapa rumah.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00014348220429383218,
+      "EARTHQUAKE": 0.9980219602584839,
+      "FIRE": 2.3281163521460257e-05,
+      "ACCIDENT": 7.252935756696388e-05,
+      "NON_EVENT": 0.0017386249965056777
+    }
+  },
+  {
+    "id": "NEW06-EARTHQUAKE-02",
+    "text": "Jangan sebut cerita khayalan, gempa sungguhan baru mengguncang rumah kami sampai lemari terjatuh.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 7.961461960803717e-05,
+      "EARTHQUAKE": 0.998925507068634,
+      "FIRE": 0.0002125455066561699,
+      "ACCIDENT": 0.00010921817738562822,
+      "NON_EVENT": 0.0006730398745276034
+    }
+  },
+  {
+    "id": "NEW06-EARTHQUAKE-03",
+    "text": "Gempa merobohkan pagar balai warga pagi tadi. Syukurlah tidak ada orang yang terluka.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00025545700918883085,
+      "EARTHQUAKE": 0.9978000521659851,
+      "FIRE": 7.246636232594028e-05,
+      "ACCIDENT": 6.0577021940844133e-05,
+      "NON_EVENT": 0.001811467343941331
+    }
+  },
+  {
+    "id": "NEW06-EARTHQUAKE-04",
+    "text": "Praktik berlindung di bawah meja terhenti ketika gempa asli mengguncang sekolah dan memecahkan kaca.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 7.006401574471965e-05,
+      "EARTHQUAKE": 0.9990532994270325,
+      "FIRE": 2.0419252905412577e-05,
+      "ACCIDENT": 3.0375600545085035e-05,
+      "NON_EVENT": 0.0008259579190053046
+    }
+  },
+  {
+    "id": "NEW06-EARTHQUAKE-05",
+    "text": "Gempa terjadi pukul dua tadi; setelah itu tidak ada gempa susulan hingga laporan ini dikirim.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 6.75243281875737e-05,
+      "EARTHQUAKE": 0.9873537421226501,
+      "FIRE": 1.5104132216947619e-05,
+      "ACCIDENT": 3.604358425945975e-05,
+      "NON_EVENT": 0.012527613900601864
+    }
+  },
+  {
+    "id": "NEW06-EARTHQUAKE-06",
+    "text": "Tanah berguncang kuat, lampu bergoyang, dan dinding rumah retak; warga sekampung keluar ke jalan.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00034092649002559483,
+      "EARTHQUAKE": 0.9971042275428772,
+      "FIRE": 0.0006476716371253133,
+      "ACCIDENT": 0.00019066968525294214,
+      "NON_EVENT": 0.0017165347235277295
+    }
+  },
+  {
+    "id": "NEW06-EARTHQUAKE-07",
+    "text": "Bukan kecelakaan kendaraan yang membuat warga keluar. Gempa sedang mengguncang kawasan perumahan.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0004438457253854722,
+      "EARTHQUAKE": 0.987940788269043,
+      "FIRE": 0.00012166662781964988,
+      "ACCIDENT": 0.007675665430724621,
+      "NON_EVENT": 0.003817993449047208
+    }
+  },
+  {
+    "id": "NEW06-EARTHQUAKE-08",
+    "text": "Tidak sedang membicarakan teori. Gempa betulan baru terjadi di Desa Sumberjati dan atap balai rusak.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0001530413283035159,
+      "EARTHQUAKE": 0.9989914298057556,
+      "FIRE": 6.0883590776938945e-05,
+      "ACCIDENT": 6.3925443100743e-05,
+      "NON_EVENT": 0.0007306741899810731
+    }
+  },
+  {
+    "id": "NEW06-EARTHQUAKE-09",
+    "text": "Kabar gempa awalnya diragukan, tetapi tim lapangan memastikan guncangan nyata dan menemukan rumah rusak.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00027685699751600623,
+      "EARTHQUAKE": 0.9948287606239319,
+      "FIRE": 2.5150473447865807e-05,
+      "ACCIDENT": 0.00018237995391245931,
+      "NON_EVENT": 0.004686735570430756
+    }
+  },
+  {
+    "id": "NEW06-EARTHQUAKE-10",
+    "text": "Peringatan ini bukan bagian simulasi: gempa baru terasa keras di gedung kantor dan para pegawai berlarian.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 2.861163557099644e-05,
+      "EARTHQUAKE": 0.9985957741737366,
+      "FIRE": 1.112397603719728e-05,
+      "ACCIDENT": 3.911586100002751e-05,
+      "NON_EVENT": 0.0013253659708425403
+    }
+  },
+  {
+    "id": "NEW06-FIRE-01",
+    "text": "Kebakaran melalap gudang kain di Jalan Seruni sore ini dan petugas sedang menyemprotkan air.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 1.3730589671467897e-05,
+      "EARTHQUAKE": 1.761126986821182e-05,
+      "FIRE": 0.9987517595291138,
+      "ACCIDENT": 3.117377491435036e-05,
+      "NON_EVENT": 0.0011857460485771298
+    }
+  },
+  {
+    "id": "NEW06-FIRE-02",
+    "text": "Jangan menganggap peragaan pemadam. Dapur kantin benar-benar kebakaran dan api menjalar ke atap.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 1.8453960365150124e-05,
+      "EARTHQUAKE": 2.2757887563784607e-05,
+      "FIRE": 0.998529314994812,
+      "ACCIDENT": 3.919600567314774e-05,
+      "NON_EVENT": 0.0013902733335271478
+    }
+  },
+  {
+    "id": "NEW06-FIRE-03",
+    "text": "Kebakaran menghanguskan satu kios di Pasar Lazuardi tanpa menimbulkan korban luka.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 1.527649692434352e-05,
+      "EARTHQUAKE": 1.9393613911233842e-05,
+      "FIRE": 0.9985373020172119,
+      "ACCIDENT": 2.579306783445645e-05,
+      "NON_EVENT": 0.0014022866962477565
+    }
+  },
+  {
+    "id": "NEW06-FIRE-04",
+    "text": "Pelatihan antigempa dihentikan karena kebakaran asli muncul di gudang bahan bakar sebelah lokasi.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 2.240102185169235e-05,
+      "EARTHQUAKE": 2.7176158255315386e-05,
+      "FIRE": 0.9975289702415466,
+      "ACCIDENT": 3.353210195200518e-05,
+      "NON_EVENT": 0.0023879297077655792
+    }
+  },
+  {
+    "id": "NEW06-FIRE-05",
+    "text": "Kebakaran yang sedang kami laporkan bukan adegan film. Dua rumah terbakar dan warga membutuhkan pemadam.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 1.582498225616291e-05,
+      "EARTHQUAKE": 9.849879461398814e-06,
+      "FIRE": 0.9946680068969727,
+      "ACCIDENT": 2.1109828594489954e-05,
+      "NON_EVENT": 0.005285125691443682
+    }
+  },
+  {
+    "id": "NEW06-FIRE-06",
+    "text": "Api menyambar atap rumah kontrakan, asap mengepul tebal, dan penghuni bergegas keluar meminta bantuan.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 3.7182449887041e-05,
+      "EARTHQUAKE": 3.2470441510668024e-05,
+      "FIRE": 0.9986390471458435,
+      "ACCIDENT": 4.70650993520394e-05,
+      "NON_EVENT": 0.0012443152954801917
+    }
+  },
+  {
+    "id": "NEW06-FIRE-07",
+    "text": "Bukan banjir di pabrik itu; kebakaran sedang berlangsung dan asap hitam terlihat dari jalan besar.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 3.1508436222793534e-05,
+      "EARTHQUAKE": 1.6892825442482717e-05,
+      "FIRE": 0.9893069863319397,
+      "ACCIDENT": 3.0476792744593695e-05,
+      "NON_EVENT": 0.010614261031150818
+    }
+  },
+  {
+    "id": "NEW06-FIRE-08",
+    "text": "Peringatan risiko kemarin kini menjadi kejadian: kebakaran terjadi di lereng bukit dan petugas memadamkan api.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 1.6766140106483363e-05,
+      "EARTHQUAKE": 1.704879105091095e-05,
+      "FIRE": 0.9988885521888733,
+      "ACCIDENT": 5.817114652018063e-05,
+      "NON_EVENT": 0.0010194721398875117
+    }
+  },
+  {
+    "id": "NEW06-FIRE-09",
+    "text": "Ini bukan latihan soal keselamatan. Bengkel di depan rumah saya kebakaran sejak beberapa menit lalu.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 1.6397989384131506e-05,
+      "EARTHQUAKE": 2.1790869141113944e-05,
+      "FIRE": 0.9978001713752747,
+      "ACCIDENT": 3.8840014894958586e-05,
+      "NON_EVENT": 0.0021226811222732067
+    }
+  },
+  {
+    "id": "NEW06-FIRE-10",
+    "text": "Kebakaran bukan di sekolah seperti kabar awal, melainkan di gudang sebelahnya; petugas sudah tiba.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 2.7980348022538237e-05,
+      "EARTHQUAKE": 4.7895511670503765e-05,
+      "FIRE": 0.996955394744873,
+      "ACCIDENT": 3.027861748705618e-05,
+      "NON_EVENT": 0.0029384754598140717
+    }
+  },
+  {
+    "id": "NEW06-ACCIDENT-01",
+    "text": "Kecelakaan terjadi di simpang Jalan Tanjung; sepeda motor menabrak sedan dan satu orang terluka.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 6.260668305912986e-05,
+      "EARTHQUAKE": 1.3195661267673131e-05,
+      "FIRE": 6.0253350966377184e-05,
+      "ACCIDENT": 0.9955314993858337,
+      "NON_EVENT": 0.004332520999014378
+    }
+  },
+  {
+    "id": "NEW06-ACCIDENT-02",
+    "text": "Ini bukan demonstrasi cara berkendara. Bus menabrak pembatas di depan terminal dan penumpangnya cedera.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 4.1847204556688666e-05,
+      "EARTHQUAKE": 2.2418384105549194e-05,
+      "FIRE": 5.6660799600649625e-05,
+      "ACCIDENT": 0.9974057078361511,
+      "NON_EVENT": 0.002473378088325262
+    }
+  },
+  {
+    "id": "NEW06-ACCIDENT-03",
+    "text": "Kecelakaan dua mobil di Jalan Bambu tidak menimbulkan korban jiwa, tetapi kedua kendaraan rusak.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 9.829988266574219e-05,
+      "EARTHQUAKE": 1.1866283784911502e-05,
+      "FIRE": 7.393928535748273e-05,
+      "ACCIDENT": 0.9837763905525208,
+      "NON_EVENT": 0.016039466485381126
+    }
+  },
+  {
+    "id": "NEW06-ACCIDENT-04",
+    "text": "Latihan pengaturan jalan terhenti setelah sebuah motor sungguhan menabrak peserta di pintu masuk.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00011666745558613911,
+      "EARTHQUAKE": 3.9039106923155487e-05,
+      "FIRE": 4.392533810460009e-05,
+      "ACCIDENT": 0.9969109892845154,
+      "NON_EVENT": 0.0028894369024783373
+    }
+  },
+  {
+    "id": "NEW06-ACCIDENT-05",
+    "text": "Tabrakan di depan bioskop bukan adegan syuting. Pengendara motor menabrak pejalan kaki dan ambulans dipanggil.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 9.087829675991088e-05,
+      "EARTHQUAKE": 3.314024434075691e-05,
+      "FIRE": 4.312273085815832e-05,
+      "ACCIDENT": 0.9962400197982788,
+      "NON_EVENT": 0.003592848312109709
+    }
+  },
+  {
+    "id": "NEW06-ACCIDENT-06",
+    "text": "Truk oleng lalu menghantam warung di tikungan; sopir terjepit dan tim penolong berusaha mengeluarkannya.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0002731157874222845,
+      "EARTHQUAKE": 5.17900480190292e-05,
+      "FIRE": 8.907053415896371e-05,
+      "ACCIDENT": 0.9973069429397583,
+      "NON_EVENT": 0.0022791328374296427
+    }
+  },
+  {
+    "id": "NEW06-ACCIDENT-07",
+    "text": "Tidak ada gempa di jembatan itu. Sebuah kecelakaan baru terjadi ketika dua truk bertabrakan.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0004953706520609558,
+      "EARTHQUAKE": 8.880456152837723e-05,
+      "FIRE": 0.00015049667854327708,
+      "ACCIDENT": 0.8335928320884705,
+      "NON_EVENT": 0.16567249596118927
+    }
+  },
+  {
+    "id": "NEW06-ACCIDENT-08",
+    "text": "Kabar kecelakaan semula dibantah, tetapi polisi di lokasi kemudian mengonfirmasi tabrakan dan dua korban luka.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.000311104318825528,
+      "EARTHQUAKE": 0.0003120004548691213,
+      "FIRE": 3.0417146263062023e-05,
+      "ACCIDENT": 0.9680997729301453,
+      "NON_EVENT": 0.03124665655195713
+    }
+  },
+  {
+    "id": "NEW06-ACCIDENT-09",
+    "text": "Bukan soal ujian mengemudi: barusan mobil menabrak pagar sekolah dan pengemudinya terluka.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 9.030848741531372e-05,
+      "EARTHQUAKE": 4.7635498049203306e-05,
+      "FIRE": 0.0002221157483290881,
+      "ACCIDENT": 0.9972996115684509,
+      "NON_EVENT": 0.0023403239902108908
+    }
+  },
+  {
+    "id": "NEW06-ACCIDENT-10",
+    "text": "Motor pertama tidak menabrak siapa pun, tetapi mobil di belakangnya menabrak pohon hingga penumpangnya terluka.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 4.289890785003081e-05,
+      "EARTHQUAKE": 2.7103083994006738e-05,
+      "FIRE": 4.217413516016677e-05,
+      "ACCIDENT": 0.9954882264137268,
+      "NON_EVENT": 0.004399619530886412
+    }
+  },
+  {
+    "id": "NEW06-NON_EVENT-01",
+    "text": "Pengecekan polisi memastikan kabar kecelakaan di Jalan Melati keliru; mobil-mobil sedang parkir dan tidak ada tabrakan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 3.732908589881845e-05,
+      "EARTHQUAKE": 2.346151632082183e-06,
+      "FIRE": 4.718202035292052e-06,
+      "ACCIDENT": 0.005189822055399418,
+      "NON_EVENT": 0.9947657585144043
+    }
+  },
+  {
+    "id": "NEW06-NON_EVENT-02",
+    "text": "Kabar kebakaran kantor dibantah oleh pengelola; tidak ada api dan peristiwa tersebut tidak terjadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 4.2800769733730704e-05,
+      "EARTHQUAKE": 9.292693903262261e-06,
+      "FIRE": 5.564652383327484e-05,
+      "ACCIDENT": 4.075057404406834e-06,
+      "NON_EVENT": 0.9998881816864014
+    }
+  },
+  {
+    "id": "NEW06-NON_EVENT-03",
+    "text": "Guru meminta murid menjelaskan penyebab gempa melalui gambar di papan tulis. Tidak ada peristiwa gempa yang dilaporkan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 1.7596073575987248e-06,
+      "EARTHQUAKE": 1.9987846826552413e-05,
+      "FIRE": 1.05453716514603e-06,
+      "ACCIDENT": 3.6496595612334204e-07,
+      "NON_EVENT": 0.9999768733978271
+    }
+  },
+  {
+    "id": "NEW06-NON_EVENT-04",
+    "text": "Peta perkiraan menandai potensi banjir pekan depan. Warga diminta menyiapkan perlengkapan sebelum ada kejadian.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 9.952077380148694e-05,
+      "EARTHQUAKE": 8.600730438956816e-07,
+      "FIRE": 3.1904889965517214e-06,
+      "ACCIDENT": 3.2644129532855004e-07,
+      "NON_EVENT": 0.9998960494995117
+    }
+  },
+  {
+    "id": "NEW06-NON_EVENT-05",
+    "text": "Pemain film merekam tabrakan menggunakan kendaraan mainan; adegan kecelakaan itu sepenuhnya rekaan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 1.5434958186233416e-05,
+      "EARTHQUAKE": 0.00043216184712946415,
+      "FIRE": 0.00013604912965092808,
+      "ACCIDENT": 0.04256071522831917,
+      "NON_EVENT": 0.9568556547164917
+    }
+  },
+  {
+    "id": "NEW06-NON_EVENT-06",
+    "text": "Panitia menggelar simulasi kebakaran dengan api tiruan dan pemeran korban. Semua peserta aman, tanpa kejadian sungguhan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 2.0650909391406458e-06,
+      "EARTHQUAKE": 1.700175516816671e-06,
+      "FIRE": 0.000282087130472064,
+      "ACCIDENT": 6.524164746224415e-07,
+      "NON_EVENT": 0.9997134804725647
+    }
+  },
+  {
+    "id": "NEW06-NON_EVENT-07",
+    "text": "Bagaimana bila gempa merobohkan rumah? Kalimat ini hanya ilustrasi dalam modul pelatihan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 2.6079087547259405e-06,
+      "EARTHQUAKE": 5.490478088177042e-06,
+      "FIRE": 3.2642908536217874e-06,
+      "ACCIDENT": 8.530757895641727e-07,
+      "NON_EVENT": 0.9999878406524658
+    }
+  },
+  {
+    "id": "NEW06-NON_EVENT-08",
+    "text": "Rapat mengevaluasi jumlah kecelakaan selama lima tahun sebagai statistik umum, tanpa laporan peristiwa tertentu.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 8.700865237187827e-07,
+      "EARTHQUAKE": 9.920452157530235e-07,
+      "FIRE": 1.0134539252248942e-06,
+      "ACCIDENT": 3.094272358339367e-07,
+      "NON_EVENT": 0.9999967813491821
+    }
+  },
+  {
+    "id": "NEW06-NON_EVENT-09",
+    "text": "Penyiar bercanda bahwa akun sang juara kebanjiran ucapan selamat; ia tidak sedang memberitakan bencana.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 3.906191068381304e-06,
+      "EARTHQUAKE": 3.302230879853596e-07,
+      "FIRE": 1.2781873692802037e-06,
+      "ACCIDENT": 4.519015135429072e-07,
+      "NON_EVENT": 0.9999940395355225
+    }
+  },
+  {
+    "id": "NEW06-NON_EVENT-10",
+    "text": "Bukan penanganan banjir yang sudah terjadi. Undangan ini hanya menjadwalkan latihan evakuasi untuk bulan depan.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0022599881049245596,
+      "EARTHQUAKE": 1.3996065035826177e-06,
+      "FIRE": 1.3720258721150458e-05,
+      "ACCIDENT": 2.412176172583713e-06,
+      "NON_EVENT": 0.9977224469184875
+    }
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "schema": "slr09-cached-last-block-context-0.8.3",
+  "status": "SUCCEEDED",
+  "started_at": "2026-10-20T10:26:53.194232+00:00",
+  "training_executed": true,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "new_acceptance_inference_executed": false,
+  "training_unique": 1683,
+  "training_origins": {
+    "HUMAN_SOURCE": 584,
+    "KNOWN_HUMAN_ADJUDICATED_NOW_TRAINING": 145,
+    "OWNER_APPROVED": 24,
+    "ASSISTANT_OTHER": 576,
+    "ASSISTANT_SEEN_V07": 50,
+    "KNOWN_ASSISTANT_SCOPE_NOW_TRAINING": 50,
+    "KNOWN_HUMAN_REGRESSION_NOW_TRAINING": 50,
+    "REVIEWED_FINAL_NOW_TRAINING": 100,
+    "NEW_ASSISTANT_WEAK_TRAINING": 64,
+    "ASSISTANT_DIAGNOSTIC_RETIRED_TO_WEAK_TRAINING": 40
+  },
+  "parent_run_directory": "evidence/quality_fix_v083/cached_context_training_v083_20261020T101722_298188Z",
+  "cached_prefix_verified": true,
+  "gradient_updates_executed": true,
+  "epoch": 1,
+  "step": 251,
+  "steps_per_epoch": 300,
+  "selected_epoch": 1,
+  "all_known_constraints_met": true,
+  "finished_at": "2026-10-20T10:29:39.699202+00:00"
+}

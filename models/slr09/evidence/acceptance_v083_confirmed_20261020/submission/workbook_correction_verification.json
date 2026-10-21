@@ -1,0 +1,25 @@
+{
+  "status": "SUCCEEDED",
+  "changes": [
+    {
+      "sheet": "Token",
+      "cell": "D574",
+      "before": "O",
+      "after": "FALSE-EVENT"
+    },
+    {
+      "sheet": "Token",
+      "cell": "D531",
+      "before": "O",
+      "after": "OFFICER-ARG"
+    }
+  ],
+  "all_other_review_values_unchanged": true,
+  "formulas_freeze_panes_tables_and_dropdowns_preserved": true,
+  "records": 50,
+  "tokens": 685,
+  "approved": 50,
+  "final_workbook_sha256": "2e9cfb9ee4b45ded92baa190d0348b55464fdc3c4b570da2436ef314a2adf352",
+  "source_unchanged": true,
+  "model_inference_executed": false
+}

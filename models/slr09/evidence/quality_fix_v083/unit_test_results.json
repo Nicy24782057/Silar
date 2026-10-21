@@ -1,0 +1,28 @@
+{
+  "suites": [
+    {
+      "suite": "contract_tests",
+      "returncode": 0,
+      "tests": 80,
+      "log": "models/slr09/evidence/quality_fix_v083/contract_tests.txt",
+      "tail": [
+        "Ran 80 tests in 0.515s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "suite": "evaluator_tests",
+      "returncode": 0,
+      "tests": 23,
+      "log": "models/slr09/evidence/quality_fix_v083/evaluator_tests.txt",
+      "tail": [
+        "Ran 23 tests in 0.331s",
+        "",
+        "OK"
+      ]
+    }
+  ],
+  "all_passed": true,
+  "neural_quality_measured_by_these_tests": false
+}

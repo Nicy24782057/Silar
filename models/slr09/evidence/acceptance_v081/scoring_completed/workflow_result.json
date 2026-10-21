@@ -1,0 +1,13 @@
+{
+  "status": "SCORING_COMPLETED_FROM_FROZEN_PREDICTIONS",
+  "at": "2026-10-19T11:23:31.350007+00:00",
+  "original_run_failed_at_scoring": true,
+  "records": 50,
+  "original_inference_executed": true,
+  "new_model_inference_executed": false,
+  "training_executed": false,
+  "gold_changed": false,
+  "metric_targets_met": false,
+  "quality_acceptance_approved": false,
+  "card_done": false
+}

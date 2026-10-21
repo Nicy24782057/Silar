@@ -1,0 +1,68 @@
+Exported SENA unique references: 16 / 486
+Exported SENA unique references: 176 / 486
+Exported SENA unique references: 336 / 486
+Exported SENA unique references: 486 / 486
+Exported SENA verified: human130 130
+Exported SENA verified: original146 146
+Exported SENA verified: adjudicated145 145
+Exported SENA verified: scope50 50
+Exported SENA verified: seen_v07_50 50
+Exported SENA verified: human_regression50 50
+Exported SENA verified: FINAL081 50
+Exported SENA verified: FINAL082 50
+Exported SENA verified: context40_now_training 40
+Exported SENA verified: FINAL083_seen_development 50
+Seen joint regression: human_regression50 10 /50
+Seen joint regression: human_regression50 20 /50
+Seen joint regression: human_regression50 30 /50
+Seen joint regression: human_regression50 40 /50
+Seen joint regression: human_regression50 50 /50
+Seen joint regression: FINAL081_seen 10 /50
+Seen joint regression: FINAL081_seen 20 /50
+Seen joint regression: FINAL081_seen 30 /50
+Seen joint regression: FINAL081_seen 40 /50
+Seen joint regression: FINAL081_seen 50 /50
+Seen joint regression: FINAL082_seen 10 /50
+Seen joint regression: FINAL082_seen 20 /50
+Seen joint regression: FINAL082_seen 30 /50
+Seen joint regression: FINAL082_seen 40 /50
+Seen joint regression: FINAL082_seen 50 /50
+Seen joint regression: FINAL083_seen 10 /50
+Seen joint regression: FINAL083_seen 20 /50
+Seen joint regression: FINAL083_seen 30 /50
+Seen joint regression: FINAL083_seen 40 /50
+Seen joint regression: FINAL083_seen 50 /50
+{
+  "schema": "slr09-context-export-verification-0.8.4",
+  "status": "SUCCEEDED",
+  "started_at": "2026-10-20T14:51:59.527198+00:00",
+  "model_inference_executed": true,
+  "new_acceptance_inference_executed": false,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "all_known_joint_regressions_met": true,
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "cpu_count": 9,
+    "packages": {
+      "torch": "2.11.0+cpu",
+      "transformers": "4.57.1",
+      "tokenizers": "0.22.1",
+      "safetensors": "0.8.0",
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.8.0",
+      "iterative-stratification": null
+    },
+    "device": "cpu",
+    "peak_process_rss_bytes": 1341419520,
+    "measurement_scope": "PROCESS_ON_OBSERVED_ENVIRONMENT_NOT_AUTOMATIC_TARGET_VM_PROOF",
+    "torch_num_threads": 2,
+    "cuda_available": false,
+    "cuda_runtime": null
+  },
+  "finished_at": "2026-10-20T14:53:18.750688+00:00"
+}
+Notebook execution recorded: notebooks/30_Verifikasi_Ekspor_SLR09_v0.8.4_executed.ipynb

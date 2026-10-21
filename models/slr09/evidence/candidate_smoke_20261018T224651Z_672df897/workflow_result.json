@@ -1,0 +1,14 @@
+{
+  "schema": "slr09-candidate-v02-smoke-workflow-0.1",
+  "run_id": "20261018T224651Z_672df897",
+  "status": "SUCCEEDED",
+  "training_executed": false,
+  "environment_scope": "REPRESENTATIVE",
+  "quality_acceptance_approved": false,
+  "target_vm_verified": false,
+  "source_bundle_sha256": "d59e95a26493bbe005593cc67af478bd0b7b963557849cb2427669f167a8be09",
+  "phase": "COMPLETE",
+  "records_completed": 3,
+  "model_inference_executed": true,
+  "fusion_executed": true
+}

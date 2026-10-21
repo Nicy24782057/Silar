@@ -1,0 +1,37 @@
+{
+  "baseline": "SLR09_Paket_Penyerahan_v0.3",
+  "delivery": "SLR09_Paket_Evaluasi_Penerimaan_v0.4",
+  "changed_paths_before_manifest_rebuild": [
+    "MULAI_SLR09.md",
+    "docs/ai/slr09/Pemetaan_Perubahan_dan_Perbaikan_SLR_09_2026-10-18.md",
+    "docs/ai/slr09/README.md",
+    "docs/ai/slr09/evaluation-plan.md",
+    "docs/ai/slr09/review-results.md",
+    "models/slr09/README.md",
+    "models/slr09/asset_manifest.json",
+    "models/slr09/config/model_candidates.json"
+  ],
+  "added_paths_before_manifest_rebuild": [
+    "docs/ai/slr09/Penuntasan_Mutu_SLR09_v0.4.md",
+    "models/slr09/acceptance/README.md",
+    "models/slr09/acceptance/Review_Acuan_SLR09.html",
+    "models/slr09/acceptance/acceptance_decision_template.json",
+    "models/slr09/acceptance/development_queue_sena.json",
+    "models/slr09/acceptance/known_inputs.json",
+    "models/slr09/acceptance/quality_analysis.json",
+    "models/slr09/acceptance/review_bundle_draft.json",
+    "models/slr09/code/acceptance/evaluate_acceptance.py",
+    "models/slr09/code/acceptance/test_acceptance.py",
+    "models/slr09/evidence/revision_v0.4/browser_form_qa.json",
+    "models/slr09/evidence/revision_v0.4/evaluator_tests.json",
+    "models/slr09/evidence/revision_v0.4/evaluator_tests.txt",
+    "models/slr09/evidence/revision_v0.4/notebook_qa.json",
+    "models/slr09/notebooks/10_Evaluasi_Penerimaan_SLR09_v0.4.ipynb"
+  ],
+  "unchanged_files": 193,
+  "active_runtime_and_model_lock_and_cutoff_byte_identical": true,
+  "model_weights_changed": false,
+  "training_executed": false,
+  "new_neural_inference_executed": false,
+  "quality_acceptance_approved": false
+}

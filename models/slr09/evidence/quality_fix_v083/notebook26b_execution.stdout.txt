@@ -1,0 +1,25 @@
+Waiting for the original experiment to finish; status: TRAINING
+Waiting for the original experiment to finish; status: TRAINING
+Waiting for the original experiment to finish; status: TRAINING
+Waiting for the original experiment to finish; status: TRAINING
+ORIGINAL_EXPERIMENT_FINISHED_WITHOUT_FEASIBLE_CANDIDATE_CONTINUING
+ACTUAL_CACHED_TRAINING_OUTPUT /workspace/scratch/89b81e051aff/silar_work/models/slr09/evidence/quality_fix_v083/cached_context_training_v083_20261020T101722_298188Z
+Cached training 1 1 / 252 loss 3.5361
+Cached training 1 51 / 252 loss 0.0135
+Cached training 1 101 / 252 loss 0.0197
+Cached training 1 151 / 252 loss 0.1168
+Cached training 1 201 / 252 loss 0.8936
+Cached training 1 251 / 252 loss 0.019
+{"epoch": 1, "feasible": false, "context40": 0.9, "contrast_errors": {"seen_v07_50": ["NEW07-NON_EVENT-06"], "FINAL081": ["FINAL081-NON_EVENT-01"], "FINAL082": ["FINAL082-NON_EVENT-02"]}, "failed_class_sets": ["human130", "original146", "adjudicated145", "FINAL081"]}
+Cached training 2 1 / 252 loss 0.0128
+Cached training 2 51 / 252 loss 0.0045
+Cached training 2 101 / 252 loss 0.3664
+Cached training 2 151 / 252 loss 0.0419
+Cached training 2 201 / 252 loss 0.2679
+Cached training 2 251 / 252 loss 0.0118
+{"epoch": 2, "feasible": false, "context40": 1.0, "contrast_errors": {"seen_v07_50": ["NEW07-NON_EVENT-06"], "FINAL082": ["FINAL082-NON_EVENT-02"]}, "failed_class_sets": ["human130", "original146", "adjudicated145"]}
+Cached training 3 1 / 252 loss 0.0092
+Cached training 3 51 / 252 loss 0.0773
+Cached training 3 101 / 252 loss 0.0058
+Cached training 3 151 / 252 loss 0.0088
+Cached training 3 201 / 252 loss 0.0024

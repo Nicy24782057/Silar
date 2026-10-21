@@ -1,0 +1,22 @@
+{
+  "schema": "slr09-inference-environment-0.2",
+  "profile_id": "CANDIDATE_EXPORT_STACK_PENDING_LOCAL_SMOKE",
+  "basis": "VERSIONS_RECORDED_IN_COMPLETED_COLAB_RUNS",
+  "python_recommended": "3.12 or 3.13",
+  "pinned_packages": {
+    "torch": "2.11.0",
+    "transformers": "4.57.1",
+    "tokenizers": "0.22.1",
+    "safetensors": "0.8.0",
+    "numpy": "2.1.3"
+  },
+  "guard_packages": [
+    "torch",
+    "transformers",
+    "tokenizers",
+    "safetensors",
+    "numpy"
+  ],
+  "candidate_neural_loading_verified_in_this_revision": false,
+  "scope": "DEPENDENCY_PROFILE_PREPARED_NOT_PROOF_OF_TARGET_ENVIRONMENT"
+}

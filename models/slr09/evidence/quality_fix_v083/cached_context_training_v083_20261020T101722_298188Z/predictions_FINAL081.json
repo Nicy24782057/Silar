@@ -1,0 +1,602 @@
+[
+  {
+    "id": "FINAL081-FLOOD-01",
+    "text": "Menurut warga, Banjir menggenangi tiga rumah di Desa Rimbakencana Utara subuh tadi.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9978336691856384,
+      "EARTHQUAKE": 1.9607476133387536e-05,
+      "FIRE": 9.877257252810523e-05,
+      "ACCIDENT": 3.103461494902149e-05,
+      "NON_EVENT": 0.0020169455092400312
+    }
+  },
+  {
+    "id": "FINAL081-FLOOD-02",
+    "text": "Banjir menggenangi tiga rumah di Kelurahan Banyumadu Utara pagi ini; dua warga luka ringan.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9986230134963989,
+      "EARTHQUAKE": 1.9241113477619365e-05,
+      "FIRE": 4.651057315641083e-05,
+      "ACCIDENT": 3.921366806025617e-05,
+      "NON_EVENT": 0.0012719844235107303
+    }
+  },
+  {
+    "id": "FINAL081-FLOOD-03",
+    "text": "Banjir menggenangi tiga rumah di Kampung Tirtajaya Utara tadi malam; seorang penjaga meninggal.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9986224174499512,
+      "EARTHQUAKE": 1.7823269445216283e-05,
+      "FIRE": 5.935732406214811e-05,
+      "ACCIDENT": 5.231390969129279e-05,
+      "NON_EVENT": 0.0012480345321819186
+    }
+  },
+  {
+    "id": "FINAL081-FLOOD-04",
+    "text": "Banjir dipicu hujan deras di Desa Cempakawana Utara siang tadi dan menggenangi tiga rumah.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.998404324054718,
+      "EARTHQUAKE": 2.2193860786501318e-05,
+      "FIRE": 3.5115397622575983e-05,
+      "ACCIDENT": 3.6231085687177256e-05,
+      "NON_EVENT": 0.0015022739535197616
+    }
+  },
+  {
+    "id": "FINAL081-FLOOD-05",
+    "text": "Petugas BPBD tiba di Kelurahan Sumberasri Utara sore ini setelah Banjir menggenangi tiga rumah.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9986151456832886,
+      "EARTHQUAKE": 1.7234151528100483e-05,
+      "FIRE": 3.592693610698916e-05,
+      "ACCIDENT": 3.059279697481543e-05,
+      "NON_EVENT": 0.0013010380789637566
+    }
+  },
+  {
+    "id": "FINAL081-FLOOD-06",
+    "text": "Banjir di Jalan Lembayung Utara pukul sembilan menggenangi tiga rumah; jalur tersebut sekarang ditutup.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9985927939414978,
+      "EARTHQUAKE": 2.6944588171318173e-05,
+      "FIRE": 8.131463982863352e-05,
+      "ACCIDENT": 3.0773506296100095e-05,
+      "NON_EVENT": 0.0012681832304224372
+    }
+  },
+  {
+    "id": "FINAL081-FLOOD-07",
+    "text": "Banjir menggenangi tiga rumah di Kampung Wanasetra Utara malam ini; petugas memastikan tidak ada korban.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9985462427139282,
+      "EARTHQUAKE": 1.8750572053249925e-05,
+      "FIRE": 2.9151335183996707e-05,
+      "ACCIDENT": 2.591510201455094e-05,
+      "NON_EVENT": 0.0013798734871670604
+    }
+  },
+  {
+    "id": "FINAL081-FLOOD-08",
+    "text": "Di tengah latihan evakuasi, Banjir sungguhan menggenangi tiga rumah di Desa Beringinwangi Utara pagi tadi.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.997622549533844,
+      "EARTHQUAKE": 2.1170431864447892e-05,
+      "FIRE": 0.0001479190104873851,
+      "ACCIDENT": 6.89479275024496e-05,
+      "NON_EVENT": 0.002139410702511668
+    }
+  },
+  {
+    "id": "FINAL081-FLOOD-09",
+    "text": "Bukan sekadar kabar: Banjir benar-benar menggenangi tiga rumah di Kelurahan Kartasena Utara sore tadi.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9984591007232666,
+      "EARTHQUAKE": 2.0955640138708986e-05,
+      "FIRE": 5.36796469532419e-05,
+      "ACCIDENT": 5.210595918470062e-05,
+      "NON_EVENT": 0.0014141652500256896
+    }
+  },
+  {
+    "id": "FINAL081-FLOOD-10",
+    "text": "Rekaman ini bukan adegan film. Banjir menggenangi tiga rumah di Kampung Harumjaya Utara kemarin sore.",
+    "gold": "FLOOD",
+    "probabilities": {
+      "FLOOD": 0.9977400302886963,
+      "EARTHQUAKE": 1.1065707440138794e-05,
+      "FIRE": 3.560623008524999e-05,
+      "ACCIDENT": 2.973857226606924e-05,
+      "NON_EVENT": 0.0021836250089108944
+    }
+  },
+  {
+    "id": "FINAL081-EARTHQUAKE-01",
+    "text": "Menurut warga, Gempa merusak dinding sekolah di Desa Rimbakencana Selatan subuh tadi.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0002790058497339487,
+      "EARTHQUAKE": 0.9986131191253662,
+      "FIRE": 0.00017669779481366277,
+      "ACCIDENT": 0.00011046862346120179,
+      "NON_EVENT": 0.0008207064820453525
+    }
+  },
+  {
+    "id": "FINAL081-EARTHQUAKE-02",
+    "text": "Gempa merusak dinding sekolah di Kelurahan Banyumadu Selatan pagi ini; dua warga luka ringan.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0004534388135652989,
+      "EARTHQUAKE": 0.9980279803276062,
+      "FIRE": 0.00023013110330794007,
+      "ACCIDENT": 0.00013954282621853054,
+      "NON_EVENT": 0.0011489399475976825
+    }
+  },
+  {
+    "id": "FINAL081-EARTHQUAKE-03",
+    "text": "Gempa merusak dinding sekolah di Kampung Tirtajaya Selatan tadi malam; seorang penjaga meninggal.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0003092933911830187,
+      "EARTHQUAKE": 0.9984299540519714,
+      "FIRE": 0.00024901199503801763,
+      "ACCIDENT": 0.00013259088154882193,
+      "NON_EVENT": 0.0008790733409114182
+    }
+  },
+  {
+    "id": "FINAL081-EARTHQUAKE-04",
+    "text": "Gempa dipicu pergeseran sesar di Desa Cempakawana Selatan siang tadi dan merusak dinding sekolah.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00018940151494462043,
+      "EARTHQUAKE": 0.9984729886054993,
+      "FIRE": 3.894876499543898e-05,
+      "ACCIDENT": 0.0001035597306326963,
+      "NON_EVENT": 0.0011951483320444822
+    }
+  },
+  {
+    "id": "FINAL081-EARTHQUAKE-05",
+    "text": "Petugas BPBD tiba di Kelurahan Sumberasri Selatan sore ini setelah Gempa merusak dinding sekolah.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00029540227842517197,
+      "EARTHQUAKE": 0.9982105493545532,
+      "FIRE": 0.00021496525732800364,
+      "ACCIDENT": 0.00018083772738464177,
+      "NON_EVENT": 0.0010982761159539223
+    }
+  },
+  {
+    "id": "FINAL081-EARTHQUAKE-06",
+    "text": "Gempa di Jalan Lembayung Selatan pukul sembilan merusak dinding sekolah; jalur tersebut sekarang ditutup.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0001735780679155141,
+      "EARTHQUAKE": 0.9985257983207703,
+      "FIRE": 9.409031190443784e-05,
+      "ACCIDENT": 6.583582580788061e-05,
+      "NON_EVENT": 0.0011408051941543818
+    }
+  },
+  {
+    "id": "FINAL081-EARTHQUAKE-07",
+    "text": "Gempa merusak dinding sekolah di Kampung Wanasetra Selatan malam ini; petugas memastikan tidak ada korban.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.0001219167752424255,
+      "EARTHQUAKE": 0.9986055493354797,
+      "FIRE": 8.893307676771656e-05,
+      "ACCIDENT": 6.247909186640754e-05,
+      "NON_EVENT": 0.0011211531236767769
+    }
+  },
+  {
+    "id": "FINAL081-EARTHQUAKE-08",
+    "text": "Di tengah latihan evakuasi, Gempa sungguhan merusak dinding sekolah di Desa Beringinwangi Selatan pagi tadi.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00015682486991863698,
+      "EARTHQUAKE": 0.998391330242157,
+      "FIRE": 0.0002470299950800836,
+      "ACCIDENT": 0.00012622075155377388,
+      "NON_EVENT": 0.001078431261703372
+    }
+  },
+  {
+    "id": "FINAL081-EARTHQUAKE-09",
+    "text": "Bukan sekadar kabar: Gempa benar-benar merusak dinding sekolah di Kelurahan Kartasena Selatan sore tadi.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00010032638238044456,
+      "EARTHQUAKE": 0.9985713958740234,
+      "FIRE": 0.00019915023585781455,
+      "ACCIDENT": 0.0002311179123353213,
+      "NON_EVENT": 0.0008979354170151055
+    }
+  },
+  {
+    "id": "FINAL081-EARTHQUAKE-10",
+    "text": "Rekaman ini bukan adegan film. Gempa merusak dinding sekolah di Kampung Harumjaya Selatan kemarin sore.",
+    "gold": "EARTHQUAKE",
+    "probabilities": {
+      "FLOOD": 0.00011199676373507828,
+      "EARTHQUAKE": 0.9984920024871826,
+      "FIRE": 0.000245399191044271,
+      "ACCIDENT": 0.0002631634415592998,
+      "NON_EVENT": 0.0008873079787008464
+    }
+  },
+  {
+    "id": "FINAL081-FIRE-01",
+    "text": "Menurut warga, Kebakaran menghanguskan satu warung di Desa Rimbakencana Barat subuh tadi.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 2.0483212210820056e-05,
+      "EARTHQUAKE": 1.709518073766958e-05,
+      "FIRE": 0.9986973404884338,
+      "ACCIDENT": 3.2132120395544916e-05,
+      "NON_EVENT": 0.0012329414021223783
+    }
+  },
+  {
+    "id": "FINAL081-FIRE-02",
+    "text": "Kebakaran menghanguskan satu warung di Kelurahan Banyumadu Barat pagi ini; dua warga luka ringan.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 2.7074667741544545e-05,
+      "EARTHQUAKE": 2.0561796191032045e-05,
+      "FIRE": 0.9987537860870361,
+      "ACCIDENT": 3.647814446594566e-05,
+      "NON_EVENT": 0.0011622026795521379
+    }
+  },
+  {
+    "id": "FINAL081-FIRE-03",
+    "text": "Kebakaran menghanguskan satu warung di Kampung Tirtajaya Barat tadi malam; seorang penjaga meninggal.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 2.7907655749004334e-05,
+      "EARTHQUAKE": 2.04489151656162e-05,
+      "FIRE": 0.9989228844642639,
+      "ACCIDENT": 5.873372356290929e-05,
+      "NON_EVENT": 0.0009700056980364025
+    }
+  },
+  {
+    "id": "FINAL081-FIRE-04",
+    "text": "Kebakaran dipicu korsleting listrik di Desa Cempakawana Barat siang tadi dan menghanguskan satu warung.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 2.4802959160297178e-05,
+      "EARTHQUAKE": 1.896315734484233e-05,
+      "FIRE": 0.9990467429161072,
+      "ACCIDENT": 4.5541815779870376e-05,
+      "NON_EVENT": 0.0008639887091703713
+    }
+  },
+  {
+    "id": "FINAL081-FIRE-05",
+    "text": "Petugas BPBD tiba di Kelurahan Sumberasri Barat sore ini setelah Kebakaran menghanguskan satu warung.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 3.222703162464313e-05,
+      "EARTHQUAKE": 2.2392054233932868e-05,
+      "FIRE": 0.9986446499824524,
+      "ACCIDENT": 3.838652992271818e-05,
+      "NON_EVENT": 0.001262364094145596
+    }
+  },
+  {
+    "id": "FINAL081-FIRE-06",
+    "text": "Kebakaran di Jalan Lembayung Barat pukul sembilan menghanguskan satu warung; jalur tersebut sekarang ditutup.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 2.4209282855736092e-05,
+      "EARTHQUAKE": 1.743923894537147e-05,
+      "FIRE": 0.9990918636322021,
+      "ACCIDENT": 3.405078678042628e-05,
+      "NON_EVENT": 0.0008323430665768683
+    }
+  },
+  {
+    "id": "FINAL081-FIRE-07",
+    "text": "Kebakaran menghanguskan satu warung di Kampung Wanasetra Barat malam ini; petugas memastikan tidak ada korban.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 1.49688985402463e-05,
+      "EARTHQUAKE": 1.809465538826771e-05,
+      "FIRE": 0.9987249970436096,
+      "ACCIDENT": 3.352476051077247e-05,
+      "NON_EVENT": 0.0012083000037819147
+    }
+  },
+  {
+    "id": "FINAL081-FIRE-08",
+    "text": "Di tengah latihan evakuasi, Kebakaran sungguhan menghanguskan satu warung di Desa Beringinwangi Barat pagi tadi.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 2.1823363567818888e-05,
+      "EARTHQUAKE": 2.3964163119671866e-05,
+      "FIRE": 0.9988402724266052,
+      "ACCIDENT": 4.6459728764602914e-05,
+      "NON_EVENT": 0.0010674766963347793
+    }
+  },
+  {
+    "id": "FINAL081-FIRE-09",
+    "text": "Bukan sekadar kabar: Kebakaran benar-benar menghanguskan satu warung di Kelurahan Kartasena Barat sore tadi.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 1.5056664778967388e-05,
+      "EARTHQUAKE": 2.1494002794497646e-05,
+      "FIRE": 0.9987574815750122,
+      "ACCIDENT": 5.506243905983865e-05,
+      "NON_EVENT": 0.0011509608011692762
+    }
+  },
+  {
+    "id": "FINAL081-FIRE-10",
+    "text": "Rekaman ini bukan adegan film. Kebakaran menghanguskan satu warung di Kampung Harumjaya Barat kemarin sore.",
+    "gold": "FIRE",
+    "probabilities": {
+      "FLOOD": 2.33359205594752e-05,
+      "EARTHQUAKE": 1.5569778042845428e-05,
+      "FIRE": 0.9983859062194824,
+      "ACCIDENT": 5.401931412052363e-05,
+      "NON_EVENT": 0.0015211869031190872
+    }
+  },
+  {
+    "id": "FINAL081-ACCIDENT-01",
+    "text": "Menurut warga, Kecelakaan merusak dua sepeda motor di Desa Rimbakencana Tengah subuh tadi.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.00012414349475875497,
+      "EARTHQUAKE": 2.5198800358339213e-05,
+      "FIRE": 0.00014000074588693678,
+      "ACCIDENT": 0.9970179796218872,
+      "NON_EVENT": 0.0026927031576633453
+    }
+  },
+  {
+    "id": "FINAL081-ACCIDENT-02",
+    "text": "Kecelakaan merusak dua sepeda motor di Kelurahan Banyumadu Tengah pagi ini; dua warga luka ringan.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 0.0001357739674858749,
+      "EARTHQUAKE": 1.7295089492108673e-05,
+      "FIRE": 0.0001104064067476429,
+      "ACCIDENT": 0.9973171353340149,
+      "NON_EVENT": 0.0024193874560296535
+    }
+  },
+  {
+    "id": "FINAL081-ACCIDENT-03",
+    "text": "Kecelakaan merusak dua sepeda motor di Kampung Tirtajaya Tengah tadi malam; seorang penjaga meninggal.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 8.40190623421222e-05,
+      "EARTHQUAKE": 1.713146411930211e-05,
+      "FIRE": 9.00241793715395e-05,
+      "ACCIDENT": 0.9978606104850769,
+      "NON_EVENT": 0.0019482728093862534
+    }
+  },
+  {
+    "id": "FINAL081-ACCIDENT-04",
+    "text": "Kecelakaan dipicu rem blong di Desa Cempakawana Tengah siang tadi dan merusak dua sepeda motor.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 6.785395817132667e-05,
+      "EARTHQUAKE": 2.5585761250113137e-05,
+      "FIRE": 4.653018913813867e-05,
+      "ACCIDENT": 0.9982051849365234,
+      "NON_EVENT": 0.0016549243591725826
+    }
+  },
+  {
+    "id": "FINAL081-ACCIDENT-05",
+    "text": "Petugas BPBD tiba di Kelurahan Sumberasri Tengah sore ini setelah Kecelakaan merusak dua sepeda motor.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 5.8674049796536565e-05,
+      "EARTHQUAKE": 1.9659793906612322e-05,
+      "FIRE": 6.48132263449952e-05,
+      "ACCIDENT": 0.9981288313865662,
+      "NON_EVENT": 0.0017279876628890634
+    }
+  },
+  {
+    "id": "FINAL081-ACCIDENT-06",
+    "text": "Kecelakaan di Jalan Lembayung Tengah pukul sembilan merusak dua sepeda motor; jalur tersebut sekarang ditutup.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 9.323097765445709e-05,
+      "EARTHQUAKE": 2.116456198564265e-05,
+      "FIRE": 4.813626583199948e-05,
+      "ACCIDENT": 0.9980119466781616,
+      "NON_EVENT": 0.0018255062168464065
+    }
+  },
+  {
+    "id": "FINAL081-ACCIDENT-07",
+    "text": "Kecelakaan merusak dua sepeda motor di Kampung Wanasetra Tengah malam ini; petugas memastikan tidak ada korban.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 8.472220360999927e-05,
+      "EARTHQUAKE": 1.5612138668075204e-05,
+      "FIRE": 5.1049097237410024e-05,
+      "ACCIDENT": 0.996877908706665,
+      "NON_EVENT": 0.0029707083012908697
+    }
+  },
+  {
+    "id": "FINAL081-ACCIDENT-08",
+    "text": "Di tengah latihan evakuasi, Kecelakaan sungguhan merusak dua sepeda motor di Desa Beringinwangi Tengah pagi tadi.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 6.967732770135626e-05,
+      "EARTHQUAKE": 3.483506225165911e-05,
+      "FIRE": 0.00023142089776229113,
+      "ACCIDENT": 0.9982921481132507,
+      "NON_EVENT": 0.001371922087855637
+    }
+  },
+  {
+    "id": "FINAL081-ACCIDENT-09",
+    "text": "Bukan sekadar kabar: Kecelakaan benar-benar merusak dua sepeda motor di Kelurahan Kartasena Tengah sore tadi.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 5.5431377404602244e-05,
+      "EARTHQUAKE": 4.202884520054795e-05,
+      "FIRE": 0.00010929319250863045,
+      "ACCIDENT": 0.9987064599990845,
+      "NON_EVENT": 0.001086684176698327
+    }
+  },
+  {
+    "id": "FINAL081-ACCIDENT-10",
+    "text": "Rekaman ini bukan adegan film. Kecelakaan merusak dua sepeda motor di Kampung Harumjaya Tengah kemarin sore.",
+    "gold": "ACCIDENT",
+    "probabilities": {
+      "FLOOD": 8.447436994174495e-05,
+      "EARTHQUAKE": 3.45279804605525e-05,
+      "FIRE": 0.000188102712854743,
+      "ACCIDENT": 0.9983555674552917,
+      "NON_EVENT": 0.0013372978428378701
+    }
+  },
+  {
+    "id": "FINAL081-NON_EVENT-01",
+    "text": "Petugas BPBD menggelar simulasi kebakaran di lapangan Kalimurni sore ini.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 9.410639177076519e-05,
+      "EARTHQUAKE": 1.742666972859297e-05,
+      "FIRE": 0.08772062510251999,
+      "ACCIDENT": 1.556240204081405e-05,
+      "NON_EVENT": 0.9121523499488831
+    }
+  },
+  {
+    "id": "FINAL081-NON_EVENT-02",
+    "text": "Latihan penanganan kecelakaan diselenggarakan di balai pelatihan Puspasari pagi ini.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 3.804854486588738e-06,
+      "EARTHQUAKE": 1.9033427633985411e-06,
+      "FIRE": 1.850460307650792e-06,
+      "ACCIDENT": 2.9840132356184768e-06,
+      "NON_EVENT": 0.9999895095825195
+    }
+  },
+  {
+    "id": "FINAL081-NON_EVENT-03",
+    "text": "Besok ada prakiraan potensi banjir di Kelurahan Cendana Baru.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00039009045576676726,
+      "EARTHQUAKE": 1.264633851860708e-06,
+      "FIRE": 1.4412219115911284e-06,
+      "ACCIDENT": 1.4483701988865505e-06,
+      "NON_EVENT": 0.9996058344841003
+    }
+  },
+  {
+    "id": "FINAL081-NON_EVENT-04",
+    "text": "Petugas memastikan tidak terjadi gempa di Desa Lazuardi siang tadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0004970990703441203,
+      "EARTHQUAKE": 0.008733054623007774,
+      "FIRE": 1.4519632713927422e-05,
+      "ACCIDENT": 5.861677709617652e-05,
+      "NON_EVENT": 0.9906966686248779
+    }
+  },
+  {
+    "id": "FINAL081-NON_EVENT-05",
+    "text": "Unggahan toko itu menulis banjir pesanan sejak pagi tadi.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.0023062913678586483,
+      "EARTHQUAKE": 3.866276074404595e-06,
+      "FIRE": 3.454954639892094e-05,
+      "ACCIDENT": 2.529771336412523e-06,
+      "NON_EVENT": 0.9976528286933899
+    }
+  },
+  {
+    "id": "FINAL081-NON_EVENT-06",
+    "text": "Tim kelurahan menyiapkan jalur evakuasi untuk mengantisipasi banjir di Kampung Manggala.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.6747475862503052,
+      "EARTHQUAKE": 9.621613571653143e-06,
+      "FIRE": 2.8093534638173878e-05,
+      "ACCIDENT": 2.946887798316311e-05,
+      "NON_EVENT": 0.32518520951271057
+    }
+  },
+  {
+    "id": "FINAL081-NON_EVENT-07",
+    "text": "Buku keselamatan menjelaskan cara menghindari kebakaran akibat kompor bocor.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 3.96877385355765e-06,
+      "EARTHQUAKE": 1.917848976518144e-06,
+      "FIRE": 0.00034132847213186324,
+      "ACCIDENT": 1.4616965700042783e-06,
+      "NON_EVENT": 0.999651312828064
+    }
+  },
+  {
+    "id": "FINAL081-NON_EVENT-08",
+    "text": "Artikel itu membahas sepuluh kecelakaan terburuk sepanjang dekade, tanpa laporan kejadian tertentu.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 8.730987246963196e-06,
+      "EARTHQUAKE": 3.2771099540696014e-06,
+      "FIRE": 9.121558832703158e-06,
+      "ACCIDENT": 1.7951637119040242e-06,
+      "NON_EVENT": 0.9999771118164062
+    }
+  },
+  {
+    "id": "FINAL081-NON_EVENT-09",
+    "text": "Panitia membuka donasi tahunan untuk para penyintas gempa dan banjir dari beberapa tahun berbeda.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.008286221884191036,
+      "EARTHQUAKE": 0.006419564597308636,
+      "FIRE": 3.328441744088195e-05,
+      "ACCIDENT": 2.1260530047584325e-06,
+      "NON_EVENT": 0.9852588176727295
+    }
+  },
+  {
+    "id": "FINAL081-NON_EVENT-10",
+    "text": "Di panggung teater, para pemain memeragakan gempa menggunakan efek suara; penonton tetap duduk.",
+    "gold": "NON_EVENT",
+    "probabilities": {
+      "FLOOD": 0.00014391110744327307,
+      "EARTHQUAKE": 0.03788554668426514,
+      "FIRE": 0.00010325835319235921,
+      "ACCIDENT": 0.0015113655244931579,
+      "NON_EVENT": 0.9603558778762817
+    }
+  }
+]

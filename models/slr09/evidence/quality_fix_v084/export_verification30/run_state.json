@@ -1,0 +1,33 @@
+{
+  "schema": "slr09-context-export-verification-0.8.4",
+  "status": "SUCCEEDED",
+  "started_at": "2026-10-20T14:51:59.527198+00:00",
+  "model_inference_executed": true,
+  "new_acceptance_inference_executed": false,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "all_known_joint_regressions_met": true,
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "cpu_count": 9,
+    "packages": {
+      "torch": "2.11.0+cpu",
+      "transformers": "4.57.1",
+      "tokenizers": "0.22.1",
+      "safetensors": "0.8.0",
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.8.0",
+      "iterative-stratification": null
+    },
+    "device": "cpu",
+    "peak_process_rss_bytes": 1341419520,
+    "measurement_scope": "PROCESS_ON_OBSERVED_ENVIRONMENT_NOT_AUTOMATIC_TARGET_VM_PROOF",
+    "torch_num_threads": 2,
+    "cuda_available": false,
+    "cuda_runtime": null
+  },
+  "finished_at": "2026-10-20T14:53:18.750688+00:00"
+}

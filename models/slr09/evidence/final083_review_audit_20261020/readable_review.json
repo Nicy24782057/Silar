@@ -1,0 +1,4202 @@
+[
+  {
+    "ID": "FINAL083-FLOOD-01",
+    "Narasi": "Banjir memutus akses pasar di Kelurahan Puspanala sejak subuh.",
+    "Kategori": "FLOOD",
+    "Lokasi": "Kelurahan Puspanala",
+    "Waktu": "sejak subuh",
+    "Pihak": "",
+    "Dampak": "memutus akses pasar",
+    "Korban": "",
+    "Objek": "akses pasar",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "FLOOD-EVENT",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Banjir"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 2,
+        "end": 2,
+        "tokens": [
+          "memutus"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 3,
+        "end": 4,
+        "tokens": [
+          "akses",
+          "pasar"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 6,
+        "end": 7,
+        "tokens": [
+          "Kelurahan",
+          "Puspanala"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 8,
+        "end": 9,
+        "tokens": [
+          "sejak",
+          "subuh"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 10,
+        "end": 10,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FLOOD-02",
+    "Narasi": "Tiga rumah terendam banjir malam kemarin di Dusun Gintungasri.",
+    "Kategori": "FLOOD",
+    "Lokasi": "Dusun Gintungasri",
+    "Waktu": "malam kemarin",
+    "Pihak": "",
+    "Dampak": "Tiga rumah terendam",
+    "Korban": "",
+    "Objek": "Tiga rumah",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 1,
+        "end": 2,
+        "tokens": [
+          "Tiga",
+          "rumah"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 3,
+        "end": 3,
+        "tokens": [
+          "terendam"
+        ]
+      },
+      {
+        "label": "FLOOD-EVENT",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "banjir"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 5,
+        "end": 6,
+        "tokens": [
+          "malam",
+          "kemarin"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 7,
+        "end": 7,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 8,
+        "end": 9,
+        "tokens": [
+          "Dusun",
+          "Gintungasri"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 10,
+        "end": 10,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FLOOD-03",
+    "Narasi": "Regu SAR mengungsikan penduduk dari Desa Sekarwangi akibat banjir pagi ini.",
+    "Kategori": "FLOOD",
+    "Lokasi": "Desa Sekarwangi",
+    "Waktu": "pagi ini",
+    "Pihak": "Regu SAR",
+    "Dampak": "mengungsikan penduduk",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "OFFICER-ARG",
+        "start": 1,
+        "end": 2,
+        "tokens": [
+          "Regu",
+          "SAR"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 3,
+        "end": 4,
+        "tokens": [
+          "mengungsikan",
+          "penduduk"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "dari"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 6,
+        "end": 7,
+        "tokens": [
+          "Desa",
+          "Sekarwangi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 8,
+        "end": 8,
+        "tokens": [
+          "akibat"
+        ]
+      },
+      {
+        "label": "FLOOD-EVENT",
+        "start": 9,
+        "end": 9,
+        "tokens": [
+          "banjir"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 10,
+        "end": 11,
+        "tokens": [
+          "pagi",
+          "ini"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 12,
+        "end": 12,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FLOOD-04",
+    "Narasi": "Peserta latihan mengangkat perahu ketika banjir sungguhan merendam gudang beras di Dusun Waringinreja sore tadi.",
+    "Kategori": "FLOOD",
+    "Lokasi": "Dusun Waringinreja",
+    "Waktu": "sore tadi",
+    "Pihak": "Peserta latihan",
+    "Dampak": "mengangkat perahu | merendam gudang beras",
+    "Korban": "",
+    "Objek": "gudang beras",
+    "Status": "APPROVED",
+    "Catatan": "Ditambahkan: Peserta latihan sebagai Pihak dan tindakan mengangkat perahu sebagai Dampak. Banjir nyata (bukan latihan), jadi tetap FLOOD.",
+    "token_spans": [
+      {
+        "label": "OFFICER-ARG",
+        "start": 1,
+        "end": 2,
+        "tokens": [
+          "Peserta",
+          "latihan"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 3,
+        "end": 4,
+        "tokens": [
+          "mengangkat",
+          "perahu"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "ketika"
+        ]
+      },
+      {
+        "label": "FLOOD-EVENT",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "banjir"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 7,
+        "end": 7,
+        "tokens": [
+          "sungguhan"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 8,
+        "end": 8,
+        "tokens": [
+          "merendam"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "gudang",
+          "beras"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 11,
+        "end": 11,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 12,
+        "end": 13,
+        "tokens": [
+          "Dusun",
+          "Waringinreja"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 14,
+        "end": 15,
+        "tokens": [
+          "sore",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 16,
+        "end": 16,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FLOOD-05",
+    "Narasi": "Petugas kelurahan mengonfirmasi banjir di Kelurahan Mekarnala malam ini; informasi tersebut bukan skenario latihan.",
+    "Kategori": "FLOOD",
+    "Lokasi": "Kelurahan Mekarnala",
+    "Waktu": "malam ini",
+    "Pihak": "Petugas kelurahan",
+    "Dampak": "",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "OFFICER-ARG",
+        "start": 1,
+        "end": 2,
+        "tokens": [
+          "Petugas",
+          "kelurahan"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 3,
+        "end": 3,
+        "tokens": [
+          "mengonfirmasi"
+        ]
+      },
+      {
+        "label": "FLOOD-EVENT",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "banjir"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 6,
+        "end": 7,
+        "tokens": [
+          "Kelurahan",
+          "Mekarnala"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 8,
+        "end": 9,
+        "tokens": [
+          "malam",
+          "ini"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 10,
+        "end": 16,
+        "tokens": [
+          ";",
+          "informasi",
+          "tersebut",
+          "bukan",
+          "skenario",
+          "latihan",
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FLOOD-06",
+    "Narasi": "Luapan sungai menyebabkan banjir menggenangi kebun sayur di Desa Karangnusa siang tadi.",
+    "Kategori": "FLOOD",
+    "Lokasi": "Desa Karangnusa",
+    "Waktu": "siang tadi",
+    "Pihak": "",
+    "Dampak": "menggenangi kebun sayur",
+    "Korban": "",
+    "Objek": "kebun sayur",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "REASON-ARG",
+        "start": 1,
+        "end": 2,
+        "tokens": [
+          "Luapan",
+          "sungai"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 3,
+        "end": 3,
+        "tokens": [
+          "menyebabkan"
+        ]
+      },
+      {
+        "label": "FLOOD-EVENT",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "banjir"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "menggenangi"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 6,
+        "end": 7,
+        "tokens": [
+          "kebun",
+          "sayur"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 8,
+        "end": 8,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "Desa",
+          "Karangnusa"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 11,
+        "end": 12,
+        "tokens": [
+          "siang",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 13,
+        "end": 13,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FLOOD-07",
+    "Narasi": "Banjir di Desa Palaswangi kemarin malam mengakibatkan seorang warga terluka.",
+    "Kategori": "FLOOD",
+    "Lokasi": "Desa Palaswangi",
+    "Waktu": "kemarin malam",
+    "Pihak": "seorang warga",
+    "Dampak": "",
+    "Korban": "seorang warga terluka",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "FLOOD-EVENT",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Banjir"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 2,
+        "end": 2,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 3,
+        "end": 4,
+        "tokens": [
+          "Desa",
+          "Palaswangi"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 5,
+        "end": 6,
+        "tokens": [
+          "kemarin",
+          "malam"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 7,
+        "end": 7,
+        "tokens": [
+          "mengakibatkan"
+        ]
+      },
+      {
+        "label": "WOUNDVICTIM-ARG",
+        "start": 8,
+        "end": 10,
+        "tokens": [
+          "seorang",
+          "warga",
+          "terluka"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 11,
+        "end": 11,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FLOOD-08",
+    "Narasi": "Dua nelayan meninggal saat banjir di Kampung Rengganala pagi tadi.",
+    "Kategori": "FLOOD",
+    "Lokasi": "Kampung Rengganala",
+    "Waktu": "pagi tadi",
+    "Pihak": "Dua nelayan",
+    "Dampak": "",
+    "Korban": "Dua nelayan meninggal",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "DEATHVICTIM-ARG",
+        "start": 1,
+        "end": 3,
+        "tokens": [
+          "Dua",
+          "nelayan",
+          "meninggal"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "saat"
+        ]
+      },
+      {
+        "label": "FLOOD-EVENT",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "banjir"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "Kampung",
+          "Rengganala"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "pagi",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 11,
+        "end": 11,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FLOOD-09",
+    "Narasi": "Tak ada korban jiwa, tetapi banjir merusak pagar puskesmas di Desa Manggalarum sore ini.",
+    "Kategori": "FLOOD",
+    "Lokasi": "Desa Manggalarum",
+    "Waktu": "sore ini",
+    "Pihak": "",
+    "Dampak": "merusak pagar puskesmas",
+    "Korban": "",
+    "Objek": "pagar puskesmas",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "O",
+        "start": 1,
+        "end": 6,
+        "tokens": [
+          "Tak",
+          "ada",
+          "korban",
+          "jiwa",
+          ",",
+          "tetapi"
+        ]
+      },
+      {
+        "label": "FLOOD-EVENT",
+        "start": 7,
+        "end": 7,
+        "tokens": [
+          "banjir"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 8,
+        "end": 8,
+        "tokens": [
+          "merusak"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "pagar",
+          "puskesmas"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 11,
+        "end": 11,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 12,
+        "end": 13,
+        "tokens": [
+          "Desa",
+          "Manggalarum"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 14,
+        "end": 15,
+        "tokens": [
+          "sore",
+          "ini"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 16,
+        "end": 16,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FLOOD-10",
+    "Narasi": "Sejak tadi malam, banjir masih menggenangi jalan desa di Kampung Cikareja.",
+    "Kategori": "FLOOD",
+    "Lokasi": "Kampung Cikareja",
+    "Waktu": "Sejak tadi malam",
+    "Pihak": "",
+    "Dampak": "menggenangi jalan desa",
+    "Korban": "",
+    "Objek": "jalan desa",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "TIME-ARG",
+        "start": 1,
+        "end": 3,
+        "tokens": [
+          "Sejak",
+          "tadi",
+          "malam"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          ","
+        ]
+      },
+      {
+        "label": "FLOOD-EVENT",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "banjir"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "masih"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 7,
+        "end": 7,
+        "tokens": [
+          "menggenangi"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 8,
+        "end": 9,
+        "tokens": [
+          "jalan",
+          "desa"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 10,
+        "end": 10,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 11,
+        "end": 12,
+        "tokens": [
+          "Kampung",
+          "Cikareja"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 13,
+        "end": 13,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-EARTHQUAKE-01",
+    "Narasi": "Gempa mengguncang Kecamatan Sukamanah siang ini; warga keluar dari rumah.",
+    "Kategori": "EARTHQUAKE",
+    "Lokasi": "Kecamatan Sukamanah",
+    "Waktu": "siang ini",
+    "Pihak": "warga",
+    "Dampak": "mengguncang | keluar dari rumah",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "Dampak dikoreksi: nama tempat dikeluarkan (sudah di Lokasi); tindakan warga keluar dari rumah ditambahkan.",
+    "token_spans": [
+      {
+        "label": "EARTHQUAKE-EVENT",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Gempa"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 2,
+        "end": 2,
+        "tokens": [
+          "mengguncang"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 3,
+        "end": 4,
+        "tokens": [
+          "Kecamatan",
+          "Sukamanah"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 5,
+        "end": 6,
+        "tokens": [
+          "siang",
+          "ini"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 7,
+        "end": 7,
+        "tokens": [
+          ";"
+        ]
+      },
+      {
+        "label": "OFFICER-ARG",
+        "start": 8,
+        "end": 8,
+        "tokens": [
+          "warga"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 9,
+        "end": 11,
+        "tokens": [
+          "keluar",
+          "dari",
+          "rumah"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 12,
+        "end": 12,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-EARTHQUAKE-02",
+    "Narasi": "Atap balai warga ambruk akibat gempa subuh tadi di Desa Ciparanti.",
+    "Kategori": "EARTHQUAKE",
+    "Lokasi": "Desa Ciparanti",
+    "Waktu": "subuh tadi",
+    "Pihak": "",
+    "Dampak": "Atap balai warga ambruk",
+    "Korban": "",
+    "Objek": "Atap balai warga",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 1,
+        "end": 3,
+        "tokens": [
+          "Atap",
+          "balai",
+          "warga"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "ambruk"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "akibat"
+        ]
+      },
+      {
+        "label": "EARTHQUAKE-EVENT",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "gempa"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "subuh",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 9,
+        "end": 9,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 10,
+        "end": 11,
+        "tokens": [
+          "Desa",
+          "Ciparanti"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 12,
+        "end": 12,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-EARTHQUAKE-03",
+    "Narasi": "Setelah gempa di Dusun Sindangnala pagi tadi, relawan mendirikan tenda.",
+    "Kategori": "EARTHQUAKE",
+    "Lokasi": "Dusun Sindangnala",
+    "Waktu": "pagi tadi",
+    "Pihak": "relawan",
+    "Dampak": "mendirikan tenda",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "O",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Setelah"
+        ]
+      },
+      {
+        "label": "EARTHQUAKE-EVENT",
+        "start": 2,
+        "end": 2,
+        "tokens": [
+          "gempa"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 3,
+        "end": 3,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 4,
+        "end": 5,
+        "tokens": [
+          "Dusun",
+          "Sindangnala"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 6,
+        "end": 7,
+        "tokens": [
+          "pagi",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 8,
+        "end": 8,
+        "tokens": [
+          ","
+        ]
+      },
+      {
+        "label": "OFFICER-ARG",
+        "start": 9,
+        "end": 9,
+        "tokens": [
+          "relawan"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 10,
+        "end": 11,
+        "tokens": [
+          "mendirikan",
+          "tenda"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 12,
+        "end": 12,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-EARTHQUAKE-04",
+    "Narasi": "Instruktur menghentikan latihan karena gempa betulan meretakkan tembok kelas di Sekolah Binarasa siang tadi.",
+    "Kategori": "EARTHQUAKE",
+    "Lokasi": "Sekolah Binarasa",
+    "Waktu": "siang tadi",
+    "Pihak": "Instruktur",
+    "Dampak": "menghentikan latihan | meretakkan tembok kelas",
+    "Korban": "",
+    "Objek": "tembok kelas",
+    "Status": "APPROVED",
+    "Catatan": "Ditambahkan: Instruktur sebagai Pihak dan tindakan menghentikan latihan sebagai Dampak. Gempa nyata (betulan), jadi tetap EARTHQUAKE.",
+    "token_spans": [
+      {
+        "label": "OFFICER-ARG",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Instruktur"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 2,
+        "end": 3,
+        "tokens": [
+          "menghentikan",
+          "latihan"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "karena"
+        ]
+      },
+      {
+        "label": "EARTHQUAKE-EVENT",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "gempa"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "betulan"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 7,
+        "end": 7,
+        "tokens": [
+          "meretakkan"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 8,
+        "end": 9,
+        "tokens": [
+          "tembok",
+          "kelas"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 10,
+        "end": 10,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 11,
+        "end": 12,
+        "tokens": [
+          "Sekolah",
+          "Binarasa"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 13,
+        "end": 14,
+        "tokens": [
+          "siang",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 15,
+        "end": 15,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-EARTHQUAKE-05",
+    "Narasi": "Tim BPBD memastikan kabar gempa di Desa Kertanala tadi malam benar; satu rumah rusak.",
+    "Kategori": "EARTHQUAKE",
+    "Lokasi": "Desa Kertanala",
+    "Waktu": "tadi malam",
+    "Pihak": "Tim BPBD",
+    "Dampak": "satu rumah rusak",
+    "Korban": "",
+    "Objek": "satu rumah",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "OFFICER-ARG",
+        "start": 1,
+        "end": 2,
+        "tokens": [
+          "Tim",
+          "BPBD"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 3,
+        "end": 4,
+        "tokens": [
+          "memastikan",
+          "kabar"
+        ]
+      },
+      {
+        "label": "EARTHQUAKE-EVENT",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "gempa"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "Desa",
+          "Kertanala"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "tadi",
+          "malam"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 11,
+        "end": 12,
+        "tokens": [
+          "benar",
+          ";"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 13,
+        "end": 14,
+        "tokens": [
+          "satu",
+          "rumah"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 15,
+        "end": 15,
+        "tokens": [
+          "rusak"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 16,
+        "end": 16,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-EARTHQUAKE-06",
+    "Narasi": "Akibat pergeseran sesar, gempa merusak menara air di Kelurahan Tirtanala sore ini.",
+    "Kategori": "EARTHQUAKE",
+    "Lokasi": "Kelurahan Tirtanala",
+    "Waktu": "sore ini",
+    "Pihak": "",
+    "Dampak": "merusak menara air",
+    "Korban": "",
+    "Objek": "menara air",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "O",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Akibat"
+        ]
+      },
+      {
+        "label": "REASON-ARG",
+        "start": 2,
+        "end": 3,
+        "tokens": [
+          "pergeseran",
+          "sesar"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          ","
+        ]
+      },
+      {
+        "label": "EARTHQUAKE-EVENT",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "gempa"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "merusak"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "menara",
+          "air"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 9,
+        "end": 9,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 10,
+        "end": 11,
+        "tokens": [
+          "Kelurahan",
+          "Tirtanala"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 12,
+        "end": 13,
+        "tokens": [
+          "sore",
+          "ini"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 14,
+        "end": 14,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-EARTHQUAKE-07",
+    "Narasi": "Dua pedagang terluka dalam gempa di Pasar Ciburuan kemarin pagi.",
+    "Kategori": "EARTHQUAKE",
+    "Lokasi": "Pasar Ciburuan",
+    "Waktu": "kemarin pagi",
+    "Pihak": "Dua pedagang",
+    "Dampak": "",
+    "Korban": "Dua pedagang terluka",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "WOUNDVICTIM-ARG",
+        "start": 1,
+        "end": 3,
+        "tokens": [
+          "Dua",
+          "pedagang",
+          "terluka"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "dalam"
+        ]
+      },
+      {
+        "label": "EARTHQUAKE-EVENT",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "gempa"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "Pasar",
+          "Ciburuan"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "kemarin",
+          "pagi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 11,
+        "end": 11,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-EARTHQUAKE-08",
+    "Narasi": "Gempa di Desa Langlangreja malam tadi menimbulkan satu korban meninggal.",
+    "Kategori": "EARTHQUAKE",
+    "Lokasi": "Desa Langlangreja",
+    "Waktu": "malam tadi",
+    "Pihak": "satu korban",
+    "Dampak": "",
+    "Korban": "satu korban meninggal",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "EARTHQUAKE-EVENT",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Gempa"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 2,
+        "end": 2,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 3,
+        "end": 4,
+        "tokens": [
+          "Desa",
+          "Langlangreja"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 5,
+        "end": 6,
+        "tokens": [
+          "malam",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 7,
+        "end": 7,
+        "tokens": [
+          "menimbulkan"
+        ]
+      },
+      {
+        "label": "DEATHVICTIM-ARG",
+        "start": 8,
+        "end": 10,
+        "tokens": [
+          "satu",
+          "korban",
+          "meninggal"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 11,
+        "end": 11,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-EARTHQUAKE-09",
+    "Narasi": "Tidak ada korban luka setelah gempa sore tadi di Kampung Pasirnala; dinding musala retak.",
+    "Kategori": "EARTHQUAKE",
+    "Lokasi": "Kampung Pasirnala",
+    "Waktu": "sore tadi",
+    "Pihak": "",
+    "Dampak": "dinding musala retak",
+    "Korban": "",
+    "Objek": "dinding musala",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "O",
+        "start": 1,
+        "end": 5,
+        "tokens": [
+          "Tidak",
+          "ada",
+          "korban",
+          "luka",
+          "setelah"
+        ]
+      },
+      {
+        "label": "EARTHQUAKE-EVENT",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "gempa"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "sore",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 9,
+        "end": 9,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 10,
+        "end": 11,
+        "tokens": [
+          "Kampung",
+          "Pasirnala"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 12,
+        "end": 12,
+        "tokens": [
+          ";"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 13,
+        "end": 14,
+        "tokens": [
+          "dinding",
+          "musala"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 15,
+        "end": 15,
+        "tokens": [
+          "retak"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 16,
+        "end": 16,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-EARTHQUAKE-10",
+    "Narasi": "Gempa susulan terasa di Desa Wanasukma malam ini dan warga menunggu di luar.",
+    "Kategori": "EARTHQUAKE",
+    "Lokasi": "Desa Wanasukma",
+    "Waktu": "malam ini",
+    "Pihak": "warga",
+    "Dampak": "terasa | menunggu di luar",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "Ditambahkan: tindakan warga menunggu di luar sebagai Dampak.",
+    "token_spans": [
+      {
+        "label": "EARTHQUAKE-EVENT",
+        "start": 1,
+        "end": 2,
+        "tokens": [
+          "Gempa",
+          "susulan"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 3,
+        "end": 3,
+        "tokens": [
+          "terasa"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 5,
+        "end": 6,
+        "tokens": [
+          "Desa",
+          "Wanasukma"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "malam",
+          "ini"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 9,
+        "end": 9,
+        "tokens": [
+          "dan"
+        ]
+      },
+      {
+        "label": "OFFICER-ARG",
+        "start": 10,
+        "end": 10,
+        "tokens": [
+          "warga"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 11,
+        "end": 13,
+        "tokens": [
+          "menunggu",
+          "di",
+          "luar"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 14,
+        "end": 14,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FIRE-01",
+    "Narasi": "Kebakaran melalap kios buah di Pasar Palagan dini hari tadi.",
+    "Kategori": "FIRE",
+    "Lokasi": "Pasar Palagan",
+    "Waktu": "dini hari tadi",
+    "Pihak": "",
+    "Dampak": "melalap kios buah",
+    "Korban": "",
+    "Objek": "kios buah",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "FIRE-EVENT",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Kebakaran"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 2,
+        "end": 2,
+        "tokens": [
+          "melalap"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 3,
+        "end": 4,
+        "tokens": [
+          "kios",
+          "buah"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 6,
+        "end": 7,
+        "tokens": [
+          "Pasar",
+          "Palagan"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 8,
+        "end": 10,
+        "tokens": [
+          "dini",
+          "hari",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 11,
+        "end": 11,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FIRE-02",
+    "Narasi": "Dua bengkel hangus dalam kebakaran di Jalan Nataraya kemarin sore.",
+    "Kategori": "FIRE",
+    "Lokasi": "Jalan Nataraya",
+    "Waktu": "kemarin sore",
+    "Pihak": "",
+    "Dampak": "Dua bengkel hangus",
+    "Korban": "",
+    "Objek": "Dua bengkel",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 1,
+        "end": 2,
+        "tokens": [
+          "Dua",
+          "bengkel"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 3,
+        "end": 3,
+        "tokens": [
+          "hangus"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "dalam"
+        ]
+      },
+      {
+        "label": "FIRE-EVENT",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "kebakaran"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "STREET-ARG",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "Jalan",
+          "Nataraya"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "kemarin",
+          "sore"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 11,
+        "end": 11,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FIRE-03",
+    "Narasi": "Regu damkar memadamkan api saat kebakaran di Gudang Puspalaras siang ini.",
+    "Kategori": "FIRE",
+    "Lokasi": "Gudang Puspalaras",
+    "Waktu": "siang ini",
+    "Pihak": "Regu damkar",
+    "Dampak": "memadamkan api",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "OFFICER-ARG",
+        "start": 1,
+        "end": 2,
+        "tokens": [
+          "Regu",
+          "damkar"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 3,
+        "end": 4,
+        "tokens": [
+          "memadamkan",
+          "api"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "saat"
+        ]
+      },
+      {
+        "label": "FIRE-EVENT",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "kebakaran"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 7,
+        "end": 7,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 8,
+        "end": 9,
+        "tokens": [
+          "Gudang",
+          "Puspalaras"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 10,
+        "end": 11,
+        "tokens": [
+          "siang",
+          "ini"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 12,
+        "end": 12,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FIRE-04",
+    "Narasi": "Bukan alat peraga yang terbakar: kebakaran sungguhan merusak kantin di Pusat Latihan Wiranala pagi ini.",
+    "Kategori": "FIRE",
+    "Lokasi": "Pusat Latihan Wiranala",
+    "Waktu": "pagi ini",
+    "Pihak": "",
+    "Dampak": "merusak kantin",
+    "Korban": "",
+    "Objek": "kantin",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "O",
+        "start": 1,
+        "end": 6,
+        "tokens": [
+          "Bukan",
+          "alat",
+          "peraga",
+          "yang",
+          "terbakar",
+          ":"
+        ]
+      },
+      {
+        "label": "FIRE-EVENT",
+        "start": 7,
+        "end": 7,
+        "tokens": [
+          "kebakaran"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 8,
+        "end": 8,
+        "tokens": [
+          "sungguhan"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 9,
+        "end": 9,
+        "tokens": [
+          "merusak"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 10,
+        "end": 10,
+        "tokens": [
+          "kantin"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 11,
+        "end": 11,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 12,
+        "end": 14,
+        "tokens": [
+          "Pusat",
+          "Latihan",
+          "Wiranala"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 15,
+        "end": 16,
+        "tokens": [
+          "pagi",
+          "ini"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 17,
+        "end": 17,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FIRE-05",
+    "Narasi": "Pemeriksaan petugas desa membuktikan kebakaran di Desa Bayumanah tadi malam merupakan kejadian nyata.",
+    "Kategori": "FIRE",
+    "Lokasi": "Desa Bayumanah",
+    "Waktu": "tadi malam",
+    "Pihak": "petugas desa",
+    "Dampak": "",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "O",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Pemeriksaan"
+        ]
+      },
+      {
+        "label": "OFFICER-ARG",
+        "start": 2,
+        "end": 3,
+        "tokens": [
+          "petugas",
+          "desa"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "membuktikan"
+        ]
+      },
+      {
+        "label": "FIRE-EVENT",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "kebakaran"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "Desa",
+          "Bayumanah"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "tadi",
+          "malam"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 11,
+        "end": 14,
+        "tokens": [
+          "merupakan",
+          "kejadian",
+          "nyata",
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FIRE-06",
+    "Narasi": "Tabung gas bocor memicu kebakaran yang menghanguskan dapur warung di Kampung Nusaloka sore tadi.",
+    "Kategori": "FIRE",
+    "Lokasi": "Kampung Nusaloka",
+    "Waktu": "sore tadi",
+    "Pihak": "",
+    "Dampak": "menghanguskan dapur warung",
+    "Korban": "",
+    "Objek": "dapur warung",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "REASON-ARG",
+        "start": 1,
+        "end": 3,
+        "tokens": [
+          "Tabung",
+          "gas",
+          "bocor"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "memicu"
+        ]
+      },
+      {
+        "label": "FIRE-EVENT",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "kebakaran"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "yang"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 7,
+        "end": 7,
+        "tokens": [
+          "menghanguskan"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 8,
+        "end": 9,
+        "tokens": [
+          "dapur",
+          "warung"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 10,
+        "end": 10,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 11,
+        "end": 12,
+        "tokens": [
+          "Kampung",
+          "Nusaloka"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 13,
+        "end": 14,
+        "tokens": [
+          "sore",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 15,
+        "end": 15,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FIRE-07",
+    "Narasi": "Kebakaran subuh tadi di Kelurahan Ringinmanah mengakibatkan satu pemilik rumah terluka.",
+    "Kategori": "FIRE",
+    "Lokasi": "Kelurahan Ringinmanah",
+    "Waktu": "subuh tadi",
+    "Pihak": "satu pemilik rumah",
+    "Dampak": "",
+    "Korban": "satu pemilik rumah terluka",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "FIRE-EVENT",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Kebakaran"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 2,
+        "end": 3,
+        "tokens": [
+          "subuh",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 5,
+        "end": 6,
+        "tokens": [
+          "Kelurahan",
+          "Ringinmanah"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 7,
+        "end": 7,
+        "tokens": [
+          "mengakibatkan"
+        ]
+      },
+      {
+        "label": "WOUNDVICTIM-ARG",
+        "start": 8,
+        "end": 11,
+        "tokens": [
+          "satu",
+          "pemilik",
+          "rumah",
+          "terluka"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 12,
+        "end": 12,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FIRE-08",
+    "Narasi": "Dalam kebakaran di Desa Cikamulya malam kemarin, seorang pekerja meninggal.",
+    "Kategori": "FIRE",
+    "Lokasi": "Desa Cikamulya",
+    "Waktu": "malam kemarin",
+    "Pihak": "seorang pekerja",
+    "Dampak": "",
+    "Korban": "seorang pekerja meninggal",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "O",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Dalam"
+        ]
+      },
+      {
+        "label": "FIRE-EVENT",
+        "start": 2,
+        "end": 2,
+        "tokens": [
+          "kebakaran"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 3,
+        "end": 3,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 4,
+        "end": 5,
+        "tokens": [
+          "Desa",
+          "Cikamulya"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 6,
+        "end": 7,
+        "tokens": [
+          "malam",
+          "kemarin"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 8,
+        "end": 8,
+        "tokens": [
+          ","
+        ]
+      },
+      {
+        "label": "DEATHVICTIM-ARG",
+        "start": 9,
+        "end": 11,
+        "tokens": [
+          "seorang",
+          "pekerja",
+          "meninggal"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 12,
+        "end": 12,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FIRE-09",
+    "Narasi": "Kebakaran merusak ruang penyimpanan di Balai Naramukti siang tadi; semua orang selamat.",
+    "Kategori": "FIRE",
+    "Lokasi": "Balai Naramukti",
+    "Waktu": "siang tadi",
+    "Pihak": "",
+    "Dampak": "merusak ruang penyimpanan",
+    "Korban": "",
+    "Objek": "ruang penyimpanan",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "FIRE-EVENT",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Kebakaran"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 2,
+        "end": 2,
+        "tokens": [
+          "merusak"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 3,
+        "end": 4,
+        "tokens": [
+          "ruang",
+          "penyimpanan"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 6,
+        "end": 7,
+        "tokens": [
+          "Balai",
+          "Naramukti"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 8,
+        "end": 9,
+        "tokens": [
+          "siang",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 10,
+        "end": 14,
+        "tokens": [
+          ";",
+          "semua",
+          "orang",
+          "selamat",
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-FIRE-10",
+    "Narasi": "Malam ini, api masih membakar tumpukan kayu di Dusun Ciparayasih.",
+    "Kategori": "FIRE",
+    "Lokasi": "Dusun Ciparayasih",
+    "Waktu": "Malam ini",
+    "Pihak": "",
+    "Dampak": "membakar tumpukan kayu",
+    "Korban": "",
+    "Objek": "tumpukan kayu",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "TIME-ARG",
+        "start": 1,
+        "end": 2,
+        "tokens": [
+          "Malam",
+          "ini"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 3,
+        "end": 3,
+        "tokens": [
+          ","
+        ]
+      },
+      {
+        "label": "FIRE-EVENT",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "api"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "masih"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "membakar"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "tumpukan",
+          "kayu"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 9,
+        "end": 9,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 10,
+        "end": 11,
+        "tokens": [
+          "Dusun",
+          "Ciparayasih"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 12,
+        "end": 12,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-ACCIDENT-01",
+    "Narasi": "Kecelakaan melibatkan sepeda motor di Jalan Sindangarum pagi tadi.",
+    "Kategori": "ACCIDENT",
+    "Lokasi": "Jalan Sindangarum",
+    "Waktu": "pagi tadi",
+    "Pihak": "",
+    "Dampak": "melibatkan sepeda motor",
+    "Korban": "",
+    "Objek": "sepeda motor",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "ACCIDENT-EVENT",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Kecelakaan"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 2,
+        "end": 2,
+        "tokens": [
+          "melibatkan"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 3,
+        "end": 4,
+        "tokens": [
+          "sepeda",
+          "motor"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "STREET-ARG",
+        "start": 6,
+        "end": 7,
+        "tokens": [
+          "Jalan",
+          "Sindangarum"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 8,
+        "end": 9,
+        "tokens": [
+          "pagi",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 10,
+        "end": 10,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-ACCIDENT-02",
+    "Narasi": "Mobil pengangkut telur terbalik dalam kecelakaan di Desa Bantarwulan siang ini.",
+    "Kategori": "ACCIDENT",
+    "Lokasi": "Desa Bantarwulan",
+    "Waktu": "siang ini",
+    "Pihak": "",
+    "Dampak": "Mobil pengangkut telur terbalik",
+    "Korban": "",
+    "Objek": "Mobil pengangkut telur",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 1,
+        "end": 3,
+        "tokens": [
+          "Mobil",
+          "pengangkut",
+          "telur"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "terbalik"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "dalam"
+        ]
+      },
+      {
+        "label": "ACCIDENT-EVENT",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "kecelakaan"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 7,
+        "end": 7,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 8,
+        "end": 9,
+        "tokens": [
+          "Desa",
+          "Bantarwulan"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 10,
+        "end": 11,
+        "tokens": [
+          "siang",
+          "ini"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 12,
+        "end": 12,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-ACCIDENT-03",
+    "Narasi": "Petugas polisi mengatur lalu lintas setelah kecelakaan di Jalan Madunala kemarin sore.",
+    "Kategori": "ACCIDENT",
+    "Lokasi": "Jalan Madunala",
+    "Waktu": "kemarin sore",
+    "Pihak": "Petugas polisi",
+    "Dampak": "mengatur lalu lintas",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "OFFICER-ARG",
+        "start": 1,
+        "end": 2,
+        "tokens": [
+          "Petugas",
+          "polisi"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 3,
+        "end": 5,
+        "tokens": [
+          "mengatur",
+          "lalu",
+          "lintas"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "setelah"
+        ]
+      },
+      {
+        "label": "ACCIDENT-EVENT",
+        "start": 7,
+        "end": 7,
+        "tokens": [
+          "kecelakaan"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 8,
+        "end": 8,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "STREET-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "Jalan",
+          "Madunala"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 11,
+        "end": 12,
+        "tokens": [
+          "kemarin",
+          "sore"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 13,
+        "end": 13,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-ACCIDENT-04",
+    "Narasi": "Pelatihan dihentikan ketika kecelakaan nyata merusak mobil instruktur di Lapangan Sekarnala sore tadi.",
+    "Kategori": "ACCIDENT",
+    "Lokasi": "Lapangan Sekarnala",
+    "Waktu": "sore tadi",
+    "Pihak": "",
+    "Dampak": "Pelatihan dihentikan | merusak mobil instruktur",
+    "Korban": "",
+    "Objek": "mobil instruktur",
+    "Status": "APPROVED",
+    "Catatan": "Ditambahkan: Pelatihan dihentikan sebagai Dampak. Kecelakaan nyata, jadi tetap ACCIDENT.",
+    "token_spans": [
+      {
+        "label": "INFORMATION-ARG",
+        "start": 1,
+        "end": 2,
+        "tokens": [
+          "Pelatihan",
+          "dihentikan"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 3,
+        "end": 3,
+        "tokens": [
+          "ketika"
+        ]
+      },
+      {
+        "label": "ACCIDENT-EVENT",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "kecelakaan"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "nyata"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "merusak"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "mobil",
+          "instruktur"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 9,
+        "end": 9,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 10,
+        "end": 11,
+        "tokens": [
+          "Lapangan",
+          "Sekarnala"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 12,
+        "end": 13,
+        "tokens": [
+          "sore",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 14,
+        "end": 14,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-ACCIDENT-05",
+    "Narasi": "Rekaman latihan itu terputus oleh kecelakaan sungguhan di Jalan Giriarum pagi ini; seorang pengendara terluka.",
+    "Kategori": "ACCIDENT",
+    "Lokasi": "Jalan Giriarum",
+    "Waktu": "pagi ini",
+    "Pihak": "seorang pengendara",
+    "Dampak": "Rekaman latihan itu terputus",
+    "Korban": "seorang pengendara terluka",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "Ditambahkan: terputusnya rekaman latihan sebagai Dampak. Kecelakaan sungguhan, jadi tetap ACCIDENT.",
+    "token_spans": [
+      {
+        "label": "INFORMATION-ARG",
+        "start": 1,
+        "end": 4,
+        "tokens": [
+          "Rekaman",
+          "latihan",
+          "itu",
+          "terputus"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "oleh"
+        ]
+      },
+      {
+        "label": "ACCIDENT-EVENT",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "kecelakaan"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "sungguhan",
+          "di"
+        ]
+      },
+      {
+        "label": "STREET-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "Jalan",
+          "Giriarum"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 11,
+        "end": 12,
+        "tokens": [
+          "pagi",
+          "ini"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 13,
+        "end": 13,
+        "tokens": [
+          ";"
+        ]
+      },
+      {
+        "label": "WOUNDVICTIM-ARG",
+        "start": 14,
+        "end": 16,
+        "tokens": [
+          "seorang",
+          "pengendara",
+          "terluka"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 17,
+        "end": 17,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-ACCIDENT-06",
+    "Narasi": "Ban pecah memicu kecelakaan di Desa Wanamanah malam tadi; satu truk rusak.",
+    "Kategori": "ACCIDENT",
+    "Lokasi": "Desa Wanamanah",
+    "Waktu": "malam tadi",
+    "Pihak": "",
+    "Dampak": "satu truk rusak",
+    "Korban": "",
+    "Objek": "satu truk",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "REASON-ARG",
+        "start": 1,
+        "end": 2,
+        "tokens": [
+          "Ban",
+          "pecah"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 3,
+        "end": 3,
+        "tokens": [
+          "memicu"
+        ]
+      },
+      {
+        "label": "ACCIDENT-EVENT",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "kecelakaan"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 6,
+        "end": 7,
+        "tokens": [
+          "Desa",
+          "Wanamanah"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 8,
+        "end": 9,
+        "tokens": [
+          "malam",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 10,
+        "end": 10,
+        "tokens": [
+          ";"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 11,
+        "end": 12,
+        "tokens": [
+          "satu",
+          "truk"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 13,
+        "end": 13,
+        "tokens": [
+          "rusak"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 14,
+        "end": 14,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-ACCIDENT-07",
+    "Narasi": "Akibat kecelakaan di Jalan Sukawening subuh tadi, dua penumpang terluka.",
+    "Kategori": "ACCIDENT",
+    "Lokasi": "Jalan Sukawening",
+    "Waktu": "subuh tadi",
+    "Pihak": "dua penumpang",
+    "Dampak": "",
+    "Korban": "dua penumpang terluka",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "O",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Akibat"
+        ]
+      },
+      {
+        "label": "ACCIDENT-EVENT",
+        "start": 2,
+        "end": 2,
+        "tokens": [
+          "kecelakaan"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 3,
+        "end": 3,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "STREET-ARG",
+        "start": 4,
+        "end": 5,
+        "tokens": [
+          "Jalan",
+          "Sukawening"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 6,
+        "end": 7,
+        "tokens": [
+          "subuh",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 8,
+        "end": 8,
+        "tokens": [
+          ","
+        ]
+      },
+      {
+        "label": "WOUNDVICTIM-ARG",
+        "start": 9,
+        "end": 11,
+        "tokens": [
+          "dua",
+          "penumpang",
+          "terluka"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 12,
+        "end": 12,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-ACCIDENT-08",
+    "Narasi": "Seorang sopir meninggal pada kecelakaan di Kampung Palawana kemarin malam.",
+    "Kategori": "ACCIDENT",
+    "Lokasi": "Kampung Palawana",
+    "Waktu": "kemarin malam",
+    "Pihak": "Seorang sopir",
+    "Dampak": "",
+    "Korban": "Seorang sopir meninggal",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "DEATHVICTIM-ARG",
+        "start": 1,
+        "end": 3,
+        "tokens": [
+          "Seorang",
+          "sopir",
+          "meninggal"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "pada"
+        ]
+      },
+      {
+        "label": "ACCIDENT-EVENT",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "kecelakaan"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "Kampung",
+          "Palawana"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "kemarin",
+          "malam"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 11,
+        "end": 11,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-ACCIDENT-09",
+    "Narasi": "Kecelakaan merusak dua motor di Jalan Puspasukma siang tadi, tanpa korban luka.",
+    "Kategori": "ACCIDENT",
+    "Lokasi": "Jalan Puspasukma",
+    "Waktu": "siang tadi",
+    "Pihak": "",
+    "Dampak": "merusak dua motor",
+    "Korban": "",
+    "Objek": "dua motor",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "ACCIDENT-EVENT",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Kecelakaan"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 2,
+        "end": 2,
+        "tokens": [
+          "merusak"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 3,
+        "end": 4,
+        "tokens": [
+          "dua",
+          "motor"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "STREET-ARG",
+        "start": 6,
+        "end": 7,
+        "tokens": [
+          "Jalan",
+          "Puspasukma"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 8,
+        "end": 9,
+        "tokens": [
+          "siang",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 10,
+        "end": 14,
+        "tokens": [
+          ",",
+          "tanpa",
+          "korban",
+          "luka",
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-ACCIDENT-10",
+    "Narasi": "Tadi sore, kecelakaan melibatkan bus sekolah di Kelurahan Mekarwening.",
+    "Kategori": "ACCIDENT",
+    "Lokasi": "Kelurahan Mekarwening",
+    "Waktu": "Tadi sore",
+    "Pihak": "",
+    "Dampak": "melibatkan bus sekolah",
+    "Korban": "",
+    "Objek": "bus sekolah",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "TIME-ARG",
+        "start": 1,
+        "end": 2,
+        "tokens": [
+          "Tadi",
+          "sore"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 3,
+        "end": 3,
+        "tokens": [
+          ","
+        ]
+      },
+      {
+        "label": "ACCIDENT-EVENT",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "kecelakaan"
+        ]
+      },
+      {
+        "label": "INFORMATION-ARG",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "melibatkan"
+        ]
+      },
+      {
+        "label": "AFFECTEDOBJECTS-ARG",
+        "start": 6,
+        "end": 7,
+        "tokens": [
+          "bus",
+          "sekolah"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 8,
+        "end": 8,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "Kelurahan",
+          "Mekarwening"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 11,
+        "end": 11,
+        "tokens": [
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-NON_EVENT-01",
+    "Narasi": "Di Balai Sukmanala siang ini, peserta memperagakan kecelakaan dengan kendaraan tiruan; seluruh adegan hanya latihan.",
+    "Kategori": "NON_EVENT",
+    "Lokasi": "Balai Sukmanala",
+    "Waktu": "siang ini",
+    "Pihak": "peserta",
+    "Dampak": "",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "Ditambahkan: peserta sebagai Pihak. Hanya peragaan/latihan, jadi NON_EVENT.",
+    "token_spans": [
+      {
+        "label": "O",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 2,
+        "end": 3,
+        "tokens": [
+          "Balai",
+          "Sukmanala"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 4,
+        "end": 5,
+        "tokens": [
+          "siang",
+          "ini"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 6,
+        "end": 8,
+        "tokens": [
+          ",",
+          "peserta",
+          "memperagakan"
+        ]
+      },
+      {
+        "label": "FALSE-EVENT",
+        "start": 9,
+        "end": 9,
+        "tokens": [
+          "kecelakaan"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 10,
+        "end": 18,
+        "tokens": [
+          "dengan",
+          "kendaraan",
+          "tiruan",
+          ";",
+          "seluruh",
+          "adegan",
+          "hanya",
+          "latihan",
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-NON_EVENT-02",
+    "Narasi": "Regu damkar menggunakan layar untuk simulasi kebakaran di Aula Giriwening pagi tadi; tidak ada kejadian nyata.",
+    "Kategori": "NON_EVENT",
+    "Lokasi": "Aula Giriwening",
+    "Waktu": "pagi tadi",
+    "Pihak": "Regu damkar",
+    "Dampak": "",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "OFFICER-ARG",
+        "start": 1,
+        "end": 2,
+        "tokens": [
+          "Regu",
+          "damkar"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 3,
+        "end": 6,
+        "tokens": [
+          "menggunakan",
+          "layar",
+          "untuk",
+          "simulasi"
+        ]
+      },
+      {
+        "label": "FALSE-EVENT",
+        "start": 7,
+        "end": 7,
+        "tokens": [
+          "kebakaran"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 8,
+        "end": 8,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "Aula",
+          "Giriwening"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 11,
+        "end": 12,
+        "tokens": [
+          "pagi",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 13,
+        "end": 18,
+        "tokens": [
+          ";",
+          "tidak",
+          "ada",
+          "kejadian",
+          "nyata",
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-NON_EVENT-03",
+    "Narasi": "Getaran buatan menandai peragaan gempa di Pusat Belajar Naramerta sore ini, bukan gempa sungguhan.",
+    "Kategori": "NON_EVENT",
+    "Lokasi": "Pusat Belajar Naramerta",
+    "Waktu": "sore ini",
+    "Pihak": "",
+    "Dampak": "",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "O",
+        "start": 1,
+        "end": 4,
+        "tokens": [
+          "Getaran",
+          "buatan",
+          "menandai",
+          "peragaan"
+        ]
+      },
+      {
+        "label": "FALSE-EVENT",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "gempa"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 7,
+        "end": 9,
+        "tokens": [
+          "Pusat",
+          "Belajar",
+          "Naramerta"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 10,
+        "end": 11,
+        "tokens": [
+          "sore",
+          "ini"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 12,
+        "end": 16,
+        "tokens": [
+          ",",
+          "bukan",
+          "gempa",
+          "sungguhan",
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-NON_EVENT-04",
+    "Narasi": "Banjir pada latihan di Lapangan Kertamanah kemarin pagi ditiru dengan kolam kecil; permukiman tetap kering.",
+    "Kategori": "NON_EVENT",
+    "Lokasi": "Lapangan Kertamanah",
+    "Waktu": "kemarin pagi",
+    "Pihak": "",
+    "Dampak": "",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "FALSE-EVENT",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Banjir"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 2,
+        "end": 4,
+        "tokens": [
+          "pada",
+          "latihan",
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 5,
+        "end": 6,
+        "tokens": [
+          "Lapangan",
+          "Kertamanah"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "kemarin",
+          "pagi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 9,
+        "end": 17,
+        "tokens": [
+          "ditiru",
+          "dengan",
+          "kolam",
+          "kecil",
+          ";",
+          "permukiman",
+          "tetap",
+          "kering",
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-NON_EVENT-05",
+    "Narasi": "Petugas membahas potensi banjir di Desa Nusalintang pekan depan; sampai kini belum ada kejadian.",
+    "Kategori": "NON_EVENT",
+    "Lokasi": "Desa Nusalintang",
+    "Waktu": "pekan depan",
+    "Pihak": "Petugas",
+    "Dampak": "",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "OFFICER-ARG",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Petugas"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 2,
+        "end": 3,
+        "tokens": [
+          "membahas",
+          "potensi"
+        ]
+      },
+      {
+        "label": "FALSE-EVENT",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "banjir"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 6,
+        "end": 7,
+        "tokens": [
+          "Desa",
+          "Nusalintang"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 8,
+        "end": 9,
+        "tokens": [
+          "pekan",
+          "depan"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 10,
+        "end": 16,
+        "tokens": [
+          ";",
+          "sampai",
+          "kini",
+          "belum",
+          "ada",
+          "kejadian",
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-NON_EVENT-06",
+    "Narasi": "Kepala dusun membantah kabar kebakaran di Dusun Girimadu malam tadi; pemeriksaan tidak menemukan peristiwa tersebut.",
+    "Kategori": "NON_EVENT",
+    "Lokasi": "Dusun Girimadu",
+    "Waktu": "malam tadi",
+    "Pihak": "Kepala dusun",
+    "Dampak": "",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "OFFICER-ARG",
+        "start": 1,
+        "end": 2,
+        "tokens": [
+          "Kepala",
+          "dusun"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 3,
+        "end": 4,
+        "tokens": [
+          "membantah",
+          "kabar"
+        ]
+      },
+      {
+        "label": "FALSE-EVENT",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "kebakaran"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "Dusun",
+          "Girimadu"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "malam",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 11,
+        "end": 17,
+        "tokens": [
+          ";",
+          "pemeriksaan",
+          "tidak",
+          "menemukan",
+          "peristiwa",
+          "tersebut",
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-NON_EVENT-07",
+    "Narasi": "Guru menguraikan teori penyebab gempa di Sekolah Wanasukma pagi ini; ini pelajaran, tanpa peristiwa tertentu.",
+    "Kategori": "NON_EVENT",
+    "Lokasi": "Sekolah Wanasukma",
+    "Waktu": "pagi ini",
+    "Pihak": "Guru",
+    "Dampak": "",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "OFFICER-ARG",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Guru"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 2,
+        "end": 4,
+        "tokens": [
+          "menguraikan",
+          "teori",
+          "penyebab"
+        ]
+      },
+      {
+        "label": "FALSE-EVENT",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "gempa"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 6,
+        "end": 6,
+        "tokens": [
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "Sekolah",
+          "Wanasukma"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "pagi",
+          "ini"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 11,
+        "end": 18,
+        "tokens": [
+          ";",
+          "ini",
+          "pelajaran",
+          ",",
+          "tanpa",
+          "peristiwa",
+          "tertentu",
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-NON_EVENT-08",
+    "Narasi": "Pedagang berkata tokonya banjir pesanan hari ini; ungkapan itu berarti banyak pembeli.",
+    "Kategori": "NON_EVENT",
+    "Lokasi": "",
+    "Waktu": "hari ini",
+    "Pihak": "Pedagang",
+    "Dampak": "",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "OFFICER-ARG",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Pedagang"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 2,
+        "end": 3,
+        "tokens": [
+          "berkata",
+          "tokonya"
+        ]
+      },
+      {
+        "label": "FALSE-EVENT",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "banjir"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 5,
+        "tokens": [
+          "pesanan"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 6,
+        "end": 7,
+        "tokens": [
+          "hari",
+          "ini"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 8,
+        "end": 14,
+        "tokens": [
+          ";",
+          "ungkapan",
+          "itu",
+          "berarti",
+          "banyak",
+          "pembeli",
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-NON_EVENT-09",
+    "Narasi": "Cerita pendek tentang kecelakaan di negeri rekaan dibacakan peserta kelas sore tadi; kisahnya fiksi.",
+    "Kategori": "NON_EVENT",
+    "Lokasi": "",
+    "Waktu": "sore tadi",
+    "Pihak": "peserta kelas",
+    "Dampak": "",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "O",
+        "start": 1,
+        "end": 3,
+        "tokens": [
+          "Cerita",
+          "pendek",
+          "tentang"
+        ]
+      },
+      {
+        "label": "FALSE-EVENT",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "kecelakaan"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 8,
+        "tokens": [
+          "di",
+          "negeri",
+          "rekaan",
+          "dibacakan"
+        ]
+      },
+      {
+        "label": "OFFICER-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "peserta",
+          "kelas"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 11,
+        "end": 12,
+        "tokens": [
+          "sore",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 13,
+        "end": 16,
+        "tokens": [
+          ";",
+          "kisahnya",
+          "fiksi",
+          "."
+        ]
+      }
+    ]
+  },
+  {
+    "ID": "FINAL083-NON_EVENT-10",
+    "Narasi": "Peneliti menyajikan statistik kebakaran tahunan di Gedung Wanasukma siang tadi, tanpa melaporkan kejadian baru.",
+    "Kategori": "NON_EVENT",
+    "Lokasi": "Gedung Wanasukma",
+    "Waktu": "siang tadi",
+    "Pihak": "Peneliti",
+    "Dampak": "",
+    "Korban": "",
+    "Objek": "",
+    "Status": "APPROVED",
+    "Catatan": "",
+    "token_spans": [
+      {
+        "label": "OFFICER-ARG",
+        "start": 1,
+        "end": 1,
+        "tokens": [
+          "Peneliti"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 2,
+        "end": 3,
+        "tokens": [
+          "menyajikan",
+          "statistik"
+        ]
+      },
+      {
+        "label": "FALSE-EVENT",
+        "start": 4,
+        "end": 4,
+        "tokens": [
+          "kebakaran"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 5,
+        "end": 6,
+        "tokens": [
+          "tahunan",
+          "di"
+        ]
+      },
+      {
+        "label": "PLACE-ARG",
+        "start": 7,
+        "end": 8,
+        "tokens": [
+          "Gedung",
+          "Wanasukma"
+        ]
+      },
+      {
+        "label": "TIME-ARG",
+        "start": 9,
+        "end": 10,
+        "tokens": [
+          "siang",
+          "tadi"
+        ]
+      },
+      {
+        "label": "O",
+        "start": 11,
+        "end": 16,
+        "tokens": [
+          ",",
+          "tanpa",
+          "melaporkan",
+          "kejadian",
+          "baru",
+          "."
+        ]
+      }
+    ]
+  }
+]

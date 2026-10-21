@@ -1,0 +1,10 @@
+{
+  "draft_sha256": "00a040caae70349d26d91515b905c6b6f69418a30a90ec08e40524a4026428bb",
+  "proposals_sha256": "f47c5ca5b73bd3055bf5d499fd032ba483889ff4971223bdb932d2973836f7f0",
+  "known_inputs_count": 2396,
+  "new_records": 50,
+  "normalized_exact_overlap": 0,
+  "all_pending": true,
+  "model_inference_executed": false,
+  "quality_acceptance_approved": false
+}

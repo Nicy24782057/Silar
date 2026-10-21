@@ -1,0 +1,13 @@
+{
+  "source_model": "SILAR_SENA_matched_v07_20261019T054716",
+  "source_archive_sha256": "2965cd389299e56f8a51816a7012b92feeb4767b73367a9896b2a932942ac76e",
+  "manual_non_event_bias_to_remove": 0.1,
+  "files": {
+    "config.json": "febb4294e220615be653133104562be26236ea97165c5103dc7b6d377277da9a",
+    "model.safetensors": "81b020cd021c2c87dbdf907107ca484c77f2c85be767c22273692bb52027c480",
+    "tokenizer.json": "93684d1d5cc282613006dbee78d38882487365cdd378d087e21e755ac157ca63",
+    "tokenizer_config.json": "6c7af3e1d0c166292dc68cece6e6bb2be29945b8a45b39c804f65e9602a78429",
+    "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+    "vocab.txt": "343bf28a78f7efeda6419fa610f553184a6dcd29aae726f46850cd05e3167dc3"
+  }
+}

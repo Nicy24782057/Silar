@@ -1,0 +1,16 @@
+{
+  "status": "SUCCEEDED",
+  "archive_name": "SILAR_SENA_diagnostic_v0.8.3_20261020.zip",
+  "crc_all_members_verified": true,
+  "runtime_sha256_verified": {
+    "config.json": "febb4294e220615be653133104562be26236ea97165c5103dc7b6d377277da9a",
+    "model.safetensors": "7346c6e6e7d09d61f7983dffdee148fb2d931e18c9dfbb57de06e3deb73abc66",
+    "tokenizer.json": "54a2750d24145cb7924b3061e60bd2f14ba863634726e22d4959f65fc5973d7d",
+    "tokenizer_config.json": "6c7af3e1d0c166292dc68cece6e6bb2be29945b8a45b39c804f65e9602a78429",
+    "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+    "vocab.txt": "343bf28a78f7efeda6419fa610f553184a6dcd29aae726f46850cd05e3167dc3"
+  },
+  "diagnostic_only": true,
+  "candidate_selector_updated": false,
+  "quality_acceptance_approved": false
+}

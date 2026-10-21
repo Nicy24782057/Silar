@@ -1,0 +1,11 @@
+{
+  "status": "DEVELOPMENT_REGRESSION_VERIFIED_FRESH_HUMAN_REFERENCE_REQUIRED",
+  "note": "The evaluator decision field READY_FOR_HUMAN_ACCEPTANCE is a generic metric result; all four reports explicitly have seen-development scope and do not authorize acceptance.",
+  "original_FINAL083_result_preserved": true,
+  "original_FINAL083_snapshot_files_verified": 21,
+  "all_known_joint_regressions_met": true,
+  "new_acceptance_inference_executed": false,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "production_deployed": false
+}

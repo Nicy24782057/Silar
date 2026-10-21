@@ -1,0 +1,404 @@
+[
+  {
+    "metrics": {
+      "human130": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "FLOOD": {
+            "support": 27,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "EARTHQUAKE": {
+            "support": 21,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "FIRE": {
+            "support": 31,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "ACCIDENT": {
+            "support": 23,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "NON_EVENT": {
+            "support": 28,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "predeclared_selection_metric": 1.1111111111111112,
+        "targets_met": true
+      },
+      "original146": {
+        "accuracy": 0.9794520547945206,
+        "macro_f1": 0.9809331651954603,
+        "per_class": {
+          "FLOOD": {
+            "support": 32,
+            "precision": 1.0,
+            "recall": 0.90625,
+            "f1": 0.9508196721311475
+          },
+          "EARTHQUAKE": {
+            "support": 24,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "FIRE": {
+            "support": 35,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "ACCIDENT": {
+            "support": 24,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "NON_EVENT": {
+            "support": 31,
+            "precision": 0.9117647058823529,
+            "recall": 1.0,
+            "f1": 0.9538461538461539
+          }
+        },
+        "predeclared_selection_metric": 1.1111111111111112,
+        "targets_met": true
+      },
+      "adjudicated145": {
+        "accuracy": 0.993103448275862,
+        "macro_f1": 0.9935332464146024,
+        "per_class": {
+          "FLOOD": {
+            "support": 30,
+            "precision": 1.0,
+            "recall": 0.9666666666666667,
+            "f1": 0.9830508474576272
+          },
+          "EARTHQUAKE": {
+            "support": 24,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "FIRE": {
+            "support": 35,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "ACCIDENT": {
+            "support": 24,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "NON_EVENT": {
+            "support": 32,
+            "precision": 0.9696969696969697,
+            "recall": 1.0,
+            "f1": 0.9846153846153847
+          }
+        },
+        "predeclared_selection_metric": 1.1111111111111112,
+        "targets_met": true
+      },
+      "scope50": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "FLOOD": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "EARTHQUAKE": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "FIRE": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "ACCIDENT": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "NON_EVENT": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "predeclared_selection_metric": 1.1111111111111112,
+        "targets_met": true
+      },
+      "seen_v07_50": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "FLOOD": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "EARTHQUAKE": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "FIRE": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "ACCIDENT": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "NON_EVENT": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "predeclared_selection_metric": 1.1111111111111112,
+        "targets_met": true
+      },
+      "human_regression50": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "FLOOD": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "EARTHQUAKE": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "FIRE": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "ACCIDENT": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "NON_EVENT": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "predeclared_selection_metric": 1.1111111111111112,
+        "targets_met": true
+      },
+      "FINAL081": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "FLOOD": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "EARTHQUAKE": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "FIRE": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "ACCIDENT": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "NON_EVENT": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "predeclared_selection_metric": 1.1111111111111112,
+        "targets_met": true
+      },
+      "FINAL082": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "FLOOD": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "EARTHQUAKE": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "FIRE": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "ACCIDENT": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "NON_EVENT": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "predeclared_selection_metric": 1.1111111111111112,
+        "targets_met": true
+      },
+      "context40_now_training": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "FLOOD": {
+            "support": 8,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "EARTHQUAKE": {
+            "support": 8,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "FIRE": {
+            "support": 8,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "ACCIDENT": {
+            "support": 8,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "NON_EVENT": {
+            "support": 8,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "predeclared_selection_metric": 1.1111111111111112,
+        "targets_met": true
+      },
+      "FINAL083_seen_development": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "FLOOD": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "EARTHQUAKE": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "FIRE": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "ACCIDENT": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "NON_EVENT": {
+            "support": 10,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "predeclared_selection_metric": 1.1111111111111112,
+        "targets_met": true
+      }
+    },
+    "contrast_errors": {
+      "human130": [],
+      "original146": [],
+      "adjudicated145": [],
+      "scope50": [],
+      "seen_v07_50": [],
+      "human_regression50": [],
+      "FINAL081": [],
+      "FINAL082": [],
+      "context40_now_training": [],
+      "FINAL083_seen_development": []
+    },
+    "feasible": true,
+    "regressions_with_overlapping_sets": 0,
+    "epoch": 1,
+    "steps_completed": 309,
+    "seconds": 55.630024120999224,
+    "training_loss_mean": 0.028490835021650812
+  }
+]

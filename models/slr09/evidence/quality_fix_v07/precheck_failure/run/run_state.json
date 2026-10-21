@@ -1,0 +1,18 @@
+{
+  "schema": "slr09-matched-training-0.7",
+  "status": "FAILED",
+  "source": "V06_EPOCH1_WARM_START_MANUAL_NE_BIAS_1.5_REMOVED_BEFORE_GRADIENTS",
+  "training_executed": false,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "seen24_used_for_selection": true,
+  "v06_new50_used_for_selection": true,
+  "v07_new50_used_for_training_or_selection": false,
+  "pilot50_used_for_training_or_checkpoint_selection": false,
+  "assistant_examples_human_reviewed": false,
+  "started_at": "2026-10-19T05:46:40.961814+00:00",
+  "error": {
+    "type": "ValueError",
+    "message": "Warm identity changed: model.safetensors"
+  }
+}

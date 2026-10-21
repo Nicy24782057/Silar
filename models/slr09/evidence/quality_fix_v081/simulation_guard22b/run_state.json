@@ -1,0 +1,15 @@
+{
+  "schema": "slr09-known-simulation-guard-0.8.1",
+  "status": "SUCCEEDED",
+  "started_at": "2026-10-19T10:46:20.701960+00:00",
+  "training_executed": false,
+  "gradient_updates_executed": false,
+  "source_gradient_training_notebook": 21,
+  "development_bias_fitting_executed": true,
+  "model_inference_executed": false,
+  "new_final_reference_read_or_inferred": false,
+  "quality_acceptance_approved": false,
+  "card_done": false,
+  "additional_bias": 2.5,
+  "finished_at": "2026-10-19T10:46:24.248462+00:00"
+}

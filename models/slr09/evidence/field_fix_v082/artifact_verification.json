@@ -1,0 +1,29 @@
+{
+  "status": "SUCCEEDED",
+  "review_bintang_source_unchanged": true,
+  "original50_gold_and_neural_predictions_preserved": true,
+  "original_workflow_failure_preserved": true,
+  "raw_sena_nara_outputs_unchanged_after_replay": true,
+  "initial_nonempty_exact": [
+    163,
+    207
+  ],
+  "final_regression_nonempty_exact": [
+    177,
+    207
+  ],
+  "report_narratives": 50,
+  "new_reference_records": 50,
+  "new_reference_tokens": 671,
+  "new_reference_all_pending": true,
+  "new_reference_reviewer_blank": true,
+  "fake_approvals_saved": false,
+  "blank_reviewer_rejected_before_inference": true,
+  "completed_in_memory_fixture_validates": true,
+  "new_candidate_binding_verified": true,
+  "formula_errors": 0,
+  "notebook25_not_executed": true,
+  "new_reference_inference_executed": false,
+  "quality_acceptance_approved": false,
+  "card_done": false
+}
