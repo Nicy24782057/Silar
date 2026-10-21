@@ -1,6 +1,6 @@
 # Perancangan UI UX dan Prototype SILAR
 
-SLR_07 menghasilkan rancangan antarmuka dan simulasi interaksi untuk membantu kelompok menerapkan kebutuhan yang sama pada frontend. Paket memuat wireframe interaktif, hasil review Nicy Putra Pratama tanggal 16 Oktober 2026, dan pemeriksaan teknis tambahan. U07-02–U07-10 dilaporkan lulus; U07-01 sudah diperbaiki dan memerlukan uji ulang manual. U07-11–U07-15 lulus pemeriksaan teknis; U07-16 baru diperiksa keberadaan kontennya. Pemeriksaan perangkat/usability dan penerimaan kelompok masih perlu dicatat.
+SLR_07 menghasilkan rancangan antarmuka dan simulasi interaksi sebagai pedoman frontend. Paket telah diperbarui berdasarkan audit 18 Oktober 2026: menu Buat Laporan ditutup setelah navigasi, kontras avatar diperbaiki, serta hasil review dilengkapi dengan bukti audit browser yang sesuai cakupannya. Sebanyak 60 pemeriksaan teknis lulus pada sumber hasil perbaikan. Uji visual ulang dan penerimaan kelompok masih memerlukan catatan aktual.
 
 ## Acuan dan kedudukan
 
@@ -19,7 +19,7 @@ Dari akar proyek, jalankan `py -m http.server 8000 --directory docs/uiux/prototy
 
 Prototype daring: https://silar-slr07-wireframe.ntesengmajola699.chatgpt.site. Tautan mengikuti izin yang berlaku, bukan jaminan anggota lain otomatis mendapat akses. Panduan menyediakan unduhan paket sumber daring dan dokumen review. Salinan dokumen dalam prototype disertakan untuk unduhan; dokumentasi utama tetap berada di docs/uiux/.
 
-Untuk pemeriksaan logika/struktur paket, jalankan `node docs/uiux/tools/check.mjs` dan `node docs/uiux/tools/review-check.mjs` dari akar proyek. Sumber kerja penyusun pada Site tetap berada di dist/ dan skrip penyusun scripts/check.mjs; keduanya menghasilkan paket pengumpulan di atas. Sarana HTML/CSS/JavaScript ini tidak mengganti frontend produksi Vue 3, Composition API, Vue Router, Vite, Fetch dan CSS.
+Untuk pemeriksaan logika/struktur paket, jalankan `node docs/uiux/tools/check.mjs` serta `node docs/uiux/tools/review-check.mjs` dan `node docs/uiux/tools/audit-check.mjs` dari akar proyek. Sumber kerja penyusun pada Site tetap berada di dist/ dan skrip penyusun scripts/check.mjs; keduanya menghasilkan paket pengumpulan di atas. Sarana HTML/CSS/JavaScript ini tidak mengganti frontend produksi Vue 3, Composition API, Vue Router, Vite, Fetch dan CSS.
 
 ## Keputusan interaksi yang dibawa dari diskusi
 
@@ -143,7 +143,7 @@ Acuan SLR_07 telah ditetapkan sebagai berikut; penetapan sasaran tidak berarti p
 | Laptop/desktop Windows | Google Chrome | Operator, Admin dan pemeriksaan seluruh peran | 1366 × 768 CSS px |
 | Laptop/desktop Windows | Microsoft Edge | Kompatibilitas | 1366 × 768 CSS px |
 
-Tambahkan pemeriksaan ukuran 360 × 800 dan 768 × 1024 CSS px melalui browser. Simulasi ukuran dibedakan dari pengujian perangkat nyata. Perangkat, OS, versi browser, viewport dan bukti aktual belum dicatat pada hasil yang diterima.
+Tambahkan pemeriksaan ukuran 360 × 800 dan 768 × 1024 CSS px melalui browser. Simulasi ukuran dibedakan dari pengujian perangkat nyata. Auditor telah mencatat Linux/Chromium 153.0.8010.0 dan empat viewport simulasi pada paket awal; bukti perangkat fisik/browser sasaran serta hasil visual ulang paket setelah perbaikan belum disampaikan.
 
 Kriteria responsif mengikuti AC-N06: alur utama dapat digunakan tanpa kontrol tertutup atau informasi penting terpotong. Form/panel menyesuaikan layar; menu ponsel dapat dibuka/ditutup; tabel menggulir dalam area sendiri; dialog dan tindakan tetap dapat dijangkau saat keyboard tampil; teks/label/pesan/status terbaca dan status tidak hanya bergantung warna. Tindakan sesuai izin tetap dapat dijangkau ketika ukuran berubah. CSS rancangan menyesuaikan pada 760 px dan 1100 px; kelulusannya dibuktikan melalui U07-16.
 
@@ -157,12 +157,14 @@ Batas media, dukungan audio, TTL, retry interval dan kapasitas dalam SLR_06 masi
 
 Perbaikan password salah dilakukan setelah laporan penguji. Simulasi sekarang mencocokkan email/password akun contoh, menahan login akun pendaftaran yang belum diverifikasi, serta mengganti password setelah reset valid. Akun awal: pelapor@contoh.test / Silar123!; OTP fixture: 123456. Untuk registrasi gunakan email fiktif lain dan password contoh sendiri, kemudian verifikasi; sesudah reset gunakan password baru. Operator/Admin tetap ditinjau melalui kontrol peran lab. Ini bukan autentikasi backend dan bukan bukti keamanan produksi.
 
-Pemeriksaan `node docs/uiux/tools/check.mjs` (atau scripts/check.mjs pada sumber penyusun) menghasilkan 42 checks passed setelah perbaikan. Enam tambahan pada skrip dasar memeriksa penolakan kredensial salah, akun benar, registrasi/verifikasi, OTP kedaluwarsa, reset dan pemisahan purpose. Skrip review-check.mjs menambahkan 15 pemeriksaan terhubung ke U07-01/U07-11–U07-16; semuanya lulus secara teknis. Rendering struktur memakai stub Node, bukan browser. Uji ulang manual perbaikan login belum dilaporkan.
+Pemeriksaan `node docs/uiux/tools/check.mjs` (atau scripts/check.mjs pada sumber penyusun) menghasilkan 42 checks passed setelah perbaikan. Enam tambahan pada skrip dasar memeriksa penolakan kredensial salah, akun benar, registrasi/verifikasi, OTP kedaluwarsa, reset dan pemisahan purpose. Skrip review-check.mjs menambahkan 15 pemeriksaan terhubung ke U07-01/U07-11–U07-16; semuanya lulus secara teknis. Rendering struktur memakai stub Node, bukan browser. Audit 18 Oktober kemudian membuktikan kasus login/OTP melalui browser pada paket awal. Sesudah perbaikan menu/avatar, 42 dasar dan 15 tambahan diulang serta 3 regresi audit lulus: total 60 pemeriksaan teknis. Uji visual ulang paket terbaru belum dilakukan oleh penyusun.
 
 ## Review dan tindak lanjut
 
 Hasil awal tersedia pada [review-results.md](review-results.md), panduan lengkap pada [test-plan.md](test-plan.md), checklist pada [review-checklist.md](review-checklist.md), dan cara mencoba OTP kedaluwarsa/password serta kasus tersisa pada [review-next-steps.md](review-next-steps.md). Catatan perbaikan teknis terpisah pada [technical-review.md](technical-review.md). Panduan pengumpulan tersedia pada [submission.md](submission.md).
 
-Penguji/pencatat dalam Word adalah Nicy Putra Pratama, tanggal 16 Oktober 2026, lokasi localhost:8000. Sembilan skenario U07-02–U07-10 dilaporkan lulus. U07-01 telah diperbaiki dan lulus uji teknis, tetapi uji ulang manual belum dilaporkan. U07-11–U07-15 lulus pemeriksaan teknis tambahan; U07-16 baru diperiksa keberadaan konten awareness. Hasil rinci dan hash aset tersedia pada [bukti-review/hasil-pemeriksaan-teknis.json](bukti-review/hasil-pemeriksaan-teknis.json). Metadata perangkat, bukti screenshot, versi sumber yang diuji, nama anggota lain, dan penerimaan akhir belum dicatat. Rencana/hasil teknis tidak diubah menjadi hasil pengguna yang belum dilakukan.
+Penguji awal Nicy Putra Pratama, 16 Oktober 2026, localhost:8000. Audit tambahan 18 Oktober menggunakan Linux/Chromium 153.0.8010.0 pada paket awal: tujuh alur browser lulus; 112 kombinasi halaman/peran/viewport diperiksa; ditemukan menu dan kontras avatar yang kemudian diperbaiki. Nama personal auditor tidak dicantumkan. Hasil sumber dan tindak lanjut ada di [audit-follow-up.md](audit-follow-up.md). Uji browser lama, hasil Node.js terbaru, perangkat fisik dan penerimaan kelompok dicatat terpisah.
+
+Bukti terbaru: [hasil-pemeriksaan-teknis.json](bukti-review/hasil-pemeriksaan-teknis.json) untuk 15 uji tambahan dan [hasil-regresi-audit.json](bukti-review/hasil-regresi-audit.json) untuk tiga regresi menu/kontras. Bukti historis dan sumber audit dipertahankan di bukti-review/. Nama reviewer akhir, keputusan kelompok, hasil perangkat serta commit GitHub kelompok belum disampaikan.
 
 Simpan bukti aktual di [bukti-review/](bukti-review/), isi temuan dan uji ulang, serta catat keputusan kelompok sebelum Done. Word boleh digunakan kelompok untuk review; README tetap menunjuk lokasi hasil aktual. Belum ada push ke GitHub SILAR kelompok dari pekerjaan ini. Dokumen Word, PDF atau PNG bukan pengganti sumber desain/prototype yang dapat diperiksa.

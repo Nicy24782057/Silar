@@ -1,0 +1,42 @@
+{
+  "title": "Uji Regresi Temuan Audit SLR_07",
+  "executed_at": "2026-10-18T12:42:19.818Z",
+  "node_version": "v24.19.0",
+  "method": "Node.js: eksekusi handler klik pada stub DOM dan perhitungan kontras sRGB dari CSS.",
+  "browser_visual_qa": false,
+  "viewport_layout_retested": false,
+  "asset_sha256": {
+    "index.html": "19abb5e3a4a2862dbb1551bca5f9762981a581fc919d1d71482d295d4708adef",
+    "styles.css": "059d4a04027a2a4039c031bbb5993f541a9afe935dcb8c778bba83f4f8adff1f",
+    "app.mjs": "056aba2e0a2d468f0a7dbca3990640b339fc81e2ede6867521763a0d85d7c7e3",
+    "model.mjs": "e9a680dc43c017f09b92c0f117b20e2527d820a4803ca2ea7566f6b76d806477"
+  },
+  "summary": {
+    "passed": 0,
+    "failed": 3,
+    "total": 3
+  },
+  "results": [
+    {
+      "id": "AR07-01",
+      "issue": "A07-01",
+      "name": "Menu ditutup ketika membuka draft yang sudah ada",
+      "status": "GAGAL_TEKNIS",
+      "observed": "Menu masih terbuka setelah membuka draft.\n\ntrue !== false\n"
+    },
+    {
+      "id": "AR07-02",
+      "issue": "A07-01",
+      "name": "Menu ditutup ketika membuat draft baru dan tidak menduplikasi draft",
+      "status": "GAGAL_TEKNIS",
+      "observed": "Menu masih terbuka setelah membuat draft baru.\n\ntrue !== false\n"
+    },
+    {
+      "id": "AR07-03",
+      "issue": "A07-02",
+      "name": "Kontras warna teks avatar minimal 4,5:1",
+      "status": "GAGAL_TEKNIS",
+      "observed": "Rasio kontras avatar 4.37:1 di bawah 4,5:1."
+    }
+  ]
+}

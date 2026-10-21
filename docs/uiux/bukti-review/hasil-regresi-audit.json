@@ -1,0 +1,48 @@
+{
+  "title": "Uji Regresi Temuan Audit SLR_07",
+  "executed_at": "2026-10-18T12:48:10.775Z",
+  "node_version": "v24.19.0",
+  "method": "Node.js: eksekusi handler klik pada stub DOM dan perhitungan kontras sRGB dari CSS.",
+  "browser_visual_qa": false,
+  "viewport_layout_retested": false,
+  "asset_sha256": {
+    "index.html": "19abb5e3a4a2862dbb1551bca5f9762981a581fc919d1d71482d295d4708adef",
+    "styles.css": "4b15b13505aca13838a0bb941adc61f31352f7f54e5237410c518e3e804f870b",
+    "app.mjs": "e6a5780264792dfd84039986bafcf97221e80dccfceb8e53020fb1026ef14600",
+    "model.mjs": "e9a680dc43c017f09b92c0f117b20e2527d820a4803ca2ea7566f6b76d806477"
+  },
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3
+  },
+  "results": [
+    {
+      "id": "AR07-01",
+      "issue": "A07-01",
+      "name": "Menu ditutup ketika membuka draft yang sudah ada",
+      "status": "LULUS_TEKNIS",
+      "observed": "RP02 membuka draft yang sama tanpa duplikasi; class menu-open hilang dan formulir dirender."
+    },
+    {
+      "id": "AR07-02",
+      "issue": "A07-01",
+      "name": "Menu ditutup ketika membuat draft baru dan tidak menduplikasi draft",
+      "status": "LULUS_TEKNIS",
+      "observed": "Satu draft baru dibuat; menu tertutup pada kedua navigasi; membuka ulang memakai draft tersebut."
+    },
+    {
+      "id": "AR07-03",
+      "issue": "A07-02",
+      "name": "Kontras warna teks avatar minimal 4,5:1",
+      "status": "LULUS_TEKNIS",
+      "observed": {
+        "foreground": "#1d2b32",
+        "background": "#edf1f2",
+        "contrast_ratio": 12.79,
+        "minimum": 4.5,
+        "scope": "Perhitungan warna sRGB dari CSS; bukan pemindaian browser atau sertifikasi aksesibilitas seluruh UI."
+      }
+    }
+  ]
+}

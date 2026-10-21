@@ -1,0 +1,147 @@
+{
+  "title": "Bukti Pemeriksaan Teknis SLR_07",
+  "executed_at": "2026-10-16T11:46:19.814Z",
+  "method": "Node.js: perilaku model, handler klik, dan proyeksi HTML pada stub DOM; bukan browser.",
+  "node_version": "v24.19.0",
+  "scope": "Prototype dengan data fiktif; tanpa API/AI/email/PWA nyata.",
+  "browser_visual_qa": false,
+  "manual_tester": "Tidak diatribusikan kepada penguji manual.",
+  "asset_sha256": {
+    "index.html": "19abb5e3a4a2862dbb1551bca5f9762981a581fc919d1d71482d295d4708adef",
+    "styles.css": "059d4a04027a2a4039c031bbb5993f541a9afe935dcb8c778bba83f4f8adff1f",
+    "app.mjs": "056aba2e0a2d468f0a7dbca3990640b339fc81e2ede6867521763a0d85d7c7e3",
+    "model.mjs": "e9a680dc43c017f09b92c0f117b20e2527d820a4803ca2ea7566f6b76d806477"
+  },
+  "summary": {
+    "passed": 15,
+    "failed": 0,
+    "total": 15
+  },
+  "results": [
+    {
+      "id": "RT-01",
+      "scenario": "U07-01",
+      "name": "Uji ulang password salah dan OTP kedaluwarsa",
+      "expected": "Akun tetap di halaman masuk; kode kedaluwarsa tidak mengaktifkan akun.",
+      "observed": "Password salah ditolak dengan INVALID_CREDENTIALS; OTP_EXPIRED tidak mengubah verified=false.",
+      "status": "LULUS_TEKNIS"
+    },
+    {
+      "id": "RT-02",
+      "scenario": "U07-11",
+      "name": "Pemisahan persiapan, kandidat, approval, publish",
+      "expected": "Portal hanya mendapat versi setelah tindakan Terbitkan; checklist wajib.",
+      "observed": "Tidak terbit pada PREPARE/DRAFT/APPROVED; versi yang disetujui terbit dan penanganan tetap terbuka.",
+      "status": "LULUS_TEKNIS"
+    },
+    {
+      "id": "RT-03",
+      "scenario": "U07-11",
+      "name": "Sanitasi dan pembatalan kandidat pengganti",
+      "expected": "Field privat ditolak; pembatalan DRAFT maupun APPROVED mempertahankan versi terbit.",
+      "observed": "Allowlist menolak email; dua pembatalan tidak mengganti versi publik; review ulang setelah terbit ditolak.",
+      "status": "LULUS_TEKNIS"
+    },
+    {
+      "id": "RT-04",
+      "scenario": "U07-12",
+      "name": "Prasyarat penutupan",
+      "expected": "Close ditahan tanpa review, keputusan final, tindak lanjut selesai, atau saat kandidat aktif.",
+      "observed": "Empat keadaan yang belum memenuhi syarat seluruhnya menghasilkan TRANSITION_REJECTED.",
+      "status": "LULUS_TEKNIS"
+    },
+    {
+      "id": "RT-05",
+      "scenario": "U07-12",
+      "name": "Jalur internal/terbit dan CLOSED terminal",
+      "expected": "Kedua jalur sah dapat ditutup; mutasi berikutnya ditolak dan riwayat tetap terbaca.",
+      "observed": "INTERNAL/PUBLISHED ditutup dengan catatan; review, tindak lanjut, publikasi dan assignment setelah CLOSED ditolak.",
+      "status": "LULUS_TEKNIS"
+    },
+    {
+      "id": "RT-06",
+      "scenario": "U07-13",
+      "name": "Akun dan aktivasi Operator",
+      "expected": "Akun awal belum aktif; Admin tidak dapat melewati aktivasi pemilik.",
+      "observed": "Akun baru belum aktif/tanpa password Admin; resend hanya Admin; aktivasi fixture mengaktifkan akun contoh pertama yang belum diverifikasi.",
+      "status": "LULUS_TEKNIS"
+    },
+    {
+      "id": "RT-07",
+      "scenario": "U07-13",
+      "name": "Pengalihan dan pencabutan izin",
+      "expected": "Alasan wajib; akses lama dicabut; penonaktifan/izin berlaku pada tindakan berikutnya.",
+      "observed": "Assignment tanpa alasan ditolak; B memperoleh akses, A kehilangan akses; izin dicabut/nonaktif menahan tindakan berikutnya.",
+      "status": "LULUS_TEKNIS"
+    },
+    {
+      "id": "RT-08",
+      "scenario": "U07-13",
+      "name": "Proyeksi Admin, audit dan monitoring",
+      "expected": "Draft/isi privat tidak terbuka otomatis; audit tidak merender narasi; monitoring hanya metadata.",
+      "observed": "Draft dan bukti privat dibatasi; audit merender metadata tindakan; NOT_CONFIGURED tersedia tanpa tombol menjalankan model.",
+      "status": "LULUS_TEKNIS"
+    },
+    {
+      "id": "RT-09",
+      "scenario": "U07-14",
+      "name": "Pencarian, kategori dan lokasi umum",
+      "expected": "Pencarian empat field publik tidak peka kapital; kombinasi filter bekerja dan hasil kosong dijelaskan.",
+      "observed": "Empat field pencarian cocok tanpa peka kapital; filter gabungan sesuai; kategori yang berbeda menampilkan pesan kosong.",
+      "status": "LULUS_TEKNIS"
+    },
+    {
+      "id": "RT-10",
+      "scenario": "U07-14",
+      "name": "Urutan publikasi terbaru",
+      "expected": "Publikasi baru muncul sebelum versi fixture yang terbit lebih awal.",
+      "observed": "Artikel pertama adalah publikasi yang baru dibuat dalam sesi, disusul publikasi fixture lama.",
+      "status": "LULUS_TEKNIS"
+    },
+    {
+      "id": "RT-11",
+      "scenario": "U07-14",
+      "name": "Batas informasi publik",
+      "expected": "Detail memuat versi publik, waktu kejadian dan publikasi; narasi privat/catatan internal tidak muncul.",
+      "observed": "Daftar membedakan dua waktu; detail hanya data publik; laporan tanpa versi terbit ditolak.",
+      "status": "LULUS_TEKNIS"
+    },
+    {
+      "id": "RT-12",
+      "scenario": "U07-15",
+      "name": "Notifikasi baca, tujuan dan akses lama",
+      "expected": "Penerima dibatasi; tandai dibaca bekerja; notifikasi lama tidak memulihkan akses setelah assignment berubah.",
+      "observed": "Notifikasi A dapat ditandai dibaca; tautan lama ditolak setelah pengalihan; notifikasi penugasan baru tersedia bagi B.",
+      "status": "LULUS_TEKNIS"
+    },
+    {
+      "id": "RT-13",
+      "scenario": "U07-15",
+      "name": "Pemicu notifikasi laporan",
+      "expected": "Submit, review, assignment, publikasi dan close menghasilkan pemberitahuan dalam aplikasi.",
+      "observed": "Notifikasi sesuai peran dan jenis kejadian tersedia di aplikasi; tidak menggunakan layanan kirim pesan eksternal.",
+      "status": "LULUS_TEKNIS"
+    },
+    {
+      "id": "RT-14",
+      "scenario": "U07-15",
+      "name": "Offline dan panduan instalasi",
+      "expected": "Operasi laporan ditahan saat offline; panduan tidak menjanjikan sinkronisasi draft offline.",
+      "observed": "SAVE ditolak OFFLINE, formulir operasi tidak dirender; panduan menjelaskan kebutuhan koneksi tanpa cache data privat.",
+      "status": "LULUS_TEKNIS"
+    },
+    {
+      "id": "RT-15",
+      "scenario": "U07-16",
+      "name": "Keberadaan pesan Digital Awareness",
+      "expected": "Panduan/layar relevan memuat informasi AI, Gemini, OTP, kategori, sanitasi dan batas pemulihan.",
+      "observed": "Informasi ditemukan pada sumber/proyeksi HTML. Keterbacaan, pemahaman pengguna, fokus dan layout belum dinilai oleh pemeriksaan ini.",
+      "status": "LULUS_TEKNIS"
+    }
+  ],
+  "manual_follow_up": [
+    "U07-01: uji ulang login/OTP oleh penguji pada browser.",
+    "U07-16: layout, perangkat/browser aktual, keyboard, fokus, kontras dan review usability kelompok.",
+    "Penerimaan akhir kelompok dan commit repository SILAR yang sebenarnya."
+  ]
+}

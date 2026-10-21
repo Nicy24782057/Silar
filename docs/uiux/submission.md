@@ -1,49 +1,48 @@
-# Panduan Pengumpulan SLR_07
+# Panduan Pengumpulan SLR_07 Setelah Audit
 
 ## Penempatan
 
-Ekstrak `SLR_07_UIUX_SILAR_Siap_Dipindahkan.zip` ke folder sementara. Baca `MULAI_DI_SINI.txt`, lalu **salin folder `docs` ke akar proyek SILAR** dan gabungkan dengan docs yang sudah ada. Lokasi akhirnya harus `SILAR/docs/uiux/README.md`, bukan folder docs bertumpuk. Pertahankan tambahan review lokal sebelum mengganti berkas. Daftar setiap file dan fungsinya tersedia pada `penempatan-berkas.md`.
+Ekstrak `SLR_07_UIUX_SILAR_Perbaikan_Audit.zip` ke folder sementara. Baca MULAI_DI_SINI.txt, lalu salin folder **docs ke akar proyek SILAR** dan gabungkan dengan docs yang sudah ada. Lokasi akhirnya `SILAR/docs/uiux/README.md`. Pertahankan tambahan review lokal sebelum mengganti berkas. Daftar fungsi file ada di penempatan-berkas.md.
 
-Dari akar SILAR, jalankan `py -m http.server 8000 --directory docs/uiux/prototype` (atau gunakan python/python3), kemudian buka http://localhost:8000. Muat ulang penuh setelah pembaruan, sebelum pengujian baru. Tidak perlu npm install atau mengubah konfigurasi frontend produksi.
+Jalankan `py -m http.server 8000 --directory docs/uiux/prototype` dari akar SILAR, atau gunakan python/python3. Buka http://localhost:8000 dan muat ulang penuh sebelum alur baru. Prototype tetap memakai sumber HTML/CSS/JS dan data contoh; frontend produksi mengikuti Vue 3.
 
 ## Bukti yang tersedia
 
-| Bukti task | Lokasi dalam proyek | Keadaan |
+| Bukti task | Lokasi | Keadaan |
 | --- | --- | --- |
-| Sumber desain/rancangan layar yang dapat diedit | docs/uiux/prototype/index.html, styles.css, app.mjs, model.mjs | Tersedia dan interaktif menggunakan data contoh. |
-| File/URL prototype | docs/uiux/prototype/ atau URL di bawah | Tersedia; bukan layanan API/AI nyata. |
+| Sumber desain/rancangan layar editable | docs/uiux/prototype/index.html, styles.css, app.mjs, model.mjs | Tersedia; menu dan kontras avatar diperbaiki. |
+| Prototype interaktif | docs/uiux/prototype/ atau URL di bawah | Tersedia; bukan API/AI nyata. |
 | README dan keterlacakan FR/NFR–API/perangkat | docs/uiux/README.md dan screens.json | Tersedia. |
-| Catatan review dan tindak lanjut | docs/uiux/review-results.md, review-checklist.md, technical-review.md | Catatan pengguna dan hasil tambahan terisi; login serta urutan publikasi diperbaiki. |
-| Bukti pemeriksaan teknis | docs/uiux/bukti-review/hasil-pemeriksaan-teknis.json | 15 pemeriksaan tambahan lulus; 42 dasar juga lulus. |
-| Bukti manual perangkat dan keputusan kelompok | docs/uiux/bukti-review/ dan review-results.md | Diisi dari pemeriksaan nyata yang belum dilaporkan. |
-| Commit repository SILAR kelompok | Tautan commit pada card | Diisi setelah commit/push kelompok. |
+| Review, temuan dan tindak lanjut | review-results.md, review-checklist.md, technical-review.md, audit-follow-up.md | Diperbarui dengan hasil pengguna, auditor dan regresi sesuai lingkup masing-masing. |
+| Bukti audit browser paket awal | bukti-review/audit-sumber-2026-10-18.md | Tujuh alur lulus dan 112 kombinasi viewport dicatat; satu temuan menu dan satu kontras ditemukan. |
+| Bukti teknis sumber hasil perbaikan | bukti-review/hasil-pemeriksaan-teknis.json dan hasil-regresi-audit.json | 42 dasar + 15 tambahan + 3 regresi lulus. |
+| Riwayat sebelum perbaikan | bukti-review/regresi-audit-sebelum-2026-10-18.json dan hasil-pemeriksaan-teknis-2026-10-16.json | Dipertahankan sebagai bukti historis. |
+| Visual ulang/perangkat dan penerimaan kelompok | bukti-review/ dan review-results.md | Belum disampaikan; langkah tersedia pada review-next-steps.md. |
+| Commit final repository SILAR kelompok | Tautan pada card | Diisi setelah commit/push kelompok yang sebenarnya. |
 
-Prototype daring: https://silar-slr07-wireframe.ntesengmajola699.chatgpt.site. Akses mengikuti izin yang berlaku. File lokal dapat dijalankan untuk review kelompok. Word/PDF/PNG merupakan pelengkap pilihan kelompok.
+Prototype daring: https://silar-slr07-wireframe.ntesengmajola699.chatgpt.site. Akses mengikuti izin yang berlaku. Word/PDF/PNG dapat menjadi pelengkap pilihan kelompok.
 
 ## Teks bukti untuk card
 
-Sumber desain dan prototype SILAR tersedia di `docs/uiux/prototype/`; dokumentasi dan pemetaan kebutuhan ada pada `docs/uiux/README.md` dan `screens.json`. Review awal Nicy Putra Pratama tanggal 16 Oktober 2026 telah dicatat. Pemeriksaan teknis tambahan publikasi, penutupan, Admin, Portal Publik, notifikasi/offline/PWA dan konten awareness tersedia pada hasil review dan bukti JSON. Login salah serta urutan publikasi portal telah diperbaiki; 42 pemeriksaan dasar dan 15 tambahan lulus. Finalisasi manual perangkat/usability, uji ulang akun dan penerimaan kelompok masih perlu dicatat. Tautan commit diisi setelah unggah repository SILAR kelompok.
+Sumber desain/prototype tersedia pada docs/uiux/prototype/; pemetaan dan pedoman implementasi ada pada README.md serta screens.json. Review awal Nicy Putra Pratama tanggal 16 Oktober dan audit eksternal 18 Oktober telah dicatat sesuai sumber. Menu ponsel setelah Buat Laporan serta kontras avatar diperbaiki. Paket hasil perbaikan lulus 60 pemeriksaan teknis. Audit browser pada paket awal mencatat tujuh alur lulus dan 112 kombinasi halaman/peran/viewport, dengan keterbatasan simulasi Linux. Visual ulang menu/avatar, pemeriksaan perangkat/usability, keputusan penerimaan kelompok dan commit GitHub kelompok masih perlu catatan aktual. Status: In Review.
 
 ## Commit yang disarankan
 
 ```text
-SLR_07 Melengkapi Paket UI UX dan Hasil Review SILAR
+SLR_07 Memperbaiki Menu Ponsel dan Melengkapi Hasil Audit SILAR
 ```
-
-Bila melalui terminal, dari akar repository SILAR:
 
 ```sh
 git add docs/uiux
-git commit -m "SLR_07 Melengkapi Paket UI UX dan Hasil Review SILAR"
+git commit -m "SLR_07 Memperbaiki Menu Ponsel dan Melengkapi Hasil Audit SILAR"
 ```
 
-Periksa perubahan sebelum commit, kemudian push sesuai branch kelompok. Paket ini tidak melakukan push ke GitHub SILAR kelompok. Commit Site prototype tidak menggantikan commit repository kelompok.
+Periksa perubahan sebelum commit, kemudian push sesuai branch kelompok. Pekerjaan ini tidak melakukan push ke GitHub SILAR kelompok; commit sumber prototype daring bukan penggantinya.
 
-## Finalisasi
+## Finalisasi penerimaan
 
-1. Jalankan prototype dari lokasi yang benar dan lakukan uji ulang singkat login salah/OTP kedaluwarsa.
-2. Lakukan pemeriksaan perangkat dan usability U07-16; telusuri alur tambahan bersama kelompok. Panduan ada di review-next-steps.md.
-3. Catat hasil aktual, lingkungan, bukti relevan dan keputusan kelompok.
-4. Unggah docs/uiux/ dan cantumkan tautan commit sebenarnya pada card. Centang selesai sesuai hasil finalisasi.
+1. Ulangi menu pada draft lama/baru di 360/390 px dan sesudah berganti ukuran; periksa kontras browser.
+2. Catat perangkat/browser sasaran, pengalaman penggunaan, nama reviewer akhir, tanggal dan keputusan kelompok. Jika sudah dilakukan di luar ZIP, lampirkan bukti aktual.
+3. Tautkan commit final dan tutup temuan berdasarkan hasilnya. Card dapat Done untuk lingkup SLR_07 tanpa menunggu frontend produksi atau AI, setelah kriteria tahap terpenuhi.
 
-Sumber HTML/CSS/JavaScript merupakan sarana prototype; frontend produksi tetap Vue 3. Prototype tidak menambahkan pertanyaan adaptif atau membuktikan backend/model telah berjalan.
+Keadaan penerimaan yang belum disampaikan dicatat eksplisit pada review-results.md; keputusan kelompok tidak diasumsikan dari hasil otomatis.

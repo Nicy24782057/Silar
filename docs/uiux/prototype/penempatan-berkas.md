@@ -15,6 +15,7 @@ Ekstrak ZIP di folder sementara, lalu salin **folder `docs`** ke **akar proyek S
 | `docs/uiux/test-plan.md` | Langkah serta harapan U07-01–U07-16. | Pedoman review |
 | `docs/uiux/review-results.md` | Hasil pengguna, hasil teknis, temuan dan tindak lanjut. | Bukti review |
 | `docs/uiux/review-checklist.md` | Rekap area dan pekerjaan tersisa. | Pendukung review |
+| `docs/uiux/audit-follow-up.md` | Dasar audit, penyelesaian A07-01–A07-03 dan batas bukti. | Tindak lanjut audit |
 | `docs/uiux/technical-review.md` | Perbaikan dan metode pemeriksaan teknis. | Bukti tindak lanjut |
 | `docs/uiux/review-next-steps.md` | Uji ulang dan pemeriksaan manual yang masih dibutuhkan. | Pedoman finalisasi |
 | `docs/uiux/submission.md` | Lokasi bukti card dan usulan commit. | Pedoman pengumpulan |
@@ -23,6 +24,11 @@ Ekstrak ZIP di folder sementara, lalu salin **folder `docs`** ke **akar proyek S
 | `docs/uiux/bukti-review/hasil-pemeriksaan-teknis.json` | Hasil eksekusi, ID uji dan hash aset yang diperiksa. | Bukti teknis aktual |
 | `docs/uiux/tools/check.mjs` | 42 pemeriksaan logika/struktur dasar. | Pendukung, memerlukan Node.js |
 | `docs/uiux/tools/review-check.mjs` | 15 pemeriksaan tambahan terhubung ke skenario review. | Pendukung, memerlukan Node.js |
+| `docs/uiux/tools/audit-check.mjs` | 3 regresi menu draft lama/baru dan kontras avatar. | Pendukung, memerlukan Node.js |
+| `docs/uiux/bukti-review/hasil-regresi-audit.json` | Hasil sesudah perbaikan menu/avatar beserta hash aset. | Bukti teknis aktual |
+| `docs/uiux/bukti-review/regresi-audit-sebelum-2026-10-18.json` | Hasil gagal sebelum perbaikan sebagai riwayat. | Bukti historis |
+| `docs/uiux/bukti-review/hasil-pemeriksaan-teknis-2026-10-16.json` | Hasil teknis paket awal. | Bukti historis |
+| `docs/uiux/bukti-review/audit-sumber-2026-10-18.md` | Salinan laporan audit pengguna, termasuk bagian 07/08, tanpa perubahan. | Sumber bukti audit |
 | `docs/uiux/prototype/*.md` dan `prototype/screens.json` | Salinan dokumen untuk tombol unduh pada prototype lokal. | Salinan distribusi; sumber utama tetap di `docs/uiux/` |
 
 **Lokasi yang benar:** `SILAR/docs/uiux/prototype/index.html`. Jangan menyalin folder `docs` ke dalam `docs/uiux/`, karena akan menghasilkan jalur bertumpuk. Salin seluruh folder agar tautan dan modul tetap lengkap. Word/PDF/PNG merupakan pelengkap pilihan kelompok; paket ini sudah memuat sumber editable serta prototype.
@@ -42,6 +48,7 @@ Pemeriksaan teknis opsional, jika Node.js tersedia:
 ```sh
 node docs/uiux/tools/check.mjs
 node docs/uiux/tools/review-check.mjs
+node docs/uiux/tools/audit-check.mjs
 ```
 
 Untuk menyimpan hasil eksekusi baru secara terpisah:
