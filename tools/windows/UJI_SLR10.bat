@@ -1,6 +1,6 @@
 @echo off
 setlocal
-cd /d "%~dp0"
+cd /d "%~dp0..\..\"
 py -3.13 -m unittest discover -s tools\tests -v
 if errorlevel 1 goto gagal
 cd /d "%~dp0code\backend"
