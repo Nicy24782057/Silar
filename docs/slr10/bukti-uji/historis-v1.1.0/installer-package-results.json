@@ -1,0 +1,29 @@
+{
+  "environment": "Full release installation into disposable fixture repositories, not actual Windows or inference; AI files are preservation sentinels only",
+  "results": [
+    {
+      "scenario": "Full release applied to SLR_08 plus synthetic SLR_11 sentinels; protected content preserved",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Actual 1.0.0 payload and old manifest upgraded to 1.1.0 with Pillow 13.0.0 and new build",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Full package reinstall proposes zero changes",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Current release Windows CRLF sources and manifest reinstall without false conflicts",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Unknown local code stops full preflight without any file changes",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Setup origin merge preserves existing port and credential sentinels",
+      "status": "PASS"
+    }
+  ]
+}

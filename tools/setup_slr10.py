@@ -40,7 +40,7 @@ def configure_env(env_path, decoder=None, probe=None):
             key, value = line.split('=', 1)
             values[key.strip()] = value.strip().strip('"').strip("'")
     if values.get('SILAR_LOCAL_MODE', '').lower() not in ('1', 'true', 'yes'):
-        raise ValueError('SIAPKAN_SLR10 hanya untuk .env SILAR_LOCAL_MODE=true. Konfigurasi nonlokal tidak diubah.')
+        raise ValueError('Setup SLR_10 hanya untuk .env SILAR_LOCAL_MODE=true. Konfigurasi nonlokal tidak diubah.')
     changes = {'FRONTEND_URL': 'http://localhost:5173', 'FRONTEND_VERIFY_PATH': '/verify-email',
                'FRONTEND_ACTIVATE_PATH': '/activate-operator', 'FRONTEND_RESET_PATH': '/reset-password'}
     for key in ('CORS_ALLOWED_ORIGINS', 'CSRF_TRUSTED_ORIGINS'):
@@ -79,7 +79,7 @@ def main():
             ignore.write_text(text + '\n.slr10-backups/\n')
         env_path = BACKEND / '.env'
         if not env_path.exists():
-            raise ValueError('Konfigurasi backend belum ada. Jalankan code/backend/SETUP_LOKAL.bat terlebih dahulu; PostgreSQL 16 milikmu memakai port 5433.')
+            raise ValueError('Konfigurasi backend belum ada. Ikuti bagian instalasi baru pada PANDUAN_RUNNING.md; gunakan PostgreSQL 16 dan port lokal yang benar.')
         executable = BACKEND / '.venv' / ('Scripts/python.exe' if os.name == 'nt' else 'bin/python')
         if not executable.exists():
             venv.create(BACKEND / '.venv', with_pip=True)
@@ -110,7 +110,7 @@ def main():
             raise ValueError('Pasang Node.js LTS, lalu jalankan kembali setup untuk membangun frontend.')
         if not decoder or not probe:
             print('Catatan: FFmpeg belum terbaca. WAV PCM dapat dipakai; audio lain menunggu decoder. Pasang FFmpeg lalu jalankan ulang setup.')
-        print('\nPersiapan selesai. Jalankan JALANKAN_BACKEND.bat dan JALANKAN_FRONTEND_BAWAAN.bat di terminal terpisah.')
+        print('\nPersiapan selesai. Ikuti bagian menjalankan backend dan frontend pada PANDUAN_RUNNING.md; gunakan dua terminal.')
         return 0
     except (ValueError, OSError, subprocess.CalledProcessError) as error:
         print('Persiapan belum selesai:', str(error))

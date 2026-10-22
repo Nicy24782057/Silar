@@ -1,0 +1,44 @@
+PASS Simpan sumber mempertahankan bukti dan bundle lama
+PASS Simpan tanpa perubahan tidak menggandakan bukti
+PASS Analisis belum berarti konfirmasi atau submit
+PASS Submit mengunci koreksi Reporter
+PASS NON_EVENT menahan konfirmasi dan submit meskipun field dikoreksi
+PASS uncertain boleh dikirim dan flag tidak hilang
+PASS Revisi field membatalkan konfirmasi dan mempertahankan alasan uncertain
+PASS Revisi narasi membutuhkan analisis ulang dan tidak memakai fakta narasi lama
+PASS Perubahan sumber selama run tidak mengaktifkan hasil lama
+PASS RUNNING menolak analisis baru
+PASS UNKNOWN menahan analisis sampai pemulihan teknis disahkan
+PASS Respons hilang ditemukan melalui baca status tanpa analisis kedua
+PASS Kapasitas penuh tidak membuat run atau mengubah Report
+PASS Satu klaim menutup akses Operator lain
+PASS Pengalihan Admin mencabut akses penanggung jawab lama
+PASS Admin tidak dapat membuka draft atau memperoleh isi privat otomatis
+PASS Penonaktifan dan pencabutan izin berlaku pada tindakan berikutnya
+PASS Akun Operator baru belum aktif dan tidak menerima password Admin
+PASS INVALID diarahkan internal dan tidak menyalakan publikasi
+PASS PREPARE, kandidat, approval dan publish merupakan tindakan terpisah
+PASS Kandidat publik menolak field di luar allowlist
+PASS Batal kandidat pengganti mempertahankan versi yang sudah terbit
+PASS Review ditolak setelah publikasi pertama
+PASS Close ditahan oleh tindak lanjut PENDING dan kandidat aktif
+PASS Close sah terminal untuk penanganan dan pengalihan
+PASS Pembatalan tindak lanjut memerlukan alasan
+PASS Konflik versi tidak langsung menjalankan ulang mutasi
+PASS Offline menahan operasi laporan
+PASS OTP salah dan kedaluwarsa ditampilkan sebagai kegagalan aman
+PASS Login menolak password salah dan email tidak dikenal tanpa masuk ke ruang Reporter
+PASS Login akun awal contoh menerima hanya pasangan email dan password yang benar
+PASS Pendaftaran perlu verifikasi sebelum password pendaftaran bisa digunakan untuk masuk
+PASS OTP kedaluwarsa tidak menyelesaikan verifikasi akun contoh
+PASS Reset menolak kode salah atau konfirmasi berbeda lalu mengganti password untuk login berikutnya
+PASS Permintaan reset tetap generik dan OTP reset tidak menyelesaikan verifikasi email
+PASS Semua kelompok layar dan dialog dapat dirender tanpa error JavaScript
+PASS Sesudah revisi narasi, layar menawarkan analisis revisi dan tidak tersangkut status lama
+PASS Pemulihan analisis narasi revisi mempertahankan pilihan retry revisi
+PASS Antrean tidak merender narasi atau alamat privat
+PASS Tampilan Reporter tidak merender alasan review internal
+PASS Input pengguna di-escape pada render
+PASS Tidak ada penyimpanan privat lokal atau panggilan API nyata
+
+42 checks passed. Browser/visual QA oleh skrip: tidak dilakukan.

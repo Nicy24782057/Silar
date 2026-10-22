@@ -133,6 +133,34 @@ class InstallerTests(unittest.TestCase):
         installer.install(self.target)
         self.assertEqual((self.target/'tools/release-manifest.json').read_bytes(), (self.pack/'tools/release-manifest.json').read_bytes())
 
+    def test_known_obsolete_launcher_is_backed_up_removed_and_reinstall_is_empty(self):
+        name, raw = 'JALANKAN_BACKEND.bat', b'@echo off\r\nrem known launcher\r\n'
+        self.write(self.target, name, raw)
+        self.manifest['removed_files'] = {name: {'accepted_sha256': [digest(raw)]}}
+        self.save_manifest()
+        installer.install(self.target)
+        self.assertFalse((self.target/name).exists())
+        backups = list((self.target/'.slr10-backups').glob('*/'+name))
+        self.assertEqual(len(backups), 1)
+        self.assertEqual(backups[0].read_bytes(), raw)
+        self.assertEqual(installer.install(self.target, dry_run=True), 0)
+
+    def test_locally_changed_obsolete_launcher_stops_all_writes(self):
+        name = 'JALANKAN_BACKEND.bat'
+        self.write(self.target, name, b'local team changes')
+        self.manifest['removed_files'] = {name: {'accepted_sha256': [digest(b'old release')]}}
+        self.save_manifest()
+        before = self.snapshot()
+        with self.assertRaises(ValueError): installer.install(self.target)
+        self.assertEqual(before, self.snapshot())
+
+    def test_obsolete_path_outside_repository_is_rejected(self):
+        self.manifest['removed_files'] = {'../outside.txt': {'accepted_sha256': []}}
+        self.save_manifest()
+        before = self.snapshot()
+        with self.assertRaises(ValueError): installer.install(self.target)
+        self.assertEqual(before, self.snapshot())
+
 
 if __name__ == '__main__':
     unittest.main()

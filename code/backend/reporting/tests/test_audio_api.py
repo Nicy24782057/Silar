@@ -7,7 +7,7 @@ from django.test import TestCase, override_settings
 from rest_framework.test import APIClient
 from common.testing import user
 from core.models import EvidenceItem, Report
-from reporting.tests.audio_fixtures import audio_fixtures
+from reporting.tests.audio_fixtures import audio_fixtures, duration_audio_fixtures
 
 
 class AudioContractAPITests(TestCase):
@@ -91,3 +91,28 @@ class AudioContractAPITests(TestCase):
         self.report = response.data['data']['report']
         response = self.upload('video.mp4', (folder / 'video.mp4').read_bytes(), 'video/mp4')
         self.assertEqual(response.status_code, 415, response.data)
+
+    def test_exact_120_second_uploads_keep_original_bytes(self):
+        with tempfile.TemporaryDirectory() as folder:
+            fixtures = duration_audio_fixtures(folder, 120 * 16000)
+            for path, mime in fixtures:
+                with self.subTest(name=path.name):
+                    raw = path.read_bytes()
+                    response = self.upload(path.name, raw, mime)
+                    self.assertEqual(response.status_code, 201, response.data)
+                    self.report = response.data['data']['report']
+                    item = response.data['data']['object']
+                    self.assertEqual(item['sha256'], hashlib.sha256(raw).hexdigest())
+                    media = self.client.get('/api/v1/evidence/' + item['id'] + '/media/')
+                    self.assertEqual(b''.join(media.streaming_content), raw)
+
+    def test_upload_over_120_seconds_does_not_change_draft(self):
+        with tempfile.TemporaryDirectory() as folder:
+            fixtures = duration_audio_fixtures(folder, 120 * 16000 + 160)
+            for path, mime in fixtures:
+                with self.subTest(name=path.name):
+                    response = self.upload(path.name, path.read_bytes(), mime)
+                    self.assertEqual(response.status_code, 413, response.data)
+                    self.assertEqual(response.data['error']['code'], 'INPUT_TOO_LARGE')
+            self.assertFalse(EvidenceItem.objects.filter(report_id=self.report['id']).exists())
+            self.assertEqual(Report.objects.get(pk=self.report['id']).revision, self.report['revision'])

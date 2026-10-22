@@ -1,0 +1,17 @@
+PASS RT-01 Uji ulang password salah dan OTP kedaluwarsa
+PASS RT-02 Pemisahan persiapan, kandidat, approval, publish
+PASS RT-03 Sanitasi dan pembatalan kandidat pengganti
+PASS RT-04 Prasyarat penutupan
+PASS RT-05 Jalur internal/terbit dan CLOSED terminal
+PASS RT-06 Akun dan aktivasi Operator
+PASS RT-07 Pengalihan dan pencabutan izin
+PASS RT-08 Proyeksi Admin, audit dan monitoring
+PASS RT-09 Pencarian, kategori dan lokasi umum
+PASS RT-10 Urutan publikasi terbaru
+PASS RT-11 Batas informasi publik
+PASS RT-12 Notifikasi baca, tujuan dan akses lama
+PASS RT-13 Pemicu notifikasi laporan
+PASS RT-14 Offline dan panduan instalasi
+PASS RT-15 Keberadaan pesan Digital Awareness
+
+15/15 pemeriksaan teknis lulus; browser/visual QA tidak dilakukan.

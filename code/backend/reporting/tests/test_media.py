@@ -10,7 +10,7 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 from PIL import Image
 from common.api import ApiProblem
 from reporting.media import validate_upload
-from reporting.tests.audio_fixtures import audio_fixtures
+from reporting.tests.audio_fixtures import audio_fixtures, duration_audio_fixtures
 
 
 class MediaDecoderTests(SimpleTestCase):
@@ -112,6 +112,41 @@ class MediaDecoderTests(SimpleTestCase):
         with self.assertRaises(ApiProblem) as error:
             validate_upload({'type': 'AUDIO', 'file': SimpleUploadedFile('long.wav', buffer.getvalue(), 'audio/wav')})
         self.assertEqual(error.exception.error_code, 'INPUT_TOO_LARGE')
+
+    def test_exact_120_seconds_accepts_all_target_codecs_with_padding(self):
+        with tempfile.TemporaryDirectory() as folder:
+            fixtures = duration_audio_fixtures(folder, 120 * 16000)
+            if fixtures is None:
+                self.skipTest('FFmpeg dan ffprobe diperlukan untuk batas codec.')
+            for path, mime in fixtures:
+                with self.subTest(name=path.name):
+                    original = path.read_bytes()
+                    metadata, raw = validate_upload({'type': 'AUDIO',
+                        'file': SimpleUploadedFile(path.name, original, mime)})
+                    self.assertEqual(metadata['mime_type'], mime)
+                    self.assertEqual(raw, original)
+
+    def test_119_9_seconds_remains_valid_for_all_target_codecs(self):
+        with tempfile.TemporaryDirectory() as folder:
+            fixtures = duration_audio_fixtures(folder, 1199 * 1600)
+            if fixtures is None:
+                self.skipTest('FFmpeg dan ffprobe diperlukan untuk batas codec.')
+            for path, mime in fixtures:
+                with self.subTest(name=path.name):
+                    metadata, _ = validate_upload({'type': 'AUDIO',
+                        'file': SimpleUploadedFile(path.name, path.read_bytes(), mime)})
+                    self.assertEqual(metadata['mime_type'], mime)
+
+    def test_decoded_audio_over_120_seconds_is_rejected_for_all_target_codecs(self):
+        with tempfile.TemporaryDirectory() as folder:
+            fixtures = duration_audio_fixtures(folder, 120 * 16000 + 160)
+            if fixtures is None:
+                self.skipTest('FFmpeg dan ffprobe diperlukan untuk batas codec.')
+            for path, mime in fixtures:
+                with self.subTest(name=path.name), self.assertRaises(ApiProblem) as error:
+                    validate_upload({'type': 'AUDIO',
+                        'file': SimpleUploadedFile(path.name, path.read_bytes(), mime)})
+                self.assertEqual(error.exception.error_code, 'INPUT_TOO_LARGE')
 
     def test_decoder_disappearing_is_a_service_failure(self):
         with patch('reporting.media.shutil.which', return_value='/missing/decoder'), \

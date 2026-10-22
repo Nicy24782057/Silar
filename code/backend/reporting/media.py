@@ -2,7 +2,6 @@
 import hashlib
 import io
 import json
-import math
 import os
 from pathlib import PureWindowsPath
 import shutil
@@ -20,6 +19,8 @@ AUDIO_LIMIT = 10 * MIB
 BUNDLE_LIMIT = 25 * MIB
 MAX_PIXELS = 12_000_000
 MAX_AUDIO_SECONDS = 120
+AUDIO_SAMPLE_RATE = 16000
+MAX_DECODED_AUDIO_BYTES = MAX_AUDIO_SECONDS * AUDIO_SAMPLE_RATE * 2
 AUDIO_PROFILES = {
     '.wav': ('audio/wav', {'wav'}, {'pcm_s16le', 'pcm_s24le', 'pcm_s32le', 'pcm_u8', 'pcm_f32le'}),
     '.mp3': ('audio/mpeg', {'mp3'}, {'mp3'}),
@@ -98,26 +99,20 @@ def validate_audio(raw, name):
             detected = set(data.get('format', {}).get('format_name', '').split(','))
             if len(audios) != 1 or videos or not formats.intersection(detected) or audios[0].get('codec_name') not in codecs:
                 problem()
-            # Browser MediaRecorder WebM may omit container duration. Validate
-            # decoded time below instead of rejecting a valid recording header.
-            try:
-                duration = float(data.get('format', {}).get('duration', audios[0].get('duration', 0)))
-            except (ValueError, TypeError):
-                duration = 0
-            if not math.isfinite(duration):
-                problem()
-            if duration > MAX_AUDIO_SECONDS:
-                problem('INPUT_TOO_LARGE', 'Durasi audio maksimal 2 menit.', 413)
+            # Container duration includes codec padding and is not the decoded
+            # signal length. Count mono 16 kHz s16 samples, as SLR_11 does.
+            # The output byte limit bounds long inputs just beyond the
+            # boundary; the upload itself is never rewritten.
             decoded = subprocess.run([decoder, '-nostdin', '-v', 'error', '-xerror', '-threads', '1',
-                '-protocol_whitelist', 'file,pipe', '-i', str(path), '-map', '0:a:0', '-vn', '-t', '121',
-                '-progress', 'pipe:1', '-f', 'null', '-'], capture_output=True, timeout=30)
+                '-protocol_whitelist', 'file,pipe', '-i', str(path), '-map', '0:a:0', '-vn',
+                '-ac', '1', '-ar', str(AUDIO_SAMPLE_RATE), '-c:a', 'pcm_s16le',
+                '-fs', str(MAX_DECODED_AUDIO_BYTES + 2), '-f', 's16le', 'pipe:1'],
+                capture_output=True, timeout=30)
             if decoded.returncode:
                 problem()
-            times = [int(line.split('=', 1)[1]) for line in decoded.stdout.decode(errors='replace').splitlines()
-                     if line.startswith('out_time_us=') and line.split('=', 1)[1].isdigit()]
-            if not times or max(times) <= 0:
+            if not decoded.stdout or len(decoded.stdout) % 2:
                 problem()
-            if max(times) > MAX_AUDIO_SECONDS * 1_000_000:
+            if len(decoded.stdout) > MAX_DECODED_AUDIO_BYTES:
                 problem('INPUT_TOO_LARGE', 'Durasi audio maksimal 2 menit.', 413)
             return mime
         except FileNotFoundError:

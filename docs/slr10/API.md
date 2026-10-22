@@ -35,8 +35,10 @@ Schema ReportDetail dan helper serialisasi berada pada `reporting/serializers.py
 
 Parameter awal mengikuti A7.3. Range audio tidak diimplementasikan pada penyajian FileResponse SLR_10; frontend mengambil satu blob privat ketika pengguna meminta media. Dukungan seeking/streaming lanjutan ditinjau saat integrasi, tanpa membuka URL publik.
 
-## Profil audio revisi 1.1.0
+## Profil audio revisi 1.1.1
 
 Ekstensi/codec: WAV PCM, MP3/MP3, WebM/Opus, M4A/AAC, serta MP4/AAC. Berkas harus memiliki tepat satu stream audio dan tidak memiliki stream video, termasuk cover gambar. OGG, ALAC, Vorbis dan MP4 yang berisi video ditolak dengan MEDIA_UNSUPPORTED sebelum penyimpanan evidence/revision berubah. Batas tetap 10 MiB, lebih dari nol sampai 120 detik, satu audio per bundle dan 25 MiB total termasuk byte teks. Byte asli, hash dan metadata dipertahankan.
 
 MIME canonical audio: audio/wav, audio/mpeg, audio/webm, audio/mp4. Alias container video/mp4 yang diberikan browser tidak mengizinkan video: validator tetap membuktikan AAC tanpa stream video dan menyimpan metadata audio/mp4. MIME lain yang tidak sesuai isi ditolak. Decoder yang belum tersedia tetap 503 MEDIA_DECODER_NOT_READY; kerusakan/codec tidak didukung tetap 415 MEDIA_UNSUPPORTED.
+
+Durasi pada versi 1.1.1 ditentukan dari jumlah sampel hasil decode mono 16 kHz, maksimal 1.920.000 sampel (120 detik). Metadata container tidak menjadi dasar penolakan tunggal. Byte asli, respons, kode error, dan schema endpoint tetap sama.

@@ -1,0 +1,71 @@
+{
+  "environment": "Node; VM/static prototype checks, not browser or actual AI",
+  "results": [
+    {
+      "script": "check.mjs",
+      "line_endings": "LF",
+      "returncode": 0,
+      "passed": 42,
+      "last_lines": [
+        "PASS Tidak ada penyimpanan privat lokal atau panggilan API nyata",
+        "",
+        "42 checks passed. Browser/visual QA oleh skrip: tidak dilakukan."
+      ]
+    },
+    {
+      "script": "review-check.mjs",
+      "line_endings": "LF",
+      "returncode": 0,
+      "passed": 15,
+      "last_lines": [
+        "PASS RT-15 Keberadaan pesan Digital Awareness",
+        "",
+        "15/15 pemeriksaan teknis lulus; browser/visual QA tidak dilakukan."
+      ]
+    },
+    {
+      "script": "audit-check.mjs",
+      "line_endings": "LF",
+      "returncode": 0,
+      "passed": 3,
+      "last_lines": [
+        "PASS AR07-03 Kontras warna teks avatar minimal 4,5:1",
+        "",
+        "3/3 pemeriksaan regresi audit lulus; browser/visual QA tidak dilakukan."
+      ]
+    },
+    {
+      "script": "check.mjs",
+      "line_endings": "CRLF",
+      "returncode": 0,
+      "passed": 42,
+      "last_lines": [
+        "PASS Tidak ada penyimpanan privat lokal atau panggilan API nyata",
+        "",
+        "42 checks passed. Browser/visual QA oleh skrip: tidak dilakukan."
+      ]
+    },
+    {
+      "script": "review-check.mjs",
+      "line_endings": "CRLF",
+      "returncode": 0,
+      "passed": 15,
+      "last_lines": [
+        "PASS RT-15 Keberadaan pesan Digital Awareness",
+        "",
+        "15/15 pemeriksaan teknis lulus; browser/visual QA tidak dilakukan."
+      ]
+    },
+    {
+      "script": "audit-check.mjs",
+      "line_endings": "CRLF",
+      "returncode": 0,
+      "passed": 3,
+      "last_lines": [
+        "PASS AR07-03 Kontras warna teks avatar minimal 4,5:1",
+        "",
+        "3/3 pemeriksaan regresi audit lulus; browser/visual QA tidak dilakukan."
+      ]
+    }
+  ]
+}

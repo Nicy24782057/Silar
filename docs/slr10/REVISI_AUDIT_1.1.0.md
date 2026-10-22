@@ -1,5 +1,7 @@
 # Revisi audit SLR_10 — 1.1.0
 
+> Arsip rilis 1.1.0. Petunjuk operasional aktif kini berada di `../../PANDUAN_RUNNING.md`; hasil terbaru pada `HASIL_VERIFIKASI.md`.
+
 Tanggal: 22 Oktober 2026. Menggantikan paket implementasi 1.0.0 pada bagian SLR_10. Status: revisi kode dan verifikasi komponen; penerimaan gabungan Windows/PostgreSQL/SLR_11 belum ditutup.
 
 | ID | Implementasi | Bukti dan status |

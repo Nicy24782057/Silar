@@ -1,6 +1,6 @@
 # Implementasi SLR_10 SILAR
 
-Versi paket 1.1.0 (revisi audit), 22 Oktober 2026. Paket menyediakan frontend Vue dan layanan input multimodal di atas fondasi SLR_08. Hasilnya dipakai oleh SLR_11 untuk analisis, kemudian SLR_12 untuk pemeriksaan, koreksi, konfirmasi, dan pengiriman resmi.
+Versi paket 1.1.1 (revisi penutup implementasi), 22 Oktober 2026. Paket menyediakan frontend Vue dan layanan input multimodal di atas fondasi SLR_08. Hasilnya dipakai oleh SLR_11 untuk analisis, kemudian SLR_12 untuk pemeriksaan, koreksi, konfirmasi, dan pengiriman resmi.
 
 ## Acuan dan posisi sumber
 
@@ -21,34 +21,13 @@ Dokumen dan bukti historis SLR_07/SLR_08 dipertahankan. Manifest/hasil tes lama 
 | Fondasi | `code/backend/accounts/`, `core/`, `common/` | Model dan layanan SLR_08 digunakan kembali. Tidak ada model laporan kedua atau migration pengganti. |
 | PWA | `code/frontend/public/`, `tools/service-worker.js` | Manifest, ikon, precache aset UI, cache versi dan pemberitahuan offline. |
 | Pengujian | `code/backend/reporting/tests/`, `code/frontend/tests/` | Akses, validasi decoder, pemulihan sumber, revision, idempotency dan batas cache. |
-| Pemasangan | `tools/` dan BAT akar | Pemasang perubahan, konfigurasi origin lokal serta server build Vue bawaan. |
+| Pemasangan | `tools/` dan `PANDUAN_RUNNING.md` | Pemasang perubahan, konfigurasi origin lokal serta server build Vue bawaan. |
 
 ## Menjalankan di Windows
 
-Ikuti `MULAI_DI_SINI.txt`. Gunakan Python 3.13 yang sudah terpasang dan PostgreSQL 16 dengan konfigurasi `.env` yang sudah berhasil. Jangan mengulang inisialisasi database atau menghapus migration. Tidak ada password akun bawaan dalam paket.
+Ikuti satu panduan operasional di [PANDUAN_RUNNING.md](../../PANDUAN_RUNNING.md). Gunakan Python 3.12 dan PostgreSQL 16 dengan konfigurasi lokal yang sudah berhasil; instalasi tim memakai port 5433. Panduan menjelaskan pembaruan repository, menjalankan dua server, email lokal, dan pengujian sesuai perubahan.
 
-Pemasangan ke repository lama dilakukan dari folder ekstraksi melalui `PASANG_KE_REPO.bat`. Pemasang memeriksa hash sumber dan konflik sebelum menyalin, menggabungkan penambahan URL/app dengan konfigurasi yang sudah ada, serta mencadangkan berkas yang berubah dalam `.slr10-backups/`. Folder itu diabaikan Git. Berkas `ai_pipeline/` dan route analisis milik rekan tidak diganti.
-
-Dari repository tujuan jalankan `SIAPKAN_SLR10.bat`. Skrip memasang `requirements-slr10.txt` bersama `requirements-ai.txt` apabila tersedia dalam satu resolver, menjalankan `check`, `migrate` dan `bootstrap_silar`, lalu menggunakan build bawaan atau membangun ulang jika npm tersedia. Konfigurasi lokal hanya menyelaraskan origin serta path akun dan lokasi decoder; kredensial database/JWT/OTP dipertahankan.
-
-Jalankan backend dan frontend pada terminal terpisah:
-
-```bat
-JALANKAN_BACKEND.bat
-JALANKAN_FRONTEND_BAWAAN.bat
-```
-
-Buka `http://localhost:5173`. Server frontend bawaan memproksi `/api/` ke Django `localhost:8001`; cookie dan CSRF memakai hostname localhost yang sama. Server bawaan hanya mengikat loopback dan ditujukan untuk pengembangan/demo lokal. Deployment menggunakan web server/HTTPS yang disiapkan pada SLR_16.
-
-Untuk pengembangan frontend menggunakan Node.js LTS:
-
-```bat
-cd code\frontend
-npm ci
-npm run dev
-```
-
-Frontend produksi dibangun melalui `npm run build`. `npm run preview` dan server Python bawaan menyajikan build yang sama. Node 20.19+ atau 22.12+ sesuai engine Vite; Node.js LTS digunakan untuk penyiapan baru. Versi paket dikunci dalam package-lock.json.
+Installer Python tetap tersedia dan melindungi pekerjaan SLR11. Launcher root lama diganti panduan; berkas distribusi yang dihapus dicadangkan hanya jika hash-nya dikenal. Petunjuk menjalankan aplikasi tidak lagi bergantung pada launcher root.
 
 ## Alur yang sudah disediakan
 
@@ -76,7 +55,7 @@ PNG/JPEG statis diperiksa dengan Pillow melalui verify dan load; ekstensi dan MI
 | WebM | Opus saja, tanpa video atau cover gambar. |
 | OGG, ALAC, Vorbis | Ditolak sebelum disimpan sebagai bukti audio valid. |
 
-FFprobe memeriksa container/stream dan FFmpeg benar-benar mendekode audio. Rekaman WebM yang tidak memiliki durasi pada header dinilai dari waktu hasil decode. Semua stream video ditolak, termasuk attached picture/cover art. MIME container `video/mp4` dari pemilih berkas browser hanya diterima bila isinya benar-benar AAC tanpa stream video; metadata disimpan sebagai `audio/mp4`. Batas ukuran, durasi dan timeout decoder tetap memerlukan pengukuran pada perangkat tujuan. Setup mencoba memasang `Gyan.FFmpeg` melalui WinGet bila decoder Windows belum tersedia. Apabila pemasangan gagal, jalankan kembali setelah FFmpeg tersedia; aplikasi menolak format yang belum bisa didekode dengan pesan aman.
+FFprobe memeriksa container/stream dan FFmpeg benar-benar mendekode audio. Durasi ditentukan dari jumlah sampel PCM mono 16 kHz hasil decode, sehingga padding metadata MP3/WebM tidak menolak isi audio yang tepat 120 detik. Output decoder dibatasi ukurannya dan byte asli tetap dipertahankan. Semua stream video ditolak, termasuk attached picture/cover art. MIME container `video/mp4` dari pemilih berkas browser hanya diterima bila isinya benar-benar AAC tanpa stream video; metadata disimpan sebagai `audio/mp4`. Batas ukuran, durasi dan timeout decoder tetap memerlukan pengukuran pada perangkat tujuan. Setup mencoba memasang `Gyan.FFmpeg` melalui WinGet bila decoder Windows belum tersedia. Apabila pemasangan gagal, jalankan kembali setelah FFmpeg tersedia; aplikasi menolak format yang belum bisa didekode dengan pesan aman.
 
 ## Keamanan dan PWA
 
@@ -106,3 +85,7 @@ Rincian perubahan dan status penutupannya ada pada `REVISI_AUDIT_1.1.0.md`; audi
 Recorder hanya memilih WebM/Opus atau MP4/AAC yang didukung browser; bila tidak tersedia atau izin gagal, tersedia pesan perbaikan dan kanal unggah/teks/gambar. Backend tetap memeriksa isi sebenarnya. Peringatan normalisasi NARA ditampilkan terpisah dari uncertain, hanya ketika identitas run/hasil/sumber cocok dengan kartu yang ditampilkan.
 
 Rujukan API browser: [MediaRecorder.isTypeSupported](https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/isTypeSupported_static), [MediaRecorder.mimeType](https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/mimeType), dan [error event](https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/error_event).
+
+## Revisi 1.1.1
+
+Lihat [REVISI_1.1.1.md](REVISI_1.1.1.md) dan [HASIL_VERIFIKASI.md](HASIL_VERIFIKASI.md). Pengujian diulang pada validator/API audio, installer/paket, dan build yang terdampak. Source logika frontend/PWA, fondasi SLR08, serta kontrak API tidak diubah. Bukti rilis 1.1.0 berada di `bukti-uji/historis-v1.1.0/`. Penerimaan Windows/PostgreSQL dan alur AI gabungan tetap dicatat sesuai hasil aktual tim.

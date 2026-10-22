@@ -25,17 +25,31 @@ def known_hashes(path):
 def build(root, previous, baseline=None):
     old = json.loads((previous/'tools/release-manifest.json').read_text())
     names = set(old['files'])
+    names.update(old.get('removed_files', {}))
     for folder in ('code/frontend','code/backend/reporting','docs/slr10','tools'):
         for path in (root/folder).rglob('*'):
             if path.is_file() and not any(part in {'node_modules','__pycache__','.venv'} for part in path.relative_to(root).parts):
                 names.add(path.relative_to(root).as_posix())
     names |= {p.name for p in root.glob('*.bat')}
+    names |= {'README.md', 'PANDUAN_RUNNING.md', 'code/New Dokumen Teks.txt'}
     names |= {'docs/uiux/tools/check.mjs','docs/uiux/tools/review-check.mjs','docs/uiux/tools/audit-check.mjs'}
     names.discard('tools/release-manifest.json')
     records = {}
+    removed = {}
     for name in sorted(names):
         source = root/name
         if not source.is_file():
+            accepted = known_hashes(previous/name)
+            accepted.update(old.get('removed_files', {}).get(name, {}).get('accepted_sha256', []))
+            previous_record = old['files'].get(name, {})
+            accepted.update(previous_record.get('accepted_previous_sha256', []))
+            accepted.update(previous_record.get('equivalent_sha256', []))
+            accepted.update(value for value in [previous_record.get('sha256'),
+                                                previous_record.get('baseline_sha256')] if value)
+            if baseline is not None:
+                accepted |= known_hashes(baseline/name)
+            if accepted:
+                removed[name] = {'accepted_sha256': sorted(accepted)}
             continue
         record = {'sha256':digest(source.read_bytes())}
         equivalents = known_hashes(source)
@@ -47,13 +61,20 @@ def build(root, previous, baseline=None):
         if baseline_hash:
             record['baseline_sha256'] = baseline_hash
         accepted = known_hashes(previous/name)
+        accepted.update(old['files'].get(name, {}).get('accepted_previous_sha256', []))
         if baseline is not None:
             accepted |= known_hashes(baseline/name)
         if accepted:
             record['accepted_previous_sha256'] = sorted(accepted)
         records[name] = record
-    manifest = {'version':'1.1.0','baseline':old['baseline'],'previous_versions':['1.0.0'],
-        'previous_manifest_sha256':sorted(known_hashes(previous/'tools/release-manifest.json')),'files':records}
+    previous_manifests = known_hashes(previous/'tools/release-manifest.json')
+    previous_manifests.update(old.get('previous_manifest_sha256', []))
+    if baseline is not None:
+        previous_manifests |= known_hashes(baseline/'tools/release-manifest.json')
+    version = json.loads((root/'code/frontend/package.json').read_text())['version']
+    manifest = {'version':version,'baseline':old['baseline'],
+        'previous_versions':sorted(set(old.get('previous_versions', []) + [old['version']])),
+        'previous_manifest_sha256':sorted(previous_manifests), 'files':records, 'removed_files':removed}
     (root/'tools/release-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     return len(records)
 

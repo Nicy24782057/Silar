@@ -6,6 +6,28 @@ import wave
 from PIL import Image
 
 
+def duration_audio_fixtures(folder, sample_count):
+    """Encode a known number of 16 kHz samples, including codec padding."""
+    if not shutil.which('ffmpeg') or not shutil.which('ffprobe'):
+        return None
+    folder = Path(folder)
+    source = folder / 'duration.wav'
+    with wave.open(str(source), 'wb') as output:
+        output.setnchannels(1)
+        output.setsampwidth(2)
+        output.setframerate(16000)
+        output.writeframes(b'\0\0' * sample_count)
+    rows = [(source, 'audio/wav')]
+    for suffix, codec, mime in [('mp3', 'libmp3lame', 'audio/mpeg'),
+                                ('m4a', 'aac', 'audio/mp4'), ('mp4', 'aac', 'audio/mp4'),
+                                ('webm', 'libopus', 'audio/webm')]:
+        path = folder / ('duration.' + suffix)
+        subprocess.run(['ffmpeg', '-nostdin', '-v', 'error', '-i', str(source),
+                        '-c:a', codec, str(path)], capture_output=True, check=True, timeout=30)
+        rows.append((path, mime))
+    return rows
+
+
 def audio_fixtures(folder):
     if not shutil.which('ffmpeg') or not shutil.which('ffprobe'):
         return None

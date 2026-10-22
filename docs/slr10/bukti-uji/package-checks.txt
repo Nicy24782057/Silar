@@ -1,0 +1,316 @@
+Paket SLR_10: 1.1.1
+Berkas baru/perubahan yang akan diterapkan: 80
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 11
+PANDUAN_RUNNING.md
+README.md
+code/backend/reporting/media.py
+code/backend/reporting/tests/audio_fixtures.py
+code/backend/reporting/tests/test_audio_api.py
+code/backend/reporting/tests/test_media.py
+code/frontend/dist/assets/AuthView-D64UUtUr.js
+code/frontend/dist/assets/DraftView-DQLKlOC0.js
+code/frontend/dist/assets/ErrorNotice-DsL3tZD4.js
+code/frontend/dist/assets/NotFoundView-DKFEe8FT.js
+code/frontend/dist/assets/ProfileView-p4CAytIZ.js
+code/frontend/dist/assets/PwaView-XIcS0IdU.js
+code/frontend/dist/assets/ReportsView-DjS8VIhw.js
+code/frontend/dist/assets/WorkspaceView-CjAZjwSA.js
+code/frontend/dist/assets/domain-CJHpKmYo.js
+code/frontend/dist/assets/index-ZH7rAKCL.js
+code/frontend/dist/index.html
+code/frontend/dist/sw.js
+code/frontend/package-lock.json
+code/frontend/package.json
+code/frontend/src/analysis.js
+code/frontend/src/audio.js
+code/frontend/src/components/AnalysisResult.vue
+code/frontend/src/components/AudioRecorder.vue
+code/frontend/src/domain.js
+code/frontend/src/views/DraftView.vue
+code/frontend/tests/analysis.test.js
+code/frontend/tests/audio.test.js
+code/frontend/tests/domain.test.js
+docs/slr10/ACUAN_AUDIT_20261022.md
+docs/slr10/API.md
+docs/slr10/CHECKLIST_PENERIMAAN.md
+docs/slr10/HASIL_VERIFIKASI.md
+docs/slr10/INTEGRASI_SLR11.md
+docs/slr10/README.md
+docs/slr10/REVISI_1.1.1.md
+docs/slr10/REVISI_AUDIT_1.1.0.md
+docs/slr10/bukti-uji/audio-boundary-slr11.json
+docs/slr10/bukti-uji/audio-boundary-slr11.txt
+docs/slr10/bukti-uji/audio-components.txt
+docs/slr10/bukti-uji/frontend-build.txt
+docs/slr10/bukti-uji/historis-v1.0.0/backend-components.txt
+docs/slr10/bukti-uji/historis-v1.0.0/browser-results.json
+docs/slr10/bukti-uji/historis-v1.0.0/frontend-build.txt
+docs/slr10/bukti-uji/historis-v1.0.0/installer-results.json
+docs/slr10/bukti-uji/historis-v1.0.0/summary.json
+docs/slr10/bukti-uji/historis-v1.1.0/audit-check.mjs-CRLF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/audit-check.mjs-LF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/backend-components.txt
+docs/slr10/bukti-uji/historis-v1.1.0/browser-check.txt
+docs/slr10/bukti-uji/historis-v1.1.0/browser-results.json
+docs/slr10/bukti-uji/historis-v1.1.0/build-result.json
+docs/slr10/bukti-uji/historis-v1.1.0/check.mjs-CRLF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/check.mjs-LF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/dependency-check.json
+docs/slr10/bukti-uji/historis-v1.1.0/django-check.txt
+docs/slr10/bukti-uji/historis-v1.1.0/frontend-tests.txt
+docs/slr10/bukti-uji/historis-v1.1.0/installer-package-results.json
+docs/slr10/bukti-uji/historis-v1.1.0/installer-package-tests.txt
+docs/slr10/bukti-uji/historis-v1.1.0/installer-unit-results.json
+docs/slr10/bukti-uji/historis-v1.1.0/installer-unit-tests.txt
+docs/slr10/bukti-uji/historis-v1.1.0/prototype-results.json
+docs/slr10/bukti-uji/historis-v1.1.0/review-check.mjs-CRLF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/review-check.mjs-LF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/static-results.json
+docs/slr10/bukti-uji/historis-v1.1.0/summary.json
+docs/slr10/bukti-uji/installer-unit-tests.txt
+docs/slr10/bukti-uji/package-checks.json
+docs/slr10/bukti-uji/package-checks.txt
+docs/slr10/bukti-uji/summary.json
+docs/uiux/tools/audit-check.mjs
+docs/uiux/tools/check.mjs
+docs/uiux/tools/review-check.mjs
+tools/build_release_manifest.py
+tools/install_slr10.py
+tools/setup_slr10.py
+tools/tests/__init__.py
+tools/tests/test_install_slr10.py
+code/backend/requirements.txt
+tools/release-manifest.json
+HAPUS BUKA_EMAIL_LOKAL.bat
+HAPUS JALANKAN_BACKEND.bat
+HAPUS JALANKAN_FRONTEND_BAWAAN.bat
+HAPUS JALANKAN_FRONTEND_DEV.bat
+HAPUS MULAI_DI_SINI.txt
+HAPUS PASANG_KE_REPO.bat
+HAPUS SIAPKAN_SLR10.bat
+HAPUS UJI_SLR10.bat
+HAPUS code/New Dokumen Teks.txt
+HAPUS docs/slr10/bukti-uji/backend-components.txt
+HAPUS docs/slr10/bukti-uji/browser-results.json
+Paket SLR_10: 1.1.1
+Berkas baru/perubahan yang akan diterapkan: 80
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 11
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya ikuti PANDUAN_RUNNING.md dari repository tujuan.
+Paket SLR_10: 1.1.1
+Berkas baru/perubahan yang akan diterapkan: 0
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
+Paket SLR_10: 1.1.1
+Berkas baru/perubahan yang akan diterapkan: 48
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 27
+PANDUAN_RUNNING.md
+README.md
+code/backend/reporting/media.py
+code/backend/reporting/tests/audio_fixtures.py
+code/backend/reporting/tests/test_audio_api.py
+code/backend/reporting/tests/test_media.py
+code/frontend/package-lock.json
+code/frontend/package.json
+docs/slr10/API.md
+docs/slr10/CHECKLIST_PENERIMAAN.md
+docs/slr10/HASIL_VERIFIKASI.md
+docs/slr10/INTEGRASI_SLR11.md
+docs/slr10/README.md
+docs/slr10/REVISI_1.1.1.md
+docs/slr10/REVISI_AUDIT_1.1.0.md
+docs/slr10/bukti-uji/audio-boundary-slr11.json
+docs/slr10/bukti-uji/audio-boundary-slr11.txt
+docs/slr10/bukti-uji/audio-components.txt
+docs/slr10/bukti-uji/frontend-build.txt
+docs/slr10/bukti-uji/historis-v1.1.0/audit-check.mjs-CRLF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/audit-check.mjs-LF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/backend-components.txt
+docs/slr10/bukti-uji/historis-v1.1.0/browser-check.txt
+docs/slr10/bukti-uji/historis-v1.1.0/browser-results.json
+docs/slr10/bukti-uji/historis-v1.1.0/build-result.json
+docs/slr10/bukti-uji/historis-v1.1.0/check.mjs-CRLF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/check.mjs-LF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/dependency-check.json
+docs/slr10/bukti-uji/historis-v1.1.0/django-check.txt
+docs/slr10/bukti-uji/historis-v1.1.0/frontend-tests.txt
+docs/slr10/bukti-uji/historis-v1.1.0/installer-package-results.json
+docs/slr10/bukti-uji/historis-v1.1.0/installer-package-tests.txt
+docs/slr10/bukti-uji/historis-v1.1.0/installer-unit-results.json
+docs/slr10/bukti-uji/historis-v1.1.0/installer-unit-tests.txt
+docs/slr10/bukti-uji/historis-v1.1.0/prototype-results.json
+docs/slr10/bukti-uji/historis-v1.1.0/review-check.mjs-CRLF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/review-check.mjs-LF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/static-results.json
+docs/slr10/bukti-uji/historis-v1.1.0/summary.json
+docs/slr10/bukti-uji/installer-unit-tests.txt
+docs/slr10/bukti-uji/package-checks.json
+docs/slr10/bukti-uji/package-checks.txt
+docs/slr10/bukti-uji/summary.json
+tools/build_release_manifest.py
+tools/install_slr10.py
+tools/setup_slr10.py
+tools/tests/test_install_slr10.py
+tools/release-manifest.json
+HAPUS BUKA_EMAIL_LOKAL.bat
+HAPUS JALANKAN_BACKEND.bat
+HAPUS JALANKAN_FRONTEND_BAWAAN.bat
+HAPUS JALANKAN_FRONTEND_DEV.bat
+HAPUS MULAI_DI_SINI.txt
+HAPUS PASANG_KE_REPO.bat
+HAPUS SIAPKAN_SLR10.bat
+HAPUS UJI_SLR10.bat
+HAPUS code/New Dokumen Teks.txt
+HAPUS docs/slr10/bukti-uji/audit-check.mjs-CRLF.txt
+HAPUS docs/slr10/bukti-uji/audit-check.mjs-LF.txt
+HAPUS docs/slr10/bukti-uji/backend-components.txt
+HAPUS docs/slr10/bukti-uji/browser-check.txt
+HAPUS docs/slr10/bukti-uji/browser-results.json
+HAPUS docs/slr10/bukti-uji/build-result.json
+HAPUS docs/slr10/bukti-uji/check.mjs-CRLF.txt
+HAPUS docs/slr10/bukti-uji/check.mjs-LF.txt
+HAPUS docs/slr10/bukti-uji/dependency-check.json
+HAPUS docs/slr10/bukti-uji/django-check.txt
+HAPUS docs/slr10/bukti-uji/frontend-tests.txt
+HAPUS docs/slr10/bukti-uji/installer-package-results.json
+HAPUS docs/slr10/bukti-uji/installer-package-tests.txt
+HAPUS docs/slr10/bukti-uji/installer-unit-results.json
+HAPUS docs/slr10/bukti-uji/prototype-results.json
+HAPUS docs/slr10/bukti-uji/review-check.mjs-CRLF.txt
+HAPUS docs/slr10/bukti-uji/review-check.mjs-LF.txt
+HAPUS docs/slr10/bukti-uji/static-results.json
+Paket SLR_10: 1.1.1
+Berkas baru/perubahan yang akan diterapkan: 48
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 27
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya ikuti PANDUAN_RUNNING.md dari repository tujuan.
+Paket SLR_10: 1.1.1
+Berkas baru/perubahan yang akan diterapkan: 0
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
+Paket SLR_10: 1.1.1
+Berkas baru/perubahan yang akan diterapkan: 48
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 27
+PANDUAN_RUNNING.md
+README.md
+code/backend/reporting/media.py
+code/backend/reporting/tests/audio_fixtures.py
+code/backend/reporting/tests/test_audio_api.py
+code/backend/reporting/tests/test_media.py
+code/frontend/package-lock.json
+code/frontend/package.json
+docs/slr10/API.md
+docs/slr10/CHECKLIST_PENERIMAAN.md
+docs/slr10/HASIL_VERIFIKASI.md
+docs/slr10/INTEGRASI_SLR11.md
+docs/slr10/README.md
+docs/slr10/REVISI_1.1.1.md
+docs/slr10/REVISI_AUDIT_1.1.0.md
+docs/slr10/bukti-uji/audio-boundary-slr11.json
+docs/slr10/bukti-uji/audio-boundary-slr11.txt
+docs/slr10/bukti-uji/audio-components.txt
+docs/slr10/bukti-uji/frontend-build.txt
+docs/slr10/bukti-uji/historis-v1.1.0/audit-check.mjs-CRLF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/audit-check.mjs-LF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/backend-components.txt
+docs/slr10/bukti-uji/historis-v1.1.0/browser-check.txt
+docs/slr10/bukti-uji/historis-v1.1.0/browser-results.json
+docs/slr10/bukti-uji/historis-v1.1.0/build-result.json
+docs/slr10/bukti-uji/historis-v1.1.0/check.mjs-CRLF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/check.mjs-LF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/dependency-check.json
+docs/slr10/bukti-uji/historis-v1.1.0/django-check.txt
+docs/slr10/bukti-uji/historis-v1.1.0/frontend-tests.txt
+docs/slr10/bukti-uji/historis-v1.1.0/installer-package-results.json
+docs/slr10/bukti-uji/historis-v1.1.0/installer-package-tests.txt
+docs/slr10/bukti-uji/historis-v1.1.0/installer-unit-results.json
+docs/slr10/bukti-uji/historis-v1.1.0/installer-unit-tests.txt
+docs/slr10/bukti-uji/historis-v1.1.0/prototype-results.json
+docs/slr10/bukti-uji/historis-v1.1.0/review-check.mjs-CRLF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/review-check.mjs-LF.txt
+docs/slr10/bukti-uji/historis-v1.1.0/static-results.json
+docs/slr10/bukti-uji/historis-v1.1.0/summary.json
+docs/slr10/bukti-uji/installer-unit-tests.txt
+docs/slr10/bukti-uji/package-checks.json
+docs/slr10/bukti-uji/package-checks.txt
+docs/slr10/bukti-uji/summary.json
+tools/build_release_manifest.py
+tools/install_slr10.py
+tools/setup_slr10.py
+tools/tests/test_install_slr10.py
+tools/release-manifest.json
+HAPUS BUKA_EMAIL_LOKAL.bat
+HAPUS JALANKAN_BACKEND.bat
+HAPUS JALANKAN_FRONTEND_BAWAAN.bat
+HAPUS JALANKAN_FRONTEND_DEV.bat
+HAPUS MULAI_DI_SINI.txt
+HAPUS PASANG_KE_REPO.bat
+HAPUS SIAPKAN_SLR10.bat
+HAPUS UJI_SLR10.bat
+HAPUS code/New Dokumen Teks.txt
+HAPUS docs/slr10/bukti-uji/audit-check.mjs-CRLF.txt
+HAPUS docs/slr10/bukti-uji/audit-check.mjs-LF.txt
+HAPUS docs/slr10/bukti-uji/backend-components.txt
+HAPUS docs/slr10/bukti-uji/browser-check.txt
+HAPUS docs/slr10/bukti-uji/browser-results.json
+HAPUS docs/slr10/bukti-uji/build-result.json
+HAPUS docs/slr10/bukti-uji/check.mjs-CRLF.txt
+HAPUS docs/slr10/bukti-uji/check.mjs-LF.txt
+HAPUS docs/slr10/bukti-uji/dependency-check.json
+HAPUS docs/slr10/bukti-uji/django-check.txt
+HAPUS docs/slr10/bukti-uji/frontend-tests.txt
+HAPUS docs/slr10/bukti-uji/installer-package-results.json
+HAPUS docs/slr10/bukti-uji/installer-package-tests.txt
+HAPUS docs/slr10/bukti-uji/installer-unit-results.json
+HAPUS docs/slr10/bukti-uji/prototype-results.json
+HAPUS docs/slr10/bukti-uji/review-check.mjs-CRLF.txt
+HAPUS docs/slr10/bukti-uji/review-check.mjs-LF.txt
+HAPUS docs/slr10/bukti-uji/static-results.json
+Paket SLR_10: 1.1.1
+Berkas baru/perubahan yang akan diterapkan: 48
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 27
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya ikuti PANDUAN_RUNNING.md dari repository tujuan.
+Paket SLR_10: 1.1.1
+Berkas baru/perubahan yang akan diterapkan: 0
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
+{
+  "release": "1.1.1",
+  "manifest_files": 129,
+  "obsolete_entries": 27,
+  "manifest_hashes": "PASS",
+  "root_guide": "PANDUAN_RUNNING.md",
+  "root_launchers": 0,
+  "build_asset_links": "PASS",
+  "frontend_logic_and_foundation": "UNCHANGED",
+  "reference_documents": "UNCHANGED",
+  "scenarios": [
+    {
+      "scenario": "upgrade 1.0.0",
+      "status": "PASS",
+      "operations": 91,
+      "removed_and_backed_up": 11,
+      "protected_files": 40,
+      "reinstall_operations": 0
+    },
+    {
+      "scenario": "upgrade 1.1.0",
+      "status": "PASS",
+      "operations": 75,
+      "removed_and_backed_up": 27,
+      "protected_files": 40,
+      "reinstall_operations": 0
+    },
+    {
+      "scenario": "upgrade 1.1.0-CRLF",
+      "status": "PASS",
+      "operations": 75,
+      "removed_and_backed_up": 27,
+      "protected_files": 40,
+      "reinstall_operations": 0
+    },
+    {
+      "scenario": "local obsolete launcher edit stops all writes",
+      "status": "PASS"
+    }
+  ],
+  "scope": "temporary repositories; actual AI source; model/media/venv markers only"
+}

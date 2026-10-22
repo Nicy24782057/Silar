@@ -32,6 +32,7 @@ def install(target, dry_run=False):
         raise ValueError('Folder tujuan harus akar repository Silar yang memuat code/backend/manage.py.')
     manifest = json.loads((SOURCE / 'tools/release-manifest.json').read_text())
     plan = []
+    removals = []
     conflicts = []
     for name, record in manifest['files'].items():
         if name in ('code/backend/config/urls.py', 'code/backend/config/settings.py', 'code/backend/requirements.txt', '.gitignore'):
@@ -52,6 +53,18 @@ def install(target, dry_run=False):
                 conflicts.append(name)
                 continue
         plan.append((name, source.read_bytes()))
+    # Only remove obsolete distribution files with a known historical hash.
+    # A locally edited launcher/asset stops the entire preflight before writes.
+    for name, record in manifest.get('removed_files', {}).items():
+        dest = target / name
+        if name in manifest['files'] or not dest.resolve().is_relative_to(target):
+            raise ValueError('Path penghapusan paket tidak sah.')
+        if not dest.exists():
+            continue
+        if not dest.is_file() or sha(dest) not in record.get('accepted_sha256', []):
+            conflicts.append(name + ' (berkas lama diubah lokal)')
+            continue
+        removals.append(name)
     for name, token, block in [
         ('code/backend/config/urls.py', "include('reporting.urls')", URL_BLOCK),
         ('code/backend/config/settings.py', "'reporting'", APP_BLOCK),
@@ -97,10 +110,13 @@ def install(target, dry_run=False):
         raise ValueError('Ada berkas lokal yang berbeda. Tidak ada berkas yang disalin. Tinjau: ' + ', '.join(conflicts))
     print('Paket SLR_10:', manifest['version'])
     print('Berkas baru/perubahan yang akan diterapkan:', len(plan))
+    print('Berkas distribusi lama yang akan dicadangkan dan dihapus:', len(removals))
     if dry_run:
         for name, _ in plan:
             print(name)
-        return len(plan)
+        for name in removals:
+            print('HAPUS ' + name)
+        return len(plan) + len(removals)
     backup = target / '.slr10-backups' / datetime.now().strftime('%Y%m%d-%H%M%S-%f')
     # Ignore the backup before writing any old project files into it.
     for name, data in sorted(plan, key=lambda item: item[0] != '.gitignore'):
@@ -113,9 +129,15 @@ def install(target, dry_run=False):
         temporary = dest.with_name(dest.name + '.slr10-tmp')
         temporary.write_bytes(data)
         temporary.replace(dest)
+    for name in removals:
+        dest = target / name
+        old = backup / name
+        old.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(dest, old)
+        dest.unlink()
     print('Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.')
-    print('Selanjutnya jalankan SIAPKAN_SLR10.bat dari repository tujuan.')
-    return len(plan)
+    print('Selanjutnya ikuti PANDUAN_RUNNING.md dari repository tujuan.')
+    return len(plan) + len(removals)
 
 
 def main():

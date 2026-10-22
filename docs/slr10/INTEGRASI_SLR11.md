@@ -40,9 +40,15 @@ Nama `ai_pipeline/` mengikuti rencana MEET_06; sesuaikan include dengan nama mod
 
 Koreksi narasi/field, Human Verification, konfirmasi dan submit resmi tetap berada pada SLR_12. Pengelolaan Operator/Admin dan Portal Publik dilengkapi pada SLR_13/SLR_14. Tampilan ruang akun non-Reporter di SLR_10 tidak mengklaim dashboard tersebut sudah selesai.
 
-## Penyelarasan audit 1.1.0
+## Penyelarasan audit 1.1.0 (riwayat)
 
 - Profil audio: MP3, WAV PCM, WebM/Opus, M4A/MP4-AAC tanpa video atau cover gambar; OGG/ALAC/Vorbis ditolak. Bukti tidak diubah menjadi format lain oleh SLR_10. Resampling mono 16 kHz untuk Whisper tetap SLR_11.
 - Pillow 13.0.0 merupakan pin dasar. Requirements AI yang masih memakai pin lain dihentikan oleh preflight agar tidak terjadi downgrade diam-diam. Setup menggunakan resolver gabungan bila requirements-ai.txt tersedia.
 - Pembacaan normalization_warnings tidak mengubah uncertain atau hasil model. UI mencocokkan bundle, narrative, sena_result, nara_result, dan analysis_run sebelum menampilkan confidence/peringatan dari run terbaru. Ketika run terbaru gagal atau belum cocok, kartu tersimpan diberi keterangan dan metadata run baru tidak dicampurkan.
-- Belum ada salinan kode/dependensi lengkap SLR_11 pada lingkungan penyusun revisi ini. Pemeriksaan loader load_sources, resolver lengkap AI, tujuh rute nyata dan PostgreSQL 16 tetap menjadi pengujian gabungan di repository tim; hasil audit historis tidak dihitung ulang sebagai bukti versi 1.1.0.
+- Saat penyusunan versi 1.1.0 belum ada salinan kode/dependensi lengkap SLR_11 pada lingkungan penyusun. Pemeriksaan loader load_sources, resolver lengkap AI, tujuh rute nyata dan PostgreSQL 16 tetap menjadi pengujian gabungan di repository tim; hasil audit historis tidak dihitung ulang sebagai bukti versi 1.1.0.
+
+## Penyelarasan 1.1.1
+
+Validator SLR10 menghitung panjang isi audio hasil decode menjadi PCM mono 16 kHz, sama dengan satuan batas decoder SLR11. Padding metadata pada MP3/WebM tepat 120 detik tidak lagi menyebabkan penolakan sebelum decode. Batas tetap 120 detik dan bukti asli tidak ditulis ulang.
+
+Panduan menjalankan kedua layanan ada pada `../../PANDUAN_RUNNING.md`. Tambahan konfigurasi kedua modul tetap digabung secara terarah; installer tidak mengganti source atau requirements AI. Hasil pemeriksaan penghubung yang benar-benar dijalankan dirangkum pada `HASIL_VERIFIKASI.md`; pengujian loader dibedakan dari inferensi model/API nyata.

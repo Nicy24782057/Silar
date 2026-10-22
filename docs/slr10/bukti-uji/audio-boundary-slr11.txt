@@ -1,0 +1,111 @@
+{
+  "cases": 15,
+  "matched": true,
+  "rows": [
+    {
+      "seconds_source": 119.9,
+      "format": ".wav",
+      "slr10": "ACCEPT",
+      "slr11": "ACCEPT",
+      "decoded_duration_ms": 119900
+    },
+    {
+      "seconds_source": 119.9,
+      "format": ".mp3",
+      "slr10": "ACCEPT",
+      "slr11": "ACCEPT",
+      "decoded_duration_ms": 119900
+    },
+    {
+      "seconds_source": 119.9,
+      "format": ".m4a",
+      "slr10": "ACCEPT",
+      "slr11": "ACCEPT",
+      "decoded_duration_ms": 119900
+    },
+    {
+      "seconds_source": 119.9,
+      "format": ".mp4",
+      "slr10": "ACCEPT",
+      "slr11": "ACCEPT",
+      "decoded_duration_ms": 119900
+    },
+    {
+      "seconds_source": 119.9,
+      "format": ".webm",
+      "slr10": "ACCEPT",
+      "slr11": "ACCEPT",
+      "decoded_duration_ms": 119900
+    },
+    {
+      "seconds_source": 120.0,
+      "format": ".wav",
+      "slr10": "ACCEPT",
+      "slr11": "ACCEPT",
+      "decoded_duration_ms": 120000
+    },
+    {
+      "seconds_source": 120.0,
+      "format": ".mp3",
+      "slr10": "ACCEPT",
+      "slr11": "ACCEPT",
+      "decoded_duration_ms": 120000
+    },
+    {
+      "seconds_source": 120.0,
+      "format": ".m4a",
+      "slr10": "ACCEPT",
+      "slr11": "ACCEPT",
+      "decoded_duration_ms": 120000
+    },
+    {
+      "seconds_source": 120.0,
+      "format": ".mp4",
+      "slr10": "ACCEPT",
+      "slr11": "ACCEPT",
+      "decoded_duration_ms": 120000
+    },
+    {
+      "seconds_source": 120.0,
+      "format": ".webm",
+      "slr10": "ACCEPT",
+      "slr11": "ACCEPT",
+      "decoded_duration_ms": 120000
+    },
+    {
+      "seconds_source": 120.01,
+      "format": ".wav",
+      "slr10": "INPUT_TOO_LARGE",
+      "slr11": "INPUT_TOO_LARGE",
+      "decoded_duration_ms": null
+    },
+    {
+      "seconds_source": 120.01,
+      "format": ".mp3",
+      "slr10": "INPUT_TOO_LARGE",
+      "slr11": "INPUT_TOO_LARGE",
+      "decoded_duration_ms": null
+    },
+    {
+      "seconds_source": 120.01,
+      "format": ".m4a",
+      "slr10": "INPUT_TOO_LARGE",
+      "slr11": "INPUT_TOO_LARGE",
+      "decoded_duration_ms": null
+    },
+    {
+      "seconds_source": 120.01,
+      "format": ".mp4",
+      "slr10": "INPUT_TOO_LARGE",
+      "slr11": "INPUT_TOO_LARGE",
+      "decoded_duration_ms": null
+    },
+    {
+      "seconds_source": 120.01,
+      "format": ".webm",
+      "slr10": "INPUT_TOO_LARGE",
+      "slr11": "INPUT_TOO_LARGE",
+      "decoded_duration_ms": null
+    }
+  ]
+}

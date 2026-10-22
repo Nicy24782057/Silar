@@ -1,0 +1,42 @@
+{
+  "release": "1.1.1",
+  "manifest_files": 129,
+  "obsolete_entries": 27,
+  "manifest_hashes": "PASS",
+  "root_guide": "PANDUAN_RUNNING.md",
+  "root_launchers": 0,
+  "build_asset_links": "PASS",
+  "frontend_logic_and_foundation": "UNCHANGED",
+  "reference_documents": "UNCHANGED",
+  "scenarios": [
+    {
+      "scenario": "upgrade 1.0.0",
+      "status": "PASS",
+      "operations": 91,
+      "removed_and_backed_up": 11,
+      "protected_files": 40,
+      "reinstall_operations": 0
+    },
+    {
+      "scenario": "upgrade 1.1.0",
+      "status": "PASS",
+      "operations": 75,
+      "removed_and_backed_up": 27,
+      "protected_files": 40,
+      "reinstall_operations": 0
+    },
+    {
+      "scenario": "upgrade 1.1.0-CRLF",
+      "status": "PASS",
+      "operations": 75,
+      "removed_and_backed_up": 27,
+      "protected_files": 40,
+      "reinstall_operations": 0
+    },
+    {
+      "scenario": "local obsolete launcher edit stops all writes",
+      "status": "PASS"
+    }
+  ],
+  "scope": "temporary repositories; actual AI source; model/media/venv markers only"
+}

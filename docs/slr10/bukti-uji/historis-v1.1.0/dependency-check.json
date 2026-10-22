@@ -1,0 +1,6 @@
+{
+  "slr10_install": "PASS",
+  "pillow": "13.0.0",
+  "pip_check": "No broken requirements found.",
+  "combined_slr11_requirements_resolver": "NOT_RUN: full SLR_11 requirements/code were unavailable"
+}

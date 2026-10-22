@@ -1,24 +1,24 @@
 npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
 
-> silar-slr10-frontend@1.0.0 build
+> silar-slr10-frontend@1.1.1 build
 > vite build
 
 vite v7.3.7 building client environment for production...
 transforming...
-✓ 42 modules transformed.
+✓ 44 modules transformed.
 rendering chunks...
 computing gzip size...
-dist/index.html                          0.75 kB │ gzip:  0.42 kB
+dist/index.html                          0.75 kB │ gzip:  0.43 kB
 dist/sw.js                               1.77 kB
 dist/assets/index-c_1ivaG6.css          14.83 kB │ gzip:  4.03 kB
-dist/assets/NotFoundView-CvoqN9DQ.js     0.56 kB │ gzip:  0.39 kB
-dist/assets/ErrorNotice-D9I34ssi.js      0.81 kB │ gzip:  0.50 kB
-dist/assets/WorkspaceView-bkid4gcS.js    0.83 kB │ gzip:  0.53 kB
-dist/assets/ProfileView-BCQSAMUl.js      1.78 kB │ gzip:  0.98 kB
-dist/assets/PwaView-D0V8LhIu.js          2.13 kB │ gzip:  1.12 kB
-dist/assets/domain-Bge91Za-.js           2.18 kB │ gzip:  1.32 kB
-dist/assets/ReportsView-CIrAJiTZ.js      3.11 kB │ gzip:  1.55 kB
-dist/assets/AuthView-DDYz0mVV.js         7.62 kB │ gzip:  2.96 kB
-dist/assets/DraftView-DcuZuHLb.js       19.73 kB │ gzip:  7.41 kB
-dist/assets/index-BGUgpcTO.js          103.16 kB │ gzip: 40.41 kB
-✓ built in 5.66s
+dist/assets/NotFoundView-DKFEe8FT.js     0.56 kB │ gzip:  0.39 kB
+dist/assets/ErrorNotice-DsL3tZD4.js      0.81 kB │ gzip:  0.50 kB
+dist/assets/WorkspaceView-CjAZjwSA.js    0.83 kB │ gzip:  0.53 kB
+dist/assets/ProfileView-p4CAytIZ.js      1.78 kB │ gzip:  0.98 kB
+dist/assets/PwaView-XIcS0IdU.js          2.13 kB │ gzip:  1.12 kB
+dist/assets/domain-CJHpKmYo.js           2.21 kB │ gzip:  1.34 kB
+dist/assets/ReportsView-DjS8VIhw.js      3.11 kB │ gzip:  1.55 kB
+dist/assets/AuthView-D64UUtUr.js         7.62 kB │ gzip:  2.96 kB
+dist/assets/DraftView-DQLKlOC0.js       22.87 kB │ gzip:  8.48 kB
+dist/assets/index-ZH7rAKCL.js          103.16 kB │ gzip: 40.41 kB
+✓ built in 1.09s
