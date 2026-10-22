@@ -1,0 +1,1 @@
+<template><section class="card empty"><h1>Halaman tidak ditemukan</h1><p>Periksa alamat atau kembali ke daftar laporan yang dapat kamu akses.</p><RouterLink class="button primary" to="/reports">Kembali ke laporan</RouterLink></section></template>

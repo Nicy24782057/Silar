@@ -13,7 +13,7 @@ const source=fs.readFileSync(path.join(assetPath,'app.mjs'),'utf8');
 const root={innerHTML:''},listeners={};
 const context={...model,console,setTimeout:()=>0,setInterval:()=>0,clearInterval:()=>{},requestAnimationFrame:()=>{},URL:{},document:{querySelector:q=>q==='#app'?root:null,querySelectorAll:()=>[],addEventListener:(type,fn)=>listeners[type]=fn}};
 vm.createContext(context);
-vm.runInContext(source.replace(/^import .*?;\n/,'')+'\nglobalThis.reviewHarness={state:v=>{s=v;modal=null;publicFilter={q:"",category:"",location:""};},filter:v=>publicFilter=v,render};',context);
+vm.runInContext(source.replace(/^import .*?;\r?\n/,'')+'\nglobalThis.reviewHarness={state:v=>{s=v;modal=null;publicFilter={q:"",category:"",location:""};},filter:v=>publicFilter=v,render};',context);
 const h=context.reviewHarness;
 const render=(s,page=s.page)=>{s.page=page;h.state(s);h.render();return root.innerHTML;};
 const click=(action,data={})=>listeners.click({target:{closest:()=>({dataset:{action,...data}})}});

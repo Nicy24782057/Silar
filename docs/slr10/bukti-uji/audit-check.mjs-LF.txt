@@ -1,0 +1,5 @@
+PASS AR07-01 Menu ditutup ketika membuka draft yang sudah ada
+PASS AR07-02 Menu ditutup ketika membuat draft baru dan tidak menduplikasi draft
+PASS AR07-03 Kontras warna teks avatar minimal 4,5:1
+
+3/3 pemeriksaan regresi audit lulus; browser/visual QA tidak dilakukan.

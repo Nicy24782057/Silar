@@ -137,3 +137,6 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 27 * 1024 * 1024
 FILE_UPLOAD_MAX_MEMORY_SIZE = 1024 * 1024
 APPEND_SLASH = True
 
+# SLR_10 input service
+if 'reporting' not in INSTALLED_APPS:
+    INSTALLED_APPS += ['reporting']

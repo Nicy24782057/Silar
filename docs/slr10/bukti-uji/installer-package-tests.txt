@@ -1,0 +1,23 @@
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 124
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya jalankan SIAPKAN_SLR10.bat dari repository tujuan.
+PASS Full release applied to SLR_08 plus synthetic SLR_11 sentinels; protected content preserved
+Berkas baru/perubahan yang akan diterapkan: 80
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya jalankan SIAPKAN_SLR10.bat dari repository tujuan.
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 69
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya jalankan SIAPKAN_SLR10.bat dari repository tujuan.
+PASS Actual 1.0.0 payload and old manifest upgraded to 1.1.0 with Pillow 13.0.0 and new build
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 0
+PASS Full package reinstall proposes zero changes
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 0
+PASS Current release Windows CRLF sources and manifest reinstall without false conflicts
+PASS Unknown local code stops full preflight without any file changes
+Origin frontend lokal diselaraskan; koneksi database dan rahasia akun dipertahankan.
+PASS Setup origin merge preserves existing port and credential sentinels
+FULL PACKAGE INSTALL CHECKS PASSED: 6

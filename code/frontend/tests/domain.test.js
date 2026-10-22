@@ -1,0 +1,12 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import { validateText, validateFile, validateBundle, usesGemini, paginationPath, textLength, LIMITS } from '../src/domain.js';
+test('Unicode dihitung per code point, bukan byte atau UTF16',()=>{assert.equal(textLength('🌧'),1);assert.equal(validateText('🌧'.repeat(5000)),'');assert.ok(validateText('a'.repeat(5001)));});
+test('Teks kosong ditolak',()=>assert.ok(validateText(' \n ')));
+test('Ekstensi gambar dan batas ukuran diperiksa',()=>{assert.equal(validateFile({name:'a.JPEG',size:100},'IMAGE'),'');assert.ok(validateFile({name:'a.svg',size:100},'IMAGE'));assert.ok(validateFile({name:'a.png',size:LIMITS.image+1},'IMAGE'));});
+test('Lima format audio sesuai kontrak diperiksa server',()=>{for(const ext of ['wav','mp3','m4a','mp4','webm'])assert.equal(validateFile({name:'voice.'+ext,size:100},'AUDIO'),'');});
+test('OGG ditolak dan pesan format tidak menawarkan codec lain',()=>{assert.ok(validateFile({name:'voice.ogg',size:100},'AUDIO'));assert.match(validateFile({name:'voice.ogg',size:100},'AUDIO'),/AAC tanpa video/);});
+test('Bundle membutuhkan kanal asli dan menahan jumlah berlebih',()=>{assert.ok(validateBundle([]));assert.ok(validateBundle([{type:'TEXT',byte_size:1},{type:'TEXT',byte_size:1}]));assert.equal(validateBundle([{type:'AUDIO',byte_size:100}]),'');});
+test('Bundle menghitung byte teks juga',()=>assert.ok(validateBundle([{type:'TEXT',byte_size:LIMITS.bundle+1}])));
+test('Gemini tidak digunakan pada teks atau audio tunggal',()=>{assert.equal(usesGemini([{type:'TEXT'}]),false);assert.equal(usesGemini([{type:'AUDIO'}]),false);});
+test('Gemini diinformasikan untuk lima rute yang relevan',()=>{for(const types of [['IMAGE'],['TEXT','AUDIO'],['TEXT','IMAGE'],['AUDIO','IMAGE'],['TEXT','AUDIO','IMAGE']])assert.equal(usesGemini(types.map(type=>({type}))),true);});
+test('Pagination hanya menyusun path API lokal',()=>{assert.equal(paginationPath('http://localhost:8001/api/v1/reports/?page=2'),'reports/?page=2');assert.throws(()=>paginationPath('https://example.com/private'));});

@@ -1,0 +1,52 @@
+{
+  "suite": "tools/tests/test_install_slr10.py",
+  "environment": "isolated synthetic repositories; Python 3.12.14; actual Windows execution not claimed",
+  "tests": 11,
+  "failures": 0,
+  "results": [
+    {
+      "scenario": "fresh install preserves protected data",
+      "status": "PASS"
+    },
+    {
+      "scenario": "known 1.0.0 upgrade and Pillow 13.0.0",
+      "status": "PASS"
+    },
+    {
+      "scenario": "known Windows CRLF previous source",
+      "status": "PASS"
+    },
+    {
+      "scenario": "idempotent reinstall",
+      "status": "PASS"
+    },
+    {
+      "scenario": "local edits stop all writes",
+      "status": "PASS"
+    },
+    {
+      "scenario": "unknown Pillow pin stops all writes",
+      "status": "PASS"
+    },
+    {
+      "scenario": "conflicting AI pin stops all writes",
+      "status": "PASS"
+    },
+    {
+      "scenario": "previous files backed up",
+      "status": "PASS"
+    },
+    {
+      "scenario": "changed source distribution rejected",
+      "status": "PASS"
+    },
+    {
+      "scenario": "known previous manifest upgraded",
+      "status": "PASS"
+    },
+    {
+      "scenario": "current Windows CRLF source/manifest remains idempotent",
+      "status": "PASS"
+    }
+  ]
+}

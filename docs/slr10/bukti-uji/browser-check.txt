@@ -1,0 +1,29 @@
+PASS Login salah ditolak oleh API nyata
+PASS Login Reporter melalui Vue, CSRF, JWT dan cookie
+PASS Draft dan teks disimpan melalui backend nyata
+PASS Tab ditutup lalu draft/evidence dipulihkan sebelum bundle
+PASS Upload PNG, decoder backend dan media privat on demand
+PASS MediaRecorder browser menghasilkan WebM yang benar-benar didekode dan disimpan backend
+PASS Pemilihan eksplisit dan pembentukan bundle
+PASS SLR_11 belum terpasang ditampilkan sebagai layanan belum tersedia, tanpa hasil AI buatan
+PASS MP4/AAC audio dari pemilih berkas browser diterima API, termasuk MIME video/mp4 tanpa stream video
+PASS Pilihan OGG mendapat pesan perbaikan sebelum diterima sebagai bukti
+PASS Fixture tampilan: peringatan NARA terlihat ketika uncertain=false; confidence SENA tetap terpisah
+PASS Fixture tampilan: uncertain=true dan peringatan NARA muncul bersama
+PASS Fixture tampilan: daftar peringatan kosong dirender dengan aman
+PASS Fixture tampilan: run gagal dan NARA kosong tidak menggabungkan confidence baru ke kartu lama
+PASS Fixture browser recorder unsupported: pesan dapat ditindaklanjuti dan unggah audio tetap tersedia
+PASS Fixture browser recorder denied: pesan dapat ditindaklanjuti dan unggah audio tetap tersedia
+PASS Perubahan profil memakai PATCH API
+PASS Tampilan tanpa overflow horizontal 360px
+PASS Tampilan tanpa overflow horizontal 390px
+PASS Tampilan tanpa overflow horizontal 768px
+PASS Tampilan tanpa overflow horizontal 1366px
+PASS Menu ponsel menutup sesudah navigasi
+PASS Cache PWA hanya aset UI; storage browser tidak memuat token atau draft
+PASS Navigasi offline memuat app shell dan pemberitahuan koneksi
+PASS Logout 204 diproses tanpa parser JSON dan keluar dari halaman privat
+PASS Registrasi Vue, email lokal dan verifikasi OTP nyata
+PASS Pemulihan/reset password dan login menggunakan kata sandi baru melalui Vue
+PASS Tidak ada exception JavaScript browser
+BROWSER CHECKS PASSED: 28

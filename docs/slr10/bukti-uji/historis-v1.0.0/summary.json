@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-22",
+  "backend_component_tests": {
+    "passed": 31,
+    "database": "SQLite isolated supplementary tests; PostgreSQL triggers/locks not exercised"
+  },
+  "frontend_tests": {
+    "passed": 11
+  },
+  "browser_scenarios": {
+    "passed": 20
+  },
+  "installer_checks": {
+    "passed": 4
+  },
+  "build": "PASS",
+  "postgresql_16": "NOT_RUN_ENVIRONMENT_RESTRICTION",
+  "windows_execution": "NOT_RUN",
+  "real_ai_inference": "NOT_RUN_SLR11_SOURCE_NOT_PROVIDED",
+  "platform": "Linux",
+  "python": "3.12.14",
+  "node": "24.19.0"
+}

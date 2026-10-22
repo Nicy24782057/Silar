@@ -1,0 +1,37 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> silar-slr10-frontend@1.1.0 test
+> node --test tests/*.test.js
+
+✔ Peringatan tampil ketika uncertain false tanpa mengubah flag (3.198124ms)
+✔ Peringatan dan uncertain true tetap terpisah (0.467239ms)
+✔ Kode baru memakai pesan umum dan label field aman (2.059129ms)
+✔ Hasil kosong dan NARA yang belum tersedia aman (0.795044ms)
+✔ Analisis terbaru gagal tidak memasangkan peringatan/keyakinannya ke kartu lama (1.12085ms)
+✔ Identitas run, hasil, bundle, dan narasi harus cocok (0.84187ms)
+✔ Narasi baru tidak dilabeli sebagai sumber kartu lama (0.548318ms)
+✔ Recorder mendahulukan WebM dengan codec Opus (3.954642ms)
+✔ Recorder memakai AAC atau MP4 generik ketika WebM tidak tersedia (1.01578ms)
+✔ Tidak ada fallback OGG atau format default yang tidak diketahui (0.57602ms)
+✔ Nama dan MIME mengikuti keluaran rekaman yang sebenarnya (4.713796ms)
+✔ Keluaran OGG, Vorbis, ALAC, video dan MIME kosong tidak disamarkan (1.323492ms)
+✔ Unicode dihitung per code point, bukan byte atau UTF16 (4.742513ms)
+✔ Teks kosong ditolak (0.554221ms)
+✔ Ekstensi gambar dan batas ukuran diperiksa (0.745404ms)
+✔ Lima format audio sesuai kontrak diperiksa server (1.574695ms)
+✔ OGG ditolak dan pesan format tidak menawarkan codec lain (0.876763ms)
+✔ Bundle membutuhkan kanal asli dan menahan jumlah berlebih (0.963564ms)
+✔ Bundle menghitung byte teks juga (0.516897ms)
+✔ Gemini tidak digunakan pada teks atau audio tunggal (0.685189ms)
+✔ Gemini diinformasikan untuk lima rute yang relevan (0.445852ms)
+✔ Pagination hanya menyusun path API lokal (1.961655ms)
+✔ Precache hanya daftar aset antarmuka (14.625194ms)
+✔ Auth, API privat, media, POST dan origin lain tidak diintersep (5.28353ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1430.756683

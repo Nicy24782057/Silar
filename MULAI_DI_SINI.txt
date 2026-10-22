@@ -1,0 +1,57 @@
+SLR_10 SILAR — Paket implementasi versi 1.1.0 — revisi audit
+
+ISI HASIL
+- code/frontend/: kode Vue 3, Router, Vite, Fetch, CSS, PWA dan build dist siap pakai.
+- code/backend/reporting/: API draft, upload/list evidence, media privat dan bundle.
+- Fondasi backend SLR_08 serta dokumen acuan sumber tetap disertakan.
+- docs/slr10/: panduan, kontrak API, integrasi SLR_11, hasil pemeriksaan dan checklist.
+- Skrip BAT untuk pemasangan dan menjalankan aplikasi di Windows.
+
+UNTUK MEMPERBARUI REPOSITORY SILAR / VERSI 1.0.0 YANG SUDAH TERPASANG
+0. Pada kedua jendela server yang masih aktif, tekan Ctrl+C sampai server berhenti.
+1. Ekstrak ZIP ini ke folder sementara. Jangan langsung menimpa seluruh repository.
+2. Jalankan PASANG_KE_REPO.bat dari folder hasil ekstraksi.
+3. Saat diminta, tempel path folder utama repository:
+   C:\Users\A C E R\Documents\KULIAH\PEMROGRAMAN INTERNET II\Silar
+4. Pemasang mengenali berkas v1.0.0 yang diketahui dan memperbarui perubahan SLR_10. Jika ada konflik isi berkas lokal,
+   proses berhenti sebelum menyalin. .env, database, migration lama, media dan model
+   tidak diganti. Routing SLR_11 yang sudah ada dipertahankan.
+5. Buka repository Silar tujuan, lalu jalankan SIAPKAN_SLR10.bat.
+   Skrip memakai .env backend yang sudah ada, menyelaraskan origin localhost:5173,
+   menyelaraskan Pillow 13.0.0 dan dependensi tambahan (bersama requirements-ai.txt bila ada), memeriksa backend dan menjalankan migration biasa.
+   Koneksi PostgreSQL 16 milikmu pada port 5433 tidak direset.
+6. Jalankan JALANKAN_BACKEND.bat. Biarkan terminal terbuka.
+7. Jalankan JALANKAN_FRONTEND_BAWAAN.bat di terminal lain.
+8. Buka http://localhost:5173 di browser. Tekan Ctrl+F5 sekali untuk memuat aset revisi.
+   Gunakan localhost secara konsisten. Commit/push tetap kamu lakukan sendiri.
+
+MENGAPA ADA BUILD BAWAAN
+Frontend sudah dibangun dengan Vue dan Vite. Build dist bisa disajikan oleh Python
+yang sudah kamu pasang. Node.js/npm diperlukan saat mengubah atau membangun ulang
+frontend. Jika npm tersedia, setup juga memasang dependency dan membangun ulang.
+
+TES PERTAMA
+- Masuk dengan akun Reporter terverifikasi yang sudah ada, atau daftar Reporter baru.
+- Untuk EMAIL_MODE=file, jalankan BUKA_EMAIL_LOKAL.bat lalu baca kode/tautan terbaru.
+- Buat draft, simpan teks, unggah gambar/audio, lalu pilih bukti dan simpan bundle.
+- Coba tutup tab sesudah upload tetapi sebelum bundle dibuat. Login/buka draft kembali;
+  bukti tersimpan harus tetap tersedia tanpa upload ulang.
+- UJI_SLR10.bat menjalankan tes backend pada PostgreSQL dari .env serta tes/build Vue.
+
+BATAS INTEGRASI AI
+Kode pipeline dan aset SENA/NARA SLR_11 tidak terdapat pada sumber yang diberikan.
+Paket ini menyiapkan permintaan analisis dan pembacaan hasil tersimpan, tanpa membuat
+hasil AI contoh pada aplikasi. Jika API SLR_11 belum terpasang, aplikasi menyampaikan
+bahwa analisis belum tersedia; bukti dan bundle tetap tersimpan. Lihat
+docs/slr10/INTEGRASI_SLR11.md untuk menyambungkan modul tersebut.
+
+STATUS PENGUJIAN
+Pemeriksaan komponen, build dan browser dijelaskan pada docs/slr10/HASIL_VERIFIKASI.md.
+SQLite hanya dipakai secara eksplisit untuk pengujian komponen dalam lingkungan
+penyusun. Aplikasi tetap menggunakan PostgreSQL 16; pengujian Windows/PostgreSQL
+dan alur AI nyata harus dicatat dari pelaksanaan pada laptop/lingkungan tim.
+
+DAFTAR REVISI
+Lihat docs/slr10/REVISI_AUDIT_1.1.0.md untuk perubahan, bukti dan bagian integrasi
+yang masih menunggu pengujian. Paket revisi tidak menyatakan AI/Windows/PostgreSQL
+sudah lulus jika belum diuji pada versi gabungan yang sebenarnya.

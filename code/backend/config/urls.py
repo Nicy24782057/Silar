@@ -22,3 +22,7 @@ urlpatterns=[
 ]
 handler404='common.api.not_found'
 handler500='common.api.server_error'
+
+# SLR_10 input endpoints
+from django.urls import include
+urlpatterns += [path('api/v1/', include('reporting.urls'))]

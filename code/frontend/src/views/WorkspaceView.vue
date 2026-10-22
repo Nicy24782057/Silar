@@ -1,0 +1,2 @@
+<script setup>import { session } from '../session';</script>
+<template><div class="page-heading"><div><div class="eyebrow">AKUN {{ session.user.role }}</div><h1>Selamat datang, {{ session.user.full_name }}</h1><p class="subtitle">Akunmu aktif. Akses tindakan mengikuti kewenangan yang diberikan.</p></div></div><section class="card narrow"><h2>Ruang akun</h2><p>Halaman pengelolaan laporan sedang dipersiapkan. Kamu dapat memeriksa profil dan keamanan akun.</p><RouterLink class="button primary" to="/profile">Buka profil</RouterLink></section></template>

@@ -1,0 +1,48 @@
+test_conflicting_ai_pin_stops_all_writes (test_install_slr10.InstallerTests.test_conflicting_ai_pin_stops_all_writes) ... ok
+test_current_windows_crlf_does_not_create_false_conflict (test_install_slr10.InstallerTests.test_current_windows_crlf_does_not_create_false_conflict) ... ok
+test_fresh_install_preserves_database_configuration_ai_media_and_models (test_install_slr10.InstallerTests.test_fresh_install_preserves_database_configuration_ai_media_and_models) ... ok
+test_known_previous_manifest_is_replaced_safely (test_install_slr10.InstallerTests.test_known_previous_manifest_is_replaced_safely) ... ok
+test_known_windows_crlf_previous_file_is_upgraded (test_install_slr10.InstallerTests.test_known_windows_crlf_previous_file_is_upgraded) ... ok
+test_local_source_edits_stop_all_writes (test_install_slr10.InstallerTests.test_local_source_edits_stop_all_writes) ... ok
+test_modified_distribution_is_rejected_without_target_changes (test_install_slr10.InstallerTests.test_modified_distribution_is_rejected_without_target_changes) ... ok
+test_previous_file_and_requirements_are_backed_up (test_install_slr10.InstallerTests.test_previous_file_and_requirements_are_backed_up) ... ok
+test_reinstall_is_idempotent (test_install_slr10.InstallerTests.test_reinstall_is_idempotent) ... ok
+test_unknown_pillow_pin_stops_all_writes (test_install_slr10.InstallerTests.test_unknown_pillow_pin_stops_all_writes) ... ok
+test_upgrade_known_100_and_pillow_without_changing_ai_requirements (test_install_slr10.InstallerTests.test_upgrade_known_100_and_pillow_without_changing_ai_requirements) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.125s
+
+OK
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 6
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya jalankan SIAPKAN_SLR10.bat dari repository tujuan.
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 0
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 6
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya jalankan SIAPKAN_SLR10.bat dari repository tujuan.
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 6
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya jalankan SIAPKAN_SLR10.bat dari repository tujuan.
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 6
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya jalankan SIAPKAN_SLR10.bat dari repository tujuan.
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 6
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya jalankan SIAPKAN_SLR10.bat dari repository tujuan.
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 6
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya jalankan SIAPKAN_SLR10.bat dari repository tujuan.
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 0
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 6
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya jalankan SIAPKAN_SLR10.bat dari repository tujuan.

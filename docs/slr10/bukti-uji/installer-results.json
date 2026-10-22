@@ -1,0 +1,20 @@
+{
+  "results": [
+    {
+      "scenario": "Pemasangan mempertahankan .env, model/migration dan pekerjaan/config SLR_11",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Pemasangan ulang bersifat idempotent",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Konflik isi frontend menghentikan preflight tanpa menimpa berkas",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Konfigurasi lokal hanya menyelaraskan origin dan mempertahankan DB_PORT/password",
+      "status": "PASS"
+    }
+  ]
+}

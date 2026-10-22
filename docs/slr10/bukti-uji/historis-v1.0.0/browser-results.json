@@ -1,0 +1,110 @@
+{
+  "environment": {
+    "browser": "Chromium 140.0.7339.16",
+    "backend": "Django HTTP actual; isolated SQLite component database; no PostgreSQL triggers",
+    "frontend": "Vue production build through Python proxy",
+    "ai": "not installed; unavailability tested"
+  },
+  "results": [
+    {
+      "scenario": "Login salah ditolak oleh API nyata",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scenario": "Login Reporter melalui Vue, CSRF, JWT dan cookie",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scenario": "Draft dan teks disimpan melalui backend nyata",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scenario": "Tab ditutup lalu draft/evidence dipulihkan sebelum bundle",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scenario": "Upload PNG, decoder backend dan media privat on demand",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scenario": "MediaRecorder browser menghasilkan WebM yang benar-benar didekode dan disimpan backend",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scenario": "Pemilihan eksplisit dan pembentukan bundle",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scenario": "SLR_11 belum terpasang ditampilkan sebagai layanan belum tersedia, tanpa hasil AI buatan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scenario": "Perubahan profil memakai PATCH API",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scenario": "Tampilan tanpa overflow horizontal 360px",
+      "status": "PASS",
+      "detail": "{'width': 360, 'scroll': 360}"
+    },
+    {
+      "scenario": "Tampilan tanpa overflow horizontal 390px",
+      "status": "PASS",
+      "detail": "{'width': 390, 'scroll': 390}"
+    },
+    {
+      "scenario": "Tampilan tanpa overflow horizontal 768px",
+      "status": "PASS",
+      "detail": "{'width': 768, 'scroll': 768}"
+    },
+    {
+      "scenario": "Tampilan tanpa overflow horizontal 1366px",
+      "status": "PASS",
+      "detail": "{'width': 1366, 'scroll': 1366}"
+    },
+    {
+      "scenario": "Menu ponsel menutup sesudah navigasi",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scenario": "Cache PWA hanya aset UI; storage browser tidak memuat token atau draft",
+      "status": "PASS",
+      "detail": "16 assets"
+    },
+    {
+      "scenario": "Navigasi offline memuat app shell dan pemberitahuan koneksi",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scenario": "Logout 204 diproses tanpa parser JSON dan keluar dari halaman privat",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scenario": "Registrasi Vue, email lokal dan verifikasi OTP nyata",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scenario": "Pemulihan/reset password dan login menggunakan kata sandi baru melalui Vue",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scenario": "Tidak ada exception JavaScript browser",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}

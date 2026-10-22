@@ -14,7 +14,7 @@ function harness(){
  const root={innerHTML:''},listeners={};
  const context={...model,console,setTimeout:()=>0,setInterval:()=>0,clearInterval:()=>{},requestAnimationFrame:()=>{},URL:{},document:{querySelector:q=>q==='#app'?root:null,querySelectorAll:()=>[],addEventListener:(type,fn)=>listeners[type]=fn}};
  vm.createContext(context);
- vm.runInContext(app.replace(/^import .*?;\n/,'')+'\nglobalThis.auditHarness={state:v=>{s=v;modal=null;menuOpen=false;},getState:()=>s,getMenu:()=>menuOpen,render};',context);
+ vm.runInContext(app.replace(/^import .*?;\r?\n/,'')+'\nglobalThis.auditHarness={state:v=>{s=v;modal=null;menuOpen=false;},getState:()=>s,getMenu:()=>menuOpen,render};',context);
  const h=context.auditHarness;
  return {root,h,click:(action,data={})=>listeners.click({target:{closest:()=>({dataset:{action,...data}})}})};
 }

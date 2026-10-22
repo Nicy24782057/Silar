@@ -1,0 +1,7 @@
+
+
+# SLR_10 local files
+.slr10-backups/
+code/frontend/node_modules/
+code/frontend/dist/
+code/backend/private_backups/

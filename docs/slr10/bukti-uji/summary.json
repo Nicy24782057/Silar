@@ -1,0 +1,20 @@
+{
+  "release": "1.1.0",
+  "date": "2026-10-22",
+  "backend_component_tests": 39,
+  "frontend_tests": 24,
+  "browser_scenarios": 28,
+  "installer_unit_tests": 11,
+  "prototype_checks_per_line_ending": {
+    "check": 42,
+    "review-check": 15,
+    "audit-check": 3
+  },
+  "pillow": "13.0.0",
+  "postgresql16": "NOT_RUN",
+  "slr11_loader_and_real_ai": "NOT_RUN",
+  "windows_physical_devices": "NOT_RUN",
+  "full_ai_dependency_resolver": "NOT_RUN",
+  "history": "bukti-uji/historis-v1.0.0",
+  "full_package_install_scenarios": 6
+}

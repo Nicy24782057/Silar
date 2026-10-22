@@ -1,0 +1,10 @@
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+const prompt=ref(null);const message=ref('');const update=ref(null);
+const capture=event=>{event.preventDefault();prompt.value=event;};
+onMounted(async()=>{window.addEventListener('beforeinstallprompt',capture);if('serviceWorker'in navigator){const registration=await navigator.serviceWorker.getRegistration();update.value=registration?.waiting||null;}});
+onUnmounted(()=>window.removeEventListener('beforeinstallprompt',capture));
+async function install(){if(!prompt.value)return;await prompt.value.prompt();const result=await prompt.value.userChoice;message.value=result.outcome==='accepted'?'Permintaan pemasangan diterima.':'Pemasangan dibatalkan; kamu tetap dapat memakai browser.';prompt.value=null;}
+function activate(){update.value?.postMessage('ACTIVATE_UPDATE');navigator.serviceWorker.addEventListener('controllerchange',()=>location.reload(),{once:true});}
+</script>
+<template><div class="page-heading"><div><div class="eyebrow">AKSES APLIKASI</div><h1>Aplikasi & Koneksi</h1><p class="subtitle">Akses SILAR dari browser atau pasang sebagai aplikasi.</p></div></div><div class="info-grid"><section class="card"><h2>Pasang SILAR</h2><p>Gunakan menu browser untuk memasang aplikasi atau menambahkannya ke layar utama. Fitur pemasangan mengikuti dukungan browser.</p><button v-if="prompt" class="primary" @click="install">Pasang aplikasi</button><p v-else class="fine">Pada Chrome/Edge, cari menu Pasang aplikasi. Di perangkat lain, gunakan Tambahkan ke layar utama jika tersedia.</p><p v-if="message" role="status">{{ message }}</p><button v-if="update" @click="activate">Gunakan pembaruan aplikasi</button></section><section class="card"><h2>Ketika offline</h2><p>Aset antarmuka dapat tersedia setelah aplikasi pernah dimuat. Registrasi, login, draft, bukti, media privat, dan hasil analisis tetap membutuhkan koneksi.</p><p class="fine">Tidak ada penyimpanan atau sinkronisasi draft offline. Token dan data privat tidak dimasukkan ke cache aplikasi.</p></section></div></template>
