@@ -1,5 +1,9 @@
 # Implementasi SLR_10 SILAR
 
+Pembaruan dokumentasi **23 Oktober 2026**: integrasi SLR10–SLR11 0.2.0 memiliki bukti tujuh rute, 10 run dengan relasi `OK` dan 24 tes transaksi/integrasi Windows/PostgreSQL lulus. Pelaksana juga mengonfirmasi frontend sampai hasil tersimpan, instalasi PWA, muat ulang dan notifikasi offline; tampilan yang digunakan dinilai tidak bermasalah.
+
+Status terbaru: [HASIL_VERIFIKASI.md](HASIL_VERIFIKASI.md), [CHECKLIST_PENERIMAAN.md](CHECKLIST_PENERIMAAN.md), [INTEGRASI_SLR11.md](INTEGRASI_SLR11.md), dan [catatan penerimaan manual](bukti-uji/penerimaan-manual-20261023.md). Bukti rinci pipeline/hasil: [dokumen SLR11](../ai/slr11/BUKTI_PEKERJAAN_DAN_WAKTU_PROSES_SLR11.md). Panduan operasional tetap [PANDUAN_RUNNING.md](../../PANDUAN_RUNNING.md). Uraian versi 1.1.1 di bawah merupakan riwayat penyerahan SLR10.
+
 Versi paket 1.1.1 (revisi penutup implementasi), 22 Oktober 2026. Paket menyediakan frontend Vue dan layanan input multimodal di atas fondasi SLR_08. Hasilnya dipakai oleh SLR_11 untuk analisis, kemudian SLR_12 untuk pemeriksaan, koreksi, konfirmasi, dan pengiriman resmi.
 
 ## Acuan dan posisi sumber
@@ -76,7 +80,7 @@ PWA hanya memuat daftar aset UI yang dibangun. API, media, token, draft dan hasi
 | FR23, NFR04 | Event audit dalam transaksi dan sumber versi tetap. | Report create, upload dan bundle tercatat tanpa isi bukti/rahasia pada audit. |
 | NFR06 | Layout responsif dan menu ponsel. | Simulasi viewport dicatat pada hasil browser; perangkat fisik diverifikasi kelompok. |
 
-Rincian status pemeriksaan ada di `HASIL_VERIFIKASI.md`. Review kelompok, Windows/PostgreSQL, perangkat sasaran dan bukti commit/push dicatat setelah pelaksanaan sebenarnya. Tidak ada commit atau push otomatis ke repository kelompok dari penyusunan paket ini.
+Rincian status pemeriksaan ada di `HASIL_VERIFIKASI.md`. Hasil Windows/PostgreSQL dan laporan manual PWA/tampilan sudah dicatat sesuai sumbernya. Model/provider pengganti pada 24 tes backend, runtime asli pada run aplikasi, serta arsip UI/PWA historis dibedakan. Review/keputusan kelompok dan pencocokan bukti commit dilakukan oleh pelaksana.
 
 ## Revisi audit 1.1.0
 
@@ -88,4 +92,4 @@ Rujukan API browser: [MediaRecorder.isTypeSupported](https://developer.mozilla.o
 
 ## Revisi 1.1.1
 
-Lihat [REVISI_1.1.1.md](REVISI_1.1.1.md) dan [HASIL_VERIFIKASI.md](HASIL_VERIFIKASI.md). Pengujian diulang pada validator/API audio, installer/paket, dan build yang terdampak. Source logika frontend/PWA, fondasi SLR08, serta kontrak API tidak diubah. Bukti rilis 1.1.0 berada di `bukti-uji/historis-v1.1.0/`. Penerimaan Windows/PostgreSQL dan alur AI gabungan tetap dicatat sesuai hasil aktual tim.
+Lihat [REVISI_1.1.1.md](REVISI_1.1.1.md) dan [HASIL_VERIFIKASI.md](HASIL_VERIFIKASI.md). Pengujian diulang pada validator/API audio, installer/paket, dan build yang terdampak. Pada revisi audio/kemasan 1.1.1 saat itu, source logika frontend/PWA, fondasi SLR08 dan kontrak API dipertahankan. Paket integrasi 0.2.0 kemudian melengkapi sambungan analisis/pemulihan frontend. Bukti rilis 1.1.0 berada di `bukti-uji/historis-v1.1.0/`; hasil integrasi dan laporan manual terbaru tercantum pada HASIL_VERIFIKASI.md.

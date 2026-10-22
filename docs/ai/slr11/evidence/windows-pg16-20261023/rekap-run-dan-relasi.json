@@ -1,0 +1,167 @@
+{
+  "provenance": {
+    "source": "verifikasi-relasi-dan-pemulihan.txt",
+    "original_uploaded_name": "Teks yang ditempel (1)(1).txt",
+    "source_sha256": "686789a18bfecb18eb42e990e13e1c2b93f7628ba8d6b09cbbea6fdb7981301f",
+    "verification_date": "2026-10-23",
+    "note": "Derived from the supplied terminal output; no new query or inference was executed by the document author."
+  },
+  "run_filter": {
+    "mode": "EVIDENCE",
+    "status": "SUCCEEDED"
+  },
+  "results": [
+    {
+      "route": "A",
+      "run_id": "6cb95e92-9c64-43e7-82a9-5f162ac493fc",
+      "hasil": "OK",
+      "masalah": []
+    },
+    {
+      "route": "AI",
+      "run_id": "3ed5f47f-7abe-4087-882f-def5aa50a0ce",
+      "hasil": "OK",
+      "masalah": []
+    },
+    {
+      "route": "AI",
+      "run_id": "d71db3cf-14b1-4432-9c1e-f363ee32f0cb",
+      "hasil": "OK",
+      "masalah": []
+    },
+    {
+      "route": "I",
+      "run_id": "af59afda-014e-4203-a9fc-ddc7326a1c1c",
+      "hasil": "OK",
+      "masalah": []
+    },
+    {
+      "route": "T",
+      "run_id": "f3aa497d-d588-4be1-8b9e-2f6907dde8f7",
+      "hasil": "OK",
+      "masalah": []
+    },
+    {
+      "route": "T",
+      "run_id": "a183de89-52a3-4cee-8ac9-bc8267a9c14e",
+      "hasil": "OK",
+      "masalah": []
+    },
+    {
+      "route": "T",
+      "run_id": "dee42303-db65-485a-a3ef-378e12e77040",
+      "hasil": "OK",
+      "masalah": []
+    },
+    {
+      "route": "TA",
+      "run_id": "85ecf463-304d-4fd8-8cfb-642880e3bcf9",
+      "hasil": "OK",
+      "masalah": []
+    },
+    {
+      "route": "TAI",
+      "run_id": "fb4eadcc-291e-4e5a-ba38-42b15bcbdf14",
+      "hasil": "OK",
+      "masalah": []
+    },
+    {
+      "route": "TI",
+      "run_id": "f97c1d62-6365-41a3-8231-a586441ac638",
+      "hasil": "OK",
+      "masalah": []
+    }
+  ],
+  "summary": {
+    "jumlah_run": 10,
+    "ok": 10,
+    "perlu_diperiksa": 0,
+    "rute_terbaca": [
+      "A",
+      "AI",
+      "I",
+      "T",
+      "TA",
+      "TAI",
+      "TI"
+    ]
+  },
+  "route_counts": [
+    {
+      "route": "T",
+      "succeeded_runs": 3,
+      "relation_ok": 3
+    },
+    {
+      "route": "A",
+      "succeeded_runs": 1,
+      "relation_ok": 1
+    },
+    {
+      "route": "I",
+      "succeeded_runs": 1,
+      "relation_ok": 1
+    },
+    {
+      "route": "TA",
+      "succeeded_runs": 1,
+      "relation_ok": 1
+    },
+    {
+      "route": "TI",
+      "succeeded_runs": 1,
+      "relation_ok": 1
+    },
+    {
+      "route": "AI",
+      "succeeded_runs": 2,
+      "relation_ok": 2
+    },
+    {
+      "route": "TAI",
+      "succeeded_runs": 1,
+      "relation_ok": 1
+    }
+  ],
+  "automated_tests": {
+    "settings": "config.test_settings",
+    "database_name": "test_silar_local",
+    "database_engine": "PostgreSQL",
+    "keepdb": true,
+    "python_version_as_logged": "3.12.10",
+    "count": 24,
+    "elapsed_seconds": 19.483,
+    "result": "OK",
+    "module_counts": {
+      "ai_pipeline.tests.test_database": 15,
+      "ai_pipeline.tests.test_reporting_integration": 9
+    },
+    "test_ids": [
+      "ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_all_seven_routes_persist_sources_and_audio_reference",
+      "ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_capacity_full_does_not_mutate_report",
+      "ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_finalization_error_rolls_back_card_and_never_returns_success",
+      "ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_known_upstream_failure_keeps_partial_narrative_and_safe_error",
+      "ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_narrative_revision_reuses_narrative_without_transcription",
+      "ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_non_event_is_blocked_and_empty_fields_do_not_make_uncertain",
+      "ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_other_owner_cannot_start_or_read_run",
+      "ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_recovery_refuses_live_process_then_fences_old_token_after_proof",
+      "ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_replay_checks_current_account_before_returning_snapshot",
+      "ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_replay_does_not_reapply_submitted_transition_guard",
+      "ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_same_key_with_new_revision_is_mismatch",
+      "ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_source_change_preserves_partial_history_but_never_activates_old_card",
+      "ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_success_commits_card_ledger_and_audit_before_http_success",
+      "ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_terminal_replay_has_no_new_inference_or_revision",
+      "ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_uncertain_database_outcome_keeps_slot_and_get_is_read_only",
+      "ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_expired_request_remains_readable_without_available_replay",
+      "ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_known_failure_can_be_read_replayed_and_explicitly_retried_from_fresh_revision",
+      "ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_lost_response_is_recovered_by_reading_request_run_and_report_without_mutation",
+      "ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_missing_ai_configuration_preserves_login_draft_and_uploaded_evidence",
+      "ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_non_event_and_uncertain_are_stored_without_verification_or_submission",
+      "ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_other_owner_cannot_read_request_run_report_or_media",
+      "ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_seven_routes_from_actual_upload_bundle_to_matching_stored_card",
+      "ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_source_changed_through_input_api_preserves_new_bundle_and_rejects_old_card",
+      "ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_unknown_finalization_remains_read_only_and_holds_another_analysis"
+    ],
+    "scope": "Transactions and integration using controlled model/provider doubles in the supplied integration package."
+  }
+}

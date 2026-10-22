@@ -1,0 +1,3862 @@
+{
+  "exported_at": "2026-10-22T23:29:52.657Z",
+  "method": "Read existing successful EVIDENCE runs; no inference.",
+  "selection": "Latest successful run per route.",
+  "routes": [
+    "T",
+    "A",
+    "I",
+    "TA",
+    "TI",
+    "AI",
+    "TAI"
+  ],
+  "example_count": 7,
+  "examples": [
+    {
+      "route": "T",
+      "bundle": {
+        "id": "90dac7f9-2723-4f27-b437-32198c8c8502",
+        "version_number": 1,
+        "source_digest": "6c3f8b8f5d7fe3028f1b9640a100f0ec5bc09862ce1115bd0ef780c9dc78b9ac"
+      },
+      "sources": [
+        {
+          "position": 1,
+          "evidence_id": "f5b89e6a-d771-4ef3-8e71-857b0e52a350",
+          "type": "TEXT",
+          "text_content": "Tanah bergoyang dan bergetas sangat kuat sehingga menyebabkan 3 rumah runtuh",
+          "mime_type": null,
+          "byte_size": 76,
+          "sha256": "59f16daf04f946a9413d2dd267f532a29aa87484c77254c3ee66e35638b4a8a3"
+        }
+      ],
+      "run": {
+        "id": "9e9fde05-5015-450c-97af-00781a500a81",
+        "created_at": "2026-10-22T23:24:13.350145Z",
+        "report_id": "7f08bbc3-ccf6-4c27-95b5-be22e52773e4",
+        "bundle_id": "90dac7f9-2723-4f27-b437-32198c8c8502",
+        "input_narrative_id": null,
+        "output_narrative_id": "1cdc3df8-bbbf-4a52-ac00-cdc8a38d248d",
+        "used_transcript_id": null,
+        "input_revision": 2,
+        "mode": "EVIDENCE",
+        "route": "T",
+        "status": "SUCCEEDED",
+        "stage": "PERSIST",
+        "model_versions": {
+          "nara": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3",
+          "sena": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3",
+          "fusion": "silar-fusion-a4.22-0.1.0",
+          "adapter": "silar-adapter-0.5.3",
+          "runtime": "silar-candidate-runtime-0.6.5",
+          "pipeline": "silar-pipeline-0.1.0",
+          "normalizer": "silar-normalizer-0.1.0",
+          "asset_lock_sha256": "35f33ef6eca306d16fbf1bbd6093bc6a8512770394e32036ca06f8ff7c6d4876",
+          "confidence_threshold": 0.95,
+          "configuration_sha256": "1ee37cdf182e7b509d80622c31128402b0e1b1215b333a334e17ebdc4a7886d1",
+          "calibration_reference": "SILAR_SENA_context_v084_20261020T144453Z:OPERATING_CUTOFF_0.95_NOT_PROBABILITY_CALIBRATED",
+          "inference_profile_sha256": "d2f235f7b5b3f4d7cb445fa5870cfc6b0b49f9f1a429e8518075c4ff53955bbd"
+        },
+        "started_at": "2026-10-22T23:24:13.347839Z",
+        "finished_at": "2026-10-22T23:24:37.219936Z",
+        "error_code": null,
+        "timings_ms": {
+          "NARA": 220.997,
+          "SENA": 23524.187,
+          "TOTAL": 23900.98,
+          "FUSION": 0.3,
+          "NARRATIVE": 0.137
+        },
+        "used_transcript": null,
+        "output_narrative": {
+          "id": "1cdc3df8-bbbf-4a52-ac00-cdc8a38d248d",
+          "created_at": "2026-10-22T23:24:13.384424Z",
+          "report_id": "7f08bbc3-ccf6-4c27-95b5-be22e52773e4",
+          "bundle_id": "90dac7f9-2723-4f27-b437-32198c8c8502",
+          "parent_id": null,
+          "producer_run_id": "9e9fde05-5015-450c-97af-00781a500a81",
+          "version_number": 1,
+          "text": "Tanah bergoyang dan bergetas sangat kuat sehingga menyebabkan 3 rumah runtuh",
+          "origin": "NORMALIZER"
+        },
+        "sena": {
+          "id": "ec103b2c-815f-406d-89a1-068d2e7b63e6",
+          "created_at": "2026-10-22T23:24:36.925554Z",
+          "analysis_run_id": "9e9fde05-5015-450c-97af-00781a500a81",
+          "narrative_id": "1cdc3df8-bbbf-4a52-ac00-cdc8a38d248d",
+          "category": "EARTHQUAKE",
+          "confidence": 0.99867,
+          "raw_output": {
+            "label": "EARTHQUAKE",
+            "confidence": 0.9986701011657715,
+            "probabilities": {
+              "FIRE": 3.015312358911615e-05,
+              "FLOOD": 0.0003929143713321537,
+              "ACCIDENT": 0.000255880004260689,
+              "NON_EVENT": 0.000651136040687561,
+              "EARTHQUAKE": 0.9986701011657715
+            }
+          },
+          "model_version": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3"
+        },
+        "nara": {
+          "id": "e6e1a91a-0e3c-475a-aa33-14c6b84246b8",
+          "created_at": "2026-10-22T23:24:37.167389Z",
+          "analysis_run_id": "9e9fde05-5015-450c-97af-00781a500a81",
+          "narrative_id": "1cdc3df8-bbbf-4a52-ac00-cdc8a38d248d",
+          "raw_output": {
+            "srl_spans": {
+              "TIME-ARG": [],
+              "PLACE-ARG": [],
+              "FIRE-EVENT": [],
+              "REASON-ARG": [
+                {
+                  "role": "REASON-ARG",
+                  "text": "Tanah",
+                  "mean_confidence": 0.6711679697036743
+                }
+              ],
+              "STREET-ARG": [],
+              "FALSE-EVENT": [],
+              "FLOOD-EVENT": [],
+              "OFFICER-ARG": [],
+              "ACCIDENT-EVENT": [],
+              "DEATHVICTIM-ARG": [],
+              "INFORMATION-ARG": [
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "runtuh",
+                  "mean_confidence": 0.6899158358573914
+                }
+              ],
+              "WOUNDVICTIM-ARG": [],
+              "EARTHQUAKE-EVENT": [],
+              "AFFECTEDOBJECTS-ARG": [
+                {
+                  "role": "AFFECTEDOBJECTS-ARG",
+                  "text": "3 rumah",
+                  "mean_confidence": 0.9627443552017212
+                }
+              ]
+            },
+            "token_coverage": {
+              "alignment": "FIRST_WORDPIECE_LEGACY_INFERENCE_NOT_PROOF_OF_TRAINING_ALIGNMENT",
+              "source_regex_tokens": 11,
+              "processed_regex_tokens": 11,
+              "all_regex_tokens_processed": true,
+              "last_wordpiece_sequence_partial": false,
+              "processed_wordpieces_with_special_tokens": 14
+            },
+            "postprocessing_trace": {
+              "spans_before_guard": {
+                "TIME-ARG": [],
+                "PLACE-ARG": [],
+                "FIRE-EVENT": [],
+                "REASON-ARG": [
+                  {
+                    "role": "REASON-ARG",
+                    "text": "Tanah",
+                    "mean_confidence": 0.6711679697036743
+                  }
+                ],
+                "STREET-ARG": [],
+                "FALSE-EVENT": [],
+                "FLOOD-EVENT": [],
+                "OFFICER-ARG": [],
+                "ACCIDENT-EVENT": [],
+                "DEATHVICTIM-ARG": [],
+                "INFORMATION-ARG": [
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "runtuh",
+                    "mean_confidence": 0.6899158358573914
+                  }
+                ],
+                "WOUNDVICTIM-ARG": [],
+                "EARTHQUAKE-EVENT": [],
+                "AFFECTEDOBJECTS-ARG": [
+                  {
+                    "role": "AFFECTEDOBJECTS-ARG",
+                    "text": "3 rumah",
+                    "mean_confidence": 0.9627443552017212
+                  }
+                ]
+              },
+              "victim_safety_flags": [],
+              "victim_guard_version": "silar-victim-guard-0.5.0"
+            },
+            "srl_token_predictions": [
+              {
+                "end": 5,
+                "label": "REASON-ARG",
+                "start": 0,
+                "token": "tanah",
+                "original": "Tanah",
+                "confidence": 0.6711679697036743
+              },
+              {
+                "end": 15,
+                "label": "O",
+                "start": 6,
+                "token": "bergoyang",
+                "original": "bergoyang",
+                "confidence": 0.4465939402580261
+              },
+              {
+                "end": 19,
+                "label": "O",
+                "start": 16,
+                "token": "dan",
+                "original": "dan",
+                "confidence": 0.9702941179275513
+              },
+              {
+                "end": 28,
+                "label": "O",
+                "start": 20,
+                "token": "bergetas",
+                "original": "bergetas",
+                "confidence": 0.41419902443885803
+              },
+              {
+                "end": 35,
+                "label": "O",
+                "start": 29,
+                "token": "sangat",
+                "original": "sangat",
+                "confidence": 0.5844042301177979
+              },
+              {
+                "end": 40,
+                "label": "O",
+                "start": 36,
+                "token": "kuat",
+                "original": "kuat",
+                "confidence": 0.6183733940124512
+              },
+              {
+                "end": 49,
+                "label": "O",
+                "start": 41,
+                "token": "sehingga",
+                "original": "sehingga",
+                "confidence": 0.986255407333374
+              },
+              {
+                "end": 61,
+                "label": "O",
+                "start": 50,
+                "token": "menyebabkan",
+                "original": "menyebabkan",
+                "confidence": 0.9724282026290894
+              },
+              {
+                "end": 63,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 62,
+                "token": "3",
+                "original": "3",
+                "confidence": 0.953384280204773
+              },
+              {
+                "end": 69,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 64,
+                "token": "rumah",
+                "original": "rumah",
+                "confidence": 0.9721044301986694
+              },
+              {
+                "end": 76,
+                "label": "INFORMATION-ARG",
+                "start": 70,
+                "token": "runtuh",
+                "original": "runtuh",
+                "confidence": 0.6899158358573914
+              }
+            ]
+          },
+          "normalized_output": {
+            "impacts": [
+              "3 rumah runtuh"
+            ],
+            "victims": [],
+            "time_text": null,
+            "occurred_at": null,
+            "location_text": null,
+            "affected_objects": [
+              "3 rumah"
+            ],
+            "involved_parties": []
+          },
+          "normalization_warnings": [
+            {
+              "code": "INFORMATION_AS_IMPACT_SUGGESTION",
+              "field": "impacts"
+            }
+          ],
+          "model_version": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3"
+        }
+      },
+      "incident_card": {
+        "id": "eb42401e-6c58-4d73-ab17-46b449814a0d",
+        "created_at": "2026-10-22T23:24:37.215926Z",
+        "report_id": "7f08bbc3-ccf6-4c27-95b5-be22e52773e4",
+        "bundle_id": "90dac7f9-2723-4f27-b437-32198c8c8502",
+        "narrative_id": "1cdc3df8-bbbf-4a52-ac00-cdc8a38d248d",
+        "sena_result_id": "ec103b2c-815f-406d-89a1-068d2e7b63e6",
+        "nara_result_id": "e6e1a91a-0e3c-475a-aa33-14c6b84246b8",
+        "parent_id": null,
+        "version_number": 1,
+        "source_kind": "AI_FUSION",
+        "data": {
+          "impacts": [
+            "3 rumah runtuh"
+          ],
+          "victims": [],
+          "time_text": null,
+          "event_type": "EARTHQUAKE",
+          "occurred_at": null,
+          "location_text": null,
+          "affected_objects": [
+            "3 rumah"
+          ],
+          "involved_parties": []
+        },
+        "uncertain": false,
+        "uncertain_reasons": [],
+        "fusion_version": "silar-fusion-a4.22-0.1.0"
+      }
+    },
+    {
+      "route": "A",
+      "bundle": {
+        "id": "bcd95df6-8e06-45e7-8465-210e015e164c",
+        "version_number": 1,
+        "source_digest": "4da4cd70bd9b559ca7bcb77655c399192f62e6336c33064265ef94e044f79e61"
+      },
+      "sources": [
+        {
+          "position": 1,
+          "evidence_id": "c216c73f-cd58-44ba-95b0-0a52c38a8f0f",
+          "type": "AUDIO",
+          "text_content": null,
+          "mime_type": "audio/mpeg",
+          "byte_size": 301056,
+          "sha256": "f4293e37a657268d96544e1fae07a6bbe6ce8245a338ebcf14af6188613b3be7"
+        }
+      ],
+      "run": {
+        "id": "6cb95e92-9c64-43e7-82a9-5f162ac493fc",
+        "created_at": "2026-10-21T17:16:49.389182Z",
+        "report_id": "caab1513-0bda-483e-9bf0-9f96371d9a8b",
+        "bundle_id": "bcd95df6-8e06-45e7-8465-210e015e164c",
+        "input_narrative_id": null,
+        "output_narrative_id": "0db5c898-4f50-43e5-9149-4cf52c174dd8",
+        "used_transcript_id": "6aa6c0be-721c-4d8d-a7b4-9233cf4a862c",
+        "input_revision": 1,
+        "mode": "EVIDENCE",
+        "route": "A",
+        "status": "SUCCEEDED",
+        "stage": "PERSIST",
+        "model_versions": {
+          "nara": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3",
+          "sena": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3",
+          "fusion": "silar-fusion-a4.22-0.1.0",
+          "adapter": "silar-adapter-0.5.3",
+          "runtime": "silar-candidate-runtime-0.6.5",
+          "whisper": "whisper-small|536b0662742c0234|cpu-int8",
+          "pipeline": "silar-pipeline-0.1.0",
+          "normalizer": "silar-normalizer-0.1.0",
+          "asset_lock_sha256": "35f33ef6eca306d16fbf1bbd6093bc6a8512770394e32036ca06f8ff7c6d4876",
+          "confidence_threshold": 0.95,
+          "configuration_sha256": "1ee37cdf182e7b509d80622c31128402b0e1b1215b333a334e17ebdc4a7886d1",
+          "calibration_reference": "SILAR_SENA_context_v084_20261020T144453Z:OPERATING_CUTOFF_0.95_NOT_PROBABILITY_CALIBRATED",
+          "inference_profile_sha256": "d2f235f7b5b3f4d7cb445fa5870cfc6b0b49f9f1a429e8518075c4ff53955bbd"
+        },
+        "started_at": "2026-10-21T17:16:49.389182Z",
+        "finished_at": "2026-10-21T17:16:52.830703Z",
+        "error_code": null,
+        "timings_ms": {
+          "NARA": 63.337,
+          "SENA": 64.597,
+          "TOTAL": 3468.127,
+          "FUSION": 0.12,
+          "WHISPER": 3117.909,
+          "NARRATIVE": 0.035
+        },
+        "used_transcript": {
+          "id": "6aa6c0be-721c-4d8d-a7b4-9233cf4a862c",
+          "created_at": "2026-10-21T17:16:52.614064Z",
+          "report_id": "caab1513-0bda-483e-9bf0-9f96371d9a8b",
+          "evidence_id": "c216c73f-cd58-44ba-95b0-0a52c38a8f0f",
+          "analysis_run_id": "6cb95e92-9c64-43e7-82a9-5f162ac493fc",
+          "text": "ada kebakaran di Kalimantan Barat dan saat ini belum ada korban jiwa",
+          "model_version": "whisper-small|536b0662742c0234|cpu-int8",
+          "duration_ms": 9408
+        },
+        "output_narrative": {
+          "id": "0db5c898-4f50-43e5-9149-4cf52c174dd8",
+          "created_at": "2026-10-21T17:16:52.630950Z",
+          "report_id": "caab1513-0bda-483e-9bf0-9f96371d9a8b",
+          "bundle_id": "bcd95df6-8e06-45e7-8465-210e015e164c",
+          "parent_id": null,
+          "producer_run_id": "6cb95e92-9c64-43e7-82a9-5f162ac493fc",
+          "version_number": 1,
+          "text": "ada kebakaran di Kalimantan Barat dan saat ini belum ada korban jiwa",
+          "origin": "NORMALIZER"
+        },
+        "sena": {
+          "id": "af87f537-5713-430a-9396-6adbd8b62df3",
+          "created_at": "2026-10-21T17:16:52.722331Z",
+          "analysis_run_id": "6cb95e92-9c64-43e7-82a9-5f162ac493fc",
+          "narrative_id": "0db5c898-4f50-43e5-9149-4cf52c174dd8",
+          "category": "FIRE",
+          "confidence": 0.99655,
+          "raw_output": {
+            "label": "FIRE",
+            "confidence": 0.9965465664863586,
+            "probabilities": {
+              "FIRE": 0.9965465664863586,
+              "FLOOD": 8.85591816768283e-06,
+              "ACCIDENT": 6.553020284627564e-06,
+              "NON_EVENT": 0.003434103913605213,
+              "EARTHQUAKE": 3.9812084651202895e-06
+            }
+          },
+          "model_version": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3"
+        },
+        "nara": {
+          "id": "c29189be-751d-48ee-8a90-da64a07ae00f",
+          "created_at": "2026-10-21T17:16:52.804615Z",
+          "analysis_run_id": "6cb95e92-9c64-43e7-82a9-5f162ac493fc",
+          "narrative_id": "0db5c898-4f50-43e5-9149-4cf52c174dd8",
+          "raw_output": {
+            "srl_spans": {
+              "TIME-ARG": [
+                {
+                  "role": "TIME-ARG",
+                  "text": "saat ini",
+                  "mean_confidence": 0.8861664235591888
+                }
+              ],
+              "PLACE-ARG": [
+                {
+                  "role": "PLACE-ARG",
+                  "text": "Kalimantan Barat",
+                  "mean_confidence": 0.9981592297554016
+                }
+              ],
+              "FIRE-EVENT": [
+                {
+                  "role": "FIRE-EVENT",
+                  "text": "kebakaran",
+                  "mean_confidence": 0.9967898726463318
+                }
+              ],
+              "REASON-ARG": [],
+              "STREET-ARG": [],
+              "FALSE-EVENT": [],
+              "FLOOD-EVENT": [],
+              "OFFICER-ARG": [],
+              "ACCIDENT-EVENT": [],
+              "DEATHVICTIM-ARG": [],
+              "INFORMATION-ARG": [
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "belum ada korban jiwa",
+                  "mean_confidence": 0.978470042347908
+                }
+              ],
+              "WOUNDVICTIM-ARG": [],
+              "EARTHQUAKE-EVENT": [],
+              "AFFECTEDOBJECTS-ARG": []
+            },
+            "token_coverage": {
+              "alignment": "FIRST_WORDPIECE_LEGACY_INFERENCE_NOT_PROOF_OF_TRAINING_ALIGNMENT",
+              "source_regex_tokens": 12,
+              "processed_regex_tokens": 12,
+              "all_regex_tokens_processed": true,
+              "last_wordpiece_sequence_partial": false,
+              "processed_wordpieces_with_special_tokens": 14
+            },
+            "postprocessing_trace": {
+              "spans_before_guard": {
+                "TIME-ARG": [
+                  {
+                    "role": "TIME-ARG",
+                    "text": "saat ini",
+                    "mean_confidence": 0.8861664235591888
+                  }
+                ],
+                "PLACE-ARG": [
+                  {
+                    "role": "PLACE-ARG",
+                    "text": "Kalimantan Barat",
+                    "mean_confidence": 0.9981592297554016
+                  }
+                ],
+                "FIRE-EVENT": [
+                  {
+                    "role": "FIRE-EVENT",
+                    "text": "kebakaran",
+                    "mean_confidence": 0.9967898726463318
+                  }
+                ],
+                "REASON-ARG": [],
+                "STREET-ARG": [],
+                "FALSE-EVENT": [],
+                "FLOOD-EVENT": [],
+                "OFFICER-ARG": [],
+                "ACCIDENT-EVENT": [],
+                "DEATHVICTIM-ARG": [],
+                "INFORMATION-ARG": [
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "belum ada korban jiwa",
+                    "mean_confidence": 0.978470042347908
+                  }
+                ],
+                "WOUNDVICTIM-ARG": [],
+                "EARTHQUAKE-EVENT": [],
+                "AFFECTEDOBJECTS-ARG": []
+              },
+              "victim_safety_flags": [],
+              "victim_guard_version": "silar-victim-guard-0.5.0"
+            },
+            "srl_token_predictions": [
+              {
+                "end": 3,
+                "label": "O",
+                "start": 0,
+                "token": "ada",
+                "original": "ada",
+                "confidence": 0.9919737577438354
+              },
+              {
+                "end": 13,
+                "label": "FIRE-EVENT",
+                "start": 4,
+                "token": "kebakaran",
+                "original": "kebakaran",
+                "confidence": 0.9967898726463318
+              },
+              {
+                "end": 16,
+                "label": "O",
+                "start": 14,
+                "token": "di",
+                "original": "di",
+                "confidence": 0.9978123903274536
+              },
+              {
+                "end": 27,
+                "label": "PLACE-ARG",
+                "start": 17,
+                "token": "kalimantan",
+                "original": "Kalimantan",
+                "confidence": 0.9980276226997375
+              },
+              {
+                "end": 33,
+                "label": "PLACE-ARG",
+                "start": 28,
+                "token": "barat",
+                "original": "Barat",
+                "confidence": 0.9982908368110657
+              },
+              {
+                "end": 37,
+                "label": "O",
+                "start": 34,
+                "token": "dan",
+                "original": "dan",
+                "confidence": 0.9822315573692322
+              },
+              {
+                "end": 42,
+                "label": "TIME-ARG",
+                "start": 38,
+                "token": "saat",
+                "original": "saat",
+                "confidence": 0.8961190581321716
+              },
+              {
+                "end": 46,
+                "label": "TIME-ARG",
+                "start": 43,
+                "token": "ini",
+                "original": "ini",
+                "confidence": 0.876213788986206
+              },
+              {
+                "end": 52,
+                "label": "INFORMATION-ARG",
+                "start": 47,
+                "token": "belum",
+                "original": "belum",
+                "confidence": 0.9877786040306091
+              },
+              {
+                "end": 56,
+                "label": "INFORMATION-ARG",
+                "start": 53,
+                "token": "ada",
+                "original": "ada",
+                "confidence": 0.982306182384491
+              },
+              {
+                "end": 63,
+                "label": "INFORMATION-ARG",
+                "start": 57,
+                "token": "korban",
+                "original": "korban",
+                "confidence": 0.9684864282608032
+              },
+              {
+                "end": 68,
+                "label": "INFORMATION-ARG",
+                "start": 64,
+                "token": "jiwa",
+                "original": "jiwa",
+                "confidence": 0.9753089547157288
+              }
+            ]
+          },
+          "normalized_output": {
+            "impacts": [],
+            "victims": [],
+            "time_text": "saat ini",
+            "occurred_at": null,
+            "location_text": "Kalimantan Barat",
+            "affected_objects": [],
+            "involved_parties": []
+          },
+          "normalization_warnings": [],
+          "model_version": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3"
+        }
+      },
+      "incident_card": {
+        "id": "77e3d60b-bdcc-4373-878e-d33db5378acb",
+        "created_at": "2026-10-21T17:16:52.830703Z",
+        "report_id": "caab1513-0bda-483e-9bf0-9f96371d9a8b",
+        "bundle_id": "bcd95df6-8e06-45e7-8465-210e015e164c",
+        "narrative_id": "0db5c898-4f50-43e5-9149-4cf52c174dd8",
+        "sena_result_id": "af87f537-5713-430a-9396-6adbd8b62df3",
+        "nara_result_id": "c29189be-751d-48ee-8a90-da64a07ae00f",
+        "parent_id": null,
+        "version_number": 1,
+        "source_kind": "AI_FUSION",
+        "data": {
+          "impacts": [],
+          "victims": [],
+          "time_text": "saat ini",
+          "event_type": "FIRE",
+          "occurred_at": null,
+          "location_text": "Kalimantan Barat",
+          "affected_objects": [],
+          "involved_parties": []
+        },
+        "uncertain": false,
+        "uncertain_reasons": [],
+        "fusion_version": "silar-fusion-a4.22-0.1.0"
+      }
+    },
+    {
+      "route": "I",
+      "bundle": {
+        "id": "ae3e6f62-025e-43e5-94d3-9f3d534fd1ec",
+        "version_number": 1,
+        "source_digest": "c4859cc16d9f8a3f6061eec081f9d9696e3aa89080ff728511d6030f4105c51e"
+      },
+      "sources": [
+        {
+          "position": 1,
+          "evidence_id": "0f00131c-7ea7-432f-98e1-2511000febc6",
+          "type": "IMAGE",
+          "text_content": null,
+          "mime_type": "image/jpeg",
+          "byte_size": 40625,
+          "sha256": "630ec66cf07f969b97e6e26036c381cb07233c335e8e065c452000f6451399c2"
+        }
+      ],
+      "run": {
+        "id": "af59afda-014e-4203-a9fc-ddc7326a1c1c",
+        "created_at": "2026-10-21T17:21:46.683691Z",
+        "report_id": "a3b9d390-c71f-4f07-bc7c-1212d72af953",
+        "bundle_id": "ae3e6f62-025e-43e5-94d3-9f3d534fd1ec",
+        "input_narrative_id": null,
+        "output_narrative_id": "0af60aa9-4dfc-4261-afd0-506f5cf25e0d",
+        "used_transcript_id": null,
+        "input_revision": 1,
+        "mode": "EVIDENCE",
+        "route": "I",
+        "status": "SUCCEEDED",
+        "stage": "PERSIST",
+        "model_versions": {
+          "nara": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3",
+          "sena": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3",
+          "fusion": "silar-fusion-a4.22-0.1.0",
+          "gemini": {
+            "sdk_version": "2.32.0",
+            "prompt_sha256": "86653ffb1ad3d0cb8ffd05fe8cadb4bb079df38f875c010d4b4a91c58a3172af",
+            "prompt_version": "silar-unified-narrative-0.1.0",
+            "resolved_model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "adapter": "silar-adapter-0.5.3",
+          "runtime": "silar-candidate-runtime-0.6.5",
+          "pipeline": "silar-pipeline-0.1.0",
+          "asset_lock_sha256": "35f33ef6eca306d16fbf1bbd6093bc6a8512770394e32036ca06f8ff7c6d4876",
+          "confidence_threshold": 0.95,
+          "configuration_sha256": "1ee37cdf182e7b509d80622c31128402b0e1b1215b333a334e17ebdc4a7886d1",
+          "calibration_reference": "SILAR_SENA_context_v084_20261020T144453Z:OPERATING_CUTOFF_0.95_NOT_PROBABILITY_CALIBRATED",
+          "inference_profile_sha256": "d2f235f7b5b3f4d7cb445fa5870cfc6b0b49f9f1a429e8518075c4ff53955bbd"
+        },
+        "started_at": "2026-10-21T17:21:46.683691Z",
+        "finished_at": "2026-10-21T17:21:56.361244Z",
+        "error_code": null,
+        "timings_ms": {
+          "NARA": 169.491,
+          "SENA": 6281.694,
+          "TOTAL": 9710.717,
+          "FUSION": 0.231,
+          "NARRATIVE": 3091.902
+        },
+        "used_transcript": null,
+        "output_narrative": {
+          "id": "0af60aa9-4dfc-4261-afd0-506f5cf25e0d",
+          "created_at": "2026-10-21T17:21:49.825365Z",
+          "report_id": "a3b9d390-c71f-4f07-bc7c-1212d72af953",
+          "bundle_id": "ae3e6f62-025e-43e5-94d3-9f3d534fd1ec",
+          "parent_id": null,
+          "producer_run_id": "af59afda-014e-4203-a9fc-ddc7326a1c1c",
+          "version_number": 1,
+          "text": "Tampak sebuah bangunan rumah mengalami kebakaran dengan api dan asap hitam tebal membumbung tinggi dari bagian atap dan jendela. Di teras depan rumah, terlihat seseorang mengenakan baju berwarna kuning berdiri sambil memegang ember.",
+          "origin": "GEMINI"
+        },
+        "sena": {
+          "id": "4d23ca83-a19c-4941-a6ea-34688e2e02f7",
+          "created_at": "2026-10-21T17:21:56.129706Z",
+          "analysis_run_id": "af59afda-014e-4203-a9fc-ddc7326a1c1c",
+          "narrative_id": "0af60aa9-4dfc-4261-afd0-506f5cf25e0d",
+          "category": "FIRE",
+          "confidence": 0.99957,
+          "raw_output": {
+            "label": "FIRE",
+            "confidence": 0.9995695948600769,
+            "probabilities": {
+              "FIRE": 0.9995695948600769,
+              "FLOOD": 5.016589966544416e-06,
+              "ACCIDENT": 1.2943786714458838e-05,
+              "NON_EVENT": 0.00040782568976283073,
+              "EARTHQUAKE": 4.555854502541479e-06
+            }
+          },
+          "model_version": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3"
+        },
+        "nara": {
+          "id": "c0d8fd9e-f6cc-4e74-bbbf-6eefd0685d89",
+          "created_at": "2026-10-21T17:21:56.318304Z",
+          "analysis_run_id": "af59afda-014e-4203-a9fc-ddc7326a1c1c",
+          "narrative_id": "0af60aa9-4dfc-4261-afd0-506f5cf25e0d",
+          "raw_output": {
+            "srl_spans": {
+              "TIME-ARG": [],
+              "PLACE-ARG": [
+                {
+                  "role": "PLACE-ARG",
+                  "text": "teras depan rumah",
+                  "mean_confidence": 0.9349826574325562
+                }
+              ],
+              "FIRE-EVENT": [
+                {
+                  "role": "FIRE-EVENT",
+                  "text": "kebakaran",
+                  "mean_confidence": 0.9968394041061401
+                },
+                {
+                  "role": "FIRE-EVENT",
+                  "text": "api",
+                  "mean_confidence": 0.9494630098342896
+                }
+              ],
+              "REASON-ARG": [],
+              "STREET-ARG": [],
+              "FALSE-EVENT": [],
+              "FLOOD-EVENT": [],
+              "OFFICER-ARG": [
+                {
+                  "role": "OFFICER-ARG",
+                  "text": "seseorang",
+                  "mean_confidence": 0.413524329662323
+                }
+              ],
+              "ACCIDENT-EVENT": [],
+              "DEATHVICTIM-ARG": [],
+              "INFORMATION-ARG": [
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "asap hitam tebal membumbung tinggi dari bagian",
+                  "mean_confidence": 0.7795582030500684
+                },
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "berdiri",
+                  "mean_confidence": 0.5365518927574158
+                },
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "memegang ember",
+                  "mean_confidence": 0.43942806124687195
+                }
+              ],
+              "WOUNDVICTIM-ARG": [],
+              "EARTHQUAKE-EVENT": [],
+              "AFFECTEDOBJECTS-ARG": [
+                {
+                  "role": "AFFECTEDOBJECTS-ARG",
+                  "text": "sebuah bangunan rumah",
+                  "mean_confidence": 0.9899604916572571
+                },
+                {
+                  "role": "AFFECTEDOBJECTS-ARG",
+                  "text": "atap",
+                  "mean_confidence": 0.5089490413665771
+                },
+                {
+                  "role": "AFFECTEDOBJECTS-ARG",
+                  "text": "jendela",
+                  "mean_confidence": 0.4077052175998688
+                }
+              ]
+            },
+            "token_coverage": {
+              "alignment": "FIRST_WORDPIECE_LEGACY_INFERENCE_NOT_PROOF_OF_TRAINING_ALIGNMENT",
+              "source_regex_tokens": 36,
+              "processed_regex_tokens": 36,
+              "all_regex_tokens_processed": true,
+              "last_wordpiece_sequence_partial": false,
+              "processed_wordpieces_with_special_tokens": 40
+            },
+            "postprocessing_trace": {
+              "spans_before_guard": {
+                "TIME-ARG": [],
+                "PLACE-ARG": [
+                  {
+                    "role": "PLACE-ARG",
+                    "text": "teras depan rumah",
+                    "mean_confidence": 0.9349826574325562
+                  }
+                ],
+                "FIRE-EVENT": [
+                  {
+                    "role": "FIRE-EVENT",
+                    "text": "kebakaran",
+                    "mean_confidence": 0.9968394041061401
+                  },
+                  {
+                    "role": "FIRE-EVENT",
+                    "text": "api",
+                    "mean_confidence": 0.9494630098342896
+                  }
+                ],
+                "REASON-ARG": [],
+                "STREET-ARG": [],
+                "FALSE-EVENT": [],
+                "FLOOD-EVENT": [],
+                "OFFICER-ARG": [
+                  {
+                    "role": "OFFICER-ARG",
+                    "text": "seseorang",
+                    "mean_confidence": 0.413524329662323
+                  }
+                ],
+                "ACCIDENT-EVENT": [],
+                "DEATHVICTIM-ARG": [],
+                "INFORMATION-ARG": [
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "asap hitam tebal membumbung tinggi dari bagian",
+                    "mean_confidence": 0.7795582030500684
+                  },
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "berdiri",
+                    "mean_confidence": 0.5365518927574158
+                  },
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "memegang ember",
+                    "mean_confidence": 0.43942806124687195
+                  }
+                ],
+                "WOUNDVICTIM-ARG": [],
+                "EARTHQUAKE-EVENT": [],
+                "AFFECTEDOBJECTS-ARG": [
+                  {
+                    "role": "AFFECTEDOBJECTS-ARG",
+                    "text": "sebuah bangunan rumah",
+                    "mean_confidence": 0.9899604916572571
+                  },
+                  {
+                    "role": "AFFECTEDOBJECTS-ARG",
+                    "text": "atap",
+                    "mean_confidence": 0.5089490413665771
+                  },
+                  {
+                    "role": "AFFECTEDOBJECTS-ARG",
+                    "text": "jendela",
+                    "mean_confidence": 0.4077052175998688
+                  }
+                ]
+              },
+              "victim_safety_flags": [],
+              "victim_guard_version": "silar-victim-guard-0.5.0"
+            },
+            "srl_token_predictions": [
+              {
+                "end": 6,
+                "label": "O",
+                "start": 0,
+                "token": "tampak",
+                "original": "Tampak",
+                "confidence": 0.9809522032737732
+              },
+              {
+                "end": 13,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 7,
+                "token": "sebuah",
+                "original": "sebuah",
+                "confidence": 0.9858354330062866
+              },
+              {
+                "end": 22,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 14,
+                "token": "bangunan",
+                "original": "bangunan",
+                "confidence": 0.9900614023208618
+              },
+              {
+                "end": 28,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 23,
+                "token": "rumah",
+                "original": "rumah",
+                "confidence": 0.9939846396446228
+              },
+              {
+                "end": 38,
+                "label": "O",
+                "start": 29,
+                "token": "mengalami",
+                "original": "mengalami",
+                "confidence": 0.8250146508216858
+              },
+              {
+                "end": 48,
+                "label": "FIRE-EVENT",
+                "start": 39,
+                "token": "kebakaran",
+                "original": "kebakaran",
+                "confidence": 0.9968394041061401
+              },
+              {
+                "end": 55,
+                "label": "O",
+                "start": 49,
+                "token": "dengan",
+                "original": "dengan",
+                "confidence": 0.9867362380027771
+              },
+              {
+                "end": 59,
+                "label": "FIRE-EVENT",
+                "start": 56,
+                "token": "api",
+                "original": "api",
+                "confidence": 0.9494630098342896
+              },
+              {
+                "end": 63,
+                "label": "O",
+                "start": 60,
+                "token": "dan",
+                "original": "dan",
+                "confidence": 0.9730764627456665
+              },
+              {
+                "end": 68,
+                "label": "INFORMATION-ARG",
+                "start": 64,
+                "token": "asap",
+                "original": "asap",
+                "confidence": 0.8228339552879333
+              },
+              {
+                "end": 74,
+                "label": "INFORMATION-ARG",
+                "start": 69,
+                "token": "hitam",
+                "original": "hitam",
+                "confidence": 0.8332260251045227
+              },
+              {
+                "end": 80,
+                "label": "INFORMATION-ARG",
+                "start": 75,
+                "token": "tebal",
+                "original": "tebal",
+                "confidence": 0.909032940864563
+              },
+              {
+                "end": 91,
+                "label": "INFORMATION-ARG",
+                "start": 81,
+                "token": "membumbung",
+                "original": "membumbung",
+                "confidence": 0.9664216041564941
+              },
+              {
+                "end": 98,
+                "label": "INFORMATION-ARG",
+                "start": 92,
+                "token": "tinggi",
+                "original": "tinggi",
+                "confidence": 0.9234267473220825
+              },
+              {
+                "end": 103,
+                "label": "INFORMATION-ARG",
+                "start": 99,
+                "token": "dari",
+                "original": "dari",
+                "confidence": 0.6090161800384521
+              },
+              {
+                "end": 110,
+                "label": "INFORMATION-ARG",
+                "start": 104,
+                "token": "bagian",
+                "original": "bagian",
+                "confidence": 0.3929499685764313
+              },
+              {
+                "end": 115,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 111,
+                "token": "atap",
+                "original": "atap",
+                "confidence": 0.5089490413665771
+              },
+              {
+                "end": 119,
+                "label": "O",
+                "start": 116,
+                "token": "dan",
+                "original": "dan",
+                "confidence": 0.5577996373176575
+              },
+              {
+                "end": 127,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 120,
+                "token": "jendela",
+                "original": "jendela",
+                "confidence": 0.4077052175998688
+              },
+              {
+                "end": 128,
+                "label": "O",
+                "start": 127,
+                "token": ".",
+                "original": ".",
+                "confidence": 0.9962827563285828
+              },
+              {
+                "end": 131,
+                "label": "O",
+                "start": 129,
+                "token": "di",
+                "original": "Di",
+                "confidence": 0.9863110184669495
+              },
+              {
+                "end": 137,
+                "label": "PLACE-ARG",
+                "start": 132,
+                "token": "teras",
+                "original": "teras",
+                "confidence": 0.9210614562034607
+              },
+              {
+                "end": 143,
+                "label": "PLACE-ARG",
+                "start": 138,
+                "token": "depan",
+                "original": "depan",
+                "confidence": 0.9414631724357605
+              },
+              {
+                "end": 149,
+                "label": "PLACE-ARG",
+                "start": 144,
+                "token": "rumah",
+                "original": "rumah",
+                "confidence": 0.9424233436584473
+              },
+              {
+                "end": 150,
+                "label": "O",
+                "start": 149,
+                "token": ",",
+                "original": ",",
+                "confidence": 0.9953578114509583
+              },
+              {
+                "end": 159,
+                "label": "O",
+                "start": 151,
+                "token": "terlihat",
+                "original": "terlihat",
+                "confidence": 0.9657712578773499
+              },
+              {
+                "end": 169,
+                "label": "OFFICER-ARG",
+                "start": 160,
+                "token": "seseorang",
+                "original": "seseorang",
+                "confidence": 0.413524329662323
+              },
+              {
+                "end": 180,
+                "label": "O",
+                "start": 170,
+                "token": "mengenakan",
+                "original": "mengenakan",
+                "confidence": 0.4355112612247467
+              },
+              {
+                "end": 185,
+                "label": "O",
+                "start": 181,
+                "token": "baju",
+                "original": "baju",
+                "confidence": 0.3769969046115875
+              },
+              {
+                "end": 194,
+                "label": "O",
+                "start": 186,
+                "token": "berwarna",
+                "original": "berwarna",
+                "confidence": 0.6293885111808777
+              },
+              {
+                "end": 201,
+                "label": "O",
+                "start": 195,
+                "token": "kuning",
+                "original": "kuning",
+                "confidence": 0.5496325492858887
+              },
+              {
+                "end": 209,
+                "label": "INFORMATION-ARG",
+                "start": 202,
+                "token": "berdiri",
+                "original": "berdiri",
+                "confidence": 0.5365518927574158
+              },
+              {
+                "end": 216,
+                "label": "O",
+                "start": 210,
+                "token": "sambil",
+                "original": "sambil",
+                "confidence": 0.46051111817359924
+              },
+              {
+                "end": 225,
+                "label": "INFORMATION-ARG",
+                "start": 217,
+                "token": "memegang",
+                "original": "memegang",
+                "confidence": 0.5050800442695618
+              },
+              {
+                "end": 231,
+                "label": "INFORMATION-ARG",
+                "start": 226,
+                "token": "ember",
+                "original": "ember",
+                "confidence": 0.37377607822418213
+              },
+              {
+                "end": 232,
+                "label": "O",
+                "start": 231,
+                "token": ".",
+                "original": ".",
+                "confidence": 0.9979068040847778
+              }
+            ]
+          },
+          "normalized_output": {
+            "impacts": [
+              "asap hitam tebal membumbung tinggi dari bagian atap",
+              "berdiri",
+              "memegang ember"
+            ],
+            "victims": [],
+            "time_text": null,
+            "occurred_at": null,
+            "location_text": "teras depan rumah",
+            "affected_objects": [
+              "sebuah bangunan rumah",
+              "atap",
+              "jendela"
+            ],
+            "involved_parties": [
+              "seseorang"
+            ]
+          },
+          "normalization_warnings": [
+            {
+              "code": "INFORMATION_AS_IMPACT_SUGGESTION",
+              "field": "impacts"
+            }
+          ],
+          "model_version": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3"
+        }
+      },
+      "incident_card": {
+        "id": "dce958c6-d3bb-458e-9409-fc05f29bb459",
+        "created_at": "2026-10-21T17:21:56.358221Z",
+        "report_id": "a3b9d390-c71f-4f07-bc7c-1212d72af953",
+        "bundle_id": "ae3e6f62-025e-43e5-94d3-9f3d534fd1ec",
+        "narrative_id": "0af60aa9-4dfc-4261-afd0-506f5cf25e0d",
+        "sena_result_id": "4d23ca83-a19c-4941-a6ea-34688e2e02f7",
+        "nara_result_id": "c0d8fd9e-f6cc-4e74-bbbf-6eefd0685d89",
+        "parent_id": null,
+        "version_number": 1,
+        "source_kind": "AI_FUSION",
+        "data": {
+          "impacts": [
+            "asap hitam tebal membumbung tinggi dari bagian atap",
+            "berdiri",
+            "memegang ember"
+          ],
+          "victims": [],
+          "time_text": null,
+          "event_type": "FIRE",
+          "occurred_at": null,
+          "location_text": "teras depan rumah",
+          "affected_objects": [
+            "sebuah bangunan rumah",
+            "atap",
+            "jendela"
+          ],
+          "involved_parties": [
+            "seseorang"
+          ]
+        },
+        "uncertain": false,
+        "uncertain_reasons": [],
+        "fusion_version": "silar-fusion-a4.22-0.1.0"
+      }
+    },
+    {
+      "route": "TA",
+      "bundle": {
+        "id": "18ef09d0-e997-49e0-b7be-9c000af9975d",
+        "version_number": 1,
+        "source_digest": "91a0beecbb608458f1a407f1cf3f5e310c0051e471c5f80292d6700f342deccf"
+      },
+      "sources": [
+        {
+          "position": 1,
+          "evidence_id": "2690261c-19f7-41bf-b411-27a2e31ea366",
+          "type": "TEXT",
+          "text_content": "Laporan awal: kebakaran di Kalimantan Barat. Saat ini belum ada korban jiwa.",
+          "mime_type": null,
+          "byte_size": 76,
+          "sha256": "caec5e505254d2ac128b8216ea38f931500bfe77b7cf01580bb4d33aee30e3b6"
+        },
+        {
+          "position": 2,
+          "evidence_id": "f0c86f14-5e04-401b-b63e-602770363e0a",
+          "type": "AUDIO",
+          "text_content": null,
+          "mime_type": "audio/mpeg",
+          "byte_size": 301056,
+          "sha256": "f4293e37a657268d96544e1fae07a6bbe6ce8245a338ebcf14af6188613b3be7"
+        }
+      ],
+      "run": {
+        "id": "85ecf463-304d-4fd8-8cfb-642880e3bcf9",
+        "created_at": "2026-10-21T17:30:23.754490Z",
+        "report_id": "a52373f8-b8f5-4652-b76a-b7d562e9d25c",
+        "bundle_id": "18ef09d0-e997-49e0-b7be-9c000af9975d",
+        "input_narrative_id": null,
+        "output_narrative_id": "1c2631fa-dc64-4bf5-8ecb-f7556c5ccddf",
+        "used_transcript_id": "42dafe07-c929-42cb-acf3-9bff8cc33e71",
+        "input_revision": 1,
+        "mode": "EVIDENCE",
+        "route": "TA",
+        "status": "SUCCEEDED",
+        "stage": "PERSIST",
+        "model_versions": {
+          "nara": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3",
+          "sena": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3",
+          "fusion": "silar-fusion-a4.22-0.1.0",
+          "gemini": {
+            "sdk_version": "2.32.0",
+            "prompt_sha256": "86653ffb1ad3d0cb8ffd05fe8cadb4bb079df38f875c010d4b4a91c58a3172af",
+            "prompt_version": "silar-unified-narrative-0.1.0",
+            "resolved_model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "adapter": "silar-adapter-0.5.3",
+          "runtime": "silar-candidate-runtime-0.6.5",
+          "whisper": "whisper-small|536b0662742c0234|cpu-int8",
+          "pipeline": "silar-pipeline-0.1.0",
+          "asset_lock_sha256": "35f33ef6eca306d16fbf1bbd6093bc6a8512770394e32036ca06f8ff7c6d4876",
+          "confidence_threshold": 0.95,
+          "configuration_sha256": "1ee37cdf182e7b509d80622c31128402b0e1b1215b333a334e17ebdc4a7886d1",
+          "calibration_reference": "SILAR_SENA_context_v084_20261020T144453Z:OPERATING_CUTOFF_0.95_NOT_PROBABILITY_CALIBRATED",
+          "inference_profile_sha256": "d2f235f7b5b3f4d7cb445fa5870cfc6b0b49f9f1a429e8518075c4ff53955bbd"
+        },
+        "started_at": "2026-10-21T17:30:23.754490Z",
+        "finished_at": "2026-10-21T17:30:30.353767Z",
+        "error_code": null,
+        "timings_ms": {
+          "NARA": 55.483,
+          "SENA": 53.475,
+          "TOTAL": 6618.784,
+          "FUSION": 0.127,
+          "WHISPER": 4428.304,
+          "NARRATIVE": 1825.001
+        },
+        "used_transcript": {
+          "id": "42dafe07-c929-42cb-acf3-9bff8cc33e71",
+          "created_at": "2026-10-21T17:30:28.315307Z",
+          "report_id": "a52373f8-b8f5-4652-b76a-b7d562e9d25c",
+          "evidence_id": "f0c86f14-5e04-401b-b63e-602770363e0a",
+          "analysis_run_id": "85ecf463-304d-4fd8-8cfb-642880e3bcf9",
+          "text": "ada kebakaran di Kalimantan Barat dan saat ini belum ada korban jiwa",
+          "model_version": "whisper-small|536b0662742c0234|cpu-int8",
+          "duration_ms": 9408
+        },
+        "output_narrative": {
+          "id": "1c2631fa-dc64-4bf5-8ecb-f7556c5ccddf",
+          "created_at": "2026-10-21T17:30:30.158156Z",
+          "report_id": "a52373f8-b8f5-4652-b76a-b7d562e9d25c",
+          "bundle_id": "18ef09d0-e997-49e0-b7be-9c000af9975d",
+          "parent_id": null,
+          "producer_run_id": "85ecf463-304d-4fd8-8cfb-642880e3bcf9",
+          "version_number": 1,
+          "text": "Terjadi kebakaran di Kalimantan Barat. Saat ini belum ada korban jiwa.",
+          "origin": "GEMINI"
+        },
+        "sena": {
+          "id": "e49d2688-1149-4d20-908e-f3593aea0b5c",
+          "created_at": "2026-10-21T17:30:30.240439Z",
+          "analysis_run_id": "85ecf463-304d-4fd8-8cfb-642880e3bcf9",
+          "narrative_id": "1c2631fa-dc64-4bf5-8ecb-f7556c5ccddf",
+          "category": "FIRE",
+          "confidence": 0.99958,
+          "raw_output": {
+            "label": "FIRE",
+            "confidence": 0.9995755553245544,
+            "probabilities": {
+              "FIRE": 0.9995755553245544,
+              "FLOOD": 7.90553167462349e-06,
+              "ACCIDENT": 7.947811354824807e-06,
+              "NON_EVENT": 0.000397694471757859,
+              "EARTHQUAKE": 1.0777761417557485e-05
+            }
+          },
+          "model_version": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3"
+        },
+        "nara": {
+          "id": "0304ddca-ffaa-443e-8d4a-6a378266a9f0",
+          "created_at": "2026-10-21T17:30:30.311119Z",
+          "analysis_run_id": "85ecf463-304d-4fd8-8cfb-642880e3bcf9",
+          "narrative_id": "1c2631fa-dc64-4bf5-8ecb-f7556c5ccddf",
+          "raw_output": {
+            "srl_spans": {
+              "TIME-ARG": [
+                {
+                  "role": "TIME-ARG",
+                  "text": "Saat ini",
+                  "mean_confidence": 0.7521494030952454
+                }
+              ],
+              "PLACE-ARG": [
+                {
+                  "role": "PLACE-ARG",
+                  "text": "Kalimantan Barat",
+                  "mean_confidence": 0.9980174601078033
+                }
+              ],
+              "FIRE-EVENT": [
+                {
+                  "role": "FIRE-EVENT",
+                  "text": "kebakaran",
+                  "mean_confidence": 0.9978856444358826
+                }
+              ],
+              "REASON-ARG": [],
+              "STREET-ARG": [],
+              "FALSE-EVENT": [],
+              "FLOOD-EVENT": [],
+              "OFFICER-ARG": [],
+              "ACCIDENT-EVENT": [],
+              "DEATHVICTIM-ARG": [],
+              "INFORMATION-ARG": [
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "belum ada korban jiwa",
+                  "mean_confidence": 0.9851678311824799
+                }
+              ],
+              "WOUNDVICTIM-ARG": [],
+              "EARTHQUAKE-EVENT": [],
+              "AFFECTEDOBJECTS-ARG": []
+            },
+            "token_coverage": {
+              "alignment": "FIRST_WORDPIECE_LEGACY_INFERENCE_NOT_PROOF_OF_TRAINING_ALIGNMENT",
+              "source_regex_tokens": 13,
+              "processed_regex_tokens": 13,
+              "all_regex_tokens_processed": true,
+              "last_wordpiece_sequence_partial": false,
+              "processed_wordpieces_with_special_tokens": 15
+            },
+            "postprocessing_trace": {
+              "spans_before_guard": {
+                "TIME-ARG": [
+                  {
+                    "role": "TIME-ARG",
+                    "text": "Saat ini",
+                    "mean_confidence": 0.7521494030952454
+                  }
+                ],
+                "PLACE-ARG": [
+                  {
+                    "role": "PLACE-ARG",
+                    "text": "Kalimantan Barat",
+                    "mean_confidence": 0.9980174601078033
+                  }
+                ],
+                "FIRE-EVENT": [
+                  {
+                    "role": "FIRE-EVENT",
+                    "text": "kebakaran",
+                    "mean_confidence": 0.9978856444358826
+                  }
+                ],
+                "REASON-ARG": [],
+                "STREET-ARG": [],
+                "FALSE-EVENT": [],
+                "FLOOD-EVENT": [],
+                "OFFICER-ARG": [],
+                "ACCIDENT-EVENT": [],
+                "DEATHVICTIM-ARG": [],
+                "INFORMATION-ARG": [
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "belum ada korban jiwa",
+                    "mean_confidence": 0.9851678311824799
+                  }
+                ],
+                "WOUNDVICTIM-ARG": [],
+                "EARTHQUAKE-EVENT": [],
+                "AFFECTEDOBJECTS-ARG": []
+              },
+              "victim_safety_flags": [],
+              "victim_guard_version": "silar-victim-guard-0.5.0"
+            },
+            "srl_token_predictions": [
+              {
+                "end": 7,
+                "label": "O",
+                "start": 0,
+                "token": "terjadi",
+                "original": "Terjadi",
+                "confidence": 0.9837258458137512
+              },
+              {
+                "end": 17,
+                "label": "FIRE-EVENT",
+                "start": 8,
+                "token": "kebakaran",
+                "original": "kebakaran",
+                "confidence": 0.9978856444358826
+              },
+              {
+                "end": 20,
+                "label": "O",
+                "start": 18,
+                "token": "di",
+                "original": "di",
+                "confidence": 0.9967203736305237
+              },
+              {
+                "end": 31,
+                "label": "PLACE-ARG",
+                "start": 21,
+                "token": "kalimantan",
+                "original": "Kalimantan",
+                "confidence": 0.9978302121162415
+              },
+              {
+                "end": 37,
+                "label": "PLACE-ARG",
+                "start": 32,
+                "token": "barat",
+                "original": "Barat",
+                "confidence": 0.9982047080993652
+              },
+              {
+                "end": 38,
+                "label": "O",
+                "start": 37,
+                "token": ".",
+                "original": ".",
+                "confidence": 0.9905210733413696
+              },
+              {
+                "end": 43,
+                "label": "TIME-ARG",
+                "start": 39,
+                "token": "saat",
+                "original": "Saat",
+                "confidence": 0.783229410648346
+              },
+              {
+                "end": 47,
+                "label": "TIME-ARG",
+                "start": 44,
+                "token": "ini",
+                "original": "ini",
+                "confidence": 0.7210693955421448
+              },
+              {
+                "end": 53,
+                "label": "INFORMATION-ARG",
+                "start": 48,
+                "token": "belum",
+                "original": "belum",
+                "confidence": 0.9920915365219116
+              },
+              {
+                "end": 57,
+                "label": "INFORMATION-ARG",
+                "start": 54,
+                "token": "ada",
+                "original": "ada",
+                "confidence": 0.9875369668006897
+              },
+              {
+                "end": 64,
+                "label": "INFORMATION-ARG",
+                "start": 58,
+                "token": "korban",
+                "original": "korban",
+                "confidence": 0.9775265455245972
+              },
+              {
+                "end": 69,
+                "label": "INFORMATION-ARG",
+                "start": 65,
+                "token": "jiwa",
+                "original": "jiwa",
+                "confidence": 0.983516275882721
+              },
+              {
+                "end": 70,
+                "label": "O",
+                "start": 69,
+                "token": ".",
+                "original": ".",
+                "confidence": 0.9962834715843201
+              }
+            ]
+          },
+          "normalized_output": {
+            "impacts": [],
+            "victims": [],
+            "time_text": "Saat ini",
+            "occurred_at": null,
+            "location_text": "Kalimantan Barat",
+            "affected_objects": [],
+            "involved_parties": []
+          },
+          "normalization_warnings": [],
+          "model_version": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3"
+        }
+      },
+      "incident_card": {
+        "id": "553f3a6e-619c-4e5d-ba29-cfe70c39c395",
+        "created_at": "2026-10-21T17:30:30.350766Z",
+        "report_id": "a52373f8-b8f5-4652-b76a-b7d562e9d25c",
+        "bundle_id": "18ef09d0-e997-49e0-b7be-9c000af9975d",
+        "narrative_id": "1c2631fa-dc64-4bf5-8ecb-f7556c5ccddf",
+        "sena_result_id": "e49d2688-1149-4d20-908e-f3593aea0b5c",
+        "nara_result_id": "0304ddca-ffaa-443e-8d4a-6a378266a9f0",
+        "parent_id": null,
+        "version_number": 1,
+        "source_kind": "AI_FUSION",
+        "data": {
+          "impacts": [],
+          "victims": [],
+          "time_text": "Saat ini",
+          "event_type": "FIRE",
+          "occurred_at": null,
+          "location_text": "Kalimantan Barat",
+          "affected_objects": [],
+          "involved_parties": []
+        },
+        "uncertain": false,
+        "uncertain_reasons": [],
+        "fusion_version": "silar-fusion-a4.22-0.1.0"
+      }
+    },
+    {
+      "route": "TI",
+      "bundle": {
+        "id": "5ec22059-2022-454d-950b-2e674a8eccd1",
+        "version_number": 1,
+        "source_digest": "781cb974f33c3ac34ad26fd719ac0579fbc098410ff736b787387040db9baab6"
+      },
+      "sources": [
+        {
+          "position": 1,
+          "evidence_id": "9b352c26-a1e7-4d26-8b4d-1ddde2dfa7b8",
+          "type": "TEXT",
+          "text_content": "Laporan awal: kebakaran di Kalimantan Barat. Saat ini belum ada korban jiwa.",
+          "mime_type": null,
+          "byte_size": 76,
+          "sha256": "caec5e505254d2ac128b8216ea38f931500bfe77b7cf01580bb4d33aee30e3b6"
+        },
+        {
+          "position": 2,
+          "evidence_id": "327f7f5e-9300-401e-8534-3d2bf12a0020",
+          "type": "IMAGE",
+          "text_content": null,
+          "mime_type": "image/jpeg",
+          "byte_size": 40625,
+          "sha256": "630ec66cf07f969b97e6e26036c381cb07233c335e8e065c452000f6451399c2"
+        }
+      ],
+      "run": {
+        "id": "f97c1d62-6365-41a3-8231-a586441ac638",
+        "created_at": "2026-10-21T17:30:30.518043Z",
+        "report_id": "2e419e55-cc3c-405d-a367-24a62de65c8e",
+        "bundle_id": "5ec22059-2022-454d-950b-2e674a8eccd1",
+        "input_narrative_id": null,
+        "output_narrative_id": "352d5ebf-d698-45e3-aa82-3635b2782c06",
+        "used_transcript_id": null,
+        "input_revision": 1,
+        "mode": "EVIDENCE",
+        "route": "TI",
+        "status": "SUCCEEDED",
+        "stage": "PERSIST",
+        "model_versions": {
+          "nara": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3",
+          "sena": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3",
+          "fusion": "silar-fusion-a4.22-0.1.0",
+          "gemini": {
+            "sdk_version": "2.32.0",
+            "prompt_sha256": "86653ffb1ad3d0cb8ffd05fe8cadb4bb079df38f875c010d4b4a91c58a3172af",
+            "prompt_version": "silar-unified-narrative-0.1.0",
+            "resolved_model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "adapter": "silar-adapter-0.5.3",
+          "runtime": "silar-candidate-runtime-0.6.5",
+          "pipeline": "silar-pipeline-0.1.0",
+          "asset_lock_sha256": "35f33ef6eca306d16fbf1bbd6093bc6a8512770394e32036ca06f8ff7c6d4876",
+          "confidence_threshold": 0.95,
+          "configuration_sha256": "1ee37cdf182e7b509d80622c31128402b0e1b1215b333a334e17ebdc4a7886d1",
+          "calibration_reference": "SILAR_SENA_context_v084_20261020T144453Z:OPERATING_CUTOFF_0.95_NOT_PROBABILITY_CALIBRATED",
+          "inference_profile_sha256": "d2f235f7b5b3f4d7cb445fa5870cfc6b0b49f9f1a429e8518075c4ff53955bbd"
+        },
+        "started_at": "2026-10-21T17:30:30.516866Z",
+        "finished_at": "2026-10-21T17:30:33.164519Z",
+        "error_code": null,
+        "timings_ms": {
+          "NARA": 67.956,
+          "SENA": 62.54,
+          "TOTAL": 2663.513,
+          "FUSION": 0.18,
+          "NARRATIVE": 2282.153
+        },
+        "used_transcript": null,
+        "output_narrative": {
+          "id": "352d5ebf-d698-45e3-aa82-3635b2782c06",
+          "created_at": "2026-10-21T17:30:32.821731Z",
+          "report_id": "2e419e55-cc3c-405d-a367-24a62de65c8e",
+          "bundle_id": "5ec22059-2022-454d-950b-2e674a8eccd1",
+          "parent_id": null,
+          "producer_run_id": "f97c1d62-6365-41a3-8231-a586441ac638",
+          "version_number": 1,
+          "text": "Berdasarkan laporan awal, terjadi kebakaran di Kalimantan Barat dan saat ini belum ada korban jiwa. Pada foto terlihat sebuah bangunan dengan dinding hijau mengalami kebakaran di bagian atap yang mengeluarkan api dan asap tebal, sementara seorang individu berdiri di teras depan.",
+          "origin": "GEMINI"
+        },
+        "sena": {
+          "id": "bd3a3b8b-2f4f-4ed0-9098-b40ada7f5f64",
+          "created_at": "2026-10-21T17:30:32.899290Z",
+          "analysis_run_id": "f97c1d62-6365-41a3-8231-a586441ac638",
+          "narrative_id": "352d5ebf-d698-45e3-aa82-3635b2782c06",
+          "category": "FIRE",
+          "confidence": 0.9995,
+          "raw_output": {
+            "label": "FIRE",
+            "confidence": 0.9994969367980957,
+            "probabilities": {
+              "FIRE": 0.9994969367980957,
+              "FLOOD": 2.918820428021718e-06,
+              "ACCIDENT": 8.281785994768143e-06,
+              "NON_EVENT": 0.00048606732161715627,
+              "EARTHQUAKE": 5.765447440353455e-06
+            }
+          },
+          "model_version": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3"
+        },
+        "nara": {
+          "id": "8b6109a9-6e44-4219-b179-c5e7dbca8774",
+          "created_at": "2026-10-21T17:30:32.976906Z",
+          "analysis_run_id": "f97c1d62-6365-41a3-8231-a586441ac638",
+          "narrative_id": "352d5ebf-d698-45e3-aa82-3635b2782c06",
+          "raw_output": {
+            "srl_spans": {
+              "TIME-ARG": [
+                {
+                  "role": "TIME-ARG",
+                  "text": "saat ini",
+                  "mean_confidence": 0.7779048681259155
+                }
+              ],
+              "PLACE-ARG": [
+                {
+                  "role": "PLACE-ARG",
+                  "text": "Kalimantan Barat",
+                  "mean_confidence": 0.9971000850200653
+                },
+                {
+                  "role": "PLACE-ARG",
+                  "text": "teras depan",
+                  "mean_confidence": 0.5831055343151093
+                }
+              ],
+              "FIRE-EVENT": [
+                {
+                  "role": "FIRE-EVENT",
+                  "text": "kebakaran",
+                  "mean_confidence": 0.9974551796913147
+                },
+                {
+                  "role": "FIRE-EVENT",
+                  "text": "kebakaran",
+                  "mean_confidence": 0.9962782263755798
+                },
+                {
+                  "role": "FIRE-EVENT",
+                  "text": "api",
+                  "mean_confidence": 0.6180486679077148
+                }
+              ],
+              "REASON-ARG": [],
+              "STREET-ARG": [],
+              "FALSE-EVENT": [],
+              "FLOOD-EVENT": [],
+              "OFFICER-ARG": [
+                {
+                  "role": "OFFICER-ARG",
+                  "text": "seorang individu",
+                  "mean_confidence": 0.8891794681549072
+                }
+              ],
+              "ACCIDENT-EVENT": [],
+              "DEATHVICTIM-ARG": [],
+              "INFORMATION-ARG": [
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "belum ada korban jiwa",
+                  "mean_confidence": 0.9515020251274109
+                },
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "mengeluarkan",
+                  "mean_confidence": 0.7046296000480652
+                },
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "asap tebal",
+                  "mean_confidence": 0.5676424205303192
+                },
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "berdiri",
+                  "mean_confidence": 0.7711808681488037
+                }
+              ],
+              "WOUNDVICTIM-ARG": [],
+              "EARTHQUAKE-EVENT": [],
+              "AFFECTEDOBJECTS-ARG": [
+                {
+                  "role": "AFFECTEDOBJECTS-ARG",
+                  "text": "sebuah bangunan dengan dinding hijau",
+                  "mean_confidence": 0.9408093333244324
+                },
+                {
+                  "role": "AFFECTEDOBJECTS-ARG",
+                  "text": "bagian atap",
+                  "mean_confidence": 0.8105699121952057
+                }
+              ]
+            },
+            "token_coverage": {
+              "alignment": "FIRST_WORDPIECE_LEGACY_INFERENCE_NOT_PROOF_OF_TRAINING_ALIGNMENT",
+              "source_regex_tokens": 45,
+              "processed_regex_tokens": 45,
+              "all_regex_tokens_processed": true,
+              "last_wordpiece_sequence_partial": false,
+              "processed_wordpieces_with_special_tokens": 47
+            },
+            "postprocessing_trace": {
+              "spans_before_guard": {
+                "TIME-ARG": [
+                  {
+                    "role": "TIME-ARG",
+                    "text": "saat ini",
+                    "mean_confidence": 0.7779048681259155
+                  }
+                ],
+                "PLACE-ARG": [
+                  {
+                    "role": "PLACE-ARG",
+                    "text": "Kalimantan Barat",
+                    "mean_confidence": 0.9971000850200653
+                  },
+                  {
+                    "role": "PLACE-ARG",
+                    "text": "teras depan",
+                    "mean_confidence": 0.5831055343151093
+                  }
+                ],
+                "FIRE-EVENT": [
+                  {
+                    "role": "FIRE-EVENT",
+                    "text": "kebakaran",
+                    "mean_confidence": 0.9974551796913147
+                  },
+                  {
+                    "role": "FIRE-EVENT",
+                    "text": "kebakaran",
+                    "mean_confidence": 0.9962782263755798
+                  },
+                  {
+                    "role": "FIRE-EVENT",
+                    "text": "api",
+                    "mean_confidence": 0.6180486679077148
+                  }
+                ],
+                "REASON-ARG": [],
+                "STREET-ARG": [],
+                "FALSE-EVENT": [],
+                "FLOOD-EVENT": [],
+                "OFFICER-ARG": [
+                  {
+                    "role": "OFFICER-ARG",
+                    "text": "seorang individu",
+                    "mean_confidence": 0.8891794681549072
+                  }
+                ],
+                "ACCIDENT-EVENT": [],
+                "DEATHVICTIM-ARG": [],
+                "INFORMATION-ARG": [
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "belum ada korban jiwa",
+                    "mean_confidence": 0.9515020251274109
+                  },
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "mengeluarkan",
+                    "mean_confidence": 0.7046296000480652
+                  },
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "asap tebal",
+                    "mean_confidence": 0.5676424205303192
+                  },
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "berdiri",
+                    "mean_confidence": 0.7711808681488037
+                  }
+                ],
+                "WOUNDVICTIM-ARG": [],
+                "EARTHQUAKE-EVENT": [],
+                "AFFECTEDOBJECTS-ARG": [
+                  {
+                    "role": "AFFECTEDOBJECTS-ARG",
+                    "text": "sebuah bangunan dengan dinding hijau",
+                    "mean_confidence": 0.9408093333244324
+                  },
+                  {
+                    "role": "AFFECTEDOBJECTS-ARG",
+                    "text": "bagian atap",
+                    "mean_confidence": 0.8105699121952057
+                  }
+                ]
+              },
+              "victim_safety_flags": [],
+              "victim_guard_version": "silar-victim-guard-0.5.0"
+            },
+            "srl_token_predictions": [
+              {
+                "end": 11,
+                "label": "O",
+                "start": 0,
+                "token": "berdasarkan",
+                "original": "Berdasarkan",
+                "confidence": 0.9623664617538452
+              },
+              {
+                "end": 19,
+                "label": "O",
+                "start": 12,
+                "token": "laporan",
+                "original": "laporan",
+                "confidence": 0.7151051759719849
+              },
+              {
+                "end": 24,
+                "label": "O",
+                "start": 20,
+                "token": "awal",
+                "original": "awal",
+                "confidence": 0.7863812446594238
+              },
+              {
+                "end": 25,
+                "label": "O",
+                "start": 24,
+                "token": ",",
+                "original": ",",
+                "confidence": 0.9854250550270081
+              },
+              {
+                "end": 33,
+                "label": "O",
+                "start": 26,
+                "token": "terjadi",
+                "original": "terjadi",
+                "confidence": 0.9669605493545532
+              },
+              {
+                "end": 43,
+                "label": "FIRE-EVENT",
+                "start": 34,
+                "token": "kebakaran",
+                "original": "kebakaran",
+                "confidence": 0.9974551796913147
+              },
+              {
+                "end": 46,
+                "label": "O",
+                "start": 44,
+                "token": "di",
+                "original": "di",
+                "confidence": 0.9960262775421143
+              },
+              {
+                "end": 57,
+                "label": "PLACE-ARG",
+                "start": 47,
+                "token": "kalimantan",
+                "original": "Kalimantan",
+                "confidence": 0.997163712978363
+              },
+              {
+                "end": 63,
+                "label": "PLACE-ARG",
+                "start": 58,
+                "token": "barat",
+                "original": "Barat",
+                "confidence": 0.9970364570617676
+              },
+              {
+                "end": 67,
+                "label": "O",
+                "start": 64,
+                "token": "dan",
+                "original": "dan",
+                "confidence": 0.9776163101196289
+              },
+              {
+                "end": 72,
+                "label": "TIME-ARG",
+                "start": 68,
+                "token": "saat",
+                "original": "saat",
+                "confidence": 0.7978025078773499
+              },
+              {
+                "end": 76,
+                "label": "TIME-ARG",
+                "start": 73,
+                "token": "ini",
+                "original": "ini",
+                "confidence": 0.7580072283744812
+              },
+              {
+                "end": 82,
+                "label": "INFORMATION-ARG",
+                "start": 77,
+                "token": "belum",
+                "original": "belum",
+                "confidence": 0.968573272228241
+              },
+              {
+                "end": 86,
+                "label": "INFORMATION-ARG",
+                "start": 83,
+                "token": "ada",
+                "original": "ada",
+                "confidence": 0.9566321969032288
+              },
+              {
+                "end": 93,
+                "label": "INFORMATION-ARG",
+                "start": 87,
+                "token": "korban",
+                "original": "korban",
+                "confidence": 0.9384204745292664
+              },
+              {
+                "end": 98,
+                "label": "INFORMATION-ARG",
+                "start": 94,
+                "token": "jiwa",
+                "original": "jiwa",
+                "confidence": 0.9423821568489075
+              },
+              {
+                "end": 99,
+                "label": "O",
+                "start": 98,
+                "token": ".",
+                "original": ".",
+                "confidence": 0.9933958649635315
+              },
+              {
+                "end": 104,
+                "label": "O",
+                "start": 100,
+                "token": "pada",
+                "original": "Pada",
+                "confidence": 0.9784685969352722
+              },
+              {
+                "end": 109,
+                "label": "O",
+                "start": 105,
+                "token": "foto",
+                "original": "foto",
+                "confidence": 0.9236209392547607
+              },
+              {
+                "end": 118,
+                "label": "O",
+                "start": 110,
+                "token": "terlihat",
+                "original": "terlihat",
+                "confidence": 0.9707658290863037
+              },
+              {
+                "end": 125,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 119,
+                "token": "sebuah",
+                "original": "sebuah",
+                "confidence": 0.9847667813301086
+              },
+              {
+                "end": 134,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 126,
+                "token": "bangunan",
+                "original": "bangunan",
+                "confidence": 0.9927776455879211
+              },
+              {
+                "end": 141,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 135,
+                "token": "dengan",
+                "original": "dengan",
+                "confidence": 0.7888790965080261
+              },
+              {
+                "end": 149,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 142,
+                "token": "dinding",
+                "original": "dinding",
+                "confidence": 0.96955406665802
+              },
+              {
+                "end": 155,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 150,
+                "token": "hijau",
+                "original": "hijau",
+                "confidence": 0.9680690765380859
+              },
+              {
+                "end": 165,
+                "label": "O",
+                "start": 156,
+                "token": "mengalami",
+                "original": "mengalami",
+                "confidence": 0.7793352007865906
+              },
+              {
+                "end": 175,
+                "label": "FIRE-EVENT",
+                "start": 166,
+                "token": "kebakaran",
+                "original": "kebakaran",
+                "confidence": 0.9962782263755798
+              },
+              {
+                "end": 178,
+                "label": "O",
+                "start": 176,
+                "token": "di",
+                "original": "di",
+                "confidence": 0.9406135678291321
+              },
+              {
+                "end": 185,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 179,
+                "token": "bagian",
+                "original": "bagian",
+                "confidence": 0.6988835334777832
+              },
+              {
+                "end": 190,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 186,
+                "token": "atap",
+                "original": "atap",
+                "confidence": 0.9222562909126282
+              },
+              {
+                "end": 195,
+                "label": "O",
+                "start": 191,
+                "token": "yang",
+                "original": "yang",
+                "confidence": 0.9173827767372131
+              },
+              {
+                "end": 208,
+                "label": "INFORMATION-ARG",
+                "start": 196,
+                "token": "mengeluarkan",
+                "original": "mengeluarkan",
+                "confidence": 0.7046296000480652
+              },
+              {
+                "end": 212,
+                "label": "FIRE-EVENT",
+                "start": 209,
+                "token": "api",
+                "original": "api",
+                "confidence": 0.6180486679077148
+              },
+              {
+                "end": 216,
+                "label": "O",
+                "start": 213,
+                "token": "dan",
+                "original": "dan",
+                "confidence": 0.9142778515815735
+              },
+              {
+                "end": 221,
+                "label": "INFORMATION-ARG",
+                "start": 217,
+                "token": "asap",
+                "original": "asap",
+                "confidence": 0.5549874901771545
+              },
+              {
+                "end": 227,
+                "label": "INFORMATION-ARG",
+                "start": 222,
+                "token": "tebal",
+                "original": "tebal",
+                "confidence": 0.5802973508834839
+              },
+              {
+                "end": 228,
+                "label": "O",
+                "start": 227,
+                "token": ",",
+                "original": ",",
+                "confidence": 0.991908848285675
+              },
+              {
+                "end": 238,
+                "label": "O",
+                "start": 229,
+                "token": "sementara",
+                "original": "sementara",
+                "confidence": 0.970192015171051
+              },
+              {
+                "end": 246,
+                "label": "OFFICER-ARG",
+                "start": 239,
+                "token": "seorang",
+                "original": "seorang",
+                "confidence": 0.9004803895950317
+              },
+              {
+                "end": 255,
+                "label": "OFFICER-ARG",
+                "start": 247,
+                "token": "individu",
+                "original": "individu",
+                "confidence": 0.8778785467147827
+              },
+              {
+                "end": 263,
+                "label": "INFORMATION-ARG",
+                "start": 256,
+                "token": "berdiri",
+                "original": "berdiri",
+                "confidence": 0.7711808681488037
+              },
+              {
+                "end": 266,
+                "label": "O",
+                "start": 264,
+                "token": "di",
+                "original": "di",
+                "confidence": 0.8297093510627747
+              },
+              {
+                "end": 272,
+                "label": "PLACE-ARG",
+                "start": 267,
+                "token": "teras",
+                "original": "teras",
+                "confidence": 0.5945248603820801
+              },
+              {
+                "end": 278,
+                "label": "PLACE-ARG",
+                "start": 273,
+                "token": "depan",
+                "original": "depan",
+                "confidence": 0.5716862082481384
+              },
+              {
+                "end": 279,
+                "label": "O",
+                "start": 278,
+                "token": ".",
+                "original": ".",
+                "confidence": 0.9956814050674438
+              }
+            ]
+          },
+          "normalized_output": {
+            "impacts": [
+              "mengeluarkan",
+              "asap tebal",
+              "berdiri"
+            ],
+            "victims": [],
+            "time_text": "saat ini",
+            "occurred_at": null,
+            "location_text": "Kalimantan Barat; teras depan",
+            "affected_objects": [
+              "sebuah bangunan dengan dinding hijau",
+              "bagian atap"
+            ],
+            "involved_parties": [
+              "seorang individu"
+            ]
+          },
+          "normalization_warnings": [
+            {
+              "code": "INFORMATION_AS_IMPACT_SUGGESTION",
+              "field": "impacts"
+            }
+          ],
+          "model_version": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3"
+        }
+      },
+      "incident_card": {
+        "id": "e63480c2-df9f-4854-9912-bca5819105c2",
+        "created_at": "2026-10-21T17:30:33.148880Z",
+        "report_id": "2e419e55-cc3c-405d-a367-24a62de65c8e",
+        "bundle_id": "5ec22059-2022-454d-950b-2e674a8eccd1",
+        "narrative_id": "352d5ebf-d698-45e3-aa82-3635b2782c06",
+        "sena_result_id": "bd3a3b8b-2f4f-4ed0-9098-b40ada7f5f64",
+        "nara_result_id": "8b6109a9-6e44-4219-b179-c5e7dbca8774",
+        "parent_id": null,
+        "version_number": 1,
+        "source_kind": "AI_FUSION",
+        "data": {
+          "impacts": [
+            "mengeluarkan",
+            "asap tebal",
+            "berdiri"
+          ],
+          "victims": [],
+          "time_text": "saat ini",
+          "event_type": "FIRE",
+          "occurred_at": null,
+          "location_text": "Kalimantan Barat; teras depan",
+          "affected_objects": [
+            "sebuah bangunan dengan dinding hijau",
+            "bagian atap"
+          ],
+          "involved_parties": [
+            "seorang individu"
+          ]
+        },
+        "uncertain": false,
+        "uncertain_reasons": [],
+        "fusion_version": "silar-fusion-a4.22-0.1.0"
+      }
+    },
+    {
+      "route": "AI",
+      "bundle": {
+        "id": "ade35738-393a-4c4a-a62d-d62894d2e41b",
+        "version_number": 1,
+        "source_digest": "2365b34b80a920a0c3231af6b9bb98843bc520bfc9bff7d57dae66567bb03833"
+      },
+      "sources": [
+        {
+          "position": 1,
+          "evidence_id": "f880bcfb-ffd5-4e89-9f43-6b222cd1d920",
+          "type": "AUDIO",
+          "text_content": null,
+          "mime_type": "audio/webm",
+          "byte_size": 201918,
+          "sha256": "3d8638767973dbc4db7ef525a0619e5756a1e54163611bacb97ca335d3d97c3e"
+        },
+        {
+          "position": 2,
+          "evidence_id": "41fd57f7-9755-43da-b074-0d9300635c23",
+          "type": "IMAGE",
+          "text_content": null,
+          "mime_type": "image/jpeg",
+          "byte_size": 84859,
+          "sha256": "096d96e0fb30252eff3efca195f0aecd5401b087e6309b3dee432f94c667897e"
+        }
+      ],
+      "run": {
+        "id": "d71db3cf-14b1-4432-9c1e-f363ee32f0cb",
+        "created_at": "2026-10-22T09:29:04.281489Z",
+        "report_id": "28a9c2a5-7893-4b75-846b-62b4a19f4895",
+        "bundle_id": "ade35738-393a-4c4a-a62d-d62894d2e41b",
+        "input_narrative_id": null,
+        "output_narrative_id": "84a5cc03-6ac6-4909-a439-4223c4a73f11",
+        "used_transcript_id": "43eb1c2b-bd40-47da-b320-7387cb214c1f",
+        "input_revision": 2,
+        "mode": "EVIDENCE",
+        "route": "AI",
+        "status": "SUCCEEDED",
+        "stage": "PERSIST",
+        "model_versions": {
+          "nara": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3",
+          "sena": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3",
+          "fusion": "silar-fusion-a4.22-0.1.0",
+          "gemini": {
+            "sdk_version": "2.32.0",
+            "prompt_sha256": "86653ffb1ad3d0cb8ffd05fe8cadb4bb079df38f875c010d4b4a91c58a3172af",
+            "prompt_version": "silar-unified-narrative-0.1.0",
+            "resolved_model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "adapter": "silar-adapter-0.5.3",
+          "runtime": "silar-candidate-runtime-0.6.5",
+          "whisper": "whisper-small|536b0662742c0234|cpu-int8",
+          "pipeline": "silar-pipeline-0.1.0",
+          "asset_lock_sha256": "35f33ef6eca306d16fbf1bbd6093bc6a8512770394e32036ca06f8ff7c6d4876",
+          "confidence_threshold": 0.95,
+          "configuration_sha256": "1ee37cdf182e7b509d80622c31128402b0e1b1215b333a334e17ebdc4a7886d1",
+          "calibration_reference": "SILAR_SENA_context_v084_20261020T144453Z:OPERATING_CUTOFF_0.95_NOT_PROBABILITY_CALIBRATED",
+          "inference_profile_sha256": "d2f235f7b5b3f4d7cb445fa5870cfc6b0b49f9f1a429e8518075c4ff53955bbd"
+        },
+        "started_at": "2026-10-22T09:29:04.280487Z",
+        "finished_at": "2026-10-22T09:29:35.888763Z",
+        "error_code": null,
+        "timings_ms": {
+          "NARA": 245.314,
+          "SENA": 21770.299,
+          "TOTAL": 31655.013,
+          "FUSION": 0.364,
+          "WHISPER": 3857.32,
+          "NARRATIVE": 3722.808
+        },
+        "used_transcript": {
+          "id": "43eb1c2b-bd40-47da-b320-7387cb214c1f",
+          "created_at": "2026-10-22T09:29:10.036449Z",
+          "report_id": "28a9c2a5-7893-4b75-846b-62b4a19f4895",
+          "evidence_id": "f880bcfb-ffd5-4e89-9f43-6b222cd1d920",
+          "analysis_run_id": "d71db3cf-14b1-4432-9c1e-f363ee32f0cb",
+          "text": "terjadi kebakaran di rumah saya jalan lasar daerah pada lampung",
+          "model_version": "whisper-small|536b0662742c0234|cpu-int8",
+          "duration_ms": 12720
+        },
+        "output_narrative": {
+          "id": "84a5cc03-6ac6-4909-a439-4223c4a73f11",
+          "created_at": "2026-10-22T09:29:13.780435Z",
+          "report_id": "28a9c2a5-7893-4b75-846b-62b4a19f4895",
+          "bundle_id": "ade35738-393a-4c4a-a62d-d62894d2e41b",
+          "parent_id": null,
+          "producer_run_id": "d71db3cf-14b1-4432-9c1e-f363ee32f0cb",
+          "version_number": 1,
+          "text": "Berdasarkan transkrip audio, dilaporkan terjadi kebakaran di rumah pelapor yang berada di Jalan Lasar daerah Pada Lampung. Sementara itu, dari foto terlihat situasi malam hari dengan kebakaran besar yang menimbulkan kobaran api dan asap tebal membumbung di antara bangunan-bangunan, disertai keberadaan kendaraan serta kerumunan orang di sekitar lokasi.",
+          "origin": "GEMINI"
+        },
+        "sena": {
+          "id": "21f9c2a1-b266-4316-98ef-0563601f1d3a",
+          "created_at": "2026-10-22T09:29:35.561297Z",
+          "analysis_run_id": "d71db3cf-14b1-4432-9c1e-f363ee32f0cb",
+          "narrative_id": "84a5cc03-6ac6-4909-a439-4223c4a73f11",
+          "category": "FIRE",
+          "confidence": 0.99965,
+          "raw_output": {
+            "label": "FIRE",
+            "confidence": 0.9996460676193237,
+            "probabilities": {
+              "FIRE": 0.9996460676193237,
+              "FLOOD": 6.468757419497706e-06,
+              "ACCIDENT": 1.4038309927855153e-05,
+              "NON_EVENT": 0.0003021650481969118,
+              "EARTHQUAKE": 3.113709681201726e-05
+            }
+          },
+          "model_version": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3"
+        },
+        "nara": {
+          "id": "b36a6928-567c-478c-9a86-f229b9731b84",
+          "created_at": "2026-10-22T09:29:35.832313Z",
+          "analysis_run_id": "d71db3cf-14b1-4432-9c1e-f363ee32f0cb",
+          "narrative_id": "84a5cc03-6ac6-4909-a439-4223c4a73f11",
+          "raw_output": {
+            "srl_spans": {
+              "TIME-ARG": [
+                {
+                  "role": "TIME-ARG",
+                  "text": "malam hari",
+                  "mean_confidence": 0.9011358916759491
+                }
+              ],
+              "PLACE-ARG": [
+                {
+                  "role": "PLACE-ARG",
+                  "text": "daerah Pada Lampung",
+                  "mean_confidence": 0.988041083017985
+                }
+              ],
+              "FIRE-EVENT": [
+                {
+                  "role": "FIRE-EVENT",
+                  "text": "kebakaran",
+                  "mean_confidence": 0.9981219172477722
+                },
+                {
+                  "role": "FIRE-EVENT",
+                  "text": "kebakaran",
+                  "mean_confidence": 0.9960175156593323
+                },
+                {
+                  "role": "FIRE-EVENT",
+                  "text": "api",
+                  "mean_confidence": 0.5879115462303162
+                }
+              ],
+              "REASON-ARG": [],
+              "STREET-ARG": [
+                {
+                  "role": "STREET-ARG",
+                  "text": "Jalan Lasar",
+                  "mean_confidence": 0.9453860819339752
+                }
+              ],
+              "FALSE-EVENT": [],
+              "FLOOD-EVENT": [],
+              "OFFICER-ARG": [
+                {
+                  "role": "OFFICER-ARG",
+                  "text": "orang",
+                  "mean_confidence": 0.38930195569992065
+                }
+              ],
+              "ACCIDENT-EVENT": [],
+              "DEATHVICTIM-ARG": [],
+              "INFORMATION-ARG": [
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "menimbulkan kobaran",
+                  "mean_confidence": 0.7290579080581665
+                },
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "asap tebal membumbung",
+                  "mean_confidence": 0.8883917927742004
+                },
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "keberadaan kendaraan",
+                  "mean_confidence": 0.8180075585842133
+                },
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "kerumunan",
+                  "mean_confidence": 0.7656278610229492
+                }
+              ],
+              "WOUNDVICTIM-ARG": [],
+              "EARTHQUAKE-EVENT": [],
+              "AFFECTEDOBJECTS-ARG": [
+                {
+                  "role": "AFFECTEDOBJECTS-ARG",
+                  "text": "rumah pelapor",
+                  "mean_confidence": 0.8727725446224213
+                },
+                {
+                  "role": "AFFECTEDOBJECTS-ARG",
+                  "text": "antara bangunan-bangunan",
+                  "mean_confidence": 0.7084295898675919
+                }
+              ]
+            },
+            "token_coverage": {
+              "alignment": "FIRST_WORDPIECE_LEGACY_INFERENCE_NOT_PROOF_OF_TRAINING_ALIGNMENT",
+              "source_regex_tokens": 53,
+              "processed_regex_tokens": 53,
+              "all_regex_tokens_processed": true,
+              "last_wordpiece_sequence_partial": false,
+              "processed_wordpieces_with_special_tokens": 61
+            },
+            "postprocessing_trace": {
+              "spans_before_guard": {
+                "TIME-ARG": [
+                  {
+                    "role": "TIME-ARG",
+                    "text": "malam hari",
+                    "mean_confidence": 0.9011358916759491
+                  }
+                ],
+                "PLACE-ARG": [
+                  {
+                    "role": "PLACE-ARG",
+                    "text": "daerah Pada Lampung",
+                    "mean_confidence": 0.988041083017985
+                  }
+                ],
+                "FIRE-EVENT": [
+                  {
+                    "role": "FIRE-EVENT",
+                    "text": "kebakaran",
+                    "mean_confidence": 0.9981219172477722
+                  },
+                  {
+                    "role": "FIRE-EVENT",
+                    "text": "kebakaran",
+                    "mean_confidence": 0.9960175156593323
+                  },
+                  {
+                    "role": "FIRE-EVENT",
+                    "text": "api",
+                    "mean_confidence": 0.5879115462303162
+                  }
+                ],
+                "REASON-ARG": [],
+                "STREET-ARG": [
+                  {
+                    "role": "STREET-ARG",
+                    "text": "Jalan Lasar",
+                    "mean_confidence": 0.9453860819339752
+                  }
+                ],
+                "FALSE-EVENT": [],
+                "FLOOD-EVENT": [],
+                "OFFICER-ARG": [
+                  {
+                    "role": "OFFICER-ARG",
+                    "text": "orang",
+                    "mean_confidence": 0.38930195569992065
+                  }
+                ],
+                "ACCIDENT-EVENT": [],
+                "DEATHVICTIM-ARG": [],
+                "INFORMATION-ARG": [
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "menimbulkan kobaran",
+                    "mean_confidence": 0.7290579080581665
+                  },
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "asap tebal membumbung",
+                    "mean_confidence": 0.8883917927742004
+                  },
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "keberadaan kendaraan",
+                    "mean_confidence": 0.8180075585842133
+                  },
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "kerumunan",
+                    "mean_confidence": 0.7656278610229492
+                  }
+                ],
+                "WOUNDVICTIM-ARG": [],
+                "EARTHQUAKE-EVENT": [],
+                "AFFECTEDOBJECTS-ARG": [
+                  {
+                    "role": "AFFECTEDOBJECTS-ARG",
+                    "text": "rumah pelapor",
+                    "mean_confidence": 0.8727725446224213
+                  },
+                  {
+                    "role": "AFFECTEDOBJECTS-ARG",
+                    "text": "antara bangunan-bangunan",
+                    "mean_confidence": 0.7084295898675919
+                  }
+                ]
+              },
+              "victim_safety_flags": [],
+              "victim_guard_version": "silar-victim-guard-0.5.0"
+            },
+            "srl_token_predictions": [
+              {
+                "end": 11,
+                "label": "O",
+                "start": 0,
+                "token": "berdasarkan",
+                "original": "Berdasarkan",
+                "confidence": 0.987145185470581
+              },
+              {
+                "end": 21,
+                "label": "O",
+                "start": 12,
+                "token": "transkrip",
+                "original": "transkrip",
+                "confidence": 0.8436405062675476
+              },
+              {
+                "end": 27,
+                "label": "O",
+                "start": 22,
+                "token": "audio",
+                "original": "audio",
+                "confidence": 0.9519309997558594
+              },
+              {
+                "end": 28,
+                "label": "O",
+                "start": 27,
+                "token": ",",
+                "original": ",",
+                "confidence": 0.9855790138244629
+              },
+              {
+                "end": 39,
+                "label": "O",
+                "start": 29,
+                "token": "dilaporkan",
+                "original": "dilaporkan",
+                "confidence": 0.9653775691986084
+              },
+              {
+                "end": 47,
+                "label": "O",
+                "start": 40,
+                "token": "terjadi",
+                "original": "terjadi",
+                "confidence": 0.9640852808952332
+              },
+              {
+                "end": 57,
+                "label": "FIRE-EVENT",
+                "start": 48,
+                "token": "kebakaran",
+                "original": "kebakaran",
+                "confidence": 0.9981219172477722
+              },
+              {
+                "end": 60,
+                "label": "O",
+                "start": 58,
+                "token": "di",
+                "original": "di",
+                "confidence": 0.9951552152633667
+              },
+              {
+                "end": 66,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 61,
+                "token": "rumah",
+                "original": "rumah",
+                "confidence": 0.9460873007774353
+              },
+              {
+                "end": 74,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 67,
+                "token": "pelapor",
+                "original": "pelapor",
+                "confidence": 0.7994577884674072
+              },
+              {
+                "end": 79,
+                "label": "O",
+                "start": 75,
+                "token": "yang",
+                "original": "yang",
+                "confidence": 0.9916958212852478
+              },
+              {
+                "end": 86,
+                "label": "O",
+                "start": 80,
+                "token": "berada",
+                "original": "berada",
+                "confidence": 0.9421966075897217
+              },
+              {
+                "end": 89,
+                "label": "O",
+                "start": 87,
+                "token": "di",
+                "original": "di",
+                "confidence": 0.9374332427978516
+              },
+              {
+                "end": 95,
+                "label": "STREET-ARG",
+                "start": 90,
+                "token": "jalan",
+                "original": "Jalan",
+                "confidence": 0.941241443157196
+              },
+              {
+                "end": 101,
+                "label": "STREET-ARG",
+                "start": 96,
+                "token": "lasar",
+                "original": "Lasar",
+                "confidence": 0.9495307207107544
+              },
+              {
+                "end": 108,
+                "label": "PLACE-ARG",
+                "start": 102,
+                "token": "daerah",
+                "original": "daerah",
+                "confidence": 0.9875219464302063
+              },
+              {
+                "end": 113,
+                "label": "PLACE-ARG",
+                "start": 109,
+                "token": "pada",
+                "original": "Pada",
+                "confidence": 0.9801619052886963
+              },
+              {
+                "end": 121,
+                "label": "PLACE-ARG",
+                "start": 114,
+                "token": "lampung",
+                "original": "Lampung",
+                "confidence": 0.9964393973350525
+              },
+              {
+                "end": 122,
+                "label": "O",
+                "start": 121,
+                "token": ".",
+                "original": ".",
+                "confidence": 0.7331728935241699
+              },
+              {
+                "end": 132,
+                "label": "O",
+                "start": 123,
+                "token": "sementara",
+                "original": "Sementara",
+                "confidence": 0.988808810710907
+              },
+              {
+                "end": 136,
+                "label": "O",
+                "start": 133,
+                "token": "itu",
+                "original": "itu",
+                "confidence": 0.9886826872825623
+              },
+              {
+                "end": 137,
+                "label": "O",
+                "start": 136,
+                "token": ",",
+                "original": ",",
+                "confidence": 0.9905597567558289
+              },
+              {
+                "end": 142,
+                "label": "O",
+                "start": 138,
+                "token": "dari",
+                "original": "dari",
+                "confidence": 0.9877745509147644
+              },
+              {
+                "end": 147,
+                "label": "O",
+                "start": 143,
+                "token": "foto",
+                "original": "foto",
+                "confidence": 0.9491454362869263
+              },
+              {
+                "end": 156,
+                "label": "O",
+                "start": 148,
+                "token": "terlihat",
+                "original": "terlihat",
+                "confidence": 0.9530370235443115
+              },
+              {
+                "end": 164,
+                "label": "O",
+                "start": 157,
+                "token": "situasi",
+                "original": "situasi",
+                "confidence": 0.9282010793685913
+              },
+              {
+                "end": 170,
+                "label": "TIME-ARG",
+                "start": 165,
+                "token": "malam",
+                "original": "malam",
+                "confidence": 0.8923112154006958
+              },
+              {
+                "end": 175,
+                "label": "TIME-ARG",
+                "start": 171,
+                "token": "hari",
+                "original": "hari",
+                "confidence": 0.9099605679512024
+              },
+              {
+                "end": 182,
+                "label": "O",
+                "start": 176,
+                "token": "dengan",
+                "original": "dengan",
+                "confidence": 0.9820978045463562
+              },
+              {
+                "end": 192,
+                "label": "FIRE-EVENT",
+                "start": 183,
+                "token": "kebakaran",
+                "original": "kebakaran",
+                "confidence": 0.9960175156593323
+              },
+              {
+                "end": 198,
+                "label": "O",
+                "start": 193,
+                "token": "besar",
+                "original": "besar",
+                "confidence": 0.8185890316963196
+              },
+              {
+                "end": 203,
+                "label": "O",
+                "start": 199,
+                "token": "yang",
+                "original": "yang",
+                "confidence": 0.9723023176193237
+              },
+              {
+                "end": 215,
+                "label": "INFORMATION-ARG",
+                "start": 204,
+                "token": "menimbulkan",
+                "original": "menimbulkan",
+                "confidence": 0.6643366813659668
+              },
+              {
+                "end": 223,
+                "label": "INFORMATION-ARG",
+                "start": 216,
+                "token": "kobaran",
+                "original": "kobaran",
+                "confidence": 0.7937791347503662
+              },
+              {
+                "end": 227,
+                "label": "FIRE-EVENT",
+                "start": 224,
+                "token": "api",
+                "original": "api",
+                "confidence": 0.5879115462303162
+              },
+              {
+                "end": 231,
+                "label": "O",
+                "start": 228,
+                "token": "dan",
+                "original": "dan",
+                "confidence": 0.9175975322723389
+              },
+              {
+                "end": 236,
+                "label": "INFORMATION-ARG",
+                "start": 232,
+                "token": "asap",
+                "original": "asap",
+                "confidence": 0.830592155456543
+              },
+              {
+                "end": 242,
+                "label": "INFORMATION-ARG",
+                "start": 237,
+                "token": "tebal",
+                "original": "tebal",
+                "confidence": 0.8751574158668518
+              },
+              {
+                "end": 253,
+                "label": "INFORMATION-ARG",
+                "start": 243,
+                "token": "membumbung",
+                "original": "membumbung",
+                "confidence": 0.9594258069992065
+              },
+              {
+                "end": 256,
+                "label": "O",
+                "start": 254,
+                "token": "di",
+                "original": "di",
+                "confidence": 0.6639724969863892
+              },
+              {
+                "end": 263,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 257,
+                "token": "antara",
+                "original": "antara",
+                "confidence": 0.4752216637134552
+              },
+              {
+                "end": 281,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 264,
+                "token": "bangunan-bangunan",
+                "original": "bangunan-bangunan",
+                "confidence": 0.9416375160217285
+              },
+              {
+                "end": 282,
+                "label": "O",
+                "start": 281,
+                "token": ",",
+                "original": ",",
+                "confidence": 0.975934624671936
+              },
+              {
+                "end": 291,
+                "label": "O",
+                "start": 283,
+                "token": "disertai",
+                "original": "disertai",
+                "confidence": 0.8380817174911499
+              },
+              {
+                "end": 302,
+                "label": "INFORMATION-ARG",
+                "start": 292,
+                "token": "keberadaan",
+                "original": "keberadaan",
+                "confidence": 0.7861301898956299
+              },
+              {
+                "end": 312,
+                "label": "INFORMATION-ARG",
+                "start": 303,
+                "token": "kendaraan",
+                "original": "kendaraan",
+                "confidence": 0.8498849272727966
+              },
+              {
+                "end": 318,
+                "label": "O",
+                "start": 313,
+                "token": "serta",
+                "original": "serta",
+                "confidence": 0.8518825769424438
+              },
+              {
+                "end": 328,
+                "label": "INFORMATION-ARG",
+                "start": 319,
+                "token": "kerumunan",
+                "original": "kerumunan",
+                "confidence": 0.7656278610229492
+              },
+              {
+                "end": 334,
+                "label": "OFFICER-ARG",
+                "start": 329,
+                "token": "orang",
+                "original": "orang",
+                "confidence": 0.38930195569992065
+              },
+              {
+                "end": 337,
+                "label": "O",
+                "start": 335,
+                "token": "di",
+                "original": "di",
+                "confidence": 0.9253272414207458
+              },
+              {
+                "end": 345,
+                "label": "O",
+                "start": 338,
+                "token": "sekitar",
+                "original": "sekitar",
+                "confidence": 0.5196678638458252
+              },
+              {
+                "end": 352,
+                "label": "O",
+                "start": 346,
+                "token": "lokasi",
+                "original": "lokasi",
+                "confidence": 0.5375245809555054
+              },
+              {
+                "end": 353,
+                "label": "O",
+                "start": 352,
+                "token": ".",
+                "original": ".",
+                "confidence": 0.995525062084198
+              }
+            ]
+          },
+          "normalized_output": {
+            "impacts": [
+              "menimbulkan kobaran",
+              "asap tebal membumbung",
+              "keberadaan kendaraan",
+              "kerumunan orang"
+            ],
+            "victims": [],
+            "time_text": "malam hari",
+            "occurred_at": null,
+            "location_text": "daerah Pada Lampung; Jalan Lasar",
+            "affected_objects": [
+              "rumah pelapor",
+              "antara bangunan-bangunan"
+            ],
+            "involved_parties": [
+              "orang"
+            ]
+          },
+          "normalization_warnings": [
+            {
+              "code": "INFORMATION_AS_IMPACT_SUGGESTION",
+              "field": "impacts"
+            }
+          ],
+          "model_version": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3"
+        }
+      },
+      "incident_card": {
+        "id": "9e3bcc1c-5c3d-4b63-81e3-751288bfd7d6",
+        "created_at": "2026-10-22T09:29:35.884970Z",
+        "report_id": "28a9c2a5-7893-4b75-846b-62b4a19f4895",
+        "bundle_id": "ade35738-393a-4c4a-a62d-d62894d2e41b",
+        "narrative_id": "84a5cc03-6ac6-4909-a439-4223c4a73f11",
+        "sena_result_id": "21f9c2a1-b266-4316-98ef-0563601f1d3a",
+        "nara_result_id": "b36a6928-567c-478c-9a86-f229b9731b84",
+        "parent_id": null,
+        "version_number": 1,
+        "source_kind": "AI_FUSION",
+        "data": {
+          "impacts": [
+            "menimbulkan kobaran",
+            "asap tebal membumbung",
+            "keberadaan kendaraan",
+            "kerumunan orang"
+          ],
+          "victims": [],
+          "time_text": "malam hari",
+          "event_type": "FIRE",
+          "occurred_at": null,
+          "location_text": "daerah Pada Lampung; Jalan Lasar",
+          "affected_objects": [
+            "rumah pelapor",
+            "antara bangunan-bangunan"
+          ],
+          "involved_parties": [
+            "orang"
+          ]
+        },
+        "uncertain": false,
+        "uncertain_reasons": [],
+        "fusion_version": "silar-fusion-a4.22-0.1.0"
+      }
+    },
+    {
+      "route": "TAI",
+      "bundle": {
+        "id": "47e6c24f-f860-48b4-bbed-965e3a3c5589",
+        "version_number": 1,
+        "source_digest": "a7b716edb241c412ce75f603df78aa6a35e8f460bc25f815e9fc7c57051005a8"
+      },
+      "sources": [
+        {
+          "position": 1,
+          "evidence_id": "22ad915b-c4a4-4c45-a9d7-9912e364437f",
+          "type": "TEXT",
+          "text_content": "Laporan awal: kebakaran di Kalimantan Barat. Saat ini belum ada korban jiwa.",
+          "mime_type": null,
+          "byte_size": 76,
+          "sha256": "caec5e505254d2ac128b8216ea38f931500bfe77b7cf01580bb4d33aee30e3b6"
+        },
+        {
+          "position": 2,
+          "evidence_id": "add10488-2591-455c-b00c-9bfbd1ee9b17",
+          "type": "AUDIO",
+          "text_content": null,
+          "mime_type": "audio/mpeg",
+          "byte_size": 301056,
+          "sha256": "f4293e37a657268d96544e1fae07a6bbe6ce8245a338ebcf14af6188613b3be7"
+        },
+        {
+          "position": 3,
+          "evidence_id": "15383fad-2e6a-4366-8073-2d2fdf02f680",
+          "type": "IMAGE",
+          "text_content": null,
+          "mime_type": "image/jpeg",
+          "byte_size": 40625,
+          "sha256": "630ec66cf07f969b97e6e26036c381cb07233c335e8e065c452000f6451399c2"
+        }
+      ],
+      "run": {
+        "id": "fb4eadcc-291e-4e5a-ba38-42b15bcbdf14",
+        "created_at": "2026-10-21T17:30:38.354684Z",
+        "report_id": "8d439838-12c3-44e2-919a-c9502bd23403",
+        "bundle_id": "47e6c24f-f860-48b4-bbed-965e3a3c5589",
+        "input_narrative_id": null,
+        "output_narrative_id": "59b002a0-a52e-4baf-92c2-cf0d0dd0045b",
+        "used_transcript_id": "165e00c7-a8e6-4ed4-b3f6-bfef011fbc50",
+        "input_revision": 1,
+        "mode": "EVIDENCE",
+        "route": "TAI",
+        "status": "SUCCEEDED",
+        "stage": "PERSIST",
+        "model_versions": {
+          "nara": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3",
+          "sena": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3",
+          "fusion": "silar-fusion-a4.22-0.1.0",
+          "gemini": {
+            "sdk_version": "2.32.0",
+            "prompt_sha256": "86653ffb1ad3d0cb8ffd05fe8cadb4bb079df38f875c010d4b4a91c58a3172af",
+            "prompt_version": "silar-unified-narrative-0.1.0",
+            "resolved_model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "adapter": "silar-adapter-0.5.3",
+          "runtime": "silar-candidate-runtime-0.6.5",
+          "whisper": "whisper-small|536b0662742c0234|cpu-int8",
+          "pipeline": "silar-pipeline-0.1.0",
+          "asset_lock_sha256": "35f33ef6eca306d16fbf1bbd6093bc6a8512770394e32036ca06f8ff7c6d4876",
+          "confidence_threshold": 0.95,
+          "configuration_sha256": "1ee37cdf182e7b509d80622c31128402b0e1b1215b333a334e17ebdc4a7886d1",
+          "calibration_reference": "SILAR_SENA_context_v084_20261020T144453Z:OPERATING_CUTOFF_0.95_NOT_PROBABILITY_CALIBRATED",
+          "inference_profile_sha256": "d2f235f7b5b3f4d7cb445fa5870cfc6b0b49f9f1a429e8518075c4ff53955bbd"
+        },
+        "started_at": "2026-10-21T17:30:38.354684Z",
+        "finished_at": "2026-10-21T17:30:45.271146Z",
+        "error_code": null,
+        "timings_ms": {
+          "NARA": 71.394,
+          "SENA": 67.991,
+          "TOTAL": 6926.025,
+          "FUSION": 0.199,
+          "WHISPER": 1749.836,
+          "NARRATIVE": 4873.112
+        },
+        "used_transcript": {
+          "id": "165e00c7-a8e6-4ed4-b3f6-bfef011fbc50",
+          "created_at": "2026-10-21T17:30:40.149876Z",
+          "report_id": "8d439838-12c3-44e2-919a-c9502bd23403",
+          "evidence_id": "add10488-2591-455c-b00c-9bfbd1ee9b17",
+          "analysis_run_id": "fb4eadcc-291e-4e5a-ba38-42b15bcbdf14",
+          "text": "ada kebakaran di Kalimantan Barat dan saat ini belum ada korban jiwa",
+          "model_version": "whisper-small|536b0662742c0234|cpu-int8",
+          "duration_ms": 9408
+        },
+        "output_narrative": {
+          "id": "59b002a0-a52e-4baf-92c2-cf0d0dd0045b",
+          "created_at": "2026-10-21T17:30:45.048202Z",
+          "report_id": "8d439838-12c3-44e2-919a-c9502bd23403",
+          "bundle_id": "47e6c24f-f860-48b4-bbed-965e3a3c5589",
+          "parent_id": null,
+          "producer_run_id": "fb4eadcc-291e-4e5a-ba38-42b15bcbdf14",
+          "version_number": 1,
+          "text": "Terdapat laporan kebakaran di Kalimantan Barat yang menyatakan bahwa saat ini belum ada korban jiwa. Berdasarkan foto, terlihat sebuah bangunan berdinding hijau yang bagian atapnya sedang terbakar hebat mengeluarkan api dan asap tebal, serta tampak seseorang berdiri di teras.",
+          "origin": "GEMINI"
+        },
+        "sena": {
+          "id": "28a9b108-002c-4fec-a098-0efdd78384ee",
+          "created_at": "2026-10-21T17:30:45.132679Z",
+          "analysis_run_id": "fb4eadcc-291e-4e5a-ba38-42b15bcbdf14",
+          "narrative_id": "59b002a0-a52e-4baf-92c2-cf0d0dd0045b",
+          "category": "FIRE",
+          "confidence": 0.99725,
+          "raw_output": {
+            "label": "FIRE",
+            "confidence": 0.9972488284111023,
+            "probabilities": {
+              "FIRE": 0.9972488284111023,
+              "FLOOD": 6.571900030394318e-06,
+              "ACCIDENT": 1.544593214930501e-05,
+              "NON_EVENT": 0.0027179722674191,
+              "EARTHQUAKE": 1.1117132999061141e-05
+            }
+          },
+          "model_version": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3"
+        },
+        "nara": {
+          "id": "a15d98ea-f004-4766-9abd-cc77e7492825",
+          "created_at": "2026-10-21T17:30:45.220327Z",
+          "analysis_run_id": "fb4eadcc-291e-4e5a-ba38-42b15bcbdf14",
+          "narrative_id": "59b002a0-a52e-4baf-92c2-cf0d0dd0045b",
+          "raw_output": {
+            "srl_spans": {
+              "TIME-ARG": [
+                {
+                  "role": "TIME-ARG",
+                  "text": "saat",
+                  "mean_confidence": 0.4901233911514282
+                }
+              ],
+              "PLACE-ARG": [
+                {
+                  "role": "PLACE-ARG",
+                  "text": "Kalimantan Barat",
+                  "mean_confidence": 0.997534841299057
+                }
+              ],
+              "FIRE-EVENT": [
+                {
+                  "role": "FIRE-EVENT",
+                  "text": "kebakaran",
+                  "mean_confidence": 0.9933655858039856
+                },
+                {
+                  "role": "FIRE-EVENT",
+                  "text": "terbakar",
+                  "mean_confidence": 0.9928348064422607
+                }
+              ],
+              "REASON-ARG": [],
+              "STREET-ARG": [],
+              "FALSE-EVENT": [],
+              "FLOOD-EVENT": [],
+              "OFFICER-ARG": [],
+              "ACCIDENT-EVENT": [],
+              "DEATHVICTIM-ARG": [],
+              "INFORMATION-ARG": [
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "ini belum ada korban jiwa",
+                  "mean_confidence": 0.8700389921665191
+                },
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "sedang",
+                  "mean_confidence": 0.45614203810691833
+                },
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "mengeluarkan api",
+                  "mean_confidence": 0.5202111303806305
+                },
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "asap tebal",
+                  "mean_confidence": 0.7132152318954468
+                },
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "tampak seseorang berdiri",
+                  "mean_confidence": 0.7317246794700623
+                },
+                {
+                  "role": "INFORMATION-ARG",
+                  "text": "teras",
+                  "mean_confidence": 0.5712504386901855
+                }
+              ],
+              "WOUNDVICTIM-ARG": [],
+              "EARTHQUAKE-EVENT": [],
+              "AFFECTEDOBJECTS-ARG": [
+                {
+                  "role": "AFFECTEDOBJECTS-ARG",
+                  "text": "sebuah bangunan berdinding hijau",
+                  "mean_confidence": 0.9781015962362289
+                },
+                {
+                  "role": "AFFECTEDOBJECTS-ARG",
+                  "text": "bagian atapnya",
+                  "mean_confidence": 0.9215027093887329
+                }
+              ]
+            },
+            "token_coverage": {
+              "alignment": "FIRST_WORDPIECE_LEGACY_INFERENCE_NOT_PROOF_OF_TRAINING_ALIGNMENT",
+              "source_regex_tokens": 43,
+              "processed_regex_tokens": 43,
+              "all_regex_tokens_processed": true,
+              "last_wordpiece_sequence_partial": false,
+              "processed_wordpieces_with_special_tokens": 47
+            },
+            "postprocessing_trace": {
+              "spans_before_guard": {
+                "TIME-ARG": [
+                  {
+                    "role": "TIME-ARG",
+                    "text": "saat",
+                    "mean_confidence": 0.4901233911514282
+                  }
+                ],
+                "PLACE-ARG": [
+                  {
+                    "role": "PLACE-ARG",
+                    "text": "Kalimantan Barat",
+                    "mean_confidence": 0.997534841299057
+                  }
+                ],
+                "FIRE-EVENT": [
+                  {
+                    "role": "FIRE-EVENT",
+                    "text": "kebakaran",
+                    "mean_confidence": 0.9933655858039856
+                  },
+                  {
+                    "role": "FIRE-EVENT",
+                    "text": "terbakar",
+                    "mean_confidence": 0.9928348064422607
+                  }
+                ],
+                "REASON-ARG": [],
+                "STREET-ARG": [],
+                "FALSE-EVENT": [],
+                "FLOOD-EVENT": [],
+                "OFFICER-ARG": [],
+                "ACCIDENT-EVENT": [],
+                "DEATHVICTIM-ARG": [],
+                "INFORMATION-ARG": [
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "ini belum ada korban jiwa",
+                    "mean_confidence": 0.8700389921665191
+                  },
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "sedang",
+                    "mean_confidence": 0.45614203810691833
+                  },
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "mengeluarkan api",
+                    "mean_confidence": 0.5202111303806305
+                  },
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "asap tebal",
+                    "mean_confidence": 0.7132152318954468
+                  },
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "tampak seseorang berdiri",
+                    "mean_confidence": 0.7317246794700623
+                  },
+                  {
+                    "role": "INFORMATION-ARG",
+                    "text": "teras",
+                    "mean_confidence": 0.5712504386901855
+                  }
+                ],
+                "WOUNDVICTIM-ARG": [],
+                "EARTHQUAKE-EVENT": [],
+                "AFFECTEDOBJECTS-ARG": [
+                  {
+                    "role": "AFFECTEDOBJECTS-ARG",
+                    "text": "sebuah bangunan berdinding hijau",
+                    "mean_confidence": 0.9781015962362289
+                  },
+                  {
+                    "role": "AFFECTEDOBJECTS-ARG",
+                    "text": "bagian atapnya",
+                    "mean_confidence": 0.9215027093887329
+                  }
+                ]
+              },
+              "victim_safety_flags": [],
+              "victim_guard_version": "silar-victim-guard-0.5.0"
+            },
+            "srl_token_predictions": [
+              {
+                "end": 8,
+                "label": "O",
+                "start": 0,
+                "token": "terdapat",
+                "original": "Terdapat",
+                "confidence": 0.9668170213699341
+              },
+              {
+                "end": 16,
+                "label": "O",
+                "start": 9,
+                "token": "laporan",
+                "original": "laporan",
+                "confidence": 0.7974844574928284
+              },
+              {
+                "end": 26,
+                "label": "FIRE-EVENT",
+                "start": 17,
+                "token": "kebakaran",
+                "original": "kebakaran",
+                "confidence": 0.9933655858039856
+              },
+              {
+                "end": 29,
+                "label": "O",
+                "start": 27,
+                "token": "di",
+                "original": "di",
+                "confidence": 0.995266318321228
+              },
+              {
+                "end": 40,
+                "label": "PLACE-ARG",
+                "start": 30,
+                "token": "kalimantan",
+                "original": "Kalimantan",
+                "confidence": 0.9975407123565674
+              },
+              {
+                "end": 46,
+                "label": "PLACE-ARG",
+                "start": 41,
+                "token": "barat",
+                "original": "Barat",
+                "confidence": 0.9975289702415466
+              },
+              {
+                "end": 51,
+                "label": "O",
+                "start": 47,
+                "token": "yang",
+                "original": "yang",
+                "confidence": 0.9753100872039795
+              },
+              {
+                "end": 62,
+                "label": "O",
+                "start": 52,
+                "token": "menyatakan",
+                "original": "menyatakan",
+                "confidence": 0.6457539796829224
+              },
+              {
+                "end": 68,
+                "label": "O",
+                "start": 63,
+                "token": "bahwa",
+                "original": "bahwa",
+                "confidence": 0.7181293368339539
+              },
+              {
+                "end": 73,
+                "label": "TIME-ARG",
+                "start": 69,
+                "token": "saat",
+                "original": "saat",
+                "confidence": 0.4901233911514282
+              },
+              {
+                "end": 77,
+                "label": "INFORMATION-ARG",
+                "start": 74,
+                "token": "ini",
+                "original": "ini",
+                "confidence": 0.47078362107276917
+              },
+              {
+                "end": 83,
+                "label": "INFORMATION-ARG",
+                "start": 78,
+                "token": "belum",
+                "original": "belum",
+                "confidence": 0.9804690480232239
+              },
+              {
+                "end": 87,
+                "label": "INFORMATION-ARG",
+                "start": 84,
+                "token": "ada",
+                "original": "ada",
+                "confidence": 0.9730592966079712
+              },
+              {
+                "end": 94,
+                "label": "INFORMATION-ARG",
+                "start": 88,
+                "token": "korban",
+                "original": "korban",
+                "confidence": 0.9629481434822083
+              },
+              {
+                "end": 99,
+                "label": "INFORMATION-ARG",
+                "start": 95,
+                "token": "jiwa",
+                "original": "jiwa",
+                "confidence": 0.9629348516464233
+              },
+              {
+                "end": 100,
+                "label": "O",
+                "start": 99,
+                "token": ".",
+                "original": ".",
+                "confidence": 0.9935298562049866
+              },
+              {
+                "end": 112,
+                "label": "O",
+                "start": 101,
+                "token": "berdasarkan",
+                "original": "Berdasarkan",
+                "confidence": 0.9834542274475098
+              },
+              {
+                "end": 117,
+                "label": "O",
+                "start": 113,
+                "token": "foto",
+                "original": "foto",
+                "confidence": 0.9374170899391174
+              },
+              {
+                "end": 118,
+                "label": "O",
+                "start": 117,
+                "token": ",",
+                "original": ",",
+                "confidence": 0.9903772473335266
+              },
+              {
+                "end": 127,
+                "label": "O",
+                "start": 119,
+                "token": "terlihat",
+                "original": "terlihat",
+                "confidence": 0.9384435415267944
+              },
+              {
+                "end": 134,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 128,
+                "token": "sebuah",
+                "original": "sebuah",
+                "confidence": 0.9780377149581909
+              },
+              {
+                "end": 143,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 135,
+                "token": "bangunan",
+                "original": "bangunan",
+                "confidence": 0.9937166571617126
+              },
+              {
+                "end": 154,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 144,
+                "token": "berdinding",
+                "original": "berdinding",
+                "confidence": 0.9740051627159119
+              },
+              {
+                "end": 160,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 155,
+                "token": "hijau",
+                "original": "hijau",
+                "confidence": 0.9666468501091003
+              },
+              {
+                "end": 165,
+                "label": "O",
+                "start": 161,
+                "token": "yang",
+                "original": "yang",
+                "confidence": 0.9140430092811584
+              },
+              {
+                "end": 172,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 166,
+                "token": "bagian",
+                "original": "bagian",
+                "confidence": 0.876910924911499
+              },
+              {
+                "end": 180,
+                "label": "AFFECTEDOBJECTS-ARG",
+                "start": 173,
+                "token": "atapnya",
+                "original": "atapnya",
+                "confidence": 0.9660944938659668
+              },
+              {
+                "end": 187,
+                "label": "INFORMATION-ARG",
+                "start": 181,
+                "token": "sedang",
+                "original": "sedang",
+                "confidence": 0.45614203810691833
+              },
+              {
+                "end": 196,
+                "label": "FIRE-EVENT",
+                "start": 188,
+                "token": "terbakar",
+                "original": "terbakar",
+                "confidence": 0.9928348064422607
+              },
+              {
+                "end": 202,
+                "label": "O",
+                "start": 197,
+                "token": "hebat",
+                "original": "hebat",
+                "confidence": 0.5121887922286987
+              },
+              {
+                "end": 215,
+                "label": "INFORMATION-ARG",
+                "start": 203,
+                "token": "mengeluarkan",
+                "original": "mengeluarkan",
+                "confidence": 0.5189297795295715
+              },
+              {
+                "end": 219,
+                "label": "INFORMATION-ARG",
+                "start": 216,
+                "token": "api",
+                "original": "api",
+                "confidence": 0.5214924812316895
+              },
+              {
+                "end": 223,
+                "label": "O",
+                "start": 220,
+                "token": "dan",
+                "original": "dan",
+                "confidence": 0.8732454776763916
+              },
+              {
+                "end": 228,
+                "label": "INFORMATION-ARG",
+                "start": 224,
+                "token": "asap",
+                "original": "asap",
+                "confidence": 0.7504960894584656
+              },
+              {
+                "end": 234,
+                "label": "INFORMATION-ARG",
+                "start": 229,
+                "token": "tebal",
+                "original": "tebal",
+                "confidence": 0.675934374332428
+              },
+              {
+                "end": 235,
+                "label": "O",
+                "start": 234,
+                "token": ",",
+                "original": ",",
+                "confidence": 0.9814401865005493
+              },
+              {
+                "end": 241,
+                "label": "O",
+                "start": 236,
+                "token": "serta",
+                "original": "serta",
+                "confidence": 0.9815585017204285
+              },
+              {
+                "end": 248,
+                "label": "INFORMATION-ARG",
+                "start": 242,
+                "token": "tampak",
+                "original": "tampak",
+                "confidence": 0.5340602993965149
+              },
+              {
+                "end": 258,
+                "label": "INFORMATION-ARG",
+                "start": 249,
+                "token": "seseorang",
+                "original": "seseorang",
+                "confidence": 0.7508796453475952
+              },
+              {
+                "end": 266,
+                "label": "INFORMATION-ARG",
+                "start": 259,
+                "token": "berdiri",
+                "original": "berdiri",
+                "confidence": 0.9102340936660767
+              },
+              {
+                "end": 269,
+                "label": "O",
+                "start": 267,
+                "token": "di",
+                "original": "di",
+                "confidence": 0.5679438710212708
+              },
+              {
+                "end": 275,
+                "label": "INFORMATION-ARG",
+                "start": 270,
+                "token": "teras",
+                "original": "teras",
+                "confidence": 0.5712504386901855
+              },
+              {
+                "end": 276,
+                "label": "O",
+                "start": 275,
+                "token": ".",
+                "original": ".",
+                "confidence": 0.9952113032341003
+              }
+            ]
+          },
+          "normalized_output": {
+            "impacts": [
+              "ini belum ada korban jiwa",
+              "bagian atapnya sedang",
+              "mengeluarkan api",
+              "asap tebal",
+              "tampak seseorang berdiri",
+              "teras"
+            ],
+            "victims": [],
+            "time_text": "saat",
+            "occurred_at": null,
+            "location_text": "Kalimantan Barat",
+            "affected_objects": [
+              "sebuah bangunan berdinding hijau",
+              "bagian atapnya"
+            ],
+            "involved_parties": []
+          },
+          "normalization_warnings": [
+            {
+              "code": "INFORMATION_AS_IMPACT_SUGGESTION",
+              "field": "impacts"
+            }
+          ],
+          "model_version": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3"
+        }
+      },
+      "incident_card": {
+        "id": "20358c96-3d44-43db-a947-dac34efd4bdb",
+        "created_at": "2026-10-21T17:30:45.268560Z",
+        "report_id": "8d439838-12c3-44e2-919a-c9502bd23403",
+        "bundle_id": "47e6c24f-f860-48b4-bbed-965e3a3c5589",
+        "narrative_id": "59b002a0-a52e-4baf-92c2-cf0d0dd0045b",
+        "sena_result_id": "28a9b108-002c-4fec-a098-0efdd78384ee",
+        "nara_result_id": "a15d98ea-f004-4766-9abd-cc77e7492825",
+        "parent_id": null,
+        "version_number": 1,
+        "source_kind": "AI_FUSION",
+        "data": {
+          "impacts": [
+            "ini belum ada korban jiwa",
+            "bagian atapnya sedang",
+            "mengeluarkan api",
+            "asap tebal",
+            "tampak seseorang berdiri",
+            "teras"
+          ],
+          "victims": [],
+          "time_text": "saat",
+          "event_type": "FIRE",
+          "occurred_at": null,
+          "location_text": "Kalimantan Barat",
+          "affected_objects": [
+            "sebuah bangunan berdinding hijau",
+            "bagian atapnya"
+          ],
+          "involved_parties": []
+        },
+        "uncertain": false,
+        "uncertain_reasons": [],
+        "fusion_version": "silar-fusion-a4.22-0.1.0"
+      }
+    }
+  ]
+}

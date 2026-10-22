@@ -1,0 +1,46 @@
+{
+  "status": "PASSED",
+  "checks": [
+    {
+      "command": [
+        "uv",
+        "pip",
+        "check",
+        "--python",
+        "<python-env>"
+      ],
+      "exit_code": 0,
+      "output": "Using Python 3.12.14 environment at: /workspace/scratch/89b81e051aff/slr11_env\nChecked 70 packages in 1ms\nAll installed packages are compatible"
+    },
+    {
+      "command": [
+        "<python-env>",
+        "-m",
+        "compileall",
+        "-q",
+        "code/backend/ai_pipeline"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "<python-env>",
+        "-m",
+        "pyflakes",
+        "code/backend/ai_pipeline"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  ]
+}

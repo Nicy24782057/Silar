@@ -1,0 +1,48 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> silar-slr10-frontend@1.1.1 test
+> node --test tests/*.test.js
+
+✔ Peringatan tampil ketika uncertain false tanpa mengubah flag (0.839536ms)
+✔ Peringatan dan uncertain true tetap terpisah (0.13263ms)
+✔ Kode baru memakai pesan umum dan label field aman (0.687808ms)
+✔ Hasil kosong dan NARA yang belum tersedia aman (0.167162ms)
+✔ Analisis terbaru gagal tidak memasangkan peringatan/keyakinannya ke kartu lama (0.122094ms)
+✔ Identitas run, hasil, bundle, dan narasi harus cocok (0.180873ms)
+✔ Narasi baru tidak dilabeli sebagai sumber kartu lama (0.158939ms)
+✔ Body sukses yang terputus setelah POST menahan hasil sebagai belum pasti tanpa retry (4.160234ms)
+✔ Koneksi POST terputus tidak mengirim ulang request (1.993707ms)
+✔ Respons gateway tanpa hasil backend pasti mengharuskan pembacaan keadaan tersimpan (2.356203ms)
+✔ Kegagalan AI yang telah dicatat mempertahankan kode backend (2.651187ms)
+✔ Body GET yang tidak terbaca tidak menyatakan mutasi telah dilakukan (1.132458ms)
+✔ Logout 204 tidak mencoba membaca JSON (0.787628ms)
+✔ Recorder mendahulukan WebM dengan codec Opus (0.717562ms)
+✔ Recorder memakai AAC atau MP4 generik ketika WebM tidak tersedia (0.151408ms)
+✔ Tidak ada fallback OGG atau format default yang tidak diketahui (0.148865ms)
+✔ Nama dan MIME mengikuti keluaran rekaman yang sebenarnya (0.911164ms)
+✔ Keluaran OGG, Vorbis, ALAC, video dan MIME kosong tidak disamarkan (0.405061ms)
+✔ Unicode dihitung per code point, bukan byte atau UTF16 (1.22665ms)
+✔ Teks kosong ditolak (0.124498ms)
+✔ Ekstensi gambar dan batas ukuran diperiksa (0.236727ms)
+✔ Lima format audio sesuai kontrak diperiksa server (0.237969ms)
+✔ OGG ditolak dan pesan format tidak menawarkan codec lain (0.260383ms)
+✔ Bundle membutuhkan kanal asli dan menahan jumlah berlebih (0.193291ms)
+✔ Bundle menghitung byte teks juga (0.108554ms)
+✔ Gemini tidak digunakan pada teks atau audio tunggal (0.140111ms)
+✔ Gemini diinformasikan untuk lima rute yang relevan (0.256738ms)
+✔ Pagination hanya menyusun path API lokal (0.430179ms)
+✔ Precache hanya daftar aset antarmuka (2.44703ms)
+✔ Auth, API privat, media, POST dan origin lain tidak diintersep (0.824133ms)
+✔ Pembacaan respons hilang memakai GET request, run dan draft tanpa POST atau replay otomatis (1.862549ms)
+✔ RUNNING dan UNKNOWN tanpa hasil terminal hanya dibaca tanpa menebak run atau mengulang (0.381706ms)
+✔ Request dan run dari laporan lain tidak digabungkan ke draft yang dibuka (0.829811ms)
+✔ Daftar pemulihan analisis menyaring request upload dan laporan lain (0.247173ms)
+✔ Respons hilang, REQUEST_RUNNING dan REQUEST_UNKNOWN menahan tindakan baru sampai dibaca (0.258089ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 161.02458

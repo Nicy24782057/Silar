@@ -2,6 +2,7 @@
 import { computed, onBeforeUnmount, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { api, ApiError } from '../api';
+import {analysisRequests, readStoredAnalysis, requestGuidance, requiresStoredState} from '../recovery';
 import { online } from '../network';
 import { validateText, validateFile, validateBundle, usesGemini, paginationPath, label, date, size, textLength } from '../domain';
 import ErrorNotice from '../components/ErrorNotice.vue';
@@ -12,6 +13,7 @@ const detail=ref(null);const evidence=ref([]);const count=ref(0);const next=ref(
 const text=ref('');const audio=ref(null);const images=ref([]);const preview=ref({});
 const busy=ref(false);const loading=ref(false);const analysing=ref(false);const error=ref(null);const message=ref('');
 const unknown=ref(false);const consent=ref(false);const requestRows=ref([]);
+const requestNext=ref(null);const selectedRequest=ref(null);const recoveredRun=ref(null);const includeExpired=ref(false);
 const isNew=computed(()=>route.params.id==='new');
 const report=computed(()=>detail.value?.report);
 const active=computed(()=>detail.value?.active_bundle);
@@ -27,7 +29,7 @@ function releasePreviews(){for(const value of Object.values(preview.value))URL.r
 onBeforeUnmount(()=>{releasePreviews();if(audioUrl.value)URL.revokeObjectURL(audioUrl.value);});
 function addEvidence(rows){const known=new Map(evidence.value.map(x=>[x.id,x]));for(const item of rows)known.set(item.id,item);evidence.value=Array.from(known.values());}
 async function load(){
-  error.value=null;loading.value=true;requestRows.value=[];releasePreviews();consent.value=false;
+  error.value=null;loading.value=true;requestRows.value=[];requestNext.value=null;selectedRequest.value=null;recoveredRun.value=null;releasePreviews();consent.value=false;
   try{
     if(isNew.value){detail.value=null;evidence.value=[];selected.value=[];return;}
     detail.value=(await api('reports/'+route.params.id+'/')).data;
@@ -40,7 +42,7 @@ async function load(){
 }
 watch(()=>route.params.id,()=>{text.value='';audio.value=null;images.value=[];message.value='';load();},{immediate:true});
 async function create(){busy.value=true;error.value=null;try{const result=await api('reports/',{method:'POST',body:{},key:crypto.randomUUID()});await router.replace('/reports/'+result.data.report.id);}catch(e){fail(e);}finally{busy.value=false;}}
-function fail(e){error.value=e;if(e.code==='RESPONSE_UNKNOWN')unknown.value=true;}
+function fail(e){error.value=e;if(requiresStoredState(e))unknown.value=true;}
 async function more(){loading.value=true;error.value=null;try{const result=await api(paginationPath(next.value));addEvidence(result.results);count.value=result.count;next.value=result.next;}catch(e){fail(e);}finally{loading.value=false;}}
 async function upload(kind,value){
   const problem=kind==='TEXT'?validateText(value):validateFile(value,kind);
@@ -80,9 +82,21 @@ async function analyse(){
 }
 async function checkRequests(){
   loading.value=true;error.value=null;
-  try{await load();const result=await api('requests/?report_id='+route.params.id);requestRows.value=result.results;
-    if(!requestRows.value.length)message.value='Tidak ada request analisis pada halaman ini. Periksa sumber dan hasil tersimpan sebelum tindakan baru.';
+  try{await load();loading.value=true;const result=await api('requests/?report_id='+route.params.id+'&include_expired='+includeExpired.value);requestRows.value=analysisRequests(result.results,route.params.id);requestNext.value=result.next;
+    if(!requestRows.value.length)message.value=requestNext.value?'Belum ada request analisis pada halaman ini. Muat riwayat berikutnya untuk mencari request terdahulu.':'Tidak ada request analisis yang sesuai. Periksa sumber dan hasil tersimpan sebelum tindakan baru.';
   }catch(e){if(e.status===404)e=new ApiError('Pembacaan request analisis belum tersedia. Bukti dapat diperiksa melalui daftar sumber tersimpan.','AI_CONFIGURATION_NOT_READY',503);fail(e);}finally{loading.value=false;}
+}
+async function moreRequests(){
+  loading.value=true;error.value=null;
+  try{const result=await api(paginationPath(requestNext.value));const rows=analysisRequests(result.results,route.params.id);
+    requestRows.value=[...new Map([...requestRows.value,...rows].map(item=>[item.key,item])).values()];requestNext.value=result.next;
+  }catch(e){fail(e);}finally{loading.value=false;}
+}
+async function readRequest(key){
+  loading.value=true;error.value=null;message.value='';selectedRequest.value=null;recoveredRun.value=null;
+  try{const result=await readStoredAnalysis(api,route.params.id,key);detail.value=result.detail;selectedRequest.value=result.request;recoveredRun.value=result.run;unknown.value=false;
+    message.value=requestGuidance(result.request.state);
+  }catch(e){fail(e);}finally{loading.value=false;}
 }
 </script>
 <template>
@@ -110,7 +124,9 @@ async function checkRequests(){
       </section>
     </div>
     <div v-if="analysing" class="notice" role="status">Backend sedang memproses sumber. Kamu boleh berpindah fokus selama tab dan request tetap aktif. Jika koneksi terputus, periksa hasil tersimpan sebelum mengulang.</div>
-    <div v-if="requestRows.length" class="card"><h2>Request tersimpan</h2><ul class="request-list"><li v-for="item in requestRows" :key="item.key"><strong>{{ label(item.state) }}</strong> · {{ date(item.created_at) }}<small v-if="item.error_code">{{ item.error_code }}</small></li></ul></div>
+    <div v-if="active && editable" class="field-help"><label class="check-label"><input v-model="includeExpired" type="checkbox" :disabled="loading||analysing">Sertakan riwayat permintaan yang lebih lama saat memeriksa status</label></div>
+    <div v-if="requestRows.length || requestNext" class="card"><h2>Request analisis tersimpan</h2><p class="muted">Pilih request untuk membaca keadaan dan hasilnya tanpa menjalankan analisis ulang.</p><ul class="request-list"><li v-for="item in requestRows" :key="item.key"><strong>{{ label(item.state) }}</strong> · {{ date(item.created_at) }}<small v-if="item.error_code">{{ item.error_code }}</small><button class="small" :disabled="busy||analysing||loading||!online" @click="readRequest(item.key)">Baca request ini</button></li></ul><button v-if="requestNext" class="full" :disabled="busy||analysing||loading||!online" @click="moreRequests">Muat riwayat berikutnya</button></div>
+    <div v-if="selectedRequest" class="card" role="status"><h2>Keadaan request yang dipilih</h2><p><strong>{{ label(selectedRequest.state) }}</strong> · {{ date(selectedRequest.created_at) }}</p><p>{{ requestGuidance(selectedRequest.state) }}</p><p v-if="selectedRequest.error_code">Kode hasil: {{ selectedRequest.error_code }}</p><p v-if="recoveredRun">Tahap terakhir: {{ label(recoveredRun.stage) }} · {{ label(recoveredRun.status) }}</p><p class="fine">Tampilan Incident Card di bawah mengikuti sumber dan versi draft terbaru.</p></div>
     <AnalysisResult :detail="detail" />
   </template>
 </template>

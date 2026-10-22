@@ -1,0 +1,269 @@
+>> Start-Transcript -Path .\hasil-verifikasi-slr10-slr11.txt -Append
+Transcript started, output file is .\hasil-verifikasi-slr10-slr11.txt
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> $cekRelasiSilar = @'
+>> import json
+>> from core.models import (
+>>     AnalysisRun,
+>>     SENAResult,
+>>     NARAResult,
+>>     IncidentCardVersion,
+>> )
+>> 
+>> runs = (
+>>     AnalysisRun.objects
+>>     .filter(mode="EVIDENCE", status="SUCCEEDED")
+>>     .select_related(
+>>         "bundle",
+>>         "output_narrative",
+>>         "used_transcript",
+>>         "request_record",
+>>     )
+>>     .order_by("route", "started_at")
+>> )
+>> 
+>> hasil = []
+>> for run in runs:
+>>     narasi = run.output_narrative
+>>     transkrip = run.used_transcript
+>>     sena = SENAResult.objects.filter(analysis_run=run).first()
+>>     nara = NARAResult.objects.filter(analysis_run=run).first()
+>>     cards = list(IncidentCardVersion.objects.filter(
+>>         sena_result__analysis_run=run,
+>>         source_kind="AI_FUSION",
+>>     ))
+>>     card = cards[0] if len(cards) == 1 else None
+>>     ledger = run.request_record
+>>     pemeriksaan = {
+>>         "narasi_tersimpan": bool(narasi and narasi.text.strip()),
+>>         "narasi_milik_run": bool(
+>>             narasi and narasi.producer_run_id == run.id
+>>         ),
+>>         "sena_nara_memakai_narasi_run": bool(
+>>             narasi and sena and nara
+>>             and sena.narrative_id == nara.narrative_id == narasi.id
+>>         ),
+>>         "satu_card_fusion": len(cards) == 1,
+>>         "referensi_card_sesuai": bool(
+>>             card and narasi and sena and nara
+>>             and card.narrative_id == narasi.id
+>>             and card.sena_result_id == sena.id
+>>             and card.nara_result_id == nara.id
+>>         ),
+>>         "laporan_dan_bundle_sesuai": bool(
+>>             narasi and card
+>>             and run.report_id == run.bundle.report_id
+>>             == narasi.report_id == card.report_id
+>>             and run.bundle_id == narasi.bundle_id == card.bundle_id
+>>         ),
+>>         "isi_card_sesuai_hasil": bool(
+>>             card and sena and nara
+>>             and card.data == {
+>>                 "event_type": None if sena.category == "NON_EVENT" else sena.category,
+>>                 **nara.normalized_output,
+>>             }
+>>         ),
+>>         "transkrip_sesuai": (
+>>             bool(
+>>                 transkrip
+>>                 and transkrip.analysis_run_id == run.id
+>>                 and transkrip.report_id == run.report_id
+>>             )
+>>             if "A" in run.route else transkrip is None
+>>         ),
+>>         "ledger_sukses_menunjuk_run": (
+>>             ledger.state == "SUCCEEDED"
+>>             and ledger.result_type == "Run"
+>>             and ledger.result_id == run.id
+>>             and ledger.report_id == run.report_id
+>>             and ledger.response_status == 201
+>>         ),
+>>     }
+>>     masalah = [nama for nama, cocok in pemeriksaan.items() if not cocok]
+>>     hasil.append({
+>>         "route": run.route,
+>>         "run_id": str(run.id),
+>>         "hasil": "OK" if not masalah else "PERIKSA",
+>>         "masalah": masalah,
+>>     })
+>> 
+>> print("\nHASIL PEMERIKSAAN RELASI")
+>> print(json.dumps(hasil, indent=2))
+>> print("\nRINGKASAN")
+>> print(json.dumps({
+>>     "jumlah_run": len(hasil),
+>>     "ok": sum(item["hasil"] == "OK" for item in hasil),
+>>     "perlu_diperiksa": sum(item["hasil"] == "PERIKSA" for item in hasil),
+>>     "rute_terbaca": sorted({item["route"] for item in hasil}),
+>> }, indent=2))
+>> '@
+>> 
+>> $cekRelasiSilar | .\.venv\Scripts\python.exe manage.py shell
+27 objects imported automatically (use -v 2 for details).
+
+Ctrl click to launch VS Code Native REPL (https://aka.ms/python-native-repl)
+Python 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> >>> ... ... ... ... ... >>> >>> ... ... ... ... ... ... ... ... ... ... >>> >>> >>> ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... >>> 
+HASIL PEMERIKSAAN RELASI
+>>> [
+  {
+    "route": "A",
+    "run_id": "6cb95e92-9c64-43e7-82a9-5f162ac493fc",
+    "hasil": "OK",
+    "masalah": []
+  },
+  {
+    "route": "AI",
+    "run_id": "3ed5f47f-7abe-4087-882f-def5aa50a0ce",
+    "hasil": "OK",
+    "masalah": []
+  },
+  {
+    "route": "AI",
+    "run_id": "d71db3cf-14b1-4432-9c1e-f363ee32f0cb",
+    "hasil": "OK",
+    "masalah": []
+  },
+  {
+    "route": "I",
+    "run_id": "af59afda-014e-4203-a9fc-ddc7326a1c1c",
+    "hasil": "OK",
+    "masalah": []
+  },
+  {
+    "route": "T",
+    "run_id": "f3aa497d-d588-4be1-8b9e-2f6907dde8f7",
+    "hasil": "OK",
+    "masalah": []
+  },
+  {
+    "route": "T",
+    "run_id": "a183de89-52a3-4cee-8ac9-bc8267a9c14e",
+    "hasil": "OK",
+    "masalah": []
+  },
+  {
+    "route": "T",
+    "run_id": "dee42303-db65-485a-a3ef-378e12e77040",
+    "hasil": "OK",
+    "masalah": []
+  },
+  {
+    "route": "TA",
+    "run_id": "85ecf463-304d-4fd8-8cfb-642880e3bcf9",
+    "hasil": "OK",
+    "masalah": []
+  },
+  {
+    "route": "TAI",
+    "run_id": "fb4eadcc-291e-4e5a-ba38-42b15bcbdf14",
+    "hasil": "OK",
+    "masalah": []
+  },
+  {
+    "route": "TI",
+    "run_id": "f97c1d62-6365-41a3-8231-a586441ac638",
+    "hasil": "OK",
+    "masalah": []
+  }
+]
+>>> 
+RINGKASAN
+>>> ... ... ... ... ... {
+  "jumlah_run": 10,
+  "ok": 10,
+  "perlu_diperiksa": 0,
+  "rute_terbaca": [
+    "A",
+    "AI",
+    "I",
+    "T",
+    "TA",
+    "TAI",
+    "TI"
+  ]
+}
+>>> 
+now exiting InteractiveConsole...
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> .\.venv\Scripts\python.exe manage.py test `
+>>   ai_pipeline.tests.test_database `
+>>   ai_pipeline.tests.test_reporting_integration `
+>>   --settings=config.test_settings `
+>>   --verbosity=2 `
+>>   --keepdb
+Found 24 test(s).
+Using existing test database for alias 'default' ('test_silar_local')...
+Operations to perform:
+  Synchronize unmigrated apps: ai_pipeline, corsheaders, reporting, rest_framework
+  Apply all migrations: accounts, auth, contenttypes, core, sessions, token_blacklist
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying accounts.0001_initial... OK
+  Applying core.0001_initial... OK
+  Applying core.0002_history_guards... OK
+  Applying core.0003_nara_normalization_warnings... OK
+  Applying core.0004_allowed_enums... OK
+  Applying sessions.0001_initial... OK
+  Applying token_blacklist.0001_initial... OK
+  Applying token_blacklist.0002_outstandingtoken_jti_hex... OK
+  Applying token_blacklist.0003_auto_20171017_2007... OK
+  Applying token_blacklist.0004_auto_20171017_2013... OK
+  Applying token_blacklist.0005_remove_outstandingtoken_jti... OK
+  Applying token_blacklist.0006_auto_20171017_2113... OK
+  Applying token_blacklist.0007_auto_20171017_2214... OK
+  Applying token_blacklist.0008_migrate_to_bigautofield... OK
+  Applying token_blacklist.0010_fix_migrate_to_bigautofield... OK
+  Applying token_blacklist.0011_linearizes_history... OK
+  Applying token_blacklist.0012_alter_outstandingtoken_user... OK
+  Applying token_blacklist.0013_alter_blacklistedtoken_options_and_more... OK
+System check identified no issues (0 silenced).
+test_all_seven_routes_persist_sources_and_audio_reference (ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_all_seven_routes_persist_sources_and_audio_reference) ... ok
+test_capacity_full_does_not_mutate_report (ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_capacity_full_does_not_mutate_report) ... ok
+test_finalization_error_rolls_back_card_and_never_returns_success (ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_finalization_error_rolls_back_card_and_never_returns_success) ... ok
+test_known_upstream_failure_keeps_partial_narrative_and_safe_error (ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_known_upstream_failure_keeps_partial_narrative_and_safe_error) ... ok
+test_narrative_revision_reuses_narrative_without_transcription (ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_narrative_revision_reuses_narrative_without_transcription) ... ok
+test_non_event_is_blocked_and_empty_fields_do_not_make_uncertain (ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_non_event_is_blocked_and_empty_fields_do_not_make_uncertain) ... ok
+test_other_owner_cannot_start_or_read_run (ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_other_owner_cannot_start_or_read_run) ... ok
+test_recovery_refuses_live_process_then_fences_old_token_after_proof (ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_recovery_refuses_live_process_then_fences_old_token_after_proof) ... ok
+test_replay_checks_current_account_before_returning_snapshot (ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_replay_checks_current_account_before_returning_snapshot) ... ok
+test_replay_does_not_reapply_submitted_transition_guard (ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_replay_does_not_reapply_submitted_transition_guard) ... ok
+test_same_key_with_new_revision_is_mismatch (ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_same_key_with_new_revision_is_mismatch) ... ok
+test_source_change_preserves_partial_history_but_never_activates_old_card (ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_source_change_preserves_partial_history_but_never_activates_old_card) ... ok
+test_success_commits_card_ledger_and_audit_before_http_success (ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_success_commits_card_ledger_and_audit_before_http_success) ... ok
+test_terminal_replay_has_no_new_inference_or_revision (ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_terminal_replay_has_no_new_inference_or_revision) ... ok
+test_uncertain_database_outcome_keeps_slot_and_get_is_read_only (ai_pipeline.tests.test_database.AnalysisDatabaseTests.test_uncertain_database_outcome_keeps_slot_and_get_is_read_only) ... ok
+test_expired_request_remains_readable_without_available_replay (ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_expired_request_remains_readable_without_available_replay) ... ok
+test_known_failure_can_be_read_replayed_and_explicitly_retried_from_fresh_revision (ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_known_failure_can_be_read_replayed_and_explicitly_retried_from_fresh_revision) ... ok
+test_lost_response_is_recovered_by_reading_request_run_and_report_without_mutation (ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_lost_response_is_recovered_by_reading_request_run_and_report_without_mutation) ... ok
+test_missing_ai_configuration_preserves_login_draft_and_uploaded_evidence (ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_missing_ai_configuration_preserves_login_draft_and_uploaded_evidence) ... ok
+test_non_event_and_uncertain_are_stored_without_verification_or_submission (ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_non_event_and_uncertain_are_stored_without_verification_or_submission) ... ok
+test_other_owner_cannot_read_request_run_report_or_media (ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_other_owner_cannot_read_request_run_report_or_media) ... ok
+test_seven_routes_from_actual_upload_bundle_to_matching_stored_card (ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_seven_routes_from_actual_upload_bundle_to_matching_stored_card) ... ok
+test_source_changed_through_input_api_preserves_new_bundle_and_rejects_old_card (ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_source_changed_through_input_api_preserves_new_bundle_and_rejects_old_card) ... ok
+test_unknown_finalization_remains_read_only_and_holds_another_analysis (ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_unknown_finalization_remains_read_only_and_holds_another_analysis) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 19.483s
+
+OK
+Preserving test database for alias 'default' ('test_silar_local')...
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> Stop-Transcript
+Transcript stopped, output file is D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend\hasil-verifikasi-slr10-slr11.txt
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> 

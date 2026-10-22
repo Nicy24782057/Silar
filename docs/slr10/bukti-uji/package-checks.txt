@@ -1,6 +1,6 @@
 Paket SLR_10: 1.1.1
 Berkas baru/perubahan yang akan diterapkan: 80
-Berkas distribusi lama yang akan dicadangkan dan dihapus: 11
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 21
 PANDUAN_RUNNING.md
 README.md
 code/backend/reporting/media.py
@@ -90,11 +90,21 @@ HAPUS PASANG_KE_REPO.bat
 HAPUS SIAPKAN_SLR10.bat
 HAPUS UJI_SLR10.bat
 HAPUS code/New Dokumen Teks.txt
+HAPUS code/frontend/dist/assets/AuthView-DDYz0mVV.js
+HAPUS code/frontend/dist/assets/DraftView-DcuZuHLb.js
+HAPUS code/frontend/dist/assets/ErrorNotice-D9I34ssi.js
+HAPUS code/frontend/dist/assets/NotFoundView-CvoqN9DQ.js
+HAPUS code/frontend/dist/assets/ProfileView-BCQSAMUl.js
+HAPUS code/frontend/dist/assets/PwaView-D0V8LhIu.js
+HAPUS code/frontend/dist/assets/ReportsView-CIrAJiTZ.js
+HAPUS code/frontend/dist/assets/WorkspaceView-bkid4gcS.js
+HAPUS code/frontend/dist/assets/domain-Bge91Za-.js
+HAPUS code/frontend/dist/assets/index-BGUgpcTO.js
 HAPUS docs/slr10/bukti-uji/backend-components.txt
 HAPUS docs/slr10/bukti-uji/browser-results.json
 Paket SLR_10: 1.1.1
 Berkas baru/perubahan yang akan diterapkan: 80
-Berkas distribusi lama yang akan dicadangkan dan dihapus: 11
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 21
 Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
 Selanjutnya ikuti PANDUAN_RUNNING.md dari repository tujuan.
 Paket SLR_10: 1.1.1
@@ -102,7 +112,7 @@ Berkas baru/perubahan yang akan diterapkan: 0
 Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
 Paket SLR_10: 1.1.1
 Berkas baru/perubahan yang akan diterapkan: 48
-Berkas distribusi lama yang akan dicadangkan dan dihapus: 27
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 37
 PANDUAN_RUNNING.md
 README.md
 code/backend/reporting/media.py
@@ -160,6 +170,16 @@ HAPUS PASANG_KE_REPO.bat
 HAPUS SIAPKAN_SLR10.bat
 HAPUS UJI_SLR10.bat
 HAPUS code/New Dokumen Teks.txt
+HAPUS code/frontend/dist/assets/AuthView-DDYz0mVV.js
+HAPUS code/frontend/dist/assets/DraftView-DcuZuHLb.js
+HAPUS code/frontend/dist/assets/ErrorNotice-D9I34ssi.js
+HAPUS code/frontend/dist/assets/NotFoundView-CvoqN9DQ.js
+HAPUS code/frontend/dist/assets/ProfileView-BCQSAMUl.js
+HAPUS code/frontend/dist/assets/PwaView-D0V8LhIu.js
+HAPUS code/frontend/dist/assets/ReportsView-CIrAJiTZ.js
+HAPUS code/frontend/dist/assets/WorkspaceView-bkid4gcS.js
+HAPUS code/frontend/dist/assets/domain-Bge91Za-.js
+HAPUS code/frontend/dist/assets/index-BGUgpcTO.js
 HAPUS docs/slr10/bukti-uji/audit-check.mjs-CRLF.txt
 HAPUS docs/slr10/bukti-uji/audit-check.mjs-LF.txt
 HAPUS docs/slr10/bukti-uji/backend-components.txt
@@ -180,7 +200,7 @@ HAPUS docs/slr10/bukti-uji/review-check.mjs-LF.txt
 HAPUS docs/slr10/bukti-uji/static-results.json
 Paket SLR_10: 1.1.1
 Berkas baru/perubahan yang akan diterapkan: 48
-Berkas distribusi lama yang akan dicadangkan dan dihapus: 27
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 37
 Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
 Selanjutnya ikuti PANDUAN_RUNNING.md dari repository tujuan.
 Paket SLR_10: 1.1.1
@@ -188,7 +208,7 @@ Berkas baru/perubahan yang akan diterapkan: 0
 Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
 Paket SLR_10: 1.1.1
 Berkas baru/perubahan yang akan diterapkan: 48
-Berkas distribusi lama yang akan dicadangkan dan dihapus: 27
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 37
 PANDUAN_RUNNING.md
 README.md
 code/backend/reporting/media.py
@@ -246,6 +266,16 @@ HAPUS PASANG_KE_REPO.bat
 HAPUS SIAPKAN_SLR10.bat
 HAPUS UJI_SLR10.bat
 HAPUS code/New Dokumen Teks.txt
+HAPUS code/frontend/dist/assets/AuthView-DDYz0mVV.js
+HAPUS code/frontend/dist/assets/DraftView-DcuZuHLb.js
+HAPUS code/frontend/dist/assets/ErrorNotice-D9I34ssi.js
+HAPUS code/frontend/dist/assets/NotFoundView-CvoqN9DQ.js
+HAPUS code/frontend/dist/assets/ProfileView-BCQSAMUl.js
+HAPUS code/frontend/dist/assets/PwaView-D0V8LhIu.js
+HAPUS code/frontend/dist/assets/ReportsView-CIrAJiTZ.js
+HAPUS code/frontend/dist/assets/WorkspaceView-bkid4gcS.js
+HAPUS code/frontend/dist/assets/domain-Bge91Za-.js
+HAPUS code/frontend/dist/assets/index-BGUgpcTO.js
 HAPUS docs/slr10/bukti-uji/audit-check.mjs-CRLF.txt
 HAPUS docs/slr10/bukti-uji/audit-check.mjs-LF.txt
 HAPUS docs/slr10/bukti-uji/backend-components.txt
@@ -266,7 +296,7 @@ HAPUS docs/slr10/bukti-uji/review-check.mjs-LF.txt
 HAPUS docs/slr10/bukti-uji/static-results.json
 Paket SLR_10: 1.1.1
 Berkas baru/perubahan yang akan diterapkan: 48
-Berkas distribusi lama yang akan dicadangkan dan dihapus: 27
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 37
 Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
 Selanjutnya ikuti PANDUAN_RUNNING.md dari repository tujuan.
 Paket SLR_10: 1.1.1
@@ -274,8 +304,8 @@ Berkas baru/perubahan yang akan diterapkan: 0
 Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
 {
   "release": "1.1.1",
-  "manifest_files": 129,
-  "obsolete_entries": 27,
+  "manifest_files": 119,
+  "obsolete_entries": 37,
   "manifest_hashes": "PASS",
   "root_guide": "PANDUAN_RUNNING.md",
   "root_launchers": 0,
@@ -286,24 +316,24 @@ Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
     {
       "scenario": "upgrade 1.0.0",
       "status": "PASS",
-      "operations": 91,
-      "removed_and_backed_up": 11,
+      "operations": 101,
+      "removed_and_backed_up": 21,
       "protected_files": 40,
       "reinstall_operations": 0
     },
     {
       "scenario": "upgrade 1.1.0",
       "status": "PASS",
-      "operations": 75,
-      "removed_and_backed_up": 27,
+      "operations": 85,
+      "removed_and_backed_up": 37,
       "protected_files": 40,
       "reinstall_operations": 0
     },
     {
       "scenario": "upgrade 1.1.0-CRLF",
       "status": "PASS",
-      "operations": 75,
-      "removed_and_backed_up": 27,
+      "operations": 85,
+      "removed_and_backed_up": 37,
       "protected_files": 40,
       "reinstall_operations": 0
     },

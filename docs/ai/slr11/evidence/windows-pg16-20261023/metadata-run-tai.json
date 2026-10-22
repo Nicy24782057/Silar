@@ -1,0 +1,45 @@
+{
+  "provenance": {
+    "source": "Terminal output supplied by the project executor in the integration conversation.",
+    "note": "Faithful transcription of supplied run metadata; no new database query or inference was executed by the document author."
+  },
+  "run": {
+    "id": "fb4eadcc-291e-4e5a-ba38-42b15bcbdf14",
+    "report_id": "8d439838-12c3-44e2-919a-c9502bd23403",
+    "route": "TAI",
+    "status": "SUCCEEDED",
+    "started_at": "2026-10-21 17:30:38.354684+00:00",
+    "finished_at": "2026-10-21 17:30:45.271146+00:00",
+    "used_transcript_id": "165e00c7-a8e6-4ed4-b3f6-bfef011fbc50",
+    "output_narrative_id": "59b002a0-a52e-4baf-92c2-cf0d0dd0045b",
+    "model_versions": {
+      "nara": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3",
+      "sena": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3",
+      "fusion": "silar-fusion-a4.22-0.1.0",
+      "gemini": {
+        "sdk_version": "2.32.0",
+        "prompt_sha256": "86653ffb1ad3d0cb8ffd05fe8cadb4bb079df38f875c010d4b4a91c58a3172af",
+        "prompt_version": "silar-unified-narrative-0.1.0",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "requested_model": "gemini-3.5-flash-lite"
+      },
+      "adapter": "silar-adapter-0.5.3",
+      "runtime": "silar-candidate-runtime-0.6.5",
+      "whisper": "whisper-small|536b0662742c0234|cpu-int8",
+      "pipeline": "silar-pipeline-0.1.0",
+      "asset_lock_sha256": "35f33ef6eca306d16fbf1bbd6093bc6a8512770394e32036ca06f8ff7c6d4876",
+      "confidence_threshold": 0.95,
+      "configuration_sha256": "1ee37cdf182e7b509d80622c31128402b0e1b1215b333a334e17ebdc4a7886d1",
+      "calibration_reference": "SILAR_SENA_context_v084_20261020T144453Z:OPERATING_CUTOFF_0.95_NOT_PROBABILITY_CALIBRATED",
+      "inference_profile_sha256": "d2f235f7b5b3f4d7cb445fa5870cfc6b0b49f9f1a429e8518075c4ff53955bbd"
+    },
+    "timings_ms": {
+      "NARA": 71.394,
+      "SENA": 67.991,
+      "TOTAL": 6926.025,
+      "FUSION": 0.199,
+      "WHISPER": 1749.836,
+      "NARRATIVE": 4873.112
+    }
+  }
+}

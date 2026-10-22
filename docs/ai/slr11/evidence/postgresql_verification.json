@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-10-21T09:49:33.640145+00:00",
+  "status": "BLOCKED_NOT_RUN",
+  "tests_discovered": 15,
+  "tests_run": 0,
+  "required_database": "PostgreSQL 16 with original SLR08 migrations and triggers",
+  "reason": "No PostgreSQL service is available. PostgreSQL 16.2 binaries were obtained for testing, but initdb refuses root. This sandbox maps only UID/GID 0 and does not permit switching to another UID or creating a user namespace.",
+  "initdb_observation": "initdb: error: cannot be run as root",
+  "sqlite_substitution_used": false,
+  "production_dependency_added_for_pgserver": false
+}

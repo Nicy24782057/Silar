@@ -1,0 +1,138 @@
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Found 74 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: accounts, ai_pipeline, core, corsheaders, reporting, rest_framework
+  Apply all migrations: auth, contenttypes, sessions, token_blacklist
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table accounts_user
+    Creating table accounts_emailotp
+    Creating table accounts_securitythrottle
+    Creating table core_report
+    Creating table core_evidenceitem
+    Creating table core_evidencebundle
+    Creating table core_evidencebundleitem
+    Creating table core_narrativeversion
+    Creating table core_analysisrun
+    Creating table core_transcript
+    Creating table core_senaresult
+    Creating table core_nararesult
+    Creating table core_incidentcardversion
+    Creating table core_humanverification
+    Creating table core_operatorassignment
+    Creating table core_operatorreview
+    Creating table core_followuprecord
+    Creating table core_publicationversion
+    Creating table core_notification
+    Creating table core_auditevent
+    Creating table core_idempotencyrecord
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+  Applying token_blacklist.0001_initial... OK
+  Applying token_blacklist.0002_outstandingtoken_jti_hex... OK
+  Applying token_blacklist.0003_auto_20171017_2007... OK
+  Applying token_blacklist.0004_auto_20171017_2013... OK
+  Applying token_blacklist.0005_remove_outstandingtoken_jti... OK
+  Applying token_blacklist.0006_auto_20171017_2113... OK
+  Applying token_blacklist.0007_auto_20171017_2214... OK
+  Applying token_blacklist.0008_migrate_to_bigautofield... OK
+  Applying token_blacklist.0010_fix_migrate_to_bigautofield... OK
+  Applying token_blacklist.0011_linearizes_history... OK
+  Applying token_blacklist.0012_alter_outstandingtoken_user... OK
+  Applying token_blacklist.0013_alter_blacklistedtoken_options_and_more...test_bundle_activates_sources_and_versions_remain (reporting.tests.test_api.InputAPITests.test_bundle_activates_sources_and_versions_remain) ... ok
+test_bundle_cannot_contain_two_text_channels (reporting.tests.test_api.InputAPITests.test_bundle_cannot_contain_two_text_channels) ... ok
+test_bundle_rejects_empty_duplicate_or_cross_report_ids (reporting.tests.test_api.InputAPITests.test_bundle_rejects_empty_duplicate_or_cross_report_ids) ... ok
+test_bundle_replay_returns_original_even_after_later_upload (reporting.tests.test_api.InputAPITests.test_bundle_replay_returns_original_even_after_later_upload) ... ok
+test_create_draft_and_exact_snapshot (reporting.tests.test_api.InputAPITests.test_create_draft_and_exact_snapshot) ... ok
+test_create_idempotent_replay_no_duplicate (reporting.tests.test_api.InputAPITests.test_create_idempotent_replay_no_duplicate) ... ok
+test_create_rejects_payload_and_missing_key (reporting.tests.test_api.InputAPITests.test_create_rejects_payload_and_missing_key) ... ok
+test_detail_empty_keys_and_ai_result_read_adapter (reporting.tests.test_api.InputAPITests.test_detail_empty_keys_and_ai_result_read_adapter) ... ok
+test_draft_cannot_be_read_by_admin_monitor (reporting.tests.test_api.InputAPITests.test_draft_cannot_be_read_by_admin_monitor) ... ok
+test_evidence_get_rejects_extra_query (reporting.tests.test_api.InputAPITests.test_evidence_get_rejects_extra_query) ... ok
+test_fake_image_is_rejected_without_saving_file (reporting.tests.test_api.InputAPITests.test_fake_image_is_rejected_without_saving_file) ... ok
+test_idempotency_payload_mismatch_is_409 (reporting.tests.test_api.InputAPITests.test_idempotency_payload_mismatch_is_409) ... ok
+test_image_bytes_private_and_access_checked_each_time (reporting.tests.test_api.InputAPITests.test_image_bytes_private_and_access_checked_each_time) ... ok
+test_list_is_summary_only_and_pagination_is_validated (reporting.tests.test_api.InputAPITests.test_list_is_summary_only_and_pagination_is_validated) ... ok
+test_missing_report_is_404_not_internal_error (reporting.tests.test_api.InputAPITests.test_missing_report_is_404_not_internal_error) ... ok
+test_operator_cannot_create_report (reporting.tests.test_api.InputAPITests.test_operator_cannot_create_report) ... ok
+test_other_owner_cannot_read_or_mutate_sources (reporting.tests.test_api.InputAPITests.test_other_owner_cannot_read_or_mutate_sources) ... ok
+test_private_api_requires_login (reporting.tests.test_api.InputAPITests.test_private_api_requires_login) ... ok
+test_restore_before_bundle_uses_read_only_paginated_evidence (reporting.tests.test_api.InputAPITests.test_restore_before_bundle_uses_read_only_paginated_evidence) ... ok
+test_revision_conflict_leaves_no_new_item (reporting.tests.test_api.InputAPITests.test_revision_conflict_leaves_no_new_item) ... ok
+test_text_upload_preserves_original_and_does_not_activate_bundle (reporting.tests.test_api.InputAPITests.test_text_upload_preserves_original_and_does_not_activate_bundle) ... ok
+test_transaction_failure_removes_new_media_file (reporting.tests.test_api.InputAPITests.test_transaction_failure_removes_new_media_file) ... ok
+test_unverified_account_rejected (reporting.tests.test_api.InputAPITests.test_unverified_account_rejected) ... ok
+test_upload_idempotency_does_not_duplicate_evidence (reporting.tests.test_api.InputAPITests.test_upload_idempotency_does_not_duplicate_evidence) ... ok
+test_browser_mp4_container_mime_still_requires_aac_without_video (reporting.tests.test_audio_api.AudioContractAPITests.test_browser_mp4_container_mime_still_requires_aac_without_video) ... ok
+test_exact_120_second_uploads_keep_original_bytes (reporting.tests.test_audio_api.AudioContractAPITests.test_exact_120_second_uploads_keep_original_bytes) ... ok
+test_five_audio_formats_preserve_original_and_restore_before_bundle (reporting.tests.test_audio_api.AudioContractAPITests.test_five_audio_formats_preserve_original_and_restore_before_bundle) ... ok
+test_spoofed_extension_mime_and_corruption_fail_before_revision_changes (reporting.tests.test_audio_api.AudioContractAPITests.test_spoofed_extension_mime_and_corruption_fail_before_revision_changes) ... ok
+test_unsupported_codecs_video_and_cover_cannot_become_evidence (reporting.tests.test_audio_api.AudioContractAPITests.test_unsupported_codecs_video_and_cover_cannot_become_evidence) ... ok
+test_upload_over_120_seconds_does_not_change_draft (reporting.tests.test_audio_api.AudioContractAPITests.test_upload_over_120_seconds_does_not_change_draft) ... ok
+test_reviewed_fusion_threshold_and_non_event_rules (ai_pipeline.tests.test_components.AdapterRuleTests.test_reviewed_fusion_threshold_and_non_event_rules) ... ok
+test_broken_audio_is_rejected (ai_pipeline.tests.test_components.AudioBoundaryTests.test_broken_audio_is_rejected) ... ok
+test_declared_mime_does_not_override_decoded_content (ai_pipeline.tests.test_components.AudioBoundaryTests.test_declared_mime_does_not_override_decoded_content) ... ok
+test_decoded_duration_limit_is_enforced (ai_pipeline.tests.test_components.AudioBoundaryTests.test_decoded_duration_limit_is_enforced) ... ok
+test_real_decoding_of_all_four_target_formats (ai_pipeline.tests.test_components.AudioBoundaryTests.test_real_decoding_of_all_four_target_formats) ... ok
+test_renaming_webm_as_mp3_is_rejected (ai_pipeline.tests.test_components.AudioBoundaryTests.test_renaming_webm_as_mp3_is_rejected) ... ok
+test_analysis_schema_rejects_unknown_fields_boolean_revision_and_wrong_mode (ai_pipeline.tests.test_components.ContractAndRecoveryTests.test_analysis_schema_rejects_unknown_fields_boolean_revision_and_wrong_mode) ... ok
+test_another_host_is_not_accepted_as_local_process_proof (ai_pipeline.tests.test_components.ContractAndRecoveryTests.test_another_host_is_not_accepted_as_local_process_proof) ... ok
+test_live_process_is_not_proof_for_aborting_an_unknown_run (ai_pipeline.tests.test_components.ContractAndRecoveryTests.test_live_process_is_not_proof_for_aborting_an_unknown_run) ... ok
+test_post_returns_the_saved_snapshot_and_replay_header (ai_pipeline.tests.test_components.ContractAndRecoveryTests.test_post_returns_the_saved_snapshot_and_replay_header) ... ok
+test_request_metadata_never_serializes_private_response_or_execution_context (ai_pipeline.tests.test_components.ContractAndRecoveryTests.test_request_metadata_never_serializes_private_response_or_execution_context) ... ok
+test_run_monitor_projection_does_not_expose_private_content_or_execution_identity (ai_pipeline.tests.test_components.ContractAndRecoveryTests.test_run_monitor_projection_does_not_expose_private_content_or_execution_identity) ... ok
+test_service_metadata_is_configuration_only_and_contains_no_secrets (ai_pipeline.tests.test_components.ContractAndRecoveryTests.test_service_metadata_is_configuration_only_and_contains_no_secrets) ... ok
+test_extra_classification_fields_and_truncated_output_are_rejected (ai_pipeline.tests.test_components.GeminiBoundaryTests.test_extra_classification_fields_and_truncated_output_are_rejected) ... ok
+test_missing_key_is_an_explicit_configuration_failure (ai_pipeline.tests.test_components.GeminiBoundaryTests.test_missing_key_is_an_explicit_configuration_failure) ... ok
+test_payload_contains_only_relevant_text_transcript_and_images (ai_pipeline.tests.test_components.GeminiBoundaryTests.test_payload_contains_only_relevant_text_transcript_and_images) ... ok
+test_sdk_receives_bounded_single_attempt_and_structured_narrative (ai_pipeline.tests.test_components.GeminiBoundaryTests.test_sdk_receives_bounded_single_attempt_and_structured_narrative) ... ok
+test_audio_transcript_does_not_trigger_gemini (ai_pipeline.tests.test_components.PipelineRouteTests.test_audio_transcript_does_not_trigger_gemini) ... ok
+test_narrative_revision_never_calls_whisper_or_gemini (ai_pipeline.tests.test_components.PipelineRouteTests.test_narrative_revision_never_calls_whisper_or_gemini) ... ok
+test_seven_routes_call_only_required_components (ai_pipeline.tests.test_components.PipelineRouteTests.test_seven_routes_call_only_required_components) ... ok
+test_all_seven_original_channel_routes (ai_pipeline.tests.test_components.RoutingAndNormalizerTests.test_all_seven_original_channel_routes) ... ok
+test_api_key_is_not_in_options_repr (ai_pipeline.tests.test_components.RoutingAndNormalizerTests.test_api_key_is_not_in_options_repr) ... ok
+test_invalid_ai_config_does_not_prevent_auth_url_loading (ai_pipeline.tests.test_components.RoutingAndNormalizerTests.test_invalid_ai_config_does_not_prevent_auth_url_loading) ... ok
+test_invalid_counts_are_rejected (ai_pipeline.tests.test_components.RoutingAndNormalizerTests.test_invalid_counts_are_rejected) ... ok
+test_multiple_images_are_one_original_channel (ai_pipeline.tests.test_components.RoutingAndNormalizerTests.test_multiple_images_are_one_original_channel) ... ok
+test_normalizer_preserves_facts_case_negation_and_punctuation (ai_pipeline.tests.test_components.RoutingAndNormalizerTests.test_normalizer_preserves_facts_case_negation_and_punctuation) ... ok
+test_normalizer_rejects_empty_control_and_excessive_output (ai_pipeline.tests.test_components.RoutingAndNormalizerTests.test_normalizer_rejects_empty_control_and_excessive_output) ... ok
+test_changed_text_hash_is_rejected (ai_pipeline.tests.test_components.SourceBoundaryTests.test_changed_text_hash_is_rejected) ... ok
+test_media_path_cannot_escape_private_root (ai_pipeline.tests.test_components.SourceBoundaryTests.test_media_path_cannot_escape_private_root) ... ok
+test_png_signature_and_full_decode_are_checked (ai_pipeline.tests.test_components.SourceBoundaryTests.test_png_signature_and_full_decode_are_checked) ... ok
+test_119_9_seconds_remains_valid_for_all_target_codecs (reporting.tests.test_media.MediaDecoderTests.test_119_9_seconds_remains_valid_for_all_target_codecs) ... ok
+test_audio_contract_rejects_actual_unsupported_codecs_video_and_cover (reporting.tests.test_media.MediaDecoderTests.test_audio_contract_rejects_actual_unsupported_codecs_video_and_cover) ... ok
+test_audio_pcm_actual_frames_and_duration (reporting.tests.test_media.MediaDecoderTests.test_audio_pcm_actual_frames_and_duration) ... ok
+test_decoded_audio_over_120_seconds_is_rejected_for_all_target_codecs (reporting.tests.test_media.MediaDecoderTests.test_decoded_audio_over_120_seconds_is_rejected_for_all_target_codecs) ... ok
+test_decoder_disappearing_is_a_service_failure (reporting.tests.test_media.MediaDecoderTests.test_decoder_disappearing_is_a_service_failure) ... ok
+test_duration_above_120_seconds_is_rejected (reporting.tests.test_media.MediaDecoderTests.test_duration_above_120_seconds_is_rejected) ... ok
+test_exact_120_seconds_accepts_all_target_codecs_with_padding (reporting.tests.test_media.MediaDecoderTests.test_exact_120_seconds_accepts_all_target_codecs_with_padding) ... ok
+test_extension_mismatch_or_wrong_mime_rejected (reporting.tests.test_media.MediaDecoderTests.test_extension_mismatch_or_wrong_mime_rejected) ... ok
+test_ffmpeg_audio_profiles_are_actually_decoded (reporting.tests.test_media.MediaDecoderTests.test_ffmpeg_audio_profiles_are_actually_decoded) ... ok
+test_large_dimensions_rejected (reporting.tests.test_media.MediaDecoderTests.test_large_dimensions_rejected) ... ok
+test_missing_decoder_cannot_accept_fake_mp3 (reporting.tests.test_media.MediaDecoderTests.test_missing_decoder_cannot_accept_fake_mp3) ... ok
+test_renamed_container_mime_corruption_and_size_are_rejected (reporting.tests.test_media.MediaDecoderTests.test_renamed_container_mime_corruption_and_size_are_rejected) ... ok
+test_text_unicode_byte_size_preserves_original (reporting.tests.test_media.MediaDecoderTests.test_text_unicode_byte_size_preserves_original) ... ok
+test_valid_png_and_jpeg_use_decoder_mime (reporting.tests.test_media.MediaDecoderTests.test_valid_png_and_jpeg_use_decoder_mime) ... ok
+
+----------------------------------------------------------------------
+Ran 74 tests in 15.948s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+ OK
+System check identified no issues (0 silenced).

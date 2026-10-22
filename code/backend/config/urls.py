@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import include, path
 from accounts import views as a
 from core.views import health,AuditListView
 
@@ -23,6 +23,8 @@ urlpatterns=[
 handler404='common.api.not_found'
 handler500='common.api.server_error'
 
-# SLR_10 input endpoints
-from django.urls import include
-urlpatterns += [path('api/v1/', include('reporting.urls'))]
+# Input and synchronous AI analysis share the same /api/v1/ contract.
+urlpatterns += [
+    path('api/v1/', include('reporting.urls')),
+    path('api/v1/', include('ai_pipeline.urls')),
+]

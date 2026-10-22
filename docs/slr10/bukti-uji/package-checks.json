@@ -1,7 +1,7 @@
 {
   "release": "1.1.1",
-  "manifest_files": 129,
-  "obsolete_entries": 27,
+  "manifest_files": 119,
+  "obsolete_entries": 37,
   "manifest_hashes": "PASS",
   "root_guide": "PANDUAN_RUNNING.md",
   "root_launchers": 0,
@@ -12,24 +12,24 @@
     {
       "scenario": "upgrade 1.0.0",
       "status": "PASS",
-      "operations": 91,
-      "removed_and_backed_up": 11,
+      "operations": 101,
+      "removed_and_backed_up": 21,
       "protected_files": 40,
       "reinstall_operations": 0
     },
     {
       "scenario": "upgrade 1.1.0",
       "status": "PASS",
-      "operations": 75,
-      "removed_and_backed_up": 27,
+      "operations": 85,
+      "removed_and_backed_up": 37,
       "protected_files": 40,
       "reinstall_operations": 0
     },
     {
       "scenario": "upgrade 1.1.0-CRLF",
       "status": "PASS",
-      "operations": 75,
-      "removed_and_backed_up": 27,
+      "operations": 85,
+      "removed_and_backed_up": 37,
       "protected_files": 40,
       "reinstall_operations": 0
     },

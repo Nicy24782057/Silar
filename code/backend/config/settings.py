@@ -140,3 +140,21 @@ APPEND_SLASH = True
 # SLR_10 input service
 if 'reporting' not in INSTALLED_APPS:
     INSTALLED_APPS += ['reporting']
+
+# SLR11 shares the existing accounts, core models and reporting input service.
+if 'ai_pipeline' not in INSTALLED_APPS:
+    INSTALLED_APPS += ['ai_pipeline']
+
+# SLR11: AI settings are validated lazily so unconfigured AI does not block login.
+SILAR_SLR09_ROOT = os.getenv('SILAR_SLR09_ROOT', str(BASE_DIR.parent.parent / 'models' / 'slr09'))
+SENA_MODEL_DIR = os.getenv('SENA_MODEL_DIR', str(MODEL_ASSET_ROOT / 'sena'))
+NARA_MODEL_DIR = os.getenv('NARA_MODEL_DIR', str(MODEL_ASSET_ROOT / 'nara'))
+WHISPER_MODEL_DIR = os.getenv('WHISPER_MODEL_DIR', str(MODEL_ASSET_ROOT / 'whisper-small'))
+WHISPER_VARIANT = os.getenv('WHISPER_VARIANT', 'small')
+AI_CPU_THREADS = os.getenv('AI_CPU_THREADS', '2')
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', '')
+GEMINI_MODEL = os.getenv('GEMINI_MODEL', 'gemini-3.5-flash-lite')
+GEMINI_TIMEOUT_MS = os.getenv('GEMINI_TIMEOUT_MS', '90000')
+GEMINI_MAX_OUTPUT_TOKENS = os.getenv('GEMINI_MAX_OUTPUT_TOKENS', '4096')
+# Initial operational values, not a target-VM performance claim.
+ANALYSIS_DEADLINE_SECONDS = os.getenv('ANALYSIS_DEADLINE_SECONDS', '240')

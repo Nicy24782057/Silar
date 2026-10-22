@@ -1,0 +1,13 @@
+{
+  "recorded_at": "2026-10-21T09:49:33.638671+00:00",
+  "status": "PASSED",
+  "tests_run": 30,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds": 0.496,
+  "database_used": false,
+  "gemini_network_called": false,
+  "neural_predictions_used_in_these_tests": false,
+  "scope": "Component tests; actual decoding of four audio formats; provider and orchestration use explicit doubles."
+}

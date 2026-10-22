@@ -1,0 +1,195 @@
+{
+  "recorded_at": "2026-10-21T09:39:59.023345+00:00",
+  "scope": "Local component smoke using actual SENA/NARA/Whisper assets; no database or Gemini call; not a quality acceptance test or FINAL084 reevaluation.",
+  "status": "LOCAL_SMOKE_COMPLETED",
+  "model_versions": {
+    "sena": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3",
+    "nara": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3",
+    "adapter": "silar-adapter-0.5.3",
+    "fusion": "silar-fusion-a4.22-0.1.0",
+    "runtime": "silar-candidate-runtime-0.6.5",
+    "confidence_threshold": 0.95,
+    "calibration_reference": "SILAR_SENA_context_v084_20261020T144453Z:OPERATING_CUTOFF_0.95_NOT_PROBABILITY_CALIBRATED",
+    "configuration_sha256": "1ee37cdf182e7b509d80622c31128402b0e1b1215b333a334e17ebdc4a7886d1",
+    "asset_lock_sha256": "35f33ef6eca306d16fbf1bbd6093bc6a8512770394e32036ca06f8ff7c6d4876",
+    "inference_profile_sha256": "d2f235f7b5b3f4d7cb445fa5870cfc6b0b49f9f1a429e8518075c4ff53955bbd"
+  },
+  "records": [
+    {
+      "id": 1,
+      "synthetic_input": "Banjir merendam Jalan Melati di Desa Sukamaju pagi ini. Tidak ada korban jiwa.",
+      "category": "FLOOD",
+      "confidence": 0.9995424747467041,
+      "card": {
+        "data": {
+          "event_type": "FLOOD",
+          "location_text": "Desa Sukamaju; Jalan Melati",
+          "time_text": "pagi ini",
+          "occurred_at": null,
+          "involved_parties": [],
+          "impacts": [
+            "merendam Jalan Melati"
+          ],
+          "victims": [],
+          "affected_objects": []
+        },
+        "uncertain": false,
+        "uncertain_reasons": [],
+        "fusion_version": "silar-fusion-a4.22-0.1.0"
+      },
+      "integration_signals": {
+        "blocked_by_non_event": false
+      },
+      "timings_ms": {
+        "NARRATIVE": 0.157,
+        "SENA": 4636.362,
+        "NARA": 83.653,
+        "FUSION": 0.253
+      }
+    },
+    {
+      "id": 2,
+      "synthetic_input": "Sebuah mobil menabrak tiang di Jalan Mawar pukul 07.30. Dua orang mengalami luka.",
+      "category": "ACCIDENT",
+      "confidence": 0.9992526173591614,
+      "card": {
+        "data": {
+          "event_type": "ACCIDENT",
+          "location_text": "Jalan Mawar",
+          "time_text": "pukul 07.30",
+          "occurred_at": null,
+          "involved_parties": [
+            "Dua orang"
+          ],
+          "impacts": [
+            "menabrak tiang"
+          ],
+          "victims": [
+            "Dua orang mengalami luka"
+          ],
+          "affected_objects": [
+            "Sebuah mobil",
+            "tiang"
+          ]
+        },
+        "uncertain": false,
+        "uncertain_reasons": [],
+        "fusion_version": "silar-fusion-a4.22-0.1.0"
+      },
+      "integration_signals": {
+        "blocked_by_non_event": false
+      },
+      "timings_ms": {
+        "NARRATIVE": 0.021,
+        "SENA": 66.097,
+        "NARA": 85.76,
+        "FUSION": 0.184
+      }
+    },
+    {
+      "id": 3,
+      "synthetic_input": "Besok akan diadakan simulasi evakuasi kebakaran di sekolah. Ini latihan, bukan kebakaran sungguhan.",
+      "category": "NON_EVENT",
+      "confidence": 0.9999828338623047,
+      "card": {
+        "data": {
+          "event_type": null,
+          "location_text": "sekolah",
+          "time_text": null,
+          "occurred_at": null,
+          "involved_parties": [],
+          "impacts": [],
+          "victims": [],
+          "affected_objects": []
+        },
+        "uncertain": false,
+        "uncertain_reasons": [],
+        "fusion_version": "silar-fusion-a4.22-0.1.0"
+      },
+      "integration_signals": {
+        "blocked_by_non_event": true
+      },
+      "timings_ms": {
+        "NARRATIVE": 0.024,
+        "SENA": 75.207,
+        "NARA": 86.32,
+        "FUSION": 0.124
+      }
+    }
+  ],
+  "whisper": {
+    "model_version": "whisper-small|536b0662742c0234|cpu-int8",
+    "asset_revision": "536b0662742c02347bc0e980a01041f333bce120",
+    "synthetic_audio": true,
+    "status": "NO_SPEECH_REJECTED",
+    "error_code": "AI_OUTPUT_INVALID",
+    "weights_loaded": true,
+    "speech_transcription_verified": false
+  },
+  "elapsed_seconds": 6.892,
+  "process_rss_bytes_at_end": 2125824,
+  "environment": {
+    "Django": "5.2.18",
+    "torch": "2.11.0+cpu",
+    "transformers": "4.57.1",
+    "tokenizers": "0.22.1",
+    "safetensors": "0.8.0",
+    "numpy": "2.1.3",
+    "faster-whisper": "1.2.1",
+    "ctranslate2": "4.8.3",
+    "av": "19.0.2",
+    "google-genai": "2.32.0"
+  },
+  "database_used": false,
+  "gemini_network_called": false,
+  "training_executed": false,
+  "target_vm_verified": false,
+  "process_rss_measurement_accepted": false,
+  "resource_measurement_scope": "Not accepted as RAM evidence; no target-VM capacity or minimum-RAM claim.",
+  "synthetic_audio_route": {
+    "status": "SUCCEEDED",
+    "source_text": "Banjir merendam Jalan Melati tidak ada korban jiwa",
+    "speech_generator": "FFmpeg flite, English slt voice reading Indonesian text",
+    "speech_quality_scope": "Synthetic accented speech; not an Indonesian ASR accuracy evaluation or microphone/device acceptance test.",
+    "duration_ms": 3685,
+    "transcript": "Benjir Munrendam Jalan Melati Tidak Eta Korban Jeewa",
+    "narrative": "Benjir Munrendam Jalan Melati Tidak Eta Korban Jeewa",
+    "sena": {
+      "label": "NON_EVENT",
+      "confidence": 0.9999929666519165,
+      "probabilities": {
+        "FLOOD": 9.17183001547528e-07,
+        "EARTHQUAKE": 2.0176686987838366e-08,
+        "FIRE": 2.209113972639898e-06,
+        "ACCIDENT": 3.84712348022731e-06,
+        "NON_EVENT": 0.9999929666519165
+      }
+    },
+    "card": {
+      "data": {
+        "event_type": null,
+        "location_text": "Jalan Melati",
+        "time_text": null,
+        "occurred_at": null,
+        "involved_parties": [
+          "Jeewa"
+        ],
+        "impacts": [
+          "Benjir",
+          "Tidak Eta"
+        ],
+        "victims": [],
+        "affected_objects": []
+      },
+      "uncertain": false,
+      "uncertain_reasons": [],
+      "fusion_version": "silar-fusion-a4.22-0.1.0"
+    },
+    "whisper_model_version": "whisper-small|536b0662742c0234|cpu-int8",
+    "elapsed_seconds": 8.393,
+    "database_used": false,
+    "gemini_network_called": false,
+    "audio_file": "synthetic_speech_flite.wav",
+    "audio_sha256": "f0016d59b77ad99b43a3e0bd0ac24bb04d27f222da9c6674c8b84b75fa20e203"
+  }
+}

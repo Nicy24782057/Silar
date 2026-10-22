@@ -1,5 +1,9 @@
 # Penghubung SLR_10 dan SLR_11
 
+**Pembaruan penerimaan 23 Oktober 2026:** kedua modul memakai source integrasi 0.2.0. Database aplikasi pelaksana memuat tujuh rute dan 10 run berhasil; pemeriksaan hubungan hasil menghasilkan 10 `OK`. Sebanyak 24 tes transaksi/integrasi pada Windows/PostgreSQL lulus. Alur frontend sampai draft awal Incident Card tersimpan serta pemuatan ulang telah dikonfirmasi pelaksana.
+
+Bukti terbaru: [HASIL_VERIFIKASI.md](HASIL_VERIFIKASI.md) dan [bukti pekerjaan SLR11](../ai/slr11/BUKTI_PEKERJAAN_DAN_WAKTU_PROSES_SLR11.md). Laporan penyusunan paket 22 Oktober 2026 tetap tersedia pada `../ai/slr11/HASIL_INTEGRASI_v0.2.0.md`. Batas lingkungan dalam laporan lama berlaku bagi eksekusi yang dilaporkan saat itu; hasil pelaksana dicatat terpisah dalam bukti terbaru.
+
 SLR_10 menyediakan aplikasi Vue dan sumber input tersimpan. SLR_11 menyediakan pipeline sinkron, narasi, Whisper/Normalizer/Gemini, SENA, NARA, Fusion, ledger/run serta finalisasi hasil. Tidak ada pipeline atau aset model baru yang dibuat dalam paket SLR_10 ini.
 
 ## Titik integrasi
@@ -25,11 +29,25 @@ Pemulihan analisis menggunakan `GET requests/?report_id=...`, `GET requests/{key
 
 ## Pemasangan route tanpa menimpa
 
-`config/urls.py` SLR_10 menambahkan include `reporting.urls`. Modul ini hanya memiliki endpoint daftar/detail Report, evidence, media dan bundle. Tidak ada stub route analyses yang menutupi implementasi SLR_11. Rekan dapat menambahkan include URL pipeline pada awalan `/api/v1/` yang sama. Semua route tetap memakai trailing slash.
+`config/urls.py` SLR_10 menambahkan include `reporting.urls`. Modul ini hanya memiliki endpoint daftar/detail Report, evidence, media dan bundle. Tidak ada stub route analyses yang menutupi implementasi SLR_11. Include `ai_pipeline.urls` telah dipasang bersama `reporting.urls` pada awalan `/api/v1/` yang sama. Semua route tetap memakai trailing slash.
 
-Nama `ai_pipeline/` mengikuti rencana MEET_06; sesuaikan include dengan nama modul aktual yang dibuat pelaksana SLR_11. Dependency AI ditambahkan ke berkas requirements terpisah agar fondasi akun dan decoder input tetap dapat dijalankan tanpa memuat model.
+Modul aktual bernama `ai_pipeline/`. Kedua include sudah terdaftar tepat satu kali bersama endpoint akun. Dependency AI tersedia dalam `requirements-ai.txt`; model tetap dimuat saat analisis diperlukan sehingga konfigurasi AI tidak menghalangi pemuatan endpoint akun.
 
-## Kriteria uji bersama
+Frontend kini menyediakan daftar request analisis yang dipaginasi, pilihan riwayat kedaluwarsa dan pembacaan detail request/run. Respons JSON yang terputus serta kegagalan gateway yang hasil mutasinya belum pasti diperlakukan sebagai `RESPONSE_UNKNOWN`. Tidak ada retry POST otomatis. Schema hasil SLR10 dan SLR11 dibandingkan pada objek persisten hasil sambungan API dalam `ai_pipeline/tests/test_reporting_integration.py`.
+
+## Hasil uji bersama yang tersedia
+
+| Bagian | Hasil dan sumber |
+| --- | --- |
+| Rute pada aplikasi | T, A, I, TA, TI, AI dan TAI masing-masing memiliki run SUCCEEDED; total 10. |
+| Hubungan hasil | 10 run OK; narasi/SENA/NARA/kartu, laporan/bundle, transkrip dan ledger memenuhi aturan pemeriksaan yang dicatat. |
+| Kontrak transaksi/pemulihan | 24 tes lulus, termasuk replay, respons hilang, konflik revision/sumber, kegagalan, UNKNOWN dan fencing token. |
+| Frontend | Pelaksana mengonfirmasi hasil mencapai draft awal Incident Card tersimpan dan tetap dapat dibaca setelah pemuatan ulang. |
+| PWA dan tampilan | Instalasi/muat ulang/notifikasi offline berhasil menurut pelaksana; frontend dinilai tidak bermasalah. Rincian sumber dan batas pada catatan penerimaan manual SLR10. |
+
+Dua suite otomatis memakai model/provider pengganti pada PostgreSQL. Bukti runtime asli TAI, metadata model dan waktu per tahap dibaca dari run aplikasi yang sudah tersimpan. Pemeriksaan tersebut tidak mengklaim seluruh rute melalui browser atau pemutusan jaringan browser secara fisik telah diuji.
+
+## Acuan skenario uji bersama
 
 1. Login nyata, buat Report, upload media dan pilih bundle melalui aplikasi.
 2. Jalankan tujuh kombinasi kanal. Teks/audio tunggal tidak mengirim data ke Gemini; lima kombinasi terkait memberi informasi pemrosesan eksternal sebelum tindakan.

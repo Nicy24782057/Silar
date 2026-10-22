@@ -1,4 +1,4 @@
-const API_BASE = (import.meta.env.VITE_API_BASE || '/api/v1/').replace(/\/?$/, '/');
+const API_BASE = (import.meta.env?.VITE_API_BASE || '/api/v1/').replace(/\/?$/, '/');
 let access = null;
 let csrf = null;
 let csrfWork = null;
@@ -12,6 +12,12 @@ export class ApiError extends Error {
 }
 export function onSessionExpired(callback) { clearHandler = callback; }
 export function clearAccess() { access = null; }
+
+function unreadableResponse(method, status = 0) {
+  return new ApiError(method === 'GET' ? 'Respons layanan belum dapat dibaca. Periksa koneksi, lalu muat kembali.' :
+    'Respons terputus. Hasil tindakan belum pasti. Baca keadaan tersimpan sebelum mengulang.',
+    method === 'GET' ? 'NETWORK_ERROR' : 'RESPONSE_UNKNOWN', status);
+}
 
 async function send(path, options = {}) {
   const {method = 'GET', body, auth = true, raw = false, retryRead = true, csrfToken} = options;
@@ -27,9 +33,7 @@ async function send(path, options = {}) {
     response = await fetch(API_BASE + path.replace(/^\//, ''), {method, headers, credentials:'include', cache:'no-store',
       body: body === undefined ? undefined : multipart ? body : JSON.stringify(body)});
   } catch {
-    throw new ApiError(method === 'GET' ? 'Layanan belum dapat dibaca. Periksa koneksi, lalu muat kembali.' :
-      'Respons terputus. Hasil tindakan belum pasti. Baca keadaan tersimpan sebelum mengulang.',
-      method === 'GET' ? 'NETWORK_ERROR' : 'RESPONSE_UNKNOWN');
+    throw unreadableResponse(method);
   }
   if (response.status === 401 && auth && method === 'GET' && retryRead) {
     try { await refresh(); return send(path, {...options, retryRead:false}); }
@@ -38,14 +42,18 @@ async function send(path, options = {}) {
   if (!response.ok) {
     let data = {};
     try { data = await response.json(); } catch { /* Safe HTTP fallback below. */ }
-    const error = data.error || {};
+    const error = data?.error || {};
+    if (method !== 'GET' && response.status >= 500 &&
+      (!error.code || ['BACKEND_UNAVAILABLE', 'INTERNAL_ERROR'].includes(error.code))) {
+      throw unreadableResponse(method, response.status);
+    }
     if (response.status === 401 && auth) { clearAccess(); clearHandler(); }
     throw new ApiError(error.message || 'Layanan belum dapat digunakan.', error.code || 'HTTP_ERROR', response.status,
       error.fields || {}, error.request_id, response.headers.get('Retry-After'));
   }
-  if (raw) return response.blob();
   if (response.status === 204) return null;
-  return response.json();
+  try { return await (raw ? response.blob() : response.json()); }
+  catch { throw unreadableResponse(method, response.status); }
 }
 
 async function getCsrf() {

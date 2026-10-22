@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "scenarios": 8,
+  "source_files": 85,
+  "removed_paths": 26,
+  "unchanged_archive_support": 19,
+  "cases": [
+    {
+      "scenario": "upgrade latest Git base",
+      "status": "PASS",
+      "operations": 85,
+      "preserved_files": 7,
+      "reinstall_operations": 0
+    },
+    {
+      "scenario": "existing SLR11 and custom gitignore",
+      "status": "PASS",
+      "operations": 48,
+      "preserved_files": 8,
+      "reinstall_operations": 0
+    },
+    {
+      "scenario": "Windows CRLF",
+      "status": "PASS",
+      "operations": 92,
+      "preserved_files": 7,
+      "reinstall_operations": 0
+    },
+    {
+      "scenario": "local frontend edit rejects all writes",
+      "status": "PASS"
+    },
+    {
+      "scenario": "local obsolete launcher edit rejects all writes",
+      "status": "PASS"
+    },
+    {
+      "scenario": "escape, secret path and symlink rejected",
+      "status": "PASS"
+    },
+    {
+      "scenario": "modified distribution rejected",
+      "status": "PASS"
+    },
+    {
+      "scenario": "interrupted write restores earlier files",
+      "status": "PASS"
+    }
+  ],
+  "scope": "disposable repositories; actual reviewed payload; synthetic protected markers"
+}

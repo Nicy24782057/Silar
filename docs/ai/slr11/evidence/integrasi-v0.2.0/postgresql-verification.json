@@ -1,0 +1,6 @@
+{
+  "status": "NOT_RUN",
+  "binary": "16.2",
+  "reason": "initdb requires a non-root service identity; runuser could not set groups: Operation not permitted",
+  "original_database_tests_available": 15
+}
