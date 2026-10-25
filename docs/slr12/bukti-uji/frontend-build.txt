@@ -1,0 +1,26 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> silar-slr10-frontend@1.1.1 build
+> vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 57 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                              0.78 kB │ gzip:  0.45 kB
+dist/sw.js                                   1.87 kB
+dist/assets/index-GzwEoWUr.css              46.40 kB │ gzip:  9.68 kB
+dist/assets/NotFoundView-HdXxxrdl.js         0.56 kB │ gzip:  0.39 kB
+dist/assets/report-list-CBBCLnB1.js          0.75 kB │ gzip:  0.47 kB
+dist/assets/ErrorNotice-BGZYpTCA.js          0.81 kB │ gzip:  0.50 kB
+dist/assets/WorkspaceView-AMP0mmRc.js        0.83 kB │ gzip:  0.53 kB
+dist/assets/ProfileView-AIXrj-FS.js          1.78 kB │ gzip:  0.98 kB
+dist/assets/PwaView-DyLppPou.js              2.13 kB │ gzip:  1.12 kB
+dist/assets/domain-CIsmcPf-.js               2.39 kB │ gzip:  1.42 kB
+dist/assets/NotificationsView-B3KNwG-t.js    3.11 kB │ gzip:  1.56 kB
+dist/assets/AuthView-5gJSD5Ha.js             7.62 kB │ gzip:  2.96 kB
+dist/assets/ReportsView-wo_0uqTx.js          7.67 kB │ gzip:  2.98 kB
+dist/assets/DraftView-B8GhFEPN.js           60.92 kB │ gzip: 19.21 kB
+dist/assets/index-jLZQaiSw.js              110.63 kB │ gzip: 43.47 kB
+✓ built in 1.08s

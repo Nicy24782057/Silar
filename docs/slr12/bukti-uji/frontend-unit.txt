@@ -1,0 +1,68 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> silar-slr10-frontend@1.1.1 test
+> node --test tests/*.test.js
+
+✔ Peringatan tampil ketika uncertain false tanpa mengubah flag (1.454173ms)
+✔ Peringatan dan uncertain true tetap terpisah (0.228524ms)
+✔ Kode baru memakai pesan umum dan label field aman (0.922592ms)
+✔ Hasil kosong dan NARA yang belum tersedia aman (0.254363ms)
+✔ Analisis terbaru gagal tidak memasangkan peringatan/keyakinannya ke kartu lama (0.377349ms)
+✔ Identitas run, hasil, bundle, dan narasi harus cocok (0.43091ms)
+✔ Narasi baru tidak dilabeli sebagai sumber kartu lama (0.185079ms)
+✔ Body sukses yang terputus setelah POST menahan hasil sebagai belum pasti tanpa retry (5.028613ms)
+✔ Koneksi POST terputus tidak mengirim ulang request (1.277216ms)
+✔ Respons gateway tanpa hasil backend pasti mengharuskan pembacaan keadaan tersimpan (2.226497ms)
+✔ Kegagalan AI yang telah dicatat mempertahankan kode backend (1.381262ms)
+✔ Body GET yang tidak terbaca tidak menyatakan mutasi telah dilakukan (1.475104ms)
+✔ Logout 204 tidak mencoba membaca JSON (1.177285ms)
+✔ Recorder mendahulukan WebM dengan codec Opus (0.719355ms)
+✔ Recorder memakai AAC atau MP4 generik ketika WebM tidak tersedia (0.276267ms)
+✔ Tidak ada fallback OGG atau format default yang tidak diketahui (0.163797ms)
+✔ Nama dan MIME mengikuti keluaran rekaman yang sebenarnya (1.14722ms)
+✔ Keluaran OGG, Vorbis, ALAC, video dan MIME kosong tidak disamarkan (0.439322ms)
+✔ Unicode dihitung per code point, bukan byte atau UTF16 (1.601255ms)
+✔ Teks kosong ditolak (0.199972ms)
+✔ Ekstensi gambar dan batas ukuran diperiksa (0.302065ms)
+✔ Lima format audio sesuai kontrak diperiksa server (0.290227ms)
+✔ OGG ditolak dan pesan format tidak menawarkan codec lain (0.198229ms)
+✔ Bundle membutuhkan kanal asli dan menahan jumlah berlebih (0.171138ms)
+✔ Bundle menghitung byte teks juga (0.097017ms)
+✔ Gemini tidak digunakan pada teks atau audio tunggal (0.186882ms)
+✔ Gemini diinformasikan untuk lima rute yang relevan (0.196677ms)
+✔ Pagination hanya menyusun path API lokal (0.480135ms)
+✔ Keterangan terbaru menjadi aktif sebelum bundle; semua gambar dan satu audio ikut otomatis (16.355894ms)
+✔ Bundle aktif mempertahankan pilihan sumber lama; hanya unggahan sesudahnya yang mengganti kanal (0.222546ms)
+✔ Penggantian keterangan/audio mempertahankan gambar dan tidak menyertakan dua item kanal yang sama (1.162573ms)
+✔ Riwayat gambar lebih dari tiga tidak dipangkas diam-diam (0.573845ms)
+✔ Batas gambar dan total byte diperiksa sebelum kelompok unggahan dikirim (0.387254ms)
+✔ Pemeriksaan sumber sama mengabaikan urutan tetapi menolak ID duplikat (0.177808ms)
+✔ Analisis satu klik menyimpan snapshot dahulu dan memakai revision hasil commit (1.88309ms)
+✔ Sumber tidak berubah memakai bundle aktif tanpa membentuk versi baru (0.210187ms)
+✔ Informasi Gemini diperiksa sebelum persiapan sumber atau analisis (0.919116ms)
+✔ Respons persiapan terputus menahan analisis dan tidak mengulang POST (0.395877ms)
+✔ Sumber pada respons persiapan yang tidak sesuai tidak diteruskan ke analisis (0.29211ms)
+✔ Kegagalan analisis setelah snapshot tersimpan mempertahankan snapshot untuk pemulihan (0.257558ms)
+✔ Precache hanya daftar aset antarmuka (2.302271ms)
+✔ Auth, API privat, media, POST dan origin lain tidak diintersep (0.774518ms)
+✔ Aktivasi pembaruan menghapus cache aset SILAR lama dan mempertahankan cache aktif serta aplikasi lain (0.732554ms)
+✔ Pembacaan respons hilang memakai GET request, run dan draft tanpa POST atau replay otomatis (1.86316ms)
+✔ RUNNING dan UNKNOWN tanpa hasil terminal hanya dibaca tanpa menebak run atau mengulang (0.496388ms)
+✔ Request dan run dari laporan lain tidak digabungkan ke draft yang dibuka (0.712614ms)
+✔ Daftar pemulihan analisis menyaring request upload dan laporan lain (0.193612ms)
+✔ Respons hilang, REQUEST_RUNNING dan REQUEST_UNKNOWN menahan tindakan baru sampai dibaca (0.281304ms)
+✔ Uncertain with missing incident fields can be confirmed; submission needs verification of the exact card (0.96839ms)
+✔ NON_EVENT, mismatched source/run and unknown execution never enable confirmation or submission (0.321445ms)
+✔ Official reports stay read-only even when their historical source is valid (0.237508ms)
+✔ Partial corrections preserve untouched arrays and exact stored time, including milliseconds (1.234151ms)
+✔ Explicit clearing remains null or an empty array; empty information does not become zero victims (0.580916ms)
+✔ Lost submit/correction/confirmation responses read only the ledger and latest report, never POST (0.438911ms)
+✔ Recovery includes report mutations but never combines a foreign report or run (0.452753ms)
+ℹ tests 55
+ℹ suites 0
+ℹ pass 55
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 213.947156

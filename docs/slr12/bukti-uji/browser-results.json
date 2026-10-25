@@ -1,0 +1,102 @@
+{
+  "executed_at": "2026-10-23T09:55:32.031Z",
+  "browser": "133.0.6943.0",
+  "environment": "Linux headless Chromium; synthetic data; SQLite component backend; production Vue build",
+  "scenarios": [
+    {
+      "scenario": "Production build, initial theme and login fields survive keyboard theme toggle",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Current SLR10 navigation and saved theme survive report navigation/reload",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Card correction preserves form on theme change and creates a new version",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Confirmation and official submission are separate, version-bound actions",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Recipient notifications can be read without exposing another account notification",
+      "status": "PASS"
+    },
+    {
+      "scenario": "History shows original card/source and compares parent without current-result mixing",
+      "status": "PASS"
+    },
+    {
+      "scenario": "NON_EVENT remains blocked and category is not editable",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Narrative revision disables the old card and requests explicit NARRATIVE_REVISION",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Lost correction response recovers committed state using reads without duplicate POST",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Revision conflict retains local edits and never silently rebases/resubmits",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Mobile menu, reading and form layout fit 390px and 320px",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Denied storage falls back to device theme and retains manual choice across navigation",
+      "status": "PASS"
+    },
+    {
+      "scenario": "PWA caches assets only; offline blocks writes and reload does not restore private drafts",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Saved text becomes read-only; explicit edit replaces the active text and reload retains its original archive",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Replacing audio retains one active recording, the current text and both originals in the archive",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Three images join the active sources automatically and a fourth is rejected before uploading",
+      "status": "PASS"
+    },
+    {
+      "scenario": "One click prepares exactly the active TAI sources after consent; explicit retry reuses the committed bundle",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Lost bundle response blocks analysis; reading committed state allows an explicit retry without a duplicate bundle",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Paginated saved evidence is fully read before writes and selects the latest text without losing originals",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Report filters, sorting and pagination use the server query and accurate totals",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Reporter list remains readable in both themes and at 390/320px with keyboard-operated theme controls",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Refined review preserves seven fields, uncertainty, keyboard editing and private PWA asset boundaries in a fresh signed-in session",
+      "status": "PASS"
+    }
+  ],
+  "passed": 22,
+  "runtime_errors": [],
+  "limits": [
+    "Not a physical mobile device or Windows check",
+    "No real AI inference; narrative handoff intentionally returns AI_CONFIGURATION_NOT_READY in the unconfigured QA server",
+    "PostgreSQL locking/trigger tests were not executed in this environment"
+  ]
+}

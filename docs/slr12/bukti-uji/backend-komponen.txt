@@ -1,0 +1,117 @@
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Found 53 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: accounts, ai_pipeline, core, corsheaders, reporting, rest_framework
+  Apply all migrations: auth, contenttypes, sessions, token_blacklist
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table accounts_user
+    Creating table accounts_emailotp
+    Creating table accounts_securitythrottle
+    Creating table core_report
+    Creating table core_evidenceitem
+    Creating table core_evidencebundle
+    Creating table core_evidencebundleitem
+    Creating table core_narrativeversion
+    Creating table core_analysisrun
+    Creating table core_transcript
+    Creating table core_senaresult
+    Creating table core_nararesult
+    Creating table core_incidentcardversion
+    Creating table core_humanverification
+    Creating table core_operatorassignment
+    Creating table core_operatorreview
+    Creating table core_followuprecord
+    Creating table core_publicationversion
+    Creating table core_notification
+    Creating table core_auditevent
+    Creating table core_idempotencyrecord
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+  Applying token_blacklist.0001_initial... OK
+  Applying token_blacklist.0002_outstandingtoken_jti_hex... OK
+  Applying token_blacklist.0003_auto_20171017_2007... OK
+  Applying token_blacklist.0004_auto_20171017_2013... OK
+  Applying token_blacklist.0005_remove_outstandingtoken_jti... OK
+  Applying token_blacklist.0006_auto_20171017_2113... OK
+  Applying token_blacklist.0007_auto_20171017_2214... OK
+  Applying token_blacklist.0008_migrate_to_bigautofield... OK
+  Applying token_blacklist.0010_fix_migrate_to_bigautofield... OK
+  Applying token_blacklist.0011_linearizes_history... OK
+  Applying token_blacklist.0012_alter_outstandingtoken_user... OK
+  Applying token_blacklist.0013_alter_blacklistedtoken_options_and_more...test_bundle_activates_sources_and_versions_remain (reporting.tests.test_api.InputAPITests.test_bundle_activates_sources_and_versions_remain) ... ok
+test_bundle_cannot_contain_two_text_channels (reporting.tests.test_api.InputAPITests.test_bundle_cannot_contain_two_text_channels) ... ok
+test_bundle_rejects_empty_duplicate_or_cross_report_ids (reporting.tests.test_api.InputAPITests.test_bundle_rejects_empty_duplicate_or_cross_report_ids) ... ok
+test_bundle_replay_returns_original_even_after_later_upload (reporting.tests.test_api.InputAPITests.test_bundle_replay_returns_original_even_after_later_upload) ... ok
+test_create_draft_and_exact_snapshot (reporting.tests.test_api.InputAPITests.test_create_draft_and_exact_snapshot) ... ok
+test_create_idempotent_replay_no_duplicate (reporting.tests.test_api.InputAPITests.test_create_idempotent_replay_no_duplicate) ... ok
+test_create_rejects_payload_and_missing_key (reporting.tests.test_api.InputAPITests.test_create_rejects_payload_and_missing_key) ... ok
+test_detail_empty_keys_and_ai_result_read_adapter (reporting.tests.test_api.InputAPITests.test_detail_empty_keys_and_ai_result_read_adapter) ... ok
+test_draft_cannot_be_read_by_admin_monitor (reporting.tests.test_api.InputAPITests.test_draft_cannot_be_read_by_admin_monitor) ... ok
+test_evidence_get_rejects_extra_query (reporting.tests.test_api.InputAPITests.test_evidence_get_rejects_extra_query) ... ok
+test_fake_image_is_rejected_without_saving_file (reporting.tests.test_api.InputAPITests.test_fake_image_is_rejected_without_saving_file) ... ok
+test_idempotency_payload_mismatch_is_409 (reporting.tests.test_api.InputAPITests.test_idempotency_payload_mismatch_is_409) ... ok
+test_image_bytes_private_and_access_checked_each_time (reporting.tests.test_api.InputAPITests.test_image_bytes_private_and_access_checked_each_time) ... ok
+test_list_is_summary_only_and_pagination_is_validated (reporting.tests.test_api.InputAPITests.test_list_is_summary_only_and_pagination_is_validated) ... ok
+test_missing_report_is_404_not_internal_error (reporting.tests.test_api.InputAPITests.test_missing_report_is_404_not_internal_error) ... ok
+test_operator_cannot_create_report (reporting.tests.test_api.InputAPITests.test_operator_cannot_create_report) ... ok
+test_other_owner_cannot_read_or_mutate_sources (reporting.tests.test_api.InputAPITests.test_other_owner_cannot_read_or_mutate_sources) ... ok
+test_private_api_requires_login (reporting.tests.test_api.InputAPITests.test_private_api_requires_login) ... ok
+test_restore_before_bundle_uses_read_only_paginated_evidence (reporting.tests.test_api.InputAPITests.test_restore_before_bundle_uses_read_only_paginated_evidence) ... ok
+test_revision_conflict_leaves_no_new_item (reporting.tests.test_api.InputAPITests.test_revision_conflict_leaves_no_new_item) ... ok
+test_text_upload_preserves_original_and_does_not_activate_bundle (reporting.tests.test_api.InputAPITests.test_text_upload_preserves_original_and_does_not_activate_bundle) ... ok
+test_transaction_failure_removes_new_media_file (reporting.tests.test_api.InputAPITests.test_transaction_failure_removes_new_media_file) ... ok
+test_unverified_account_rejected (reporting.tests.test_api.InputAPITests.test_unverified_account_rejected) ... ok
+test_upload_idempotency_does_not_duplicate_evidence (reporting.tests.test_api.InputAPITests.test_upload_idempotency_does_not_duplicate_evidence) ... ok
+test_foreign_read_unknown_body_and_invalid_query_rejected (reporting.tests.test_review.NotificationTests.test_foreign_read_unknown_body_and_invalid_query_rejected) ... ok
+test_list_is_recipient_only_paginated_no_recipient_identity (reporting.tests.test_review.NotificationTests.test_list_is_recipient_only_paginated_no_recipient_identity) ... ok
+test_repeat_read_preserves_first_timestamp_and_report_revision (reporting.tests.test_review.NotificationTests.test_repeat_read_preserves_first_timestamp_and_report_revision) ... ok
+test_card_audit_failure_rolls_back_version_ledger_and_report (reporting.tests.test_review.ReporterReviewTests.test_card_audit_failure_rolls_back_version_ledger_and_report) ... ok
+test_card_correction_keeps_sources_raw_results_and_old_confirmation (reporting.tests.test_review.ReporterReviewTests.test_card_correction_keeps_sources_raw_results_and_old_confirmation) ... ok
+test_confirm_binds_version_without_submitting_or_clearing_uncertainty (reporting.tests.test_review.ReporterReviewTests.test_confirm_binds_version_without_submitting_or_clearing_uncertainty) ... ok
+test_confirm_same_version_new_key_returns_existing_without_revision_or_audit_change (reporting.tests.test_review.ReporterReviewTests.test_confirm_same_version_new_key_returns_existing_without_revision_or_audit_change) ... ok
+test_correction_replay_precedes_stale_revision_and_parent_checks (reporting.tests.test_review.ReporterReviewTests.test_correction_replay_precedes_stale_revision_and_parent_checks) ... ok
+test_failed_preparation_cannot_confirm_a_leftover_card (reporting.tests.test_review.ReporterReviewTests.test_failed_preparation_cannot_confirm_a_leftover_card) ... ok
+test_missing_report_and_missing_idempotency_key_use_safe_errors (reporting.tests.test_review.ReporterReviewTests.test_missing_report_and_missing_idempotency_key_use_safe_errors) ... ok
+test_narrative_can_change_while_unknown_run_remains_reserved (reporting.tests.test_review.ReporterReviewTests.test_narrative_can_change_while_unknown_run_remains_reserved) ... ok
+test_narrative_revision_invalidates_card_increments_source_and_preserves_original (reporting.tests.test_review.ReporterReviewTests.test_narrative_revision_invalidates_card_increments_source_and_preserves_original) ... ok
+test_new_bundle_rejects_old_card_confirmation (reporting.tests.test_review.ReporterReviewTests.test_new_bundle_rejects_old_card_confirmation) ... ok
+test_non_event_stays_blocked_after_field_correction_and_cannot_confirm (reporting.tests.test_review.ReporterReviewTests.test_non_event_stays_blocked_after_field_correction_and_cannot_confirm) ... ok
+test_official_flags_and_history_exclude_internal_audit_fields (reporting.tests.test_review.ReporterReviewTests.test_official_flags_and_history_exclude_internal_audit_fields) ... ok
+test_old_confirmation_cannot_submit_corrected_version (reporting.tests.test_review.ReporterReviewTests.test_old_confirmation_cannot_submit_corrected_version) ... ok
+test_other_owner_missing_report_and_revoked_actor_do_not_replay (reporting.tests.test_review.ReporterReviewTests.test_other_owner_missing_report_and_revoked_actor_do_not_replay) ... ok
+test_patch_rejects_category_unknown_null_list_and_naive_time (reporting.tests.test_review.ReporterReviewTests.test_patch_rejects_category_unknown_null_list_and_naive_time) ... ok
+test_reporter_and_monitor_receive_only_published_public_version_projection (reporting.tests.test_review.ReporterReviewTests.test_reporter_and_monitor_receive_only_published_public_version_projection) ... ok
+test_source_or_incomplete_run_cannot_be_confirmed (reporting.tests.test_review.ReporterReviewTests.test_source_or_incomplete_run_cannot_be_confirmed) ... ok
+test_stale_revision_and_stale_parent_do_not_create_versions (reporting.tests.test_review.ReporterReviewTests.test_stale_revision_and_stale_parent_do_not_create_versions) ... ok
+test_submit_notification_failure_rolls_back_official_pointer_and_audit (reporting.tests.test_review.ReporterReviewTests.test_submit_notification_failure_rolls_back_official_pointer_and_audit) ... ok
+test_submit_replay_uses_original_snapshot_and_never_duplicates_notification (reporting.tests.test_review.ReporterReviewTests.test_submit_replay_uses_original_snapshot_and_never_duplicates_notification) ... ok
+test_submit_requires_confirmation_but_missing_incident_fields_do_not_block (reporting.tests.test_review.ReporterReviewTests.test_submit_requires_confirmation_but_missing_incident_fields_do_not_block) ... ok
+test_submitted_owner_cannot_correct_or_confirm_again (reporting.tests.test_review.ReporterReviewTests.test_submitted_owner_cannot_correct_or_confirm_again) ... ok
+test_submitted_report_enters_existing_queue_scope_without_private_summary_fields (reporting.tests.test_review.ReporterReviewTests.test_submitted_report_enters_existing_queue_scope_without_private_summary_fields) ... ok
+test_version_list_is_paginated_metadata_and_old_detail_is_immutable_source (reporting.tests.test_review.ReporterReviewTests.test_version_list_is_paginated_metadata_and_old_detail_is_immutable_source) ... ok
+test_non_event_after_reanalysis_still_blocks_confirmation (reporting.tests.test_review_pipeline.NarrativeReviewIntegrationTests.test_non_event_after_reanalysis_still_blocks_confirmation) ... ok
+test_revised_narrative_runs_only_sena_nara_fusion_then_can_confirm_and_submit (reporting.tests.test_review_pipeline.NarrativeReviewIntegrationTests.test_revised_narrative_runs_only_sena_nara_fusion_then_can_confirm_and_submit) ... ok
+
+----------------------------------------------------------------------
+Ran 53 tests in 1.836s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+ OK
+System check identified no issues (0 silenced).
