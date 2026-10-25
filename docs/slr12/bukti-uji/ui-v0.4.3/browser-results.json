@@ -1,0 +1,1433 @@
+{
+  "checks": [
+    {
+      "name": "Login dua panel mengikuti referensi tanpa sidebar pelapor atau pemotongan logo",
+      "status": "PASS"
+    },
+    {
+      "name": "Isian registrasi bertahan saat tema berganti; konfirmasi sandi berbeda ditolak sebelum POST",
+      "status": "PASS"
+    },
+    {
+      "name": "Registrasi melalui backend menampilkan Periksa Email dan tiga langkah tanpa mengklaim email pasti terkirim",
+      "status": "PASS"
+    },
+    {
+      "name": "Kirim ulang dari Periksa Email memakai alamat pendaftaran dan respons umum layanan",
+      "status": "PASS"
+    },
+    {
+      "name": "Verifikasi tanpa tautan, format salah atau query ganda dikunci dan tidak mengirim OTP",
+      "status": "PASS"
+    },
+    {
+      "name": "UUID pada tautan belum membuktikan keabsahan backend; tautan lama dan ID asing ditolak",
+      "status": "PASS"
+    },
+    {
+      "name": "Permintaan ulang di halaman OTP adalah formulir terpisah dan menghasilkan tautan terbaru",
+      "status": "PASS"
+    },
+    {
+      "name": "OTP salah tidak menyelesaikan verifikasi; input kirim ulang yang belum sah tidak menghalangi formulir kode",
+      "status": "PASS"
+    },
+    {
+      "name": "OTP benar menyelesaikan verifikasi melalui backend; masuk tetap tindakan terpisah",
+      "status": "PASS"
+    },
+    {
+      "name": "Kode yang sudah dikonsumsi tidak bisa dipakai ulang; akun terverifikasi dapat Login dan Keluar",
+      "status": "PASS"
+    },
+    {
+      "name": "Lupa sandi dan reset sandi tetap memakai alur akun serta tautan kode yang berlaku",
+      "status": "PASS"
+    },
+    {
+      "name": "Aktivasi Operator mempertahankan isian sandi dan kunci tautan; tautan pemulihan tidak mengarah ke resend yang salah",
+      "status": "PASS"
+    },
+    {
+      "name": "Resend mengikuti kesalahan serta Retry-After layanan tanpa hitungan waktu yang dibuat sendiri",
+      "status": "PASS"
+    },
+    {
+      "name": "Keempat tampilan akun dapat dipakai pada 736, 390 dan 320 px tanpa luapan",
+      "status": "PASS"
+    },
+    {
+      "name": "Offline menahan formulir akun dan mempertahankan isian; data rahasia tidak disimpan di storage",
+      "status": "PASS"
+    },
+    {
+      "name": "Login dan daftar nyata melalui API; detail tidak dibaca sebelum dipilih",
+      "status": "PASS"
+    },
+    {
+      "name": "Sidebar kiri dan logo utuh pada aset PNG asli serta aset persegi",
+      "status": "PASS"
+    },
+    {
+      "name": "Kontrol lengkap satu baris pada desktop 1024 px; judul tetap 18 px",
+      "status": "PASS"
+    },
+    {
+      "name": "Warna teks dan status pada dua tema; pergantian tema bertahan",
+      "status": "PASS"
+    },
+    {
+      "name": "Kategori Gempa Bumi dan status digabungkan pada query API",
+      "status": "PASS"
+    },
+    {
+      "name": "Pagination dan muat ulang mempertahankan halaman yang sedang dibaca",
+      "status": "PASS"
+    },
+    {
+      "name": "Detail hanya GET, no-store, menampilkan Incident Card dan mengembalikan fokus",
+      "status": "PASS"
+    },
+    {
+      "name": "Respons detail terlambat tidak menimpa laporan yang dipilih berikutnya",
+      "status": "PASS"
+    },
+    {
+      "name": "Detail dengan ID tidak cocok ditolak dan dapat dibaca ulang",
+      "status": "PASS"
+    },
+    {
+      "name": "Popup laporan terkirim memakai kartu resmi dan tindakan hanya baca",
+      "status": "PASS"
+    },
+    {
+      "name": "Edit popup membuka rincian nyata pada tahap Periksa hasil",
+      "status": "PASS"
+    },
+    {
+      "name": "Isian koreksi bertahan saat tema dan tahap berubah; simpan membentuk versi baru",
+      "status": "PASS"
+    },
+    {
+      "name": "Riwayat versi dan perbandingan induk tetap membaca API",
+      "status": "PASS"
+    },
+    {
+      "name": "Konfirmasi dan kirim terpisah; tombol kirim terlihat sebelum konfirmasi",
+      "status": "PASS"
+    },
+    {
+      "name": "Pengiriman nyata mengunci versi resmi dan menyimpan notifikasi",
+      "status": "PASS"
+    },
+    {
+      "name": "Notifikasi ringkas: empat baris 76 px, pesan dan metadata di kiri, tindakan di kanan",
+      "status": "PASS"
+    },
+    {
+      "name": "Baca dan belum dibaca berbeda tanpa mengandalkan warna; kontras kedua tema memadai",
+      "status": "PASS"
+    },
+    {
+      "name": "Tandai dibaca, filter dan muat ulang tetap menggunakan API notifikasi sebenarnya",
+      "status": "PASS"
+    },
+    {
+      "name": "Buka laporan menuju rincian yang benar dan tidak menandai pesan secara otomatis",
+      "status": "PASS"
+    },
+    {
+      "name": "Notifikasi pada 736, 390 dan 320 px tidak meluap; tindakan turun dan memiliki target sentuh 44 px",
+      "status": "PASS"
+    },
+    {
+      "name": "Pesan panjang, tanpa laporan terkait dan muat halaman berikutnya tetap terbaca utuh",
+      "status": "PASS"
+    },
+    {
+      "name": "Kegagalan menandai pesan tidak mengubah status baca dan menampilkan kesalahan",
+      "status": "PASS"
+    },
+    {
+      "name": "Keadaan kosong dan gagal memuat tetap menyediakan filter atau muat ulang",
+      "status": "PASS"
+    },
+    {
+      "name": "Saat offline status tersimpan tetap dibaca dan tindakan perubahan ditahan",
+      "status": "PASS"
+    },
+    {
+      "name": "Profil menyimpan nama dan memperbarui identitas akun",
+      "status": "PASS"
+    },
+    {
+      "name": "Buat laporan tidak membuat draft sampai tombol eksplisit ditekan",
+      "status": "PASS"
+    },
+    {
+      "name": "Tahap aktif berwarna biru dengan teks putih pada kedua tema",
+      "status": "PASS"
+    },
+    {
+      "name": "Satu teks aktif, penggantian masuk arsip, draft pulih tanpa unggah ulang",
+      "status": "PASS"
+    },
+    {
+      "name": "Audio WAV tersimpan melalui API dan mendapat receipt serta sorotan sumber aktif",
+      "status": "PASS"
+    },
+    {
+      "name": "Unggah dua gambar menandai keduanya; analisis tetap eksplisit",
+      "status": "PASS"
+    },
+    {
+      "name": "RUNNING dan UNKNOWN tetap di tahap 1; pemulihan membaca keadaan tanpa analisis baru",
+      "status": "PASS"
+    },
+    {
+      "name": "NON_EVENT dapat diperiksa tetapi tahap 3 dan tindakan lanjut tetap terkunci",
+      "status": "PASS"
+    },
+    {
+      "name": "Versi kartu baru mengunci kemajuan; revisi narasi tetap dapat dianalisis ulang di tahap 2",
+      "status": "PASS"
+    },
+    {
+      "name": "Unggahan parsial dan gagal tidak dianggap semua berhasil atau membuka tahap berikutnya",
+      "status": "PASS"
+    },
+    {
+      "name": "Daftar dan dialog tetap terjangkau pada 736, 390 dan 320 px",
+      "status": "PASS"
+    },
+    {
+      "name": "Menu HP mengelola fokus, Escape dan tema; rincian tanpa luapan",
+      "status": "PASS"
+    },
+    {
+      "name": "Pada HP penyimpanan langsung memperlihatkan Bukti aktif dan tombol kembali ke formulir",
+      "status": "PASS"
+    },
+    {
+      "name": "Offline menahan tindakan dan tetap mempertahankan isian",
+      "status": "PASS"
+    },
+    {
+      "name": "Aplikasi dan Koneksi mempertahankan informasi instalasi dan batas offline",
+      "status": "PASS"
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/register/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/otp/request/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/otp/verify/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/otp/verify/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/otp/request/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/otp/verify/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/otp/verify/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/otp/verify/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/otp/verify/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/login/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/logout/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/otp/request/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/password/reset/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/login/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/logout/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/otp/request/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/register/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/register/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/register/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/login/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/",
+      "query": "?scope=owned&ordering=-created_at&page_size=5",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/",
+      "query": "?scope=owned&ordering=-created_at&page_size=5",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/",
+      "query": "?scope=owned&ordering=-created_at&page_size=5",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/",
+      "query": "?scope=owned&ordering=-created_at&page_size=5&event_type=EARTHQUAKE",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/",
+      "query": "?scope=owned&ordering=-created_at&page_size=5&workflow_status=NOT_SUBMITTED&preparation_status=AWAITING_CONFIRMATION&event_type=EARTHQUAKE",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/",
+      "query": "?scope=owned&ordering=-created_at&page_size=5&workflow_status=NOT_SUBMITTED&preparation_status=AWAITING_CONFIRMATION&event_type=EARTHQUAKE",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/",
+      "query": "?scope=owned&ordering=-created_at&page_size=5&event_type=EARTHQUAKE",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/",
+      "query": "?scope=owned&ordering=-created_at&page_size=5",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/",
+      "query": "?scope=owned&ordering=-created_at&page_size=5&page=2",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/",
+      "query": "?scope=owned&ordering=-created_at&page_size=5&page=2",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/",
+      "query": "?scope=owned&ordering=-created_at&page_size=5",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/f148c610-3461-488c-ba1a-c2086375dbab/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/",
+      "query": "?scope=owned&ordering=-created_at&page_size=5&event_type=FIRE",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/bda2ee72-c26d-4d2e-b658-003ee7df724f/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/",
+      "query": "?scope=owned&ordering=-created_at&page_size=5",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/evidence/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/cards/revisions/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/versions/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/history/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/versions/IncidentCardVersion/4f31587b-eeda-435c-8c30-5c030117869b/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/versions/IncidentCardVersion/ae2d2412-0b98-45b0-9fd9-6958d12b68d9/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/human-verifications/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/submit/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notifications/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/notifications/d9988023-7357-411b-a188-8ff58028c5c9/read/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notifications/",
+      "query": "?unread=true",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notifications/",
+      "query": "?unread=true",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notifications/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notifications/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notifications/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notifications/",
+      "query": "?page=2",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notifications/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/notifications/d9e5f0fc-de4b-48e5-b98b-f0ea342b1dba/read/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notifications/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notifications/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notifications/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notifications/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notifications/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/me/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/5e95d8de-ee89-4dcd-9528-c5d2a74f9143/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/5e95d8de-ee89-4dcd-9528-c5d2a74f9143/evidence/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/5e95d8de-ee89-4dcd-9528-c5d2a74f9143/evidence/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/5e95d8de-ee89-4dcd-9528-c5d2a74f9143/evidence/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/5e95d8de-ee89-4dcd-9528-c5d2a74f9143/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/5e95d8de-ee89-4dcd-9528-c5d2a74f9143/evidence/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/5e95d8de-ee89-4dcd-9528-c5d2a74f9143/evidence/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/5e95d8de-ee89-4dcd-9528-c5d2a74f9143/evidence/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/5e95d8de-ee89-4dcd-9528-c5d2a74f9143/evidence/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/5e95d8de-ee89-4dcd-9528-c5d2a74f9143/bundles/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/5e95d8de-ee89-4dcd-9528-c5d2a74f9143/analyses/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/84687a7b-f4f4-476e-bc3f-d3f786ca09b3/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/84687a7b-f4f4-476e-bc3f-d3f786ca09b3/evidence/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/84687a7b-f4f4-476e-bc3f-d3f786ca09b3/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/84687a7b-f4f4-476e-bc3f-d3f786ca09b3/evidence/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/requests/",
+      "query": "?report_id=84687a7b-f4f4-476e-bc3f-d3f786ca09b3&include_expired=false",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/178312b7-ef03-4841-8da3-c3b6d06782f7/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/178312b7-ef03-4841-8da3-c3b6d06782f7/evidence/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/178312b7-ef03-4841-8da3-c3b6d06782f7/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/178312b7-ef03-4841-8da3-c3b6d06782f7/evidence/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/requests/",
+      "query": "?report_id=178312b7-ef03-4841-8da3-c3b6d06782f7&include_expired=false",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/cb44f28f-fbb8-408d-82ce-d1f3ef6d8f1b/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/cb44f28f-fbb8-408d-82ce-d1f3ef6d8f1b/evidence/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/b12f32e4-7f8c-4e5c-97c4-084d31880c23/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/b12f32e4-7f8c-4e5c-97c4-084d31880c23/evidence/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/b12f32e4-7f8c-4e5c-97c4-084d31880c23/cards/revisions/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/b12f32e4-7f8c-4e5c-97c4-084d31880c23/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/b12f32e4-7f8c-4e5c-97c4-084d31880c23/narratives/revisions/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/b12f32e4-7f8c-4e5c-97c4-084d31880c23/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/00ba34ac-dd50-44ac-b3cc-7eb743a44c8a/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/00ba34ac-dd50-44ac-b3cc-7eb743a44c8a/evidence/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/00ba34ac-dd50-44ac-b3cc-7eb743a44c8a/evidence/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/00ba34ac-dd50-44ac-b3cc-7eb743a44c8a/evidence/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/00ba34ac-dd50-44ac-b3cc-7eb743a44c8a/evidence/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/",
+      "query": "?scope=owned&ordering=-created_at&page_size=5",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/",
+      "query": "?scope=owned&ordering=-created_at&page_size=5&event_type=ACCIDENT",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/56933d8d-dffd-4c8e-b6ac-a99342ecff9a/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/69e3b20e-057a-4fb9-a88c-db599dbd1954/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/69e3b20e-057a-4fb9-a88c-db599dbd1954/evidence/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/226e8273-679f-4b38-a222-36c86ab68a7a/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/226e8273-679f-4b38-a222-36c86ab68a7a/evidence/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/226e8273-679f-4b38-a222-36c86ab68a7a/evidence/",
+      "query": "",
+      "idempotent": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/csrf/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/refresh/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/f148c610-3461-488c-ba1a-c2086375dbab/",
+      "query": "",
+      "idempotent": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/f148c610-3461-488c-ba1a-c2086375dbab/evidence/",
+      "query": "",
+      "idempotent": false
+    }
+  ]
+}

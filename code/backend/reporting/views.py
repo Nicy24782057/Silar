@@ -1,4 +1,4 @@
-from django.db.models import Exists, OuterRef
+from django.db.models import Exists, OuterRef, Q
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 from rest_framework.parsers import MultiPartParser
@@ -10,6 +10,7 @@ from common.api import ApiProblem, SilarPagination, reject_query, validate_query
 from core.models import Report, EvidenceItem, OperatorAssignment
 from core.permissions import effective_permissions, require_report_read, require_owner_draft
 from core.storage import private_media_response
+from core.validators import EVENTS
 from . import services
 from .media import validate_upload
 from .serializers import EvidenceUpload, BundleCreate, summary_data, detail_data, evidence_data
@@ -31,7 +32,7 @@ def owner_report(request, pk):
 
 class ReportListCreate(APIView):
     def get(self, request):
-        validate_query(request, ['scope', 'workflow_status', 'validation_status', 'publication_status', 'ordering'])
+        validate_query(request, ['scope', 'workflow_status', 'preparation_status', 'validation_status', 'publication_status', 'event_type', 'ordering'])
         actor = request.user
         permissions = effective_permissions(actor)
         default = {'REPORTER': 'owned', 'OPERATOR': 'assigned', 'ADMIN': 'monitor'}[actor.role]
@@ -50,12 +51,27 @@ class ReportListCreate(APIView):
             raise ApiProblem('INVALID_PAYLOAD', 'Scope tidak dikenal.', 400)
         else:
             raise ApiProblem('PERMISSION_DENIED', 'Daftar tidak tersedia untuk kewenangan ini.', 403)
-        for name in ('workflow_status', 'validation_status', 'publication_status'):
+        for name in ('workflow_status', 'preparation_status', 'validation_status', 'publication_status'):
             if name in request.query_params:
                 value = request.query_params[name]
                 if value not in dict(Report._meta.get_field(name).choices):
                     raise ApiProblem('INVALID_PAYLOAD', 'Filter status tidak dikenal.', 400, {name: ['Nilai tidak dikenal.']})
                 qs = qs.filter(**{name: value})
+        if 'event_type' in request.query_params:
+            category = request.query_params['event_type']
+            if category not in (*EVENTS, 'UNCLASSIFIED'):
+                raise ApiProblem('INVALID_PAYLOAD', 'Filter kategori tidak dikenal.', 400,
+                                 {'event_type': ['Gunakan FLOOD, EARTHQUAKE, FIRE, ACCIDENT atau UNCLASSIFIED.']})
+            # Match exactly the same card projection as summary_data, before pagination.
+            # JSON null, an absent JSON key and a missing FK are distinct on PostgreSQL.
+            def category_match(relation):
+                field = relation + '__data__event_type'
+                if category == 'UNCLASSIFIED':
+                    return Q(**{relation + '__isnull': True}) | Q(**{field + '__isnull': True}) | Q(**{field: None})
+                return Q(**{field: category})
+            qs = qs.filter(
+                (Q(submitted_at__isnull=True) & category_match('current_card_version')) |
+                (Q(submitted_at__isnull=False) & category_match('official_card_version')))
         order = request.query_params.get('ordering', '-created_at')
         if order not in ('created_at', '-created_at', 'submitted_at', '-submitted_at'):
             raise ApiProblem('INVALID_PAYLOAD', 'Urutan tidak dikenal.', 400)

@@ -1,0 +1,13 @@
+Local UI fonts, distributed without changing the font files.
+
+Poppins 400, 500, 600, 700: Google Fonts, Poppins v24.
+Manrope 800: Google Fonts, Manrope v20.
+Each font's copyright notice and SIL Open Font License are included in
+poppins-OFL.txt and manrope-OFL.txt respectively.
+
+Font stylesheet source:
+https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap
+
+License sources:
+https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/OFL.txt
+https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/OFL.txt

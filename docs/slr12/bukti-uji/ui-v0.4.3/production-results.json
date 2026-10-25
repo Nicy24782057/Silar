@@ -1,0 +1,17 @@
+{
+  "checks": [
+    {
+      "name": "Build produksi memuat Login dan aset identitas dari bundle tanpa sidebar pelapor",
+      "status": "PASS"
+    },
+    {
+      "name": "Bantuan folder lokal tidak muncul secara bawaan pada build produksi; OTP tanpa tautan terkunci",
+      "status": "PASS"
+    },
+    {
+      "name": "Login pada build produksi terhubung ke backend dan membuka sidebar kiri pelapor",
+      "status": "PASS"
+    }
+  ],
+  "runtimeErrors": []
+}

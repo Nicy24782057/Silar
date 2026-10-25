@@ -1,0 +1,130 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261023055902
+Username: LAPTOP-7FFO2N2V\ACER
+RunAs User: LAPTOP-7FFO2N2V\ACER
+Configuration Name: 
+Machine: LAPTOP-7FFO2N2V (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Program Files\Microsoft VS Code\cfbea10c5f\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 8564
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\hasil-verifikasi-slr10-slr11.txt
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> $cekRelasiSilar = @'
+import json
+from core.models import (
+    AnalysisRun,
+    SENAResult,
+    NARAResult,
+    IncidentCardVersion,
+)
+
+runs = (
+    AnalysisRun.objects
+    .filter(mode="EVIDENCE", status="SUCCEEDED")
+    .select_related(
+        "bundle",
+        "output_narrative",
+        "used_transcript",
+        "request_record",
+    )
+    .order_by("route", "started_at")
+)
+
+hasil = []
+for run in runs:
+    narasi = run.output_narrative
+    transkrip = run.used_transcript
+    sena = SENAResult.objects.filter(analysis_run=run).first()
+    nara = NARAResult.objects.filter(analysis_run=run).first()
+    cards = list(IncidentCardVersion.objects.filter(
+        sena_result__analysis_run=run,
+        source_kind="AI_FUSION",
+    ))
+    card = cards[0] if len(cards) == 1 else None
+    ledger = run.request_record
+    pemeriksaan = {
+        "narasi_tersimpan": bool(narasi and narasi.text.strip()),
+        "narasi_milik_run": bool(
+            narasi and narasi.producer_run_id == run.id
+        ),
+        "sena_nara_memakai_narasi_run": bool(
+            narasi and sena and nara
+            and sena.narrative_id == nara.narrative_id == narasi.id
+        ),
+        "satu_card_fusion": len(cards) == 1,
+        "referensi_card_sesuai": bool(
+            card and narasi and sena and nara
+            and card.narrative_id == narasi.id
+            and card.sena_result_id == sena.id
+            and card.nara_result_id == nara.id
+        ),
+        "laporan_dan_bundle_sesuai": bool(
+            narasi and card
+            and run.report_id == run.bundle.report_id
+            == narasi.report_id == card.report_id
+            and run.bundle_id == narasi.bundle_id == card.bundle_id
+        ),
+        "isi_card_sesuai_hasil": bool(
+            card and sena and nara
+            and card.data == {
+                "event_type": None if sena.category == "NON_EVENT" else sena.category,
+                **nara.normalized_output,
+            }
+        ),
+        "transkrip_sesuai": (
+            bool(
+                transkrip
+                and transkrip.analysis_run_id == run.id
+                and transkrip.report_id == run.report_id
+            )
+            if "A" in run.route else transkrip is None
+        ),
+        "ledger_sukses_menunjuk_run": (
+            ledger.state == "SUCCEEDED"
+            and ledger.result_type == "Run"
+            and ledger.result_id == run.id
+            and ledger.report_id == run.report_id
+            and ledger.response_status == 201
+        ),
+    }
+    masalah = [nama for nama, cocok in pemeriksaan.items() if not cocok]
+    hasil.append({
+        "route": run.route,
+        "run_id": str(run.id),
+        "hasil": "OK" if not masalah else "PERIKSA",
+        "masalah": masalah,
+    })
+
+print("\nHASIL PEMERIKSAAN RELASI")
+print(json.dumps(hasil, indent=2))
+print("\nRINGKASAN")
+print(json.dumps({
+    "jumlah_run": len(hasil),
+    "ok": sum(item["hasil"] == "OK" for item in hasil),
+    "perlu_diperiksa": sum(item["hasil"] == "PERIKSA" for item in hasil),
+    "rute_terbaca": sorted({item["route"] for item in hasil}),
+}, indent=2))
+'@
+
+$cekRelasiSilar | .\.venv\Scripts\python.exe manage.py shell
+
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> .\.venv\Scripts\python.exe manage.py test `
+  ai_pipeline.tests.test_database `
+  ai_pipeline.tests.test_reporting_integration `
+  --settings=config.test_settings `
+  --verbosity=2 `
+  --keepdb
+
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20261023055958
+**********************

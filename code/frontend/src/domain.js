@@ -1,6 +1,6 @@
 export const LIMITS = Object.freeze({text: 5000, image: 5 * 1024 ** 2, audio: 10 * 1024 ** 2, bundle: 25 * 1024 ** 2});
-export const labels = {DRAFT:'Draft', PROCESSING:'Sedang dianalisis', AWAITING_CONFIRMATION:'Perlu diperiksa', READY:'Sudah dikonfirmasi',
-  BLOCKED:'Pengiriman ditahan', FAILED:'Proses gagal', NOT_SUBMITTED:'Belum dikirim', SUBMITTED:'Menunggu Operator', ASSIGNED:'Ditugaskan',
+export const labels = {DRAFT:'Draft', PROCESSING:'Sedang dianalisis', AWAITING_CONFIRMATION:'Perlu diperiksa', READY:'Siap dikirim',
+  BLOCKED:'Pengiriman ditahan', FAILED:'Proses gagal', NOT_SUBMITTED:'Belum dikirim', SUBMITTED:'Sudah dikirim', ASSIGNED:'Ditugaskan',
   IN_REVIEW:'Dalam pemeriksaan', FOLLOW_UP:'Tindak lanjut', CLOSED:'Ditutup', NOT_REVIEWED:'Belum diperiksa', VALID:'Valid', INVALID:'Tidak valid',
   INCONCLUSIVE:'Belum dapat dipastikan', NOT_DECIDED:'Belum diputuskan', INTERNAL:'Internal', PENDING_APPROVAL:'Persiapan publikasi',
   APPROVED:'Disetujui', PUBLISHED:'Terbit', RUNNING:'Masih diproses', UNKNOWN:'Hasil belum pasti', SUCCEEDED:'Hasil tersimpan',

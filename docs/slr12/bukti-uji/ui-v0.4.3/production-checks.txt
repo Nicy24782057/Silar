@@ -1,0 +1,6 @@
+Local test services ready
+Chromium 153.0.8010.0
+PASS Build produksi memuat Login dan aset identitas dari bundle tanpa sidebar pelapor
+PASS Bantuan folder lokal tidak muncul secara bawaan pada build produksi; OTP tanpa tautan terkunci
+PASS Login pada build produksi terhubung ke backend dan membuka sidebar kiri pelapor
+COMPLETE 3 production checks 0 runtime errors

@@ -1,0 +1,254 @@
+{
+  "version": "0.4.3",
+  "base": "SLR12 0.2.0 + UI 0.3.x/0.4.0/0.4.1/0.4.2; cumulative UI patch",
+  "references": [
+    "SILAR_Login_Visual (1).svg",
+    "SILAR_Registrasi_Visual (1).svg",
+    "SILAR_Setelah_Registrasi_Visual (1).svg",
+    "SILAR_Verifikasi_OTP_Visual (1).svg"
+  ],
+  "changed_since_ui_042": [
+    "src/App.vue",
+    "src/assets/auth-identity.svg",
+    "src/auth-ui.css",
+    "src/auth-ui.js",
+    "src/components/AppIcon.vue",
+    "src/components/AuthLocalHelp.vue",
+    "src/main.js",
+    "src/views/AuthView.vue",
+    "tests/auth-ui.test.js"
+  ],
+  "preserved": [
+    "code/backend/",
+    "code/frontend/public/brand/",
+    "code/frontend/public/icons/",
+    "code/frontend/public/manifest.webmanifest"
+  ],
+  "files": [
+    {
+      "path": "PANDUAN_RUNNING.md",
+      "bytes": 29512,
+      "sha256": "069c7854227d3db47fdbd7461e0fc422a6b2dcc3558e1b3c2798dffb2f2b35bf"
+    },
+    {
+      "path": "code/frontend/public/fonts/SOURCES.txt",
+      "bytes": 576,
+      "sha256": "462143844bfeb769f312c7e296f8ae9967e5e6184d968a14bd5946f93366083d"
+    },
+    {
+      "path": "code/frontend/public/fonts/manrope-800.ttf",
+      "bytes": 95688,
+      "sha256": "b8f802f05b322a7345805f5b89f8bb976604cc719a91530918d5ce3c47160950"
+    },
+    {
+      "path": "code/frontend/public/fonts/manrope-OFL.txt",
+      "bytes": 4387,
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    {
+      "path": "code/frontend/public/fonts/poppins-400.ttf",
+      "bytes": 154628,
+      "sha256": "cdedb1729acac414ed01744a11da7badb86adf13108e7bd3fa161b9323f7fe54"
+    },
+    {
+      "path": "code/frontend/public/fonts/poppins-500.ttf",
+      "bytes": 152860,
+      "sha256": "fcff04f4bec2b3636f05ed894dc1f9a752c4cb587ee49857ec7a82abaf6ca016"
+    },
+    {
+      "path": "code/frontend/public/fonts/poppins-600.ttf",
+      "bytes": 151516,
+      "sha256": "dae40ca7b35fe7501bda2e4140a6860b1db47330be5d3c8ab6971fd83a70e9a5"
+    },
+    {
+      "path": "code/frontend/public/fonts/poppins-700.ttf",
+      "bytes": 150292,
+      "sha256": "1984efdda0fbe207d7ac20feac2ba7c2768c92a90094b02a206c9d58cc30ff2e"
+    },
+    {
+      "path": "code/frontend/public/fonts/poppins-OFL.txt",
+      "bytes": 4385,
+      "sha256": "6be04893d770899a015649c7aa3b582f871b272f8747a92b78b17c3e5c8b2573"
+    },
+    {
+      "path": "code/frontend/src/App.vue",
+      "bytes": 6852,
+      "sha256": "a398548eac90a3ae89313f690181a5248579c1fc18961c9cabdcc7801590ba24"
+    },
+    {
+      "path": "code/frontend/src/assets/auth-identity.svg",
+      "bytes": 823332,
+      "sha256": "1879887634047bd53b642fd23ab024fca379c412443f16b71da29819faee7ff1"
+    },
+    {
+      "path": "code/frontend/src/auth-ui.css",
+      "bytes": 8227,
+      "sha256": "8e66aae1fa4f9ce6d3d39680d3166d379ab10ddb81b18ec31f1f158c41e88ce2"
+    },
+    {
+      "path": "code/frontend/src/auth-ui.js",
+      "bytes": 426,
+      "sha256": "2e10b036f59afd5c96ba410d1516b4f57bd5e42d4e927f9835d7d795018b97f8"
+    },
+    {
+      "path": "code/frontend/src/components/AppDialog.vue",
+      "bytes": 1303,
+      "sha256": "eea0b567e834998338814d229ef819a6a8a2e2025517b026ed6ddc0def6ec4c6"
+    },
+    {
+      "path": "code/frontend/src/components/AppIcon.vue",
+      "bytes": 2904,
+      "sha256": "bec8be5f9e8f14ef8e3009e68bbf8ec328eb74683ad3338a890c0f373022751f"
+    },
+    {
+      "path": "code/frontend/src/components/AuthLocalHelp.vue",
+      "bytes": 654,
+      "sha256": "7d31ae4fd99d338ba1aef79daf775e5c6a941796a8255949cab601d4f76c74a4"
+    },
+    {
+      "path": "code/frontend/src/components/ReportCardPreview.vue",
+      "bytes": 3781,
+      "sha256": "6c3ca39a80421c93d571e5af4317662185ebff2c0d2b06bd6f7c17502170b392"
+    },
+    {
+      "path": "code/frontend/src/components/ReportReview.vue",
+      "bytes": 17178,
+      "sha256": "682c23a0fcc0ec34046aea9fc494538c5da994c60515b49e442c3117bac8789e"
+    },
+    {
+      "path": "code/frontend/src/components/ReportStatus.vue",
+      "bytes": 350,
+      "sha256": "bf193a3cddfecfa15ac2c55a150451d436753c6d3142c27cd916f48ef4f05b40"
+    },
+    {
+      "path": "code/frontend/src/components/ReportSummary.vue",
+      "bytes": 1683,
+      "sha256": "d24b42096452df16e1816ae6e89a12151bd44c0566067c3f8b374ae885f997d4"
+    },
+    {
+      "path": "code/frontend/src/components/ResponsibleReporting.vue",
+      "bytes": 649,
+      "sha256": "a59ea6020a4dc2412f43d60371eaa845f0968d5440ddcebed3c84f3e0879e810"
+    },
+    {
+      "path": "code/frontend/src/components/VersionHistory.vue",
+      "bytes": 8462,
+      "sha256": "82afa79488462200d12027aae356fac3ae9d4147dd55feeca1bdbc4501810ffc"
+    },
+    {
+      "path": "code/frontend/src/domain.js",
+      "bytes": 2925,
+      "sha256": "f43004bd56ad242b0946d2618b67391e105077c08abbfbd980589c2d683dd9b6"
+    },
+    {
+      "path": "code/frontend/src/main.js",
+      "bytes": 483,
+      "sha256": "a7841239e576e2cf29dec6906b9c20ead559087f0782d1c9d90b7a41164299f1"
+    },
+    {
+      "path": "code/frontend/src/report-flow.js",
+      "bytes": 1765,
+      "sha256": "dbeec5be74c484fa89c346ec92b75a80a04416119b4979bf96905c0fcaac6794"
+    },
+    {
+      "path": "code/frontend/src/report-list.js",
+      "bytes": 4473,
+      "sha256": "04567ff0a8dfa9bc6f22eaa3c627f3084df7c7f53f74e02933278440b96f1f12"
+    },
+    {
+      "path": "code/frontend/src/reports-ui.css",
+      "bytes": 19055,
+      "sha256": "543a01dced8e3d94e0faf5f62fea701e48e1c3b54d125b8b77a1c4f11e91d774"
+    },
+    {
+      "path": "code/frontend/src/ui.css",
+      "bytes": 30425,
+      "sha256": "19ac1141b1ad8627741f9da874432c7f53e8d68cf1ee7e0b35ed76bef1f148a1"
+    },
+    {
+      "path": "code/frontend/src/views/AuthView.vue",
+      "bytes": 13678,
+      "sha256": "205743db6f8dad843c9c8536a5881e9326fe2bde133c53b8447e1d5647208fbb"
+    },
+    {
+      "path": "code/frontend/src/views/DraftView.vue",
+      "bytes": 33098,
+      "sha256": "d0ed2c4e975cca2f3c109ea299c454b581ea9d9a1a1e29e586b1f8ea143eea79"
+    },
+    {
+      "path": "code/frontend/src/views/NotificationsView.vue",
+      "bytes": 3678,
+      "sha256": "af415b8b2b900137ccc6d8430e2b4a0a1cf974879ee3cc57097685e5d3cc9943"
+    },
+    {
+      "path": "code/frontend/src/views/ProfileView.vue",
+      "bytes": 1944,
+      "sha256": "aa675bb3f5568fdb0516f63d691ff5d5534d627acf7c616c1bf36d8a33ca48d4"
+    },
+    {
+      "path": "code/frontend/src/views/PwaView.vue",
+      "bytes": 2458,
+      "sha256": "cc05adc5362f372a8a9c241ab84920d3e7c723b366aeb969becbc39019d0c669"
+    },
+    {
+      "path": "code/frontend/src/views/ReportsView.vue",
+      "bytes": 11935,
+      "sha256": "9071121093673330f5ff011d364e042d093f8103dcfe1b66499d58fd8ef5cb23"
+    },
+    {
+      "path": "code/frontend/tests/auth-ui.test.js",
+      "bytes": 1599,
+      "sha256": "362df086403aacdd014e0401227ff9bffad84f8f0629fbc303e68a2327d6ffc9"
+    },
+    {
+      "path": "code/frontend/tests/pwa-assets.test.js",
+      "bytes": 3295,
+      "sha256": "530aa8ed2fa4660d9d1afda47cd0d03de94d394a0c249bd99245c52fa39acfec"
+    },
+    {
+      "path": "code/frontend/tests/report-flow.test.js",
+      "bytes": 4331,
+      "sha256": "1da05201b86ff60923fcc898818884ca6f5b0eb9d08ef7f257ee070929f8db3c"
+    },
+    {
+      "path": "code/frontend/vite.config.js",
+      "bytes": 3525,
+      "sha256": "7249e3095d298d688a30f10f87f3ff10f8098cefb7effd73481444702dc423ff"
+    },
+    {
+      "path": "docs/slr12/HASIL_VERIFIKASI_UI_v0.4.3.md",
+      "bytes": 10410,
+      "sha256": "5d6d3c5b2c18a1183f6ffb706ae7c06f8f8ec5a7da0d178a9091f64b726b5c76"
+    },
+    {
+      "path": "docs/slr12/bukti-uji/ui-v0.4.3/browser-checks.txt",
+      "bytes": 4524,
+      "sha256": "2e442239a39a866cf6bb1c09ffbfc7b949a5f05a15e41dac46febd9df2379939"
+    },
+    {
+      "path": "docs/slr12/bukti-uji/ui-v0.4.3/browser-results.json",
+      "bytes": 34102,
+      "sha256": "14c840959865d480f70ce93684961789869ec722379529fc5b5f86a65c0fc3a0"
+    },
+    {
+      "path": "docs/slr12/bukti-uji/ui-v0.4.3/frontend-build.txt",
+      "bytes": 1461,
+      "sha256": "5cc4ee2ce281b2c8590f253a2e50e24f45f7c54dcc4d5d30075be7a6e22633a1"
+    },
+    {
+      "path": "docs/slr12/bukti-uji/ui-v0.4.3/frontend-tests.txt",
+      "bytes": 6765,
+      "sha256": "734d4ecb10203fb7464f680429e9f3af5315bc3a7699ecd6d01b4df206b71b68"
+    },
+    {
+      "path": "docs/slr12/bukti-uji/ui-v0.4.3/production-checks.txt",
+      "bytes": 365,
+      "sha256": "f262b4322344260a8909d44f282235eb6860b4bc1b0aa3b7ff1522cc9948cde5"
+    },
+    {
+      "path": "docs/slr12/bukti-uji/ui-v0.4.3/production-results.json",
+      "bytes": 459,
+      "sha256": "b6489702ca1b7f5ec46fee747ae0448c54196a2b8e7df9a961426d2fb7613790"
+    }
+  ]
+}

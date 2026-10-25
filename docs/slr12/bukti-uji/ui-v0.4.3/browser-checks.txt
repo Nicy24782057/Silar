@@ -1,0 +1,57 @@
+Local test services ready
+Chromium 153.0.8010.0
+PASS Login dua panel mengikuti referensi tanpa sidebar pelapor atau pemotongan logo
+PASS Isian registrasi bertahan saat tema berganti; konfirmasi sandi berbeda ditolak sebelum POST
+PASS Registrasi melalui backend menampilkan Periksa Email dan tiga langkah tanpa mengklaim email pasti terkirim
+PASS Kirim ulang dari Periksa Email memakai alamat pendaftaran dan respons umum layanan
+PASS Verifikasi tanpa tautan, format salah atau query ganda dikunci dan tidak mengirim OTP
+PASS UUID pada tautan belum membuktikan keabsahan backend; tautan lama dan ID asing ditolak
+PASS Permintaan ulang di halaman OTP adalah formulir terpisah dan menghasilkan tautan terbaru
+PASS OTP salah tidak menyelesaikan verifikasi; input kirim ulang yang belum sah tidak menghalangi formulir kode
+PASS OTP benar menyelesaikan verifikasi melalui backend; masuk tetap tindakan terpisah
+PASS Kode yang sudah dikonsumsi tidak bisa dipakai ulang; akun terverifikasi dapat Login dan Keluar
+PASS Lupa sandi dan reset sandi tetap memakai alur akun serta tautan kode yang berlaku
+PASS Aktivasi Operator mempertahankan isian sandi dan kunci tautan; tautan pemulihan tidak mengarah ke resend yang salah
+PASS Resend mengikuti kesalahan serta Retry-After layanan tanpa hitungan waktu yang dibuat sendiri
+PASS Keempat tampilan akun dapat dipakai pada 736, 390 dan 320 px tanpa luapan
+PASS Offline menahan formulir akun dan mempertahankan isian; data rahasia tidak disimpan di storage
+PASS Login dan daftar nyata melalui API; detail tidak dibaca sebelum dipilih
+PASS Sidebar kiri dan logo utuh pada aset PNG asli serta aset persegi
+PASS Kontrol lengkap satu baris pada desktop 1024 px; judul tetap 18 px
+PASS Warna teks dan status pada dua tema; pergantian tema bertahan
+PASS Kategori Gempa Bumi dan status digabungkan pada query API
+PASS Pagination dan muat ulang mempertahankan halaman yang sedang dibaca
+PASS Detail hanya GET, no-store, menampilkan Incident Card dan mengembalikan fokus
+PASS Respons detail terlambat tidak menimpa laporan yang dipilih berikutnya
+PASS Detail dengan ID tidak cocok ditolak dan dapat dibaca ulang
+PASS Popup laporan terkirim memakai kartu resmi dan tindakan hanya baca
+PASS Edit popup membuka rincian nyata pada tahap Periksa hasil
+PASS Isian koreksi bertahan saat tema dan tahap berubah; simpan membentuk versi baru
+PASS Riwayat versi dan perbandingan induk tetap membaca API
+PASS Konfirmasi dan kirim terpisah; tombol kirim terlihat sebelum konfirmasi
+PASS Pengiriman nyata mengunci versi resmi dan menyimpan notifikasi
+PASS Notifikasi ringkas: empat baris 76 px, pesan dan metadata di kiri, tindakan di kanan
+PASS Baca dan belum dibaca berbeda tanpa mengandalkan warna; kontras kedua tema memadai
+PASS Tandai dibaca, filter dan muat ulang tetap menggunakan API notifikasi sebenarnya
+PASS Buka laporan menuju rincian yang benar dan tidak menandai pesan secara otomatis
+PASS Notifikasi pada 736, 390 dan 320 px tidak meluap; tindakan turun dan memiliki target sentuh 44 px
+PASS Pesan panjang, tanpa laporan terkait dan muat halaman berikutnya tetap terbaca utuh
+PASS Kegagalan menandai pesan tidak mengubah status baca dan menampilkan kesalahan
+PASS Keadaan kosong dan gagal memuat tetap menyediakan filter atau muat ulang
+PASS Saat offline status tersimpan tetap dibaca dan tindakan perubahan ditahan
+PASS Profil menyimpan nama dan memperbarui identitas akun
+PASS Buat laporan tidak membuat draft sampai tombol eksplisit ditekan
+PASS Tahap aktif berwarna biru dengan teks putih pada kedua tema
+PASS Satu teks aktif, penggantian masuk arsip, draft pulih tanpa unggah ulang
+PASS Audio WAV tersimpan melalui API dan mendapat receipt serta sorotan sumber aktif
+PASS Unggah dua gambar menandai keduanya; analisis tetap eksplisit
+PASS RUNNING dan UNKNOWN tetap di tahap 1; pemulihan membaca keadaan tanpa analisis baru
+PASS NON_EVENT dapat diperiksa tetapi tahap 3 dan tindakan lanjut tetap terkunci
+PASS Versi kartu baru mengunci kemajuan; revisi narasi tetap dapat dianalisis ulang di tahap 2
+PASS Unggahan parsial dan gagal tidak dianggap semua berhasil atau membuka tahap berikutnya
+PASS Daftar dan dialog tetap terjangkau pada 736, 390 dan 320 px
+PASS Menu HP mengelola fokus, Escape dan tema; rincian tanpa luapan
+PASS Pada HP penyimpanan langsung memperlihatkan Bukti aktif dan tombol kembali ke formulir
+PASS Offline menahan tindakan dan tetap mempertahankan isian
+PASS Aplikasi dan Koneksi mempertahankan informasi instalasi dan batas offline
+COMPLETE 54 checks 0 runtime errors

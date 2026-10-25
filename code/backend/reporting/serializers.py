@@ -107,6 +107,16 @@ def summary_data(report):
     return data
 
 
+def publication_data(obj, *, internal, report):
+    if internal:
+        data = fields(obj, 'id created_at report_id card_version_id parent_id version_number data state '
+                      'sanitized_by_id approved_by_id approved_at published_by_id published_at cancelled_at cancelled_by_id cancellation_reason')
+        for key in ('sanitized_by', 'approved_by', 'published_by', 'cancelled_by'):
+            data[key] = data.pop(key + '_id')
+        return data
+    return dict(id=str(report.id), **obj.data, published_at=primitive(obj.published_at))
+
+
 def detail_data(report, actor):
     permissions = effective_permissions(actor)
     handler = actor.role in ('OPERATOR', 'ADMIN') and 'view_assigned_report' in permissions and is_assignee(actor, report)
@@ -135,16 +145,8 @@ def detail_data(report, actor):
         result['latest_review'] = fields(report.latest_review,
             'id created_at report_id card_version_id assignment_id operator_id outcome reason reviewed_at'
             if full and actor.role != 'REPORTER' else 'id outcome reviewed_at')
-    def publication(obj, internal):
-        if internal:
-            data = fields(obj, 'id created_at report_id card_version_id parent_id version_number data state '
-                          'sanitized_by_id approved_by_id approved_at published_by_id published_at cancelled_at cancelled_by_id cancellation_reason')
-            for key in ('sanitized_by', 'approved_by', 'published_by', 'cancelled_by'):
-                data[key] = data.pop(key + '_id')
-            return data
-        return dict(id=str(report.id), **obj.data, published_at=primitive(obj.published_at))
     if full and actor.role != 'REPORTER' and report.active_publication_candidate_id:
-        result['active_candidate'] = publication(report.active_publication_candidate, True)
+        result['active_candidate'] = publication_data(report.active_publication_candidate, internal=True, report=report)
     if report.published_version_id:
-        result['published_version'] = publication(report.published_version, full and actor.role != 'REPORTER')
+        result['published_version'] = publication_data(report.published_version, internal=full and actor.role != 'REPORTER', report=report)
     return result

@@ -1,0 +1,27 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> silar-slr10-frontend@1.1.1 build
+> vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 68 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                              0.77 kB │ gzip:   0.45 kB
+dist/sw.js                                   2.05 kB
+dist/assets/auth-identity-6lzvHzxM.svg     823.33 kB │ gzip: 288.44 kB
+dist/assets/index-tpqv1mwm.css              76.34 kB │ gzip:  14.50 kB
+dist/assets/NotFoundView-Cf9-4zxN.js         0.57 kB │ gzip:   0.39 kB
+dist/assets/ErrorNotice-D4tkYnI6.js          0.81 kB │ gzip:   0.50 kB
+dist/assets/WorkspaceView-C1x8XyKB.js        0.83 kB │ gzip:   0.53 kB
+dist/assets/ProfileView-BrknlHk0.js          2.16 kB │ gzip:   1.15 kB
+dist/assets/domain-CMFdGFQo.js               2.20 kB │ gzip:   1.32 kB
+dist/assets/PwaView-MeA1T_4m.js              2.54 kB │ gzip:   1.29 kB
+dist/assets/NotificationsView-iCvG4E8Z.js    3.81 kB │ gzip:   1.79 kB
+dist/assets/analysis-EajTnUtf.js             5.05 kB │ gzip:   2.24 kB
+dist/assets/AuthView-CBwZNKCe.js            13.75 kB │ gzip:   4.93 kB
+dist/assets/ReportsView-D7nThk_-.js         15.73 kB │ gzip:   5.86 kB
+dist/assets/DraftView-SQ4cTA0u.js           72.60 kB │ gzip:  22.39 kB
+dist/assets/index-DOCX_0xC.js              112.42 kB │ gzip:  44.08 kB
+✓ built in 1.34s

@@ -7,6 +7,7 @@ export const router = createRouter({history:createWebHistory(), routes:[
   {path:'/reports', component:()=>import('./views/ReportsView.vue'), meta:{private:true, reporter:true}},
   {path:'/reports/:id', component:()=>import('./views/DraftView.vue'), meta:{private:true, reporter:true}},
   {path:'/profile', component:()=>import('./views/ProfileView.vue'), meta:{private:true}},
+  {path:'/notifications', component:()=>import('./views/NotificationsView.vue'), meta:{private:true}},
   {path:'/workspace', component:()=>import('./views/WorkspaceView.vue'), meta:{private:true}},
   {path:'/pwa', component:()=>import('./views/PwaView.vue')},
   {path:'/:pathMatch(.*)*', component:()=>import('./views/NotFoundView.vue')}

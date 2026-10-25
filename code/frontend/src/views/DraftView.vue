@@ -1,67 +1,150 @@
 <script setup>
-import { computed, onBeforeUnmount, ref, watch } from 'vue';
+import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { api, ApiError } from '../api';
-import {analysisRequests, readStoredAnalysis, requestGuidance, requiresStoredState} from '../recovery';
+import {reportRequests, readStoredReportAction, reportRequestGuidance, requestAction, requiresStoredState} from '../recovery';
 import { online } from '../network';
 import { validateText, validateFile, validateBundle, usesGemini, paginationPath, label, date, size, textLength } from '../domain';
 import ErrorNotice from '../components/ErrorNotice.vue';
 import AudioRecorder from '../components/AudioRecorder.vue';
-import AnalysisResult from '../components/AnalysisResult.vue';
+import ReportReview from '../components/ReportReview.vue';
+import VersionHistory from '../components/VersionHistory.vue';
+import AppIcon from '../components/AppIcon.vue';
+import ResponsibleReporting from '../components/ResponsibleReporting.vue';
+import ReportSummary from '../components/ReportSummary.vue';
+import ReportStatus from '../components/ReportStatus.vue';
+import { reportStatus } from '../report-list';
+import { reportStageAccess } from '../report-flow';
+import { reviewState } from '../review';
+import { defaultEvidence, useSavedEvidence, sameEvidence, uploadProblem, analyseSavedEvidence } from '../evidence';
 const route=useRoute();const router=useRouter();
 const detail=ref(null);const evidence=ref([]);const count=ref(0);const next=ref(null);const selected=ref([]);
 const text=ref('');const audio=ref(null);const images=ref([]);const preview=ref({});
 const busy=ref(false);const loading=ref(false);const analysing=ref(false);const error=ref(null);const message=ref('');
 const unknown=ref(false);const consent=ref(false);const requestRows=ref([]);
+const tab=ref('input'),tabChosen=ref(false),reviewBusy=ref(false);
+const editingText=ref(false),sourceChosen=ref(false);
+const advancedCardId=ref(null),reviewEditing=ref(false),navigationMessage=ref('');
+const savedReceipt=ref(null),evidencePanel=ref(null),receiptPanel=ref(null),inputPanel=ref(null),noticeRegion=ref(null),stageHeading=ref(null);
 const requestNext=ref(null);const selectedRequest=ref(null);const recoveredRun=ref(null);const includeExpired=ref(false);
 const isNew=computed(()=>route.params.id==='new');
 const report=computed(()=>detail.value?.report);
 const active=computed(()=>detail.value?.active_bundle);
 const editable=computed(()=>report.value?.workflow_status==='NOT_SUBMITTED');
 const held=computed(()=>['RUNNING','UNKNOWN'].includes(detail.value?.latest_run?.status));
-const locked=computed(()=>busy.value||loading.value||analysing.value||unknown.value||!online.value);
+const locked=computed(()=>busy.value||loading.value||analysing.value||reviewBusy.value||unknown.value||!online.value);
 const selectedItems=computed(()=>{const known=new Map(evidence.value.map(x=>[x.id,x]));for(const x of active.value?.items||[])known.set(x.evidence.id,x.evidence);return selected.value.map(id=>known.get(id)).filter(Boolean);});
-const selectionSaved=computed(()=>{const ids=active.value?.items.map(x=>x.evidence.id)||[];return ids.length===selected.value.length&&ids.every((id,i)=>id===selected.value[i]);});
-const external=computed(()=>usesGemini((active.value?.items||[]).map(x=>x.evidence)));
+const selectionSaved=computed(()=>Boolean(active.value)&&sameEvidence(active.value.items,selected.value));
+const selectionProblem=computed(()=>validateBundle(selectedItems.value));
+const currentText=computed(()=>selectedItems.value.find(item=>item.type==='TEXT'));
+const currentAudio=computed(()=>selectedItems.value.find(item=>item.type==='AUDIO'));
+const archive=computed(()=>evidence.value.filter(item=>!selected.value.includes(item.id)));
+const pendingInput=computed(()=>Boolean(editingText.value||text.value.trim()||audio.value||images.value.length||next.value||(active.value&&!selectionSaved.value)));
+const external=computed(()=>usesGemini(selectedItems.value));
+const stageAccess=computed(()=>reportStageAccess(detail.value,{pendingInput:pendingInput.value,editingReview:reviewEditing.value,advancedCardId:advancedCardId.value}));
 const audioUrl=ref(null);
 watch(audio, value=>{if(audioUrl.value)URL.revokeObjectURL(audioUrl.value);audioUrl.value=value?URL.createObjectURL(value):null;});
 function releasePreviews(){for(const value of Object.values(preview.value))URL.revokeObjectURL(value);preview.value={};}
 onBeforeUnmount(()=>{releasePreviews();if(audioUrl.value)URL.revokeObjectURL(audioUrl.value);});
 function addEvidence(rows){const known=new Map(evidence.value.map(x=>[x.id,x]));for(const item of rows)known.set(item.id,item);evidence.value=Array.from(known.values());}
+function defaultSources(){if(!sourceChosen.value)selected.value=defaultEvidence(evidence.value,active.value).map(item=>item.id);}
+function useSource(item){if(item.type==='IMAGE'&&!selected.value.includes(item.id)&&selectedItems.value.filter(row=>row.type==='IMAGE').length>=3){error.value=new ApiError('Maksimal tiga gambar aktif. Keluarkan salah satu gambar dari analisis sebelum menambahkan gambar lain.','INVALID_PAYLOAD');return;}selected.value=useSavedEvidence(selectedItems.value,item).map(row=>row.id);sourceChosen.value=true;consent.value=false;savedReceipt.value=null;}
+function removeSource(item){selected.value=selected.value.filter(id=>id!==item.id);sourceChosen.value=true;consent.value=false;savedReceipt.value=null;}
+function editText(){text.value=currentText.value.text_content;editingText.value=true;savedReceipt.value=null;}
+function cancelText(){text.value='';editingText.value=false;}
+async function focusArea(element,{alignTop=false}={}){
+  await nextTick();
+  if(!element?.isConnected)return;
+  const box=element.getBoundingClientRect();
+  if(alignTop||box.top<12||box.top>window.innerHeight-120)element.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});
+  element.focus({preventScroll:true});
+}
+function chooseTab(value){
+  if(value==='review'&&!stageAccess.value.review){navigationMessage.value=stageAccess.value.reviewReason;return false;}
+  if(value==='confirm'&&!stageAccess.value.confirm){navigationMessage.value=stageAccess.value.confirmReason;return false;}
+  const changed=tab.value!==value;
+  tab.value=value;tabChosen.value=true;navigationMessage.value='';
+  if(changed)nextTick(()=>focusArea(stageHeading.value));
+  return true;
+}
+function navigateReview(value){
+  if(value==='confirm'){
+    const state=reviewState(detail.value);
+    if(!state.current||state.nonEvent||pendingInput.value||reviewEditing.value||locked.value)return;
+    advancedCardId.value=detail.value.current_card.id;
+  }
+  chooseTab(value);
+}
+watch([stageAccess,loading],()=>{
+  if(loading.value||!detail.value)return;
+  if(tab.value==='confirm'&&!stageAccess.value.confirm)tab.value=stageAccess.value.review?'review':'input';
+  if(tab.value==='review'&&!stageAccess.value.review)tab.value='input';
+});
+async function viewEvidence(){await focusArea(evidencePanel.value,{alignTop:true});}
+async function addMoreEvidence(){chooseTab('input');await nextTick();await focusArea(inputPanel.value,{alignTop:true});}
+async function acknowledgeSaved(items,reportId){
+  if(!items.length||report.value?.id!==reportId||tab.value!=='input')return;
+  const label=items[0].type==='TEXT'?'Keterangan tersimpan':items[0].type==='AUDIO'?'Audio tersimpan':items.length+' gambar tersimpan';
+  savedReceipt.value={ids:items.map(item=>item.id),label,partial:Boolean(error.value)};
+  await nextTick();await focusArea(evidencePanel.value,{alignTop:true});receiptPanel.value?.focus({preventScroll:true});
+}
+function applyReviewedDetail(value){
+  detail.value=value;unknown.value=false;
+  if(value.report.submitted_at){releasePreviews();evidence.value=(value.official_bundle?.items||[]).map(x=>x.evidence);count.value=evidence.value.length;next.value=null;selected.value=evidence.value.map(x=>x.id);}
+}
 async function load(){
   error.value=null;loading.value=true;requestRows.value=[];requestNext.value=null;selectedRequest.value=null;recoveredRun.value=null;releasePreviews();consent.value=false;
   try{
     if(isNew.value){detail.value=null;evidence.value=[];selected.value=[];return;}
     detail.value=(await api('reports/'+route.params.id+'/')).data;
-    selected.value=(detail.value.active_bundle?.items||[]).map(x=>x.evidence.id);
+    sourceChosen.value=false;selected.value=(detail.value.active_bundle?.items||[]).map(x=>x.evidence.id);
     evidence.value=[];count.value=0;next.value=null;
-    if(editable.value){const result=await api('reports/'+route.params.id+'/evidence/');evidence.value=result.results;count.value=result.count;next.value=result.next;}
+    if(editable.value){const result=await api('reports/'+route.params.id+'/evidence/');evidence.value=result.results;count.value=result.count;next.value=result.next;defaultSources();}
     else{evidence.value=(detail.value.official_bundle?.items||detail.value.active_bundle?.items||[]).map(x=>x.evidence);count.value=evidence.value.length;}
     unknown.value=false;
+    if(!tabChosen.value)tab.value=stageAccess.value.confirm?'confirm':stageAccess.value.review?'review':'input';
   }catch(e){error.value=e;}finally{loading.value=false;}
 }
-watch(()=>route.params.id,()=>{text.value='';audio.value=null;images.value=[];message.value='';load();},{immediate:true});
+watch(()=>route.params.id,()=>{text.value='';editingText.value=false;audio.value=null;images.value=[];message.value='';savedReceipt.value=null;advancedCardId.value=null;reviewEditing.value=false;navigationMessage.value='';tabChosen.value=false;tab.value='input';load();},{immediate:true});
 async function create(){busy.value=true;error.value=null;try{const result=await api('reports/',{method:'POST',body:{},key:crypto.randomUUID()});await router.replace('/reports/'+result.data.report.id);}catch(e){fail(e);}finally{busy.value=false;}}
 function fail(e){error.value=e;if(requiresStoredState(e))unknown.value=true;}
-async function more(){loading.value=true;error.value=null;try{const result=await api(paginationPath(next.value));addEvidence(result.results);count.value=result.count;next.value=result.next;}catch(e){fail(e);}finally{loading.value=false;}}
+async function readEvidencePage(){const result=await api(paginationPath(next.value));addEvidence(result.results);count.value=result.count;next.value=result.next;defaultSources();}
+async function more(){loading.value=true;error.value=null;try{await readEvidencePage();}catch(e){fail(e);}finally{loading.value=false;}}
 async function upload(kind,value){
+  if(next.value)throw new ApiError('Baca semua bukti tersimpan terlebih dahulu agar sumber analisis lengkap.','INVALID_PAYLOAD');
   const problem=kind==='TEXT'?validateText(value):validateFile(value,kind);
   if(problem)throw new ApiError(problem,'INVALID_PAYLOAD');
+  const capacity=uploadProblem(selectedItems.value,kind,[value]);
+  if(capacity)throw new ApiError(capacity,'INVALID_PAYLOAD');
   if(kind==='IMAGE'&&window.createImageBitmap){let bitmap;try{bitmap=await createImageBitmap(value);if(bitmap.width*bitmap.height>12_000_000)throw new ApiError('Gambar maksimal 12 megapiksel.','INVALID_PAYLOAD');}finally{bitmap?.close();}}
   const body=new FormData();body.append('type',kind);body.append('expected_revision',String(report.value.revision));
   body.append(kind==='TEXT'?'text_content':'file',value);
   const result=await api('reports/'+report.value.id+'/evidence/',{method:'POST',body,key:crypto.randomUUID()});
-  detail.value.report=result.data.report;addEvidence([result.data.object]);count.value++;message.value='Bukti tersimpan privat. Pilih bukti di panel untuk membentuk bundle.';
+  detail.value.report=result.data.report;addEvidence([result.data.object]);count.value++;useSource(result.data.object);return result.data.object;
 }
-async function saveText(){busy.value=true;error.value=null;message.value='';try{await upload('TEXT',text.value);text.value='';}catch(e){fail(e);}finally{busy.value=false;}}
-async function saveAudio(){busy.value=true;error.value=null;message.value='';try{await upload('AUDIO',audio.value);audio.value=null;}catch(e){fail(e);}finally{busy.value=false;}}
-async function saveImages(event){busy.value=true;error.value=null;message.value='';try{if(!images.value.length)throw new ApiError('Pilih gambar terlebih dahulu.','INVALID_PAYLOAD');for(const file of images.value)await upload('IMAGE',file);}catch(e){fail(e);}finally{busy.value=false;images.value=[];event.target.reset();}}
-async function bundle(){
-  error.value=null;message.value='';const problem=validateBundle(selectedItems.value);
-  if(problem){error.value=new ApiError(problem,'INVALID_PAYLOAD');return;}
-  busy.value=true;
-  try{await api('reports/'+report.value.id+'/bundles/',{method:'POST',body:{evidence_ids:selected.value,expected_revision:report.value.revision},key:crypto.randomUUID()});await load();message.value='Bundle tersimpan. Sumber analisis mengikuti pilihan bukti pada versi ini.';}
-  catch(e){fail(e);}finally{busy.value=false;}
+async function saveText(){
+  const saved=[],reportId=report.value.id;
+  busy.value=true;error.value=null;message.value='';savedReceipt.value=null;
+  try{
+    if(currentText.value?.text_content===text.value){message.value='Keterangan sama dengan versi tersimpan.';return;}
+    saved.push(await upload('TEXT',text.value));text.value='';editingText.value=false;
+  }catch(e){fail(e);}finally{busy.value=false;if(saved.length)await acknowledgeSaved(saved,reportId);else if(error.value||message.value)await focusArea(noticeRegion.value);}
+}
+async function saveAudio(event){
+  const saved=[],reportId=report.value.id;
+  busy.value=true;error.value=null;message.value='';savedReceipt.value=null;
+  try{saved.push(await upload('AUDIO',audio.value));audio.value=null;event.target.reset();}
+  catch(e){fail(e);}finally{busy.value=false;if(saved.length)await acknowledgeSaved(saved,reportId);else if(error.value)await focusArea(noticeRegion.value);}
+}
+async function saveImages(event){
+  const saved=[],reportId=report.value.id;
+  busy.value=true;error.value=null;message.value='';savedReceipt.value=null;
+  try{
+    if(!images.value.length)throw new ApiError('Pilih gambar terlebih dahulu.','INVALID_PAYLOAD');
+    const problem=uploadProblem(selectedItems.value,'IMAGE',images.value)||images.value.map(file=>validateFile(file,'IMAGE')).find(Boolean);
+    if(problem)throw new ApiError(problem,'INVALID_PAYLOAD');
+    for(const file of images.value)saved.push(await upload('IMAGE',file));
+  }catch(e){fail(e);}finally{busy.value=false;images.value=[];event.target.reset();if(saved.length)await acknowledgeSaved(saved,reportId);else if(error.value)await focusArea(noticeRegion.value);}
 }
 async function showMedia(item){
   error.value=null;if(preview.value[item.id])return;
@@ -69,64 +152,117 @@ async function showMedia(item){
   catch(e){fail(e);}
 }
 async function analyse(){
-  error.value=null;message.value='';
-  if(text.value.trim()||audio.value||images.value.length){error.value=new ApiError('Masih ada input yang belum disimpan. Simpan bukti atau kosongkan input sebelum analisis.','INVALID_PAYLOAD');return;}
-  if(!active.value||!selectionSaved.value){error.value=new ApiError('Simpan pilihan bukti menjadi bundle terlebih dahulu.','INVALID_PAYLOAD');return;}
-  if(external.value&&!consent.value){error.value=new ApiError('Baca informasi pemrosesan eksternal dan centang pernyataan sebelum melanjutkan.','INVALID_PAYLOAD');return;}
+  error.value=null;message.value='';savedReceipt.value=null;
+  if(editingText.value||text.value.trim()||audio.value||images.value.length){error.value=new ApiError('Masih ada input yang belum disimpan. Simpan bukti atau kosongkan input sebelum analisis.','INVALID_PAYLOAD');return;}
   analysing.value=true;
   try{
-    await api('reports/'+report.value.id+'/analyses/',{method:'POST',key:crypto.randomUUID(),body:{mode:'EVIDENCE',bundle_id:active.value.id,input_revision:report.value.input_revision,expected_revision:report.value.revision}});
-    await load();message.value='Hasil analisis sudah dibaca kembali dari server. Laporan belum dikirim resmi.';
-  }catch(e){if(e.status===404||e.status===405)e=new ApiError('Layanan analisis belum tersedia. Bukti dan bundle tetap tersimpan; coba kembali setelah layanan siap.','AI_CONFIGURATION_NOT_READY',503);fail(e);}
+    if(next.value){while(next.value)await readEvidencePage();consent.value=false;message.value='Semua bukti sudah dibaca. Periksa bukti aktif dan informasi pemrosesan sebelum menekan Analisis laporan.';return;}
+    await analyseSavedEvidence(api,detail.value,selectedItems.value,consent.value,value=>{detail.value=value;});
+    await load();chooseTab('review');message.value='Hasil analisis sudah dibaca kembali dari server. Laporan belum dikirim resmi.';
+  }catch(e){if(e.status===404||e.status===405)e=new ApiError('Layanan analisis belum tersedia. Bukti dan bundle tetap tersimpan; coba kembali setelah layanan siap.','AI_CONFIGURATION_NOT_READY',503);fail(e);await focusArea(noticeRegion.value);}
   finally{analysing.value=false;}
 }
 async function checkRequests(){
   loading.value=true;error.value=null;
-  try{await load();loading.value=true;const result=await api('requests/?report_id='+route.params.id+'&include_expired='+includeExpired.value);requestRows.value=analysisRequests(result.results,route.params.id);requestNext.value=result.next;
-    if(!requestRows.value.length)message.value=requestNext.value?'Belum ada request analisis pada halaman ini. Muat riwayat berikutnya untuk mencari request terdahulu.':'Tidak ada request analisis yang sesuai. Periksa sumber dan hasil tersimpan sebelum tindakan baru.';
+  try{await load();loading.value=true;const result=await api('requests/?report_id='+route.params.id+'&include_expired='+includeExpired.value);requestRows.value=reportRequests(result.results,route.params.id);requestNext.value=result.next;
+    if(!requestRows.value.length)message.value=requestNext.value?'Belum ada permintaan pada halaman ini. Muat riwayat berikutnya untuk mencari tindakan terdahulu.':'Tidak ada permintaan yang sesuai. Periksa sumber dan hasil tersimpan sebelum tindakan baru.';
   }catch(e){if(e.status===404)e=new ApiError('Pembacaan request analisis belum tersedia. Bukti dapat diperiksa melalui daftar sumber tersimpan.','AI_CONFIGURATION_NOT_READY',503);fail(e);}finally{loading.value=false;}
 }
 async function moreRequests(){
   loading.value=true;error.value=null;
-  try{const result=await api(paginationPath(requestNext.value));const rows=analysisRequests(result.results,route.params.id);
+  try{const result=await api(paginationPath(requestNext.value));const rows=reportRequests(result.results,route.params.id);
     requestRows.value=[...new Map([...requestRows.value,...rows].map(item=>[item.key,item])).values()];requestNext.value=result.next;
   }catch(e){fail(e);}finally{loading.value=false;}
 }
 async function readRequest(key){
   loading.value=true;error.value=null;message.value='';selectedRequest.value=null;recoveredRun.value=null;
-  try{const result=await readStoredAnalysis(api,route.params.id,key);detail.value=result.detail;selectedRequest.value=result.request;recoveredRun.value=result.run;unknown.value=false;
-    message.value=requestGuidance(result.request.state);
+  try{const result=await readStoredReportAction(api,route.params.id,key);applyReviewedDetail(result.detail);selectedRequest.value=result.request;recoveredRun.value=result.run;unknown.value=false;
+    message.value=reportRequestGuidance(result.request);
   }catch(e){fail(e);}finally{loading.value=false;}
 }
 </script>
 <template>
-  <div class="page-heading"><div><div class="eyebrow">LAPORAN PRIVAT</div><h1>{{ isNew?'Buat laporan':'Draft & bukti laporan' }}</h1><p class="subtitle">Simpan sumber asli, pilih bukti yang relevan, lalu minta analisis.</p></div><RouterLink class="button" to="/reports">← Daftar laporan</RouterLink></div>
-  <ErrorNotice :error="error" /><div v-if="message" class="notice success" role="status">{{ message }}</div>
+  <div class="page-heading report-page-heading"><div><div class="eyebrow">LAPORAN PRIVAT</div><h1 ref="stageHeading" tabindex="-1">{{ isNew?'Buat laporan':report?.submitted_at?'Detail laporan':tab==='confirm'?'Konfirmasi & kirim':tab==='review'?'Periksa laporan':'Draft & bukti laporan' }}</h1><p class="subtitle">Periksa sumber dan hasil, lalu konfirmasi sebelum mengirim.</p></div><RouterLink class="report-back-link" to="/reports">← Daftar laporan</RouterLink></div>
+  <div ref="noticeRegion" class="report-notices" tabindex="-1"><ErrorNotice :error="error" /><div v-if="message" class="notice success" role="status">{{ message }}</div></div>
   <div v-if="unknown" class="notice warning">Hasil tindakan terakhir belum pasti. Muat kembali draft dan periksa bukti tersimpan sebelum mengulang.<button class="small" @click="load">Baca draft tersimpan</button></div>
-  <div v-if="isNew" class="card start-draft"><div class="eyebrow">LANGKAH PERTAMA</div><h2>Mulai dengan draft online</h2><p>Kamu dapat menggunakan teks saja, rekaman suara, gambar, atau kombinasinya. Cakupan kejadian: banjir, gempa bumi, kebakaran, dan kecelakaan.</p><button class="primary" :disabled="locked" @click="create">Buat draft kosong</button><p class="fine">Gunakan bukti milikmu. Hindari identitas korban, nomor kontak, atau alamat privat yang tidak diperlukan.</p></div>
+  <div v-if="isNew" class="create-layout">
+    <div>
+      <section class="card start-draft">
+        <span class="start-emblem"><AppIcon name="file" :size="28" /></span>
+        <h2>Siapkan laporan Anda</h2>
+        <p>Simpan teks, audio, gambar, atau kombinasinya sebagai draft. Mulai dari informasi yang Anda ketahui, lalu periksa hasil sebelum pengiriman resmi.</p>
+        <button class="primary" :disabled="locked" @click="create"><AppIcon name="plus" :size="17" />{{ busy?'Membuat draft…':'Buat draft' }}</button>
+        <div class="channel-list"><span class="channel"><AppIcon name="file" :size="13" />Teks</span><span class="channel"><AppIcon name="audio" :size="13" />Audio</span><span class="channel"><AppIcon name="image" :size="13" />PNG / JPEG</span></div>
+      </section>
+      <h2 class="flow-heading">Alur laporan</h2>
+      <div class="flow-grid">
+        <section class="card flow-card"><span>01</span><h3>Simpan bukti</h3><p>Gunakan minimal satu kanal asli yang valid. Bukti aktif dipakai bersama saat analisis.</p></section>
+        <section class="card flow-card"><span>02</span><h3>Periksa hasil</h3><p>Bandingkan Incident Card dan narasi dengan sumber. Koreksi jika diperlukan.</p></section>
+        <section class="card flow-card"><span>03</span><h3>Konfirmasi & kirim</h3><p>Konfirmasi versi yang tepat, lalu kirim melalui tindakan terpisah.</p></section>
+      </div>
+    </div>
+    <aside class="support-stack" aria-label="Panduan pelaporan"><ResponsibleReporting /><div class="notice"><strong>Laporan tetap privat</strong><p>Pengiriman kepada Operator belum berarti laporan diterbitkan ke Portal Publik.</p></div><p class="fine">Cakupan kejadian: banjir, gempa bumi, kebakaran dan kecelakaan.</p></aside>
+  </div>
   <div v-else-if="loading && !detail" class="card empty" role="status">Membaca draft…</div>
   <template v-if="detail && !isNew">
-    <div class="report-meta"><span>#{{ report.id.slice(0,8) }}</span><span class="badge" :class="report.preparation_status.toLowerCase()">{{ label(report.preparation_status) }}</span><span>{{ label(report.workflow_status) }}</span><button class="small" :disabled="busy||analysing||loading" @click="load">Muat ulang draft</button></div>
-    <div class="steps" aria-label="Tahap laporan"><span class="current"><b>1</b> Simpan bukti</span><span :class="{current:active}"><b>2</b> Pilih & bentuk bundle</span><span><b>3</b> Analisis</span></div>
-    <div v-if="!editable" class="notice">Laporan sudah dikirim dan sumbernya terkunci. Bukti serta hasil tetap dapat dibaca sesuai hak akses.</div>
-    <div class="draft-grid">
-      <section v-if="editable" class="card input-panel"><div class="section-heading"><div><h2>Informasi kejadian</h2><p class="muted">Pilih kanal sesuai kondisi dan bukti yang tersedia.</p></div><span class="badge">Privat</span></div>
-        <form method="post" action="#" @submit.prevent="saveText"><fieldset :disabled="locked"><legend>01 · Keterangan teks</legend><label for="incident-text">Ceritakan kejadian yang kamu ketahui</label><textarea id="incident-text" v-model="text" name="text_content" rows="5" aria-describedby="text-help" placeholder="Contoh: air menggenangi jalan di…" required></textarea><div id="text-help" class="field-help"><span>Jangan menambahkan informasi yang belum diketahui.</span><span>{{ textLength(text) }}/5.000</span></div><button class="secondary" type="submit">Simpan bukti teks</button></fieldset></form>
-        <form method="post" action="#" @submit.prevent="saveAudio"><fieldset :disabled="locked"><legend>02 · Rekaman suara</legend><label for="audio-file">Unggah satu audio</label><input id="audio-file" name="audio" type="file" accept=".wav,.mp3,.m4a,.mp4,.webm,audio/wav,audio/mpeg,audio/mp4,audio/webm" @change="audio=$event.target.files[0]||null"><small>WAV PCM, MP3, WebM/Opus, atau M4A/MP4-AAC tanpa video dan cover gambar · maksimal 10 MiB dan dua menit.</small><AudioRecorder :disabled="locked" @recorded="audio=$event"/><p v-if="audio" class="file-name">{{ audio.name }} · {{ size(audio.size) }}</p><audio v-if="audioUrl" :src="audioUrl" controls preload="metadata" aria-label="Dengarkan rekaman sebelum disimpan"></audio><button class="secondary" type="submit">Simpan bukti audio</button></fieldset></form>
-        <form method="post" action="#" @submit.prevent="saveImages"><fieldset :disabled="locked"><legend>03 · Gambar kejadian</legend><label for="image-files">Unggah PNG atau JPEG</label><input id="image-files" name="images" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" multiple @change="images=Array.from($event.target.files)"><small>Maksimal 5 MiB dan 12 megapiksel per gambar. Bundle memakai paling banyak tiga gambar.</small><ul v-if="images.length" class="pending-files"><li v-for="file in images" :key="file.name+file.size">{{ file.name }} · {{ size(file.size) }}</li></ul><button class="secondary" type="submit">Simpan bukti gambar</button></fieldset></form>
-        <p class="fine">Unggah menyimpan bukti asli. Mengubah pilihan sumber membuat bundle baru dan mempertahankan bukti serta versi sebelumnya.</p>
+    <div class="report-meta"><span>#{{ report.id.slice(0,8) }}</span><ReportStatus :status="reportStatus(report)" /><details class="report-status-details"><summary>Pemeriksaan & publikasi</summary><div><span>Pemeriksaan: {{ label(report.validation_status) }}</span><span>Publikasi: {{ label(report.publication_status) }}</span></div></details><button class="small" :disabled="busy||analysing||loading||reviewBusy||!online" @click="load"><AppIcon name="refresh" :size="14" />Muat ulang laporan</button></div>
+    <div class="report-navigation">
+      <ol class="report-stepper" aria-label="Tahapan laporan">
+        <li><button :aria-current="tab==='input'?'step':undefined" :disabled="busy||loading||analysing||reviewBusy" @click="chooseTab('input')"><span class="step-number">1</span><span class="step-label"><strong>Simpan bukti</strong><small>Input & sumber analisis</small></span></button></li>
+        <li><button :aria-current="tab==='review'?'step':undefined" :disabled="!stageAccess.review||busy||loading||analysing||reviewBusy" aria-describedby="report-flow-help" @click="chooseTab('review')"><span class="step-number">2</span><span class="step-label"><strong>Periksa hasil</strong><small>{{ stageAccess.review?'Bandingkan & koreksi':'Setelah analisis selesai' }}</small></span><AppIcon v-if="!stageAccess.review" class="step-lock" name="lock" :size="14" /></button></li>
+        <li><button :aria-current="tab==='confirm'?'step':undefined" :disabled="!stageAccess.confirm||busy||loading||analysing||reviewBusy" aria-describedby="report-flow-help" @click="chooseTab('confirm')"><span class="step-number">3</span><span class="step-label"><strong>Konfirmasi & kirim</strong><small>{{ stageAccess.confirm?'Tindakan terpisah':'Setelah periksa hasil' }}</small></span><AppIcon v-if="!stageAccess.confirm" class="step-lock" name="lock" :size="14" /></button></li>
+      </ol>
+      <p id="report-flow-help" class="report-flow-help">{{ navigationMessage||(!stageAccess.review?stageAccess.reviewReason:!stageAccess.confirm?stageAccess.confirmReason:'Bukti, hasil dan versi aktif siap dilanjutkan sesuai tahapan.') }}</p>
+      <button class="history-toggle link" :aria-pressed="tab==='history'" @click="chooseTab('history')"><AppIcon name="history" :size="16" />Versi & riwayat</button>
+    </div>
+    <div v-if="tab==='review'&&!report.submitted_at&&detail.current_card" class="notice">Hasil tersimpan. Bandingkan dengan sumber, lalu lanjutkan ke <strong>Konfirmasi & kirim</strong>.</div>
+    <div v-if="!editable&&tab==='input'" class="notice">Laporan sudah dikirim dan sumbernya terkunci. Bukti serta hasil tetap dapat dibaca sesuai hak akses.</div>
+    <section v-if="editable&&tab==='input'" class="evidence-progress" aria-label="Kemajuan bukti laporan">
+      <div class="evidence-progress-copy"><AppIcon :name="selectedItems.length?'circle-check':'file'" :size="21" /><div><strong>{{ selectedItems.length?selectedItems.length+' bukti aktif tersedia':'Mulai dengan menyimpan bukti' }}</strong><p>{{ selectedItems.length?'Tambahkan kanal lain atau periksa bukti aktif sebelum analisis.':'Simpan teks, audio atau gambar. Setelah berhasil, Anda diarahkan ke bukti yang tersimpan.' }}</p></div></div>
+      <button :disabled="busy||loading||analysing||reviewBusy||!selectedItems.length" @click="viewEvidence"><AppIcon name="reports" :size="15" />Lihat bukti aktif</button>
+    </section>
+    <div v-show="tab==='input'" class="draft-grid">
+      <section v-if="editable" ref="inputPanel" class="card input-panel" tabindex="-1" aria-label="Formulir informasi dan bukti"><div class="section-heading"><div><h2>Informasi kejadian</h2><p class="muted">Pilih kanal sesuai kondisi dan bukti yang tersedia.</p></div><span class="badge">Privat</span></div>
+        <p v-if="next" class="notice warning">Baca semua bukti tersimpan dahulu melalui tombol di panel bukti agar sumber laporan lengkap.</p>
+        <form method="post" action="#" @submit.prevent="saveText">
+          <fieldset :disabled="locked||Boolean(next)">
+            <legend><AppIcon name="file" :size="16" /> Keterangan teks</legend>
+            <template v-if="currentText&&!editingText">
+              <p class="evidence-text">{{ currentText.text_content }}</p>
+              <p class="fine">Keterangan sudah tersimpan. Laporan memakai satu keterangan aktif; perubahan menyimpan versi baru dan mempertahankan teks sebelumnya.</p>
+              <button class="secondary" type="button" @click="editText">Ubah keterangan</button>
+            </template>
+            <template v-else>
+              <label for="incident-text">Ceritakan kejadian yang kamu ketahui</label>
+              <textarea id="incident-text" v-model="text" name="text_content" rows="5" aria-describedby="text-help" placeholder="Contoh: air menggenangi jalan di…" required></textarea>
+              <div id="text-help" class="field-help"><span>Jangan menambahkan informasi yang belum diketahui.</span><span>{{ textLength(text) }}/5.000</span></div>
+              <div class="review-actions"><button class="secondary" type="submit">{{ editingText?'Simpan perubahan keterangan':'Simpan bukti teks' }}</button><button v-if="editingText" type="button" @click="cancelText">Batal ubah keterangan</button></div>
+            </template>
+          </fieldset>
+        </form>
+        <form method="post" action="#" @submit.prevent="saveAudio"><fieldset :disabled="locked||Boolean(next)"><legend><AppIcon name="audio" :size="16" /> Rekaman suara</legend><p v-if="currentAudio" class="fine">Audio aktif: {{ currentAudio.original_name }}. Audio baru menggantikan sumber aktif; rekaman sebelumnya tetap tersimpan di arsip.</p><label for="audio-file">{{ currentAudio?'Ganti audio aktif':'Unggah satu audio' }}</label><input id="audio-file" name="audio" type="file" accept=".wav,.mp3,.m4a,.mp4,.webm,audio/wav,audio/mpeg,audio/mp4,audio/webm" @change="audio=$event.target.files[0]||null"><small>WAV PCM, MP3, WebM/Opus, atau M4A/MP4-AAC tanpa video dan cover gambar · maksimal 10 MiB dan dua menit.</small><AudioRecorder :disabled="locked||Boolean(next)" @recorded="audio=$event"/><p v-if="audio" class="file-name">{{ audio.name }} · {{ size(audio.size) }}</p><audio v-if="audioUrl" :src="audioUrl" controls preload="metadata" aria-label="Dengarkan rekaman sebelum disimpan"></audio><button class="secondary" type="submit">{{ currentAudio?'Simpan pengganti audio':'Simpan bukti audio' }}</button></fieldset></form>
+        <form method="post" action="#" @submit.prevent="saveImages"><fieldset :disabled="locked||Boolean(next)"><legend><AppIcon name="image" :size="16" /> Gambar kejadian</legend><label for="image-files">Unggah PNG atau JPEG</label><input id="image-files" name="images" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" multiple @change="images=Array.from($event.target.files)"><small>Maksimal 5 MiB dan 12 megapiksel per gambar; maksimal tiga gambar aktif. Keluarkan gambar dari analisis jika perlu menggantinya.</small><ul v-if="images.length" class="pending-files"><li v-for="file in images" :key="file.name">{{ file.name }} · {{ size(file.size) }}</li></ul><button class="secondary" type="submit">Simpan bukti gambar</button></fieldset></form>
+        <p class="fine">Bukti yang disimpan otomatis masuk ke sumber analisis. Gunakan Ubah keterangan atau pengganti audio untuk mengganti kanal yang sama. Bukti asli dan versi sebelumnya tetap tersedia.</p>
       </section>
-      <section class="card sources-panel"><div class="section-heading"><div><h2>Bukti tersimpan</h2><p class="muted">{{ evidence.length }} dari {{ count }} bukti · pilih sumber analisis</p></div><span class="badge">{{ selected.length }} dipilih</span></div>
-        <div v-if="!evidence.length" class="empty"><span class="empty-icon" aria-hidden="true">◇</span><h3>Belum ada bukti</h3><p>Simpan keterangan teks, audio, atau gambar terlebih dahulu.</p></div>
-        <ul v-else class="evidence-list"><li v-for="item in evidence" :key="item.id" class="evidence-item"><div class="evidence-top"><label class="check-label"><input v-model="selected" type="checkbox" :value="item.id" :disabled="locked||!editable"><strong>{{ item.type==='TEXT'?'Keterangan teks':item.original_name }}</strong></label><span class="channel-tag">{{ item.type }}</span></div><p v-if="item.type==='TEXT'" class="evidence-text">{{ item.text_content }}</p><div class="evidence-meta">{{ size(item.byte_size) }} · {{ date(item.created_at) }}</div><template v-if="item.type!=='TEXT'"><button class="link" :disabled="!online" @click="showMedia(item)">{{ preview[item.id]?'Media telah dibuka':item.type==='IMAGE'?'Buka gambar privat':'Dengarkan audio privat' }}</button><img v-if="preview[item.id]&&item.type==='IMAGE'" class="evidence-image" :src="preview[item.id]" :alt="'Bukti gambar: '+item.original_name"><audio v-if="preview[item.id]&&item.type==='AUDIO'" :src="preview[item.id]" controls preload="metadata" :aria-label="'Bukti audio: '+item.original_name"></audio></template></li></ul>
-        <button v-if="next" class="full" :disabled="loading||!online" @click="more">{{ loading?'Membaca…':'Muat bukti berikutnya' }}</button>
-        <template v-if="editable"><div class="bundle-summary"><strong>{{ active?'Bundle aktif · versi '+active.version_number:'Bundle belum dibentuk' }}</strong><p>Pilih maksimal satu teks, satu audio, dan tiga gambar. Total maksimal 25 MiB.</p><button class="primary full" :disabled="locked" @click="bundle">{{ selectionSaved&&active?'Simpan sebagai bundle baru':'Simpan pilihan sebagai bundle' }}</button></div><div v-if="active" class="analysis-actions"><h3>Siap dianalisis</h3><p v-if="!selectionSaved" class="text-error">Pilihan berubah. Simpan bundle sebelum analisis.</p><p v-if="external" class="fine">Rute ini memakai Gemini: teks, transkrip, atau gambar yang relevan akan diproses layanan AI eksternal. Audio asli diproses lokal; data akun dan kredensial tidak dikirim.</p><p v-else class="fine">Kanal tunggal teks atau audio diproses melalui jalur lokal tanpa Gemini.</p><label v-if="external" class="check-label consent"><input v-model="consent" type="checkbox" :disabled="locked">Saya telah membaca informasi pemrosesan eksternal.</label><button class="primary full" :disabled="locked||held||!selectionSaved" @click="analyse">{{ analysing?'Analisis sedang berjalan…':'Analisis bundle aktif' }}</button><p v-if="held" class="fine">{{ label(detail.latest_run.status) }}. Analisis baru ditahan sampai keadaan proses dipastikan.</p><button class="link" :disabled="busy||analysing||loading||!online" @click="checkRequests">Periksa status dan hasil tersimpan</button></div></template>
-      </section>
+      <div class="support-stack"><section ref="evidencePanel" class="card sources-panel" tabindex="-1" aria-labelledby="active-evidence-heading">
+        <div class="section-heading"><div><h2 id="active-evidence-heading">{{ editable?'Bukti aktif':'Bukti resmi' }}</h2><p class="muted">{{ selectedItems.length }} bukti aktif · otomatis digunakan untuk analisis</p></div><span class="badge">{{ selectedItems.length }} aktif</span></div>
+        <div v-if="savedReceipt" ref="receiptPanel" class="evidence-receipt" :class="{partial:savedReceipt.partial}" tabindex="-1" role="status"><strong><AppIcon name="check" :size="17" />{{ savedReceipt.label }}</strong><p>{{ savedReceipt.partial?'Sebagian unggahan belum berhasil. Bukti yang sudah tersimpan ditandai di bawah.':'Bukti yang baru disimpan ditandai di bawah dan otomatis dipakai untuk analisis berikutnya.' }}</p><p v-if="savedReceipt.partial&&error">{{ error.message }}</p></div>
+        <div v-if="!selectedItems.length" class="empty"><AppIcon name="image" :size="28" /><h3>Belum ada bukti aktif</h3><p>Simpan keterangan teks, audio, atau gambar terlebih dahulu.</p></div>
+        <ul v-else class="evidence-list"><li v-for="item in selectedItems" :key="item.id" :data-evidence-id="item.id" class="evidence-item" :class="{'just-saved':savedReceipt?.ids.includes(item.id)}"><div class="evidence-top"><strong>{{ item.type==='TEXT'?'Keterangan aktif':item.original_name }}</strong><span class="channel-tag">{{ item.type }}</span></div><p v-if="item.type==='TEXT'" class="evidence-text">{{ item.text_content }}</p><span v-if="savedReceipt?.ids.includes(item.id)" class="evidence-new-label"><AppIcon name="check" :size="12" />Baru disimpan</span><div class="evidence-meta">{{ size(item.byte_size) }} · {{ date(item.created_at) }}</div><template v-if="item.type!=='TEXT'"><button class="link" :disabled="!online" @click="showMedia(item)">{{ preview[item.id]?'Media telah dibuka':item.type==='IMAGE'?'Buka gambar privat':'Dengarkan audio privat' }}</button><img v-if="preview[item.id]&&item.type==='IMAGE'" class="evidence-image" :src="preview[item.id]" :alt="'Bukti gambar: '+item.original_name"><audio v-if="preview[item.id]&&item.type==='AUDIO'" :src="preview[item.id]" controls preload="metadata" :aria-label="'Bukti audio: '+item.original_name"></audio></template><button v-if="editable&&item.type==='IMAGE'" class="link" :disabled="locked||Boolean(next)" @click="removeSource(item)">Keluarkan gambar dari analisis</button></li></ul>
+        <div v-if="editable&&selectedItems.length" class="evidence-next"><button class="secondary" :disabled="locked||Boolean(next)" @click="addMoreEvidence"><AppIcon name="plus" :size="15" />Tambah bukti lain</button></div>
+        <template v-if="editable">
+          <details v-if="archive.length" class="evidence-archive"><summary>Arsip bukti sebelumnya ({{ archive.length }})</summary><p class="fine">Bukti di arsip tetap tersimpan privat. Menggunakan teks atau audio lama menggantikan kanal aktif yang sama. Perubahan sumber diterapkan saat Analisis laporan ditekan.</p><ul class="evidence-list"><li v-for="item in archive" :key="item.id" class="evidence-item"><strong>{{ item.type==='TEXT'?'Keterangan sebelumnya':item.original_name }}</strong><p v-if="item.type==='TEXT'" class="evidence-text">{{ item.text_content }}</p><div class="evidence-meta">{{ size(item.byte_size) }} · {{ date(item.created_at) }}</div><button :disabled="locked||editingText||Boolean(next)" class="small" @click="useSource(item)">{{ item.type==='TEXT'?'Gunakan keterangan ini':item.type==='AUDIO'?'Gunakan audio ini':'Gunakan gambar ini' }}</button></li></ul></details>
+          <p class="fine">{{ evidence.length }} dari {{ count }} bukti tersimpan telah dibaca. Keterangan/audio lama masuk arsip; semua bukti aktif di atas digunakan bersama.</p>
+          <p v-if="selectionProblem&&selectedItems.length" class="notice warning">{{ selectionProblem }}</p>
+          <div class="analysis-actions"><h3>Analisis laporan</h3><p>Gunakan maksimal satu teks, satu audio, dan tiga gambar; total 25 MiB. Semua bukti aktif di atas diproses bersama. Setelah analisis, periksa dan konfirmasi hasil sebelum mengirim laporan.</p><p v-if="external" class="fine">Rute ini memakai Gemini: teks, transkrip, atau gambar yang relevan akan diproses layanan AI eksternal. Audio asli diproses lokal; data akun dan kredensial tidak dikirim.</p><p v-else-if="selectedItems.length" class="fine">Kanal tunggal teks atau audio diproses melalui jalur lokal tanpa Gemini.</p><label v-if="external&&!next" class="check-label consent"><input v-model="consent" type="checkbox" :disabled="locked">Saya telah membaca informasi pemrosesan eksternal.</label><button class="primary full" :disabled="locked||held||(!next&&Boolean(selectionProblem))" @click="analyse">{{ analysing?'Memproses…':next?'Baca semua bukti sebelum analisis':'Analisis laporan' }}</button><p v-if="held" class="fine">{{ label(detail.latest_run.status) }}. Analisis baru ditahan sampai keadaan proses dipastikan.</p><p v-if="active&&!selectionSaved" class="fine">Bukti aktif berubah. Hasil sebelumnya tetap memiliki sumber lamanya; sumber baru disimpan saat analisis berikutnya.</p><button v-if="detail.current_card" class="secondary full" :disabled="locked||!stageAccess.review" @click="chooseTab('review')">Periksa hasil laporan</button></div>
+        </template>
+      </section><ReportSummary :detail="detail" :source-count="selectedItems.length" /></div>
     </div>
     <div v-if="analysing" class="notice" role="status">Backend sedang memproses sumber. Kamu boleh berpindah fokus selama tab dan request tetap aktif. Jika koneksi terputus, periksa hasil tersimpan sebelum mengulang.</div>
-    <div v-if="active && editable" class="field-help"><label class="check-label"><input v-model="includeExpired" type="checkbox" :disabled="loading||analysing">Sertakan riwayat permintaan yang lebih lama saat memeriksa status</label></div>
-    <div v-if="requestRows.length || requestNext" class="card"><h2>Request analisis tersimpan</h2><p class="muted">Pilih request untuk membaca keadaan dan hasilnya tanpa menjalankan analisis ulang.</p><ul class="request-list"><li v-for="item in requestRows" :key="item.key"><strong>{{ label(item.state) }}</strong> · {{ date(item.created_at) }}<small v-if="item.error_code">{{ item.error_code }}</small><button class="small" :disabled="busy||analysing||loading||!online" @click="readRequest(item.key)">Baca request ini</button></li></ul><button v-if="requestNext" class="full" :disabled="busy||analysing||loading||!online" @click="moreRequests">Muat riwayat berikutnya</button></div>
-    <div v-if="selectedRequest" class="card" role="status"><h2>Keadaan request yang dipilih</h2><p><strong>{{ label(selectedRequest.state) }}</strong> · {{ date(selectedRequest.created_at) }}</p><p>{{ requestGuidance(selectedRequest.state) }}</p><p v-if="selectedRequest.error_code">Kode hasil: {{ selectedRequest.error_code }}</p><p v-if="recoveredRun">Tahap terakhir: {{ label(recoveredRun.stage) }} · {{ label(recoveredRun.status) }}</p><p class="fine">Tampilan Incident Card di bawah mengikuti sumber dan versi draft terbaru.</p></div>
-    <AnalysisResult :detail="detail" />
+    <ReportReview :key="report.id" v-show="tab==='review'||tab==='confirm'" :stage="tab" :detail="detail" :disabled="locked" :pending-input="pendingInput" @updated="applyReviewedDetail" @working="reviewBusy=$event" @navigate="navigateReview" @editing="reviewEditing=$event" />
+    <VersionHistory v-if="tab==='history'" :report-id="report.id" />
+    <section class="request-recovery"><button class="link" :disabled="busy||analysing||loading||reviewBusy||!online" @click="checkRequests">Periksa permintaan dan hasil tersimpan</button><div class="field-help"><label class="check-label"><input v-model="includeExpired" type="checkbox" :disabled="loading||analysing||reviewBusy">Sertakan riwayat permintaan yang lebih lama</label></div>
+    <div v-if="requestRows.length || requestNext" class="card"><h2>Permintaan tersimpan</h2><p class="muted">Baca keadaan analisis, koreksi, konfirmasi atau pengiriman tanpa menjalankan tindakan ulang.</p><ul class="request-list"><li v-for="item in requestRows" :key="item.key"><strong>{{ requestAction(item.scope) }} · {{ label(item.state) }}</strong> · {{ date(item.created_at) }}<small v-if="item.error_code">{{ item.error_code }}</small><button class="small" :disabled="busy||analysing||loading||reviewBusy||!online" @click="readRequest(item.key)">Baca permintaan ini</button></li></ul><button v-if="requestNext" class="full" :disabled="busy||analysing||loading||reviewBusy||!online" @click="moreRequests">Muat riwayat berikutnya</button></div>
+    <div v-if="selectedRequest" class="card" role="status"><h2>Keadaan permintaan yang dipilih</h2><p><strong>{{ requestAction(selectedRequest.scope) }} · {{ label(selectedRequest.state) }}</strong> · {{ date(selectedRequest.created_at) }}</p><p>{{ reportRequestGuidance(selectedRequest) }}</p><p v-if="selectedRequest.error_code">Kode hasil: {{ selectedRequest.error_code }}</p><p v-if="recoveredRun">Tahap terakhir: {{ label(recoveredRun.stage) }} · {{ label(recoveredRun.status) }}</p><p class="fine">Tampilan laporan mengikuti sumber dan versi terbaru.</p></div></section>
   </template>
 </template>
