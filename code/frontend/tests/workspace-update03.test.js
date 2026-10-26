@@ -3,15 +3,15 @@ import assert from 'node:assert/strict';
 import {dashboardCardLink,workspaceQuickView,workspaceReportsPath,operatorStatusFilter,workspaceEffectiveFilters} from '../src/workspace.js';
 const admin={role:'ADMIN',effective_permissions:['monitor_report','assign_report','manage_operator']};
 test('Four Admin cards open their own matching report and account destinations',()=>{
- const expected={official:'/workspace/monitoring?view=official',unassigned:'/workspace/assignments?view=unassigned',operators:'/workspace/operators?status=active',closed:'/workspace/monitoring?view=closed'};
+ const expected={official:'/workspace/monitoring?view=official',unassigned:'/workspace/monitoring?view=unassigned',operators:'/workspace/operators?status=active',closed:'/workspace/monitoring?view=closed'};
  for(const [key,url]of Object.entries(expected))assert.equal(dashboardCardLink(admin,key),url);
 });
 test('Admin shortcut routing uses explicit permissions and does not grant them by role',()=>{
  const monitor={role:'ADMIN',effective_permissions:['monitor_report']},assign={role:'ADMIN',effective_permissions:['assign_report']};
  assert.equal(dashboardCardLink(monitor,'unassigned'),'/workspace/monitoring?view=unassigned');
  assert.equal(dashboardCardLink(monitor,'operators'),null);
- assert.equal(dashboardCardLink(assign,'official'),'/workspace/assignments?view=official');
- assert.equal(dashboardCardLink(assign,'closed'),'/workspace/assignments?view=closed');
+ assert.equal(dashboardCardLink(assign,'official'),'/workspace/monitoring?view=official');
+ assert.equal(dashboardCardLink(assign,'closed'),'/workspace/monitoring?view=closed');
  for(const key of ['official','unassigned','operators','closed']){
   assert.equal(dashboardCardLink({...admin,effective_permissions:[]},key),null);
   assert.equal(dashboardCardLink({...admin,role:'OPERATOR'},key),null);

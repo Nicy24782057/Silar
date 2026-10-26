@@ -5,7 +5,7 @@ import {api} from '../api';
 import {session} from '../session';
 import {date,label} from '../domain';
 import {fieldLabels} from '../analysis';
-import {hasPermission,handlerCan,closeAllowed,decisionAllowed,shortId,workspaceLabel,eventLabels,roleLabel} from '../workspace';
+import {hasPermission,handlerCan,closeAllowed,decisionAllowed,shortId,workspaceLabel,eventLabels,roleLabel,reportTabLocked,adminReportsScope,ADMIN_REPORTS_PATH} from '../workspace';
 import AppIcon from '../components/AppIcon.vue';
 import AppDialog from '../components/AppDialog.vue';
 import ErrorNotice from '../components/ErrorNotice.vue';
@@ -27,13 +27,13 @@ const tabs=computed(()=>[
 ]);
 const canAssign=computed(()=>session.user?.role==='ADMIN'&&hasPermission(session.user,'assign_report')&&!closed.value&&!uncertain.value);
 const reviewOpen=computed(()=>handlerCan(session.user,detail.value,'review_report')&&!detail.value.has_active_candidate&&!['APPROVED','PUBLISHED'].includes(detail.value.report.publication_status));
-const back=computed(()=>session.user?.role==='ADMIN'&&hasPermission(session.user,'monitor_report')?'/workspace/monitoring':'/workspace/assigned');
+const back=computed(()=>adminReportsScope(session.user)?ADMIN_REPORTS_PATH:'/workspace/assigned');
 function show(value){if(value===null||value===undefined||value==='')return 'Belum tersedia';if(Array.isArray(value))return value.length?value.map(v=>typeof v==='object'?JSON.stringify(v):v).join('; '):'Belum tersedia';return typeof value==='object'?JSON.stringify(value):String(value);}
 let generation=0,poll=null;
 async function load({quiet=false}={}){
  const version=++generation,id=route.params.id;
  if(!quiet){busy.value=true;error.value=null;}
- try{const r=await api(`workspace/reports/${id}/`);if(version!==generation)return;detail.value=r.data;if(!tabs.value.some(x=>x[0]===tab.value))tab.value='summary';}
+ try{const r=await api(`workspace/reports/${id}/`);if(version!==generation)return;detail.value=r.data;if(!tabs.value.some(x=>x[0]===tab.value))tab.value='summary';else if(reportTabLocked(detail.value,tab.value))tab.value='review';}
  catch(e){if(version===generation){detail.value=null;error.value=e;assignment.value=false;closing.value=false;finish.value=null;}}
  finally{if(version===generation)busy.value=false;}
 }
@@ -47,8 +47,8 @@ async function write(action,body){
  }finally{saving.value=false;}
 }
 async function saveReview(){if(await write('reviews',{outcome:review.outcome,reason:review.reason.trim()}))review.reason='';}
-async function saveFollowup(){if(await write('followups',{description:followup.value.trim()}))followup.value='';}
-async function saveDecision(){if(await write('decision',{decision:decision.decision,reason:decision.reason.trim()}))decision.reason='';}
+async function saveFollowup(){if(!reportTabLocked(detail.value,'followup')&&await write('followups',{description:followup.value.trim()}))followup.value='';}
+async function saveDecision(){if(!reportTabLocked(detail.value,'decision')&&await write('decision',{decision:decision.decision,reason:decision.reason.trim()}))decision.reason='';}
 async function close(){if(await write('close',{closure_note:closure.value.trim()})){closing.value=false;closure.value='';}}
 function finishing(item,status){finish.value={...item,nextStatus:status};finishReason.value='';}
 async function saveFinish(){if(await write(`followups/${finish.value.id}`,{status:finish.value.nextStatus,completion_reason:finishReason.value.trim()}))finish.value=null;}
@@ -66,7 +66,8 @@ onBeforeUnmount(()=>{generation+=1;clearInterval(poll);window.removeEventListene
   <div class="ws-report-toolbar"><div class="ws-state-row"><WorkspaceStatus :value="detail.report.workflow_status" /><WorkspaceStatus :value="detail.report.validation_status" /><WorkspaceStatus :value="detail.report.publication_status" /></div><button :disabled="busy||saving" @click="load()"><AppIcon name="refresh" :size="15" />Muat ulang</button><button v-if="canAssign" :disabled="busy||saving" @click="assignment=true">{{ detail.assignment?'Alihkan petugas':'Tugaskan laporan' }}</button></div>
   <p v-if="closed" class="notice success"><AppIcon name="lock" :size="17" />Laporan ditutup pada {{ date(detail.report.closed_at) }}. Perubahan laporan dan penugasan telah dikunci; pembacaan tetap mengikuti hak akses.</p>
   <p v-else-if="!privateAccess" class="ws-info-line"><AppIcon name="shield" :size="18" />Ringkasan administratif. Bukti, narasi, dan hasil AI privat hanya dapat dibaca penanggung jawab saat ini yang memiliki izin.</p>
-  <nav class="ws-tabs" aria-label="Bagian laporan"><button v-for="[key,title] in tabs" :key="key" :class="{active:tab===key}" :aria-current="tab===key?'page':undefined" @click="tab=key">{{ title }}</button></nav>
+  <nav class="ws-tabs" aria-label="Bagian laporan"><button v-for="[key,title] in tabs" :key="key" :class="{active:tab===key}" :disabled="reportTabLocked(detail,key)" :aria-describedby="reportTabLocked(detail,key)?'review-step-hint':undefined" :title="reportTabLocked(detail,key)?'Catat dan simpan review resmi terlebih dahulu.':undefined" :aria-current="tab===key?'page':undefined" @click="!reportTabLocked(detail,key)&&(tab=key)"><AppIcon v-if="reportTabLocked(detail,key)" name="lock" :size="14" />{{ title }}</button></nav>
+  <p v-if="reportTabLocked(detail,'followup')" id="review-step-hint" class="ws-stage-hint"><AppIcon name="lock" :size="18" /><span><strong>Review resmi belum dicatat.</strong> {{ reviewOpen?'Buka tab Review dan simpan hasil beserta alasannya.':'Menunggu hasil review resmi dari penanggung jawab yang berwenang.' }} Tindak Lanjut dan Keputusan akan terbuka setelah review resmi tersimpan.</span></p>
 
   <template v-if="tab==='summary'">
    <div class="ws-detail-columns"><section class="card"><h2>Metadata laporan resmi</h2><dl class="ws-definition"><dt>ID laporan</dt><dd>{{ detail.report.id }}</dd><dt>Versi resmi</dt><dd>{{ detail.report.official_version }}</dd><dt>Kategori</dt><dd>{{ label(detail.report.event_type) }}</dd><dt>Waktu pengiriman</dt><dd>{{ date(detail.report.submitted_at) }}</dd><dt>Penanggung jawab</dt><dd>{{ detail.assignment?.operator_name||'Belum ditugaskan' }}</dd><dt>Revisi data</dt><dd>{{ detail.report.revision }}</dd></dl></section><section class="card"><h2>Status penanganan</h2><dl class="ws-definition"><dt>Review</dt><dd><WorkspaceStatus :value="detail.report.validation_status" /></dd><dt>Tindak lanjut</dt><dd>{{ detail.followups.filter(x=>x.status==='PENDING').length }} menunggu, {{ detail.followups.filter(x=>x.status!=='PENDING').length }} selesai/dibatalkan</dd><dt>Arah keputusan</dt><dd>{{ detail.report.publication_status==='PENDING_APPROVAL'?'Siapkan publikasi':workspaceLabel(detail.report.publication_status) }}</dd><dt>Status publikasi</dt><dd><WorkspaceStatus :value="detail.report.publication_status" /></dd><dt>Kandidat aktif</dt><dd>{{ detail.has_active_candidate?'Ada':'Tidak ada' }}</dd><dt>Penutupan</dt><dd>{{ closed?'Ditutup':'Terbuka' }}</dd></dl></section></div>

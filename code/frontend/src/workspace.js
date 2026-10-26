@@ -1,5 +1,12 @@
 export const hasPermission = (user, permission) => Boolean(user && user.effective_permissions?.includes(permission));
 export const isStaff = user => ['OPERATOR', 'ADMIN'].includes(user?.role);
+export const ADMIN_REPORTS_PATH = '/workspace/monitoring';
+export const ADMIN_REPORTS_TITLE = 'Monitoring dan Penugasan';
+export function adminReportsScope(user) {
+  if(user?.role!=='ADMIN')return null;
+  if(hasPermission(user,'assign_report'))return 'assignment';
+  return hasPermission(user,'monitor_report')?'monitor':null;
+}
 export const roleLabel = role => ({REPORTER:'Reporter', OPERATOR:'Operator', ADMIN:'Admin'}[role] || 'Akun');
 export const shortId = value => value ? '#' + String(value).slice(0, 8) : 'Belum tersedia';
 export const initials = name => String(name || '').trim().split(/\s+/).slice(0, 2).map(x => x[0] || '').join('').toUpperCase();
@@ -41,8 +48,7 @@ export function workspaceNavigation(user) {
   const add=(permission,label,to,icon,admin=false)=>{
     if(hasPermission(user,permission)&&(!admin||user.role==='ADMIN'))rows.push({permission,label,to,icon});
   };
-  add('monitor_report','Monitoring Laporan','/workspace/monitoring','chart',true);
-  add('assign_report','Penugasan','/workspace/assignments','clipboard',true);
+  if(adminReportsScope(user))rows.push({label:ADMIN_REPORTS_TITLE,to:ADMIN_REPORTS_PATH,icon:'chart'});
   add('manage_operator','Manajemen Operator','/workspace/operators','users',true);
   add('view_queue','Antrean Laporan','/workspace/queue','reports');
   add('view_assigned_report','Penanganan Saya','/workspace/assigned','clipboard');
@@ -92,12 +98,11 @@ export function workspaceEffectiveFilters(filters,view){
 export function dashboardCardLink(user,key){
   if(!isStaff(user))return null;
   if(user.role==='ADMIN'){
-    const reports=hasPermission(user,'monitor_report')?'/workspace/monitoring':hasPermission(user,'assign_report')?'/workspace/assignments':null;
+    const reports=adminReportsScope(user)?ADMIN_REPORTS_PATH:null;
     if(key==='official')return reports?reports+'?view=official':null;
     if(key==='closed')return reports?reports+'?view=closed':null;
     if(key==='unassigned'){
-      const target=hasPermission(user,'assign_report')?'/workspace/assignments':reports;
-      return target?target+'?view=unassigned':null;
+      return reports?reports+'?view=unassigned':null;
     }
     if(key==='operators')return hasPermission(user,'manage_operator')?'/workspace/operators?status=active':null;
   }

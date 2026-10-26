@@ -4,19 +4,20 @@ import {useRoute,useRouter} from 'vue-router';
 import {api} from '../api';
 import {session} from '../session';
 import {date,label,paginationPath} from '../domain';
-import {hasPermission,shortId,categoryOptions,workflowOptions,workspaceReportsPath,workspaceQuickView,workspaceEffectiveFilters} from '../workspace';
+import {hasPermission,shortId,categoryOptions,workflowOptions,workspaceReportsPath,workspaceQuickView,workspaceEffectiveFilters,adminReportsScope,ADMIN_REPORTS_PATH,ADMIN_REPORTS_TITLE} from '../workspace';
 import AppIcon from '../components/AppIcon.vue';
 import AppDialog from '../components/AppDialog.vue';
 import ErrorNotice from '../components/ErrorNotice.vue';
 import WorkspaceStatus from '../components/WorkspaceStatus.vue';
 import WorkspaceAssignment from '../components/WorkspaceAssignment.vue';
 const route=useRoute(),router=useRouter();
-const scope=computed(()=>route.meta.workspaceScope||'assigned');
+const adminPage=computed(()=>route.meta.workspaceScope==='admin');
+const scope=computed(()=>adminPage.value?(adminReportsScope(session.user)||'monitor'):route.meta.workspaceScope||'assigned');
 const quickView=computed(()=>workspaceQuickView(scope.value,route.query.view));
-const listPath=computed(()=>({queue:'/workspace/queue',assigned:'/workspace/assigned',monitor:'/workspace/monitoring',assignment:'/workspace/assignments'}[scope.value]));
-const clearLabel=computed(()=>scope.value==='assigned'?'Tampilkan semua penanganan':scope.value==='assignment'?'Tampilkan semua penugasan':'Tampilkan semua laporan');
-const titles={queue:'Antrean Laporan',assigned:'Penanganan Saya',monitor:'Monitoring Laporan',assignment:'Penugasan'};
-const captions={queue:'Ringkasan laporan resmi yang belum memiliki penanggung jawab.',assigned:'Laporan yang menjadi tanggung jawab akun Anda saat ini.',monitor:'Pantau laporan resmi dan status penanganan sesuai kewenangan.',assignment:'Tetapkan penanggung jawab dan catat setiap pengalihan.'};
+const listPath=computed(()=>({queue:'/workspace/queue',assigned:'/workspace/assigned',monitor:ADMIN_REPORTS_PATH,assignment:ADMIN_REPORTS_PATH}[scope.value]));
+const clearLabel=computed(()=>scope.value==='assigned'?'Tampilkan semua penanganan':'Tampilkan semua laporan');
+const titles={queue:'Antrean Laporan',assigned:'Penanganan Saya',monitor:ADMIN_REPORTS_TITLE,assignment:ADMIN_REPORTS_TITLE};
+const captions={queue:'Ringkasan laporan resmi yang belum memiliki penanggung jawab.',assigned:'Laporan yang menjadi tanggung jawab akun Anda saat ini.',monitor:'Pantau status laporan resmi dan penanggung jawab sesuai kewenangan.',assignment:'Pantau status laporan resmi, tetapkan penanggung jawab, dan catat setiap pengalihan.'};
 const filters=reactive({q:'',event_type:'',workflow_status:'',ordering:'-submitted_at'});
 const rows=ref([]),count=ref(0),next=ref(null),previous=ref(null),busy=ref(false),error=ref(null),message=ref('');
 const assignment=ref(null),claimReport=ref(null),claiming=ref(false);let generation=0,claimKey=null;
@@ -28,7 +29,7 @@ async function load(path){
   catch(e){if(version===generation){error.value=e;rows.value=[];count.value=0;next.value=null;previous.value=null;}}
   finally{if(version===generation)busy.value=false;}
 }
-watch([scope,()=>route.query.view],()=>{Object.assign(filters,{q:'',event_type:'',workflow_status:quickView.value?.filters?.workflow_status||'',ordering:'-submitted_at'});message.value='';load();},{immediate:true});
+watch([scope,()=>route.query.view],()=>{Object.assign(filters,{q:'',event_type:'',workflow_status:quickView.value?.filters?.workflow_status||'',ordering:'-submitted_at'});message.value='';assignment.value=null;claimReport.value=null;load();},{immediate:true});
 function openClaim(row){claimReport.value=row;claimKey=crypto.randomUUID();error.value=null;}
 async function claim(){
   if(claiming.value||!claimReport.value)return;claiming.value=true;error.value=null;
@@ -43,7 +44,7 @@ async function assigned(text){assignment.value=null;message.value=text;await loa
  <p v-if="quickView" class="ws-quick-filter"><span><AppIcon name="search" :size="17" />Tampilan: {{ quickView.title }}</span><RouterLink :to="listPath">{{ clearLabel }}<AppIcon name="arrow" :size="15" /></RouterLink></p>
  <p class="ws-info-line"><AppIcon name="shield" :size="18" />{{ scope==='queue'?'Antrean berisi ringkasan resmi tanpa identitas Reporter atau bukti privat.':'Akses administratif tidak otomatis memberikan hak membaca bukti atau melakukan tindakan Operator.' }}</p>
  <section class="card ws-table-panel" :aria-busy="busy">
-  <header class="ws-panel-heading"><div><h2>{{ scope==='assignment'?'Pengelolaan penugasan':'Daftar laporan resmi' }}</h2><p>{{ count }} laporan sesuai hak akses Anda.</p></div></header>
+  <header class="ws-panel-heading"><div><h2>{{ adminPage?'Daftar laporan dan penugasan':'Daftar laporan resmi' }}</h2><p>{{ count }} laporan sesuai hak akses Anda.</p></div></header>
   <form class="ws-filters" @submit.prevent="load()"><label class="ws-search"><AppIcon name="search" :size="17" /><span class="sr-only">Cari ID laporan</span><input v-model="filters.q" placeholder="Cari ID laporan" maxlength="37"></label><label><span class="sr-only">Kategori</span><select v-model="filters.event_type" @change="load()"><option value="">Semua kategori</option><option v-for="item in categoryOptions" :key="item.value" :value="item.value">{{ item.label }}</option></select></label><label v-if="scope!=='queue'"><span class="sr-only">Tahap laporan</span><select v-model="filters.workflow_status" :disabled="Boolean(quickView?.filters?.workflow_status)" :title="quickView?.filters?.workflow_status?'Tahap mengikuti kartu dashboard. Pilih Tampilkan semua laporan untuk mengubah tahap.':undefined" @change="load()"><option value="">Semua tahap</option><option v-for="item in workflowOptions" :key="item.value" :value="item.value">{{ item.label }}</option></select></label><label><span class="sr-only">Urutan</span><select v-model="filters.ordering" @change="load()"><option value="-submitted_at">Terbaru</option><option value="submitted_at">Terlama</option></select></label><button type="submit" :disabled="busy">Cari</button></form>
   <p v-if="busy" class="ws-loading" role="status">Membaca laporan…</p>
   <div v-if="!busy&&!rows.length" class="empty"><AppIcon name="reports" :size="36" /><h3>{{ scope==='queue'?'Antrean belum tersedia':'Belum ada laporan yang sesuai' }}</h3><p>{{ scope==='assigned'?'Laporan akan muncul setelah Anda mengklaim atau menerima penugasan dari Admin.':'Ubah filter atau muat ulang untuk memeriksa keadaan terbaru.' }}</p></div>

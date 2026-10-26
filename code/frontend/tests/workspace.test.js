@@ -11,7 +11,7 @@ test('Assignee labels follow account names rather than fixed Operator A/B/C slot
 test('Pure Admin navigation has management but no inherited Operator actions',()=>{
  const admin={role:'ADMIN',effective_permissions:['manage_operator','assign_report','monitor_report','view_audit','monitor_services']};
  const urls=workspaceNavigation(admin).map(x=>x.to);
- assert(urls.includes('/workspace/operators'));assert(urls.includes('/workspace/assignments'));
+ assert(urls.includes('/workspace/operators'));assert(urls.includes('/workspace/monitoring'));assert(!urls.includes('/workspace/assignments'));
  assert(!urls.includes('/workspace/queue'));assert(!urls.includes('/workspace/assigned'));
  assert.equal(handlerCan(admin,detail,'review_report'),false);
 });
