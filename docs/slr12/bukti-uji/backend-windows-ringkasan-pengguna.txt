@@ -1,0 +1,9 @@
+Sumber: ringkasan terminal yang dikirim pengguna pada 23 Oktober 2026.
+Perintah pada pembahasan: tiga modul tes review, review_pipeline dan review_postgresql.
+Lingkungan: clone Windows pengguna; database pengujian test_silar_local.
+Ini adalah laporan pengguna, bukan pelaksanaan ulang pada lingkungan penyusunan paket.
+
+Ran 34 tests in 10.403s
+
+OK
+Destroying test database for alias 'default' ('test_silar_local')...
