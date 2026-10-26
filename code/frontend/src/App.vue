@@ -5,8 +5,12 @@ import { session, signOut } from './session';
 import { theme, toggleTheme } from './theme';
 import { online } from './network';
 import AppIcon from './components/AppIcon.vue';
+import { isStaff, roleLabel, workspaceNavigation } from './workspace';
 const route = useRoute(), router = useRouter();
 const isAuth = computed(() => Boolean(route.meta.mode));
+const work = computed(() => isStaff(session.user));
+const workMenu = computed(() => workspaceNavigation(session.user));
+const workTitle = computed(() => route.meta.title || (route.path==='/profile'?'Profil':route.path==='/notifications'?'Notifikasi':route.path==='/pwa'?'Aplikasi & Koneksi':'Ruang kerja'));
 const accountInitials = computed(() => (session.user?.full_name || '').trim().split(/\s+/).slice(0, 2).map(part => part[0]).join('').toUpperCase());
 const menu = ref(false), smallScreen = ref(matchMedia('(max-width:760px)').matches);
 const main = ref(null), sidebar = ref(null), menuButton = ref(null), closeButton = ref(null);
@@ -47,7 +51,7 @@ async function exit() { await closeMenu(false); await signOut(); router.push('/l
 <template>
   <a class="skip" href="#main">Langsung ke isi</a>
   <main v-if="isAuth" id="main" ref="main" class="auth-main" tabindex="-1"><RouterView /></main>
-  <div v-else class="app-frame">
+  <div v-else class="app-frame" :class="{'workspace-frame':work}">
     <button v-if="menu" class="mobile-overlay" aria-label="Tutup navigasi" @click="closeMenu()"></button>
     <aside id="app-navigation" ref="sidebar" class="sidebar" :class="{open:menu}" :inert="smallScreen&&!menu" aria-label="Navigasi utama">
       <div class="sidebar-brand-row">
@@ -57,7 +61,8 @@ async function exit() { await closeMenu(false); await signOut(); router.push('/l
         </RouterLink>
         <button ref="closeButton" class="sidebar-close quiet" aria-label="Tutup menu" @click="closeMenu()"><AppIcon name="close" /></button>
       </div>
-      <div class="nav-group"><div class="nav-caption">PELAPORAN</div>
+      <div v-if="work" class="nav-group workspace-nav"><div class="nav-caption">RUANG KERJA {{ roleLabel(session.user.role).toUpperCase() }}</div><nav aria-label="Ruang kerja petugas"><RouterLink v-for="item in workMenu" :key="item.to" :to="item.to"><AppIcon :name="item.icon" />{{ item.label }}</RouterLink></nav></div>
+      <div v-else class="nav-group"><div class="nav-caption">PELAPORAN</div>
         <nav aria-label="Pelaporan">
           <template v-if="session.user?.role==='REPORTER'">
             <RouterLink class="nav-create" to="/reports/new"><AppIcon name="plus" /> Buat Laporan</RouterLink>
@@ -77,18 +82,19 @@ async function exit() { await closeMenu(false); await signOut(); router.push('/l
       <div v-if="session.user" class="nav-group"><div class="nav-caption">AKUN</div><nav aria-label="Akun"><RouterLink to="/profile"><AppIcon name="user" /> Profil</RouterLink></nav></div>
       <div class="sidebar-bottom">
         <span class="connection" :class="{offline:!online}"><i></i><span>{{ online?'Jaringan tersedia':'Perangkat offline' }}</span></span>
-        <div v-if="session.user" class="account-chip"><span class="avatar">{{ accountInitials }}</span><span>{{ session.user.full_name }}<small>{{ session.user.role==='REPORTER'?'Reporter':session.user.role }}</small></span></div>
+        <div v-if="session.user" class="account-chip"><span class="avatar">{{ accountInitials }}</span><span>{{ session.user.full_name }}<small>{{ roleLabel(session.user.role) }}</small></span></div>
         <button v-if="session.user" class="sidebar-logout quiet" @click="exit"><AppIcon name="logout" /> Keluar</button>
       </div>
     </aside>
     <div class="page-shell" :inert="smallScreen&&menu">
       <header class="topline">
+        <div v-if="work" class="ws-breadcrumb"><RouterLink to="/workspace">Ruang kerja</RouterLink><span>/</span><strong>{{ workTitle }}</strong></div><div v-if="work" class="ws-header-account"><RouterLink to="/notifications" aria-label="Buka notifikasi"><AppIcon name="bell" :size="18" /></RouterLink><span class="avatar" :title="session.user.full_name">{{ accountInitials }}</span></div>
         <button ref="menuButton" class="mobile-menu" :aria-expanded="menu" aria-controls="app-navigation" aria-label="Buka navigasi" @click="openMenu">Menu <AppIcon name="menu" :size="18" /></button>
         <RouterLink class="mobile-brand" to="/" aria-label="SILAR, halaman utama"><img src="/brand/silar-logo.png" alt=""><span>SILAR</span></RouterLink>
       </header>
       <div v-if="!online" class="offline-banner" role="status"><AppIcon name="alert" :size="18" /><span>Perangkat offline. Sambungkan kembali jaringan untuk membaca atau menyimpan laporan. Data privat tidak disimpan untuk penggunaan offline.</span></div>
       <main id="main" ref="main" class="content" tabindex="-1"><RouterView /></main>
-      <footer class="app-footer"><span>Informasi kejadian diperiksa sebelum pengiriman resmi.</span><span class="footer-private"><AppIcon name="lock" :size="13" /> Ruang pelaporan privat</span></footer>
+      <footer class="app-footer"><span>{{ work?'SILAR · Sistem Inteligensi Laporan Adaptif dan Responsif':'Informasi kejadian diperiksa sebelum pengiriman resmi.' }}</span><span class="footer-private"><AppIcon name="lock" :size="13" />{{ work?'Akses sesuai kewenangan':'Ruang pelaporan privat' }}</span></footer>
     </div>
   </div>
 </template>

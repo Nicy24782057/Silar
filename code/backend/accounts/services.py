@@ -9,6 +9,7 @@ from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError as DjangoValidationError
 from django.core.mail import EmailMessage
 from django.db import transaction, IntegrityError
+from django.db.models import Q
 from django.utils import timezone
 from rest_framework.exceptions import ValidationError
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -223,6 +224,9 @@ def patch_operator(actor,user_id,data,request_id=None):
     with transaction.atomic():
         user=User.objects.select_for_update().filter(pk=user_id,role=Role.OPERATOR).first()
         if not user:raise Http404
+        def granted_ids():
+            return sorted(permission_queryset().filter(Q(user=user)|Q(group__user=user)).values_list('id',flat=True).distinct())
+        before={'is_active':user.is_active,'permission_ids':granted_ids()}
         if data.get('is_active') and not user.email_verified_at:
             raise ApiProblem('ACTIVATION_NOT_ALLOWED','Pemilik perlu menyelesaikan aktivasi melalui email.',422)
         if 'permission_ids' in data:
@@ -233,5 +237,8 @@ def patch_operator(actor,user_id,data,request_id=None):
             if field in data:setattr(user,field,data[field])
         user.save()
         record_event(actor=actor,action='OPERATOR_UPDATED',object_type='User',object_id=user.id,
-                     after={'changed_fields':sorted(data),'is_active':user.is_active},request_id=request_id)
+                     before=before,
+                     after={'changed_fields':sorted(set(data)-{'reason'}),'is_active':user.is_active,
+                            'permission_ids':granted_ids(),
+                            **({'reason':data['reason']} if data.get('reason') else {})},request_id=request_id)
     return user

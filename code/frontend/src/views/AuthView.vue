@@ -17,7 +17,7 @@ const registered = ref(false), completed = ref(false), heading = ref(null);
 const screen = computed(() => mode.value === 'register' && registered.value ? 'registered' : mode.value);
 const titles = {login:'Login', register:'Registrasi', registered:'Periksa Email', verify:'Verifikasi OTP', forgot:'Pulihkan akses akun', reset:'Atur kata sandi baru', activate:'Aktivasi akun Operator'};
 const descriptions = {
-  login:'Masuk untuk melanjutkan laporan dan bukti milikmu.', register:'Buat akun Reporter untuk mulai melapor.',
+  login:'Masuk ke SILAR sesuai peran dan kewenangan akun Anda.', register:'Buat akun Reporter untuk mulai melapor.',
   registered:'Periksa pesan SILAR terbaru untuk melanjutkan.', verify:'Masukkan kode dari pesan yang sama dengan tautan ini.',
   forgot:'Kami akan mengirim petunjuk jika alamat email memenuhi syarat.', reset:'Masukkan kode dari email dan kata sandi pengganti.',
   activate:'Pemilik akun menetapkan kata sandinya sendiri melalui kode aktivasi.'

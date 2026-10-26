@@ -25,6 +25,7 @@ handler500='common.api.server_error'
 
 # Input and synchronous AI analysis share the same /api/v1/ contract.
 urlpatterns += [
+    path('api/v1/workspace/', include('reporting.workspace_urls')),
     path('api/v1/', include('reporting.urls')),
     path('api/v1/', include('ai_pipeline.urls')),
 ]

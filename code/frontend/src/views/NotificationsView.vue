@@ -4,6 +4,7 @@ import { api } from '../api';
 import { date, paginationPath } from '../domain';
 import { online } from '../network';
 import { session } from '../session';
+import { roleLabel } from '../workspace';
 import AppIcon from '../components/AppIcon.vue';
 import ErrorNotice from '../components/ErrorNotice.vue';
 const rows=ref([]),next=ref(null),count=ref(0),busy=ref(false),reading=ref(null),error=ref(null),message=ref(''),unread=ref(false);
@@ -22,7 +23,7 @@ async function mark(item){
 onMounted(()=>load());
 </script>
 <template>
-  <div class="page-heading"><div><div class="eyebrow">RUANG REPORTER</div><h1>Notifikasi</h1><p class="subtitle">Perubahan yang relevan dengan laporan dan kewenangan akunmu.</p></div><button :disabled="busy||!online" @click="load()"><AppIcon name="refresh" :size="15" />Muat ulang</button></div>
+  <div class="page-heading"><div><div class="eyebrow">RUANG {{ roleLabel(session.user?.role).toUpperCase() }}</div><h1>Notifikasi</h1><p class="subtitle">Perubahan yang relevan dengan laporan dan kewenangan akunmu.</p></div><button :disabled="busy||!online" @click="load()"><AppIcon name="refresh" :size="15" />Muat ulang</button></div>
   <ErrorNotice :error="error" /><div v-if="message" class="notice success" role="status">{{ message }}</div>
   <section class="card notification-card" aria-labelledby="notification-list-title" :aria-busy="busy">
     <div class="section-heading notification-heading">
@@ -43,6 +44,7 @@ onMounted(()=>load());
         </div>
         <div class="notification-actions">
           <RouterLink v-if="item.report_id&&session.user?.role==='REPORTER'" :to="'/reports/'+item.report_id">Buka laporan<AppIcon name="arrow" :size="13" /></RouterLink>
+          <RouterLink v-else-if="item.report_id" :to="'/workspace/reports/'+item.report_id">Buka laporan<AppIcon name="arrow" :size="13" /></RouterLink>
           <button v-if="!item.read_at" class="link" :disabled="busy||reading!==null||!online" @click="mark(item)">{{ reading===item.id?'Menandai…':'Tandai dibaca' }}</button>
         </div>
       </li>

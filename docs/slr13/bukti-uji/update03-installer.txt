@@ -1,0 +1,13 @@
+test_check_is_read_only (__main__.InstallerTests.test_check_is_read_only) ... ok
+test_copy_failure_rolls_back_sources_and_incremental_build (__main__.InstallerTests.test_copy_failure_rolls_back_sources_and_incremental_build) ... ok
+test_corrupt_payload_is_rejected (__main__.InstallerTests.test_corrupt_payload_is_rejected) ... ok
+test_missing_previous_static_asset_stops_before_mutation (__main__.InstallerTests.test_missing_previous_static_asset_stops_before_mutation) ... ok
+test_other_source_edits_are_not_overwritten (__main__.InstallerTests.test_other_source_edits_are_not_overwritten) ... ok
+test_partial_install_backup_and_restore_preserve_existing_assets_and_private_data (__main__.InstallerTests.test_partial_install_backup_and_restore_preserve_existing_assets_and_private_data) ... ok
+test_repeated_install_has_separate_recoverable_backups (__main__.InstallerTests.test_repeated_install_has_separate_recoverable_backups) ... ok
+test_symlink_destination_is_rejected (__main__.InstallerTests.test_symlink_destination_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.288s
+
+OK

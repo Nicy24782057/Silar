@@ -2,6 +2,11 @@
 import { computed } from 'vue';
 const props=defineProps({name:{type:String,default:'file'},size:{type:[Number,String],default:20}});
 const paths={
+  dashboard:['M3 3h7v7H3ZM14 3h7v7h-7ZM3 14h7v7H3ZM14 14h7v7h-7Z'],
+  chart:['M3 3v18h18','m7 15 5-6 4 3 5-7'],
+  clipboard:['M8 4H5v18h14V4h-3','M8 2h8v5H8Z','M8 11h8M8 15h8M8 19h5'],
+  users:['M14 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z','M2 21v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2','M18 4a4 4 0 0 1 0 7M21 14a6 6 0 0 1 2 5v2'],
+  server:['M3 3h18v7H3ZM3 14h18v7H3Z','M7 6h.01M7 17h.01M12 6h5M12 17h5'],
   file:['M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z','M14 2v6h6','M8 13h8M8 17h5'],
   folder:['M3 5h6l2 3h10v12H3Z'],
   reports:['M8 3h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z','M3 6v12M11 8h6M11 12h6M11 16h4'],

@@ -1,0 +1,51 @@
+HASIL VERIFIKASI - SILAR UI UPDATE 03
+25 Oktober 2026
+
+Dasar: proyek yang telah memakai SILAR_UI_Update_02.zip.
+
+Build frontend produksi: berhasil.
+Tes frontend: 88 lulus, 0 gagal.
+Tes backend workspace pada PostgreSQL 16: 24 lulus, 0 gagal.
+Pemeriksaan browser: 10 alur lulus, tanpa kesalahan JavaScript halaman.
+Pemeriksaan pemasang: 8 lulus, 0 gagal.
+
+ALUR BROWSER
+1. Keempat kartu Admin merupakan tautan native dengan teks tindakan.
+2. Kartu Laporan resmi membuka seluruh laporan resmi, termasuk CLOSED.
+3. Kartu Belum ditugaskan membuka filter penugasan yang sesuai dan dapat dilepas.
+4. Kartu Operator aktif hanya menampilkan akun aktif dan terverifikasi,
+   sesuai jumlah pada dashboard; akun pending/nonaktif tidak ikut ditampilkan.
+5. Filter akun bertahan setelah reload, mengikuti pilihan dropdown, dan dapat dilepas.
+6. Kartu Laporan ditutup hanya membuka laporan CLOSED.
+7. Tautan kartu Admin dapat dijalankan dengan keyboard Enter.
+8. Setelah penugasan membuat jumlah menjadi 0, kartu tetap dapat diklik dan
+   membuka daftar kosong yang sah.
+9. Keempat tautan Admin berfungsi pada viewport layar kecil tanpa halaman melebar.
+10. Empat tautan Operator yang sudah ada tetap tersedia dan membuka daftar terkait.
+
+Pemeriksaan visual dilakukan pada dashboard Admin desktop, daftar Operator aktif,
+daftar laporan ditutup, dan dashboard layar kecil. Warna/ukuran teks memakai
+Update 02. Viewport: 1366 x 900 dan 390 x 844.
+
+FILTER DAN PERIZINAN
+- Daftar belum ditugaskan menggunakan ketiadaan assignment aktif, bukan hanya
+  label workflow SUBMITTED, sehingga sesuai definisi jumlah pada dashboard.
+- Draft Reporter tidak ikut daftar laporan resmi.
+- Filter status CLOSED tidak tertimpa nilai kosong dari formulir pencarian.
+- Pencarian kategori dan pagination tetap dapat digunakan bersama filter kartu.
+- Tautan Admin mengikuti izin monitor_report, assign_report, dan manage_operator.
+- Role Reporter/Operator atau filter URL tidak memberikan hak administratif.
+- Hanya satu pembacaan filter backend ditambahkan; tidak ada perubahan mutasi,
+  model/tabel, migration, atau aturan penanganan laporan.
+
+PEMASANG
+Mode check tidak menulis berkas. Instalasi, pemulihan, dan instalasi ulang diuji
+pada salinan proyek. Payload rusak, aset lama hilang, perubahan sumber lain, dan
+tujuan symlink ditolak. Kegagalan penyalinan memulihkan sumber/build sebelumnya.
+Marker .env, OTP, bukti, model dan aset statis yang tidak berubah tetap identik.
+
+BATAS HASIL
+Pengujian memakai akun dan database pengujian terpisah, bukan Windows, akun,
+database, atau HP fisik Anda. Inferensi model AI, SMTP internet dan instalasi
+PWA fisik tidak dijalankan ulang. Kredensial/data uji, screenshot internal,
+serta infrastruktur pengujian tidak disertakan di paket.

@@ -1,0 +1,538 @@
+TAP version 13
+# Subtest: Peringatan tampil ketika uncertain false tanpa mengubah flag
+ok 1 - Peringatan tampil ketika uncertain false tanpa mengubah flag
+  ---
+  duration_ms: 1.334753
+  type: 'test'
+  ...
+# Subtest: Peringatan dan uncertain true tetap terpisah
+ok 2 - Peringatan dan uncertain true tetap terpisah
+  ---
+  duration_ms: 0.198298
+  type: 'test'
+  ...
+# Subtest: Kode baru memakai pesan umum dan label field aman
+ok 3 - Kode baru memakai pesan umum dan label field aman
+  ---
+  duration_ms: 1.285909
+  type: 'test'
+  ...
+# Subtest: Hasil kosong dan NARA yang belum tersedia aman
+ok 4 - Hasil kosong dan NARA yang belum tersedia aman
+  ---
+  duration_ms: 0.241122
+  type: 'test'
+  ...
+# Subtest: Analisis terbaru gagal tidak memasangkan peringatan/keyakinannya ke kartu lama
+ok 5 - Analisis terbaru gagal tidak memasangkan peringatan/keyakinannya ke kartu lama
+  ---
+  duration_ms: 0.222834
+  type: 'test'
+  ...
+# Subtest: Identitas run, hasil, bundle, dan narasi harus cocok
+ok 6 - Identitas run, hasil, bundle, dan narasi harus cocok
+  ---
+  duration_ms: 0.301322
+  type: 'test'
+  ...
+# Subtest: Narasi baru tidak dilabeli sebagai sumber kartu lama
+ok 7 - Narasi baru tidak dilabeli sebagai sumber kartu lama
+  ---
+  duration_ms: 0.190796
+  type: 'test'
+  ...
+# Subtest: Body sukses yang terputus setelah POST menahan hasil sebagai belum pasti tanpa retry
+ok 8 - Body sukses yang terputus setelah POST menahan hasil sebagai belum pasti tanpa retry
+  ---
+  duration_ms: 5.575565
+  type: 'test'
+  ...
+# Subtest: Koneksi POST terputus tidak mengirim ulang request
+ok 9 - Koneksi POST terputus tidak mengirim ulang request
+  ---
+  duration_ms: 1.848854
+  type: 'test'
+  ...
+# Subtest: Respons gateway tanpa hasil backend pasti mengharuskan pembacaan keadaan tersimpan
+ok 10 - Respons gateway tanpa hasil backend pasti mengharuskan pembacaan keadaan tersimpan
+  ---
+  duration_ms: 2.621063
+  type: 'test'
+  ...
+# Subtest: Kegagalan AI yang telah dicatat mempertahankan kode backend
+ok 11 - Kegagalan AI yang telah dicatat mempertahankan kode backend
+  ---
+  duration_ms: 2.774873
+  type: 'test'
+  ...
+# Subtest: Body GET yang tidak terbaca tidak menyatakan mutasi telah dilakukan
+ok 12 - Body GET yang tidak terbaca tidak menyatakan mutasi telah dilakukan
+  ---
+  duration_ms: 1.647602
+  type: 'test'
+  ...
+# Subtest: Logout 204 tidak mencoba membaca JSON
+ok 13 - Logout 204 tidak mencoba membaca JSON
+  ---
+  duration_ms: 1.090226
+  type: 'test'
+  ...
+# Subtest: Recorder mendahulukan WebM dengan codec Opus
+ok 14 - Recorder mendahulukan WebM dengan codec Opus
+  ---
+  duration_ms: 1.449394
+  type: 'test'
+  ...
+# Subtest: Recorder memakai AAC atau MP4 generik ketika WebM tidak tersedia
+ok 15 - Recorder memakai AAC atau MP4 generik ketika WebM tidak tersedia
+  ---
+  duration_ms: 0.207362
+  type: 'test'
+  ...
+# Subtest: Tidak ada fallback OGG atau format default yang tidak diketahui
+ok 16 - Tidak ada fallback OGG atau format default yang tidak diketahui
+  ---
+  duration_ms: 0.290776
+  type: 'test'
+  ...
+# Subtest: Nama dan MIME mengikuti keluaran rekaman yang sebenarnya
+ok 17 - Nama dan MIME mengikuti keluaran rekaman yang sebenarnya
+  ---
+  duration_ms: 1.211147
+  type: 'test'
+  ...
+# Subtest: Keluaran OGG, Vorbis, ALAC, video dan MIME kosong tidak disamarkan
+ok 18 - Keluaran OGG, Vorbis, ALAC, video dan MIME kosong tidak disamarkan
+  ---
+  duration_ms: 0.436906
+  type: 'test'
+  ...
+# Subtest: Email link challenge accepts the canonical UUID supplied by the backend
+ok 19 - Email link challenge accepts the canonical UUID supplied by the backend
+  ---
+  duration_ms: 0.947542
+  type: 'test'
+  ...
+# Subtest: Missing, malformed and duplicate challenge parameters cannot enable verification
+ok 20 - Missing, malformed and duplicate challenge parameters cannot enable verification
+  ---
+  duration_ms: 0.184006
+  type: 'test'
+  ...
+# Subtest: Local email help defaults to development running on loopback, never a public deployment
+ok 21 - Local email help defaults to development running on loopback, never a public deployment
+  ---
+  duration_ms: 0.162334
+  type: 'test'
+  ...
+# Subtest: An explicit local-help setting controls local preview without inferring backend email delivery
+ok 22 - An explicit local-help setting controls local preview without inferring backend email delivery
+  ---
+  duration_ms: 0.142914
+  type: 'test'
+  ...
+# Subtest: Unicode dihitung per code point, bukan byte atau UTF16
+ok 23 - Unicode dihitung per code point, bukan byte atau UTF16
+  ---
+  duration_ms: 1.348904
+  type: 'test'
+  ...
+# Subtest: Teks kosong ditolak
+ok 24 - Teks kosong ditolak
+  ---
+  duration_ms: 0.11358
+  type: 'test'
+  ...
+# Subtest: Ekstensi gambar dan batas ukuran diperiksa
+ok 25 - Ekstensi gambar dan batas ukuran diperiksa
+  ---
+  duration_ms: 0.265919
+  type: 'test'
+  ...
+# Subtest: Lima format audio sesuai kontrak diperiksa server
+ok 26 - Lima format audio sesuai kontrak diperiksa server
+  ---
+  duration_ms: 0.256545
+  type: 'test'
+  ...
+# Subtest: OGG ditolak dan pesan format tidak menawarkan codec lain
+ok 27 - OGG ditolak dan pesan format tidak menawarkan codec lain
+  ---
+  duration_ms: 0.206851
+  type: 'test'
+  ...
+# Subtest: Bundle membutuhkan kanal asli dan menahan jumlah berlebih
+ok 28 - Bundle membutuhkan kanal asli dan menahan jumlah berlebih
+  ---
+  duration_ms: 0.181883
+  type: 'test'
+  ...
+# Subtest: Bundle menghitung byte teks juga
+ok 29 - Bundle menghitung byte teks juga
+  ---
+  duration_ms: 0.094081
+  type: 'test'
+  ...
+# Subtest: Gemini tidak digunakan pada teks atau audio tunggal
+ok 30 - Gemini tidak digunakan pada teks atau audio tunggal
+  ---
+  duration_ms: 0.130135
+  type: 'test'
+  ...
+# Subtest: Gemini diinformasikan untuk lima rute yang relevan
+ok 31 - Gemini diinformasikan untuk lima rute yang relevan
+  ---
+  duration_ms: 0.207151
+  type: 'test'
+  ...
+# Subtest: Pagination hanya menyusun path API lokal
+ok 32 - Pagination hanya menyusun path API lokal
+  ---
+  duration_ms: 0.463776
+  type: 'test'
+  ...
+# Subtest: Keterangan terbaru menjadi aktif sebelum bundle; semua gambar dan satu audio ikut otomatis
+ok 33 - Keterangan terbaru menjadi aktif sebelum bundle; semua gambar dan satu audio ikut otomatis
+  ---
+  duration_ms: 10.072442
+  type: 'test'
+  ...
+# Subtest: Bundle aktif mempertahankan pilihan sumber lama; hanya unggahan sesudahnya yang mengganti kanal
+ok 34 - Bundle aktif mempertahankan pilihan sumber lama; hanya unggahan sesudahnya yang mengganti kanal
+  ---
+  duration_ms: 0.211668
+  type: 'test'
+  ...
+# Subtest: Penggantian keterangan/audio mempertahankan gambar dan tidak menyertakan dua item kanal yang sama
+ok 35 - Penggantian keterangan/audio mempertahankan gambar dan tidak menyertakan dua item kanal yang sama
+  ---
+  duration_ms: 0.252118
+  type: 'test'
+  ...
+# Subtest: Riwayat gambar lebih dari tiga tidak dipangkas diam-diam
+ok 36 - Riwayat gambar lebih dari tiga tidak dipangkas diam-diam
+  ---
+  duration_ms: 0.336735
+  type: 'test'
+  ...
+# Subtest: Batas gambar dan total byte diperiksa sebelum kelompok unggahan dikirim
+ok 37 - Batas gambar dan total byte diperiksa sebelum kelompok unggahan dikirim
+  ---
+  duration_ms: 0.184086
+  type: 'test'
+  ...
+# Subtest: Pemeriksaan sumber sama mengabaikan urutan tetapi menolak ID duplikat
+ok 38 - Pemeriksaan sumber sama mengabaikan urutan tetapi menolak ID duplikat
+  ---
+  duration_ms: 0.569364
+  type: 'test'
+  ...
+# Subtest: Analisis satu klik menyimpan snapshot dahulu dan memakai revision hasil commit
+ok 39 - Analisis satu klik menyimpan snapshot dahulu dan memakai revision hasil commit
+  ---
+  duration_ms: 1.062394
+  type: 'test'
+  ...
+# Subtest: Sumber tidak berubah memakai bundle aktif tanpa membentuk versi baru
+ok 40 - Sumber tidak berubah memakai bundle aktif tanpa membentuk versi baru
+  ---
+  duration_ms: 1.21291
+  type: 'test'
+  ...
+# Subtest: Informasi Gemini diperiksa sebelum persiapan sumber atau analisis
+ok 41 - Informasi Gemini diperiksa sebelum persiapan sumber atau analisis
+  ---
+  duration_ms: 2.446901
+  type: 'test'
+  ...
+# Subtest: Respons persiapan terputus menahan analisis dan tidak mengulang POST
+ok 42 - Respons persiapan terputus menahan analisis dan tidak mengulang POST
+  ---
+  duration_ms: 0.304828
+  type: 'test'
+  ...
+# Subtest: Sumber pada respons persiapan yang tidak sesuai tidak diteruskan ke analisis
+ok 43 - Sumber pada respons persiapan yang tidak sesuai tidak diteruskan ke analisis
+  ---
+  duration_ms: 0.285949
+  type: 'test'
+  ...
+# Subtest: Kegagalan analisis setelah snapshot tersimpan mempertahankan snapshot untuk pemulihan
+ok 44 - Kegagalan analisis setelah snapshot tersimpan mempertahankan snapshot untuk pemulihan
+  ---
+  duration_ms: 0.296755
+  type: 'test'
+  ...
+# Subtest: Custom manifest icons work without the old icons directory, including a filename with spaces
+ok 45 - Custom manifest icons work without the old icons directory, including a filename with spaces
+  ---
+  duration_ms: 6.626873
+  type: 'test'
+  ...
+# Subtest: A stale icon reference warns without ENOENT or precaching a missing file; API/private data stays out
+ok 46 - A stale icon reference warns without ENOENT or precaching a missing file; API/private data stays out
+  ---
+  duration_ms: 2.856977
+  type: 'test'
+  ...
+# Subtest: Changing icon bytes or HTML changes the UI cache version without renaming the asset
+ok 47 - Changing icon bytes or HTML changes the UI cache version without renaming the asset
+  ---
+  duration_ms: 7.107554
+  type: 'test'
+  ...
+# Subtest: Precache hanya daftar aset antarmuka
+ok 48 - Precache hanya daftar aset antarmuka
+  ---
+  duration_ms: 2.550356
+  type: 'test'
+  ...
+# Subtest: Auth, API privat, media, POST dan origin lain tidak diintersep
+ok 49 - Auth, API privat, media, POST dan origin lain tidak diintersep
+  ---
+  duration_ms: 0.771638
+  type: 'test'
+  ...
+# Subtest: Aktivasi pembaruan menghapus cache aset SILAR lama dan mempertahankan cache aktif serta aplikasi lain
+ok 50 - Aktivasi pembaruan menghapus cache aset SILAR lama dan mempertahankan cache aktif serta aplikasi lain
+  ---
+  duration_ms: 0.964567
+  type: 'test'
+  ...
+# Subtest: Pembacaan respons hilang memakai GET request, run dan draft tanpa POST atau replay otomatis
+ok 51 - Pembacaan respons hilang memakai GET request, run dan draft tanpa POST atau replay otomatis
+  ---
+  duration_ms: 1.97298
+  type: 'test'
+  ...
+# Subtest: RUNNING dan UNKNOWN tanpa hasil terminal hanya dibaca tanpa menebak run atau mengulang
+ok 52 - RUNNING dan UNKNOWN tanpa hasil terminal hanya dibaca tanpa menebak run atau mengulang
+  ---
+  duration_ms: 0.567962
+  type: 'test'
+  ...
+# Subtest: Request dan run dari laporan lain tidak digabungkan ke draft yang dibuka
+ok 53 - Request dan run dari laporan lain tidak digabungkan ke draft yang dibuka
+  ---
+  duration_ms: 1.183506
+  type: 'test'
+  ...
+# Subtest: Daftar pemulihan analisis menyaring request upload dan laporan lain
+ok 54 - Daftar pemulihan analisis menyaring request upload dan laporan lain
+  ---
+  duration_ms: 0.224978
+  type: 'test'
+  ...
+# Subtest: Respons hilang, REQUEST_RUNNING dan REQUEST_UNKNOWN menahan tindakan baru sampai dibaca
+ok 55 - Respons hilang, REQUEST_RUNNING dan REQUEST_UNKNOWN menahan tindakan baru sampai dibaca
+  ---
+  duration_ms: 0.272599
+  type: 'test'
+  ...
+# Subtest: Fresh draft and saved evidence without a completed analysis keep stages 2 and 3 locked
+ok 56 - Fresh draft and saved evidence without a completed analysis keep stages 2 and 3 locked
+  ---
+  duration_ms: 1.607021
+  type: 'test'
+  ...
+# Subtest: Completed current analysis opens review but confirmation requires advancing the exact card
+ok 57 - Completed current analysis opens review but confirmation requires advancing the exact card
+  ---
+  duration_ms: 0.314322
+  type: 'test'
+  ...
+# Subtest: Unsaved evidence and an open correction prevent jumping to confirmation
+ok 58 - Unsaved evidence and an open correction prevent jumping to confirmation
+  ---
+  duration_ms: 0.316375
+  type: 'test'
+  ...
+# Subtest: A corrected card invalidates local progress; legitimate stored verification allows resuming
+ok 59 - A corrected card invalidates local progress; legitimate stored verification allows resuming
+  ---
+  duration_ms: 0.189464
+  type: 'test'
+  ...
+# Subtest: Missing or mismatched result references and RUNNING/UNKNOWN/FAILED do not unlock review
+ok 60 - Missing or mismatched result references and RUNNING/UNKNOWN/FAILED do not unlock review
+  ---
+  duration_ms: 0.294913
+  type: 'test'
+  ...
+# Subtest: NON_EVENT remains readable at stage 2 while stage 3 stays locked
+ok 61 - NON_EVENT remains readable at stage 2 while stage 3 stays locked
+  ---
+  duration_ms: 0.171618
+  type: 'test'
+  ...
+# Subtest: Saved narrative revision keeps reanalysis accessible but cannot unlock confirmation without new results
+ok 62 - Saved narrative revision keeps reanalysis accessible but cannot unlock confirmation without new results
+  ---
+  duration_ms: 0.403576
+  type: 'test'
+  ...
+# Subtest: Official reports remain readable through the steps without allowing another send
+ok 63 - Official reports remain readable through the steps without allowing another send
+  ---
+  duration_ms: 0.161793
+  type: 'test'
+  ...
+# Subtest: Four actual incident categories include earthquake; NON_EVENT is not an event category
+ok 64 - Four actual incident categories include earthquake; NON_EVENT is not an event category
+  ---
+  duration_ms: 1.91238
+  type: 'test'
+  ...
+# Subtest: Prepared drafts combine category and both states in a paginated server query
+ok 65 - Prepared drafts combine category and both states in a paginated server query
+  ---
+  duration_ms: 0.85341
+  type: 'test'
+  ...
+# Subtest: Confirmation does not imply submission and workflow has precedence after sending
+ok 66 - Confirmation does not imply submission and workflow has precedence after sending
+  ---
+  duration_ms: 0.15379
+  type: 'test'
+  ...
+# Subtest: Uncertain with missing incident fields can be confirmed; submission needs verification of the exact card
+ok 67 - Uncertain with missing incident fields can be confirmed; submission needs verification of the exact card
+  ---
+  duration_ms: 1.37271
+  type: 'test'
+  ...
+# Subtest: NON_EVENT, mismatched source/run and unknown execution never enable confirmation or submission
+ok 68 - NON_EVENT, mismatched source/run and unknown execution never enable confirmation or submission
+  ---
+  duration_ms: 0.603134
+  type: 'test'
+  ...
+# Subtest: Official reports stay read-only even when their historical source is valid
+ok 69 - Official reports stay read-only even when their historical source is valid
+  ---
+  duration_ms: 0.19944
+  type: 'test'
+  ...
+# Subtest: Partial corrections preserve untouched arrays and exact stored time, including milliseconds
+ok 70 - Partial corrections preserve untouched arrays and exact stored time, including milliseconds
+  ---
+  duration_ms: 1.11953
+  type: 'test'
+  ...
+# Subtest: Explicit clearing remains null or an empty array; empty information does not become zero victims
+ok 71 - Explicit clearing remains null or an empty array; empty information does not become zero victims
+  ---
+  duration_ms: 0.710446
+  type: 'test'
+  ...
+# Subtest: Lost submit/correction/confirmation responses read only the ledger and latest report, never POST
+ok 72 - Lost submit/correction/confirmation responses read only the ledger and latest report, never POST
+  ---
+  duration_ms: 0.738789
+  type: 'test'
+  ...
+# Subtest: Recovery includes report mutations but never combines a foreign report or run
+ok 73 - Recovery includes report mutations but never combines a foreign report or run
+  ---
+  duration_ms: 0.497787
+  type: 'test'
+  ...
+# Subtest: Four metric links use separate destinations and respect read permissions
+ok 74 - Four metric links use separate destinations and respect read permissions
+  ---
+  duration_ms: 1.326541
+  type: 'test'
+  ...
+# Subtest: Shortcut filters preserve scope and pagination without accepting inherited object keys
+ok 75 - Shortcut filters preserve scope and pagination without accepting inherited object keys
+  ---
+  duration_ms: 1.221763
+  type: 'test'
+  ...
+# Subtest: Unsaved review text never unlocks dependent tabs
+ok 76 - Unsaved review text never unlocks dependent tabs
+  ---
+  duration_ms: 0.268202
+  type: 'test'
+  ...
+# Subtest: All saved outcomes unlock dependent reading, including CLOSED; old-card reviews do not
+ok 77 - All saved outcomes unlock dependent reading, including CLOSED; old-card reviews do not
+  ---
+  duration_ms: 0.334051
+  type: 'test'
+  ...
+# Subtest: Four Admin cards open their own matching report and account destinations
+ok 78 - Four Admin cards open their own matching report and account destinations
+  ---
+  duration_ms: 1.14617
+  type: 'test'
+  ...
+# Subtest: Admin shortcut routing uses explicit permissions and does not grant them by role
+ok 79 - Admin shortcut routing uses explicit permissions and does not grant them by role
+  ---
+  duration_ms: 0.232078
+  type: 'test'
+  ...
+# Subtest: Admin views preserve all official reports, current unassigned state and CLOSED separately
+ok 80 - Admin views preserve all official reports, current unassigned state and CLOSED separately
+  ---
+  duration_ms: 1.628984
+  type: 'test'
+  ...
+# Subtest: Operator account status links accept only supported single query values
+ok 81 - Operator account status links accept only supported single query values
+  ---
+  duration_ms: 0.211026
+  type: 'test'
+  ...
+# Subtest: Empty or stale form values cannot erase a fixed CLOSED dashboard filter
+ok 82 - Empty or stale form values cannot erase a fixed CLOSED dashboard filter
+  ---
+  duration_ms: 0.370085
+  type: 'test'
+  ...
+# Subtest: Assignee labels follow account names rather than fixed Operator A/B/C slots
+ok 83 - Assignee labels follow account names rather than fixed Operator A/B/C slots
+  ---
+  duration_ms: 0.707602
+  type: 'test'
+  ...
+# Subtest: Pure Admin navigation has management but no inherited Operator actions
+ok 84 - Pure Admin navigation has management but no inherited Operator actions
+  ---
+  duration_ms: 0.264036
+  type: 'test'
+  ...
+# Subtest: A role label cannot grant private reading or mutation after reassignment
+ok 85 - A role label cannot grant private reading or mutation after reassignment
+  ---
+  duration_ms: 0.169575
+  type: 'test'
+  ...
+# Subtest: Closed reports and unmet close requirements never enable a mutation
+ok 86 - Closed reports and unmet close requirements never enable a mutation
+  ---
+  duration_ms: 0.295934
+  type: 'test'
+  ...
+# Subtest: Prepare requires valid review and cannot alter published or active-candidate state
+ok 87 - Prepare requires valid review and cannot alter published or active-candidate state
+  ---
+  duration_ms: 0.251056
+  type: 'test'
+  ...
+# Subtest: Workspace filters remain server-scoped and preserve independent states
+ok 88 - Workspace filters remain server-scoped and preserve independent states
+  ---
+  duration_ms: 2.036286
+  type: 'test'
+  ...
+1..88
+# tests 88
+# suites 0
+# pass 88
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 361.989213

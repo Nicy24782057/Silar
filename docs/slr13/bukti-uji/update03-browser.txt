@@ -1,0 +1,11 @@
+PASS All four Admin cards are real links with matching action labels
+PASS Official card includes every officially submitted stage, including CLOSED
+PASS Unassigned card opens the matching assignment filter and can clear it
+PASS Active-Operator card shows only active and verified accounts matching its count
+PASS Account filter survives reload, follows the dropdown and can be cleared
+PASS Closed-report card opens only CLOSED reports
+PASS Admin card navigation works with keyboard Enter
+PASS A zero-count card stays clickable and shows a valid empty list
+PASS All four Admin shortcuts work on a mobile-width screen
+PASS The four existing Operator links remain available
+{"passed":10,"checks":["All four Admin cards are real links with matching action labels","Official card includes every officially submitted stage, including CLOSED","Unassigned card opens the matching assignment filter and can clear it","Active-Operator card shows only active and verified accounts matching its count","Account filter survives reload, follows the dropdown and can be cleared","Closed-report card opens only CLOSED reports","Admin card navigation works with keyboard Enter","A zero-count card stays clickable and shows a valid empty list","All four Admin shortcuts work on a mobile-width screen","The four existing Operator links remain available"],"jsErrors":[]}

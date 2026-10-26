@@ -1,0 +1,48 @@
+HASIL VERIFIKASI - SILAR UI UPDATE 02
+25 Oktober 2026
+
+Dasar: paket SILAR_UI_Operator_Admin.zip yang sebelumnya dikirim.
+
+- Build frontend produksi: berhasil.
+- Tes frontend: 83 lulus, 0 gagal.
+- Tes backend workspace pada PostgreSQL 16: 21 lulus, 0 gagal.
+- Pemeriksaan alur browser: 12 lulus, tanpa kesalahan JavaScript halaman.
+- Pemeriksaan pemasang: 8 lulus, 0 gagal.
+
+ALUR YANG DIPERIKSA
+1. Empat kartu Operator berupa tautan yang dapat digunakan dengan mouse/keyboard.
+2. Kartu antrean membuka antrean resmi dalam kewenangan akun.
+3. Kartu penanganan membuka tugas aktif akun tersebut.
+4. Kartu review hanya membuka tugas aktif yang belum direview.
+5. Kartu tindak lanjut membuka tugas aktif dengan PENDING; dua tindak lanjut
+   pada satu laporan tidak menggandakan laporan/jumlah pada daftar.
+6. Filter dashboard dapat dilepas untuk kembali ke seluruh penanganan.
+7. Tab Tindak Lanjut dan Keputusan terkunci ketika review belum tersimpan;
+   mengisi alasan saja tidak membuka tab.
+8. Review resmi yang tersimpan membuka kedua tab; aturan izin/tindakan tetap berlaku.
+9. Tiga hasil review membuka pembacaan tab terkait; CLOSED tetap dapat dibaca
+   oleh yang berhak tanpa membuka kembali tombol perubahan.
+10. Tampilan layar kecil dan navigasi berfungsi tanpa halaman melebar.
+11. Warna dan keterbacaan mode gelap diperiksa.
+12. Dashboard Admin mempertahankan menu/hak akses serta mendapat teks lebih jelas.
+
+Warna latar kartu dibuat lebih pekat dan cerah. Pasangan warna teks dan ujung
+gradasi kartu pada mode terang memiliki rasio kontras minimal sekitar 4,7:1.
+Ini pemeriksaan pasangan warna kartu, bukan klaim audit aksesibilitas seluruh aplikasi.
+
+PEMASANG
+Mode pemeriksaan tidak menulis berkas; pemasangan/pemulihan dan pemasangan ulang
+diuji pada salinan proyek; paket rusak, aset dasar hilang, perubahan sumber lain,
+serta tautan simbolis ditolak. Kegagalan penyalinan memulihkan sumber/build lama.
+Marker .env, OTP, bukti, model, dan aset statis yang tidak berubah tetap identik.
+
+LINGKUP PAKET
+Hanya delapan berkas sumber/tes serta berkas build yang berubah. Tambahan backend
+hanya untuk filter pembacaan daftar. Tidak ada migration atau perubahan database.
+Logo/font/aset statis yang sama tidak dikirim ulang atau diganti.
+
+BATAS PENGUJIAN
+Pengujian memakai database dan akun pengujian terpisah, viewport desktop
+1366 x 900 dan layar kecil 390 x 844. Bukan uji pada Windows/HP fisik/database Anda.
+Inferensi model AI, SMTP, dan instalasi PWA fisik tidak dijalankan ulang.
+Data/kredensial uji, infrastruktur pengujian, dan screenshot internal tidak disertakan.

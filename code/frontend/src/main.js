@@ -7,6 +7,7 @@ import './style.css';
 import './ui.css';
 import './reports-ui.css';
 import './auth-ui.css';
+import './workspace.css';
 initializeTheme();
 createApp(App).use(router).mount('#app');
 if (import.meta.env.PROD && 'serviceWorker' in navigator) {

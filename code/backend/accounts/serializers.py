@@ -44,11 +44,12 @@ class OperatorCreate(StrictSerializer):
     permission_ids=serializers.ListField(child=serializers.IntegerField(min_value=1),allow_empty=True)
 
 class OperatorPatch(StrictSerializer):
+    reason=serializers.CharField(max_length=1500,trim_whitespace=True,required=False)
     full_name=serializers.CharField(max_length=150,trim_whitespace=True,required=False)
     is_active=serializers.BooleanField(required=False)
     permission_ids=serializers.ListField(child=serializers.IntegerField(min_value=1),required=False,allow_empty=True)
     def validate(self,attrs):
-        if not attrs:raise serializers.ValidationError('Minimal satu field perubahan diperlukan.')
+        if not set(attrs)-{'reason'}:raise serializers.ValidationError('Minimal satu field perubahan diperlukan.')
         return attrs
 
 def account_data(user,operator=False,target=False):

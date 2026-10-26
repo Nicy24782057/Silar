@@ -8,6 +8,7 @@ ALLOWED_CHANGE_FIELDS = {
     'revision','input_revision','preparation_status','workflow_status','validation_status','publication_status',
     'card_version_id','bundle_id','assignment_id','operator_id','outcome','status','state','error_code',
     'result_id','result_type','run_id','published_version_id','candidate_id','reason_recorded',
+    'reason',
 }
 
 def record_event(*, actor, action, object_type, object_id=None, report=None, before=None, after=None, request_id=None, acting_role=None):
