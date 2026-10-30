@@ -1,0 +1,3 @@
+PASS production preview: service worker active, 59 cached UI assets, no API/media/report/credential data cached.
+PASS offline shell, disabled login, no cached public records; production local-email helper hidden.
+PASS isolated QA database integrity.

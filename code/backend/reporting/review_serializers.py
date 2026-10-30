@@ -56,3 +56,7 @@ class ConfirmCard(StrictSerializer):
 
 class SubmitCard(ConfirmCard):
     pass
+
+
+class DeleteDraft(StrictSerializer):
+    expected_revision = serializers.IntegerField(min_value=1)

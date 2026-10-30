@@ -30,6 +30,8 @@ def is_assignee(user, report):
     return report.assignments.filter(operator_id=user.id,ended_at__isnull=True).exists()
 
 def can_read_report(user, report, content=False):
+    if report.deleted_at is not None:
+        return False
     if not user or not user.is_active or not user.email_verified_at:
         return False
     if user.role==Role.REPORTER:

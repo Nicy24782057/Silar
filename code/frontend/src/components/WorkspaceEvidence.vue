@@ -1,14 +1,24 @@
 <script setup>
 import {onBeforeUnmount,ref,watch} from 'vue';
 import {api} from '../api';
+import {online} from '../network';
 import {size,date} from '../domain';
 import AppIcon from './AppIcon.vue';
 import AppDialog from './AppDialog.vue';
-import ErrorNotice from './ErrorNotice.vue';
+import FetchState from './FetchState.vue';
 const props=defineProps({bundle:Object,allowed:Boolean});
-const error=ref(null),loading=ref(null),preview=ref(null);let token=0;
-function clear(){token+=1;if(preview.value)URL.revokeObjectURL(preview.value.url);preview.value=null;loading.value=null;}
-async function open(item){clear();const version=token;loading.value=item.id;error.value=null;try{const blob=await api(`evidence/${item.id}/media/`,{raw:true});if(version!==token)return;preview.value={url:URL.createObjectURL(blob),item};}catch(e){if(version===token)error.value=e;}finally{if(version===token)loading.value=null;}}
-watch(()=>props.allowed,value=>{if(!value)clear();});onBeforeUnmount(clear);
+const error=ref(null),loading=ref(false),selected=ref(null),url=ref(null);let sequence=0,controller;
+function clear(){++sequence;controller?.abort();if(url.value)URL.revokeObjectURL(url.value);url.value=null;selected.value=null;loading.value=false;error.value=null;}
+async function read(){const item=selected.value;if(!item)return;const version=++sequence;controller?.abort();controller=new AbortController();loading.value=true;error.value=null;
+ try{const blob=await api(`evidence/${item.id}/media/`,{raw:true,signal:controller.signal});if(version===sequence&&props.allowed)url.value=URL.createObjectURL(blob);}
+ catch(e){if(version===sequence&&e.name!=='AbortError')error.value=e;}finally{if(version===sequence)loading.value=false;}}
+function open(item){clear();selected.value=item;read();}
+watch([()=>props.allowed,()=>props.bundle?.id],clear);onBeforeUnmount(clear);
 </script>
-<template><ErrorNotice :error="error" /><p v-if="!allowed" class="notice warning">Akses bukti memerlukan penugasan sebagai penanggung jawab saat ini.</p><ul v-else class="ws-evidence-list"><li v-for="entry in bundle?.items||[]" :key="entry.evidence.id"><div class="ws-evidence-heading"><span class="heading-icon"><AppIcon :name="entry.evidence.type==='TEXT'?'file':entry.evidence.type==='IMAGE'?'image':'audio'" /></span><div><strong>{{ entry.evidence.type==='TEXT'?'Keterangan teks':entry.evidence.original_name }}</strong><small>{{ size(entry.evidence.byte_size) }} · {{ date(entry.evidence.created_at) }}</small></div><button v-if="entry.evidence.type!=='TEXT'" :disabled="loading!==null" @click="open(entry.evidence)">{{ loading===entry.evidence.id?'Memuat…':'Pratinjau' }}</button></div><p v-if="entry.evidence.type==='TEXT'" class="preserve ws-source-text">{{ entry.evidence.text_content }}</p></li></ul><p class="fine">Bukti adalah sumber dari versi resmi dan ditampilkan tanpa penyuntingan.</p><AppDialog v-if="preview" :title="preview.item.original_name" caption="Bukti versi resmi" @close="clear"><img v-if="preview.item.type==='IMAGE'" class="ws-media-image" :src="preview.url" :alt="preview.item.original_name"><audio v-else :src="preview.url" controls preload="metadata"/><template #actions><button @click="clear">Tutup</button></template></AppDialog></template>
+<template>
+ <FetchState v-if="!allowed" state="error" title="Bukti tidak dapat dibuka" description="Akses mengikuti penugasan dan izin akun saat ini." :disabled="true" />
+ <FetchState v-else-if="!bundle?.items?.length" state="empty" title="Bukti versi resmi belum tersedia" description="Bukti dibaca dari versi resmi laporan yang dipilih." />
+ <div v-else class="ws-evidence-grid"><article v-for="entry in bundle.items" :key="entry.evidence.id" class="card ws-evidence-card" :class="{'ws-evidence-text-card':entry.evidence.type==='TEXT'}"><header class="ws-panel-heading"><div class="title-with-icon"><span class="heading-icon"><AppIcon :name="entry.evidence.type==='TEXT'?'file':entry.evidence.type==='IMAGE'?'image':'audio'" /></span><div><h2>{{ entry.evidence.type==='TEXT'?'Keterangan teks':entry.evidence.type==='IMAGE'?'Foto kejadian':'Rekaman audio' }}</h2><p v-if="entry.evidence.type==='TEXT'">{{ size(entry.evidence.byte_size) }} · {{ date(entry.evidence.created_at) }}</p></div></div></header><div class="ws-evidence-content"><template v-if="entry.evidence.type==='TEXT'"><p class="preserve ws-source-text">{{ entry.evidence.text_content }}</p><p class="fine">Sumber asli dari versi resmi {{ bundle.version_number }}.</p></template><template v-else><strong class="ws-evidence-name">{{ entry.evidence.original_name }}</strong><p class="muted">{{ size(entry.evidence.byte_size) }} · {{ date(entry.evidence.created_at) }}</p><div class="ws-evidence-footer"><small><AppIcon name="lock" :size="14" />Bukti privat</small><button :disabled="!online" @click="open(entry.evidence)"><AppIcon name="eye" :size="16" />Pratinjau</button></div></template></div></article></div>
+ <p class="fine">Bukti berasal dari versi resmi dan ditampilkan tanpa penyuntingan.</p>
+ <AppDialog v-if="selected" :title="selected.original_name" eyebrow="BUKTI PRIVAT" class="ws-media-dialog" caption="Bukti privat · versi resmi" @close="clear"><FetchState v-if="loading" compact title="Memuat bukti…" description="Membaca berkas yang dipilih dari sumber privat." /><FetchState v-else-if="error" state="error" compact title="Bukti belum dapat dimuat" description="Coba lagi untuk membaca berkas yang sama." :error="error" :disabled="!online" @retry="read" /><template v-else-if="url"><img v-if="selected.type==='IMAGE'" class="ws-media-image" :src="url" :alt="selected.original_name"><audio v-else :src="url" controls preload="metadata"/></template><template #actions><button @click="clear">Tutup</button></template></AppDialog>
+</template>

@@ -30,9 +30,10 @@ async function send(path, options = {}) {
   if (body !== undefined && !multipart) headers['Content-Type'] = 'application/json';
   let response;
   try {
-    response = await fetch(API_BASE + path.replace(/^\//, ''), {method, headers, credentials:'include', cache:'no-store',
+    response = await fetch(API_BASE + path.replace(/^\//, ''), {method, headers, credentials:options.credentials || 'include', cache:'no-store', signal:options.signal,
       body: body === undefined ? undefined : multipart ? body : JSON.stringify(body)});
-  } catch {
+  } catch (error) {
+    if (error.name === 'AbortError') throw error;
     throw unreadableResponse(method);
   }
   if (response.status === 401 && auth && method === 'GET' && retryRead) {
@@ -77,3 +78,8 @@ export async function logout() {
   try { await authPost('logout/', {}); } finally { clearAccess(); }
 }
 export const api = send;
+// Public reads never attach a private token, refresh a session or send cookies.
+export function publicRead(path, options = {}) {
+  if (!path.startsWith('public/reports/')) throw new Error('Alamat publik tidak sah.');
+  return send(path, {method:'GET', auth:false, credentials:'omit', signal:options.signal});
+}

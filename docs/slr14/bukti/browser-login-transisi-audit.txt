@@ -1,0 +1,3 @@
+PASS login: 24 theme/viewport cases including supplied 1535×727, short tablet/desktop, breakpoint641/640, phone320; copy/art/privacy gaps preserved.
+PASS normal page fade, one page at a time, hash navigation after transition, no undefined-ID fetches or runtime errors.
+PASS isolated QA database integrity.

@@ -1,0 +1,9 @@
+Status: belum lulus di lingkungan QA ini; bukan bagian dari 94 komponen yang lulus.
+Suite: ai_pipeline.tests.test_reporting_integration (9 tests).
+Percobaan awal: ModuleNotFoundError untuk psutil.
+Sesudah psutil==7.2.2 (dependensi yang sudah ada pada requirements-ai.txt) tersedia:
+setup identitas proses menghasilkan psutil.NoSuchProcess sebelum run terbentuk.
+Hasil runner: FAILED (13 subtest failures, 1 error; 9 tests).
+Tidak ada perubahan pipeline/psutil/test untuk menyembunyikan kegagalan tersebut.
+Jalankan ulang pada lingkungan aplikasi/stack AI SLR11 yang lengkap.
+Pemeriksaan lingkungan: PID os.getpid dan /proc/self tidak berada dalam namespace yang sama.

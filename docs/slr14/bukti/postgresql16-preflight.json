@@ -1,0 +1,10 @@
+{
+  "status": "BLOCKED",
+  "generated_at": "2026-10-30T16:00:10.601454+07:00",
+  "tests_run": 0,
+  "database_vendor": null,
+  "postgresql_major": null,
+  "django_version": "5.2.18",
+  "discovered_tests": 143,
+  "reason": "PostgreSQL 16 belum dapat digunakan. Periksa koneksi dan hak membuat database uji pada konfigurasi lokal."
+}

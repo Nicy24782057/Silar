@@ -1,0 +1,10 @@
+PASS full login layout transition for Reporter, Operator and Admin; outgoing/incoming layout animations observed.
+Step caption contrast 5.310739616642744 {
+  color: 'rgb(82, 100, 122)',
+  bg: 'color(srgb 0.917412 0.943177 0.976706)',
+  muted: '#52647A',
+  theme: 'light'
+}
+PASS analysis: real-stage 0/42/71/100 percentages, no time-based advance, one POST, stored-result read before100, explicit Next required. Progress UI uses controlled API responses; no real inference.
+PASS sequential Next/Back, unsaved correction guard, real API confirm/submit, verified receipt route, refresh and details, six responsive/theme receipts, unsubmitted sent-URL cannot show success.
+PASS isolated QA database integrity.

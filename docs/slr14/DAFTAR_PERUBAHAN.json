@@ -1,0 +1,1012 @@
+{
+  "base_commit": "1af8ac6f098b1a50fc83b4c74f8b0b4bbaaf73cd",
+  "branch": "codex/slr14-approved-ui",
+  "date": "2026-10-30",
+  "scope": "SLR14 publication, reference UI audit, owner-only draft deletion, layout transitions, stage-based analysis progress, sequential report flow, verified sent receipt, aligned notifications, reference draft steps, automatic verified analysis results, guided Operator review handoff and two-action publication confirmation/publish",
+  "cumulative_package": true,
+  "previous_package_sha256": "8d154c094afb9e3f7fbaef688982b2ae0dbe1c9eac62e5c863cc29e1a5819efa",
+  "design_reference": {
+    "filename": "SILAR_Seluruh_Role_Palet_Terang (2)(2).zip",
+    "sha256": "f83c5b3fa7f9290114e4fa131952e756d962fb0a123dd179f59644b501ec0b27",
+    "svg_count": 30,
+    "guide_count": 5
+  },
+  "new_migration": "core.0005_report_soft_deletion",
+  "verification": {
+    "frontend_unit_passed": 109,
+    "backend_component_passed": 94,
+    "backend_postgresql_tests_skipped": 5,
+    "native_postgresql_status": "BLOCKED",
+    "native_tests_discovered": 143,
+    "native_tests_run": 0,
+    "additional_ai_integration": "not passed; QA process-identity namespace limitation; see HASIL_VERIFIKASI.md",
+    "previous_browser_matrix_cases": 174,
+    "operator_process_render_cases": 60,
+    "operator_tab_render_cases": 28,
+    "operator_lost_response_recovery": "GET-only recovery of review, decision, create and publish; approval failure never publishes",
+    "latest_notification_cases": 24,
+    "latest_draft_step_cases": 12,
+    "automatic_analysis_results": "passed with controlled AI responses; no real inference",
+    "reporter_portal_cases": 60,
+    "login_viewport_cases": 24,
+    "cached_ui_assets": 60
+  },
+  "manifest_excludes_itself": true,
+  "files": [
+    {
+      "path": "code/backend/ai_pipeline/views.py",
+      "size": 4293,
+      "sha256": "8938de31f21f9cac3905006513fcb47a5f71452d3d68a9c5afb65ec1bf724fcc"
+    },
+    {
+      "path": "code/backend/core/audit.py",
+      "size": 1745,
+      "sha256": "7e8bd207979d41c206ec8e7f6b263ec40a29383797e810a14099004f9b2cc010"
+    },
+    {
+      "path": "code/backend/core/migrations/0005_report_soft_deletion.py",
+      "size": 2038,
+      "sha256": "ef35d83f34bba93ec6773cd1095576a5cff0dc353a410bd50596032c5104f068"
+    },
+    {
+      "path": "code/backend/core/models.py",
+      "size": 28039,
+      "sha256": "5a0905005b55ad6750aee34b7f60c32847c3bebc3318618bc82094b1f6ea851f"
+    },
+    {
+      "path": "code/backend/core/permissions.py",
+      "size": 3055,
+      "sha256": "d3622b8ad57f27066ee1c95cc3c3787dc8960d8d7bdca7408f488b74b79d1d1c"
+    },
+    {
+      "path": "code/backend/core/validators.py",
+      "size": 3419,
+      "sha256": "ed67c64384258c6fba47e3867ab0e595d1c6bb967e6053bdbf6e368b48bebced"
+    },
+    {
+      "path": "code/backend/reporting/publication_serializers.py",
+      "size": 1919,
+      "sha256": "82b24f2ee39dfc0cfa6f4d9054f36d8b2b823840c93d50b4d8be7fcb2bfc73ea"
+    },
+    {
+      "path": "code/backend/reporting/publication_services.py",
+      "size": 10724,
+      "sha256": "6f0d19341b2221601b5fce15243135f396167c0cd1f947d3a7a06b424a10682b"
+    },
+    {
+      "path": "code/backend/reporting/publication_views.py",
+      "size": 4440,
+      "sha256": "66cca888b65f9fceee5cc9a8e81125f4a7aa237128355a84bd636e49508a0bf6"
+    },
+    {
+      "path": "code/backend/reporting/review_serializers.py",
+      "size": 2374,
+      "sha256": "1264eace682213bb86d552d2b118a598787d421517b54972809303cd5a9f2437"
+    },
+    {
+      "path": "code/backend/reporting/serializers.py",
+      "size": 8227,
+      "sha256": "9234de2179eea41880c0c9658b2962ae4e2c5e6d7d80fd0c36fd4d80a234e63f"
+    },
+    {
+      "path": "code/backend/reporting/services.py",
+      "size": 9033,
+      "sha256": "4d257230f95cc75c55bdf37017bdafca16e199b9269f40a28958d14b96b584e1"
+    },
+    {
+      "path": "code/backend/reporting/slr14_verification.py",
+      "size": 7207,
+      "sha256": "c611e8f402f08648d256b246a17aa902d730bd9e1aaa3187ee3d3b322a66005c"
+    },
+    {
+      "path": "code/backend/reporting/tests/test_deletion.py",
+      "size": 6861,
+      "sha256": "1bae97403a222833e284ace7554b1f9772a22a4e31e9e5c0ae6500bb267ebddf"
+    },
+    {
+      "path": "code/backend/reporting/tests/test_deletion_postgresql.py",
+      "size": 2954,
+      "sha256": "1be76b33ee625f5507eb7a230cca80a46dbfa299d19370bdc76d3618df1ab6b0"
+    },
+    {
+      "path": "code/backend/reporting/tests/test_publication.py",
+      "size": 26371,
+      "sha256": "daad4a1cb474e2937cca3086aa60c1ec974072957120f2c1a389f1e1a525f043"
+    },
+    {
+      "path": "code/backend/reporting/tests/test_slr14_verification.py",
+      "size": 5463,
+      "sha256": "3a38180d54c9399e75efc7d772b980fd93f8c00145939e962fe9dab1e2fd9408"
+    },
+    {
+      "path": "code/backend/reporting/urls.py",
+      "size": 2797,
+      "sha256": "31a6f05aa47720faefe92a970086b96bf26904e9f7ff9691bf0162ee1a414a88"
+    },
+    {
+      "path": "code/backend/reporting/views.py",
+      "size": 7888,
+      "sha256": "856ef2ee14686432933cef94b1d36781e9750989b57fef46452afeb61201cdbc"
+    },
+    {
+      "path": "code/backend/reporting/workspace_services.py",
+      "size": 13608,
+      "sha256": "18d189ed76830df91fed1d3fdeea6bd62a887bec5b8d4d3ba641ac16818237ae"
+    },
+    {
+      "path": "code/backend/verify_slr14.py",
+      "size": 4283,
+      "sha256": "34b043db07b7dd7a432d0be36a66fab555a1630c9833a207276f8914c26bcbdb"
+    },
+    {
+      "path": "code/frontend/public/brand/silar-reference.svg",
+      "size": 190509,
+      "sha256": "d467e009313999c5b37e10ea12aab8ac0e99cd96869104dfd5a9bbf9d27f4d57"
+    },
+    {
+      "path": "code/frontend/public/fonts/SOURCES.txt",
+      "size": 851,
+      "sha256": "2c2cf19b864b7c885c060267ed73dcac4fe26e065933748a7075b61b21111553"
+    },
+    {
+      "path": "code/frontend/public/fonts/inter-OFL.txt",
+      "size": 4375,
+      "sha256": "8c8fa881d9091ee315d2c80d207bb73afd4e90a66c9782ca445c5642f25db6dc"
+    },
+    {
+      "path": "code/frontend/public/fonts/inter-reference.woff",
+      "size": 457780,
+      "sha256": "332fc0156ad27a3828943b7f7974edf74bc781366c12361feaf816ecd2402a59"
+    },
+    {
+      "path": "code/frontend/src/App.vue",
+      "size": 9357,
+      "sha256": "24a5c4bbde4cd921c44499dc48d161921cd90c74060b5965873f739e2958c22a"
+    },
+    {
+      "path": "code/frontend/src/analysis-progress.js",
+      "size": 3441,
+      "sha256": "4f3385a7b026428e1e62c3cc9a088dee8ecf780bbae86f02713987455d26219d"
+    },
+    {
+      "path": "code/frontend/src/api.js",
+      "size": 4089,
+      "sha256": "05b0e5e7f1f14e2d434d90c9013e27a2938f8125ebb5df9c4a6c94438cb166ca"
+    },
+    {
+      "path": "code/frontend/src/assets/reference/auth-identity-dark.svg",
+      "size": 573066,
+      "sha256": "5201642f25be12dc0788c454751f4f124a3a88b476377265b1239a92326a247d"
+    },
+    {
+      "path": "code/frontend/src/assets/reference/auth-identity.svg",
+      "size": 573047,
+      "sha256": "e684bb2063649f408e6b33f6fd6216701bf2a79e2bcc9ddd430f235be85dc9fc"
+    },
+    {
+      "path": "code/frontend/src/assets/reference/nara-dark.svg",
+      "size": 70558,
+      "sha256": "2bff6d275f81d1e42ddf4dbadca277bd0e9b2f47714fe087eca2fd3f025d46a1"
+    },
+    {
+      "path": "code/frontend/src/assets/reference/nara.svg",
+      "size": 70539,
+      "sha256": "f078f284b27c58ef66f2ed07d8abe0139b3a90f3b69bb138d8e4021b14af1f66"
+    },
+    {
+      "path": "code/frontend/src/assets/reference/portal-hero.webp",
+      "size": 98820,
+      "sha256": "50928ea8733e671920d75933acc54c5cffde500f2ae18b04d8288f2272b23d70"
+    },
+    {
+      "path": "code/frontend/src/assets/reference/privacy-dark.svg",
+      "size": 234693,
+      "sha256": "c0d9b840f757b7d5621a514ae25159f9643558adf0f808caaedb05c667554ea8"
+    },
+    {
+      "path": "code/frontend/src/assets/reference/privacy.svg",
+      "size": 234674,
+      "sha256": "1def8b0252a1b295ee012360217d84171565c276d3cc5958061b1247364347f3"
+    },
+    {
+      "path": "code/frontend/src/assets/reference/reporter-welcome.svg",
+      "size": 2211792,
+      "sha256": "1246c935d3a4933f205b8cb2df194e223db90e29a5da3188c21a96c712e9715b"
+    },
+    {
+      "path": "code/frontend/src/assets/reference/reporting-scene-dark.svg",
+      "size": 412451,
+      "sha256": "4deb9d0483052159c3501d66e8a494ad141d803f0554c3af9e65276782756d7a"
+    },
+    {
+      "path": "code/frontend/src/assets/reference/reporting-scene.svg",
+      "size": 412432,
+      "sha256": "06351d351e4ab196103058f6677aeeb24ade14e4e7355567e5bf7a0e96bab132"
+    },
+    {
+      "path": "code/frontend/src/assets/reference/sena-dark.svg",
+      "size": 102836,
+      "sha256": "2487fefc8a994c00739c8f1e5c1f3185e9abd4f07c96ae1812cb2b35a5b675a2"
+    },
+    {
+      "path": "code/frontend/src/assets/reference/sena.svg",
+      "size": 102817,
+      "sha256": "7ba05ac45f880f1c93275f8fb4878c0421046456b73ac6ccac511e1ee9ddb2dc"
+    },
+    {
+      "path": "code/frontend/src/assets/reference/start-dark.svg",
+      "size": 234160,
+      "sha256": "a0a5b476511061800320b4cf54aa1b43d8c83facd5774b23a40371d0c39ee0ca"
+    },
+    {
+      "path": "code/frontend/src/assets/reference/start.svg",
+      "size": 234141,
+      "sha256": "0f1f771cd60125acd5712d6cd70f834a65283a0314c68ee40b8679837010a982"
+    },
+    {
+      "path": "code/frontend/src/auth-ui.css",
+      "size": 8185,
+      "sha256": "20a7d92b444674c4b8ed5f7aea75afb57608cf81fcec0d7bd85aace52641a81a"
+    },
+    {
+      "path": "code/frontend/src/components/AnalysisProgress.vue",
+      "size": 2016,
+      "sha256": "bc6e5b38b488c8c168df263bf5c99d76b9cf5077ef8aee01a44346c3d6f86927"
+    },
+    {
+      "path": "code/frontend/src/components/AnalysisResult.vue",
+      "size": 4792,
+      "sha256": "fc4ea7e45d36fc224b37120b50c9b04d8ba247645dc2874fe74a284b108c3e0f"
+    },
+    {
+      "path": "code/frontend/src/components/AppDialog.vue",
+      "size": 1378,
+      "sha256": "a8bc0f1e05317aa7d91eddc15aade7b056ee1d458686d48c9d87b60cb16a50d3"
+    },
+    {
+      "path": "code/frontend/src/components/AppIcon.vue",
+      "size": 3647,
+      "sha256": "33dff547fdeefeafa9f7a6987ce5f71dfedcbe40a887fc3885acbcb7be948249"
+    },
+    {
+      "path": "code/frontend/src/components/AuthIdentity.vue",
+      "size": 2895,
+      "sha256": "312cf00d23047edc51c151ce060b9370faf9b2b48ee810d16ef98f4bcd88f26c"
+    },
+    {
+      "path": "code/frontend/src/components/DeleteDraftDialog.vue",
+      "size": 2011,
+      "sha256": "cde249eaedc70f2f814e0defcb2f4bfa1a3d5edf27be039f1907cc661a27245d"
+    },
+    {
+      "path": "code/frontend/src/components/EvidenceSources.vue",
+      "size": 4376,
+      "sha256": "4d28e34d1db9caa6417ff6ba323cf1a77f036b80263c710a9bbddf4fa27cdd08"
+    },
+    {
+      "path": "code/frontend/src/components/FetchState.vue",
+      "size": 1780,
+      "sha256": "c5245e3f922248e67a59061ab6e37a7db8c1a06b9cb9ba4833ba8b2eb5392839"
+    },
+    {
+      "path": "code/frontend/src/components/PageOutlet.vue",
+      "size": 601,
+      "sha256": "81fac1e67bcd682609d569a4b6ef835c36cadd9fa13f0d76343e7c7d0d387702"
+    },
+    {
+      "path": "code/frontend/src/components/ProcessOutlet.vue",
+      "size": 1007,
+      "sha256": "6820d14edd463451f80ca5fa421f619093bd872916c1fa71dcb12704d2141592"
+    },
+    {
+      "path": "code/frontend/src/components/PublicIncidentCard.vue",
+      "size": 1264,
+      "sha256": "9f2f3774618d03aadd8ec134367ec84c8bb3461c0fac148c36dc6d27520491e1"
+    },
+    {
+      "path": "code/frontend/src/components/PublicNavigation.vue",
+      "size": 1493,
+      "sha256": "cd90473023f03004f44b72af6b86a6e498244319199536f03429cc146ff188f3"
+    },
+    {
+      "path": "code/frontend/src/components/PublicationPanel.vue",
+      "size": 21391,
+      "sha256": "8370882e675904496d003514f6a59d0b28ee04e24570890f5038407947cdcce6"
+    },
+    {
+      "path": "code/frontend/src/components/ReferenceArt.vue",
+      "size": 372,
+      "sha256": "27507e53691bcbf16b09a5747efc0accbf9fd09e019c440e49fa96bde5c181a1"
+    },
+    {
+      "path": "code/frontend/src/components/ReportCardPreview.vue",
+      "size": 3807,
+      "sha256": "295e7b9d56b480866ceee294680ee78e1cea9c45b433e4985a6b83e119a8d3c9"
+    },
+    {
+      "path": "code/frontend/src/components/ReportReview.vue",
+      "size": 18714,
+      "sha256": "a7afc5bf072f7941e9d6eb089cc994d0fd194e369410885897f441de48500d99"
+    },
+    {
+      "path": "code/frontend/src/components/VersionHistory.vue",
+      "size": 8700,
+      "sha256": "7dff2615dc666ade63092820703446ece845a4e0b57bc1a7505c047d2af8c339"
+    },
+    {
+      "path": "code/frontend/src/components/WorkspaceAi.vue",
+      "size": 3350,
+      "sha256": "f20cf8d33255ab30eb1e6088af461d921da16f3860be6373e2913b292749f3dd"
+    },
+    {
+      "path": "code/frontend/src/components/WorkspaceAssignment.vue",
+      "size": 4561,
+      "sha256": "3b73b2bddba921039df22769c049de60b492b4103aabfff0ddd4b3e6b5b62546"
+    },
+    {
+      "path": "code/frontend/src/components/WorkspaceEvidence.vue",
+      "size": 3745,
+      "sha256": "8573f8f167f3631d2f0e54ca9affc654f0ca31ef7550b91ad2dbc01cdcc219df"
+    },
+    {
+      "path": "code/frontend/src/design-system.css",
+      "size": 36531,
+      "sha256": "11ec947af6b00571c8c72948efe50ae1599a6a1501e0e3c182262a96c2e47ab4"
+    },
+    {
+      "path": "code/frontend/src/evidence.js",
+      "size": 3126,
+      "sha256": "633269907ba1e42ed6f32e5147c76e6e9f70c5749bb21fd5f559bcbd233ec7f5"
+    },
+    {
+      "path": "code/frontend/src/fetch-state.css",
+      "size": 2345,
+      "sha256": "7f14fe8b7d682004b9e7f57953a00620b395982c26cc61da047bb70d87687a8a"
+    },
+    {
+      "path": "code/frontend/src/main.js",
+      "size": 720,
+      "sha256": "7624e30351ad88d808bc6bfe68f138fc970e7d6beede53a77f855fe1c97a357a"
+    },
+    {
+      "path": "code/frontend/src/notifications.js",
+      "size": 531,
+      "sha256": "d6499bdf5cdbf2c8bb96a5a07f04a97c411bbc59110f8dac966b2d804935d758"
+    },
+    {
+      "path": "code/frontend/src/operator-flow.js",
+      "size": 3237,
+      "sha256": "31351ee039f12083248fbf0d74c8fe33798dddf16066fd35b49f4bd5a4b5b5c5"
+    },
+    {
+      "path": "code/frontend/src/page-motion.css",
+      "size": 1787,
+      "sha256": "426095ce2dd05f5dfec554fb7c0ba50881e632f1fb9c7dca74116c03c84b9c1c"
+    },
+    {
+      "path": "code/frontend/src/public-ui.css",
+      "size": 29805,
+      "sha256": "ae1cefefcb44e98d4a6aeb5e2c6ac1e7f1a2f88c5d52fb0743f06cc263bada42"
+    },
+    {
+      "path": "code/frontend/src/publication.js",
+      "size": 1532,
+      "sha256": "c26d64147459faf7e41f1428e84fceaed1b413bc8b8d3230f91dd96ab211a4c4"
+    },
+    {
+      "path": "code/frontend/src/report-compose.css",
+      "size": 30313,
+      "sha256": "48bcd6e945a713edfadd5c927705dec8b1da515757d3c09a13c9a339eebafe10"
+    },
+    {
+      "path": "code/frontend/src/report-feedback.css",
+      "size": 5556,
+      "sha256": "37bbe3739f7a5152554f2048b68120f81516f61461b7d7f5c888a128afbafec1"
+    },
+    {
+      "path": "code/frontend/src/reports-ui.css",
+      "size": 19043,
+      "sha256": "54b53c131587ab4521564dbf9d803040f09aa9600a31fe81ee6a318ee2a40ae2"
+    },
+    {
+      "path": "code/frontend/src/router.js",
+      "size": 3990,
+      "sha256": "83d9f6c0e8a3e1ee9b7b749bcb4f53e649e3daee6d554cbedc0d8965bfc2a964"
+    },
+    {
+      "path": "code/frontend/src/use-analysis-progress.js",
+      "size": 2814,
+      "sha256": "36365b5d8af2fb3b62b5d44e0ff9803f9e21236ae33cd0a2790e854e935e98b8"
+    },
+    {
+      "path": "code/frontend/src/views/AuthView.vue",
+      "size": 13518,
+      "sha256": "135c030115691256126d147a2b37c2b5aa1a27ddee29cf58e7ec8b585ee99192"
+    },
+    {
+      "path": "code/frontend/src/views/DraftView.vue",
+      "size": 38965,
+      "sha256": "eb09a3601e20010ba5e70908f46638ad8f234e5a544dfbcdee3b416c1b8891ab"
+    },
+    {
+      "path": "code/frontend/src/views/LandingView.vue",
+      "size": 7552,
+      "sha256": "5bd9e62aee99825ddccd18070c3d0f295c7ade11c650c1cb843928b65eedce75"
+    },
+    {
+      "path": "code/frontend/src/views/NotificationsView.vue",
+      "size": 6163,
+      "sha256": "0532e750107d5a0abf17b1d0f2c1a3d5d7115fc0e1b0730ac748509c91f4385f"
+    },
+    {
+      "path": "code/frontend/src/views/ProfileView.vue",
+      "size": 3333,
+      "sha256": "9fa469c1b3f56e3cd3c19453b5a07ac2233d86891a4a2a084dd0d21c29a0f551"
+    },
+    {
+      "path": "code/frontend/src/views/PublicPortalView.vue",
+      "size": 8994,
+      "sha256": "0476dbf5566627ce43191e973a20f87413b7b670e406a7ac1b44ac394080a69c"
+    },
+    {
+      "path": "code/frontend/src/views/PwaView.vue",
+      "size": 3848,
+      "sha256": "949fee7a99d083b88f184734515a678d427ba656a2e9001d18cb237d10c668d7"
+    },
+    {
+      "path": "code/frontend/src/views/ReportSentView.vue",
+      "size": 2776,
+      "sha256": "ac6e7bd4b02d0cbcc3c6acd78c1ce33f95dfe3a89d9df9e3ca0813dec5a2ad9b"
+    },
+    {
+      "path": "code/frontend/src/views/ReportsView.vue",
+      "size": 15402,
+      "sha256": "68ce15cc53d64918aa325191726c30aaf97ca3cd94674d273205f30eaf21edd6"
+    },
+    {
+      "path": "code/frontend/src/views/WorkspaceAuditView.vue",
+      "size": 4766,
+      "sha256": "b608590dead0925c6c923e6529cae16bb4eca158fd25c1b3ce6bd6d79ce6aa7c"
+    },
+    {
+      "path": "code/frontend/src/views/WorkspaceOperatorsView.vue",
+      "size": 12712,
+      "sha256": "648993476340614d001adf9a7149fdf78d1df91d341dc0215e2b7bfbb580d040"
+    },
+    {
+      "path": "code/frontend/src/views/WorkspaceReportView.vue",
+      "size": 28485,
+      "sha256": "69b0b97c7a3eccd367b5a08f18899d92b27319145c38689e4610130c9a01e024"
+    },
+    {
+      "path": "code/frontend/src/views/WorkspaceReportsView.vue",
+      "size": 12634,
+      "sha256": "5814f94fb685143c00b446e2215d1ad1e485e2f565ea5e0b6a96fbdad135dd1a"
+    },
+    {
+      "path": "code/frontend/src/views/WorkspaceServicesView.vue",
+      "size": 2971,
+      "sha256": "227829047b8fc03c6a038d87d92844fe08d5c425abc30a7d117424bc5db20df7"
+    },
+    {
+      "path": "code/frontend/src/views/WorkspaceView.vue",
+      "size": 7692,
+      "sha256": "9ca8798789551b6259ba810bbf41e2694a565c1c71507f33b78fffd4d276bf59"
+    },
+    {
+      "path": "code/frontend/src/workspace-reference.css",
+      "size": 21306,
+      "sha256": "88924b1a351651a60e7fba5b8a86513c0ece34b1a13eb6874f4ccb74457b315d"
+    },
+    {
+      "path": "code/frontend/src/workspace.css",
+      "size": 29030,
+      "sha256": "8871d193e2220ccfc2c53fe0104e05f44e2ded4d7655bd8cdb57e392a9043107"
+    },
+    {
+      "path": "code/frontend/src/workspace.js",
+      "size": 8793,
+      "sha256": "04117649746ecdadca5aebb0a11637614bba613b15bc55ec2bc046107e4583f1"
+    },
+    {
+      "path": "code/frontend/tests/analysis-progress.test.js",
+      "size": 3866,
+      "sha256": "1c8ce78953c6c0c0f79d8b63df51d90806008999c4780ac998591f85c1efffd0"
+    },
+    {
+      "path": "code/frontend/tests/operator-flow.test.js",
+      "size": 5283,
+      "sha256": "47025e54093adb2723e0f0d0cc96d5a3f837d241d09cf6589c5341a58ac7315e"
+    },
+    {
+      "path": "code/frontend/tests/publication.test.js",
+      "size": 2806,
+      "sha256": "6c3e4618aef8812145e2f3286946f663d8381aa3b48dc1e3cdee5a4e1849cb79"
+    },
+    {
+      "path": "code/frontend/tests/workspace.test.js",
+      "size": 3395,
+      "sha256": "27717fd4d30753a2524085ef372ce78dac9335454ce4a6437d03aaf88c407d6f"
+    },
+    {
+      "path": "docs/slr14/ALUR_DAN_PROGRES_20261030.md",
+      "size": 5629,
+      "sha256": "95bd893df56571489844d8c2e384655621161e81af7e771d089f90ee194869da"
+    },
+    {
+      "path": "docs/slr14/ALUR_OPERATOR_20261030.md",
+      "size": 7750,
+      "sha256": "ae075acfe921b5826c2e266ad1339ac59a0a86fd11c336005c54862297ccc9ad"
+    },
+    {
+      "path": "docs/slr14/API_HAPUS_DRAFT.md",
+      "size": 3320,
+      "sha256": "9e4d0b2fcab878dd7bdd9462b033f0ad58aaa7bde704bb4bea5fa06e01e73b9d"
+    },
+    {
+      "path": "docs/slr14/AUDIT_MENYELURUH_20261030.md",
+      "size": 4893,
+      "sha256": "1e3d2b188d78688f878b402abcbd791a00c5dd747f7457166952c4cec6725d79"
+    },
+    {
+      "path": "docs/slr14/HASIL_VERIFIKASI.md",
+      "size": 5935,
+      "sha256": "6b4134a18c1e7dd20c320afde0ebc2e95401c37c9118606911ab87e570d731b0"
+    },
+    {
+      "path": "docs/slr14/KEPUTUSAN_DAN_CAKUPAN.md",
+      "size": 5447,
+      "sha256": "b97392415301f2ff68663512235d97d524abccf73a3ff2a51bc2f6db2ebf88f3"
+    },
+    {
+      "path": "docs/slr14/README.md",
+      "size": 8508,
+      "sha256": "2f0cd49cdd96386b486df62594b764441231e57d8961873104af6b76959dbcb0"
+    },
+    {
+      "path": "docs/slr14/REVISI_NOTIFIKASI_DAN_HASIL_20261030.md",
+      "size": 4254,
+      "sha256": "678a3f4e735e048a45db212ea055e7f9a837b8f3b4934fdb3036199ee054f32c"
+    },
+    {
+      "path": "docs/slr14/REVISI_UI_20261030.md",
+      "size": 8143,
+      "sha256": "6c733d99287ff44c0dab6ef050bb2757fe8dbbb84a23f7fd95d3a8af8087b9c9"
+    },
+    {
+      "path": "docs/slr14/UJI_POSTGRESQL16.md",
+      "size": 3491,
+      "sha256": "46d2503c6fb7649b499c0e2b74ff4947f6b28327890e7c4ab1659b809226bdd1"
+    },
+    {
+      "path": "docs/slr14/bukti/alur-laporan-terkirim-dark-390.png",
+      "size": 43753,
+      "sha256": "155db6c7776fed86e421fd82bf5e91890ddeed4144bde7d27931d25f32dbbe7c"
+    },
+    {
+      "path": "docs/slr14/bukti/alur-laporan-terkirim-light-1440.png",
+      "size": 93528,
+      "sha256": "1bdaac5019a4d8d9c79d0f2732538f7a6e23ddba54c81cb1cd1ed34cc0b2ef00"
+    },
+    {
+      "path": "docs/slr14/bukti/alur-laporan-terkirim-light-320.png",
+      "size": 49505,
+      "sha256": "62585d7e7cc370fa76bd04c0489246c87ca62dee24fb23f343614a1ee09ac767"
+    },
+    {
+      "path": "docs/slr14/bukti/alur-progres-ai-gelap-320.png",
+      "size": 137069,
+      "sha256": "d0b56ce1abbe5562d802daa6c9c4fd2ac35dc0b70ecbd5d27c8ff23dfd13dfd5"
+    },
+    {
+      "path": "docs/slr14/bukti/alur-progres-ai-gelap-ponsel.png",
+      "size": 140515,
+      "sha256": "06a62193c791aefa1e0f3fd1b66eab51e0f076836ed355303491b3c2546fe6e0"
+    },
+    {
+      "path": "docs/slr14/bukti/alur-progres-ai-terang-desktop.png",
+      "size": 261273,
+      "sha256": "2494a42b38c3085ea1b41eb11450d34f9a69df0c94cd74fab83587e251d1a8fa"
+    },
+    {
+      "path": "docs/slr14/bukti/alur-progres-pengiriman.txt",
+      "size": 706,
+      "sha256": "c5335080d36e1af6ddf4d7cd5b440b203e0fb89b097fba8011715f6f043d0827"
+    },
+    {
+      "path": "docs/slr14/bukti/audit-admin-dialog-ponsel.png",
+      "size": 46146,
+      "sha256": "67eb7104b68985a1b7da841dd2189a3c33f3fbdcb000620ddc16db9000ce6aed"
+    },
+    {
+      "path": "docs/slr14/bukti/audit-admin-izin.png",
+      "size": 202813,
+      "sha256": "38e67d1f2f18c0bf4ab833e0a5fcfa958f087330a10ede5581d34d81a8a83320"
+    },
+    {
+      "path": "docs/slr14/bukti/audit-admin-ringkasan-ponsel.png",
+      "size": 126706,
+      "sha256": "66dc6fdf8f78c54967beabe9cfe36fd8014e10771749f7004a66aec14f416234"
+    },
+    {
+      "path": "docs/slr14/bukti/audit-admin-tambah-operator.png",
+      "size": 203826,
+      "sha256": "3c06b8b4d625e46a06d37acf2b24c46a3dd9de2c9fbab16d6d67f4d6cc1eddc0"
+    },
+    {
+      "path": "docs/slr14/bukti/audit-bukti-gagal.png",
+      "size": 213122,
+      "sha256": "d85a099bd20d5f9722e215859550f2d41082fe9bf9604b6c55f5112af0a3b33b"
+    },
+    {
+      "path": "docs/slr14/bukti/audit-dashboard-admin.png",
+      "size": 320679,
+      "sha256": "5bb3991b7dd2c662ae3b774a997bb064f593d729523f7b87fdee9bafb2631899"
+    },
+    {
+      "path": "docs/slr14/bukti/audit-dashboard-operator.png",
+      "size": 303246,
+      "sha256": "586fc347246aab33b3db1ca54e3422b9ee4cb0bc6d7e9c999bee9f1bd46235a9"
+    },
+    {
+      "path": "docs/slr14/bukti/audit-hapus-draft.png",
+      "size": 221328,
+      "sha256": "f987ca919f36bcd6fc4f6211f36b6a29295f2cdcb12d2f7abd1bb22111466755"
+    },
+    {
+      "path": "docs/slr14/bukti/audit-login-layar-pendek-gelap.png",
+      "size": 426905,
+      "sha256": "f5d904f05182e1f40a039ef118333863d8591e6a5beebae8258922d64fd96d84"
+    },
+    {
+      "path": "docs/slr14/bukti/audit-login-layar-pendek-terang.png",
+      "size": 441475,
+      "sha256": "05adc9a585af73ab0e293c00d686a728ffccc99cad75b9a3f5248f1739eb3253"
+    },
+    {
+      "path": "docs/slr14/bukti/audit-login-tablet-pendek.png",
+      "size": 151291,
+      "sha256": "ddf6c42e429b7214eca04f829c46ced65e24b8622b0a3c7b4386dff80a53079e"
+    },
+    {
+      "path": "docs/slr14/bukti/audit-operator-ai-gelap.png",
+      "size": 201794,
+      "sha256": "b16a24e27988c2b01ac4a2e1d853d0c87fd98d20714103c8dcdb21f70ba05574"
+    },
+    {
+      "path": "docs/slr14/bukti/audit-operator-ai-terang.png",
+      "size": 205715,
+      "sha256": "48a8dba29eb05e19e0b89b8e64dd9f18726a649d05dc66b451520ab435264ad2"
+    },
+    {
+      "path": "docs/slr14/bukti/audit-operator-keputusan.png",
+      "size": 218744,
+      "sha256": "36386abc1710d32e4c0178ab7a1a0da375199fe8087425a961eb9082560f716d"
+    },
+    {
+      "path": "docs/slr14/bukti/audit-operator-review.png",
+      "size": 200256,
+      "sha256": "cd44d49c1761a6361fb527ca7dbc2b69367463b9f5d9ead20e1547d3b058d51b"
+    },
+    {
+      "path": "docs/slr14/bukti/audit-operator-riwayat-ponsel.png",
+      "size": 86122,
+      "sha256": "7f52701be4ea52f618eecf41067cd7b8b465919d8697f116a385f171a19a7893"
+    },
+    {
+      "path": "docs/slr14/bukti/backend-komponen-audit.txt",
+      "size": 634,
+      "sha256": "e81e58bcbb58ba0d98c21b617123ccb40d270924a53177c6b95a10797f5765ed"
+    },
+    {
+      "path": "docs/slr14/bukti/backend-komponen.txt",
+      "size": 620,
+      "sha256": "30c5b0bea1c6b6b12d1645db2d933d03055ea633f40926a265bb0bb52f3f2bfb"
+    },
+    {
+      "path": "docs/slr14/bukti/browser-admin-operator-audit.txt",
+      "size": 247,
+      "sha256": "d008261cdeb3ac62b7347faf6b564745cf2baa1aed2271d6f53f6ffd60f8473a"
+    },
+    {
+      "path": "docs/slr14/bukti/browser-login-transisi-audit.txt",
+      "size": 307,
+      "sha256": "429303db6ccfa41ca905d62881b128a5e6e7f8c6738d7203ebfe80464dad1863"
+    },
+    {
+      "path": "docs/slr14/bukti/browser-matriks-alur.txt",
+      "size": 521,
+      "sha256": "f0d3763d0f41b09e1ad35e7c6083f5a6a5c12f5b762f109124f7f4836b7dd73f"
+    },
+    {
+      "path": "docs/slr14/bukti/browser-matriks-audit.txt",
+      "size": 521,
+      "sha256": "f0d3763d0f41b09e1ad35e7c6083f5a6a5c12f5b762f109124f7f4836b7dd73f"
+    },
+    {
+      "path": "docs/slr14/bukti/browser-regresi-20261030.txt",
+      "size": 521,
+      "sha256": "f0d3763d0f41b09e1ad35e7c6083f5a6a5c12f5b762f109124f7f4836b7dd73f"
+    },
+    {
+      "path": "docs/slr14/bukti/browser-reporter-alur.txt",
+      "size": 774,
+      "sha256": "d60f6c7380d25e2a31a450b91bd070ce41da8689c4a3fa5d0d5499d9d63295fa"
+    },
+    {
+      "path": "docs/slr14/bukti/browser-reporter-audit.txt",
+      "size": 774,
+      "sha256": "d60f6c7380d25e2a31a450b91bd070ce41da8689c4a3fa5d0d5499d9d63295fa"
+    },
+    {
+      "path": "docs/slr14/bukti/browser-reporter-notifikasi.txt",
+      "size": 774,
+      "sha256": "d60f6c7380d25e2a31a450b91bd070ce41da8689c4a3fa5d0d5499d9d63295fa"
+    },
+    {
+      "path": "docs/slr14/bukti/browser-revisi-20261030.txt",
+      "size": 774,
+      "sha256": "d60f6c7380d25e2a31a450b91bd070ce41da8689c4a3fa5d0d5499d9d63295fa"
+    },
+    {
+      "path": "docs/slr14/bukti/browser-tindakan-audit.txt",
+      "size": 412,
+      "sha256": "27d04b618001f1d708cf57db5a1bc407244d0a6cb9962b437cd391d330ebfa11"
+    },
+    {
+      "path": "docs/slr14/bukti/browser.txt",
+      "size": 1551,
+      "sha256": "f3eaea404de86d8509f465a015ca6e4588b3ab1e084e3bfff5ff090bb0bc0cf4"
+    },
+    {
+      "path": "docs/slr14/bukti/draft-tahapan-gelap-320.png",
+      "size": 107851,
+      "sha256": "ad895e133f944196329e3ab0d7be872a7691d0e1b5d5333ce35ecbe282bfaca4"
+    },
+    {
+      "path": "docs/slr14/bukti/draft-tahapan-terang.png",
+      "size": 239970,
+      "sha256": "1159770b151351d360b5473109a87786f68d1f146e151f0e95bd045006f1d71d"
+    },
+    {
+      "path": "docs/slr14/bukti/frontend-build.txt",
+      "size": 3960,
+      "sha256": "f044ce620a7d39308c1976b5c2aec564d011e55aa1fa15d33a5e324acfbcb1b3"
+    },
+    {
+      "path": "docs/slr14/bukti/frontend-unit.txt",
+      "size": 10251,
+      "sha256": "281b9f0ef46f22312470bf896291f0b201098901c0bafc46136d7dad033b554d"
+    },
+    {
+      "path": "docs/slr14/bukti/hasil-otomatis-gelap.png",
+      "size": 176080,
+      "sha256": "dd21a8ec193c7243d62827b697971c5d8c46ab14641a76242485bb81fa7e436a"
+    },
+    {
+      "path": "docs/slr14/bukti/integrasi-ai-tambahan.txt",
+      "size": 668,
+      "sha256": "836ef3cd5c1c8b37631fd2857cd793a081d749882b626c02b12639ba38d6e7ce"
+    },
+    {
+      "path": "docs/slr14/bukti/login-desktop-gelap.png",
+      "size": 456661,
+      "sha256": "a81c30e7059cfacdb12b636f8342d984b567c6501f90710311e26e5a22bb237a"
+    },
+    {
+      "path": "docs/slr14/bukti/login-desktop-terang.png",
+      "size": 486861,
+      "sha256": "bb2c3b17b0d2a3f9299a254a0ec00a3f161ca299744608e9e5dd4ad3d9cb039b"
+    },
+    {
+      "path": "docs/slr14/bukti/login-ponsel.png",
+      "size": 29831,
+      "sha256": "f17e9d0b328102a047e1d4738ec3f5b685f9d894f111f277f0cb99ecd4d8a26b"
+    },
+    {
+      "path": "docs/slr14/bukti/notifikasi-admin-berisi-gelap-320.png",
+      "size": 66523,
+      "sha256": "0b7fd92418b7c1f9f6225cb67262729d6f1f270132e350cd5b2671a42c63d41b"
+    },
+    {
+      "path": "docs/slr14/bukti/notifikasi-admin-berisi-terang.png",
+      "size": 192338,
+      "sha256": "f1c32c574bfe4cb3f787f46ec8f4d03df4b3545495e25a6b9889b5cf49d2796c"
+    },
+    {
+      "path": "docs/slr14/bukti/notifikasi-admin-kosong-gelap-ponsel.png",
+      "size": 55075,
+      "sha256": "c80eca2f99d5212233d3f8d23da69227e91cb400cc2686deda3018f42390545c"
+    },
+    {
+      "path": "docs/slr14/bukti/notifikasi-admin-kosong-terang.png",
+      "size": 179434,
+      "sha256": "af2b65ad40c466c2001c2f0fc583085fba7d1f48ef1fb2a5d8b53e31ab885022"
+    },
+    {
+      "path": "docs/slr14/bukti/notifikasi-dan-hasil.txt",
+      "size": 999,
+      "sha256": "7caf3199f06f539bf014674c8983a2187da83e07b4cf1c2e488cab7402e3017b"
+    },
+    {
+      "path": "docs/slr14/bukti/operator-alur-publikasi.txt",
+      "size": 981,
+      "sha256": "83cef7cc68e1b8001c644c97dcb121c04f4974d3356b61658ed2264f1f52ce34"
+    },
+    {
+      "path": "docs/slr14/bukti/operator-formulir-pratinjau-gelap-320.png",
+      "size": 265735,
+      "sha256": "98e958a78360b59dc803f1d97d30891c9e20333f83bc1004d16c5ac05dac5b7d"
+    },
+    {
+      "path": "docs/slr14/bukti/operator-formulir-pratinjau-terang.png",
+      "size": 360506,
+      "sha256": "006bd818b2e989a7cd1a6507d76cc4b2e280e6f633812248a48b1a28ad6ff5b4"
+    },
+    {
+      "path": "docs/slr14/bukti/operator-pemulihan.txt",
+      "size": 578,
+      "sha256": "2a1aa97414a54aaa684dd3f589011a58e43f4835453e277274ecd889db4a0fa6"
+    },
+    {
+      "path": "docs/slr14/bukti/operator-pratinjau-terkonfirmasi-gelap-ponsel.png",
+      "size": 217520,
+      "sha256": "232789e96e555cc4248cbd756d27d0df09a432f7fbef3f4629dd00e87505915c"
+    },
+    {
+      "path": "docs/slr14/bukti/operator-pratinjau-terkonfirmasi-terang.png",
+      "size": 323354,
+      "sha256": "f5ae56afd1137614423f8d092c7bce291113216aa075ea0d890ad8470439b298"
+    },
+    {
+      "path": "docs/slr14/bukti/operator-publikasi-berhasil-gelap-320.png",
+      "size": 142025,
+      "sha256": "1e5f4cc417d7737070e8bb6037915daeee150a48ef8d690876119a93e9d3c0bd"
+    },
+    {
+      "path": "docs/slr14/bukti/operator-publikasi-berhasil-terang.png",
+      "size": 225371,
+      "sha256": "2a89ac789f473e3b5ab58fbfa54acd3b97837b47484992bd68b3ac787dbe31e2"
+    },
+    {
+      "path": "docs/slr14/bukti/operator-review-tersimpan-gelap-ponsel.png",
+      "size": 113321,
+      "sha256": "d195a1bae693a58823170ec221fabab6c7651eb79134ba87d7665a72303ff930"
+    },
+    {
+      "path": "docs/slr14/bukti/operator-review-tersimpan-terang.png",
+      "size": 190924,
+      "sha256": "780c1926f47061520e1f8cea1d0645a50d6ee14d53cf80eb5db6a082de76235b"
+    },
+    {
+      "path": "docs/slr14/bukti/postgresql16-preflight.json",
+      "size": 331,
+      "sha256": "1b6dc983290741d236cd3de3c838fcc49c768df1957cded97b3918c2fbc96673"
+    },
+    {
+      "path": "docs/slr14/bukti/publikasi-20261030.txt",
+      "size": 362,
+      "sha256": "903c297c63e385c23dd65245b744fcca5b8aaa502111212b7a98f91379e537e6"
+    },
+    {
+      "path": "docs/slr14/bukti/publikasi-audit.txt",
+      "size": 362,
+      "sha256": "903c297c63e385c23dd65245b744fcca5b8aaa502111212b7a98f91379e537e6"
+    },
+    {
+      "path": "docs/slr14/bukti/pwa-20261030.txt",
+      "size": 250,
+      "sha256": "e6fae062a73e973b5b6ee53a75338d51553aeb72a3d4f2cb989c61c5e2d44160"
+    },
+    {
+      "path": "docs/slr14/bukti/pwa-alur.txt",
+      "size": 250,
+      "sha256": "6e5318696b9421bc592c040c434bd66ce35ed2a2a5e4edc2ffc22165d02f538c"
+    },
+    {
+      "path": "docs/slr14/bukti/pwa-audit.txt",
+      "size": 250,
+      "sha256": "d64748c5720b64e9bec94bd0ee67b43efa6f59f66ebda98dc3dcd57c44a3c102"
+    },
+    {
+      "path": "docs/slr14/bukti/pwa-notifikasi.txt",
+      "size": 250,
+      "sha256": "6e5318696b9421bc592c040c434bd66ce35ed2a2a5e4edc2ffc22165d02f538c"
+    },
+    {
+      "path": "docs/slr14/bukti/pwa-operator.txt",
+      "size": 250,
+      "sha256": "6e5318696b9421bc592c040c434bd66ce35ed2a2a5e4edc2ffc22165d02f538c"
+    },
+    {
+      "path": "docs/slr14/bukti/revisi-confirm-light-1440.png",
+      "size": 259842,
+      "sha256": "1b736fff77cbbd6fe3a27dab3bf68263dcfcf74c6a3b98b86579c77c96145a9d"
+    },
+    {
+      "path": "docs/slr14/bukti/revisi-confirm-light-390.png",
+      "size": 177587,
+      "sha256": "4e009dd2d1b5de731f8f605d75913151777b8848b3c5801af9e538b5572cbf48"
+    },
+    {
+      "path": "docs/slr14/bukti/revisi-detail-operator-390.png",
+      "size": 203952,
+      "sha256": "1354eae7df9ce5a905440f6a0747ff6e3c5b46071152a44bce4e364164f6d843"
+    },
+    {
+      "path": "docs/slr14/bukti/revisi-detail-operator.png",
+      "size": 278211,
+      "sha256": "5e34f8119bdf9a3f03fb482a1804ba6bcb81d59429fb90dae6c28bd9dff07b9e"
+    },
+    {
+      "path": "docs/slr14/bukti/revisi-fetch-gagal.png",
+      "size": 176967,
+      "sha256": "bec73406181b5884714b8ca0c2124d77a75531320e7d464a666f26a2bf9ffaf8"
+    },
+    {
+      "path": "docs/slr14/bukti/revisi-fetch-kosong.png",
+      "size": 173857,
+      "sha256": "f03d23314de0603bc3a52e5e8056773be21bcf62cea276a1cbafd56b1fc52953"
+    },
+    {
+      "path": "docs/slr14/bukti/revisi-fetch-memuat.png",
+      "size": 114973,
+      "sha256": "8459cd6a6b7ee62a65191fca0ca4eab859973b06447d3de75937af59228afdbf"
+    },
+    {
+      "path": "docs/slr14/bukti/revisi-input-light-1440.png",
+      "size": 236834,
+      "sha256": "4ff13b17e2b65f7876d9e32fb9c361a5cd804182e9919333010e222f0a014302"
+    },
+    {
+      "path": "docs/slr14/bukti/revisi-input-light-390.png",
+      "size": 159726,
+      "sha256": "682f95e9ac72e871691571b51791b52f80494e8084321ae18ce2c5440f2e49f5"
+    },
+    {
+      "path": "docs/slr14/bukti/revisi-notifikasi.png",
+      "size": 297242,
+      "sha256": "c5c40b96edd89957946c645f18171d0243da38c83b49bb1f09cf668387164747"
+    },
+    {
+      "path": "docs/slr14/bukti/revisi-portal-light-1440.png",
+      "size": 638890,
+      "sha256": "5d7ba3625a89ea5c8f5246b8da5bc60b2d0d228451b1233125d8ea153ea024a3"
+    },
+    {
+      "path": "docs/slr14/bukti/revisi-portal-light-390.png",
+      "size": 607594,
+      "sha256": "9cb86641cb382a7308b0d9a53f56da9a5c8d83d38f7924e5ce3fe76a8cc50d3f"
+    },
+    {
+      "path": "docs/slr14/bukti/revisi-review-dark-390.png",
+      "size": 125967,
+      "sha256": "b03ab55d12d011544738a3da481a1f1f94f46c4009a0454cfcee1216efd54da2"
+    },
+    {
+      "path": "docs/slr14/bukti/revisi-review-light-1440.png",
+      "size": 251453,
+      "sha256": "34a677cb85d8240e929f983a5412114b1d8bd8343f40a81518d0c17629a30837"
+    },
+    {
+      "path": "docs/slr14/bukti/revisi-start-dark-1440.png",
+      "size": 314559,
+      "sha256": "046bba7b9c8672f687c5e8a4b089a0d5c1bf650645d20143f058e5a5144c7bbb"
+    },
+    {
+      "path": "docs/slr14/bukti/revisi-start-light-1440.png",
+      "size": 392218,
+      "sha256": "78254fafb00b64e90df9a496a3f9aee5b1f693a5e5f034f886a89fd2984357e6"
+    },
+    {
+      "path": "docs/slr14/bukti/sumber-desain-audit.txt",
+      "size": 154,
+      "sha256": "ec5ae73d37a9d3c07a6e177dbdbf60c0527f4bc0b655140251fbf3887346480f"
+    },
+    {
+      "path": "docs/slr14/bukti/visual-final-20261030.txt",
+      "size": 158,
+      "sha256": "a4b2d9e47ba86c8192f6b2e2788ab3660db982c3e5f195854f88ac50baa47ab6"
+    }
+  ]
+}

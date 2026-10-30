@@ -1,0 +1,3 @@
+PASS Operator: seven tabs, initial review, dashboard/lists/shared pages, two themes × desktop/phone.
+PASS Admin: eight pages, five dialogs, two themes × desktop/phone; no runtime errors or document overflow.
+PASS isolated QA database integrity.

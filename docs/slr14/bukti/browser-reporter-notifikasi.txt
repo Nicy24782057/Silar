@@ -1,0 +1,7 @@
+PASS shared public navigation, active page, anchor destinations, complete non-overlapping illustration at six widths and both themes.
+PASS 60 revised render combinations: portal plus all four report stages, six widths, two themes, correct sidebar and locked stages.
+PASS real local API: create draft, preserve text across tabs, save text/audio/photo, explicit card revision, confirmation and separate submission; no AI call or automatic replay.
+PASS slow/failed/empty API states remain distinct, retain context, show skeleton and explicit GET-only retry; no runtime errors.
+PASS navigation between report IDs ignores/aborts the previous response.
+PASS Operator/Admin failed reads never display empty data; explicit retries are GET-only.
+PASS isolated QA database integrity.

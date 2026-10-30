@@ -27,7 +27,7 @@ export const categoryOptions = [
 ];
 export const workspaceLabel = value => ({PENDING:'Menunggu',DONE:'Selesai',CANCELLED:'Dibatalkan',PREPARE:'Siapkan publikasi',
   PENDING_APPROVAL:'Persiapan publikasi',NOT_DECIDED:'Belum diputuskan',INTERNAL:'Internal',PUBLISHED:'Terbit',
-  APPROVED:'Disetujui',VALID:'Valid',INVALID:'Tidak valid',INCONCLUSIVE:'Belum dapat dipastikan',
+  DRAFT:'Draf',APPROVED:'Disetujui',VALID:'Valid',INVALID:'Tidak valid',INCONCLUSIVE:'Belum dapat dipastikan',
   NOT_REVIEWED:'Belum direview',ASSIGNED:'Ditugaskan',SUBMITTED:'Belum ditugaskan',IN_REVIEW:'Dalam review',
   FOLLOW_UP:'Tindak lanjut',CLOSED:'Ditutup',SELF_CLAIM:'Klaim mandiri',ADMIN_ASSIGNMENT:'Penugasan Admin',
   ADMIN_REASSIGNMENT:'Pengalihan Admin'}[value] || value || 'Belum tersedia');
@@ -37,7 +37,8 @@ export const statusTone = value => ['NOT_REVIEWED','NOT_DECIDED'].includes(value
   ['PENDING','SUBMITTED','INCONCLUSIVE','PENDING_APPROVAL'].includes(value) ? 'warning' :
   ['FOLLOW_UP','IN_REVIEW'].includes(value) ? 'purple' : 'blue';
 export const eventLabels = {
-  OPERATOR_CREATED:'Akun Operator dibuat',OPERATOR_UPDATED:'Akun Operator diperbarui',OTP_DISPATCH_PREPARED:'Petunjuk akun disiapkan',
+  REPORT_DELETED:'Draft dihapus',
+  PUBLICATION_CANDIDATE_CREATED:'Kandidat publikasi disimpan',PUBLICATION_APPROVED:'Kandidat publikasi disetujui',REPORT_PUBLISHED:'Versi publik diterbitkan',PUBLICATION_CANCELLED:'Kandidat publikasi dibatalkan',DRAFT:'Draf',OPERATOR_CREATED:'Akun Operator dibuat',OPERATOR_UPDATED:'Akun Operator diperbarui',OTP_DISPATCH_PREPARED:'Petunjuk akun disiapkan',
   OTP_DELIVERY_FAILED:'Pengiriman petunjuk gagal',REPORT_SUBMITTED:'Laporan resmi dikirim',REPORT_ASSIGNED:'Laporan ditugaskan',
   REPORT_CLAIMED:'Laporan diklaim',REPORT_REASSIGNED:'Penanggung jawab dialihkan',REVIEW_RECORDED:'Review dicatat',
   FOLLOW_UP_UPDATED:'Tindak lanjut diperbarui',PUBLICATION_DIRECTION_RECORDED:'Arah publikasi dicatat',REPORT_CLOSED:'Laporan ditutup',
@@ -72,8 +73,8 @@ export function closeAllowed(user,detail) {
 }
 export function decisionAllowed(detail,decision) {
   return Boolean(detail?.reviews?.length&&!detail.has_active_candidate&&
-    !['APPROVED','PUBLISHED'].includes(detail.report.publication_status)&&
-    (decision==='INTERNAL'||decision==='PREPARE'&&detail.report.validation_status==='VALID'));
+    detail.report.publication_status!=='APPROVED'&&
+    (decision==='INTERNAL'&&!detail.report.published_version_id&&detail.report.publication_status!=='PUBLISHED'||decision==='PREPARE'&&detail.report.validation_status==='VALID'));
 }
 export function assignmentTargetAvailable(target,currentId=null) {
   return Boolean(target?.id&&target.id!==currentId);

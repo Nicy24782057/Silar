@@ -32,7 +32,7 @@ export function uploadProblem(selected, kind, values) {
 
 // One explicit click prepares the immutable source snapshot, then starts
 // analysis. An uncertain or failed preparation never retries either POST.
-export async function analyseSavedEvidence(request, detail, items, consent, onPrepared = () => {}) {
+export async function analyseSavedEvidence(request, detail, items, consent, onPrepared = () => {}, onStarted = () => {}) {
   const problem = validateBundle(items);
   if (problem) throw new ApiError(problem, 'INVALID_PAYLOAD');
   if (usesGemini(items) && !consent) throw new ApiError('Baca informasi pemrosesan eksternal dan centang pernyataan sebelum melanjutkan.', 'INVALID_PAYLOAD');
@@ -49,7 +49,7 @@ export async function analyseSavedEvidence(request, detail, items, consent, onPr
     report = prepared.report; bundle = prepared.object;
     onPrepared({...detail, report, active_bundle: bundle, active_narrative: null, current_card: null});
   }
-  return request(`reports/${report.id}/analyses/`, {method: 'POST', key: crypto.randomUUID(), body: {
-    mode: 'EVIDENCE', bundle_id: bundle.id, input_revision: report.input_revision, expected_revision: report.revision,
-  }});
+  const key=crypto.randomUUID(),body={mode:'EVIDENCE',bundle_id:bundle.id,input_revision:report.input_revision,expected_revision:report.revision};
+  onStarted({reportId:report.id,key,...body});
+  return request(`reports/${report.id}/analyses/`, {method:'POST',key,body});
 }

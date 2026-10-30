@@ -1,0 +1,2 @@
+PASS final notification normal/failed/empty captures and seven-tab Operator summary at desktop/phone; no runtime errors.
+PASS isolated QA database integrity.

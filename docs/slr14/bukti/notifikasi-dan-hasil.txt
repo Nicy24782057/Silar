@@ -1,0 +1,7 @@
+PASS Admin notifications: aligned icon/copy, no duplicate padding, 24 empty/populated theme/viewport cases, loading/error distinct, GET-only retry, filter and one real mark-read PATCH.
+PASS full login layout transition for Reporter, Operator and Admin; outgoing/incoming layout animations observed.
+PASS original three-card draft styling at 12 theme/width cases; noninteractive steps and no underline-only variant.
+PASS analysis: real-stage 0/42/71/100 percentages, no time-based advance, one POST, stored-result read followed by automatic review; no Next click, confirmation/submission remain explicit. Progress UI uses controlled API responses; no real inference.
+PASS rejected analysis stays at input, never jumps to old result and is not automatically repeated.
+PASS sequential Next/Back, unsaved correction guard, real API confirm/submit, verified receipt route, refresh and details, six responsive/theme receipts, unsubmitted sent-URL cannot show success.
+PASS isolated QA database integrity.

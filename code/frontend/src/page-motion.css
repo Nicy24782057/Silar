@@ -1,0 +1,14 @@
+.route-page{min-width:0}
+.page-change-enter-active,.page-change-leave-active{transition:opacity .12s ease,transform .12s ease}
+.page-change-enter-from{opacity:0;transform:translateY(5px)}.page-change-leave-to{opacity:0;transform:translateY(-3px)}
+.ws-tabs button,.notification-filters button,.compose-tabs button,.report-stepper button{transition:background-color .15s ease,color .15s ease,border-color .15s ease}
+@media(prefers-reduced-motion:reduce){.page-change-enter-active,.page-change-leave-active{transition:none}.page-change-enter-from,.page-change-leave-to{transform:none}.ws-tabs button,.notification-filters button,.compose-tabs button,.report-stepper button{transition:none}}
+
+#app{min-height:100dvh}.layout-change-enter-active{transition:opacity .28s ease,transform .28s cubic-bezier(.2,.7,.2,1)}.layout-change-leave-active{transition:opacity .2s ease,transform .2s ease;pointer-events:none}.layout-change-enter-from{opacity:0;transform:translateY(8px)}.layout-change-leave-to{opacity:0;transform:translateY(-5px)}
+@media(prefers-reduced-motion:reduce){.layout-change-enter-active,.layout-change-leave-active{transition:none}.layout-change-enter-from,.layout-change-leave-to{transform:none}}
+
+.process-outlet,.process-content{min-width:0}.process-content{outline:none}
+.process-change-enter-active{transition:opacity .18s ease,transform .18s cubic-bezier(.2,.7,.2,1)}
+.process-change-leave-active{transition:opacity .12s ease,transform .12s ease;pointer-events:none}
+.process-change-enter-from{opacity:0;transform:translateY(6px)}.process-change-leave-to{opacity:0;transform:translateY(-3px)}
+@media(prefers-reduced-motion:reduce){.process-change-enter-active,.process-change-leave-active{transition:none}.process-change-enter-from,.process-change-leave-to{transform:none}}

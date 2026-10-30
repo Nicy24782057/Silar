@@ -1,0 +1,295 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261022212649
+Username: LAPTOP-7FFO2N2V\ACER
+RunAs User: LAPTOP-7FFO2N2V\ACER
+Configuration Name: 
+Machine: LAPTOP-7FFO2N2V (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Program Files\Microsoft VS Code\cfbea10c5f\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 8564
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\hasil-uji-backend.txt
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar> .\.venv\Scripts\python.exe manage.py test reporting.tests ai_pipeline.tests --settings=config.test_settings --verbosity=2
+.\.venv\Scripts\python.exe : The term '.\.venv\Scripts\python.exe' is not recognized as the name of a cmdlet, function, 
+script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is 
+correct and try again.
+At line:1 char:1
++ .\.venv\Scripts\python.exe manage.py test reporting.tests ai_pipeline ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.\.venv\Scripts\python.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+.\.venv\Scripts\python.exe : The term '.\.venv\Scripts\python.exe' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name,
+or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ .\.venv\Scripts\python.exe manage.py test reporting.tests ai_pipeline ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.\.venv\Scripts\python.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar> Set-Location "D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend"
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> Start-Transcript -Path .\hasil-uji-backend.txt -Append
+Transcript started, output file is .\hasil-uji-backend.txt
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> .\.venv\Scripts\python.exe manage.py test reporting.tests ai_pipeline.tests --settings=config.test_settings --verbosity=2
+d_only_and_holds_another_analysis) ... ok
+
+----------------------------------------------------------------------
+Ran 98 tests in 47.994s
+
+OK
+Destroying test database for alias 'default' ('test_silar_local')...
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> Stop-Transcript
+Transcript stopped, output file is D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend\hasil-uji-backend.txt
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> Set-Location ..\frontend
+Start-Transcript -Path .\hasil-uji-frontend.txt -Append
+npm.cmd test
+npm.cmd run build
+Stop-Transcript
+Transcript started, output file is .\hasil-uji-frontend.txt
+
+
+Transcript stopped, output file is D:\SEMESTER 5\Pemrograman INternet II\Silar\code\frontend\hasil-uji-frontend.txt
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\frontend> Set-Location "D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend"
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> $cekRunSilar = @'
+import json
+from django.db.models import Count
+from core.models import AnalysisRun
+
+runs = AnalysisRun.objects.filter(mode="EVIDENCE")
+
+rekap = list(
+    runs.values("route", "status")
+    .annotate(jumlah=Count("id"))
+    .order_by("route", "status")
+)
+
+print("\nREKAP RUTE DAN STATUS")
+print(json.dumps(rekap, indent=2))
+
+tai = list(
+    runs.filter(route="TAI")
+    .order_by("-started_at")
+    .values(
+        "id",
+        "report_id",
+        "route",
+        "status",
+        "started_at",
+        "finished_at",
+        "used_transcript_id",
+        "output_narrative_id",
+        "model_versions",
+        "timings_ms",
+    )[:3]
+)
+
+print("\nTIGA RUN TAI TERBARU")
+print(json.dumps(tai, default=str, indent=2))
+'@
+
+$cekRunSilar | .\.venv\Scripts\python.exe manage.py shell
+
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> Set-Location "D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend"
+
+Start-Transcript -Path .\hasil-verifikasi-slr10-slr11.txt -Append
+Transcript started, output file is .\hasil-verifikasi-slr10-slr11.txt
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> $cekRelasiSilar = @'
+import json
+from core.models import (
+    AnalysisRun,
+    SENAResult,
+    NARAResult,
+    IncidentCardVersion,
+)
+
+runs = (
+    AnalysisRun.objects
+    .filter(mode="EVIDENCE", status="SUCCEEDED")
+    .select_related(
+        "bundle",
+        "output_narrative",
+        "used_transcript",
+        "request_record",
+    )
+    .order_by("route", "started_at")
+)
+
+hasil = []
+for run in runs:
+    narasi = run.output_narrative
+    transkrip = run.used_transcript
+    sena = SENAResult.objects.filter(analysis_run=run).first()
+    nara = NARAResult.objects.filter(analysis_run=run).first()
+    cards = list(IncidentCardVersion.objects.filter(
+        sena_result__analysis_run=run,
+        source_kind="AI_FUSION",
+    ))
+    card = cards[0] if len(cards) == 1 else None
+    ledger = run.request_record
+    pemeriksaan = {
+        "narasi_tersimpan": bool(narasi and narasi.text.strip()),
+        "narasi_milik_run": bool(
+            narasi and narasi.producer_run_id == run.id
+        ),
+        "sena_nara_memakai_narasi_run": bool(
+            narasi and sena and nara
+            and sena.narrative_id == nara.narrative_id == narasi.id
+        ),
+        "satu_card_fusion": len(cards) == 1,
+        "referensi_card_sesuai": bool(
+            card and narasi and sena and nara
+            and card.narrative_id == narasi.id
+            and card.sena_result_id == sena.id
+            and card.nara_result_id == nara.id
+        ),
+        "laporan_dan_bundle_sesuai": bool(
+            narasi and card
+            and run.report_id == run.bundle.report_id
+            == narasi.report_id == card.report_id
+            and run.bundle_id == narasi.bundle_id == card.bundle_id
+        ),
+        "isi_card_sesuai_hasil": bool(
+            card and sena and nara
+            and card.data == {
+                "event_type": None if sena.category == "NON_EVENT" else sena.category,
+                **nara.normalized_output,
+            }
+        ),
+        "transkrip_sesuai": (
+            bool(
+                transkrip
+                and transkrip.analysis_run_id == run.id
+                and transkrip.report_id == run.report_id
+            )
+            if "A" in run.route else transkrip is None
+        ),
+        "ledger_sukses_menunjuk_run": (
+            ledger.state == "SUCCEEDED"
+            and ledger.result_type == "Run"
+            and ledger.result_id == run.id
+            and ledger.report_id == run.report_id
+            and ledger.response_status == 201
+        ),
+    }
+    masalah = [nama for nama, cocok in pemeriksaan.items() if not cocok]
+    hasil.append({
+        "route": run.route,
+        "run_id": str(run.id),
+        "hasil": "OK" if not masalah else "PERIKSA",
+        "masalah": masalah,
+    })
+
+print("\nHASIL PEMERIKSAAN RELASI")
+print(json.dumps(hasil, indent=2))
+print("\nRINGKASAN")
+print(json.dumps({
+    "jumlah_run": len(hasil),
+    "ok": sum(item["hasil"] == "OK" for item in hasil),
+    "perlu_diperiksa": sum(item["hasil"] == "PERIKSA" for item in hasil),
+    "rute_terbaca": sorted({item["route"] for item in hasil}),
+}, indent=2))
+'@
+
+$cekRelasiSilar | .\.venv\Scripts\python.exe manage.py shell
+
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> .\.venv\Scripts\python.exe manage.py test `
+  ai_pipeline.tests.test_database `
+  ai_pipeline.tests.test_reporting_integration `
+  --settings=config.test_settings `
+  --verbosity=2 `
+  --keepdb
+
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> Stop-Transcript
+Transcript stopped, output file is D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend\hasil-verifikasi-slr10-slr11.txt
+PS D:\SEMESTER 5\Pemrograman INternet II\Silar\code\backend> @'
+import json
+from pathlib import Path
+from django.conf import settings
+from django.core.serializers.json import DjangoJSONEncoder
+from django.utils import timezone
+from core.models import AnalysisRun, IncidentCardVersion
+from ai_pipeline.output import run_data, card_data
+
+routes = ["T", "A", "I", "TA", "TI", "AI", "TAI"]
+examples = []
+
+for route in routes:
+    run = (
+        AnalysisRun.objects
+        .filter(route=route, mode="EVIDENCE", status="SUCCEEDED")
+        .select_related("bundle", "output_narrative", "used_transcript")
+        .order_by("-started_at", "-id")
+        .first()
+    )
+    if run is None:
+        raise RuntimeError(f"Run berhasil untuk rute {route} tidak ditemukan.")
+
+    # Gunakan kartu milik run ini, termasuk jika sudah menjadi riwayat.
+    card = IncidentCardVersion.objects.get(
+        source_kind="AI_FUSION",
+        sena_result__analysis_run=run,
+        nara_result__analysis_run=run,
+    )
+
+    data = run_data(run)
+    if not all((data["output_narrative"], data["sena"], data["nara"])):
+        raise RuntimeError(f"Hasil run {run.id} belum lengkap.")
+
+    data["output_narrative"].pop("created_by", None)
+    saved_card = card_data(card)
+    saved_card.pop("created_by", None)
+
+    sources = []
+    for member in run.bundle.items.select_related("evidence").order_by("position"):
+        evidence = member.evidence
+        sources.append({
+            "position": member.position,
+            "evidence_id": str(evidence.id),
+            "type": evidence.type,
+            "text_content": evidence.text_content,
+            "mime_type": evidence.mime_type,
+            "byte_size": evidence.byte_size,
+            "sha256": evidence.sha256,
+        })
+
+    examples.append({
+        "route": route,
+        "bundle": {
+            "id": str(run.bundle_id),
+            "version_number": run.bundle.version_number,
+            "source_digest": run.bundle.source_digest,
+        },
+        "sources": sources,
+        "run": data,
+        "incident_card": saved_card,
+    })
+
+payload = {
+    "exported_at": timezone.now(),
+    "method": "Read existing successful EVIDENCE runs; no inference.",
+    "selection": "Latest successful run per route.",
+    "routes": routes,
+    "example_count": len(examples),
+    "examples": examples,
+}
+
+root = Path(settings.BASE_DIR).parent.parent
+folder = root / "docs/ai/slr11/evidence/windows-pg16-20261023"
+folder.mkdir(parents=True, exist_ok=True)
+target = folder / "contoh-hasil-7-rute.json"
+target.write_text(
+    json.dumps(payload, cls=DjangoJSONEncoder, ensure_ascii=False, indent=2),
+    encoding="utf-8",
+)
+
+print(f"Berhasil mengekspor {len(examples)} contoh.")
+print(f"File: {target}")
+'@ | .\.venv\Scripts\python.exe manage.py shell --no-imports -c "exec(__import__('sys').stdin.read())"
+

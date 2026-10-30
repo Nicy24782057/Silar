@@ -28,6 +28,31 @@ def authorize_owner(actor, report):
     require_report_read(actor, report, content=True)
 
 
+def delete_draft(actor, report_id, key, expected_revision, request_id):
+    def authorize(fresh, report):
+        require_reporter(fresh)
+        if report.owner_id!=fresh.id:
+            raise Http404
+
+    def apply(fresh, report):
+        if report.deleted_at is not None:
+            raise Http404
+        if report.submitted_at or report.workflow_status!='NOT_SUBMITTED' or report.official_card_version_id:
+            raise ApiProblem('TRANSITION_REJECTED','Laporan yang sudah dikirim tidak dapat dihapus.',422)
+        if report.analysis_runs.filter(status__in=['RUNNING','UNKNOWN']).exists():
+            raise ApiProblem('ANALYSIS_IN_PROGRESS','Pastikan hasil analisis yang masih berjalan atau belum pasti sebelum menghapus laporan.',409)
+        before={'revision':report.revision,'workflow_status':report.workflow_status}
+        report.deleted_at=timezone.now();report.deleted_by=fresh;report.revision+=1
+        report.save(update_fields=['deleted_at','deleted_by','revision'])
+        record_event(actor=fresh,action='REPORT_DELETED',object_type='Report',object_id=report.id,report=report,
+                     before=before,after={'revision':report.revision,'deleted_at':report.deleted_at.isoformat()},request_id=request_id)
+        return MutationResult({'id':str(report.id),'revision':report.revision,'deleted_at':report.deleted_at.isoformat()},200,'Report',report.id)
+
+    return atomic_mutation(actor=actor,key=key,scope=f'DELETE reports/{report_id}/',
+        payload={'expected_revision':expected_revision},report_id=report_id,expected_revision=expected_revision,
+        authorize=authorize,apply=apply)
+
+
 def envelope(report, kind, obj):
     return {'report': snapshot(report), 'result': {'type': kind, 'id': obj['id']}, 'object': obj}
 

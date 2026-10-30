@@ -3,6 +3,8 @@
 No schema changes, model execution or publication-candidate creation occurs here.
 All writes share the SLR08 revision, idempotency, audit and notification services.
 """
+from dataclasses import replace
+
 from django.db import transaction, DatabaseError
 from django.http import Http404
 from django.utils import timezone
@@ -148,7 +150,7 @@ def review(actor, report_id, key, data, request_id=None):
     def authorize(user, report): handler(user, report, 'review_report')
 
     def apply(user, report):
-        if report.publication_status in ('PUBLISHED', 'APPROVED') or active_candidate(report):
+        if report.published_version_id or report.publication_status in ('PUBLISHED', 'APPROVED') or active_candidate(report):
             raise ApiProblem('TRANSITION_REJECTED', 'Review dikunci selama ada kandidat aktif atau publikasi terbit.', 422)
         assignment = report.assignments.get(ended_at__isnull=True)
         result = OperatorReview.objects.create(report=report, card_version=report.official_card_version,
@@ -191,23 +193,18 @@ def followup(actor, report_id, key, data, request_id=None, followup_id=None):
 
 
 def decide(actor, report_id, key, data, request_id=None):
-    def authorize(user, report): handler(user, report, 'publish_report')
-
-    def apply(user, report):
-        if not report.latest_review_id:
-            raise ApiProblem('TRANSITION_REJECTED', 'Review resmi diperlukan sebelum menentukan arah keputusan.', 422)
-        if report.publication_status in ('APPROVED', 'PUBLISHED') or active_candidate(report):
-            raise ApiProblem('TRANSITION_REJECTED', 'Kandidat aktif atau publikasi yang terbit tidak dapat diubah dari alur ini.', 422)
-        if data['decision'] == 'PREPARE' and report.validation_status != 'VALID':
-            raise ApiProblem('TRANSITION_REJECTED', 'INVALID atau INCONCLUSIVE tetap bersifat internal.', 422)
-        report.publication_status = 'PENDING_APPROVAL' if data['decision'] == 'PREPARE' else 'INTERNAL'
-        report.publication_decision_reason = data['reason']; report.revision += 1; report.save()
-        events(user, report, 'PUBLICATION_DIRECTION_RECORDED', 'REVIEW_RECORDED',
-               after={'reason_recorded': True}, request_id=request_id, acting_operator=True)
-        return MutationResult({'report': snapshot(report), 'message':
-            'Arah persiapan publikasi dicatat. Laporan belum terbit; penerbitan memerlukan proses persetujuan publikasi.'
-            if data['decision'] == 'PREPARE' else 'Keputusan internal berhasil disimpan.'})
-    return mutate(actor, report_id, key, data, 'decision', authorize, apply)
+    # Retain the SLR13 workspace URL while sharing the canonical SLR14 guards,
+    # replacement flow and idempotent response with publication-decision/.
+    from .publication_services import decide as publication_decide
+    result = publication_decide(actor, report_id, key, data, request_id)
+    # Keep the SLR13 response shape for existing clients. The ledger stores the
+    # canonical response, so replay through either URL retains the same result.
+    message = (
+        'Arah persiapan publikasi dicatat. Laporan belum terbit; penerbitan memerlukan proses persetujuan publikasi.'
+        if data['decision'] == 'PREPARE' else 'Keputusan internal berhasil disimpan.')
+    if data['decision'] == 'PREPARE' and result.payload['report']['published_version_id']:
+        message = 'Persiapan versi pengganti dicatat. Versi terbit lama tetap tersedia sampai penggantinya diterbitkan.'
+    return replace(result, payload={'report': result.payload['report'], 'message': message})
 
 
 def close(actor, report_id, key, data, request_id=None):

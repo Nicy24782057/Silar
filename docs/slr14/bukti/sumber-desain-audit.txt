@@ -1,0 +1,2 @@
+PASS 60 reference page/theme captures from all 30 original SVGs (live DOM rendered in HTML).
+PASS all seven reference Operator tabs and Admin add dialog.

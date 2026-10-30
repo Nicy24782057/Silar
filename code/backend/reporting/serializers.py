@@ -3,6 +3,7 @@ from uuid import UUID
 from rest_framework import serializers
 from common.api import StrictSerializer
 from core.permissions import effective_permissions, is_assignee
+from core.validators import PUBLIC_FIELDS
 
 
 class EvidenceUpload(StrictSerializer):
@@ -114,7 +115,10 @@ def publication_data(obj, *, internal, report):
         for key in ('sanitized_by', 'approved_by', 'published_by', 'cancelled_by'):
             data[key] = data.pop(key + '_id')
         return data
-    return dict(id=str(report.id), **obj.data, published_at=primitive(obj.published_at))
+    # Every public projection uses the same explicit allowlist, even when a
+    # historical JSON value contains an unexpected key.
+    return dict(id=str(report.id), **{name: obj.data.get(name) for name in PUBLIC_FIELDS},
+                published_at=primitive(obj.published_at))
 
 
 def detail_data(report, actor):

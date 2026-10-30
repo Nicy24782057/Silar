@@ -73,6 +73,8 @@ class Report(Stamped):
     blocked_reason = models.CharField(max_length=30, null=True, blank=True)
     publication_decision_reason = models.TextField(null=True, blank=True)
     submitted_at = models.DateTimeField(null=True, blank=True)
+    deleted_at = models.DateTimeField(null=True, blank=True)
+    deleted_by = models.ForeignKey(USER, null=True, blank=True, on_delete=PROTECT, related_name='+')
     closed_at = models.DateTimeField(null=True, blank=True)
     closed_by = models.ForeignKey(USER, null=True, blank=True, on_delete=PROTECT, related_name='+', db_column='closed_by')
     closure_note = models.TextField(null=True, blank=True)
@@ -88,6 +90,7 @@ class Report(Stamped):
             ('view_audit','Membaca audit'), ('monitor_services','Monitoring layanan'),
         ]
         constraints = [
+            models.CheckConstraint(condition=Q(deleted_at__isnull=True,deleted_by__isnull=True)|Q(deleted_at__isnull=False,deleted_by__isnull=False,deleted_by=models.F('owner'),workflow_status='NOT_SUBMITTED',submitted_at__isnull=True,official_card_version__isnull=True,published_version__isnull=True,active_publication_candidate__isnull=True), name='deleted_draft_owner_and_state'),
             models.CheckConstraint(condition=Q(revision__gte=1, input_revision__gte=1), name='report_revisions_positive'),
             models.CheckConstraint(condition=Q(preparation_status__in=Preparation.values), name='report_preparation_allowed'),
             models.CheckConstraint(condition=Q(workflow_status__in=Workflow.values), name='report_workflow_allowed'),

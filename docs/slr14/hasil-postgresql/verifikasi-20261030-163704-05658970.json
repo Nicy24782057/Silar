@@ -1,0 +1,86 @@
+{
+  "status": "PASSED",
+  "generated_at": "2026-10-30T16:37:04.661832+07:00",
+  "tests_run": 143,
+  "database_vendor": "postgresql",
+  "postgresql_major": 16,
+  "django_version": "5.2.18",
+  "discovered_tests": 143,
+  "test_database": "test_silar_slr14_a9b5cb3a8131489ab99188a67843e1f5",
+  "schema_guards": {
+    "triggers": [
+      [
+        "core_auditevent",
+        "silar_immutable"
+      ],
+      [
+        "core_evidencebundle",
+        "silar_bundle_nonempty"
+      ],
+      [
+        "core_evidencebundleitem",
+        "silar_bundle_membership"
+      ],
+      [
+        "core_idempotencyrecord",
+        "silar_no_delete"
+      ],
+      [
+        "core_operatorassignment",
+        "silar_assignment_guard"
+      ],
+      [
+        "core_publicationversion",
+        "silar_no_delete"
+      ],
+      [
+        "core_publicationversion",
+        "silar_publication_guard"
+      ],
+      [
+        "core_report",
+        "silar_deleted_report_guard"
+      ],
+      [
+        "core_report",
+        "silar_report_guard"
+      ]
+    ],
+    "constraints": [
+      [
+        "core_publicationversion",
+        "publication_approval_metadata"
+      ],
+      [
+        "core_publicationversion",
+        "publication_cancel_metadata"
+      ],
+      [
+        "core_publicationversion",
+        "publication_publish_metadata"
+      ],
+      [
+        "core_publicationversion",
+        "publication_state_allowed"
+      ],
+      [
+        "core_publicationversion",
+        "publication_version_unique"
+      ],
+      [
+        "core_publicationversion",
+        "publicationversion_data_jsonkind"
+      ],
+      [
+        "core_report",
+        "deleted_draft_owner_and_state"
+      ]
+    ]
+  },
+  "failures": 0,
+  "errors": 0,
+  "skipped": [],
+  "unexpected_successes": 0,
+  "expected_failures": [],
+  "failed_tests": []
+}

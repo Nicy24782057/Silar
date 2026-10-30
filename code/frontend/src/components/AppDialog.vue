@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, nextTick, useId } from 'vue';
 import AppIcon from './AppIcon.vue';
-defineProps({ title: String, caption: String });
+defineProps({ title: String, caption: String, eyebrow: String });
 const emit = defineEmits(['close']);
 const dialog = ref(null), closeButton = ref(null), titleId = useId();
 let opener = null, previousOverflow = '';
@@ -21,7 +21,7 @@ onBeforeUnmount(() => {
 <template>
   <dialog ref="dialog" class="silar-dialog" :aria-labelledby="titleId" @cancel.prevent="emit('close')">
     <header class="dialog-heading">
-      <div><p v-if="caption" class="dialog-caption">{{ caption }}</p><h2 :id="titleId">{{ title }}</h2></div>
+      <div><p v-if="eyebrow" class="dialog-eyebrow">{{ eyebrow }}</p><p v-if="caption" class="dialog-caption">{{ caption }}</p><h2 :id="titleId">{{ title }}</h2></div>
       <button ref="closeButton" class="dialog-close quiet" aria-label="Tutup" @click="emit('close')"><AppIcon name="close" /></button>
     </header>
     <div class="dialog-content"><slot /></div>

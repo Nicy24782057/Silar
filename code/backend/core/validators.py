@@ -3,6 +3,7 @@ from django.utils.dateparse import parse_datetime
 
 EVENTS = ['FLOOD', 'EARTHQUAKE', 'FIRE', 'ACCIDENT']
 EXTRACTION_FIELDS = {'location_text', 'time_text', 'occurred_at', 'involved_parties', 'impacts', 'victims', 'affected_objects'}
+PUBLIC_FIELDS = ('event_type', 'summary', 'general_location', 'time_text', 'occurred_at', 'general_impact', 'handling_update')
 
 def aware_timestamp(value):
     try:
@@ -54,7 +55,7 @@ def card_data(value):
 
 def public_data(value):
     json_object(value)
-    fields = {'event_type', 'summary', 'general_location', 'time_text', 'occurred_at', 'general_impact', 'handling_update'}
+    fields = set(PUBLIC_FIELDS)
     if set(value) != fields or value.get('event_type') not in EVENTS:
         raise ValidationError('Field publik tidak sesuai allowlist A4.23.')
     for name, limit in [('summary', 2000), ('general_location', 500), ('time_text', 300), ('general_impact', 2000), ('handling_update', 2000)]:

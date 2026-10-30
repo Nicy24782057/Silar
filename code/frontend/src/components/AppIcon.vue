@@ -2,6 +2,9 @@
 import { computed } from 'vue';
 const props=defineProps({name:{type:String,default:'file'},size:{type:[Number,String],default:20}});
 const paths={
+  globe:['M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z','M2 12h20M12 2c6 5 6 15 0 20-6-5-6-15 0-20Z'],
+  pin:['M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z','M15 10a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z'],
+  calendar:['M3 5h18v16H3Z','M7 2v6M17 2v6M3 10h18'],
   dashboard:['M3 3h7v7H3ZM14 3h7v7h-7ZM3 14h7v7H3ZM14 14h7v7h-7Z'],
   chart:['M3 3v18h18','m7 15 5-6 4 3 5-7'],
   clipboard:['M8 4H5v18h14V4h-3','M8 2h8v5H8Z','M8 11h8M8 15h8M8 19h5'],
@@ -29,6 +32,7 @@ const paths={
   close:['m6 6 12 12M6 18 18 6'],
   edit:['m16 3 5 5-12 12-6 1 1-6Z','m13 6 5 5'],
   send:['m22 2-7 20-4-9-9-4Z','M22 2 11 13'],
+  eye:['M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z','M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z'],
   info:['M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z','M12 11v6M12 7h.01'],
   lock:['M6 10h12a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z','M8 10V6a4 4 0 0 1 8 0v4M12 14v3'],
   waves:['M2 7c3-4 7 4 10 0s7 4 10 0M2 12c3-4 7 4 10 0s7 4 10 0M2 17c3-4 7 4 10 0s7 4 10 0'],

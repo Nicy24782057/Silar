@@ -14,6 +14,7 @@ from core.validators import EVENTS
 from . import services
 from .media import validate_upload
 from .serializers import EvidenceUpload, BundleCreate, summary_data, detail_data, evidence_data
+from .review_serializers import DeleteDraft
 
 
 def response_mutation(result):
@@ -37,7 +38,7 @@ class ReportListCreate(APIView):
         permissions = effective_permissions(actor)
         default = {'REPORTER': 'owned', 'OPERATOR': 'assigned', 'ADMIN': 'monitor'}[actor.role]
         scope = request.query_params.get('scope', default)
-        qs = Report.objects.select_related('official_card_version', 'current_card_version')
+        qs = Report.objects.filter(deleted_at__isnull=True).select_related('official_card_version', 'current_card_version')
         if scope == 'owned' and actor.role == Role.REPORTER:
             qs = qs.filter(owner=actor)
         elif scope == 'assigned' and actor.role in ('OPERATOR', 'ADMIN') and 'view_assigned_report' in permissions:
@@ -87,6 +88,16 @@ class ReportListCreate(APIView):
 
 
 class ReportDetail(APIView):
+    def delete(self, request, pk):
+        reject_query(request)
+        services.require_reporter(request.user)
+        # Retain owner access here only for exact deletion replay; all reads
+        # and other operations reject deleted reports through permissions.
+        get_object_or_404(Report,pk=pk,owner=request.user)
+        body=DeleteDraft(data=request.data)
+        body.is_valid(raise_exception=True)
+        return response_mutation(services.delete_draft(request.user,pk,request.headers.get('Idempotency-Key'),body.validated_data['expected_revision'],request.request_id))
+
     def get(self, request, pk):
         reject_query(request)
         report = get_object_or_404(Report, pk=pk)

@@ -6,7 +6,7 @@ import { session, signIn } from '../session';
 import { online } from '../network';
 import { theme, toggleTheme } from '../theme';
 import { challengeFromQuery, showLocalEmailHelp } from '../auth-ui';
-import identity from '../assets/auth-identity.svg';
+import AuthIdentity from '../components/AuthIdentity.vue';
 import AppIcon from '../components/AppIcon.vue';
 import AuthLocalHelp from '../components/AuthLocalHelp.vue';
 import ErrorNotice from '../components/ErrorNotice.vue';
@@ -15,9 +15,9 @@ const route = useRoute(), router = useRouter();
 const mode = computed(() => route.meta.mode);
 const registered = ref(false), completed = ref(false), heading = ref(null);
 const screen = computed(() => mode.value === 'register' && registered.value ? 'registered' : mode.value);
-const titles = {login:'Login', register:'Registrasi', registered:'Periksa Email', verify:'Verifikasi OTP', forgot:'Pulihkan akses akun', reset:'Atur kata sandi baru', activate:'Aktivasi akun Operator'};
+const titles = {login:'Masuk ke SILAR', register:'Buat akun Reporter', registered:'Periksa email Anda', verify:'Verifikasi email', forgot:'Lupa kata sandi?', reset:'Atur kata sandi baru', activate:'Aktivasi akun Operator'};
 const descriptions = {
-  login:'Masuk ke SILAR sesuai peran dan kewenangan akun Anda.', register:'Buat akun Reporter untuk mulai melapor.',
+  login:'Gunakan email dan kata sandi akun Anda.', register:'Mulai menyampaikan laporan melalui SILAR.',
   registered:'Periksa pesan SILAR terbaru untuk melanjutkan.', verify:'Masukkan kode dari pesan yang sama dengan tautan ini.',
   forgot:'Kami akan mengirim petunjuk jika alamat email memenuhi syarat.', reset:'Masukkan kode dari email dan kata sandi pengganti.',
   activate:'Pemilik akun menetapkan kata sandinya sendiri melalui kode aktivasi.'
@@ -93,10 +93,9 @@ async function resend() {
 
 <template>
   <div class="auth-two-panel" :data-screen="screen">
-    <section class="auth-identity" aria-label="SILAR, Sistem Inteligensi Laporan Adaptif dan Responsif"><img :src="identity" alt="" width="648" height="768"></section>
+    <AuthIdentity />
     <section class="auth-panel" aria-labelledby="auth-title">
       <div class="auth-toolbar">
-        <RouterLink class="auth-mobile-brand" to="/login" aria-label="SILAR, Login"><img src="/brand/silar-logo.png" alt=""><span>SILAR</span></RouterLink>
         <button class="auth-theme quiet" :aria-pressed="theme.mode==='dark'" :aria-label="theme.mode==='dark'?'Gunakan mode terang':'Gunakan mode gelap'" @click="toggleTheme"><AppIcon :name="theme.mode==='dark'?'sun':'moon'" :size="16" />{{ theme.mode==='dark'?'Mode terang':'Mode gelap' }}</button>
       </div>
       <div class="auth-content">
@@ -142,7 +141,7 @@ async function resend() {
             </div>
             <div v-if="hasPassword && mode!=='login'" class="field"><label for="password_confirm">Ulangi kata sandi baru</label><input id="password_confirm" v-model="form.password_confirm" name="password_confirm" type="password" placeholder="Ketik kembali kata sandi" autocomplete="new-password" required minlength="8" maxlength="1024" :disabled="busy"></div>
             <div v-if="mode==='login'" class="auth-forgot"><RouterLink to="/forgot-password">Lupa sandi?</RouterLink></div>
-            <button class="primary full auth-submit" type="submit" :disabled="!canSubmit">{{ busy?'Memproses…':mode==='login'?'Login':mode==='register'?'Daftar & kirim petunjuk verifikasi':mode==='forgot'?'Kirim petunjuk pemulihan':mode==='verify'?'Verifikasi email':mode==='reset'?'Simpan kata sandi baru':'Aktifkan akun' }}</button>
+            <button class="primary full auth-submit" type="submit" :disabled="!canSubmit">{{ busy?'Memproses…':mode==='login'?'Masuk':mode==='register'?'Buat akun Reporter':mode==='forgot'?'Kirim petunjuk pemulihan':mode==='verify'?'Verifikasi email':mode==='reset'?'Simpan kata sandi baru':'Aktifkan akun' }}<AppIcon v-if="mode==='login'" name="arrow" :size="16" /></button>
             <p v-if="requiresLink" id="otp-help" class="auth-field-note">Kode sekali pakai. Masa berlaku tercantum pada pesan.</p>
           </form>
           <p v-if="mode==='register'" class="auth-register-note">Setelah mendaftar, buka pesan SILAR terbaru.<br>Ikuti tautannya, lalu masukkan kode <strong>enam digit.</strong></p>
@@ -161,6 +160,7 @@ async function resend() {
         <AuthLocalHelp v-if="localHelp && screen==='register'" compact />
         <p v-if="['login','registered','forgot'].includes(screen) || completed" class="auth-security-note"><AppIcon name="lock" :size="13" />Jangan bagikan kata sandi atau kode OTP kepada siapa pun.</p>
       </div>
+      <footer class="auth-footer">© {{ new Date().getFullYear() }} SILAR</footer>
     </section>
   </div>
 </template>

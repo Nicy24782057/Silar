@@ -8,6 +8,13 @@ import './ui.css';
 import './reports-ui.css';
 import './auth-ui.css';
 import './workspace.css';
+import './design-system.css';
+import './public-ui.css';
+import './fetch-state.css';
+import './report-compose.css';
+import './page-motion.css';
+import './workspace-reference.css';
+import './report-feedback.css';
 initializeTheme();
 createApp(App).use(router).mount('#app');
 if (import.meta.env.PROD && 'serviceWorker' in navigator) {

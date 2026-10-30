@@ -1,0 +1,66 @@
+SILAR SLR14 — REVISI ALUR OPERATOR 30 OKTOBER 2026
+
+Paket perubahan kumulatif terhadap SLR13:
+1af8ac6f098b1a50fc83b4c74f8b0b4bbaaf73cd
+
+ISI
+- code/: berkas aplikasi yang berubah, termasuk migration baru.
+- docs/slr14/: petunjuk, kontrak DELETE, audit desain, hasil dan bukti pengujian.
+- patch lengkap: alternatif pemasangan bagi pengguna Git.
+
+PEMASANGAN
+1. Hentikan backend dan frontend. Pertahankan perubahan lokal tim.
+2. Ekstrak ZIP ke folder sementara. Gabungkan code/ dan docs/slr14/ ke clone
+   Silar yang sudah menjalankan SLR13, berdasarkan path. Timpa hanya berkas
+   yang disertakan. Jangan mengganti/menghapus seluruh folder code.
+3. Pada terminal code/backend (konfigurasi SLR13/PostgreSQL 16 yang sudah aktif):
+
+   .\.venv\Scripts\python.exe manage.py migrate
+   .\.venv\Scripts\python.exe manage.py check
+   .\.venv\Scripts\python.exe verify_slr14.py
+   .\.venv\Scripts\python.exe manage.py runserver localhost:8001
+
+4. Pada terminal code/frontend:
+
+   npm.cmd test
+   npm.cmd run build
+   npm.cmd run dev
+
+   Gunakan npm.cmd ci jika dependensi belum tersedia.
+5. Jika memilih alternatif patch, gunakan git apply --check dahulu pada base
+   yang sesuai, lalu git apply. Jangan memasang patch DAN menimpa berkas secara
+   bergantian. Lihat docs/slr14/README.md untuk penjelasan lengkap.
+
+PENTING UNTUK REVISI INI
+- Operator: review terverifikasi otomatis membuka Tindak Lanjut. Pada Keputusan,
+  Tinjau untuk publikasi langsung membuka isi/pratinjau. Dua aksi utama:
+  Konfirmasi isi publikasi lalu Publikasikan sekarang. API keputusan, create,
+  approve dan publish tetap terpisah dengan revisi dan kunci idempotensi.
+  Lihat docs/slr14/ALUR_OPERATOR_20261030.md. Tidak ada backend/migration baru
+  pada revisi alur Operator ini.
+- Migration baru: core.0005_report_soft_deletion. Jalankan migrate sebelum
+  memakai backend yang baru. Tidak ada dependensi aplikasi baru.
+- Login memakai transisi seluruh kerangka. Analisis menampilkan animasi serta
+  persentase tahapan dari API. Penanda tahap kembali ke tampilan kartu acuan
+  dan tetap nonklik. Hasil otomatis terbuka setelah pembacaan tersimpan berhasil.
+  Konfirmasi/pengiriman tetap lewat tindakan eksplisit. Notifikasi dirapikan. Sesudah submit terverifikasi muncul halaman Laporan Anda sudah
+  terkirim. Lihat docs/slr14/REVISI_NOTIFIKASI_DAN_HASIL_20261030.md.
+- Revisi alur ini hanya frontend. Jika migration 0005 dari paket sebelumnya
+  sudah terpasang, tidak ada migration tambahan.
+- Reporter dapat menghapus hanya draft miliknya sendiri yang belum dikirim.
+  Penghapusan logis; bukti, versi dan audit tetap tersimpan.
+- Kontrak publik tetap sembilan field dan tidak membuka bukti privat.
+- Database, .env, kredensial, akun uji, email, model AI, node_modules, dan dist
+  tidak disertakan. PWA perlu menerima build yang baru setelah pemasangan.
+
+VERIFIKASI
+109 tes frontend dan 94 tes komponen backend lulus; lima tes PostgreSQL dilewati.
+Revisi Operator terbaru: 60 kombinasi proses + 28 kombinasi tujuh tab,
+pemulihan respons hilang lewat GET dan PWA lulus. Revisi sebelumnya: 24 kombinasi notifikasi, 12 penanda tahap, 60 Reporter/portal,
+hasil otomatis, submit dan PWA lulus. Progres AI memakai respons terkontrol,
+bukan inferensi baru. Audit sebelumnya: 174 kombinasi UI, 24 login, tujuh tab
+Operator, dialog Admin, pemulihan respons hilang, publikasi dan PWA diuji.
+Uji native PostgreSQL 16 masih BLOCKED (143 ditemukan, belum dijalankan).
+Sembilan tes integrasi AI tambahan belum lulus akibat identitas proses pada
+lingkungan QA. Rincian/arah pengulangan ada di HASIL_VERIFIKASI.md.
+Paket ini belum dinyatakan lulus penerimaan native atau inferensi AI penuh.

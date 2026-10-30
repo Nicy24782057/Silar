@@ -1,0 +1,4 @@
+PASS Reporter delete from list/detail, counts, submitted guard, forged foreign ID, lost response exact replay.
+PASS Operator: real evidence cards, media failed/retry, raw AI dialogs, blank review choice, lost review response recovered by GET only.
+PASS Admin: assignment failed/empty states, exact replay, metadata-only summary, account lost response readback with one POST.
+PASS isolated QA database integrity.

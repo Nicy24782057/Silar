@@ -1,0 +1,10 @@
+PASS responsive review-tersimpan: 12 theme/viewport cases.
+PASS verified review auto-advance, receipt with result/time, one POST, no early advance, retained layout and observed leave/enter transitions.
+PASS responsive isi-dan-pratinjau: 12 theme/viewport cases.
+PASS responsive pratinjau-terkonfirmasi: 12 theme/viewport cases.
+PASS responsive publikasi-berhasil: 12 theme/viewport cases.
+PASS one explicit confirmation performs decision/create/approve with matching content and revisions; explicit publish remains separate, nine-field public contract, lost publish recovered by GET only, successful published screen and review lock.
+PASS responsive pratinjau-tersimpan: 12 theme/viewport cases.
+PASS replacement create lost response recovers by GET without duplicate candidate; cancellation, latest-parent version3 and preservation of previous public version.
+PASS 60 rendered operator process cases, no runtime errors or page/panel overflow.
+PASS isolated QA database integrity.

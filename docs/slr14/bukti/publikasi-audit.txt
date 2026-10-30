@@ -1,0 +1,4 @@
+PASS portal: 10/page, pagination, category + query AND, detail mapping, Escape/focus.
+PASS publication: decision → sanitized candidate → approval → explicit publish; candidate stays private, exact public projection, review locked.
+PASS public requests omit private authorization and cookies; no browser runtime errors.
+PASS isolated QA database integrity.

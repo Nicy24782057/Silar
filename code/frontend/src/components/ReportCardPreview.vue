@@ -17,7 +17,7 @@ const missing = value => value == null || value === '' || (Array.isArray(value) 
 <template>
   <div class="preview-state"><ReportStatus :status="reportStatus(detail.report)" /><span v-if="card">Kartu versi {{ card.version_number }}<template v-if="submitted"> · Versi resmi terkunci</template></span></div>
   <template v-if="card">
-    <div class="preview-category"><span class="heading-icon"><AppIcon :name="incidentIcon(category)" :size="24" /></span><div><p>Kategori kejadian</p><h3>{{ category === 'EARTHQUAKE' ? 'Gempa Bumi' : label(category) }}</h3><small v-if="context.sena">Keyakinan model {{ (Number(context.sena.confidence)*100).toLocaleString('id-ID',{maximumFractionDigits:2}) }}%</small></div></div>
+    <div class="preview-category" :data-category="category"><span class="heading-icon"><AppIcon :name="incidentIcon(category)" :size="24" /></span><div><p>Kategori kejadian</p><h3>{{ category === 'EARTHQUAKE' ? 'Gempa Bumi' : label(category) }}</h3><small v-if="context.sena">Keyakinan model {{ (Number(context.sena.confidence)*100).toLocaleString('id-ID',{maximumFractionDigits:2}) }}%</small></div></div>
     <p v-if="submitted" class="notice">Versi resmi telah dikirim dan terkunci. Rincian serta riwayat tetap dapat dibaca.</p>
     <p v-else class="notice">Bandingkan hasil AI dengan bukti sebelum konfirmasi dan pengiriman melalui halaman rincian.</p>
     <p v-if="category === 'NON_EVENT'" class="notice warning">NON_EVENT: input belum diklasifikasikan sebagai kejadian yang dapat dikirim. Perbaiki sumber atau narasi melalui rincian laporan.</p>

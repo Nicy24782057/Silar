@@ -11,3 +11,8 @@ https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Poppins:wgh
 License sources:
 https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/OFL.txt
 https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/OFL.txt
+
+Inter Variable: byte-for-byte WOFF extracted from the user-supplied
+SILAR_Portal_Publik.svg @font-face (SilarInter). Its embedded name table
+identifies The Inter Project Authors and SIL Open Font License 1.1.
+See inter-OFL.txt. No external font CDN is requested at runtime.

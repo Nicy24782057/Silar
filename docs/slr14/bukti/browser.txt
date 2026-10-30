@@ -1,0 +1,24 @@
+slr14_browser_flow.log
+PASS portal: 10/page, pagination, category + query AND, detail mapping, Escape/focus.
+PASS publication: decision → sanitized candidate → approval → explicit publish; candidate stays private, exact public projection, review locked.
+PASS public requests omit private authorization and cookies; no browser runtime errors.
+PASS isolated QA database integrity.
+
+slr14_browser_replacement.log
+PASS replacement: old public version persists through prepare, candidate, cancellation and approval.
+PASS cancelled latest parent is used for version 3.
+PASS lost create and publish responses recover with the same idempotency key and exact payload; no duplicate versions.
+PASS isolated QA database integrity.
+
+slr14_browser_matrix_final.log
+PASS 48 public/account combinations: both themes, desktop/tablet/phone, no page overflow, correct panel and portal columns.
+Identity source comparison light: 0 static differing pixels (animated illustration excluded).
+Identity source comparison dark: 0 static differing pixels (animated illustration excluded).
+PASS reporter aggregates cover the complete API scope and remain independent of list filters; mobile drawer Escape.
+PASS 174 total rendered combinations; no runtime errors.
+PASS isolated QA database integrity.
+
+slr14_browser_pwa.log
+PASS production preview: service worker active, 56 cached UI assets, no API/media/report/credential data cached.
+PASS offline shell, disabled login, no cached public records; production local-email helper hidden.
+PASS isolated QA database integrity.

@@ -45,7 +45,7 @@ class RunDetailView(APIView):
 
 
 def readable_requests(user):
-    queryset = IdempotencyRecord.objects.filter(actor=user).select_related("report")
+    queryset = IdempotencyRecord.objects.filter(actor=user).filter(Q(report__isnull=True)|Q(report__deleted_at__isnull=True)).select_related("report")
     if user.role == Role.REPORTER:
         condition = Q(report__owner=user)
     else:

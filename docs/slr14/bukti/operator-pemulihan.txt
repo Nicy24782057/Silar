@@ -1,0 +1,4 @@
+PASS rejected review retains form and stage; committed/lost review is recovered with GET only and automatically advances after verification.
+PASS rejected/unknown preparation never creates the next resource; form retained; GET recovery and explicit continuation skip the saved preparation; failed approval preserves the private draft and never publishes.
+PASS approval conflict never publishes; 28 seven-tab/theme/viewport cases with reduced motion; Admin metadata-only view retains five tabs and cannot use private/publication mutation UI.
+PASS isolated QA database integrity.

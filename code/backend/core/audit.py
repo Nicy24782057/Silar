@@ -9,6 +9,7 @@ ALLOWED_CHANGE_FIELDS = {
     'card_version_id','bundle_id','assignment_id','operator_id','outcome','status','state','error_code',
     'result_id','result_type','run_id','published_version_id','candidate_id','reason_recorded',
     'reason',
+    'deleted_at',
 }
 
 def record_event(*, actor, action, object_type, object_id=None, report=None, before=None, after=None, request_id=None, acting_role=None):

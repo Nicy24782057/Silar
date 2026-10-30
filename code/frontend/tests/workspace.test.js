@@ -26,7 +26,7 @@ test('Closed reports and unmet close requirements never enable a mutation',()=>{
  assert.equal(closeAllowed(operator,{...detail,close_requirements:[{met:false}]}),false);
  assert.equal(handlerCan(operator,{...detail,report:{workflow_status:'CLOSED'}},'close_report'),false);
 });
-test('Prepare requires valid review and cannot alter published or active-candidate state',()=>{
+test('Prepare requires valid review; Internal cannot replace a publication or active candidate',()=>{
  assert.equal(decisionAllowed(detail,'PREPARE'),true);
  for(const outcome of ['INVALID','INCONCLUSIVE'])assert.equal(decisionAllowed({...detail,report:{...detail.report,validation_status:outcome}},'PREPARE'),false);
  assert.equal(decisionAllowed({...detail,has_active_candidate:true},'INTERNAL'),false);
