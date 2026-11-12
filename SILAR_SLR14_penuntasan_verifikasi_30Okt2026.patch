@@ -1,0 +1,703 @@
+diff --git a/PANDUAN_RUNNING.md b/PANDUAN_RUNNING.md
+index 0697748d87d1990d34130abd4d446649acdc638b..cbc90f49156744c8b81fca11023df4920d2e71c0 100644
+--- a/PANDUAN_RUNNING.md
++++ b/PANDUAN_RUNNING.md
+@@ -1,5 +1,11 @@
+ # Panduan menjalankan SILAR — SLR10, SLR11 dan SLR12
+ 
++Panduan terbaru SLR14: [alur dan antarmuka](docs/slr14/README.md),
++[penuntasan verifikasi PostgreSQL dan integrasi API/pipeline](docs/slr14/PENUNTASAN_VERIFIKASI_20261030.md).
++Implementasi SLR14 telah terintegrasi pada main e0dc889; hasil native dan
++inferensi AI nyata mengikuti bukti pada panduan tersebut. Bagian versi lama di
++bawah tetap menjadi catatan pemasangan/riwayatnya masing-masing.
++
+ Windows/PowerShell, diperbarui 24 Oktober 2026. Gunakan Python **3.12** dan PostgreSQL **16** sesuai lingkungan SLR11 yang sudah berhasil. Backend: `http://localhost:8001`. Frontend: `http://localhost:5173`.
+ 
+ Untuk pemakaian sehari-hari setelah konfigurasi selesai, langsung ke **bagian C**. Folder repository adalah folder utama yang berisi `code/` dan `tools/`.
+diff --git a/README.md b/README.md
+index 27b5d46b046e6c65cc441e85852dac1ce1b377a1..f4700e304e734e200da1a762255ee381455a411f 100644
+--- a/README.md
++++ b/README.md
+@@ -1,5 +1,11 @@
+ # SILAR
+ 
++Panduan terbaru SLR14: [alur dan antarmuka](docs/slr14/README.md),
++[penuntasan verifikasi PostgreSQL dan integrasi API/pipeline](docs/slr14/PENUNTASAN_VERIFIKASI_20261030.md).
++Implementasi SLR14 telah terintegrasi pada main e0dc889; hasil native dan
++inferensi AI nyata mengikuti bukti pada panduan tersebut. Bagian versi lama di
++bawah tetap menjadi catatan pemasangan/riwayatnya masing-masing.
++
+ **Platform Pelaporan Kejadian Multimodal Berbasis Kecerdasan Buatan**  
+ Sistem Inteligensi Laporan Adaptif dan Responsif.
+ 
+diff --git a/code/backend/reporting/slr14_verification.py b/code/backend/reporting/slr14_verification.py
+index 0e3e78823d45e50b978d3304445fa59782f93d3b..7bec2213820a46725f0b790d25714185f31b0eca 100644
+--- a/code/backend/reporting/slr14_verification.py
++++ b/code/backend/reporting/slr14_verification.py
+@@ -20,6 +20,20 @@ TEST_LABELS = (
+     'reporting.tests.test_deletion',
+     'reporting.tests.test_deletion_postgresql',
+ )
++PIPELINE_INTEGRATION_LABEL = 'ai_pipeline.tests.test_reporting_integration'
++REQUIRED_PIPELINE_TESTS = frozenset(
++    PIPELINE_INTEGRATION_LABEL + '.ReportingAnalysisIntegrationTests.' + name for name in (
++        'test_seven_routes_from_actual_upload_bundle_to_matching_stored_card',
++        'test_lost_response_is_recovered_by_reading_request_run_and_report_without_mutation',
++        'test_other_owner_cannot_read_request_run_report_or_media',
++        'test_source_changed_through_input_api_preserves_new_bundle_and_rejects_old_card',
++        'test_known_failure_can_be_read_replayed_and_explicitly_retried_from_fresh_revision',
++        'test_unknown_finalization_remains_read_only_and_holds_another_analysis',
++        'test_non_event_and_uncertain_are_stored_without_verification_or_submission',
++        'test_missing_ai_configuration_preserves_login_draft_and_uploaded_evidence',
++        'test_expired_request_remains_readable_without_available_replay',
++    )
++)
+ REQUIRED_TESTS = frozenset({
+     'core.tests.FoundationTests.test_postgresql_16_is_actual_test_engine',
+     'core.tests.FoundationTests.test_json_type_constraint_blocks_raw_sql_bypass',
+@@ -90,6 +104,29 @@ def require_schema_guards(database):
+     return {'triggers': sorted(REQUIRED_TRIGGERS), 'constraints': sorted(REQUIRED_CONSTRAINTS)}
+ 
+ 
++def require_execution_identity():
++    """Do not run integration with a fake/unreadable OS identity or weaken recovery."""
++    try:
++        import math
++        import psutil
++        from ai_pipeline.execution import process_context
++        context = process_context()
++        pid, started = context.get('pid'), context.get('process_started_at')
++        if type(pid) is not int or pid < 1 or not isinstance(started, (int, float)) or not math.isfinite(started):
++            raise ValueError('Incomplete process identity')
++        process = psutil.Process(pid)
++        actual = process.create_time()
++        if not isinstance(actual, (int, float)) or not math.isfinite(actual) or not process.is_running() or abs(actual - started) >= 0.01:
++            raise ValueError('Process identity does not match')
++    except Exception as error:
++        raise CommandError(
++            'Lingkungan proses Python/psutil belum dapat diverifikasi. '
++            'Jalankan pada terminal lokal dengan identitas proses OS yang dapat dibaca; '
++            'jangan mengganti identitas atau melewati guard pemulihan.'
++        ) from error
++    return True
++
++
+ def test_ids(suite):
+     for item in suite:
+         if isinstance(item, unittest.TestSuite):
+@@ -101,22 +138,32 @@ def test_ids(suite):
+ class SLR14PostgreSQLRunner(DiscoverRunner):
+     """Separate database, real migrations/guards, required races, no skipped pass."""
+ 
+-    def __init__(self, *args, verification=None, **kwargs):
++    def __init__(self, *args, verification=None, pipeline_integration=False, **kwargs):
+         self.verification = verification if verification is not None else {}
++        self.pipeline_integration = pipeline_integration
+         super().__init__(*args, **kwargs)
+ 
+     def build_suite(self, *args, **kwargs):
+         suite = super().build_suite(*args, **kwargs)
+         discovered = set(test_ids(suite))
+-        missing = REQUIRED_TESTS - discovered
++        required = REQUIRED_TESTS | REQUIRED_PIPELINE_TESTS if self.pipeline_integration else REQUIRED_TESTS
++        missing = required - discovered
+         if missing:
+             raise CommandError('Tes wajib SLR14 tidak ditemukan: ' + ', '.join(sorted(missing)))
+         self.verification['discovered_tests'] = suite.countTestCases()
++        self.verification['pipeline_integration'] = {
++            'requested': self.pipeline_integration,
++            'discovered_tests': len(discovered & REQUIRED_PIPELINE_TESTS),
++            'ai_clients': 'test_doubles' if self.pipeline_integration else 'not_exercised',
++        }
++        self.verification['live_ai_inference_exercised'] = False
+         return suite
+ 
+     def setup_databases(self, **kwargs):
+         major = require_postgresql16(connection, settings.MIGRATION_MODULES)
+         self.verification.update(database_vendor='postgresql', postgresql_major=major)
++        if self.pipeline_integration:
++            self.verification['execution_identity_verified'] = require_execution_identity()
+         # Never reuse/drop a configured application database or an existing
+         # test database. Django creates and tears down this unique test name.
+         test_name = 'test_silar_slr14_' + uuid4().hex
+diff --git a/code/backend/reporting/tests/test_slr14_pipeline_gate.py b/code/backend/reporting/tests/test_slr14_pipeline_gate.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..30dc0052f5b9529a10ddc6b8156ad69bf45f6fe7
+--- /dev/null
++++ b/code/backend/reporting/tests/test_slr14_pipeline_gate.py
+@@ -0,0 +1,78 @@
++"""Verifier guard unit tests; OS doubles here are never evidence of native acceptance."""
++import unittest
++from unittest.mock import patch
++
++from django.core.management.base import CommandError
++from django.test import SimpleTestCase, override_settings
++from django.test.runner import DiscoverRunner
++
++from reporting.slr14_verification import (
++    REQUIRED_TESTS, REQUIRED_PIPELINE_TESTS, SLR14PostgreSQLRunner, require_execution_identity,
++)
++
++
++def suite(names):
++    class NamedCase(unittest.TestCase):
++        def __init__(self, name):
++            super().__init__()
++            self.name = name
++
++        def id(self):
++            return self.name
++
++        def runTest(self):
++            pass
++
++    return unittest.TestSuite(NamedCase(name) for name in names)
++
++
++class PipelineAcceptanceGuardTests(SimpleTestCase):
++    def test_base_scope_does_not_silently_claim_pipeline_integration(self):
++        runner = SLR14PostgreSQLRunner(verbosity=0)
++        with patch.object(DiscoverRunner, 'build_suite', return_value=suite(REQUIRED_TESTS)):
++            runner.build_suite([])
++        self.assertFalse(runner.verification['pipeline_integration']['requested'])
++        self.assertFalse(runner.verification['live_ai_inference_exercised'])
++
++    def test_all_nine_pipeline_cases_are_required_in_combined_scope(self):
++        runner = SLR14PostgreSQLRunner(verbosity=0, pipeline_integration=True)
++        omitted = next(iter(REQUIRED_PIPELINE_TESTS))
++        with patch.object(DiscoverRunner, 'build_suite', return_value=suite(
++                (REQUIRED_TESTS | REQUIRED_PIPELINE_TESTS) - {omitted})):
++            with self.assertRaises(CommandError):
++                runner.build_suite([])
++        with patch.object(DiscoverRunner, 'build_suite', return_value=suite(REQUIRED_TESTS | REQUIRED_PIPELINE_TESTS)):
++            runner.build_suite([])
++        self.assertEqual(runner.verification['pipeline_integration']['discovered_tests'], 9)
++        self.assertEqual(runner.verification['pipeline_integration']['ai_clients'], 'test_doubles')
++        self.assertFalse(runner.verification['live_ai_inference_exercised'])
++
++    def test_unreadable_process_identity_blocks_instead_of_being_replaced(self):
++        with patch('ai_pipeline.execution.process_context', side_effect=RuntimeError('OS identity unavailable')):
++            with self.assertRaisesMessage(CommandError, 'Python/psutil'):
++                require_execution_identity()
++
++    def test_stopped_or_reused_identity_cannot_pass_a_live_environment_check(self):
++        with patch('ai_pipeline.execution.process_context', return_value={'pid': 123, 'process_started_at': 4.0}), \
++                patch('psutil.Process') as factory:
++            process = factory.return_value
++            process.is_running.return_value = False
++            with self.assertRaises(CommandError):
++                require_execution_identity()
++            process.is_running.return_value = True
++            process.create_time.return_value = 5.0
++            with self.assertRaises(CommandError):
++                require_execution_identity()
++            process.create_time.return_value = 4.0
++            self.assertTrue(require_execution_identity())
++
++    @override_settings(MIGRATION_MODULES={})
++    def test_identity_failure_stops_before_creating_any_test_database(self):
++        runner = SLR14PostgreSQLRunner(verbosity=0, pipeline_integration=True)
++        with patch('reporting.slr14_verification.require_postgresql16', return_value=16), \
++                patch('reporting.slr14_verification.require_execution_identity', side_effect=CommandError('blocked')), \
++                patch.object(DiscoverRunner, 'setup_databases') as create:
++            with self.assertRaises(CommandError):
++                runner.setup_databases()
++        create.assert_not_called()
++        self.assertNotIn('test_database', runner.verification)
+diff --git a/code/backend/verify_slr14.py b/code/backend/verify_slr14.py
+index 53de34789f6653f2daba39ff4750485dfc89050d..2f0fb7b102a6bbf2b6524e1a4e52f74521b3f34c 100644
+--- a/code/backend/verify_slr14.py
++++ b/code/backend/verify_slr14.py
+@@ -18,6 +18,8 @@ PROJECT = BACKEND.parent.parent
+ def main():
+     parser = argparse.ArgumentParser(description='Verifikasi SLR14 pada PostgreSQL 16 dengan database uji terpisah.')
+     parser.add_argument('--report', type=Path, help='Lokasi laporan JSON; bawaan docs/slr14/hasil-postgresql/.')
++    parser.add_argument('--include-pipeline-integration', action='store_true',
++                        help='Sertakan sembilan tes API/pipeline/penyimpanan dengan klien AI uji, bukan inferensi model asli.')
+     args = parser.parse_args()
+     now = datetime.now(timezone(timedelta(hours=7)))
+     destination = args.report or PROJECT / 'docs/slr14/hasil-postgresql' / (
+@@ -41,7 +43,7 @@ def main():
+         from django.core.management.base import CommandError
+         from django.db import DatabaseError, connections
+         from django.test import override_settings
+-        from reporting.slr14_verification import SLR14PostgreSQLRunner, TEST_LABELS
++        from reporting.slr14_verification import SLR14PostgreSQLRunner, TEST_LABELS, PIPELINE_INTEGRATION_LABEL
+ 
+         report['django_version'] = django.get_version()
+         try:
+@@ -49,8 +51,10 @@ def main():
+                 with override_settings(PRIVATE_MEDIA_ROOT=Path(temporary) / 'media',
+                                        EMAIL_FILE_PATH=Path(temporary) / 'outbox'):
+                     runner = SLR14PostgreSQLRunner(verification=report, verbosity=2,
+-                        interactive=False, keepdb=False, parallel=1)
+-                    failures = runner.run_tests(TEST_LABELS)
++                        interactive=False, keepdb=False, parallel=1,
++                        pipeline_integration=args.include_pipeline_integration)
++                    labels = TEST_LABELS + ((PIPELINE_INTEGRATION_LABEL,) if args.include_pipeline_integration else ())
++                    failures = runner.run_tests(labels)
+                     exit_code = 1 if failures else 0
+         except CommandError as error:
+             exit_code = 2
+diff --git a/docs/slr14/DAFTAR_PENUNTASAN_20261030.json b/docs/slr14/DAFTAR_PENUNTASAN_20261030.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..bfd41f761449ecee3810e9c4413b49c5ddecd847
+--- /dev/null
++++ b/docs/slr14/DAFTAR_PENUNTASAN_20261030.json
+@@ -0,0 +1,87 @@
++{
++  "base_commit": "e0dc88956695170706ce53c2dc53c9086c8f727a",
++  "date": "2026-10-30",
++  "package_kind": "incremental_patch_against_pushed_slr14",
++  "scope": "correct handoff/publication documentation; optional native PostgreSQL and nine controlled-client API pipeline tests; conservative process environment guard",
++  "runtime_pipeline_changed": false,
++  "frontend_changed": false,
++  "migration_added": false,
++  "verification": {
++    "verifier_guard_unit_passed": 17,
++    "native_base_status": "BLOCKED",
++    "native_base_discovered": 143,
++    "combined_status": "BLOCKED",
++    "combined_discovered": 152,
++    "native_tests_run": 0,
++    "pipeline_clients": "test_doubles",
++    "live_ai_inference_exercised": false
++  },
++  "manifest_excludes_itself": true,
++  "files": [
++    {
++      "path": "PANDUAN_RUNNING.md",
++      "size": 29907,
++      "sha256": "7c175c6b92aa7a98c5b57e1633919b675b5d7d6c5facc3528fe3edea8bda45ce"
++    },
++    {
++      "path": "README.md",
++      "size": 1965,
++      "sha256": "b2e34bd31690935beca8a6b267087cd11f5109ccdbc19d2316a1fa6e19765eeb"
++    },
++    {
++      "path": "code/backend/reporting/slr14_verification.py",
++      "size": 9971,
++      "sha256": "e66514cb662f7b300abfd8085622c01dd4c9ab5271e9ef702ad6a967d0c17613"
++    },
++    {
++      "path": "code/backend/reporting/tests/test_slr14_pipeline_gate.py",
++      "size": 3844,
++      "sha256": "40ca711f184164b153e3c3c13e87b3c81ca5964dcd3e6e8fd6b02b1b76015d6e"
++    },
++    {
++      "path": "code/backend/verify_slr14.py",
++      "size": 4713,
++      "sha256": "83975d7aa23f690d7fb457a3d0c777681dac1e8e4e35a649d157535029d7281d"
++    },
++    {
++      "path": "docs/slr14/HASIL_VERIFIKASI.md",
++      "size": 7200,
++      "sha256": "d84e6230d3110e35ab935ad005feaf777f561726f057f192e983afc6e9c578db"
++    },
++    {
++      "path": "docs/slr14/PENUNTASAN_VERIFIKASI_20261030.md",
++      "size": 5963,
++      "sha256": "d4511ed5086efa1786a0acb9a84ca0c84d3031b9ca074548525db3cd5eb2073b"
++    },
++    {
++      "path": "docs/slr14/README.md",
++      "size": 9135,
++      "sha256": "cc099cf65defd54669afa9b56f51bc23fbed25d2ff5d8bde18f1c059640bd7d6"
++    },
++    {
++      "path": "docs/slr14/UJI_POSTGRESQL16.md",
++      "size": 4052,
++      "sha256": "869d19d64dcff14bc88c89afe2a2ecd579296d3589539a1b04a6fe8edc114ec3"
++    },
++    {
++      "path": "docs/slr14/bukti/penuntasan-guard-verifikasi.txt",
++      "size": 3495,
++      "sha256": "f3d0226cb1b279390ffdbe18af290fd62fd7440ca28ae41e897b912fc88b3e12"
++    },
++    {
++      "path": "docs/slr14/bukti/penuntasan-lingkungan.json",
++      "size": 266,
++      "sha256": "03843af49bad7cb34afd4f7f90698f08577796e5cbbfe69f5a66907cf9c723af"
++    },
++    {
++      "path": "docs/slr14/bukti/penuntasan-native-dan-integrasi-api.json",
++      "size": 487,
++      "sha256": "65c4548a12875a34746686861b8015bd78581decce3c7acc4e689b6bbac26018"
++    },
++    {
++      "path": "docs/slr14/bukti/penuntasan-native-dasar.json",
++      "size": 489,
++      "sha256": "52b5a34ea20aef3d586891247d3ebada54a03f34938ae7e20050aaeb97cb6fbd"
++    }
++  ]
++}
+diff --git a/docs/slr14/HASIL_VERIFIKASI.md b/docs/slr14/HASIL_VERIFIKASI.md
+index 7ce7d349b18e35ec407ee5fb2c7cd4beeb235223..f9b305ac146d7bf82998355cba17e3d824a01349 100644
+--- a/docs/slr14/HASIL_VERIFIKASI.md
++++ b/docs/slr14/HASIL_VERIFIKASI.md
+@@ -31,6 +31,24 @@ Konfigurasi QA, fixture, database, email uji, kredensial dan `dist` tidak dikiri
+ Ini bukan konfigurasi menjalankan aplikasi. Mesin aplikasi tetap PostgreSQL 16.
+ Tampilan dinilai dengan data uji, sehingga isi/angka berbeda dari contoh SVG.
+ 
++## Tambahan penuntasan verifikasi
++
++Baseline implementasi sudah berada di main pada e0dc889. Tambahan alat verifikasi
++memisahkan scope native dasar dari integrasi API/pipeline. Frontend dan pipeline
++runtime tidak diubah. Hasil berikut berasal dari pemeriksaan tambahan ini:
++
++| Pemeriksaan tambahan | Hasil | Bukti |
++| --- | --- | --- |
++| Guard verifier | 17 lulus, tanpa membuat database | bukti/penuntasan-guard-verifikasi.txt |
++| Native dasar | BLOCKED; 143 ditemukan, 0 dijalankan | bukti/penuntasan-native-dasar.json |
++| Native + integrasi API/pipeline | BLOCKED; 152 ditemukan, termasuk sembilan integrasi; 0 dijalankan | bukti/penuntasan-native-dan-integrasi-api.json |
++| Lingkungan proses/model | Identitas OS tidak terverifikasi; aset model default tidak tersedia; inferensi asli tidak dijalankan | bukti/penuntasan-lingkungan.json |
++
++Perintah gabungan: `verify_slr14.py --include-pipeline-integration`. Sembilan tes
++menggunakan model/provider uji; `live_ai_inference_exercised=false` tetap tercatat
++meskipun nanti perintah ini PASSED. Penjelasan dan urutan lokal ada di
++[PENUNTASAN_VERIFIKASI_20261030.md](PENUNTASAN_VERIFIKASI_20261030.md).
++
+ ## Batas yang belum lolos
+ 
+ 1. PostgreSQL 16 tidak tersedia di lingkungan ini. Migration 0005, trigger
+@@ -38,15 +56,16 @@ Tampilan dinilai dengan data uji, sehingga isi/angka berbeda dari contoh SVG.
+    belum dibuktikan pada engine asli. Jalankan `verify_slr14.py` pada konfigurasi
+    PostgreSQL 16 tim; status harus `PASSED`, tanpa skip. Paket tidak dinyatakan
+    selesai penerimaan native hanya berdasarkan SQLite atau build.
+-2. Percobaan tambahan sembilan tes `ai_pipeline.tests.test_reporting_integration`
+-   belum lulus di lingkungan ini. Setelah dependensi psutil yang sudah tercantum
+-   pada requirements AI tersedia, setup berhenti pada pembacaan identitas proses
+-   (`psutil.NoSuchProcess`, sebelum run terbentuk) akibat lingkungan proses QA.
+-   Tes tersebut tidak dilewati/dipalsukan agar dianggap lulus. Catatan ada pada
+-   `bukti/integrasi-ai-tambahan.txt`. Jalankan kembali pada lingkungan aplikasi
+-   lokal dengan stack AI SLR11 yang lengkap. Regresi Reporter di browser tidak
+-   menjalankan inferensi AI baru; pengujian ini tidak membuktikan model/layanan
+-   AI eksternal atau pengiriman email nyata.
++2. Sembilan tes `ai_pipeline.tests.test_reporting_integration` adalah integrasi
++   API/pipeline/penyimpanan dengan **model/provider uji**, bukan inferensi AI asli.
++   Percobaan sebelumnya tertahan saat membaca identitas proses psutil sebelum
++   run terbentuk. Guard tambahan kini menghentikan lingkungan proses yang tidak
++   dapat dibuktikan, bukan mengganti identitas atau melewati pemeriksaan. Gunakan
++   `verify_slr14.py --include-pipeline-integration` pada PostgreSQL 16 lokal tim.
++3. Inferensi nyata Whisper/SENA/NARA/Fusion/Gemini serta uji end-to-end pada kode
++   terintegrasi tetap memerlukan aset/kunci dan lingkungan aplikasi sebenarnya.
++   Hasil komponen, browser dan test doubles tidak membuktikan mutu model atau
++   panggilan provider asli. Pengujian lintas fitur/performa mengikuti SLR15.
+ 
+ ## Mengulang pemeriksaan komponen
+ 
+@@ -63,13 +82,14 @@ SILAR_ALLOW_COMPONENT_DB=1 python manage.py test \
+   --settings=reporting.component_test_settings --noinput
+ ```
+ 
+-Perintah ini hanya pemeriksaan komponen eksplisit. Penerimaan penuh harus memakai
+-[UJI_POSTGRESQL16.md](UJI_POSTGRESQL16.md). Tambahan tes integrasi pada lingkungan
+-aplikasi yang lengkap:
++Perintah ini hanya pemeriksaan komponen eksplisit. Penerimaan native memakai
++[UJI_POSTGRESQL16.md](UJI_POSTGRESQL16.md). Untuk scope native beserta sembilan tes
++integrasi API dengan model/provider uji:
+ 
+ ```powershell
+-.\.venv\Scripts\python.exe manage.py test ai_pipeline.tests.test_reporting_integration --settings=config.test_settings --noinput
++.\.venv\Scripts\python.exe verify_slr14.py --include-pipeline-integration
+ ```
+ 
+-Keputusan desain, daftar sumber dan pratinjau terkini tersedia pada
+-[AUDIT_MENYELURUH_20261030.md](AUDIT_MENYELURUH_20261030.md).
++Keputusan desain dan pratinjau dijelaskan pada
++[AUDIT_MENYELURUH_20261030.md](AUDIT_MENYELURUH_20261030.md) serta
++[ALUR_OPERATOR_20261030.md](ALUR_OPERATOR_20261030.md).
+diff --git a/docs/slr14/PENUNTASAN_VERIFIKASI_20261030.md b/docs/slr14/PENUNTASAN_VERIFIKASI_20261030.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..01d4d85d0cadcd02254ff09422c4ff3b414b6b7b
+--- /dev/null
++++ b/docs/slr14/PENUNTASAN_VERIFIKASI_20261030.md
+@@ -0,0 +1,102 @@
++# Penuntasan verifikasi SLR14 dan penjelasan pengujian AI
++
++Baseline GitHub: `e0dc88956695170706ce53c2dc53c9086c8f727a`, commit SLR14 yang sudah
++tersedia di main pada 30 Oktober 2026. Dokumen dan perintah tambahan ini merupakan
++revisi terhadap baseline tersebut. Tidak ada perubahan antarmuka, kontrak API,
++model aplikasi, migration, bobot, threshold, layanan inferensi, atau training.
++
++## Arti catatan integrasi AI
++
++Istilah "integrasi AI penuh" pada penjelasan sebelumnya terlalu luas. Terdapat
++tiga bukti yang berbeda dan tidak saling menggantikan:
++
++| Pemeriksaan | Yang dibuktikan | Keadaan yang tersedia |
++| --- | --- | --- |
++| UI dan respons analisis | Loading/progres, pembacaan hasil, tahapan, recovery dan tampilan kartu | Hasil frontend/browser pada paket sebelumnya |
++| API → pipeline → penyimpanan | Input/bundle tujuh rute, routing, hasil persisten, referensi sumber, izin, replay, kegagalan dan NON_EVENT | Sembilan tes di ai_pipeline.tests.test_reporting_integration; model/provider adalah test doubles |
++| Inferensi nyata dan alur gabungan | Input diproses Whisper/SENA/NARA/Fusion serta Gemini pada rute yang memerlukannya, lalu hasil tersimpan dan dibaca aplikasi | Memerlukan aset/kunci asli dan bukti pada kode yang benar-benar dijalankan; pengujian lintas fitur/performa mengikuti SLR15 |
++
++Sembilan tes API tersebut tidak memakai bobot SENA/NARA/Whisper atau layanan
++Gemini asli. Tes memakai model/provider uji yang hasilnya terkendali. Pada mode
++PostgreSQL, database, migration, trigger dan lock tetap asli. Lulus sembilan tes
++itu bukan bukti mutu prediksi atau inferensi model asli.
++
++Contoh uji nyata teks: teks pengguna → narasi → SENA → NARA → Fusion → hasil
++tersimpan → hasil dibaca dan diperiksa Reporter. Audio menambahkan Whisper;
++foto atau kombinasi kanal memakai Gemini sesuai kontrak. Informasi yang belum
++tersedia tidak diisi dengan tebakan. Konfirmasi dan submit tetap tindakan manusia.
++
++Catatan yang belum terverifikasi berarti bukti penerimaannya belum lengkap.
++Catatan tersebut sendiri tidak membuktikan AI aplikasi rusak, dan bukan instruksi
++untuk mengganti model atau melakukan training ulang.
++
++## Satu perintah pada komputer aplikasi
++
++Pasang berkas revisi menurut path ke clone yang sudah memuat baseline SLR14.
++Gunakan venv, konfigurasi PostgreSQL 16, dan .env yang selama ini dipakai. Dari
++folder `code/backend` pada PowerShell:
++
++```powershell
++.\.venv\Scripts\python.exe verify_slr14.py --include-pipeline-integration
++```
++
++Perintah memeriksa **143 tes native SLR14 + sembilan tes integrasi API = 152 tes**
++pada satu database uji baru dengan nama acak. PostgreSQL harus mayor 16 dan role
++pengujian memerlukan hak membuat database uji. Database aplikasi tidak dipakai
++sebagai database uji; TEST NAME/MIRROR yang menunjuknya tidak digunakan. Semua
++migration asli dan guard schema harus aktif. Tidak ada skip, expected failure,
++error, atau suite kosong yang dapat menghasilkan PASSED.
++
++Identitas proses OS/psutil juga diperiksa sebelum database uji dibuat ketika
++opsi integrasi dipilih. Lingkungan dengan PID tidak terbaca dihentikan dengan
++BLOCKED, bukan diberi identitas pengganti. psutil sudah tercantum dalam
++requirements-ai.txt SLR11; gunakan lingkungan aplikasi yang telah terpasang.
++Tidak ada perubahan pada `ai_pipeline/execution.py` atau sembilan tes aslinya.
++
++Hasil JSON otomatis tersimpan di `docs/slr14/hasil-postgresql/`; terminal
++menyebut lokasi tepatnya. Untuk lokasi pilihan:
++
++```powershell
++.\.venv\Scripts\python.exe verify_slr14.py --include-pipeline-integration --report hasil-slr14-gabungan.json
++```
++
++Perintah lama tanpa flag tetap tersedia untuk 143 tes dasar. Laporan tambahan
++menyebut pipeline_integration.requested/discovered_tests, ai_clients=test_doubles,
++dan live_ai_inference_exercised=false. PASSED pada perintah gabungan tetap tidak
++berarti model/provider asli telah dijalankan.
++
++## Hasil aktual pada lingkungan pengerjaan
++
++- **17 tes guard verifier lulus**: 12 yang sudah ada dan lima tambahan untuk
++  batas scope, kelengkapan sembilan tes, serta identitas proses. Unit guard
++  memakai objek OS uji secara eksplisit; ini bukan bukti PostgreSQL berjalan.
++- Perintah dasar: **BLOCKED**, 143 ditemukan, 0 dijalankan.
++- Perintah gabungan: **BLOCKED**, 152 ditemukan, sembilan tes integrasi terdeteksi,
++  0 dijalankan. Tidak ada server PostgreSQL yang dapat diakses.
++- Pemeriksaan identitas proses OS gagal pada lingkungan QA ini; aset model asli
++  juga tidak tersedia. Tidak ada inferensi nyata atau panggilan Gemini baru.
++- Runtime pemulihan proses dan tes integrasi asli tidak diubah untuk meluluskan
++  lingkungan QA. Tidak ada fallback SQLite pada perintah native.
++
++Bukti: `bukti/penuntasan-guard-verifikasi.txt`, `penuntasan-native-dasar.json`,
++`penuntasan-native-dan-integrasi-api.json`, dan `penuntasan-lingkungan.json`.
++Hasil lama tetap disimpan sebagai riwayat. Bukti frontend/backend komponen dari
++paket sebelumnya tidak dinyatakan sebagai eksekusi baru pada revisi ini.
++
++## Melengkapi bukti model asli
++
++Pada komputer yang menjalankan aplikasi, pertahankan aset SENA/NARA sesuai
++manifest/adapter SLR09, Whisper lokal untuk audio, decoder yang diperlukan,
++serta konfigurasi Gemini untuk foto/kombinasi kanal. Model tidak diunduh ulang
++oleh perintah verifikasi di atas.
++
++Uji T, A, I, TA, TI, AI dan TAI menggunakan sumber uji yang berhak digunakan.
++Catat commit, versi model, rute/run, hasil tersimpan, kesesuaian referensi sumber,
++waktu dan kegagalan aktual. Jangan menyimpulkan mutu model atau kapasitas dari
++waktu fixture. Pengujian end-to-end dan pengukuran penerimaan terintegrasi berada
++pada SLR15 menurut pemetaan proyek. Tindakan model yang menghasilkan biaya atau
++membuka data eksternal tetap mengikuti informasi pemrosesan pada aplikasi.
++
++Status In Review dapat membawa catatan terbuka ini. Penuntasan penerimaan native
++memerlukan laporan PASSED dari lingkungan PostgreSQL 16 yang benar; hasilnya
++belum dapat dinyatakan selesai hanya dari lingkungan QA yang BLOCKED.
+diff --git a/docs/slr14/README.md b/docs/slr14/README.md
+index 5c007e97ad520889c199fc4fc8b096d0fc6ddd42..f4288f5f3674811a27dd31da9bce3b73cf0bb85c 100644
+--- a/docs/slr14/README.md
++++ b/docs/slr14/README.md
+@@ -1,5 +1,9 @@
+ # SLR14 — publikasi dan antarmuka SILAR
+ 
++**Penuntasan verifikasi:** panduan membedakan tes integrasi API dengan inferensi
++model asli, serta perintah PostgreSQL + sembilan tes pipeline, tersedia di
++[PENUNTASAN_VERIFIKASI_20261030.md](PENUNTASAN_VERIFIKASI_20261030.md).
++
+ **Revisi terkini — alur Operator:** review tersimpan otomatis membuka Tindak
+ Lanjut. Pilihan publikasi langsung menampilkan formulir/pratinjau, dengan dua
+ aksi utama Konfirmasi isi publikasi → Publikasikan sekarang. Baca
+@@ -19,9 +23,11 @@ halaman, serta penghapusan draft milik Reporter sendiri. Baca
+ [AUDIT_MENYELURUH_20261030.md](AUDIT_MENYELURUH_20261030.md). Pemetaan 30 SVG
+ ada pada [REVISI_UI_20261030.md](REVISI_UI_20261030.md). Paket bersifat kumulatif.
+ 
+-Perubahan disiapkan terhadap `main` pada commit
+-`1af8ac6f098b1a50fc83b4c74f8b0b4bbaaf73cd` (SLR13).
+-Branch kerja: `codex/slr14-approved-ui`. Belum di-push atau dideploy.
++Implementasi SLR14 telah tersedia di `main` pada commit
++`e0dc88956695170706ce53c2dc53c9086c8f727a` (30 Oktober 2026).
++Paket penuntasan verifikasi ini merupakan tambahan terhadap commit tersebut.
++Status penerimaan PostgreSQL/AI mengikuti bukti di HASIL_VERIFIKASI.md;
++keberadaan kode di main tidak menjadi bukti deployment atau penerimaan native.
+ Keputusan desain dan pemetaan data ada di
+ [KEPUTUSAN_DAN_CAKUPAN.md](KEPUTUSAN_DAN_CAKUPAN.md).
+ 
+@@ -86,24 +92,26 @@ serta `publish_report`, dan merupakan penanggung jawab saat ini. Label Admin
+ sendiri tidak memberi kewenangan Operator.
+ 
+ 1. Buka **Penanganan Saya → Detail Laporan → Review**. Pilih hasil dan simpan
+-   review beserta alasan; hasil tidak dipilih otomatis.
+-2. Untuk review **VALID** atas versi resmi, buka **Keputusan**, pilih
+-   **Siapkan publikasi**, isi alasan lalu simpan. Tindakan ini belum membuat kandidat.
+-3. Pada panel **Informasi untuk Portal Publik**, siapkan isi kandidat. Periksa
+-   semua informasi, hilangkan informasi privat, lalu buka pratinjau. Kategori
+-   mengikuti versi resmi. Waktu pasti boleh kosong; bila diisi, sertakan zona waktu.
+-4. Simpan kandidat, setujui versi tersimpan melalui konfirmasi, kemudian
+-   terbitkan melalui tindakan terpisah. Kandidat dan versi yang baru disetujui
+-   belum dapat dibaca melalui API publik.
+-5. Perbaikan kandidat tersimpan memakai pembatalan beralasan, keputusan
+-   Siapkan publikasi kembali, dan kandidat pengganti. Parent mengikuti versi
+-   terakhir, termasuk versi yang dibatalkan. Isi versi tidak ditimpa.
+-6. Versi terbit lama tetap terlihat selama penggantinya disiapkan/disetujui.
+-   Setelah pengganti terbit, pointer publik berpindah ke pengganti. Penarikan
+-   versi terbit tidak tersedia. Review dikunci setelah publikasi pertama.
+-7. Respons tindakan yang terputus menahan tindakan baru dan menyediakan
+-   **Periksa hasil tindakan**, memakai kunci serta payload permintaan yang sama.
+-   Laporan tertutup tidak menerima perubahan publikasi baru.
++   review beserta alasan. Setelah tersimpan dan terbaca kembali, Tindak Lanjut
++   otomatis terbuka dengan pesan **Review Anda sudah tersimpan**.
++2. Catat serta selesaikan/batalkan tindak lanjut bila diperlukan, lalu gunakan
++   **Lanjut ke keputusan**. Untuk review VALID atas versi resmi, pilih
++   **Tinjau untuk publikasi** dan isi alasan keputusan.
++3. Formulir dan pratinjau langsung tersedia. Periksa semua isi dan hilangkan
++   informasi privat. Kategori mengikuti versi resmi; waktu pasti boleh kosong.
++4. Setelah memeriksa sanitasi, tekan **Konfirmasi isi publikasi**. Keputusan,
++   penyimpanan versi serta persetujuan versi tepat dicatat melalui API yang
++   terpisah. Isi tersimpan harus sama dengan isi yang diperiksa. Ini belum terbit.
++5. Periksa **Pratinjau terkonfirmasi**, pastikan versi yang akan diterbitkan,
++   lalu tekan **Publikasikan sekarang**. Publikasi menunggu tindakan terakhir ini.
++6. Pembaruan berikutnya memakai **Tinjau pembaruan informasi**. Pembatalan draf
++   memerlukan alasan; parent pengganti mengikuti versi terakhir, termasuk yang
++   dibatalkan. Versi terbit lama bertahan sampai penggantinya diterbitkan.
++7. Respons terputus menahan langkah berikutnya. **Periksa hasil tindakan**
++   membaca ledger/keadaan tersimpan melalui GET. Pemulihan POST dengan kunci/body
++   sama hanya tersedia secara eksplisit bila rekam request belum ditemukan.
++   Draf hasil pemulihan dapat memerlukan konfirmasi eksplisit lagi. Review dikunci
++   setelah publikasi pertama; laporan tertutup tidak menerima perubahan baru.
+ 
+ ## Menghapus laporan yang belum dikirim
+ 
+diff --git a/docs/slr14/UJI_POSTGRESQL16.md b/docs/slr14/UJI_POSTGRESQL16.md
+index 51f90434ab9971803f0f55d9265182478e7bb296..ff52b62ad51dd449405daaa63e7d217387a8d969 100644
+--- a/docs/slr14/UJI_POSTGRESQL16.md
++++ b/docs/slr14/UJI_POSTGRESQL16.md
+@@ -12,6 +12,18 @@ Buka terminal di `code/backend`, kemudian jalankan:
+ .\.venv\Scripts\python.exe verify_slr14.py
+ ```
+ 
++Untuk menyertakan sembilan tes integrasi API → pipeline → penyimpanan:
++
++```powershell
++.\.venv\Scripts\python.exe verify_slr14.py --include-pipeline-integration
++```
++
++Scope gabungan berisi 152 tes (143 dasar + 9 integrasi). Model/provider pada
++sembilan tes tersebut adalah test doubles; tidak memanggil model/provider asli.
++Identitas proses OS/psutil diperiksa sebelum membuat database uji pada scope ini.
++Laporan mencatat `live_ai_inference_exercised=false` secara eksplisit. Rincian:
++[PENUNTASAN_VERIFIKASI_20261030.md](PENUNTASAN_VERIFIKASI_20261030.md).
++
+ Gunakan venv dan konfigurasi database lokal yang sudah dipakai pada SLR13.
+ Dependensi backend tidak berubah. Role PostgreSQL untuk pengujian perlu
+ izin membuat database uji. Perintah tidak memberikan izin atau mengganti
+diff --git a/docs/slr14/bukti/penuntasan-guard-verifikasi.txt b/docs/slr14/bukti/penuntasan-guard-verifikasi.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..774465c2b92dc2a64acc796eec6bca51e57e4af3
+--- /dev/null
++++ b/docs/slr14/bukti/penuntasan-guard-verifikasi.txt
+@@ -0,0 +1,25 @@
++test_complete_success_is_recorded_without_failure_or_skip (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_complete_success_is_recorded_without_failure_or_skip) ... ok
++test_component_database_is_rejected_before_any_sql (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_component_database_is_rejected_before_any_sql) ... ok
++test_disabled_migrations_are_rejected_before_database_creation (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_disabled_migrations_are_rejected_before_database_creation) ... ok
++test_expected_failure_cannot_hide_a_missing_acceptance_guarantee (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_expected_failure_cannot_hide_a_missing_acceptance_guarantee) ... ok
++test_missing_concurrency_tests_block_acceptance_before_setup (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_missing_concurrency_tests_block_acceptance_before_setup) ... ok
++test_missing_database_trigger_is_rejected (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_missing_database_trigger_is_rejected) ... ok
++test_native_guard_inventory_is_recorded_only_when_complete (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_native_guard_inventory_is_recorded_only_when_complete) ... ok
++test_postgresql_other_major_cannot_receive_native_acceptance (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_postgresql_other_major_cannot_receive_native_acceptance) ... ok
++test_runner_ignores_a_test_name_or_mirror_pointing_at_application_data (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_runner_ignores_a_test_name_or_mirror_pointing_at_application_data) ... ok
++test_skipped_test_is_a_failure_even_when_unittest_calls_it_successful (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_skipped_test_is_a_failure_even_when_unittest_calls_it_successful) ... ok
++test_supported_major_is_read_from_the_server (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_supported_major_is_read_from_the_server) ... ok
++test_zero_executed_tests_cannot_be_reported_as_passed (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_zero_executed_tests_cannot_be_reported_as_passed) ... ok
++test_all_nine_pipeline_cases_are_required_in_combined_scope (reporting.tests.test_slr14_pipeline_gate.PipelineAcceptanceGuardTests.test_all_nine_pipeline_cases_are_required_in_combined_scope) ... ok
++test_base_scope_does_not_silently_claim_pipeline_integration (reporting.tests.test_slr14_pipeline_gate.PipelineAcceptanceGuardTests.test_base_scope_does_not_silently_claim_pipeline_integration) ... ok
++test_identity_failure_stops_before_creating_any_test_database (reporting.tests.test_slr14_pipeline_gate.PipelineAcceptanceGuardTests.test_identity_failure_stops_before_creating_any_test_database) ... ok
++test_stopped_or_reused_identity_cannot_pass_a_live_environment_check (reporting.tests.test_slr14_pipeline_gate.PipelineAcceptanceGuardTests.test_stopped_or_reused_identity_cannot_pass_a_live_environment_check) ... ok
++test_unreadable_process_identity_blocks_instead_of_being_replaced (reporting.tests.test_slr14_pipeline_gate.PipelineAcceptanceGuardTests.test_unreadable_process_identity_blocks_instead_of_being_replaced) ... ok
++
++----------------------------------------------------------------------
++Ran 17 tests in 0.037s
++
++OK
++Found 17 test(s).
++Skipping setup of unused database(s): default.
++System check identified no issues (0 silenced).
+diff --git a/docs/slr14/bukti/penuntasan-lingkungan.json b/docs/slr14/bukti/penuntasan-lingkungan.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..826e754a2b4fa747b5b383acd49b3a438c6ba5a9
+--- /dev/null
++++ b/docs/slr14/bukti/penuntasan-lingkungan.json
+@@ -0,0 +1,7 @@
++{
++  "execution_identity_verified": false,
++  "pid_visible_in_proc": false,
++  "default_model_assets_present": false,
++  "live_ai_inference_run": false,
++  "scope": "QA environment only; no model/provider substitutions applied to runtime or original integration tests"
++}
+diff --git a/docs/slr14/bukti/penuntasan-native-dan-integrasi-api.json b/docs/slr14/bukti/penuntasan-native-dan-integrasi-api.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..c1a9cc6f8963172f0d9c78b02be4e47df35a75ed
+--- /dev/null
++++ b/docs/slr14/bukti/penuntasan-native-dan-integrasi-api.json
+@@ -0,0 +1,16 @@
++{
++  "status": "BLOCKED",
++  "generated_at": "2026-10-30T20:30:49.727085+07:00",
++  "tests_run": 0,
++  "database_vendor": null,
++  "postgresql_major": null,
++  "django_version": "5.2.18",
++  "discovered_tests": 152,
++  "pipeline_integration": {
++    "requested": true,
++    "discovered_tests": 9,
++    "ai_clients": "test_doubles"
++  },
++  "live_ai_inference_exercised": false,
++  "reason": "PostgreSQL 16 belum dapat digunakan. Periksa koneksi dan hak membuat database uji pada konfigurasi lokal."
++}
+diff --git a/docs/slr14/bukti/penuntasan-native-dasar.json b/docs/slr14/bukti/penuntasan-native-dasar.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..e37aab72191165c2ffcacb2de0868c6752700ed9
+--- /dev/null
++++ b/docs/slr14/bukti/penuntasan-native-dasar.json
+@@ -0,0 +1,16 @@
++{
++  "status": "BLOCKED",
++  "generated_at": "2026-10-30T20:30:48.967124+07:00",
++  "tests_run": 0,
++  "database_vendor": null,
++  "postgresql_major": null,
++  "django_version": "5.2.18",
++  "discovered_tests": 143,
++  "pipeline_integration": {
++    "requested": false,
++    "discovered_tests": 0,
++    "ai_clients": "not_exercised"
++  },
++  "live_ai_inference_exercised": false,
++  "reason": "PostgreSQL 16 belum dapat digunakan. Periksa koneksi dan hak membuat database uji pada konfigurasi lokal."
++}

@@ -1,0 +1,7 @@
+{
+  "execution_identity_verified": false,
+  "pid_visible_in_proc": false,
+  "default_model_assets_present": false,
+  "live_ai_inference_run": false,
+  "scope": "QA environment only; no model/provider substitutions applied to runtime or original integration tests"
+}

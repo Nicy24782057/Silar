@@ -1,0 +1,87 @@
+{
+  "base_commit": "e0dc88956695170706ce53c2dc53c9086c8f727a",
+  "date": "2026-10-30",
+  "package_kind": "incremental_patch_against_pushed_slr14",
+  "scope": "correct handoff/publication documentation; optional native PostgreSQL and nine controlled-client API pipeline tests; conservative process environment guard",
+  "runtime_pipeline_changed": false,
+  "frontend_changed": false,
+  "migration_added": false,
+  "verification": {
+    "verifier_guard_unit_passed": 17,
+    "native_base_status": "BLOCKED",
+    "native_base_discovered": 143,
+    "combined_status": "BLOCKED",
+    "combined_discovered": 152,
+    "native_tests_run": 0,
+    "pipeline_clients": "test_doubles",
+    "live_ai_inference_exercised": false
+  },
+  "manifest_excludes_itself": true,
+  "files": [
+    {
+      "path": "PANDUAN_RUNNING.md",
+      "size": 29907,
+      "sha256": "7c175c6b92aa7a98c5b57e1633919b675b5d7d6c5facc3528fe3edea8bda45ce"
+    },
+    {
+      "path": "README.md",
+      "size": 1965,
+      "sha256": "b2e34bd31690935beca8a6b267087cd11f5109ccdbc19d2316a1fa6e19765eeb"
+    },
+    {
+      "path": "code/backend/reporting/slr14_verification.py",
+      "size": 9971,
+      "sha256": "e66514cb662f7b300abfd8085622c01dd4c9ab5271e9ef702ad6a967d0c17613"
+    },
+    {
+      "path": "code/backend/reporting/tests/test_slr14_pipeline_gate.py",
+      "size": 3844,
+      "sha256": "40ca711f184164b153e3c3c13e87b3c81ca5964dcd3e6e8fd6b02b1b76015d6e"
+    },
+    {
+      "path": "code/backend/verify_slr14.py",
+      "size": 4713,
+      "sha256": "83975d7aa23f690d7fb457a3d0c777681dac1e8e4e35a649d157535029d7281d"
+    },
+    {
+      "path": "docs/slr14/HASIL_VERIFIKASI.md",
+      "size": 7200,
+      "sha256": "d84e6230d3110e35ab935ad005feaf777f561726f057f192e983afc6e9c578db"
+    },
+    {
+      "path": "docs/slr14/PENUNTASAN_VERIFIKASI_20261030.md",
+      "size": 5963,
+      "sha256": "d4511ed5086efa1786a0acb9a84ca0c84d3031b9ca074548525db3cd5eb2073b"
+    },
+    {
+      "path": "docs/slr14/README.md",
+      "size": 9135,
+      "sha256": "cc099cf65defd54669afa9b56f51bc23fbed25d2ff5d8bde18f1c059640bd7d6"
+    },
+    {
+      "path": "docs/slr14/UJI_POSTGRESQL16.md",
+      "size": 4052,
+      "sha256": "869d19d64dcff14bc88c89afe2a2ecd579296d3589539a1b04a6fe8edc114ec3"
+    },
+    {
+      "path": "docs/slr14/bukti/penuntasan-guard-verifikasi.txt",
+      "size": 3495,
+      "sha256": "f3d0226cb1b279390ffdbe18af290fd62fd7440ca28ae41e897b912fc88b3e12"
+    },
+    {
+      "path": "docs/slr14/bukti/penuntasan-lingkungan.json",
+      "size": 266,
+      "sha256": "03843af49bad7cb34afd4f7f90698f08577796e5cbbfe69f5a66907cf9c723af"
+    },
+    {
+      "path": "docs/slr14/bukti/penuntasan-native-dan-integrasi-api.json",
+      "size": 487,
+      "sha256": "65c4548a12875a34746686861b8015bd78581decce3c7acc4e689b6bbac26018"
+    },
+    {
+      "path": "docs/slr14/bukti/penuntasan-native-dasar.json",
+      "size": 489,
+      "sha256": "52b5a34ea20aef3d586891247d3ebada54a03f34938ae7e20050aaeb97cb6fbd"
+    }
+  ]
+}

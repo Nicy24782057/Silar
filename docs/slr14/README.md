@@ -1,5 +1,9 @@
 # SLR14 — publikasi dan antarmuka SILAR
 
+**Penuntasan verifikasi:** panduan membedakan tes integrasi API dengan inferensi
+model asli, serta perintah PostgreSQL + sembilan tes pipeline, tersedia di
+[PENUNTASAN_VERIFIKASI_20261030.md](PENUNTASAN_VERIFIKASI_20261030.md).
+
 **Revisi terkini — alur Operator:** review tersimpan otomatis membuka Tindak
 Lanjut. Pilihan publikasi langsung menampilkan formulir/pratinjau, dengan dua
 aksi utama Konfirmasi isi publikasi → Publikasikan sekarang. Baca
@@ -19,9 +23,11 @@ halaman, serta penghapusan draft milik Reporter sendiri. Baca
 [AUDIT_MENYELURUH_20261030.md](AUDIT_MENYELURUH_20261030.md). Pemetaan 30 SVG
 ada pada [REVISI_UI_20261030.md](REVISI_UI_20261030.md). Paket bersifat kumulatif.
 
-Perubahan disiapkan terhadap `main` pada commit
-`1af8ac6f098b1a50fc83b4c74f8b0b4bbaaf73cd` (SLR13).
-Branch kerja: `codex/slr14-approved-ui`. Belum di-push atau dideploy.
+Implementasi SLR14 telah tersedia di `main` pada commit
+`e0dc88956695170706ce53c2dc53c9086c8f727a` (30 Oktober 2026).
+Paket penuntasan verifikasi ini merupakan tambahan terhadap commit tersebut.
+Status penerimaan PostgreSQL/AI mengikuti bukti di HASIL_VERIFIKASI.md;
+keberadaan kode di main tidak menjadi bukti deployment atau penerimaan native.
 Keputusan desain dan pemetaan data ada di
 [KEPUTUSAN_DAN_CAKUPAN.md](KEPUTUSAN_DAN_CAKUPAN.md).
 
@@ -86,24 +92,26 @@ serta `publish_report`, dan merupakan penanggung jawab saat ini. Label Admin
 sendiri tidak memberi kewenangan Operator.
 
 1. Buka **Penanganan Saya → Detail Laporan → Review**. Pilih hasil dan simpan
-   review beserta alasan; hasil tidak dipilih otomatis.
-2. Untuk review **VALID** atas versi resmi, buka **Keputusan**, pilih
-   **Siapkan publikasi**, isi alasan lalu simpan. Tindakan ini belum membuat kandidat.
-3. Pada panel **Informasi untuk Portal Publik**, siapkan isi kandidat. Periksa
-   semua informasi, hilangkan informasi privat, lalu buka pratinjau. Kategori
-   mengikuti versi resmi. Waktu pasti boleh kosong; bila diisi, sertakan zona waktu.
-4. Simpan kandidat, setujui versi tersimpan melalui konfirmasi, kemudian
-   terbitkan melalui tindakan terpisah. Kandidat dan versi yang baru disetujui
-   belum dapat dibaca melalui API publik.
-5. Perbaikan kandidat tersimpan memakai pembatalan beralasan, keputusan
-   Siapkan publikasi kembali, dan kandidat pengganti. Parent mengikuti versi
-   terakhir, termasuk versi yang dibatalkan. Isi versi tidak ditimpa.
-6. Versi terbit lama tetap terlihat selama penggantinya disiapkan/disetujui.
-   Setelah pengganti terbit, pointer publik berpindah ke pengganti. Penarikan
-   versi terbit tidak tersedia. Review dikunci setelah publikasi pertama.
-7. Respons tindakan yang terputus menahan tindakan baru dan menyediakan
-   **Periksa hasil tindakan**, memakai kunci serta payload permintaan yang sama.
-   Laporan tertutup tidak menerima perubahan publikasi baru.
+   review beserta alasan. Setelah tersimpan dan terbaca kembali, Tindak Lanjut
+   otomatis terbuka dengan pesan **Review Anda sudah tersimpan**.
+2. Catat serta selesaikan/batalkan tindak lanjut bila diperlukan, lalu gunakan
+   **Lanjut ke keputusan**. Untuk review VALID atas versi resmi, pilih
+   **Tinjau untuk publikasi** dan isi alasan keputusan.
+3. Formulir dan pratinjau langsung tersedia. Periksa semua isi dan hilangkan
+   informasi privat. Kategori mengikuti versi resmi; waktu pasti boleh kosong.
+4. Setelah memeriksa sanitasi, tekan **Konfirmasi isi publikasi**. Keputusan,
+   penyimpanan versi serta persetujuan versi tepat dicatat melalui API yang
+   terpisah. Isi tersimpan harus sama dengan isi yang diperiksa. Ini belum terbit.
+5. Periksa **Pratinjau terkonfirmasi**, pastikan versi yang akan diterbitkan,
+   lalu tekan **Publikasikan sekarang**. Publikasi menunggu tindakan terakhir ini.
+6. Pembaruan berikutnya memakai **Tinjau pembaruan informasi**. Pembatalan draf
+   memerlukan alasan; parent pengganti mengikuti versi terakhir, termasuk yang
+   dibatalkan. Versi terbit lama bertahan sampai penggantinya diterbitkan.
+7. Respons terputus menahan langkah berikutnya. **Periksa hasil tindakan**
+   membaca ledger/keadaan tersimpan melalui GET. Pemulihan POST dengan kunci/body
+   sama hanya tersedia secara eksplisit bila rekam request belum ditemukan.
+   Draf hasil pemulihan dapat memerlukan konfirmasi eksplisit lagi. Review dikunci
+   setelah publikasi pertama; laporan tertutup tidak menerima perubahan baru.
 
 ## Menghapus laporan yang belum dikirim
 

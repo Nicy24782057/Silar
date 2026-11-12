@@ -1,0 +1,16 @@
+{
+  "status": "BLOCKED",
+  "generated_at": "2026-11-13T00:52:25.310822+07:00",
+  "tests_run": 0,
+  "database_vendor": "postgresql",
+  "postgresql_major": 16,
+  "django_version": "5.2.18",
+  "discovered_tests": 152,
+  "pipeline_integration": {
+    "requested": true,
+    "discovered_tests": 9,
+    "ai_clients": "test_doubles"
+  },
+  "live_ai_inference_exercised": false,
+  "reason": "Lingkungan proses Python/psutil belum dapat diverifikasi. Jalankan pada terminal lokal dengan identitas proses OS yang dapat dibaca; jangan mengganti identitas atau melewati guard pemulihan."
+}

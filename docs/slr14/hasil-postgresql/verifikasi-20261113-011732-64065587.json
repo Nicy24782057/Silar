@@ -1,0 +1,100 @@
+{
+  "status": "FAILED",
+  "generated_at": "2026-11-13T01:17:32.357328+07:00",
+  "tests_run": 152,
+  "database_vendor": "postgresql",
+  "postgresql_major": 16,
+  "django_version": "5.2.18",
+  "discovered_tests": 152,
+  "pipeline_integration": {
+    "requested": true,
+    "discovered_tests": 9,
+    "ai_clients": "test_doubles"
+  },
+  "live_ai_inference_exercised": false,
+  "execution_identity_verified": true,
+  "test_database": "test_silar_slr14_7e65bd538fa2436b9b859453f21ddb4c",
+  "schema_guards": {
+    "triggers": [
+      [
+        "core_auditevent",
+        "silar_immutable"
+      ],
+      [
+        "core_evidencebundle",
+        "silar_bundle_nonempty"
+      ],
+      [
+        "core_evidencebundleitem",
+        "silar_bundle_membership"
+      ],
+      [
+        "core_idempotencyrecord",
+        "silar_no_delete"
+      ],
+      [
+        "core_operatorassignment",
+        "silar_assignment_guard"
+      ],
+      [
+        "core_publicationversion",
+        "silar_no_delete"
+      ],
+      [
+        "core_publicationversion",
+        "silar_publication_guard"
+      ],
+      [
+        "core_report",
+        "silar_deleted_report_guard"
+      ],
+      [
+        "core_report",
+        "silar_report_guard"
+      ]
+    ],
+    "constraints": [
+      [
+        "core_publicationversion",
+        "publication_approval_metadata"
+      ],
+      [
+        "core_publicationversion",
+        "publication_cancel_metadata"
+      ],
+      [
+        "core_publicationversion",
+        "publication_publish_metadata"
+      ],
+      [
+        "core_publicationversion",
+        "publication_state_allowed"
+      ],
+      [
+        "core_publicationversion",
+        "publication_version_unique"
+      ],
+      [
+        "core_publicationversion",
+        "publicationversion_data_jsonkind"
+      ],
+      [
+        "core_report",
+        "deleted_draft_owner_and_state"
+      ]
+    ]
+  },
+  "failures": 5,
+  "errors": 1,
+  "skipped": [],
+  "unexpected_successes": 0,
+  "expected_failures": [],
+  "failed_tests": [
+    "ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_lost_response_is_recovered_by_reading_request_run_and_report_without_mutation",
+    "ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_seven_routes_from_actual_upload_bundle_to_matching_stored_card (route='A')",
+    "ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_seven_routes_from_actual_upload_bundle_to_matching_stored_card (route='TA')",
+    "ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_seven_routes_from_actual_upload_bundle_to_matching_stored_card (route='AI')",
+    "ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_seven_routes_from_actual_upload_bundle_to_matching_stored_card (route='TAI')",
+    "ai_pipeline.tests.test_reporting_integration.ReportingAnalysisIntegrationTests.test_other_owner_cannot_read_request_run_report_or_media"
+  ]
+}

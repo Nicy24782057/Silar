@@ -1,0 +1,25 @@
+test_complete_success_is_recorded_without_failure_or_skip (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_complete_success_is_recorded_without_failure_or_skip) ... ok
+test_component_database_is_rejected_before_any_sql (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_component_database_is_rejected_before_any_sql) ... ok
+test_disabled_migrations_are_rejected_before_database_creation (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_disabled_migrations_are_rejected_before_database_creation) ... ok
+test_expected_failure_cannot_hide_a_missing_acceptance_guarantee (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_expected_failure_cannot_hide_a_missing_acceptance_guarantee) ... ok
+test_missing_concurrency_tests_block_acceptance_before_setup (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_missing_concurrency_tests_block_acceptance_before_setup) ... ok
+test_missing_database_trigger_is_rejected (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_missing_database_trigger_is_rejected) ... ok
+test_native_guard_inventory_is_recorded_only_when_complete (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_native_guard_inventory_is_recorded_only_when_complete) ... ok
+test_postgresql_other_major_cannot_receive_native_acceptance (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_postgresql_other_major_cannot_receive_native_acceptance) ... ok
+test_runner_ignores_a_test_name_or_mirror_pointing_at_application_data (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_runner_ignores_a_test_name_or_mirror_pointing_at_application_data) ... ok
+test_skipped_test_is_a_failure_even_when_unittest_calls_it_successful (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_skipped_test_is_a_failure_even_when_unittest_calls_it_successful) ... ok
+test_supported_major_is_read_from_the_server (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_supported_major_is_read_from_the_server) ... ok
+test_zero_executed_tests_cannot_be_reported_as_passed (reporting.tests.test_slr14_verification.AcceptanceRunnerTests.test_zero_executed_tests_cannot_be_reported_as_passed) ... ok
+test_all_nine_pipeline_cases_are_required_in_combined_scope (reporting.tests.test_slr14_pipeline_gate.PipelineAcceptanceGuardTests.test_all_nine_pipeline_cases_are_required_in_combined_scope) ... ok
+test_base_scope_does_not_silently_claim_pipeline_integration (reporting.tests.test_slr14_pipeline_gate.PipelineAcceptanceGuardTests.test_base_scope_does_not_silently_claim_pipeline_integration) ... ok
+test_identity_failure_stops_before_creating_any_test_database (reporting.tests.test_slr14_pipeline_gate.PipelineAcceptanceGuardTests.test_identity_failure_stops_before_creating_any_test_database) ... ok
+test_stopped_or_reused_identity_cannot_pass_a_live_environment_check (reporting.tests.test_slr14_pipeline_gate.PipelineAcceptanceGuardTests.test_stopped_or_reused_identity_cannot_pass_a_live_environment_check) ... ok
+test_unreadable_process_identity_blocks_instead_of_being_replaced (reporting.tests.test_slr14_pipeline_gate.PipelineAcceptanceGuardTests.test_unreadable_process_identity_blocks_instead_of_being_replaced) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.037s
+
+OK
+Found 17 test(s).
+Skipping setup of unused database(s): default.
+System check identified no issues (0 silenced).

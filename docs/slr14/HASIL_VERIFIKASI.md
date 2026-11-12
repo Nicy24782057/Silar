@@ -31,6 +31,24 @@ Konfigurasi QA, fixture, database, email uji, kredensial dan `dist` tidak dikiri
 Ini bukan konfigurasi menjalankan aplikasi. Mesin aplikasi tetap PostgreSQL 16.
 Tampilan dinilai dengan data uji, sehingga isi/angka berbeda dari contoh SVG.
 
+## Tambahan penuntasan verifikasi
+
+Baseline implementasi sudah berada di main pada e0dc889. Tambahan alat verifikasi
+memisahkan scope native dasar dari integrasi API/pipeline. Frontend dan pipeline
+runtime tidak diubah. Hasil berikut berasal dari pemeriksaan tambahan ini:
+
+| Pemeriksaan tambahan | Hasil | Bukti |
+| --- | --- | --- |
+| Guard verifier | 17 lulus, tanpa membuat database | bukti/penuntasan-guard-verifikasi.txt |
+| Native dasar | BLOCKED; 143 ditemukan, 0 dijalankan | bukti/penuntasan-native-dasar.json |
+| Native + integrasi API/pipeline | BLOCKED; 152 ditemukan, termasuk sembilan integrasi; 0 dijalankan | bukti/penuntasan-native-dan-integrasi-api.json |
+| Lingkungan proses/model | Identitas OS tidak terverifikasi; aset model default tidak tersedia; inferensi asli tidak dijalankan | bukti/penuntasan-lingkungan.json |
+
+Perintah gabungan: `verify_slr14.py --include-pipeline-integration`. Sembilan tes
+menggunakan model/provider uji; `live_ai_inference_exercised=false` tetap tercatat
+meskipun nanti perintah ini PASSED. Penjelasan dan urutan lokal ada di
+[PENUNTASAN_VERIFIKASI_20261030.md](PENUNTASAN_VERIFIKASI_20261030.md).
+
 ## Batas yang belum lolos
 
 1. PostgreSQL 16 tidak tersedia di lingkungan ini. Migration 0005, trigger
@@ -38,15 +56,16 @@ Tampilan dinilai dengan data uji, sehingga isi/angka berbeda dari contoh SVG.
    belum dibuktikan pada engine asli. Jalankan `verify_slr14.py` pada konfigurasi
    PostgreSQL 16 tim; status harus `PASSED`, tanpa skip. Paket tidak dinyatakan
    selesai penerimaan native hanya berdasarkan SQLite atau build.
-2. Percobaan tambahan sembilan tes `ai_pipeline.tests.test_reporting_integration`
-   belum lulus di lingkungan ini. Setelah dependensi psutil yang sudah tercantum
-   pada requirements AI tersedia, setup berhenti pada pembacaan identitas proses
-   (`psutil.NoSuchProcess`, sebelum run terbentuk) akibat lingkungan proses QA.
-   Tes tersebut tidak dilewati/dipalsukan agar dianggap lulus. Catatan ada pada
-   `bukti/integrasi-ai-tambahan.txt`. Jalankan kembali pada lingkungan aplikasi
-   lokal dengan stack AI SLR11 yang lengkap. Regresi Reporter di browser tidak
-   menjalankan inferensi AI baru; pengujian ini tidak membuktikan model/layanan
-   AI eksternal atau pengiriman email nyata.
+2. Sembilan tes `ai_pipeline.tests.test_reporting_integration` adalah integrasi
+   API/pipeline/penyimpanan dengan **model/provider uji**, bukan inferensi AI asli.
+   Percobaan sebelumnya tertahan saat membaca identitas proses psutil sebelum
+   run terbentuk. Guard tambahan kini menghentikan lingkungan proses yang tidak
+   dapat dibuktikan, bukan mengganti identitas atau melewati pemeriksaan. Gunakan
+   `verify_slr14.py --include-pipeline-integration` pada PostgreSQL 16 lokal tim.
+3. Inferensi nyata Whisper/SENA/NARA/Fusion/Gemini serta uji end-to-end pada kode
+   terintegrasi tetap memerlukan aset/kunci dan lingkungan aplikasi sebenarnya.
+   Hasil komponen, browser dan test doubles tidak membuktikan mutu model atau
+   panggilan provider asli. Pengujian lintas fitur/performa mengikuti SLR15.
 
 ## Mengulang pemeriksaan komponen
 
@@ -63,13 +82,14 @@ SILAR_ALLOW_COMPONENT_DB=1 python manage.py test \
   --settings=reporting.component_test_settings --noinput
 ```
 
-Perintah ini hanya pemeriksaan komponen eksplisit. Penerimaan penuh harus memakai
-[UJI_POSTGRESQL16.md](UJI_POSTGRESQL16.md). Tambahan tes integrasi pada lingkungan
-aplikasi yang lengkap:
+Perintah ini hanya pemeriksaan komponen eksplisit. Penerimaan native memakai
+[UJI_POSTGRESQL16.md](UJI_POSTGRESQL16.md). Untuk scope native beserta sembilan tes
+integrasi API dengan model/provider uji:
 
 ```powershell
-.\.venv\Scripts\python.exe manage.py test ai_pipeline.tests.test_reporting_integration --settings=config.test_settings --noinput
+.\.venv\Scripts\python.exe verify_slr14.py --include-pipeline-integration
 ```
 
-Keputusan desain, daftar sumber dan pratinjau terkini tersedia pada
-[AUDIT_MENYELURUH_20261030.md](AUDIT_MENYELURUH_20261030.md).
+Keputusan desain dan pratinjau dijelaskan pada
+[AUDIT_MENYELURUH_20261030.md](AUDIT_MENYELURUH_20261030.md) serta
+[ALUR_OPERATOR_20261030.md](ALUR_OPERATOR_20261030.md).

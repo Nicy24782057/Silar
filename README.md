@@ -1,5 +1,11 @@
 # SILAR
 
+Panduan terbaru SLR14: [alur dan antarmuka](docs/slr14/README.md),
+[penuntasan verifikasi PostgreSQL dan integrasi API/pipeline](docs/slr14/PENUNTASAN_VERIFIKASI_20261030.md).
+Implementasi SLR14 telah terintegrasi pada main e0dc889; hasil native dan
+inferensi AI nyata mengikuti bukti pada panduan tersebut. Bagian versi lama di
+bawah tetap menjadi catatan pemasangan/riwayatnya masing-masing.
+
 **Platform Pelaporan Kejadian Multimodal Berbasis Kecerdasan Buatan**  
 Sistem Inteligensi Laporan Adaptif dan Responsif.
 

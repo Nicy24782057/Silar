@@ -20,6 +20,20 @@ TEST_LABELS = (
     'reporting.tests.test_deletion',
     'reporting.tests.test_deletion_postgresql',
 )
+PIPELINE_INTEGRATION_LABEL = 'ai_pipeline.tests.test_reporting_integration'
+REQUIRED_PIPELINE_TESTS = frozenset(
+    PIPELINE_INTEGRATION_LABEL + '.ReportingAnalysisIntegrationTests.' + name for name in (
+        'test_seven_routes_from_actual_upload_bundle_to_matching_stored_card',
+        'test_lost_response_is_recovered_by_reading_request_run_and_report_without_mutation',
+        'test_other_owner_cannot_read_request_run_report_or_media',
+        'test_source_changed_through_input_api_preserves_new_bundle_and_rejects_old_card',
+        'test_known_failure_can_be_read_replayed_and_explicitly_retried_from_fresh_revision',
+        'test_unknown_finalization_remains_read_only_and_holds_another_analysis',
+        'test_non_event_and_uncertain_are_stored_without_verification_or_submission',
+        'test_missing_ai_configuration_preserves_login_draft_and_uploaded_evidence',
+        'test_expired_request_remains_readable_without_available_replay',
+    )
+)
 REQUIRED_TESTS = frozenset({
     'core.tests.FoundationTests.test_postgresql_16_is_actual_test_engine',
     'core.tests.FoundationTests.test_json_type_constraint_blocks_raw_sql_bypass',
@@ -90,6 +104,29 @@ def require_schema_guards(database):
     return {'triggers': sorted(REQUIRED_TRIGGERS), 'constraints': sorted(REQUIRED_CONSTRAINTS)}
 
 
+def require_execution_identity():
+    """Do not run integration with a fake/unreadable OS identity or weaken recovery."""
+    try:
+        import math
+        import psutil
+        from ai_pipeline.execution import process_context
+        context = process_context()
+        pid, started = context.get('pid'), context.get('process_started_at')
+        if type(pid) is not int or pid < 1 or not isinstance(started, (int, float)) or not math.isfinite(started):
+            raise ValueError('Incomplete process identity')
+        process = psutil.Process(pid)
+        actual = process.create_time()
+        if not isinstance(actual, (int, float)) or not math.isfinite(actual) or not process.is_running() or abs(actual - started) >= 0.01:
+            raise ValueError('Process identity does not match')
+    except Exception as error:
+        raise CommandError(
+            'Lingkungan proses Python/psutil belum dapat diverifikasi. '
+            'Jalankan pada terminal lokal dengan identitas proses OS yang dapat dibaca; '
+            'jangan mengganti identitas atau melewati guard pemulihan.'
+        ) from error
+    return True
+
+
 def test_ids(suite):
     for item in suite:
         if isinstance(item, unittest.TestSuite):
@@ -101,22 +138,32 @@ def test_ids(suite):
 class SLR14PostgreSQLRunner(DiscoverRunner):
     """Separate database, real migrations/guards, required races, no skipped pass."""
 
-    def __init__(self, *args, verification=None, **kwargs):
+    def __init__(self, *args, verification=None, pipeline_integration=False, **kwargs):
         self.verification = verification if verification is not None else {}
+        self.pipeline_integration = pipeline_integration
         super().__init__(*args, **kwargs)
 
     def build_suite(self, *args, **kwargs):
         suite = super().build_suite(*args, **kwargs)
         discovered = set(test_ids(suite))
-        missing = REQUIRED_TESTS - discovered
+        required = REQUIRED_TESTS | REQUIRED_PIPELINE_TESTS if self.pipeline_integration else REQUIRED_TESTS
+        missing = required - discovered
         if missing:
             raise CommandError('Tes wajib SLR14 tidak ditemukan: ' + ', '.join(sorted(missing)))
         self.verification['discovered_tests'] = suite.countTestCases()
+        self.verification['pipeline_integration'] = {
+            'requested': self.pipeline_integration,
+            'discovered_tests': len(discovered & REQUIRED_PIPELINE_TESTS),
+            'ai_clients': 'test_doubles' if self.pipeline_integration else 'not_exercised',
+        }
+        self.verification['live_ai_inference_exercised'] = False
         return suite
 
     def setup_databases(self, **kwargs):
         major = require_postgresql16(connection, settings.MIGRATION_MODULES)
         self.verification.update(database_vendor='postgresql', postgresql_major=major)
+        if self.pipeline_integration:
+            self.verification['execution_identity_verified'] = require_execution_identity()
         # Never reuse/drop a configured application database or an existing
         # test database. Django creates and tears down this unique test name.
         test_name = 'test_silar_slr14_' + uuid4().hex

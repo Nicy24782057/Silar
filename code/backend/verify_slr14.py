@@ -18,6 +18,8 @@ PROJECT = BACKEND.parent.parent
 def main():
     parser = argparse.ArgumentParser(description='Verifikasi SLR14 pada PostgreSQL 16 dengan database uji terpisah.')
     parser.add_argument('--report', type=Path, help='Lokasi laporan JSON; bawaan docs/slr14/hasil-postgresql/.')
+    parser.add_argument('--include-pipeline-integration', action='store_true',
+                        help='Sertakan sembilan tes API/pipeline/penyimpanan dengan klien AI uji, bukan inferensi model asli.')
     args = parser.parse_args()
     now = datetime.now(timezone(timedelta(hours=7)))
     destination = args.report or PROJECT / 'docs/slr14/hasil-postgresql' / (
@@ -41,7 +43,7 @@ def main():
         from django.core.management.base import CommandError
         from django.db import DatabaseError, connections
         from django.test import override_settings
-        from reporting.slr14_verification import SLR14PostgreSQLRunner, TEST_LABELS
+        from reporting.slr14_verification import SLR14PostgreSQLRunner, TEST_LABELS, PIPELINE_INTEGRATION_LABEL
 
         report['django_version'] = django.get_version()
         try:
@@ -49,8 +51,10 @@ def main():
                 with override_settings(PRIVATE_MEDIA_ROOT=Path(temporary) / 'media',
                                        EMAIL_FILE_PATH=Path(temporary) / 'outbox'):
                     runner = SLR14PostgreSQLRunner(verification=report, verbosity=2,
-                        interactive=False, keepdb=False, parallel=1)
-                    failures = runner.run_tests(TEST_LABELS)
+                        interactive=False, keepdb=False, parallel=1,
+                        pipeline_integration=args.include_pipeline_integration)
+                    labels = TEST_LABELS + ((PIPELINE_INTEGRATION_LABEL,) if args.include_pipeline_integration else ())
+                    failures = runner.run_tests(labels)
                     exit_code = 1 if failures else 0
         except CommandError as error:
             exit_code = 2

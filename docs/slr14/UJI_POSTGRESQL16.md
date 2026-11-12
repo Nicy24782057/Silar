@@ -12,6 +12,18 @@ Buka terminal di `code/backend`, kemudian jalankan:
 .\.venv\Scripts\python.exe verify_slr14.py
 ```
 
+Untuk menyertakan sembilan tes integrasi API → pipeline → penyimpanan:
+
+```powershell
+.\.venv\Scripts\python.exe verify_slr14.py --include-pipeline-integration
+```
+
+Scope gabungan berisi 152 tes (143 dasar + 9 integrasi). Model/provider pada
+sembilan tes tersebut adalah test doubles; tidak memanggil model/provider asli.
+Identitas proses OS/psutil diperiksa sebelum membuat database uji pada scope ini.
+Laporan mencatat `live_ai_inference_exercised=false` secara eksplisit. Rincian:
+[PENUNTASAN_VERIFIKASI_20261030.md](PENUNTASAN_VERIFIKASI_20261030.md).
+
 Gunakan venv dan konfigurasi database lokal yang sudah dipakai pada SLR13.
 Dependensi backend tidak berubah. Role PostgreSQL untuk pengujian perlu
 izin membuat database uji. Perintah tidak memberikan izin atau mengganti

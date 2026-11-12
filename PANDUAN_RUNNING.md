@@ -1,5 +1,11 @@
 # Panduan menjalankan SILAR — SLR10, SLR11 dan SLR12
 
+Panduan terbaru SLR14: [alur dan antarmuka](docs/slr14/README.md),
+[penuntasan verifikasi PostgreSQL dan integrasi API/pipeline](docs/slr14/PENUNTASAN_VERIFIKASI_20261030.md).
+Implementasi SLR14 telah terintegrasi pada main e0dc889; hasil native dan
+inferensi AI nyata mengikuti bukti pada panduan tersebut. Bagian versi lama di
+bawah tetap menjadi catatan pemasangan/riwayatnya masing-masing.
+
 Windows/PowerShell, diperbarui 24 Oktober 2026. Gunakan Python **3.12** dan PostgreSQL **16** sesuai lingkungan SLR11 yang sudah berhasil. Backend: `http://localhost:8001`. Frontend: `http://localhost:5173`.
 
 Untuk pemakaian sehari-hari setelah konfigurasi selesai, langsung ke **bagian C**. Folder repository adalah folder utama yang berisi `code/` dan `tools/`.
