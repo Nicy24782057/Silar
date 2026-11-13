@@ -1,0 +1,862 @@
+diff --git a/MULAI_DI_SINI.txt b/MULAI_DI_SINI.txt
+index f247c5cc864056f3d325c930d6805a82d2906093..330fc6a8dcc94338d533ad90e0a6d5ebbbad1194 100644
+--- a/MULAI_DI_SINI.txt
++++ b/MULAI_DI_SINI.txt
+@@ -1,39 +1,44 @@
+-SILAR — REVISI TEMUAN SLR15, 13 NOVEMBER 2026
++SILAR — SLR14, PAKET LANJUTAN REVISI UI, 13 NOVEMBER 2026
+ 
++Paket ini melanjutkan paket akun/Operator/setup SILAR_SLR15.zip yang sudah
++Anda terapkan. Implementasinya masuk SLR14. SLR15 memuat pengujian/temuan.
+ Panduan utama: PANDUAN_RUNNING.md.
+-Catatan kontrak dan bukti: docs/slr15/revisi-20261113/README.md.
++Catatan revisi: docs/slr14/revisi-review-20261113/README.md.
+ 
+-INSTALASI BARU
+-1. Siapkan Python 3.12, PostgreSQL 16 yang berjalan, Git, Node/npm.
+-2. Dari folder utama, jalankan SETUP_SILAR.bat atau:
+-   py -3.12 tools/setup_silar.py
+-3. Masukkan port PostgreSQL 16 yang benar. Paket AI dan frontend ikut dipasang.
+-4. Ikuti panduan penyiapan aset model dan SMTP. Email berkas tidak masuk Gmail.
+-5. Jalankan backend dan frontend dalam dua terminal sesuai panduan utama.
++CARA MEMASANG
++1. Hentikan frontend/backend, lalu ekstrak ZIP ini ke folder sementara.
++2. Gabungkan berkas mengikuti path yang sama pada clone Silar Anda.
++   Gunakan berkas yang disertakan; tidak perlu mengganti seluruh folder proyek.
++3. Dari code/frontend, jalankan:
++   npm.cmd test
++   npm.cmd run build
++   npm.cmd run dev
++4. Mulai ulang backend. PWA yang terpasang perlu menerima pembaruan build
++   melalui Aplikasi & Koneksi, kemudian dibuka kembali.
+ 
+-MEMASANG PAKET REVISI INI PADA CLONE YANG SUDAH ADA
+-Dasar paket adalah main 7af81c8e448e12eead2b54a4e6aad72b9e2a781e.
+-Hentikan backend/frontend. Ekstrak paket ke folder sementara, lalu gabungkan
+-berkas mengikuti path. Pertahankan .env, venv, database, media dan aset model.
+-Alternatifnya gunakan patch dengan git apply --check lalu git apply.
+-Gunakan salah satu cara, tidak perlu menimpa file dan menerapkan patch sekaligus.
++Paket lanjutan ini tidak menambah dependensi atau migration backend.
++Migration akun 0002 dari paket sebelumnya harus sudah diterapkan.
++Konfigurasi .env, database, venv dan aset model lokal tetap dipakai.
+ 
+-Jika paket aplikasi sudah lengkap, jalankan dari code/backend:
+-.\.venv\Scripts\python.exe manage.py migrate
+-.\.venv\Scripts\python.exe manage.py check
+-.\.venv\Scripts\python.exe verify_slr14.py --include-pipeline-integration
+-.\.venv\Scripts\python.exe manage.py test accounts.tests accounts.test_account_flow --settings=config.test_settings
++PERUBAHAN UNTUK DIREVIEW
++- Ikon mata di dalam kolom sandi utama dan konfirmasi; keadaan tiap kolom terpisah.
++- Tombol Masuk mengikuti latar landing page, Buat akun mengikuti aksen biru-sian.
++- Catatan implementasi ditautkan ke SLR14, dengan bukti pengujian lama tetap di SLR15.
++- Panduan konkret menyiapkan arsip model dan Whisper.
+ 
+-Migration baru: accounts.0002_emailotp_activation_auth_version_and_more.
+-Dari code/frontend: npm.cmd ci, npm.cmd test, npm.cmd run build.
+-Jika dependensi belum lengkap, gunakan setup lengkap dari folder utama.
++MENYIAPKAN SENA/NARA
++Dari code/backend:
++.\.venv\Scripts\python.exe manage.py prepare_ai_models
++Command memverifikasi hash arsip di models/ lalu mengekstrak model runtime.
++Mulai ulang backend dan uji analisis teks. Audio memerlukan aset Whisper;
++foto/kombinasi kanal memerlukan konfigurasi Gemini. Lihat panduan utama.
++Runtime saat ini memakai CPU; NVIDIA/CUDA tidak diwajibkan.
+ 
+-Email/kode: satu tautan Verifikasi akun pada login. Reporter langsung menuju
+-formulir kode setelah mendaftar. Operator membuat kata sandi setelah kode benar.
+-Kirim ulang membatalkan kode dan bukti aktivasi lama. OTP bukan login otomatis.
+-Sandi baru minimum 15 karakter; aturan dibaca di formulir dan diperiksa backend.
+-Operator: Pemeriksaan, Tindak lanjut, Keputusan. Riwayat melalui tombol tersendiri.
+-Informasi publik tetap mengikuti sembilan field yang diizinkan.
++BATAS PAKET
++Alur sesi/tombol silang masih menunggu kepastian kontrol yang dimaksud pengguna.
++Pengiriman SMTP dan inferensi AI asli tidak diuji ulang dalam revisi UI ini.
++Belum ada commit, push, deployment, atau perubahan board oleh penyusun.
+ 
+-Paket tidak menyertakan kredensial, .env, bobot model, media privat, venv,
+-node_modules atau hasil build dist. Belum ada commit/push/deploy dari penyusun.
++Manifest berkas: docs/slr14/revisi-review-20261113/DAFTAR_PERUBAHAN.json.
++Patch alternatif: PERUBAHAN_SLR14_UI.patch. Pilih salin berkas ATAU terapkan patch;
++tidak perlu melakukan kedua cara sekaligus. Jalankan git apply --check dahulu.
+diff --git a/PANDUAN_RUNNING.md b/PANDUAN_RUNNING.md
+index 6774cd3fc051f01510731cf30dc4abcf3cb6bda3..e5ad08df43863169f482f0caa5cfc107d43596cd 100644
+--- a/PANDUAN_RUNNING.md
++++ b/PANDUAN_RUNNING.md
+@@ -56,6 +56,22 @@ Pemasangan paket berbeda dari pemasangan bobot model. Aset bawaan disimpan pada:
+ 
+ Ikuti prosedur aset pada [panduan integrasi AI SLR11](docs/ai/slr11/SLR11_Integrasi_dan_Verifikasi_v0.1.md). Gunakan adapter, manifest dan versi yang sudah ditetapkan proyek. Path khusus dapat diisi melalui `SENA_MODEL_DIR`, `NARA_MODEL_DIR`, `WHISPER_MODEL_DIR`, dan `SILAR_SLR09_ROOT`.
+ 
++Folder `models/` menyimpan arsip sumber SENA/NARA, sedangkan backend membaca hasil ekstraksinya pada folder `model_assets/` di atas. Keberadaan arsip belum berarti model sudah siap dimuat. Dari `code/backend`, verifikasi dan ekstrak arsip menggunakan command proyek:
++
++```powershell
++.\.venv\Scripts\python.exe manage.py prepare_ai_models
++```
++
++Command memeriksa hash arsip serta berkas runtime terhadap manifest SLR09. Jika berkas tujuan yang sudah ada berbeda, command berhenti untuk diperiksa; tidak menimpanya otomatis. Arsip SENA/NARA memakai Git LFS. Jika ukuran arsip hanya sekitar 134 byte, unduh isi LFS terlebih dahulu. Ukuran arsip yang dipilih proyek adalah SENA 412.184.854 byte dan NARA 408.238.634 byte; ukuran cocok belum menggantikan pemeriksaan hash.
++
++Untuk audio, siapkan Whisper secara terpisah. Command berikut dapat mengunduh model dari Hugging Face dan mencatat manifest lokal; memerlukan internet serta ruang disk tambahan:
++
++```powershell
++.\.venv\Scripts\python.exe manage.py prepare_ai_models --whisper-only --whisper-revision 536b0662742c02347bc0e980a01041f333bce120
++```
++
++Runtime aplikasi ini menggunakan CPU untuk SENA/NARA dan CPU `int8` untuk Whisper. NVIDIA/CUDA bukan syarat untuk konfigurasi tersebut. Model dimuat oleh backend ketika diperlukan; tidak ada server model terpisah yang harus dijalankan. Mulai ulang backend sesudah menyiapkan model atau mengganti konfigurasi, lalu coba analisis teks dahulu sebelum audio/foto/kombinasi.
++
+ Isi `GEMINI_API_KEY` dan model yang sesuai pada `.env` untuk pemrosesan foto/kombinasi kanal. Teks dan audio tunggal tidak memakai Gemini. Analisis tidak mengunduh aset otomatis.
+ 
+ ## 4. Pilih pengiriman email
+diff --git a/README.md b/README.md
+index 20a75502ff18f48ba16fa5b85ce7f7afd3e1f576..9666a31a1bbe71690de22c86b12fd46687f1eab6 100644
+--- a/README.md
++++ b/README.md
+@@ -17,7 +17,7 @@ Mulai dari **[PANDUAN_RUNNING.md](PANDUAN_RUNNING.md)**: perangkat lunak, setup
+ 
+ Di Windows, jalankan **SETUP_SILAR.bat** dari folder utama, atau `py -3.12 tools/setup_silar.py`. Script memasang paket backend dan AI beserta frontend, lalu memeriksa hasilnya. Gunakan `--check` untuk pemeriksaan tanpa pemasangan/perubahan database. Aset model dan SMTP disiapkan mengikuti panduan.
+ 
+-Revisi dari temuan SLR15 mencakup satu halaman verifikasi email/kode, sandi minimal 15 karakter, serta tiga tahap pengelolaan laporan Operator. Lihat [catatan revisi dan pengujian](docs/slr15/revisi-20261113/README.md).
++Revisi implementasi **SLR14** dari temuan pengujian SLR15 mencakup satu halaman verifikasi email/kode, sandi minimal 15 karakter, serta tiga tahap pengelolaan laporan Operator. Penyesuaian kontrol sandi dan tombol landing page ada pada [revisi review SLR14](docs/slr14/revisi-review-20261113/README.md). Bukti pengujian paket akun sebelumnya tetap tersedia pada [catatan pengujian SLR15](docs/slr15/revisi-20261113/README.md).
+ 
+ ## Acuan proyek
+ 
+diff --git a/code/frontend/src/auth-ui.css b/code/frontend/src/auth-ui.css
+index a609de45b1c4d34af268a5696a125a16aaa00cfa..f10440a23be469a009441751170b36c56ac56c76 100644
+--- a/code/frontend/src/auth-ui.css
++++ b/code/frontend/src/auth-ui.css
+@@ -1,5 +1,5 @@
+ /* Account pages follow the supplied two-panel designs. */
+-.auth-password-input{position:relative;display:flex;align-items:center;gap:6px}.auth-password-input input{min-width:0;flex:1}.auth-password-input .auth-password-toggle{flex:none;font-size:11px;min-height:44px;padding:7px;color:var(--primary)}.auth-password-length{font-size:11px;line-height:1.7;color:var(--muted);margin:7px 0 0}.auth-password-length.is-met{color:var(--primary)}
++.auth-password-input{position:relative;width:100%;min-width:0}.auth-content .auth-password-input input{width:100%;min-width:0;padding-inline-end:56px}.auth-password-input input::-ms-reveal,.auth-password-input input::-ms-clear{display:none}.auth-password-input .auth-password-toggle{position:absolute;inset-inline-end:4px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:44px;height:44px;min-height:44px;padding:10px;margin:0;border:0;border-radius:8px;background:transparent;color:var(--muted);box-shadow:none}.auth-password-input .auth-password-toggle:hover:not(:disabled){background:var(--tint);color:var(--primary)}.auth-password-input .auth-password-toggle:focus-visible{outline:2px solid var(--primary);outline-offset:-2px}.auth-password-length{font-size:11px;line-height:1.7;color:var(--muted);margin:7px 0 0}.auth-password-length.is-met{color:var(--primary)}
+ .auth-main{outline:none;min-height:100dvh;background:var(--panel)}
+ .auth-two-panel{display:grid;grid-template-columns:47.45% minmax(0,1fr);min-height:100dvh;background:var(--panel)}
+ .auth-identity{position:sticky;top:0;height:100dvh;overflow:hidden;background:var(--hero)}
+diff --git a/code/frontend/src/components/AppIcon.vue b/code/frontend/src/components/AppIcon.vue
+index 77d861c8de94a1f42c493bddd068e8354bd9aaa2..a2af5ed67e0aa9767ca6432a56b1841ba5898c8b 100644
+--- a/code/frontend/src/components/AppIcon.vue
++++ b/code/frontend/src/components/AppIcon.vue
+@@ -33,6 +33,7 @@ const paths={
+   edit:['m16 3 5 5-12 12-6 1 1-6Z','m13 6 5 5'],
+   send:['m22 2-7 20-4-9-9-4Z','M22 2 11 13'],
+   eye:['M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z','M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z'],
++  'eye-off':['m3 3 18 18','M9.9 5.2A11 11 0 0 1 12 5c6.5 0 10 7 10 7a18 18 0 0 1-3.1 4.1','M6.4 6.4A21 21 0 0 0 2 12s3.5 7 10 7a12 12 0 0 0 5.6-1.6','M9.9 9.9a3 3 0 0 0 4.2 4.2'],
+   info:['M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z','M12 11v6M12 7h.01'],
+   lock:['M6 10h12a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z','M8 10V6a4 4 0 0 1 8 0v4M12 14v3'],
+   waves:['M2 7c3-4 7 4 10 0s7 4 10 0M2 12c3-4 7 4 10 0s7 4 10 0M2 17c3-4 7 4 10 0s7 4 10 0'],
+diff --git a/code/frontend/src/components/PasswordInput.vue b/code/frontend/src/components/PasswordInput.vue
+new file mode 100644
+index 0000000000000000000000000000000000000000..f5d426ea6aff020b2d1a08d451e2a217e446055c
+--- /dev/null
++++ b/code/frontend/src/components/PasswordInput.vue
+@@ -0,0 +1,30 @@
++<script setup>
++import { ref, watch } from 'vue';
++import AppIcon from './AppIcon.vue';
++
++defineOptions({inheritAttrs:false});
++const props=defineProps({
++  modelValue:{type:String,default:''},
++  id:{type:String,required:true},
++  disabled:Boolean,
++  toggleLabel:{type:String,default:'kata sandi'},
++});
++const emit=defineEmits(['update:modelValue']);
++const visible=ref(false);
++watch(()=>props.modelValue,value=>{if(!value)visible.value=false;});
++watch(()=>props.disabled,value=>{if(value)visible.value=false;});
++</script>
++<template>
++  <div class="auth-password-input">
++    <input :id="id" v-bind="$attrs" :type="visible?'text':'password'" :value="modelValue"
++      :disabled="disabled" autocapitalize="off" spellcheck="false"
++      @input="emit('update:modelValue',$event.target.value)">
++    <button class="quiet auth-password-toggle" type="button" :disabled="disabled"
++      :aria-controls="id" :aria-pressed="visible"
++      :aria-label="`${visible?'Sembunyikan':'Tampilkan'} ${toggleLabel}`"
++      :title="`${visible?'Sembunyikan':'Tampilkan'} ${toggleLabel}`"
++      @click="visible=!visible">
++      <AppIcon :name="visible?'eye-off':'eye'" :size="19" />
++    </button>
++  </div>
++</template>
+diff --git a/code/frontend/src/public-ui.css b/code/frontend/src/public-ui.css
+index 383c7f3055a3abd09b8b424e362bc733ae7c023c..1239587add9afe9d6ce033bb4989c5cf225093db 100644
+--- a/code/frontend/src/public-ui.css
++++ b/code/frontend/src/public-ui.css
+@@ -1,7 +1,7 @@
+ .public-main{outline:none}.reference-art{display:block;width:100%;height:auto}.landing-page{background:var(--panel);color:var(--ink);font:400 14px/1.65 Inter,sans-serif}.landing-page a{text-decoration:none}.landing-container{width:min(100% - 80px,1248px);margin-inline:auto}.landing-intro{position:relative;overflow:hidden;background:radial-gradient(ellipse at 0 25%,#67D6DF99,transparent 48%),radial-gradient(ellipse at 100% 0,#3CA7D499,transparent 58%),linear-gradient(#DDF4FA,#FFFFFF)}
+ .landing-intro:before{content:'';pointer-events:none;position:absolute;left:-180px;top:130px;width:260px;height:500px;border:2px solid #28AFC13D;box-shadow:0 0 0 18px #28AFC11A,0 0 0 36px #28AFC10D;border-radius:100px;transform:rotate(-12deg)}
+-.landing-nav{height:88px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:25px;position:relative;z-index:1}.landing-brand{display:inline-flex;align-items:center;gap:12px;color:var(--ink);font-size:22px;font-weight:800}.landing-brand img{width:31px;height:31px}.landing-nav nav{display:flex;gap:34px;align-items:center}.landing-nav nav a{font-size:12px;line-height:44px;font-weight:600;color:var(--muted);position:relative;white-space:nowrap}.landing-nav nav a[aria-current]{color:var(--primary)}.landing-nav nav a[aria-current]:after{content:'';position:absolute;width:22px;height:2px;background:var(--cyan);bottom:0;left:calc(50% - 11px)}.landing-account{display:flex;justify-content:flex-end;align-items:center;gap:14px}.landing-account .button{min-height:40px;padding:10px 22px;border-color:#B8D4F2;color:#155EBD;background:#FFF;font-size:12px;white-space:nowrap}.landing-account .button.primary{background:#155EBD;border-color:#155EBD;color:#FFF;box-shadow:0 4px 12px #155EBD20}.landing-theme.quiet{width:38px;min-height:38px;padding:8px;border-radius:50%;background:#FFFFFFD0;color:#52647A}
+-.landing-hero{text-align:center;padding-top:22px}.landing-kicker{display:inline-block;padding:5px 18px;background:#EAF5FD;color:#155EBD;border-radius:11px;font-size:13px;font-weight:600;margin-bottom:12px}.landing-hero h1{font-size:clamp(38px,4.45vw,64px);line-height:1.1;letter-spacing:-3px;font-weight:700;margin:0 0 20px}.landing-hero h1>span{color:#155EBD}.landing-hero h1 em{color:#007F9D;font-style:normal;position:relative}.landing-hero h1 em:after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:4px;background:#0891B2;border-radius:50%;transform:rotate(-1deg)}.landing-hero>p:not(.landing-kicker){font-size:17px;line-height:1.6;color:var(--muted);margin-bottom:24px}.landing-hero-actions{display:flex;justify-content:center;gap:16px}.landing-hero-actions .button{min-width:180px;height:48px;font-size:13px;border-color:#B8D4F2;color:#155EBD;background:#FFF}.landing-hero-actions .primary{background:#155EBD;color:#FFF;border-color:#155EBD;box-shadow:0 5px 12px #155EBD22}.landing-account-guidance{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;color:var(--muted);font-size:12px}.landing-main-illustration{max-width:1120px;margin:8px auto -8px}.landing-coverage{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:30px;color:var(--muted);font-size:12px;padding:0 0 38px}.landing-coverage>span{display:flex;align-items:center;gap:12px}.landing-coverage>span:first-child{padding-right:25px;border-right:1px solid var(--line)}.landing-coverage .app-icon{color:var(--cyan)}
++.landing-nav{height:88px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:25px;position:relative;z-index:1}.landing-brand{display:inline-flex;align-items:center;gap:12px;color:var(--ink);font-size:22px;font-weight:800}.landing-brand img{width:31px;height:31px}.landing-nav nav{display:flex;gap:34px;align-items:center}.landing-nav nav a{font-size:12px;line-height:44px;font-weight:600;color:var(--muted);position:relative;white-space:nowrap}.landing-nav nav a[aria-current]{color:var(--primary)}.landing-nav nav a[aria-current]:after{content:'';position:absolute;width:22px;height:2px;background:var(--cyan);bottom:0;left:calc(50% - 11px)}.landing-account{display:flex;justify-content:flex-end;align-items:center;gap:14px}.landing-account .button{min-height:40px;padding:10px 22px;border-color:#207DAD66;color:#155EBD;background:#FFFFFF26;font-size:12px;white-space:nowrap}.landing-account .button.primary{background:linear-gradient(110deg,#007F9D,#155EBD);border-color:transparent;color:#FFF;box-shadow:0 3px 10px #087EA41A}.landing-theme.quiet{width:38px;min-height:38px;padding:8px;border-radius:50%;background:transparent;color:var(--muted)}
++.landing-hero{text-align:center;padding-top:22px}.landing-kicker{display:inline-block;padding:5px 18px;background:#EAF5FD;color:#155EBD;border-radius:11px;font-size:13px;font-weight:600;margin-bottom:12px}.landing-hero h1{font-size:clamp(38px,4.45vw,64px);line-height:1.1;letter-spacing:-3px;font-weight:700;margin:0 0 20px}.landing-hero h1>span{color:#155EBD}.landing-hero h1 em{color:#007F9D;font-style:normal;position:relative}.landing-hero h1 em:after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:4px;background:#0891B2;border-radius:50%;transform:rotate(-1deg)}.landing-hero>p:not(.landing-kicker){font-size:17px;line-height:1.6;color:var(--muted);margin-bottom:24px}.landing-hero-actions{display:flex;justify-content:center;gap:16px}.landing-hero-actions .button{min-width:180px;height:48px;font-size:13px;border-color:#207DAD66;color:#155EBD;background:#FFFFFF26}.landing-hero-actions .primary{background:linear-gradient(110deg,#007F9D,#155EBD);color:#FFF;border-color:transparent;box-shadow:0 3px 10px #087EA41A}.landing-account-guidance{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;color:var(--muted);font-size:12px}.landing-main-illustration{max-width:1120px;margin:8px auto -8px}.landing-coverage{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:30px;color:var(--muted);font-size:12px;padding:0 0 38px}.landing-coverage>span{display:flex;align-items:center;gap:12px}.landing-coverage>span:first-child{padding-right:25px;border-right:1px solid var(--line)}.landing-coverage .app-icon{color:var(--cyan)}
+ .landing-values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding-block:28px 26px;border-bottom:1px solid var(--line)}.landing-values article{display:flex;align-items:flex-start;gap:12px;padding-right:20px}.landing-values article+article{border-left:1px solid var(--line);padding-left:24px}.landing-values .app-icon{flex:none;background:var(--tint);color:var(--primary);box-sizing:content-box;padding:8px;border-radius:10px}.landing-values h3{font-size:14px;margin:5px 0 6px}.landing-values p{font-size:12px;color:var(--muted);margin:0}
+ .landing-workflow{padding-block:64px 34px}.landing-section-title{text-align:center;margin-bottom:30px}.landing-section-title .eyebrow{font-size:11px;letter-spacing:.08em;margin-bottom:8px}.landing-section-title h2{font-size:32px;letter-spacing:-1.1px;line-height:1.3;margin:0 0 10px}.landing-section-title>p:last-child{font-size:15px;color:var(--muted);margin:0}.landing-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.landing-steps article{border:1px solid var(--line);border-top:3px solid var(--cyan);border-radius:0 0 12px 12px;padding:22px;background:radial-gradient(ellipse at 100% 0,#22D3EE12,transparent 60%),var(--panel);box-shadow:0 7px 18px #172B4D08}.landing-steps article>div{display:flex;align-items:center;justify-content:space-between;color:var(--primary);margin-bottom:10px}.landing-steps article>div>.app-icon{width:44px;height:44px;padding:11px;background:var(--tint);border:1px solid var(--line);border-radius:12px}.landing-steps h3{font-size:19px;letter-spacing:-.5px;margin-bottom:10px}.landing-steps p{font-size:14px;color:var(--muted);line-height:1.75;margin:0}
+ .landing-model-section{background:var(--aux);padding:20px 0 32px}.landing-models{display:grid;grid-template-columns:1fr 1fr;gap:32px}.landing-models article{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:28px 30px 22px}.landing-models article header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:20px}.landing-models header strong{font-size:28px;line-height:1.3;color:#155EBD}.landing-models article:last-child header strong{color:#0891B2}.landing-models header span{padding:6px 18px;background:var(--tint);color:var(--primary);font-size:10px;font-weight:600;border-radius:6px}.landing-models .reference-art{border-radius:20px;background:linear-gradient(120deg,#D5EFF9,#F4FBFD);margin-bottom:20px}.landing-models article:last-child .reference-art{background:linear-gradient(120deg,#DDF5F9,#F4FBFD)}.landing-models h3{font-size:21px;letter-spacing:-.5px;margin:0 0 10px}.landing-models p{font-size:15px;color:var(--muted);max-width:350px;margin:0 0 18px}.landing-models small{display:flex;align-items:center;gap:8px;border-top:1px solid var(--line);padding-top:17px;font-size:11px;color:var(--muted)}
+@@ -30,8 +30,8 @@
+ .public-list-card>header h3,.landing-privacy-panel h2,.landing-start h2{color:#FFF}
+ :root[data-theme=dark] .public-list-card{border-color:color-mix(in srgb,var(--category-glow) 42%,var(--line));box-shadow:0 0 22px color-mix(in srgb,var(--category-glow) 14%,transparent)}
+ :root[data-theme=dark] .public-stats article[data-category]:not([data-category=""]){box-shadow:0 0 22px color-mix(in srgb,var(--category-glow) 18%,transparent)}
+-:root[data-theme=dark] .landing-account .button:not(.primary),:root[data-theme=dark] .landing-hero-actions .button:not(.primary){background:#172B4D;border-color:#315371;color:#EEF4FF}
+-:root[data-theme=dark] .landing-account .button.primary,:root[data-theme=dark] .landing-hero-actions .button.primary{background:#38BDF8;border-color:#38BDF8;color:#082032}
++:root[data-theme=dark] .landing-account .button:not(.primary),:root[data-theme=dark] .landing-hero-actions .button:not(.primary){background:#0E243A40;border-color:#57B7D066;color:#C3F2FD}
++:root[data-theme=dark] .landing-account .button.primary,:root[data-theme=dark] .landing-hero-actions .button.primary{background:linear-gradient(110deg,#089DB8,#2AAADF);border-color:transparent;color:#071C32;box-shadow:0 3px 10px #020D1A33}
+ /* The public routes share the navigation from the approved landing page. */
+ .public-site-header{background:var(--panel);border-bottom:1px solid var(--line)}
+ .landing-nav a{text-decoration:none}
+@@ -41,3 +41,11 @@
+ @media(max-width:1100px){.portal-content .portal-hero{padding:30px 27px;gap:16px}.portal-content .portal-hero-art{max-height:270px}.portal-hero .desktop-break{display:none}}
+ @media(max-width:760px){.portal-content .portal-hero{grid-template-columns:1fr;gap:12px}.portal-content .portal-hero-art{max-height:230px;width:100%;justify-self:center}.portal-hero p{margin-bottom:16px}.landing-nav nav{gap:12px}}
+ @media(max-width:400px){.landing-brand{font-size:18px;gap:7px}.landing-brand img{width:28px;height:28px}.landing-account{gap:6px}.landing-account .button{padding:8px 9px;font-size:10px;min-height:36px}.landing-nav{gap:10px}.landing-nav nav{justify-content:space-between;gap:6px}.landing-nav nav a{font-size:10px}.portal-content .portal-hero{padding:26px 22px}}
++
++/* Account actions share the landing page accents and keep their focus visible. */
++.landing-account .button,.landing-hero-actions .button{transition:background-color .18s ease,border-color .18s ease,box-shadow .18s ease}
++.landing-account .button:not(.primary):hover,.landing-hero-actions .button:not(.primary):hover{background:#FFFFFF66;border-color:#207DADAA}
++.landing-account .button.primary:hover,.landing-hero-actions .button.primary:hover{box-shadow:0 4px 12px #087EA42B}
++.landing-account .button:focus-visible,.landing-hero-actions .button:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
++:root[data-theme=dark] .landing-account .button:not(.primary):hover,:root[data-theme=dark] .landing-hero-actions .button:not(.primary):hover{background:#1F536666;border-color:#57B7D0AA}
++@media(prefers-reduced-motion:reduce){.landing-account .button,.landing-hero-actions .button{transition:none}}
+diff --git a/code/frontend/src/views/AuthView.vue b/code/frontend/src/views/AuthView.vue
+index 7a4747cadb225262ac0150478a63e606911b771f..ab4a37eabb374b2c1662a6af93035febe5de7d0e 100644
+--- a/code/frontend/src/views/AuthView.vue
++++ b/code/frontend/src/views/AuthView.vue
+@@ -10,9 +10,10 @@ import AuthIdentity from '../components/AuthIdentity.vue';
+ import AppIcon from '../components/AppIcon.vue';
+ import AuthLocalHelp from '../components/AuthLocalHelp.vue';
+ import ErrorNotice from '../components/ErrorNotice.vue';
++import PasswordInput from '../components/PasswordInput.vue';
+ const route=useRoute(),router=useRouter();
+ const mode=computed(()=>route.meta.mode);
+-const completed=ref(false),heading=ref(null),activationToken=ref(''),showPassword=ref(false);
++const completed=ref(false),heading=ref(null),activationToken=ref('');
+ const isVerification=computed(()=>['verify','activate'].includes(mode.value));
+ const needsCode=computed(()=>isVerification.value&&!activationToken.value||mode.value==='reset');
+ const hasPassword=computed(()=>['login','register','reset'].includes(mode.value)||Boolean(activationToken.value));
+@@ -29,7 +30,7 @@ const passwordLength=computed(()=>Array.from(form.password).length);
+ const canSubmit=computed(()=>!busy.value&&online.value&&!completed.value&&!retryRemaining.value&&(!needsCode.value||/^[0-9]{6}$/.test(form.code))&&(mode.value!=='reset'||Boolean(challenge.value))&&(!hasPassword.value||mode.value==='login'||passwordLength.value>=policy.password_min_length));
+ const localHelp=showLocalEmailHelp({flag:import.meta.env.VITE_AUTH_LOCAL_HELP,development:import.meta.env.DEV,hostname:location.hostname});
+ let flowVersion=0,timer;
+-watch([mode,()=>route.query.challenge_id],()=>{flowVersion++;error.value=null;message.value='';busy.value=false;completed.value=false;activationToken.value='';form.password='';form.password_confirm='';form.code='';showPassword.value=false;retryUntil.value=0;},{immediate:true});
++watch([mode,()=>route.query.challenge_id],()=>{flowVersion++;error.value=null;message.value='';busy.value=false;completed.value=false;activationToken.value='';form.password='';form.password_confirm='';form.code='';retryUntil.value=0;},{immediate:true});
+ watch([completed,activationToken],async()=>{await nextTick();heading.value?.focus();});
+ onMounted(async()=>{timer=setInterval(()=>{clock.value=Date.now();},1000);try{const result=await api('auth/account-policy/',{auth:false});for(const key of Object.keys(policy)){const value=result.data?.[key];if(Number.isInteger(value)&&value>0)policy[key]=value;}}catch{/* Backend enforces its policy if this supplementary read fails. */}});
+ onBeforeUnmount(()=>{flowVersion++;clearInterval(timer);activationToken.value='';form.password='';form.password_confirm='';form.code='';});
+@@ -80,8 +81,8 @@ async function resend(){
+       <div v-if="mode==='register'" class="field"><label for="full_name">Nama lengkap</label><input id="full_name" v-model="form.full_name" name="full_name" placeholder="Nama lengkap Anda" autocomplete="name" required maxlength="150" :disabled="busy"></div>
+       <div v-if="mode!=='reset'" class="field"><label for="email">Email</label><input id="email" v-model="form.email" name="email" type="email" placeholder="nama@example.com" autocomplete="username" autocapitalize="off" spellcheck="false" required maxlength="254" :disabled="busy" :readonly="Boolean(activationToken)"></div>
+       <div v-if="needsCode" class="field auth-code-field"><label for="code">Kode verifikasi (6 digit)</label><input id="code" v-model="form.code" name="code" type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="— — — — — —" autocomplete="one-time-code" required aria-describedby="otp-help" :disabled="busy||!online||mode==='reset'&&!challenge"></div>
+-      <div v-if="hasPassword" class="field"><label for="password">{{ mode==='login'?'Kata sandi':'Kata sandi baru' }}</label><div class="auth-password-input"><input id="password" v-model="form.password" name="password" :type="showPassword?'text':'password'" :placeholder="mode==='login'?'Masukkan kata sandi':'Buat kata sandi'" :autocomplete="mode==='login'?'current-password':'new-password'" required :minlength="mode==='login'?undefined:policy.password_min_length" maxlength="1024" :aria-describedby="mode!=='login'?'password-help':undefined" :disabled="busy"><button type="button" class="quiet auth-password-toggle" :aria-pressed="showPassword" :aria-label="showPassword?'Sembunyikan kata sandi':'Tampilkan kata sandi'" @click="showPassword=!showPassword">{{ showPassword?'Sembunyikan':'Lihat' }}</button></div><small v-if="mode!=='login'" id="password-help">Minimal {{ policy.password_min_length }} karakter. Gunakan beberapa kata yang tidak berkaitan. Hindari nama/email ditambah angka, pola berulang, atau urutan keyboard.</small><p v-if="mode!=='login'&&form.password" class="auth-password-length" :class="{'is-met':passwordLength>=policy.password_min_length}">{{ passwordLength>=policy.password_min_length?'Panjang minimum terpenuhi':`Masih perlu ${policy.password_min_length-passwordLength} karakter` }}. Kelayakan sandi diperiksa saat disimpan.</p></div>
+-      <div v-if="hasPassword&&mode!=='login'" class="field"><label for="password_confirm">Ulangi kata sandi baru</label><input id="password_confirm" v-model="form.password_confirm" name="password_confirm" :type="showPassword?'text':'password'" placeholder="Ketik kembali kata sandi" autocomplete="new-password" required :minlength="policy.password_min_length" maxlength="1024" :disabled="busy"></div>
++      <div v-if="hasPassword" class="field"><label for="password">{{ mode==='login'?'Kata sandi':'Kata sandi baru' }}</label><PasswordInput id="password" v-model="form.password" name="password" :placeholder="mode==='login'?'Masukkan kata sandi':'Buat kata sandi'" :autocomplete="mode==='login'?'current-password':'new-password'" required :minlength="mode==='login'?undefined:policy.password_min_length" maxlength="1024" :aria-describedby="mode!=='login'?'password-help':undefined" :disabled="busy" /><small v-if="mode!=='login'" id="password-help">Minimal {{ policy.password_min_length }} karakter. Gunakan beberapa kata yang tidak berkaitan. Hindari nama/email ditambah angka, pola berulang, atau urutan keyboard.</small><p v-if="mode!=='login'&&form.password" class="auth-password-length" :class="{'is-met':passwordLength>=policy.password_min_length}">{{ passwordLength>=policy.password_min_length?'Panjang minimum terpenuhi':`Masih perlu ${policy.password_min_length-passwordLength} karakter` }}. Kelayakan sandi diperiksa saat disimpan.</p></div>
++      <div v-if="hasPassword&&mode!=='login'" class="field"><label for="password_confirm">Ulangi kata sandi baru</label><PasswordInput id="password_confirm" v-model="form.password_confirm" name="password_confirm" toggle-label="konfirmasi kata sandi" placeholder="Ketik kembali kata sandi" autocomplete="new-password" required :minlength="policy.password_min_length" maxlength="1024" :disabled="busy" /></div>
+       <div v-if="mode==='login'" class="auth-forgot"><RouterLink to="/forgot-password">Lupa sandi?</RouterLink></div><button class="primary full auth-submit" type="submit" :disabled="!canSubmit">{{ busy?'Memproses…':retryRemaining?`Coba lagi dalam ${retryRemaining} detik`:mode==='login'?'Masuk':mode==='register'?'Buat akun Reporter':mode==='forgot'?'Kirim petunjuk pemulihan':mode==='reset'?'Simpan kata sandi baru':activationToken?'Aktifkan akun':'Verifikasi akun' }}<AppIcon v-if="mode==='login'" name="arrow" :size="16" /></button>
+       <p v-if="needsCode" id="otp-help" class="auth-field-note">Kode berlaku {{ Math.ceil(policy.otp_ttl_seconds/60) }} menit dan hanya bisa dipakai sekali. Pemeriksaan dibatasi {{ policy.otp_max_attempts }} percobaan dalam {{ Math.ceil(policy.otp_window_seconds/60) }} menit.</p>
+      </form>
+diff --git a/docs/slr14/README.md b/docs/slr14/README.md
+index f4288f5f3674811a27dd31da9bce3b73cf0bb85c..b8425e8090f886a2d9fc356f43e11c3a7273bfa2 100644
+--- a/docs/slr14/README.md
++++ b/docs/slr14/README.md
+@@ -1,5 +1,11 @@
+ # SLR14 — publikasi dan antarmuka SILAR
+ 
++**Revisi review 13 November 2026:** implementasi akun/Operator dan pembaruan UI
++tetap menjadi bagian SLR14; SLR15 mencatat pengujian dan temuannya. Ikon mata
++berada di dalam setiap kolom sandi, tombol akun menyatu dengan landing page,
++dan panduan menyiapkan aset model diperjelas. Baca
++[catatan revisi review](revisi-review-20261113/README.md).
++
+ **Penuntasan verifikasi:** panduan membedakan tes integrasi API dengan inferensi
+ model asli, serta perintah PostgreSQL + sembilan tes pipeline, tersedia di
+ [PENUNTASAN_VERIFIKASI_20261030.md](PENUNTASAN_VERIFIKASI_20261030.md).
+@@ -73,6 +79,9 @@ PWA yang sudah terpasang perlu menerima build baru; gunakan pembaruan pada
+   Laporan Saya. Halaman tidak menampilkan sukses hanya karena URL dibuka.
+ - Desktop/tablet akun memakai dua panel. Pada lebar sampai 640 px,
+   hanya formulir kanan ditampilkan. Tidak ada banner identitas tambahan.
++- Kolom sandi dan konfirmasi memiliki ikon mata di dalam ujung kanan kolom.
++  Keadaan terlihat/tersembunyi masing-masing kolom terpisah; ikon dapat
++  dioperasikan melalui keyboard dan tidak mengirim formulir.
+ - Portal memakai 5 kolom di atas 1100 px, 2 kolom pada tablet, dan 1 kolom
+   sampai 640 px. Ukuran halaman selalu 10 kartu; pencarian/filter kembali
+   ke halaman pertama. Urutan publikasi mengikuti backend.
+@@ -91,7 +100,9 @@ Gunakan Operator aktif dan terverifikasi yang memiliki `view_assigned_report`
+ serta `publish_report`, dan merupakan penanggung jawab saat ini. Label Admin
+ sendiri tidak memberi kewenangan Operator.
+ 
+-1. Buka **Penanganan Saya → Detail Laporan → Review**. Pilih hasil dan simpan
++1. Buka **Penanganan Saya → Detail Laporan → Pemeriksaan**. Bagian ini memuat
++   ringkasan, narasi, bukti dan formulir review; rincian AI dapat dibuka bila
++   diperlukan. Riwayat dibuka melalui tombol tersendiri. Pilih hasil dan simpan
+    review beserta alasan. Setelah tersimpan dan terbaca kembali, Tindak Lanjut
+    otomatis terbuka dengan pesan **Review Anda sudah tersimpan**.
+ 2. Catat serta selesaikan/batalkan tindak lanjut bila diperlukan, lalu gunakan
+diff --git a/docs/slr14/revisi-review-20261113/DAFTAR_PERUBAHAN.json b/docs/slr14/revisi-review-20261113/DAFTAR_PERUBAHAN.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..f3ef670d1f922808e6fdaea4b686f182839ffa31
+--- /dev/null
++++ b/docs/slr14/revisi-review-20261113/DAFTAR_PERUBAHAN.json
+@@ -0,0 +1,120 @@
++{
++  "scope": "SLR14",
++  "review_findings_from": "SLR15",
++  "date": "2026-11-13",
++  "type": "incremental-update-after-account-package",
++  "requires_package": {
++    "name": "SILAR_SLR15.zip",
++    "sha256": "51cc0cc1f53818bf478f4b3b8b9837d236cf4352c0019b60ac2029ea3ab1b3d7",
++    "base_commit": "7af81c8e448e12eead2b54a4e6aad72b9e2a781e"
++  },
++  "excluded_from_hash_list": [
++    "docs/slr14/revisi-review-20261113/DAFTAR_PERUBAHAN.json",
++    "PERUBAHAN_SLR14_UI.patch"
++  ],
++  "agent_committed": false,
++  "agent_pushed": false,
++  "files": [
++    {
++      "path": "MULAI_DI_SINI.txt",
++      "bytes": 2159,
++      "sha256": "874f3e423f08640c9893f44955c01b78026fd1c3a8cab91abe7c117de5118507",
++      "previous_sha256": "5d19e2bfebe51415c66f2a7125097510de1db6602a5e4336bdf4a5c55e30a047",
++      "baseline_source": "previous_package"
++    },
++    {
++      "path": "PANDUAN_RUNNING.md",
++      "bytes": 11245,
++      "sha256": "776f0134c4e82ad8380f122e24097d06bf7157a52dffc6af13036b6e20e4b6e5",
++      "previous_sha256": "0f1967dfc4c1db9ba96228b8c7df56561af6670f6e0db24b92632ade1ff7d41f",
++      "baseline_source": "previous_package"
++    },
++    {
++      "path": "README.md",
++      "bytes": 2326,
++      "sha256": "f5df37431ffc608bda67b5a1698fd028cb8ee234f58e558df579889b7bff307b",
++      "previous_sha256": "e41d7094929cd29000ef2294f71a6970c571582e60a846bfca3f281950e64afc",
++      "baseline_source": "previous_package"
++    },
++    {
++      "path": "code/frontend/src/auth-ui.css",
++      "bytes": 9076,
++      "sha256": "79ed3ebcdb3e8126a382008edfbadd4819141c489f949baad0954b43821806ba",
++      "previous_sha256": "16d216b25367cf2d635649246a884a2110e389d0020f5e815a6763a333e7c3ba",
++      "baseline_source": "previous_package"
++    },
++    {
++      "path": "code/frontend/src/components/AppIcon.vue",
++      "bytes": 3827,
++      "sha256": "0945d9566f91e5d686e33ba0386d25ed6fad46f2d260334c7a8290da8476fd65",
++      "previous_sha256": "33dff547fdeefeafa9f7a6987ce5f71dfedcbe40a887fc3885acbcb7be948249",
++      "baseline_source": "base_commit"
++    },
++    {
++      "path": "code/frontend/src/components/PasswordInput.vue",
++      "bytes": 1185,
++      "sha256": "1e3ae73a31555936715259ca696efff576afacd080811d687d7466fb7bfcafe0",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "code/frontend/src/public-ui.css",
++      "bytes": 30881,
++      "sha256": "186c0683cd140d2bbe5b8afb3a89efc544deea96d207586a199a01e1ca15bbbc",
++      "previous_sha256": "ae1cefefcb44e98d4a6aeb5e2c6ac1e7f1a2f88c5d52fb0743f06cc263bada42",
++      "baseline_source": "base_commit"
++    },
++    {
++      "path": "code/frontend/src/views/AuthView.vue",
++      "bytes": 13753,
++      "sha256": "438004ab61ae7ead3ef10ea80cf9dd3d18f2c5e3b387e2102d31f0521ec982f9",
++      "previous_sha256": "7634316e2d66416492e88fa77519c719bafe5fc52cb2173bbfc1a48a5a833023",
++      "baseline_source": "previous_package"
++    },
++    {
++      "path": "docs/slr14/README.md",
++      "bytes": 9848,
++      "sha256": "885b641018777b0585586b7672811707dfc94602d51cb4d9449363c591bad776",
++      "previous_sha256": "cc099cf65defd54669afa9b56f51bc23fbed25d2ff5d8bde18f1c059640bd7d6",
++      "baseline_source": "base_commit"
++    },
++    {
++      "path": "docs/slr14/revisi-review-20261113/README.md",
++      "bytes": 5698,
++      "sha256": "2d474e8b2dfd9778205e0f82a392c86eb71d0a2563a6caf742949f0e9ea1a974",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "docs/slr14/revisi-review-20261113/bukti/browser-result.json",
++      "bytes": 7152,
++      "sha256": "755d318f3069360daabac857ef3550988309844444d713538e3d466be90a70d6",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "docs/slr14/revisi-review-20261113/bukti/frontend-build.txt",
++      "bytes": 3960,
++      "sha256": "08dd4102448204b478e446a08960ea39e0484067e5b37613767fb037eafb23ca",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "docs/slr14/revisi-review-20261113/bukti/frontend-tests.txt",
++      "bytes": 10443,
++      "sha256": "1eb0d9eda538d95bc4151ba4f3e068df71dc16b95c15319b43f4f459e39f4fa1",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    }
++  ],
++  "checks": {
++    "frontend_tests": 111,
++    "frontend_build": "PASSED",
++    "browser_layout_cases": 72,
++    "password_control_checks": 86,
++    "browser_flows": 3,
++    "page_errors": 0,
++    "external_email_sent": false,
++    "live_ai_inference_exercised": false
++  }
++}
+diff --git a/docs/slr14/revisi-review-20261113/README.md b/docs/slr14/revisi-review-20261113/README.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..d056a9db5ecdf2e2656c5216e0df686f23d229f8
+--- /dev/null
++++ b/docs/slr14/revisi-review-20261113/README.md
+@@ -0,0 +1,55 @@
++# SLR14 — revisi hasil review, 13 November 2026
++
++Perubahan implementasi tetap berada dalam SLR14. SLR15 menjadi kegiatan pengujian dan pencatatan temuan. Revisi ini melanjutkan paket `SILAR_SLR15.zip` yang sudah diterapkan; bukan pengganti seluruh repository. Bukti paket akun/Operator sebelumnya tetap disimpan sebagai riwayat di `docs/slr15/revisi-20261113/`.
++
++## Perubahan
++
++- Kolom sandi utama dan konfirmasi menggunakan komponen `PasswordInput.vue` yang sama. Ikon mata berada di dalam ujung kanan kolom dengan area tekan 44 × 44 piksel dan ruang teks tersendiri. Lebar kolom sama dengan kolom email.
++- Setiap kolom memiliki keadaan terlihat/tersembunyi sendiri. Tombol memiliki nama aksesibel, petunjuk, keadaan `aria-pressed` dan fokus keyboard. Menekannya tidak mengirim formulir. Kolom kembali tersembunyi saat dikosongkan atau dinonaktifkan selama pengiriman.
++- Kontrol dipakai pada login, registrasi Reporter, aktivasi Operator dan reset sandi. Label, petunjuk panjang minimum dan atribut password manager tetap diteruskan ke input asli.
++- Tombol Masuk pada navigasi dan hero mengikuti latar halaman dengan garis tipis. Tombol Buat akun memakai gradasi aksen biru–sian dan bayangan halus. Mode terang/gelap serta fokus/hover memiliki warna yang sesuai. Tombol tema juga mengikuti latar navigasi.
++- Catatan utama menempatkan implementasi pada SLR14, memperbarui petunjuk Pemeriksaan Operator dan menjelaskan command penyiapan SENA/NARA serta Whisper. Perubahan ini tidak menambah dependensi atau migration backend.
++
++## Hasil verifikasi revisi ini
++
++| Pemeriksaan | Hasil |
++| --- | --- |
++| Tes frontend | 111 lulus, 0 gagal/skip; [log](bukti/frontend-tests.txt) |
++| Build produksi | Berhasil; [log](bukti/frontend-build.txt) |
++| Browser dengan animasi aktif | 72 keadaan halaman/ukuran/tema, tanpa overflow horizontal |
++| Kontrol sandi | 86 pemeriksaan toggle, keyboard, ukuran, posisi, jarak teks dan kemandirian kolom |
++| Alur akun melalui UI | 3 alur berhasil, 0 page error; [hasil JSON](bukti/browser-result.json) |
++
++Browser Chromium headless memeriksa lebar 1440, 1100, 820, 640, 390 dan 320 piksel dalam mode terang/gelap. Matriks mencakup landing page, Portal Publik, login, registrasi, reset dan pembuatan sandi Operator. Backend Django berjalan pada PostgreSQL uji terpisah; email ditulis ke berkas lokal.
++
++Tiga alur yang berhasil:
++
++1. Registrasi Reporter, kontrol sandi terpisah, tombol dinonaktifkan dan sandi disembunyikan selama pengiriman, lalu verifikasi kode.
++2. Permintaan email pemulihan lokal, reset sandi melalui challenge asli, penyimpanan sandi baru, kemudian login/logout Reporter.
++3. Verifikasi kode Operator, kontrol sandi/konfirmasi pada 12 kombinasi ukuran/tema, lalu aktivasi sebenarnya.
++
++Tautan Masuk di navigasi dan Buat akun di hero juga diperiksa menuju formulir yang benar. Sandi uji tidak disimpan pada localStorage/sessionStorage. Tampilan desktop dan ponsel diperiksa secara visual pada tangkapan layar internal; gambar tersebut tidak disertakan sebagai berkas paket.
++
++Kelompok backend 152 tes SLR14, 51 tes akun dan 25 tes setup dari paket sebelumnya tidak dijalankan ulang untuk perubahan UI ini. Tidak ada inferensi AI asli atau pengiriman SMTP eksternal dalam verifikasi revisi ini. Pemeriksaan tidak menyatakan penerimaan SLR15, pengujian perangkat fisik, atau kesamaan piksel terhadap ZIP desain asli yang tidak tersedia pada workspace.
++
++## Memasang paket lanjutan
++
++1. Terapkan paket akun/Operator/setup sebelumnya terlebih dahulu. Migration akun `0002_emailotp_activation_auth_version_and_more` harus sudah diterapkan.
++2. Hentikan server dan gabungkan berkas dari ZIP lanjutan mengikuti path. Jangan mengganti seluruh folder repository. Konfigurasi, database dan model lokal tetap digunakan.
++3. Dari `code/frontend`, jalankan `npm.cmd test`, `npm.cmd run build`, kemudian `npm.cmd run dev`. Mulai ulang backend. Perbarui build pada PWA yang terpasang.
++
++Alternatif penyalinan berkas adalah `git apply --check PERUBAHAN_SLR14_UI.patch`, lalu `git apply PERUBAHAN_SLR14_UI.patch` dari root clone. Patch dibuat terhadap isi source paket akun sebelumnya dan versi awal dokumen SLR14 pada commit `7af81c8e448e12eead2b54a4e6aad72b9e2a781e`. Jika berkas tersebut sudah diedit lagi, periksa perbedaannya sebelum menggabungkan. Pilih penyalinan berkas atau patch; tidak perlu melakukan keduanya.
++
++Manifest SHA-256 terdapat pada `DAFTAR_PERUBAHAN.json`. Manifest lama di folder bukti SLR15 tetap merekam isi paket lama, bukan versi source sesudah revisi UI ini.
++
++## Pemeriksaan AI pada komputer pemilik
++
++Ukuran arsip yang dilaporkan pemilik sesuai metadata proyek: SENA 412.184.854 byte dan NARA 408.238.634 byte. Ukuran cocok menunjukkan arsip bukan penunjuk Git LFS kecil, tetapi belum menggantikan verifikasi hash atau membuktikan model siap dimuat.
++
++Dari `code/backend`, jalankan `manage.py prepare_ai_models` memakai Python venv backend. Command memverifikasi hash dan menyiapkan hasil ekstraksi yang dibaca runtime. Mulai ulang backend dan coba teks terlebih dahulu. Audio memerlukan Whisper dan foto/kombinasi memerlukan konfigurasi Gemini; prosedur ada di `PANDUAN_RUNNING.md`. Runtime saat ini memakai CPU, tanpa kewajiban NVIDIA/CUDA. Hasil command maupun inferensi pada komputer pemilik belum diterima dalam pekerjaan ini.
++
++## Tindak lanjut
++
++Perubahan alur sesi masih memerlukan identifikasi ikon silang yang dimaksud pengguna. Menutup menu, menutup tab/aplikasi dan Keluar akun adalah tindakan berbeda; revisi UI ini mempertahankan perilaku sesi yang ada.
++
++Tidak ada commit, push, deployment atau perubahan board oleh penyusun. Setelah review, nama commit lanjutan yang sesuai adalah `fix(slr14): rapikan ikon sandi dan tombol landing page`.
+diff --git a/docs/slr14/revisi-review-20261113/bukti/browser-result.json b/docs/slr14/revisi-review-20261113/bukti/browser-result.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..43eaf1929afbd0d160e52706517c167b0269cc88
+--- /dev/null
++++ b/docs/slr14/revisi-review-20261113/bukti/browser-result.json
+@@ -0,0 +1,187 @@
++{
++  "layout_cases": [
++    "public:landing:1440:False",
++    "public:public:1440:False",
++    "auth:login:1440:False",
++    "auth:register:1440:False",
++    "auth:reset-password:1440:False",
++    "public:landing:1100:False",
++    "public:public:1100:False",
++    "auth:login:1100:False",
++    "auth:register:1100:False",
++    "auth:reset-password:1100:False",
++    "public:landing:820:False",
++    "public:public:820:False",
++    "auth:login:820:False",
++    "auth:register:820:False",
++    "auth:reset-password:820:False",
++    "public:landing:640:False",
++    "public:public:640:False",
++    "auth:login:640:False",
++    "auth:register:640:False",
++    "auth:reset-password:640:False",
++    "public:landing:390:False",
++    "public:public:390:False",
++    "auth:login:390:False",
++    "auth:register:390:False",
++    "auth:reset-password:390:False",
++    "public:landing:320:False",
++    "public:public:320:False",
++    "auth:login:320:False",
++    "auth:register:320:False",
++    "auth:reset-password:320:False",
++    "public:landing:1440:True",
++    "public:public:1440:True",
++    "auth:login:1440:True",
++    "auth:register:1440:True",
++    "auth:reset-password:1440:True",
++    "public:landing:1100:True",
++    "public:public:1100:True",
++    "auth:login:1100:True",
++    "auth:register:1100:True",
++    "auth:reset-password:1100:True",
++    "public:landing:820:True",
++    "public:public:820:True",
++    "auth:login:820:True",
++    "auth:register:820:True",
++    "auth:reset-password:820:True",
++    "public:landing:640:True",
++    "public:public:640:True",
++    "auth:login:640:True",
++    "auth:register:640:True",
++    "auth:reset-password:640:True",
++    "public:landing:390:True",
++    "public:public:390:True",
++    "auth:login:390:True",
++    "auth:register:390:True",
++    "auth:reset-password:390:True",
++    "public:landing:320:True",
++    "public:public:320:True",
++    "auth:login:320:True",
++    "auth:register:320:True",
++    "auth:reset-password:320:True",
++    "operator-password:1440:False",
++    "operator-password:1100:False",
++    "operator-password:820:False",
++    "operator-password:640:False",
++    "operator-password:390:False",
++    "operator-password:320:False",
++    "operator-password:1440:True",
++    "operator-password:1100:True",
++    "operator-password:820:True",
++    "operator-password:640:True",
++    "operator-password:390:True",
++    "operator-password:320:True"
++  ],
++  "flow_checks": [
++    "registration with independent eye controls, no toggle submit, busy disables/remasks, email-code verification",
++    "local reset-email challenge -> two independent eye controls -> save new password -> actual Reporter login/logout",
++    "Operator email-code proof -> independent password/confirmation eye controls on 12 viewport/theme combinations -> actual activation"
++  ],
++  "page_errors": [],
++  "screenshots": [
++    "landing-1440-light.png",
++    "login-1440-light.png",
++    "landing-390-light.png",
++    "register-390-light.png",
++    "landing-1440-dark.png",
++    "login-1440-dark.png",
++    "landing-390-dark.png",
++    "register-390-dark.png"
++  ],
++  "live_ai_inference_exercised": false,
++  "external_email_sent": false,
++  "password_controls": [
++    "auth:login:1440:False:password",
++    "auth:register:1440:False:password",
++    "auth:register:1440:False:password_confirm",
++    "auth:reset-password:1440:False:password",
++    "auth:reset-password:1440:False:password_confirm",
++    "auth:login:1100:False:password",
++    "auth:register:1100:False:password",
++    "auth:register:1100:False:password_confirm",
++    "auth:reset-password:1100:False:password",
++    "auth:reset-password:1100:False:password_confirm",
++    "auth:login:820:False:password",
++    "auth:register:820:False:password",
++    "auth:register:820:False:password_confirm",
++    "auth:reset-password:820:False:password",
++    "auth:reset-password:820:False:password_confirm",
++    "auth:login:640:False:password",
++    "auth:register:640:False:password",
++    "auth:register:640:False:password_confirm",
++    "auth:reset-password:640:False:password",
++    "auth:reset-password:640:False:password_confirm",
++    "auth:login:390:False:password",
++    "auth:register:390:False:password",
++    "auth:register:390:False:password_confirm",
++    "auth:reset-password:390:False:password",
++    "auth:reset-password:390:False:password_confirm",
++    "auth:login:320:False:password",
++    "auth:register:320:False:password",
++    "auth:register:320:False:password_confirm",
++    "auth:reset-password:320:False:password",
++    "auth:reset-password:320:False:password_confirm",
++    "auth:login:1440:True:password",
++    "auth:register:1440:True:password",
++    "auth:register:1440:True:password_confirm",
++    "auth:reset-password:1440:True:password",
++    "auth:reset-password:1440:True:password_confirm",
++    "auth:login:1100:True:password",
++    "auth:register:1100:True:password",
++    "auth:register:1100:True:password_confirm",
++    "auth:reset-password:1100:True:password",
++    "auth:reset-password:1100:True:password_confirm",
++    "auth:login:820:True:password",
++    "auth:register:820:True:password",
++    "auth:register:820:True:password_confirm",
++    "auth:reset-password:820:True:password",
++    "auth:reset-password:820:True:password_confirm",
++    "auth:login:640:True:password",
++    "auth:register:640:True:password",
++    "auth:register:640:True:password_confirm",
++    "auth:reset-password:640:True:password",
++    "auth:reset-password:640:True:password_confirm",
++    "auth:login:390:True:password",
++    "auth:register:390:True:password",
++    "auth:register:390:True:password_confirm",
++    "auth:reset-password:390:True:password",
++    "auth:reset-password:390:True:password_confirm",
++    "auth:login:320:True:password",
++    "auth:register:320:True:password",
++    "auth:register:320:True:password_confirm",
++    "auth:reset-password:320:True:password",
++    "auth:reset-password:320:True:password_confirm",
++    "reset-flow:password",
++    "reset-flow:password_confirm",
++    "operator-password:1440:False:password",
++    "operator-password:1440:False:password_confirm",
++    "operator-password:1100:False:password",
++    "operator-password:1100:False:password_confirm",
++    "operator-password:820:False:password",
++    "operator-password:820:False:password_confirm",
++    "operator-password:640:False:password",
++    "operator-password:640:False:password_confirm",
++    "operator-password:390:False:password",
++    "operator-password:390:False:password_confirm",
++    "operator-password:320:False:password",
++    "operator-password:320:False:password_confirm",
++    "operator-password:1440:True:password",
++    "operator-password:1440:True:password_confirm",
++    "operator-password:1100:True:password",
++    "operator-password:1100:True:password_confirm",
++    "operator-password:820:True:password",
++    "operator-password:820:True:password_confirm",
++    "operator-password:640:True:password",
++    "operator-password:640:True:password_confirm",
++    "operator-password:390:True:password",
++    "operator-password:390:True:password_confirm",
++    "operator-password:320:True:password",
++    "operator-password:320:True:password_confirm"
++  ],
++  "navigation_checks": [
++    "landing navigation Masuk -> login",
++    "landing hero Buat akun -> registration"
++  ],
++  "status": "PASSED"
++}
+\ No newline at end of file
+diff --git a/docs/slr14/revisi-review-20261113/bukti/frontend-build.txt b/docs/slr14/revisi-review-20261113/bukti/frontend-build.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..908310236a672c254a3fe75f4f5ca6370ff4855b
+--- /dev/null
++++ b/docs/slr14/revisi-review-20261113/bukti/frontend-build.txt
+@@ -0,0 +1,56 @@
++npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
++
++> silar-slr10-frontend@1.1.1 build
++> vite build
++
++vite v7.3.7 building client environment for production...
++transforming...
++✓ 117 modules transformed.
++rendering chunks...
++computing gzip size...
++dist/index.html                                     0.77 kB │ gzip:     0.45 kB
++dist/sw.js                                          3.27 kB
++dist/assets/nara-ZsaGgmM6.svg                      70.54 kB │ gzip:    13.20 kB
++dist/assets/nara-dark-IbaIl4kU.svg                 70.56 kB │ gzip:    13.21 kB
++dist/assets/portal-hero-CeIvL_w2.webp              98.82 kB
++dist/assets/sena-C3A4rkNV.svg                     102.82 kB │ gzip:    15.17 kB
++dist/assets/sena-dark-Big5evOc.svg                102.84 kB │ gzip:    15.18 kB
++dist/assets/start-CtsQazq9.svg                    234.14 kB │ gzip:   149.82 kB
++dist/assets/start-dark-DVcX997r.svg               234.16 kB │ gzip:   149.84 kB
++dist/assets/privacy-BW608JbX.svg                  234.67 kB │ gzip:   149.94 kB
++dist/assets/privacy-dark-LiBJFNyc.svg             234.69 kB │ gzip:   149.96 kB
++dist/assets/reporting-scene-Chx1PA0k.svg          412.43 kB │ gzip:   183.08 kB
++dist/assets/reporting-scene-dark-DtLdqysh.svg     412.45 kB │ gzip:   183.10 kB
++dist/assets/auth-identity-BIULP5db.svg            573.05 kB │ gzip:   207.74 kB
++dist/assets/auth-identity-dark-QRPyuOka.svg       573.07 kB │ gzip:   207.76 kB
++dist/assets/reporter-welcome-DDZdLYCb.svg       2,211.79 kB │ gzip: 1,535.36 kB
++dist/assets/index-BUYM1Jm_.css                    235.57 kB │ gzip:    40.77 kB
++dist/assets/WorkspaceStatus-CeX_ythR.js             0.26 kB │ gzip:     0.22 kB
++dist/assets/NotFoundView-BL6LyAhS.js                0.57 kB │ gzip:     0.39 kB
++dist/assets/ErrorNotice-BJkAjHJC.js                 1.04 kB │ gzip:     0.63 kB
++dist/assets/analysis-Do-MLo4m.js                    1.16 kB │ gzip:     0.62 kB
++dist/assets/AppDialog-BJC8Nehw.js                   1.33 kB │ gzip:     0.71 kB
++dist/assets/PublicNavigation-BLqRB3ld.js            1.66 kB │ gzip:     0.88 kB
++dist/assets/DeleteDraftDialog-CqNsQgcT.js           2.21 kB │ gzip:     1.21 kB
++dist/assets/recovery-DWnuqi6S.js                    2.29 kB │ gzip:     1.05 kB
++dist/assets/PublicIncidentCard-CUQHT1f8.js          2.51 kB │ gzip:     1.28 kB
++dist/assets/ReportSentView-BWjHSufv.js              2.70 kB │ gzip:     1.38 kB
++dist/assets/report-list-8JsaSJ5M.js                 3.38 kB │ gzip:     1.49 kB
++dist/assets/ProfileView-CN8kVToD.js                 3.58 kB │ gzip:     1.63 kB
++dist/assets/WorkspaceServicesView-DivPxm26.js       3.60 kB │ gzip:     1.54 kB
++dist/assets/FetchState-DsEExDyX.js                  4.14 kB │ gzip:     2.17 kB
++dist/assets/PwaView-lLXoTV6s.js                     4.17 kB │ gzip:     1.84 kB
++dist/assets/WorkspaceAssignment-DnTSo-u2.js         4.44 kB │ gzip:     2.07 kB
++dist/assets/WorkspaceAuditView-B1tR1oSo.js          5.44 kB │ gzip:     2.35 kB
++dist/assets/NotificationsView-ACd9Hpbi.js           6.04 kB │ gzip:     2.44 kB
++dist/assets/WorkspaceView-Dn95tHkJ.js               8.23 kB │ gzip:     3.23 kB
++dist/assets/LandingView-6RSHxWlz.js                 8.63 kB │ gzip:     3.43 kB
++dist/assets/PublicPortalView-xTv3NMEx.js            8.63 kB │ gzip:     3.48 kB
++dist/assets/WorkspaceReportsView-CfAI9k9l.js       12.36 kB │ gzip:     4.59 kB
++dist/assets/WorkspaceOperatorsView-DFB6FzyN.js     13.05 kB │ gzip:     4.77 kB
++dist/assets/AuthView-CoSZjlvl.js                   16.99 kB │ gzip:     6.58 kB
++dist/assets/ReportsView-QTLpLtZg.js                17.68 kB │ gzip:     6.45 kB
++dist/assets/WorkspaceReportView-C5YIOkAc.js        57.81 kB │ gzip:    17.11 kB
++dist/assets/DraftView-TYpZLTi-.js                  83.76 kB │ gzip:    26.02 kB
++dist/assets/index-SvdkcVTj.js                     133.29 kB │ gzip:    51.54 kB
++✓ built in 2.22s
+diff --git a/docs/slr14/revisi-review-20261113/bukti/frontend-tests.txt b/docs/slr14/revisi-review-20261113/bukti/frontend-tests.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..12177a2aef33b4240ee78e7a4c826fea5ced4807
+--- /dev/null
++++ b/docs/slr14/revisi-review-20261113/bukti/frontend-tests.txt
+@@ -0,0 +1,124 @@
++npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
++
++> silar-slr10-frontend@1.1.1 test
++> node --test tests/*.test.js
++
++✔ Seven evidence routes and revised narratives use only the stages actually executed (1.942218ms)
++✔ Progress stays at zero without server evidence and counts completed stages, not elapsed time (0.489898ms)
++✔ 100 percent requires both a succeeded run and a completed read of its stored result (0.500214ms)
++✔ An earlier run is never shown as the newly requested analysis (0.629903ms)
++✔ The request and report scope must match before a running analysis can be bound (0.99629ms)
++✔ A reservation is rechecked before binding the report latest run (0.394939ms)
++✔ A concurrent later run cannot replace the result linked by the original request (0.386437ms)
++✔ Bound runs with the wrong source, mode or report are rejected (0.836036ms)
++✔ Peringatan tampil ketika uncertain false tanpa mengubah flag (1.72598ms)
++✔ Peringatan dan uncertain true tetap terpisah (0.244338ms)
++✔ Kode baru memakai pesan umum dan label field aman (1.199288ms)
++✔ Hasil kosong dan NARA yang belum tersedia aman (0.372036ms)
++✔ Analisis terbaru gagal tidak memasangkan peringatan/keyakinannya ke kartu lama (0.326378ms)
++✔ Identitas run, hasil, bundle, dan narasi harus cocok (0.370904ms)
++✔ Narasi baru tidak dilabeli sebagai sumber kartu lama (0.343513ms)
++✔ Body sukses yang terputus setelah POST menahan hasil sebagai belum pasti tanpa retry (9.664429ms)
++✔ Koneksi POST terputus tidak mengirim ulang request (2.099268ms)
++✔ Respons gateway tanpa hasil backend pasti mengharuskan pembacaan keadaan tersimpan (3.413134ms)
++✔ Kegagalan AI yang telah dicatat mempertahankan kode backend (2.282726ms)
++✔ Body GET yang tidak terbaca tidak menyatakan mutasi telah dilakukan (1.942753ms)
++✔ Logout 204 tidak mencoba membaca JSON (1.271785ms)
++✔ Recorder mendahulukan WebM dengan codec Opus (1.393093ms)
++✔ Recorder memakai AAC atau MP4 generik ketika WebM tidak tersedia (0.304887ms)
++✔ Tidak ada fallback OGG atau format default yang tidak diketahui (0.389721ms)
++✔ Nama dan MIME mengikuti keluaran rekaman yang sebenarnya (1.403197ms)
++✔ Keluaran OGG, Vorbis, ALAC, video dan MIME kosong tidak disamarkan (0.55947ms)
++✔ Password reset link challenge accepts the canonical UUID supplied by the backend (1.988926ms)
++✔ Missing, malformed and duplicate challenge parameters cannot enable password reset (0.310015ms)
++✔ Local email help defaults to development running on loopback, never a public deployment (0.366237ms)
++✔ An explicit local-help setting controls local preview without inferring backend email delivery (0.297056ms)
++✔ Registration carries only the email once into the code form (0.649682ms)
++✔ Operator password form requires an explicit valid activation proof from the server (0.867252ms)
++✔ Unicode dihitung per code point, bukan byte atau UTF16 (1.947876ms)
++✔ Teks kosong ditolak (0.172824ms)
++✔ Ekstensi gambar dan batas ukuran diperiksa (0.370994ms)
++✔ Lima format audio sesuai kontrak diperiksa server (0.312498ms)
++✔ OGG ditolak dan pesan format tidak menawarkan codec lain (0.262665ms)
++✔ Bundle membutuhkan kanal asli dan menahan jumlah berlebih (0.262936ms)
++✔ Bundle menghitung byte teks juga (0.161567ms)
++✔ Gemini tidak digunakan pada teks atau audio tunggal (0.240112ms)
++✔ Gemini diinformasikan untuk lima rute yang relevan (0.331847ms)
++✔ Pagination hanya menyusun path API lokal (0.950493ms)
++✔ Keterangan terbaru menjadi aktif sebelum bundle; semua gambar dan satu audio ikut otomatis (16.073866ms)
++✔ Bundle aktif mempertahankan pilihan sumber lama; hanya unggahan sesudahnya yang mengganti kanal (0.472883ms)
++✔ Penggantian keterangan/audio mempertahankan gambar dan tidak menyertakan dua item kanal yang sama (0.372316ms)
++✔ Riwayat gambar lebih dari tiga tidak dipangkas diam-diam (0.604306ms)
++✔ Batas gambar dan total byte diperiksa sebelum kelompok unggahan dikirim (0.535765ms)
++✔ Pemeriksaan sumber sama mengabaikan urutan tetapi menolak ID duplikat (0.374158ms)
++✔ Analisis satu klik menyimpan snapshot dahulu dan memakai revision hasil commit (1.818396ms)
++✔ Sumber tidak berubah memakai bundle aktif tanpa membentuk versi baru (0.44977ms)
++✔ Informasi Gemini diperiksa sebelum persiapan sumber atau analisis (1.15293ms)
++✔ Respons persiapan terputus menahan analisis dan tidak mengulang POST (0.553451ms)
++✔ Sumber pada respons persiapan yang tidak sesuai tidak diteruskan ke analisis (0.467796ms)
++✔ Kegagalan analisis setelah snapshot tersimpan mempertahankan snapshot untuk pemulihan (1.845115ms)
++✔ Review success requires a newly stored matching review, official source and current operator (1.583031ms)
++✔ Publication editor only opens for a Valid review of the exact official card with no active candidate (0.382791ms)
++✔ Public draft values exclude private fields and preserve unknown values as null (2.556297ms)
++✔ A successful HTTP response cannot advance publication without the exact report, revision and version receipt (0.403592ms)
++✔ Publication recovery is bound to the original idempotency key, report and operation (0.454436ms)
++✔ Guided confirmation only approves a stored candidate with exactly the reviewed public content (0.493384ms)
++✔ Public pagination retains both filters and requests exactly ten cards (1.300687ms)
++✔ Internal publication preview cannot project extra legacy fields or a version UUID (0.972807ms)
++✔ Preparing a replacement preserves a published report, including after candidate cancellation (0.222616ms)
++✔ Public requests omit account credentials and do not refresh after an HTTP error (4.746209ms)
++✔ Custom manifest icons work without the old icons directory, including a filename with spaces (3.861752ms)
++✔ A stale icon reference warns without ENOENT or precaching a missing file; API/private data stays out (1.237044ms)
++✔ Changing icon bytes or HTML changes the UI cache version without renaming the asset (2.474999ms)
++✔ Precache hanya daftar aset antarmuka (5.442789ms)
++✔ Auth, API privat, media, POST dan origin lain tidak diintersep (1.546688ms)
++✔ Aktivasi pembaruan menghapus cache aset SILAR lama dan mempertahankan cache aktif serta aplikasi lain (1.245947ms)
++✔ Pembacaan respons hilang memakai GET request, run dan draft tanpa POST atau replay otomatis (1.449115ms)
++✔ RUNNING dan UNKNOWN tanpa hasil terminal hanya dibaca tanpa menebak run atau mengulang (0.36118ms)
++✔ Request dan run dari laporan lain tidak digabungkan ke draft yang dibuka (0.552049ms)
++✔ Daftar pemulihan analisis menyaring request upload dan laporan lain (0.154427ms)
++✔ Respons hilang, REQUEST_RUNNING dan REQUEST_UNKNOWN menahan tindakan baru sampai dibaca (0.134407ms)
++✔ Fresh draft and saved evidence without a completed analysis keep stages 2 and 3 locked (1.933394ms)
++✔ Completed current analysis opens review but confirmation requires advancing the exact card (0.241835ms)
++✔ Unsaved evidence and an open correction prevent jumping to confirmation (0.201766ms)
++✔ A corrected card invalidates local progress; legitimate stored verification allows resuming (0.161707ms)
++✔ Missing or mismatched result references and RUNNING/UNKNOWN/FAILED do not unlock review (0.233913ms)
++✔ NON_EVENT remains readable at stage 2 while stage 3 stays locked (0.159965ms)
++✔ Saved narrative revision keeps reanalysis accessible but cannot unlock confirmation without new results (0.128098ms)
++✔ Official reports remain readable through the steps without allowing another send (0.107718ms)
++✔ Four actual incident categories include earthquake; NON_EVENT is not an event category (2.36006ms)
++✔ Prepared drafts combine category and both states in a paginated server query (0.797108ms)
++✔ Confirmation does not imply submission and workflow has precedence after sending (0.215055ms)
++✔ Uncertain with missing incident fields can be confirmed; submission needs verification of the exact card (1.298013ms)
++✔ NON_EVENT, mismatched source/run and unknown execution never enable confirmation or submission (0.514084ms)
++✔ Official reports stay read-only even when their historical source is valid (0.148017ms)
++✔ Partial corrections preserve untouched arrays and exact stored time, including milliseconds (1.381606ms)
++✔ Explicit clearing remains null or an empty array; empty information does not become zero victims (0.691204ms)
++✔ Lost submit/correction/confirmation responses read only the ledger and latest report, never POST (0.658836ms)
++✔ Recovery includes report mutations but never combines a foreign report or run (0.443671ms)
++✔ Four metric links use separate destinations and respect read permissions (2.033771ms)
++✔ Shortcut filters preserve scope and pagination without accepting inherited object keys (2.215378ms)
++✔ Unsaved review text never unlocks dependent tabs (0.26616ms)
++✔ All saved outcomes unlock dependent reading, including CLOSED; old-card reviews do not (0.300621ms)
++✔ Four Admin cards open their own matching report and account destinations (0.805572ms)
++✔ Admin shortcut routing uses explicit permissions and does not grant them by role (0.251829ms)
++✔ Admin views preserve all official reports, current unassigned state and CLOSED separately (1.088436ms)
++✔ Operator account status links accept only supported single query values (0.147225ms)
++✔ Empty or stale form values cannot erase a fixed CLOSED dashboard filter (0.364795ms)
++✔ Merged Admin reports use the API scope permitted by the account (1.253407ms)
++✔ Monitoring and assignment have one navigation entry for either explicit Admin permission (0.747596ms)
++✔ All report shortcuts share the merged page and keep their filters under either permitted API scope (1.752189ms)
++✔ Assignee labels follow account names rather than fixed Operator A/B/C slots (0.906499ms)
++✔ Pure Admin navigation has management but no inherited Operator actions (0.323835ms)
++✔ A role label cannot grant private reading or mutation after reassignment (0.141518ms)
++✔ Closed reports and unmet close requirements never enable a mutation (0.143109ms)
++✔ Prepare requires valid review; Internal cannot replace a publication or active candidate (0.181066ms)
++✔ Workspace filters remain server-scoped and preserve independent states (0.898037ms)
++ℹ tests 111
++ℹ suites 0
++ℹ pass 111
++ℹ fail 0
++ℹ cancelled 0
++ℹ skipped 0
++ℹ todo 0
++ℹ duration_ms 495.032659

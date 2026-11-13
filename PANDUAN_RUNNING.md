@@ -56,6 +56,22 @@ Pemasangan paket berbeda dari pemasangan bobot model. Aset bawaan disimpan pada:
 
 Ikuti prosedur aset pada [panduan integrasi AI SLR11](docs/ai/slr11/SLR11_Integrasi_dan_Verifikasi_v0.1.md). Gunakan adapter, manifest dan versi yang sudah ditetapkan proyek. Path khusus dapat diisi melalui `SENA_MODEL_DIR`, `NARA_MODEL_DIR`, `WHISPER_MODEL_DIR`, dan `SILAR_SLR09_ROOT`.
 
+Folder `models/` menyimpan arsip sumber SENA/NARA, sedangkan backend membaca hasil ekstraksinya pada folder `model_assets/` di atas. Keberadaan arsip belum berarti model sudah siap dimuat. Dari `code/backend`, verifikasi dan ekstrak arsip menggunakan command proyek:
+
+```powershell
+.\.venv\Scripts\python.exe manage.py prepare_ai_models
+```
+
+Command memeriksa hash arsip serta berkas runtime terhadap manifest SLR09. Jika berkas tujuan yang sudah ada berbeda, command berhenti untuk diperiksa; tidak menimpanya otomatis. Arsip SENA/NARA memakai Git LFS. Jika ukuran arsip hanya sekitar 134 byte, unduh isi LFS terlebih dahulu. Ukuran arsip yang dipilih proyek adalah SENA 412.184.854 byte dan NARA 408.238.634 byte; ukuran cocok belum menggantikan pemeriksaan hash.
+
+Untuk audio, siapkan Whisper secara terpisah. Command berikut dapat mengunduh model dari Hugging Face dan mencatat manifest lokal; memerlukan internet serta ruang disk tambahan:
+
+```powershell
+.\.venv\Scripts\python.exe manage.py prepare_ai_models --whisper-only --whisper-revision 536b0662742c02347bc0e980a01041f333bce120
+```
+
+Runtime aplikasi ini menggunakan CPU untuk SENA/NARA dan CPU `int8` untuk Whisper. NVIDIA/CUDA bukan syarat untuk konfigurasi tersebut. Model dimuat oleh backend ketika diperlukan; tidak ada server model terpisah yang harus dijalankan. Mulai ulang backend sesudah menyiapkan model atau mengganti konfigurasi, lalu coba analisis teks dahulu sebelum audio/foto/kombinasi.
+
 Isi `GEMINI_API_KEY` dan model yang sesuai pada `.env` untuk pemrosesan foto/kombinasi kanal. Teks dan audio tunggal tidak memakai Gemini. Analisis tidak mengunduh aset otomatis.
 
 ## 4. Pilih pengiriman email

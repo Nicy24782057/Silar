@@ -17,7 +17,7 @@ Mulai dari **[PANDUAN_RUNNING.md](PANDUAN_RUNNING.md)**: perangkat lunak, setup 
 
 Di Windows, jalankan **SETUP_SILAR.bat** dari folder utama, atau `py -3.12 tools/setup_silar.py`. Script memasang paket backend dan AI beserta frontend, lalu memeriksa hasilnya. Gunakan `--check` untuk pemeriksaan tanpa pemasangan/perubahan database. Aset model dan SMTP disiapkan mengikuti panduan.
 
-Revisi dari temuan SLR15 mencakup satu halaman verifikasi email/kode, sandi minimal 15 karakter, serta tiga tahap pengelolaan laporan Operator. Lihat [catatan revisi dan pengujian](docs/slr15/revisi-20261113/README.md).
+Revisi implementasi **SLR14** dari temuan pengujian SLR15 mencakup satu halaman verifikasi email/kode, sandi minimal 15 karakter, serta tiga tahap pengelolaan laporan Operator. Penyesuaian kontrol sandi dan tombol landing page ada pada [revisi review SLR14](docs/slr14/revisi-review-20261113/README.md). Bukti pengujian paket akun sebelumnya tetap tersedia pada [catatan pengujian SLR15](docs/slr15/revisi-20261113/README.md).
 
 ## Acuan proyek
 

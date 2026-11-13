@@ -1,5 +1,11 @@
 # SLR14 — publikasi dan antarmuka SILAR
 
+**Revisi review 13 November 2026:** implementasi akun/Operator dan pembaruan UI
+tetap menjadi bagian SLR14; SLR15 mencatat pengujian dan temuannya. Ikon mata
+berada di dalam setiap kolom sandi, tombol akun menyatu dengan landing page,
+dan panduan menyiapkan aset model diperjelas. Baca
+[catatan revisi review](revisi-review-20261113/README.md).
+
 **Penuntasan verifikasi:** panduan membedakan tes integrasi API dengan inferensi
 model asli, serta perintah PostgreSQL + sembilan tes pipeline, tersedia di
 [PENUNTASAN_VERIFIKASI_20261030.md](PENUNTASAN_VERIFIKASI_20261030.md).
@@ -73,6 +79,9 @@ PWA yang sudah terpasang perlu menerima build baru; gunakan pembaruan pada
   Laporan Saya. Halaman tidak menampilkan sukses hanya karena URL dibuka.
 - Desktop/tablet akun memakai dua panel. Pada lebar sampai 640 px,
   hanya formulir kanan ditampilkan. Tidak ada banner identitas tambahan.
+- Kolom sandi dan konfirmasi memiliki ikon mata di dalam ujung kanan kolom.
+  Keadaan terlihat/tersembunyi masing-masing kolom terpisah; ikon dapat
+  dioperasikan melalui keyboard dan tidak mengirim formulir.
 - Portal memakai 5 kolom di atas 1100 px, 2 kolom pada tablet, dan 1 kolom
   sampai 640 px. Ukuran halaman selalu 10 kartu; pencarian/filter kembali
   ke halaman pertama. Urutan publikasi mengikuti backend.
@@ -91,7 +100,9 @@ Gunakan Operator aktif dan terverifikasi yang memiliki `view_assigned_report`
 serta `publish_report`, dan merupakan penanggung jawab saat ini. Label Admin
 sendiri tidak memberi kewenangan Operator.
 
-1. Buka **Penanganan Saya → Detail Laporan → Review**. Pilih hasil dan simpan
+1. Buka **Penanganan Saya → Detail Laporan → Pemeriksaan**. Bagian ini memuat
+   ringkasan, narasi, bukti dan formulir review; rincian AI dapat dibuka bila
+   diperlukan. Riwayat dibuka melalui tombol tersendiri. Pilih hasil dan simpan
    review beserta alasan. Setelah tersimpan dan terbaca kembali, Tindak Lanjut
    otomatis terbuka dengan pesan **Review Anda sudah tersimpan**.
 2. Catat serta selesaikan/batalkan tindak lanjut bila diperlukan, lalu gunakan

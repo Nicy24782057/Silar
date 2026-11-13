@@ -1,39 +1,44 @@
-SILAR — REVISI TEMUAN SLR15, 13 NOVEMBER 2026
+SILAR — SLR14, PAKET LANJUTAN REVISI UI, 13 NOVEMBER 2026
 
+Paket ini melanjutkan paket akun/Operator/setup SILAR_SLR15.zip yang sudah
+Anda terapkan. Implementasinya masuk SLR14. SLR15 memuat pengujian/temuan.
 Panduan utama: PANDUAN_RUNNING.md.
-Catatan kontrak dan bukti: docs/slr15/revisi-20261113/README.md.
+Catatan revisi: docs/slr14/revisi-review-20261113/README.md.
 
-INSTALASI BARU
-1. Siapkan Python 3.12, PostgreSQL 16 yang berjalan, Git, Node/npm.
-2. Dari folder utama, jalankan SETUP_SILAR.bat atau:
-   py -3.12 tools/setup_silar.py
-3. Masukkan port PostgreSQL 16 yang benar. Paket AI dan frontend ikut dipasang.
-4. Ikuti panduan penyiapan aset model dan SMTP. Email berkas tidak masuk Gmail.
-5. Jalankan backend dan frontend dalam dua terminal sesuai panduan utama.
+CARA MEMASANG
+1. Hentikan frontend/backend, lalu ekstrak ZIP ini ke folder sementara.
+2. Gabungkan berkas mengikuti path yang sama pada clone Silar Anda.
+   Gunakan berkas yang disertakan; tidak perlu mengganti seluruh folder proyek.
+3. Dari code/frontend, jalankan:
+   npm.cmd test
+   npm.cmd run build
+   npm.cmd run dev
+4. Mulai ulang backend. PWA yang terpasang perlu menerima pembaruan build
+   melalui Aplikasi & Koneksi, kemudian dibuka kembali.
 
-MEMASANG PAKET REVISI INI PADA CLONE YANG SUDAH ADA
-Dasar paket adalah main 7af81c8e448e12eead2b54a4e6aad72b9e2a781e.
-Hentikan backend/frontend. Ekstrak paket ke folder sementara, lalu gabungkan
-berkas mengikuti path. Pertahankan .env, venv, database, media dan aset model.
-Alternatifnya gunakan patch dengan git apply --check lalu git apply.
-Gunakan salah satu cara, tidak perlu menimpa file dan menerapkan patch sekaligus.
+Paket lanjutan ini tidak menambah dependensi atau migration backend.
+Migration akun 0002 dari paket sebelumnya harus sudah diterapkan.
+Konfigurasi .env, database, venv dan aset model lokal tetap dipakai.
 
-Jika paket aplikasi sudah lengkap, jalankan dari code/backend:
-.\.venv\Scripts\python.exe manage.py migrate
-.\.venv\Scripts\python.exe manage.py check
-.\.venv\Scripts\python.exe verify_slr14.py --include-pipeline-integration
-.\.venv\Scripts\python.exe manage.py test accounts.tests accounts.test_account_flow --settings=config.test_settings
+PERUBAHAN UNTUK DIREVIEW
+- Ikon mata di dalam kolom sandi utama dan konfirmasi; keadaan tiap kolom terpisah.
+- Tombol Masuk mengikuti latar landing page, Buat akun mengikuti aksen biru-sian.
+- Catatan implementasi ditautkan ke SLR14, dengan bukti pengujian lama tetap di SLR15.
+- Panduan konkret menyiapkan arsip model dan Whisper.
 
-Migration baru: accounts.0002_emailotp_activation_auth_version_and_more.
-Dari code/frontend: npm.cmd ci, npm.cmd test, npm.cmd run build.
-Jika dependensi belum lengkap, gunakan setup lengkap dari folder utama.
+MENYIAPKAN SENA/NARA
+Dari code/backend:
+.\.venv\Scripts\python.exe manage.py prepare_ai_models
+Command memverifikasi hash arsip di models/ lalu mengekstrak model runtime.
+Mulai ulang backend dan uji analisis teks. Audio memerlukan aset Whisper;
+foto/kombinasi kanal memerlukan konfigurasi Gemini. Lihat panduan utama.
+Runtime saat ini memakai CPU; NVIDIA/CUDA tidak diwajibkan.
 
-Email/kode: satu tautan Verifikasi akun pada login. Reporter langsung menuju
-formulir kode setelah mendaftar. Operator membuat kata sandi setelah kode benar.
-Kirim ulang membatalkan kode dan bukti aktivasi lama. OTP bukan login otomatis.
-Sandi baru minimum 15 karakter; aturan dibaca di formulir dan diperiksa backend.
-Operator: Pemeriksaan, Tindak lanjut, Keputusan. Riwayat melalui tombol tersendiri.
-Informasi publik tetap mengikuti sembilan field yang diizinkan.
+BATAS PAKET
+Alur sesi/tombol silang masih menunggu kepastian kontrol yang dimaksud pengguna.
+Pengiriman SMTP dan inferensi AI asli tidak diuji ulang dalam revisi UI ini.
+Belum ada commit, push, deployment, atau perubahan board oleh penyusun.
 
-Paket tidak menyertakan kredensial, .env, bobot model, media privat, venv,
-node_modules atau hasil build dist. Belum ada commit/push/deploy dari penyusun.
+Manifest berkas: docs/slr14/revisi-review-20261113/DAFTAR_PERUBAHAN.json.
+Patch alternatif: PERUBAHAN_SLR14_UI.patch. Pilih salin berkas ATAU terapkan patch;
+tidak perlu melakukan kedua cara sekaligus. Jalankan git apply --check dahulu.

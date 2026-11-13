@@ -1,0 +1,120 @@
+{
+  "scope": "SLR14",
+  "review_findings_from": "SLR15",
+  "date": "2026-11-13",
+  "type": "incremental-update-after-account-package",
+  "requires_package": {
+    "name": "SILAR_SLR15.zip",
+    "sha256": "51cc0cc1f53818bf478f4b3b8b9837d236cf4352c0019b60ac2029ea3ab1b3d7",
+    "base_commit": "7af81c8e448e12eead2b54a4e6aad72b9e2a781e"
+  },
+  "excluded_from_hash_list": [
+    "docs/slr14/revisi-review-20261113/DAFTAR_PERUBAHAN.json",
+    "PERUBAHAN_SLR14_UI.patch"
+  ],
+  "agent_committed": false,
+  "agent_pushed": false,
+  "files": [
+    {
+      "path": "MULAI_DI_SINI.txt",
+      "bytes": 2159,
+      "sha256": "874f3e423f08640c9893f44955c01b78026fd1c3a8cab91abe7c117de5118507",
+      "previous_sha256": "5d19e2bfebe51415c66f2a7125097510de1db6602a5e4336bdf4a5c55e30a047",
+      "baseline_source": "previous_package"
+    },
+    {
+      "path": "PANDUAN_RUNNING.md",
+      "bytes": 11245,
+      "sha256": "776f0134c4e82ad8380f122e24097d06bf7157a52dffc6af13036b6e20e4b6e5",
+      "previous_sha256": "0f1967dfc4c1db9ba96228b8c7df56561af6670f6e0db24b92632ade1ff7d41f",
+      "baseline_source": "previous_package"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2326,
+      "sha256": "f5df37431ffc608bda67b5a1698fd028cb8ee234f58e558df579889b7bff307b",
+      "previous_sha256": "e41d7094929cd29000ef2294f71a6970c571582e60a846bfca3f281950e64afc",
+      "baseline_source": "previous_package"
+    },
+    {
+      "path": "code/frontend/src/auth-ui.css",
+      "bytes": 9076,
+      "sha256": "79ed3ebcdb3e8126a382008edfbadd4819141c489f949baad0954b43821806ba",
+      "previous_sha256": "16d216b25367cf2d635649246a884a2110e389d0020f5e815a6763a333e7c3ba",
+      "baseline_source": "previous_package"
+    },
+    {
+      "path": "code/frontend/src/components/AppIcon.vue",
+      "bytes": 3827,
+      "sha256": "0945d9566f91e5d686e33ba0386d25ed6fad46f2d260334c7a8290da8476fd65",
+      "previous_sha256": "33dff547fdeefeafa9f7a6987ce5f71dfedcbe40a887fc3885acbcb7be948249",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/src/components/PasswordInput.vue",
+      "bytes": 1185,
+      "sha256": "1e3ae73a31555936715259ca696efff576afacd080811d687d7466fb7bfcafe0",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "code/frontend/src/public-ui.css",
+      "bytes": 30881,
+      "sha256": "186c0683cd140d2bbe5b8afb3a89efc544deea96d207586a199a01e1ca15bbbc",
+      "previous_sha256": "ae1cefefcb44e98d4a6aeb5e2c6ac1e7f1a2f88c5d52fb0743f06cc263bada42",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/src/views/AuthView.vue",
+      "bytes": 13753,
+      "sha256": "438004ab61ae7ead3ef10ea80cf9dd3d18f2c5e3b387e2102d31f0521ec982f9",
+      "previous_sha256": "7634316e2d66416492e88fa77519c719bafe5fc52cb2173bbfc1a48a5a833023",
+      "baseline_source": "previous_package"
+    },
+    {
+      "path": "docs/slr14/README.md",
+      "bytes": 9848,
+      "sha256": "885b641018777b0585586b7672811707dfc94602d51cb4d9449363c591bad776",
+      "previous_sha256": "cc099cf65defd54669afa9b56f51bc23fbed25d2ff5d8bde18f1c059640bd7d6",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "docs/slr14/revisi-review-20261113/README.md",
+      "bytes": 5698,
+      "sha256": "2d474e8b2dfd9778205e0f82a392c86eb71d0a2563a6caf742949f0e9ea1a974",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-review-20261113/bukti/browser-result.json",
+      "bytes": 7152,
+      "sha256": "755d318f3069360daabac857ef3550988309844444d713538e3d466be90a70d6",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-review-20261113/bukti/frontend-build.txt",
+      "bytes": 3960,
+      "sha256": "08dd4102448204b478e446a08960ea39e0484067e5b37613767fb037eafb23ca",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-review-20261113/bukti/frontend-tests.txt",
+      "bytes": 10443,
+      "sha256": "1eb0d9eda538d95bc4151ba4f3e068df71dc16b95c15319b43f4f459e39f4fa1",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    }
+  ],
+  "checks": {
+    "frontend_tests": 111,
+    "frontend_build": "PASSED",
+    "browser_layout_cases": 72,
+    "password_control_checks": 86,
+    "browser_flows": 3,
+    "page_errors": 0,
+    "external_email_sent": false,
+    "live_ai_inference_exercised": false
+  }
+}
