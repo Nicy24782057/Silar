@@ -1,4 +1,5 @@
 from datetime import timedelta
+from html import escape
 import hashlib
 import hmac
 import secrets
@@ -7,7 +8,7 @@ from django.conf import settings
 from django.contrib.auth import authenticate
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError as DjangoValidationError
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMultiAlternatives as EmailMessage
 from django.db import transaction, IntegrityError
 from django.db.models import Q
 from django.utils import timezone
@@ -20,7 +21,26 @@ from core.audit import record_event
 from core.permissions import require_admin, permission_queryset, OPERATOR_PERMISSIONS
 from .models import User, Role, EmailOTP, OTPPurpose, SecurityThrottle
 
-GENERIC_MESSAGE='Jika alamat memenuhi syarat, petunjuk dan kode akan dikirim melalui email. Periksa email terbaru Anda.'
+GENERIC_MESSAGE='Jika alamat memenuhi syarat, kode dikirim melalui email. Masukkan kode dari pesan SILAR terbaru di aplikasi.'
+
+def account_purpose(user):
+    if user and not user.email_verified_at:
+        if user.role==Role.REPORTER and user.is_active:
+            return OTPPurpose.EMAIL_VERIFICATION
+        if user.role==Role.OPERATOR and not user.is_active:
+            return OTPPurpose.ACCOUNT_ACTIVATION
+    return None
+
+def verification_target(email):
+    user=User.objects.filter(email=email.strip().casefold()).first()
+    return user,account_purpose(user)
+
+def otp_invalid():
+    return ApiProblem('OTP_INVALID','Email atau kode tidak sesuai, sudah dipakai, atau kedaluwarsa. Periksa pesan terbaru atau minta kode baru.',422)
+
+def _activation_digest(otp,secret):
+    value=f'activation:{otp.pk}:{otp.user_id}:{otp.activation_auth_version}:{secret}'
+    return hmac.new(settings.OTP_HMAC_KEY.encode(),value.encode(),hashlib.sha256).hexdigest()
 
 def rate_limit(label, identity, *, limit, seconds=900):
     key=hmac.new(settings.OTP_HMAC_KEY.encode(),f'{label}:{identity}'.encode(),hashlib.sha256).hexdigest()
@@ -64,6 +84,9 @@ def dispatch_otp(user,purpose,*,actor=None,request_id=None,admin_dispatch=False)
                 raise ApiProblem('RATE_LIMITED','Tunggu sebelum mengirim ulang.',429,retry_after=(recent.resend_after-now).total_seconds())
             return None
         EmailOTP.objects.filter(user=user,purpose=purpose,consumed_at__isnull=True,revoked_at__isnull=True).update(revoked_at=now)
+        if purpose==OTPPurpose.ACCOUNT_ACTIVATION:
+            EmailOTP.objects.filter(user=user,purpose=purpose,activation_verified_at__isnull=False,
+                activation_completed_at__isnull=True,revoked_at__isnull=True).update(revoked_at=now)
         code=f'{secrets.randbelow(1_000_000):06d}'
         otp=EmailOTP(user=user,purpose=purpose,expires_at=now+timedelta(seconds=settings.OTP_TTL_SECONDS),resend_after=now+timedelta(seconds=settings.OTP_RESEND_SECONDS))
         otp.code_digest=_digest(otp,code)
@@ -74,11 +97,29 @@ def dispatch_otp(user,purpose,*,actor=None,request_id=None,admin_dispatch=False)
           OTPPurpose.ACCOUNT_ACTIVATION:settings.FRONTEND_ACTIVATE_PATH,
           OTPPurpose.PASSWORD_RESET:settings.FRONTEND_RESET_PATH}[purpose]
     url=f'{settings.FRONTEND_URL}{path}?{urlencode({"challenge_id":str(otp.id)})}'
-    body=(f'Permintaan akun SILAR: {purpose}\n\nKode enam digit: {code}\n'
-          f'Buka halaman aplikasi: {url}\n\nKode berlaku sampai {otp.expires_at.isoformat()}. '
-          'Kode sekali pakai. Jaga kerahasiaan kode dan password. Abaikan email bila Anda tidak meminta tindakan ini.')
+    title={OTPPurpose.EMAIL_VERIFICATION:'Verifikasi email akun SILAR',
+           OTPPurpose.ACCOUNT_ACTIVATION:'Aktivasi akun Operator SILAR',
+           OTPPurpose.PASSWORD_RESET:'Atur ulang kata sandi SILAR'}[purpose]
+    instructions=('Buka tautan di bawah, lalu masukkan kode dan buat kata sandi baru.' if purpose==OTPPurpose.PASSWORD_RESET
+                  else 'Masukkan email Anda dan kode ini pada halaman Verifikasi akun di SILAR. Tautan di bawah hanya membantu membuka halaman.')
+    if purpose==OTPPurpose.ACCOUNT_ACTIVATION:
+        instructions='Admin telah membuat akun Operator untuk email ini. '+instructions+' Setelah kode benar, buat kata sandi Anda sendiri.'
+    expiry=timezone.localtime(otp.expires_at).strftime('%d-%m-%Y %H:%M %Z')
+    body=(f'{title}\n\nKode enam digit: {code}\n\n{instructions}\n'
+          f'Buka halaman aplikasi: {url}\n\nKode berlaku sampai {expiry}. '
+          'Kode sekali pakai. Jangan bagikan kode atau kata sandi kepada siapa pun. Abaikan email bila Anda tidak meminta tindakan ini.')
     try:
-        sent=EmailMessage('Kode akun SILAR',body,settings.DEFAULT_FROM_EMAIL,[user.email]).send(fail_silently=False)
+        message=EmailMessage(title,body,settings.DEFAULT_FROM_EMAIL,[user.email])
+        message.attach_alternative(
+            '<html><body style="font-family:Arial,sans-serif;color:#172e4f;background:#f3f6fc;padding:24px">'
+            '<div style="max-width:520px;margin:auto;padding:28px;background:white;border-radius:16px">'
+            f'<p style="color:#0878b0;font-weight:bold">SILAR</p><h1 style="font-size:23px">{escape(title)}</h1>'
+            f'<p style="line-height:1.7">{escape(instructions)}</p><p style="font-size:34px;font-weight:bold;letter-spacing:8px">{code}</p>'
+            f'<p>Berlaku sampai {escape(expiry)}. Kode hanya dapat digunakan sekali.</p>'
+            f'<p><a href="{escape(url,quote=True)}" style="display:inline-block;background:#1764d7;color:white;padding:13px 20px;border-radius:9px;text-decoration:none">Buka SILAR</a></p>'
+            '<p style="font-size:13px;line-height:1.7">Jangan bagikan kode atau kata sandi kepada siapa pun. Abaikan pesan ini jika tidak mengenali permintaannya.</p></div></body></html>',
+            'text/html')
+        sent=message.send(fail_silently=False)
         if not sent:raise RuntimeError('delivery unavailable')
     except Exception:
         with transaction.atomic():
@@ -110,8 +151,73 @@ def register(data,request_id=None):
 
 def request_otp(email,purpose,request_id=None):
     user=User.objects.filter(email=email.strip().casefold()).first()
-    if user:dispatch_otp(user,purpose,request_id=request_id)
+    if purpose=='ACCOUNT_VERIFICATION':purpose=account_purpose(user)
+    if user and purpose:dispatch_otp(user,purpose,request_id=request_id)
     return {'message':GENERIC_MESSAGE}
+
+def verify_account(email,code,request_id=None):
+    """Select the allowed purpose server-side; never accept a requested role."""
+    error=None
+    result=None
+    with transaction.atomic():
+        user=User.objects.select_for_update().filter(email=email.strip().casefold()).first()
+        purpose=account_purpose(user)
+        otp=(EmailOTP.objects.select_for_update().filter(user=user,purpose=purpose,
+             consumed_at__isnull=True,revoked_at__isnull=True).order_by('-created_at').first()) if purpose else None
+        now=timezone.now()
+        if not otp:
+            # Do comparable keyed work without disclosing whether an account exists.
+            hmac.compare_digest(hmac.new(settings.OTP_HMAC_KEY.encode(),code.encode(),hashlib.sha256).hexdigest(),'0'*64)
+            error=otp_invalid()
+        elif now>=otp.expires_at or otp.attempt_count>=settings.OTP_MAX_ATTEMPTS or not hmac.compare_digest(otp.code_digest,_digest(otp,code)):
+            otp.attempt_count+=1
+            if otp.attempt_count>=settings.OTP_MAX_ATTEMPTS:otp.revoked_at=now
+            otp.save(update_fields=['attempt_count','revoked_at'])
+            error=otp_invalid()
+        else:
+            otp.consumed_at=now
+            if purpose==OTPPurpose.EMAIL_VERIFICATION:
+                user.email_verified_at=now
+                user.save(update_fields=['email_verified_at','updated_at'])
+                result={'message':'Email berhasil diverifikasi. Silakan masuk.','next':'LOGIN'}
+            else:
+                secret=secrets.token_urlsafe(32)
+                otp.activation_verified_at=now
+                otp.activation_auth_version=user.auth_version
+                otp.activation_digest=_activation_digest(otp,secret)
+                result={'message':'Kode benar. Buat kata sandi untuk mengaktifkan akun Operator.',
+                        'next':'SET_PASSWORD','activation_token':f'{otp.pk}.{secret}',
+                        'expires_at':otp.expires_at}
+            otp.save()
+            record_event(actor=user,action=('ACCOUNT_EMAIL_VERIFICATION' if purpose==OTPPurpose.EMAIL_VERIFICATION else 'ACCOUNT_ACTIVATION_CODE_VERIFIED'),
+                object_type='EmailOTP',object_id=otp.pk,after={'purpose':purpose,'email_verified':bool(user.email_verified_at)},request_id=request_id)
+    if error:raise error
+    return result
+
+def finish_activation(token,password,request_id=None):
+    identifier,secret=token.split('.',1)
+    initial=EmailOTP.objects.filter(pk=identifier).values('user_id').first()
+    if not initial:raise otp_invalid()
+    with transaction.atomic():
+        user=User.objects.select_for_update().get(pk=initial['user_id'])
+        otp=EmailOTP.objects.select_for_update().get(pk=identifier)
+        now=timezone.now()
+        valid=(user.role==Role.OPERATOR and not user.email_verified_at and not user.is_active
+               and otp.purpose==OTPPurpose.ACCOUNT_ACTIVATION and otp.activation_verified_at
+               and otp.consumed_at and not otp.activation_completed_at and not otp.revoked_at
+               and now<otp.expires_at and otp.activation_auth_version==user.auth_version
+               and hmac.compare_digest(otp.activation_digest,_activation_digest(otp,secret)))
+        if not valid:raise otp_invalid()
+        validate_new_password(password,user)
+        user.set_password(password)
+        user.email_verified_at=now
+        user.is_active=True
+        user.save()
+        otp.activation_completed_at=now
+        otp.save(update_fields=['activation_completed_at'])
+        record_event(actor=user,action='ACCOUNT_ACCOUNT_ACTIVATION',object_type='User',object_id=user.pk,
+            after={'purpose':OTPPurpose.ACCOUNT_ACTIVATION,'email_verified':True},request_id=request_id)
+    return {'message':'Akun Operator berhasil diaktifkan. Silakan masuk.','next':'LOGIN'}
 
 def consume_otp(challenge_id,code,purpose,*,password=None,request_id=None):
     initial=EmailOTP.objects.filter(pk=challenge_id).values('user_id').first()

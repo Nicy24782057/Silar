@@ -13,9 +13,11 @@ SILAR menerima teks, audio, gambar, atau kombinasi kanal untuk membantu menyusun
 
 ## Menjalankan aplikasi
 
-Gunakan satu panduan operasional: **[PANDUAN_RUNNING.md](PANDUAN_RUNNING.md)**. Panduan mencakup pembaruan repository, konfigurasi lokal, backend/frontend, email lokal, pengujian, dan pemecahan masalah.
+Mulai dari **[PANDUAN_RUNNING.md](PANDUAN_RUNNING.md)**: perangkat lunak, setup lengkap, database, aset AI, email/Gmail, backend/frontend, pengujian dan pemecahan masalah.
 
-Paket SLR10 **1.1.1**, 22 Oktober 2026, memperbaiki batas durasi audio serta menyederhanakan kemasan. Status pengujian dan integrasi mengikuti [hasil verifikasi](docs/slr10/HASIL_VERIFIKASI.md). Frontend dan layanan input SLR10 digunakan bersama pipeline SLR11; pemeriksaan, koreksi, konfirmasi, dan submit resmi dilengkapi pada SLR12.
+Di Windows, jalankan **SETUP_SILAR.bat** dari folder utama, atau `py -3.12 tools/setup_silar.py`. Script memasang paket backend dan AI beserta frontend, lalu memeriksa hasilnya. Gunakan `--check` untuk pemeriksaan tanpa pemasangan/perubahan database. Aset model dan SMTP disiapkan mengikuti panduan.
+
+Revisi dari temuan SLR15 mencakup satu halaman verifikasi email/kode, sandi minimal 15 karakter, serta tiga tahap pengelolaan laporan Operator. Lihat [catatan revisi dan pengujian](docs/slr15/revisi-20261113/README.md).
 
 ## Acuan proyek
 

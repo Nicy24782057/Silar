@@ -77,7 +77,8 @@ def main():
     run(PYTHON,'manage.py','check')
     run(PYTHON,'manage.py','migrate','--noinput')
     run(PYTHON,'manage.py','bootstrap_silar')
-    print('\nSetup selesai. Buat Admin pilihan sendiri:')
+    print('\nFondasi backend selesai. Untuk paket AI dan frontend, lanjutkan dari root: py -3.12 tools/setup_silar.py')
+    print('Buat Admin pilihan sendiri setelah setup lengkap:')
     print('.venv\\Scripts\\python.exe manage.py create_silar_admin' if os.name=='nt' else '.venv/bin/python manage.py create_silar_admin')
     print('Jalankan backend di http://localhost:8001; lihat MULAI_DI_SINI.txt dan docs/backend/README.md.')
 

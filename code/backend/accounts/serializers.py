@@ -21,7 +21,20 @@ class Login(StrictSerializer):
 
 class RequestOTP(StrictSerializer):
     email=serializers.EmailField(max_length=254)
-    purpose=serializers.ChoiceField(choices=[OTPPurpose.EMAIL_VERIFICATION,OTPPurpose.PASSWORD_RESET])
+    purpose=serializers.ChoiceField(choices=[OTPPurpose.EMAIL_VERIFICATION,OTPPurpose.PASSWORD_RESET,'ACCOUNT_VERIFICATION'])
+
+class VerifyAccount(StrictSerializer):
+    email=serializers.EmailField(max_length=254)
+    code=serializers.RegexField(r'^[0-9]{6}$',trim_whitespace=False,write_only=True)
+
+class CompleteActivation(StrictSerializer):
+    activation_token=serializers.RegexField(r'^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.[A-Za-z0-9_-]{43}$',write_only=True)
+    password=serializers.CharField(trim_whitespace=False,max_length=1024,write_only=True)
+    password_confirm=serializers.CharField(trim_whitespace=False,max_length=1024,write_only=True)
+    def validate(self, attrs):
+        if attrs['password']!=attrs['password_confirm']:
+            raise serializers.ValidationError({'password_confirm':['Konfirmasi kata sandi belum sama.']})
+        return attrs
 
 class VerifyEmail(StrictSerializer):
     challenge_id=serializers.UUIDField()

@@ -71,7 +71,7 @@ def configure_env(env_path, decoder=None, probe=None):
     print('Origin frontend lokal diselaraskan; koneksi database dan rahasia akun dipertahankan.')
 
 
-def main():
+def prepare_project():
     try:
         ignore = ROOT / '.gitignore'
         text = ignore.read_text() if ignore.exists() else ''
@@ -110,11 +110,17 @@ def main():
             raise ValueError('Pasang Node.js LTS, lalu jalankan kembali setup untuk membangun frontend.')
         if not decoder or not probe:
             print('Catatan: FFmpeg belum terbaca. WAV PCM dapat dipakai; audio lain menunggu decoder. Pasang FFmpeg lalu jalankan ulang setup.')
-        print('\nPersiapan selesai. Ikuti bagian menjalankan backend dan frontend pada PANDUAN_RUNNING.md; gunakan dua terminal.')
+        print('\nPemasangan paket dan build selesai. Pemeriksaan lingkungan dilanjutkan oleh setup SILAR.')
         return 0
     except (ValueError, OSError, subprocess.CalledProcessError) as error:
         print('Persiapan belum selesai:', str(error))
         return 1
+
+
+def main():
+    sys.path.insert(0, str(ROOT))
+    from tools.setup_silar import main as unified_setup
+    return unified_setup()
 
 
 if __name__ == '__main__':

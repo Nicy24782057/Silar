@@ -77,12 +77,24 @@ class EmailOTP(models.Model):
     resend_after = models.DateTimeField()
     consumed_at = models.DateTimeField(null=True, blank=True)
     revoked_at = models.DateTimeField(null=True, blank=True)
+    # One-use proof after an Operator has entered the correct email/code.
+    # Only a keyed digest is retained; the raw activation token is never stored.
+    activation_digest = models.CharField(max_length=64, default='', blank=True)
+    activation_verified_at = models.DateTimeField(null=True, blank=True)
+    activation_completed_at = models.DateTimeField(null=True, blank=True)
+    activation_auth_version = models.PositiveIntegerField(null=True, blank=True)
 
     class Meta:
         constraints = [
             models.CheckConstraint(condition=Q(expires_at__gt=F('created_at')), name='otp_expiry_after_creation'),
             models.CheckConstraint(condition=Q(purpose__in=OTPPurpose.values), name='otp_purpose_allowed'),
             models.UniqueConstraint(fields=['user', 'purpose'], condition=Q(consumed_at__isnull=True, revoked_at__isnull=True), name='otp_one_live_challenge'),
+            models.CheckConstraint(condition=(
+                Q(activation_verified_at__isnull=True, activation_completed_at__isnull=True,
+                  activation_auth_version__isnull=True, activation_digest='') |
+                (Q(purpose=OTPPurpose.ACCOUNT_ACTIVATION, activation_verified_at__isnull=False,
+                   activation_auth_version__isnull=False, consumed_at__isnull=False) & ~Q(activation_digest=''))
+            ), name='otp_activation_proof_shape'),
         ]
         indexes = [models.Index(fields=['user', 'purpose', '-created_at'])]
 

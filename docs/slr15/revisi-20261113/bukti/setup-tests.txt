@@ -1,0 +1,68 @@
+......Tahap 1/3: memakai konfigurasi lokal yang sudah ada.
+Tahap 2/3: memasang paket backend/AI, decoder dan frontend. Aset model disiapkan terpisah.
+Tahap 3/3: memeriksa paket, decoder dan koneksi PostgreSQL.
+.
+Setup paket dan aplikasi selesai. Lihat PANDUAN_RUNNING.md untuk menjalankan dua server dan menyiapkan model/email SMTP.
+Tahap 1/3: memakai konfigurasi lokal yang sudah ada.
+Tahap 2/3: memasang paket backend/AI, decoder dan frontend. Aset model disiapkan terpisah.
+.Tahap 1/3: membuat konfigurasi dan database lokal baru. PostgreSQL 16 harus sudah berjalan.
+Tahap 2/3: memasang paket backend/AI, decoder dan frontend. Aset model disiapkan terpisah.
+Tahap 3/3: memeriksa paket, decoder dan koneksi PostgreSQL.
+.................
+----------------------------------------------------------------------
+Ran 25 tests in 0.050s
+
+OK
+
+Setup paket dan aplikasi selesai. Lihat PANDUAN_RUNNING.md untuk menjalankan dua server dan menyiapkan model/email SMTP.
+Venv yang ada bukan Python 3.12. Pertahankan .env/database/model dan siapkan venv Python 3.12 sebelum melanjutkan.
+Venv backend belum tersedia. Jalankan setup tanpa --check dengan Python 3.12.
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 6
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya ikuti PANDUAN_RUNNING.md dari repository tujuan.
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 0
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 6
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya ikuti PANDUAN_RUNNING.md dari repository tujuan.
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 6
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 1
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya ikuti PANDUAN_RUNNING.md dari repository tujuan.
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 0
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 6
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya ikuti PANDUAN_RUNNING.md dari repository tujuan.
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 6
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya ikuti PANDUAN_RUNNING.md dari repository tujuan.
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 6
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya ikuti PANDUAN_RUNNING.md dari repository tujuan.
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 6
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya ikuti PANDUAN_RUNNING.md dari repository tujuan.
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 0
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
+Paket SLR_10: 1.1.0
+Berkas baru/perubahan yang akan diterapkan: 6
+Berkas distribusi lama yang akan dicadangkan dan dihapus: 0
+Pemasangan kode selesai. .env, database, migration lama, dan aset model tidak diganti.
+Selanjutnya ikuti PANDUAN_RUNNING.md dari repository tujuan.

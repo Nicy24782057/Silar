@@ -1,4 +1,5 @@
 /* Account pages follow the supplied two-panel designs. */
+.auth-password-input{position:relative;display:flex;align-items:center;gap:6px}.auth-password-input input{min-width:0;flex:1}.auth-password-input .auth-password-toggle{flex:none;font-size:11px;min-height:44px;padding:7px;color:var(--primary)}.auth-password-length{font-size:11px;line-height:1.7;color:var(--muted);margin:7px 0 0}.auth-password-length.is-met{color:var(--primary)}
 .auth-main{outline:none;min-height:100dvh;background:var(--panel)}
 .auth-two-panel{display:grid;grid-template-columns:47.45% minmax(0,1fr);min-height:100dvh;background:var(--panel)}
 .auth-identity{position:sticky;top:0;height:100dvh;overflow:hidden;background:var(--hero)}

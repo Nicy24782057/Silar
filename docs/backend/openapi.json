@@ -1775,7 +1775,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SetPasswordOTP"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/SetPasswordOTP"
+                  },
+                  {
+                    "$ref": "#/components/schemas/CompleteActivation"
+                  }
+                ]
               }
             }
           }
@@ -6873,6 +6880,400 @@
           }
         }
       }
+    },
+    "/api/v1/auth/account/verify/": {
+      "post": {
+        "operationId": "verifyAccountByEmailCode",
+        "summary": "Verifikasi akun Reporter/Operator dengan email dan kode; peran ditentukan server",
+        "description": "Semua auth POST memerlukan CSRF cookie/header, origin yang diizinkan dan throttle. Field tak dikenal ditolak. Challenge sekali pakai dengan purpose yang tepat; tidak menerbitkan JWT.",
+        "security": [
+          {
+            "CSRFHeader": [],
+            "CSRFCookie": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Reporter: next LOGIN. Operator: next SET_PASSWORD dengan activation_token sekali pakai dan expires_at. Tidak menerbitkan token login.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "required": [
+                        "message",
+                        "next"
+                      ],
+                      "properties": {
+                        "message": {
+                          "type": "string"
+                        },
+                        "next": {
+                          "type": "string",
+                          "enum": [
+                            "LOGIN",
+                            "SET_PASSWORD"
+                          ]
+                        },
+                        "activation_token": {
+                          "type": "string",
+                          "description": "Hanya setelah kode Operator benar; jangan disimpan di browser storage atau log."
+                        },
+                        "expires_at": {
+                          "type": "string",
+                          "format": "date-time"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Kesalahan aman; fields dan request_id selalu hadir.",
+            "headers": {
+              "X-Request-ID": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Retry-After": {
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "description": "Pada pembatasan request."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Kesalahan aman; fields dan request_id selalu hadir.",
+            "headers": {
+              "X-Request-ID": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Retry-After": {
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "description": "Pada pembatasan request."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Kesalahan aman; fields dan request_id selalu hadir.",
+            "headers": {
+              "X-Request-ID": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Retry-After": {
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "description": "Pada pembatasan request."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Kesalahan aman; fields dan request_id selalu hadir.",
+            "headers": {
+              "X-Request-ID": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Retry-After": {
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "description": "Pada pembatasan request."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Kesalahan aman; fields dan request_id selalu hadir.",
+            "headers": {
+              "X-Request-ID": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Retry-After": {
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "description": "Pada pembatasan request."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Kesalahan aman; fields dan request_id selalu hadir.",
+            "headers": {
+              "X-Request-ID": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Retry-After": {
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "description": "Pada pembatasan request."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Kesalahan aman; fields dan request_id selalu hadir.",
+            "headers": {
+              "X-Request-ID": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Retry-After": {
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "description": "Pada pembatasan request."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Kesalahan aman; fields dan request_id selalu hadir.",
+            "headers": {
+              "X-Request-ID": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Retry-After": {
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "description": "Pada pembatasan request."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Kesalahan aman; fields dan request_id selalu hadir.",
+            "headers": {
+              "X-Request-ID": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Retry-After": {
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "description": "Pada pembatasan request."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Kesalahan aman; fields dan request_id selalu hadir.",
+            "headers": {
+              "X-Request-ID": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Retry-After": {
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "description": "Pada pembatasan request."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyAccount"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/account-policy/": {
+      "get": {
+        "operationId": "getAccountPolicy",
+        "summary": "Baca aturan sandi dan durasi pembatasan tanpa data akun",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Aturan publik akun",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/AccountPolicy"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -6952,12 +7353,14 @@
           "password": {
             "type": "string",
             "maxLength": 1024,
-            "writeOnly": true
+            "writeOnly": true,
+            "minLength": 15
           },
           "password_confirm": {
             "type": "string",
             "maxLength": 1024,
-            "writeOnly": true
+            "writeOnly": true,
+            "minLength": 15
           }
         },
         "additionalProperties": false,
@@ -7000,7 +7403,8 @@
             "type": "string",
             "enum": [
               "EMAIL_VERIFICATION",
-              "PASSWORD_RESET"
+              "PASSWORD_RESET",
+              "ACCOUNT_VERIFICATION"
             ]
           }
         },
@@ -7205,12 +7609,14 @@
           "password": {
             "type": "string",
             "maxLength": 1024,
-            "writeOnly": true
+            "writeOnly": true,
+            "minLength": 15
           },
           "password_confirm": {
             "type": "string",
             "maxLength": 1024,
-            "writeOnly": true
+            "writeOnly": true,
+            "minLength": 15
           }
         },
         "additionalProperties": false,
@@ -7517,6 +7923,85 @@
         "required": [
           "error"
         ]
+      },
+      "VerifyAccount": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "email",
+          "code"
+        ],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "maxLength": 254
+          },
+          "code": {
+            "type": "string",
+            "pattern": "^[0-9]{6}$",
+            "writeOnly": true
+          }
+        }
+      },
+      "CompleteActivation": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "activation_token",
+          "password",
+          "password_confirm"
+        ],
+        "properties": {
+          "activation_token": {
+            "type": "string",
+            "writeOnly": true
+          },
+          "password": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 1024,
+            "writeOnly": true
+          },
+          "password_confirm": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 1024,
+            "writeOnly": true
+          }
+        }
+      },
+      "AccountPolicy": {
+        "type": "object",
+        "required": [
+          "password_min_length",
+          "otp_resend_seconds",
+          "otp_ttl_seconds",
+          "otp_max_attempts",
+          "otp_window_seconds"
+        ],
+        "properties": {
+          "password_min_length": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "otp_resend_seconds": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "otp_ttl_seconds": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "otp_max_attempts": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "otp_window_seconds": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
       }
     }
   }

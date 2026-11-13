@@ -1,3 +1,5 @@
+> Revisi akun 13 November 2026: gunakan [kontrak verifikasi email dan kode](../slr15/revisi-20261113/KONTRAK_AKUN.md). Endpoint berbasis challenge di bawah tetap tersedia untuk kompatibilitas dan reset sandi. Alur baru memakai satu halaman verifikasi, sandi minimal 15 karakter, serta bukti aktivasi Operator sekali pakai.
+
 # Handoff frontend SLR_07 ke backend SLR_08
 
 Frontend produksi tetap mengikuti Vue 3, Composition API, Vue Router, Vite, Fetch dan CSS pada acuan tim. Paket SLR_07 yang diterima adalah prototype HTML/CSS/ES modules dengan data contoh di memori. Handler pada `app.mjs`/`model.mjs` belum memanggil backend. Sumber prototype tersebut tidak ditimpa oleh paket ini.

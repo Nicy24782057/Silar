@@ -1,0 +1,28 @@
+{
+  "motion_preference": "no-preference",
+  "layout_cases": [
+    "auth:login:1100:False",
+    "auth:register:1100:False",
+    "auth:verify-email:1100:False",
+    "operator:inspection:1100:False",
+    "operator:followup:1100:False",
+    "operator:decision:1100:False",
+    "operator:history:1100:False",
+    "operator:published:1100",
+    "operator:closed:1100",
+    "operator:invalid:1100",
+    "admin-monitor-private-content-absent"
+  ],
+  "flow_checks": [
+    "registration -> prefilled code form -> wrong code rejected -> correct code -> login button; no email link used",
+    "single verification entry -> operator code -> weak password rejected -> valid password -> activated",
+    "review -> verified automatic next stage -> optional followup skipped -> decision -> preview/confirmation -> explicit publish"
+  ],
+  "page_errors": [],
+  "screenshots-motion": [
+    "operator-password-1100.png"
+  ],
+  "live_ai_inference_exercised": false,
+  "external_email_sent": false,
+  "status": "PASSED"
+}

@@ -38,6 +38,13 @@ class CSRFView(AuthAPIView):
     def get(self,request):
         return Response({'data':{'csrf_token':get_token(request._request)}})
 
+class AccountPolicyView(AuthAPIView):
+    def get(self,request):
+        validate_query(request,[])
+        return Response({'data':{'password_min_length':15,
+            'otp_resend_seconds':settings.OTP_RESEND_SECONDS,'otp_ttl_seconds':settings.OTP_TTL_SECONDS,
+            'otp_max_attempts':settings.OTP_MAX_ATTEMPTS,'otp_window_seconds':settings.OTP_WINDOW_SECONDS}})
+
 class RegisterView(AuthAPIView):
     def post(self,request):
         data=validated(S.Register,request)
@@ -47,8 +54,20 @@ class RegisterView(AuthAPIView):
 class OTPRequestView(AuthAPIView):
     def post(self,request):
         data=validated(S.RequestOTP,request)
-        throttle(request,'otp-request',data['email'].strip().casefold()+':'+data['purpose'])
+        purpose=data['purpose']
+        if purpose=='ACCOUNT_VERIFICATION':
+            _,selected=services.verification_target(data['email'])
+            purpose=selected or purpose
+        throttle(request,'otp-request',data['email'].strip().casefold()+':'+purpose)
         return Response({'data':services.request_otp(data['email'],data['purpose'],request.request_id)},status=202)
+
+class AccountVerifyView(AuthAPIView):
+    def post(self,request):
+        data=validated(S.VerifyAccount,request)
+        user,purpose=services.verification_target(data['email'])
+        identity=str(user.pk) if purpose else 'unknown:'+data['email'].strip().casefold()
+        throttle(request,'verify',identity+':'+(purpose or 'ACCOUNT_VERIFICATION'))
+        return Response({'data':services.verify_account(data['email'],data['code'],request.request_id)})
 
 class OTPVerifyView(AuthAPIView):
     purpose=OTPPurpose.EMAIL_VERIFICATION
@@ -69,6 +88,15 @@ class ActivateView(OTPVerifyView):
     purpose=OTPPurpose.ACCOUNT_ACTIVATION
     serializer_class=S.SetPasswordOTP
     action='activate'
+    def post(self,request):
+        if isinstance(request.data,dict) and 'activation_token' in request.data:
+            data=validated(S.CompleteActivation,request)
+            from .models import EmailOTP
+            target=EmailOTP.objects.filter(pk=data['activation_token'].split('.',1)[0]).values('user_id').first()
+            identity=str(target['user_id']) if target else 'unknown:'+request.META.get('REMOTE_ADDR','unknown')
+            throttle(request,'activate',identity+':'+self.purpose)
+            return Response({'data':services.finish_activation(data['activation_token'],data['password'],request.request_id)})
+        return super().post(request)
 
 class ResetView(OTPVerifyView):
     purpose=OTPPurpose.PASSWORD_RESET

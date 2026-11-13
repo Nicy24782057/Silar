@@ -1,0 +1,93 @@
+{
+  "status": "PASSED",
+  "generated_at": "2026-11-13T02:05:44.331561+07:00",
+  "tests_run": 152,
+  "database_vendor": "postgresql",
+  "postgresql_major": 16,
+  "django_version": "5.2.18",
+  "discovered_tests": 152,
+  "pipeline_integration": {
+    "requested": true,
+    "discovered_tests": 9,
+    "ai_clients": "test_doubles"
+  },
+  "live_ai_inference_exercised": false,
+  "execution_identity_verified": true,
+  "test_database": "test_silar_slr14_85f407c0bf554b9f9612bde9e4f6e0d9",
+  "schema_guards": {
+    "triggers": [
+      [
+        "core_auditevent",
+        "silar_immutable"
+      ],
+      [
+        "core_evidencebundle",
+        "silar_bundle_nonempty"
+      ],
+      [
+        "core_evidencebundleitem",
+        "silar_bundle_membership"
+      ],
+      [
+        "core_idempotencyrecord",
+        "silar_no_delete"
+      ],
+      [
+        "core_operatorassignment",
+        "silar_assignment_guard"
+      ],
+      [
+        "core_publicationversion",
+        "silar_no_delete"
+      ],
+      [
+        "core_publicationversion",
+        "silar_publication_guard"
+      ],
+      [
+        "core_report",
+        "silar_deleted_report_guard"
+      ],
+      [
+        "core_report",
+        "silar_report_guard"
+      ]
+    ],
+    "constraints": [
+      [
+        "core_publicationversion",
+        "publication_approval_metadata"
+      ],
+      [
+        "core_publicationversion",
+        "publication_cancel_metadata"
+      ],
+      [
+        "core_publicationversion",
+        "publication_publish_metadata"
+      ],
+      [
+        "core_publicationversion",
+        "publication_state_allowed"
+      ],
+      [
+        "core_publicationversion",
+        "publication_version_unique"
+      ],
+      [
+        "core_publicationversion",
+        "publicationversion_data_jsonkind"
+      ],
+      [
+        "core_report",
+        "deleted_draft_owner_and_state"
+      ]
+    ]
+  },
+  "failures": 0,
+  "errors": 0,
+  "skipped": [],
+  "unexpected_successes": 0,
+  "expected_failures": [],
+  "failed_tests": []
+}

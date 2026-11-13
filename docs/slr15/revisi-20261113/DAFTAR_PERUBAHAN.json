@@ -1,0 +1,283 @@
+{
+  "project": "SILAR",
+  "revision": "SLR15-account-operator-setup-20261113",
+  "base_commit": "7af81c8e448e12eead2b54a4e6aad72b9e2a781e",
+  "package_type": "incremental-source-update",
+  "commit_created": false,
+  "pushed": false,
+  "excluded_from_hash_list": [
+    "docs/slr15/revisi-20261113/DAFTAR_PERUBAHAN.json",
+    "PERUBAHAN_SLR15.patch"
+  ],
+  "files": [
+    {
+      "path": "MULAI_DI_SINI.txt",
+      "bytes": 2156,
+      "sha256": "5d19e2bfebe51415c66f2a7125097510de1db6602a5e4336bdf4a5c55e30a047"
+    },
+    {
+      "path": "PANDUAN_RUNNING.md",
+      "bytes": 9779,
+      "sha256": "0f1967dfc4c1db9ba96228b8c7df56561af6670f6e0db24b92632ade1ff7d41f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2119,
+      "sha256": "e41d7094929cd29000ef2294f71a6970c571582e60a846bfca3f281950e64afc"
+    },
+    {
+      "path": "SETUP_SILAR.bat",
+      "bytes": 402,
+      "sha256": "b3aa0d3cc9293da870d9e4f0d998c42611132416ec43336ac666a18733fbb6e1"
+    },
+    {
+      "path": "code/backend/.env.example",
+      "bytes": 1672,
+      "sha256": "a6a0d1e7818695a7c93c03bf298ba498c9da7cf44f5a40ab8cfd0c4e10bea7c5"
+    },
+    {
+      "path": "code/backend/SETUP_LOKAL.bat",
+      "bytes": 65,
+      "sha256": "2f85f2ef835eb235e83c8eb81c4317bf800c37d8ffb9d7a67a2897e9f2289903"
+    },
+    {
+      "path": "code/backend/accounts/migrations/0002_emailotp_activation_auth_version_and_more.py",
+      "bytes": 1544,
+      "sha256": "668b9f65edad0fa38a2d272e6858d85a24f593fe183038f88ba37caf59988630"
+    },
+    {
+      "path": "code/backend/accounts/models.py",
+      "bytes": 5244,
+      "sha256": "4f70198cfca414bd16a3992def9e07b904fe69f8e0c4d59463faba03a95c9453"
+    },
+    {
+      "path": "code/backend/accounts/password_validation.py",
+      "bytes": 2828,
+      "sha256": "391390bbb92e517c7894474351296ce5f07426de8b751d983021a30c2ebcbf15"
+    },
+    {
+      "path": "code/backend/accounts/serializers.py",
+      "bytes": 4074,
+      "sha256": "67e6a483960cdf8c570f97317c8d268c9551505545446b5d08221ee5af891464"
+    },
+    {
+      "path": "code/backend/accounts/services.py",
+      "bytes": 21199,
+      "sha256": "9c94262e920f441487b7add77e533ecc0fbcec37a0fccd625181573c105fcc88"
+    },
+    {
+      "path": "code/backend/accounts/test_account_flow.py",
+      "bytes": 13098,
+      "sha256": "bce813434325eb4001ea689940af8b6b01df4de38654931491cab43001aa17f8"
+    },
+    {
+      "path": "code/backend/accounts/views.py",
+      "bytes": 10171,
+      "sha256": "7652397df542e74d3a843d335de6aa5a2c9f0c5473be6b86166c7504b3c4a00a"
+    },
+    {
+      "path": "code/backend/check_environment.py",
+      "bytes": 4391,
+      "sha256": "c09c280a591f286eb967ac4e17bbe578e29390276925e6c10386b968a55f1c0c"
+    },
+    {
+      "path": "code/backend/config/settings.py",
+      "bytes": 8114,
+      "sha256": "aafdf740753a2f8a8089acfa7d369695c47aec4f7b2793e7ee4b98cb16eea878"
+    },
+    {
+      "path": "code/backend/config/urls.py",
+      "bytes": 1607,
+      "sha256": "39bd6d868ab575fd8652a62124671cdaeea2ff2bd413f8d6e1bc4cd81f7ed6d4"
+    },
+    {
+      "path": "code/backend/scripts/setup_local.py",
+      "bytes": 5724,
+      "sha256": "180c32d991b82936079fc7e6e5f04cb3036aeb576bec645ad517452861a03aed"
+    },
+    {
+      "path": "code/frontend/src/auth-ui.css",
+      "bytes": 8565,
+      "sha256": "16d216b25367cf2d635649246a884a2110e389d0020f5e815a6763a333e7c3ba"
+    },
+    {
+      "path": "code/frontend/src/auth-ui.js",
+      "bytes": 1401,
+      "sha256": "9e58b58c09a443c465bfd0d75a4b252292cc55d4159301d265c4a56c85a18321"
+    },
+    {
+      "path": "code/frontend/src/components/AuthLocalHelp.vue",
+      "bytes": 647,
+      "sha256": "1e5eb18f54eeb079c1fd93c27e658ec1e6e27a9afdae9b7e348fa838dc1716b8"
+    },
+    {
+      "path": "code/frontend/src/components/ErrorNotice.vue",
+      "bytes": 973,
+      "sha256": "12e27e99294d357be54f60dfe98534121fc7115c218a9a7e818d23127967a3f5"
+    },
+    {
+      "path": "code/frontend/src/components/PageOutlet.vue",
+      "bytes": 641,
+      "sha256": "6fc65fe4dab411efe42d27ba7d1f80271a3f263bde5cf376afe9e614884d529f"
+    },
+    {
+      "path": "code/frontend/src/components/WorkspaceAi.vue",
+      "bytes": 3413,
+      "sha256": "29a20727021e6f19bdce98695163e43a0ddd20b69115639c8f5da3bd68d3286a"
+    },
+    {
+      "path": "code/frontend/src/views/AuthView.vue",
+      "bytes": 14047,
+      "sha256": "7634316e2d66416492e88fa77519c719bafe5fc52cb2173bbfc1a48a5a833023"
+    },
+    {
+      "path": "code/frontend/src/views/WorkspaceReportView.vue",
+      "bytes": 28118,
+      "sha256": "297f8b362b7f8c127931dab92b4e8837e0d69513891dc2e19baa7c6003a37844"
+    },
+    {
+      "path": "code/frontend/src/workspace-reference.css",
+      "bytes": 24194,
+      "sha256": "6708412280935f5598c5f017da8ef3f5a2d7efb032357d8c9d5423a6ba669f63"
+    },
+    {
+      "path": "code/frontend/tests/auth-ui.test.js",
+      "bytes": 2801,
+      "sha256": "d3e6c3f7ff12a8dff5c2e0059b793344d0baaa9470e6e4c32e75b8ad6807403e"
+    },
+    {
+      "path": "docs/archive/PANDUAN_RUNNING_20261024.md",
+      "bytes": 30045,
+      "sha256": "9d6fc51e7e0afa95a5b01cfdbab93268df4e97669648b158fa2bc185cf39e554"
+    },
+    {
+      "path": "docs/backend/frontend-handoff.md",
+      "bytes": 8473,
+      "sha256": "c6a915108ae9531483e415b72c8f1d9303922e6bc7c12e39a03a61f0164f30dc"
+    },
+    {
+      "path": "docs/backend/openapi.json",
+      "bytes": 226565,
+      "sha256": "fe03971900cb2a25794be0c1636944944e08c823d76cd0731a2fc69173aada89"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/HASIL_VERIFIKASI.md",
+      "bytes": 5992,
+      "sha256": "4680e6609aa4c5709e8f3bfc6a07b9a27bf331dce70f18dee25d31bdcbdd2bb2"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/KONTRAK_AKUN.md",
+      "bytes": 5851,
+      "sha256": "4f39af369eccfaa07805f175260eb9e72380edf2595ccc92fa6aee4b65ae1f1b"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/README.md",
+      "bytes": 2668,
+      "sha256": "34fb4572d85b9500a54ee6f2988ffcbfc277d75bd0989b798f970ef3957787a8"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/bukti/account-tests.txt",
+      "bytes": 662,
+      "sha256": "7860ffe8439136846bcc94e8b892c936e725a0abd24f1015c7a1bc8f38ef2801"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/bukti/browser-motion-result.json",
+      "bytes": 999,
+      "sha256": "d7b0cdcabf2bc52fb3e5563f6009ef38bac6e498845e7b4994bc3c96a4b84939"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/bukti/browser-result.json",
+      "bytes": 4021,
+      "sha256": "2a2b6920ee40c1eea5355feb5140b44c687429138e0b8c4065c94db56966fe32"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/bukti/django-check.txt",
+      "bytes": 48,
+      "sha256": "1e3e63f221bde88816c4a4ef7367691607b20cc1d194028a02ec9ae0586cf9b1"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/bukti/frontend-build.txt",
+      "bytes": 3960,
+      "sha256": "0f893040f9eff04b3f65e99055876b7f5a12af89a4b77407634d884ccfe03504"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/bukti/frontend-tests.txt",
+      "bytes": 10445,
+      "sha256": "dc7ae938a321588673660ad37dc06d3c11cf0a28835437cde128f835c4825633"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/bukti/migration-check.txt",
+      "bytes": 20,
+      "sha256": "a2bfa7b376c38062f77ce2b1e703876aaa04662f96355cdf5dc9d0d075302b05"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/bukti/native-152.json",
+      "bytes": 2020,
+      "sha256": "b717b583d7e805db5fac9fedf459970523260763c62a2818f34d6bcbb7cfb25d"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/bukti/native-152.txt",
+      "bytes": 30183,
+      "sha256": "77d4cce6fdce5333758be3f96289da1a27b4ca96b6bac84bf9be3589da26b360"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/bukti/operator-inspection-1440-light.png",
+      "bytes": 319996,
+      "sha256": "fd742c3b6ec47365ff1cb8156c09918e28a53aee4b8bc9d41be7017ec7e2edde"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/bukti/operator-inspection-390-dark.png",
+      "bytes": 237735,
+      "sha256": "f5a1235730b401561bb4c8ed3af83b1bec48bd590f77595e3399afb8c996b2aa"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/bukti/register-1440-dark.png",
+      "bytes": 520689,
+      "sha256": "d5090ea9948b043c108c6465a81eefb93774e5e96a5d766798f36df3dbb08eb3"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/bukti/setup-tests.txt",
+      "bytes": 3722,
+      "sha256": "3ba04739e378847930fd85a04f7807bc2e6af5a7b70ac33af8a9bdfb325cf4a9"
+    },
+    {
+      "path": "docs/slr15/revisi-20261113/bukti/verify-email-390-light.png",
+      "bytes": 44171,
+      "sha256": "339c01d0fd16f96bf88806c2f0396f9f1658c101578d17ee390dd7f31b667e3e"
+    },
+    {
+      "path": "tools/setup_silar.py",
+      "bytes": 2761,
+      "sha256": "14711c6e1ca8497f77e30860b6d93f95cb68d1ee0828d2a0ad232443494a3958"
+    },
+    {
+      "path": "tools/setup_slr10.py",
+      "bytes": 6100,
+      "sha256": "558c22bdc0497dc56dda8882bbf97a752afb15b3e1db0141e0dd84164b946c54"
+    },
+    {
+      "path": "tools/tests/test_setup_silar.py",
+      "bytes": 5763,
+      "sha256": "3fefbd6ea35fee0e0e30c1719647cb500d0b0369553cb9216523bff66aa90c5a"
+    }
+  ],
+  "checks": {
+    "native_slr14_tests": 152,
+    "account_tests": 51,
+    "setup_tests": 25,
+    "frontend_tests": 111,
+    "frontend_build": "PASSED",
+    "browser_reduced_motion": {
+      "layout_cases": 91,
+      "flows": 3,
+      "page_errors": 0
+    },
+    "browser_normal_motion": {
+      "layout_cases": 11,
+      "flows": 3,
+      "page_errors": 0
+    },
+    "external_email_sent": false,
+    "live_ai_inference_exercised": false
+  }
+}

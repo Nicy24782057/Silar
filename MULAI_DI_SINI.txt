@@ -1,44 +1,39 @@
-SILAR SLR14 — PENUNTASAN DOKUMENTASI DAN VERIFIKASI
-30 Oktober 2026
+SILAR — REVISI TEMUAN SLR15, 13 NOVEMBER 2026
 
-BASE
-Paket tambahan untuk repository yang sudah memuat commit main:
-e0dc88956695170706ce53c2dc53c9086c8f727a
+Panduan utama: PANDUAN_RUNNING.md.
+Catatan kontrak dan bukti: docs/slr15/revisi-20261113/README.md.
 
-ISI
-- Memperbarui README dan panduan publikasi mengikuti alur Operator terbaru.
-- Menjelaskan beda UI, integrasi API dengan klien uji, dan inferensi model asli.
-- Menambah opsi verify_slr14.py --include-pipeline-integration:
-  143 tes native + 9 integrasi API/pipeline = 152 tes pada database uji terpisah.
-- Memeriksa identitas proses OS sebelum database uji dibuat dalam scope gabungan.
-- Bukti 17 tes guard lulus serta pemeriksaan native yang tetap BLOCKED.
+INSTALASI BARU
+1. Siapkan Python 3.12, PostgreSQL 16 yang berjalan, Git, Node/npm.
+2. Dari folder utama, jalankan SETUP_SILAR.bat atau:
+   py -3.12 tools/setup_silar.py
+3. Masukkan port PostgreSQL 16 yang benar. Paket AI dan frontend ikut dipasang.
+4. Ikuti panduan penyiapan aset model dan SMTP. Email berkas tidak masuk Gmail.
+5. Jalankan backend dan frontend dalam dua terminal sesuai panduan utama.
 
-PASANG
-1. Hentikan backend pada clone yang sudah memakai revisi SLR14 terbaru.
-2. Ekstrak paket ke folder sementara. Gabungkan berkas sesuai path, termasuk
-   code/backend dan docs/slr14 serta kedua panduan root. Jangan mengganti
-   seluruh folder proyek. Pertahankan .env, database, venv dan model lokal.
-3. Alternatif Git: jalankan git apply --check terhadap patch pada base yang
-   sesuai, kemudian git apply. Pilih pemasangan berkas ATAU patch.
-4. Dari code/backend pada PowerShell, gunakan venv aplikasi yang sudah dipakai:
+MEMASANG PAKET REVISI INI PADA CLONE YANG SUDAH ADA
+Dasar paket adalah main 7af81c8e448e12eead2b54a4e6aad72b9e2a781e.
+Hentikan backend/frontend. Ekstrak paket ke folder sementara, lalu gabungkan
+berkas mengikuti path. Pertahankan .env, venv, database, media dan aset model.
+Alternatifnya gunakan patch dengan git apply --check lalu git apply.
+Gunakan salah satu cara, tidak perlu menimpa file dan menerapkan patch sekaligus.
 
-   .\.venv\Scripts\python.exe verify_slr14.py --include-pipeline-integration
+Jika paket aplikasi sudah lengkap, jalankan dari code/backend:
+.\.venv\Scripts\python.exe manage.py migrate
+.\.venv\Scripts\python.exe manage.py check
+.\.venv\Scripts\python.exe verify_slr14.py --include-pipeline-integration
+.\.venv\Scripts\python.exe manage.py test accounts.tests accounts.test_account_flow --settings=config.test_settings
 
-5. Tunggu hasil. Lokasi JSON tercetak di terminal dan berada di
-   docs/slr14/hasil-postgresql/. Bagikan JSON untuk memeriksa hasil sebenarnya.
+Migration baru: accounts.0002_emailotp_activation_auth_version_and_more.
+Dari code/frontend: npm.cmd ci, npm.cmd test, npm.cmd run build.
+Jika dependensi belum lengkap, gunakan setup lengkap dari folder utama.
 
-BATAS HASIL
-PASSED mengharuskan PostgreSQL 16, migration/trigger/lock asli dan seluruh tes
-lulus tanpa skip atau expected failure. FAILED/BLOCKED belum lulus penerimaan.
-Model/provider pada sembilan tes integrasi adalah TEST DOUBLES. Perintah ini
-bukan uji kualitas atau inferensi model AI asli dan tidak memanggil Gemini asli.
-Inferensi nyata/end-to-end tetap memerlukan aset dan lingkungan aplikasi tim.
+Email/kode: satu tautan Verifikasi akun pada login. Reporter langsung menuju
+formulir kode setelah mendaftar. Operator membuat kata sandi setelah kode benar.
+Kirim ulang membatalkan kode dan bukti aktivasi lama. OTP bukan login otomatis.
+Sandi baru minimum 15 karakter; aturan dibaca di formulir dan diperiksa backend.
+Operator: Pemeriksaan, Tindak lanjut, Keputusan. Riwayat melalui tombol tersendiri.
+Informasi publik tetap mengikuti sembilan field yang diizinkan.
 
-HASIL DI LINGKUNGAN PENGERJAAN
-17 tes guard verifier lulus. Native dasar 143 dan gabungan 152 ditemukan,
-0 dijalankan; status BLOCKED karena PostgreSQL tidak tersedia. Proses OS QA
-tidak dapat dibuktikan dan aset model default tidak ada. Status tidak dipaksa
-menjadi lulus. Runtime proses dan sembilan tes integrasi asli tidak diubah.
-
-Tidak ada perubahan frontend, migration, model, kontrak API, atau bobot AI.
-Lihat docs/slr14/PENUNTASAN_VERIFIKASI_20261030.md untuk rincian.
+Paket tidak menyertakan kredensial, .env, bobot model, media privat, venv,
+node_modules atau hasil build dist. Belum ada commit/push/deploy dari penyusun.

@@ -5,6 +5,8 @@ from core.views import health,AuditListView
 urlpatterns=[
     path('health/',health,name='health'),
     path('api/v1/auth/csrf/',a.CSRFView.as_view()),
+    path('api/v1/auth/account-policy/',a.AccountPolicyView.as_view()),
+    path('api/v1/auth/account/verify/',a.AccountVerifyView.as_view()),
     path('api/v1/auth/register/',a.RegisterView.as_view()),
     path('api/v1/auth/otp/request/',a.OTPRequestView.as_view()),
     path('api/v1/auth/otp/verify/',a.OTPVerifyView.as_view()),
