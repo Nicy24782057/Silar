@@ -1,0 +1,136 @@
+{
+  "scope": "SLR14",
+  "review_findings_from": "SLR15",
+  "date": "2026-11-13",
+  "type": "incremental-operator-flow-update-after-account-and-ui-packages",
+  "requires_packages": [
+    {
+      "name": "SILAR_SLR15.zip",
+      "sha256": "51cc0cc1f53818bf478f4b3b8b9837d236cf4352c0019b60ac2029ea3ab1b3d7"
+    },
+    {
+      "name": "SILAR_SLR14_revisi_UI_13Nov2026.zip",
+      "sha256": "887aea078bd349879f49a7ecd11ce921d00c576430340b9753a892b3ed70a707"
+    }
+  ],
+  "base_commit": "7af81c8e448e12eead2b54a4e6aad72b9e2a781e",
+  "excluded_from_hash_list": [
+    "docs/slr14/revisi-alur-operator-20261113/DAFTAR_PERUBAHAN.json",
+    "PERUBAHAN_SLR14_OPERATOR.patch"
+  ],
+  "backend_source_changed": false,
+  "new_backend_statuses": false,
+  "agent_committed": false,
+  "agent_pushed": false,
+  "files": [
+    {
+      "path": "MULAI_DI_SINI.txt",
+      "bytes": 2242,
+      "sha256": "f3f0dc5d0c7d923cd21439a7bd195632a1e596c58319e7feb6b925dedd806ad1",
+      "previous_sha256": "874f3e423f08640c9893f44955c01b78026fd1c3a8cab91abe7c117de5118507",
+      "baseline_source": "previous_ui"
+    },
+    {
+      "path": "PANDUAN_RUNNING.md",
+      "bytes": 12220,
+      "sha256": "00dccedabbbdbf217b4814ef7f2b8e86f72fdd687f5d364589285094a19cc842",
+      "previous_sha256": "776f0134c4e82ad8380f122e24097d06bf7157a52dffc6af13036b6e20e4b6e5",
+      "baseline_source": "previous_ui"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2743,
+      "sha256": "5bd4f773158be38fcd615de817f6154c02f31b8ba9b285c66752b88f2c525fbd",
+      "previous_sha256": "f5df37431ffc608bda67b5a1698fd028cb8ee234f58e558df579889b7bff307b",
+      "baseline_source": "previous_ui"
+    },
+    {
+      "path": "code/frontend/src/components/PublicationPanel.vue",
+      "bytes": 23865,
+      "sha256": "098f07496f5cfc862757a62d0c14e919c66842701b4fa72b7236b2bf0a748552",
+      "previous_sha256": "8370882e675904496d003514f6a59d0b28ee04e24570890f5038407947cdcce6",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/src/operator-flow.js",
+      "bytes": 4883,
+      "sha256": "c77acd48acfa4640f7d582b69ccc31b33e083a632bee50e4c5ee9fa5253fafef",
+      "previous_sha256": "31351ee039f12083248fbf0d74c8fe33798dddf16066fd35b49f4bd5a4b5b5c5",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/src/views/WorkspaceReportView.vue",
+      "bytes": 31593,
+      "sha256": "1b6d9476dcccaa3bb6640bacac7d198a4623a2ab2380436db788ea889fa615a4",
+      "previous_sha256": "297f8b362b7f8c127931dab92b4e8837e0d69513891dc2e19baa7c6003a37844",
+      "baseline_source": "previous_account"
+    },
+    {
+      "path": "code/frontend/src/workspace-reference.css",
+      "bytes": 25311,
+      "sha256": "e6b02a8126a49e7f0cb0ad72caf38e417bc582c413297ad12d8e5dbfb01f46c8",
+      "previous_sha256": "6708412280935f5598c5f017da8ef3f5a2d7efb032357d8c9d5423a6ba669f63",
+      "baseline_source": "previous_account"
+    },
+    {
+      "path": "code/frontend/tests/operator-flow.test.js",
+      "bytes": 8302,
+      "sha256": "3da6a72ded6812d4b6ed0e32b63975449626497db1c48026019f5ef35a10dd14",
+      "previous_sha256": "47025e54093adb2723e0f0d0cc96d5a3f837d241d09cf6589c5341a58ac7315e",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "docs/slr14/README.md",
+      "bytes": 11009,
+      "sha256": "fd53350a96b4aefe8ec021167d751e79d53fa0f0e35d60a5580c9810895499ad",
+      "previous_sha256": "885b641018777b0585586b7672811707dfc94602d51cb4d9449363c591bad776",
+      "baseline_source": "previous_ui"
+    },
+    {
+      "path": "docs/slr14/revisi-alur-operator-20261113/README.md",
+      "bytes": 7073,
+      "sha256": "2f227d7465860350c37f5c42ec2a09ab72f9d7b3e3d3877a2a36e1f22052b29b",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-alur-operator-20261113/bukti/backend-tests.txt",
+      "bytes": 470,
+      "sha256": "ba710a11c5723e97011bbd4c4669107114a25dc4b80a6f406ce80c1f67038d7e",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-alur-operator-20261113/bukti/browser-result.json",
+      "bytes": 4430,
+      "sha256": "3fc506f4df7f836323ab0006d605a6cf624fdcbade5ed9ce7d0c0d241f8d9130",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-alur-operator-20261113/bukti/frontend-build.txt",
+      "bytes": 3960,
+      "sha256": "68c0638308b0ca06502296ec952a549f0d5b82582aef422ac9a31aa1fa64d999",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-alur-operator-20261113/bukti/frontend-tests.txt",
+      "bytes": 10787,
+      "sha256": "2cd16640ae430b833aa3577ee8da3c5f58946f09ab8e7f60999bd9ae45fca86f",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    }
+  ],
+  "checks": {
+    "frontend_tests": 114,
+    "frontend_build": "PASSED",
+    "targeted_backend_tests": 35,
+    "database": "PostgreSQL 16",
+    "browser_layout_cases": 64,
+    "browser_flow_checks": 12,
+    "page_errors": 0,
+    "external_email_sent": false,
+    "live_ai_inference_exercised": false
+  }
+}

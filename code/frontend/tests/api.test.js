@@ -50,3 +50,14 @@ test('Logout 204 tidak mencoba membaca JSON', async () => {
   const {api} = await client(async () => new Response(null, {status: 204}));
   assert.equal(await api('auth/logout/', {method: 'POST', body: {}}), null);
 });
+
+test('Batas pemeriksaan sesi meneruskan pembatalan ke CSRF dan refresh tanpa retry POST',async()=>{
+  const controller=new AbortController();const calls=[];
+  const {refresh}=await client(async(path,options)=>{
+    calls.push(path);assert.equal(options.signal,controller.signal);
+    if(path.endsWith('csrf/'))return new Response(JSON.stringify({data:{csrf_token:'qa-csrf'}}));
+    controller.abort();throw new DOMException('Aborted','AbortError');
+  });
+  await assert.rejects(refresh({signal:controller.signal}),error=>error.name==='AbortError');
+  assert.equal(calls.length,2);
+});

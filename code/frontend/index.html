@@ -8,7 +8,21 @@
     <link rel="icon" href="/brand/silar-logo.png" type="image/png">
     <link rel="apple-touch-icon" href="/icons/icon-192.png">
     <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="stylesheet" href="/src/startup.css">
     <title>SILAR — Pelaporan Kejadian</title>
   </head>
-  <body><div id="app"></div><script type="module" src="/src/main.js"></script></body>
+  <body>
+    <div id="app-startup" role="status" aria-live="polite" aria-label="Memuat SILAR">
+      <div class="startup-content">
+        <img src="/brand/silar-reference.svg" alt=""><strong>SILAR</strong>
+        <p class="startup-tagline">Merangkai informasi.<br>Memahami situasi.</p>
+        <span class="startup-spinner" aria-hidden="true"></span><p id="startup-message">Menyiapkan aplikasi…</p>
+        <button id="startup-retry" type="button" hidden>Muat ulang</button>
+      </div>
+      <p class="startup-footer">Sistem Inteligensi Laporan<br>Adaptif dan Responsif</p>
+    </div>
+    <script>performance.mark('silar-startup-visible');</script>
+    <noscript><style>#app-startup{display:none!important}</style><p>Aktifkan JavaScript untuk membuka aplikasi SILAR.</p></noscript>
+    <div id="app"></div><script type="module" src="/src/main.js"></script>
+  </body>
 </html>

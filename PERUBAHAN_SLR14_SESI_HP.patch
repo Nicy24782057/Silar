@@ -1,0 +1,1344 @@
+diff --git a/MULAI_DI_SINI.txt b/MULAI_DI_SINI.txt
+index 0eef4515919e8d651545135db19868204d5c784b..95c95aef1e151159f44ccbee1f446973ff22e661 100644
+--- a/MULAI_DI_SINI.txt
++++ b/MULAI_DI_SINI.txt
+@@ -1,44 +1,45 @@
+-SILAR — SLR14, PAKET LANJUTAN ALUR OPERATOR, 13 NOVEMBER 2026
++SILAR — SLR14, PAKET LANJUTAN SESI DAN TAMPILAN HP, 13 NOVEMBER 2026
+ 
+-Paket ini melanjutkan paket akun/Operator/setup SILAR_SLR15.zip dan revisi UI
+-SILAR_SLR14_revisi_UI_13Nov2026.zip yang sebelumnya telah diterapkan.
+-Implementasi tetap pada SLR14; SLR15 mencatat pengujian dan temuannya.
+-Panduan utama: PANDUAN_RUNNING.md.
+-Catatan revisi: docs/slr14/revisi-alur-operator-20261113/README.md.
++Terapkan pada clone yang sudah berisi paket akun/setup, revisi UI, dan
++SILAR_SLR14_alur_operator_13Nov2026.zip. Ini tambahan frontend/dokumentasi.
++Implementasi tetap SLR14. SLR15 memuat kegiatan pengujian dan temuannya.
+ 
+ CARA MEMASANG
+-1. Hentikan server, lalu ekstrak ZIP ini ke folder sementara.
+-2. Gabungkan berkas mengikuti path yang sama pada clone Silar Anda.
+-   Gunakan berkas yang disertakan; tidak perlu mengganti seluruh folder proyek.
++1. Hentikan frontend. Ekstrak ZIP ini ke folder sementara.
++2. Gabungkan berkas sesuai path ke clone Silar. Jangan mengganti seluruh folder.
+ 3. Dari code/frontend, jalankan:
+    npm.cmd test
+    npm.cmd run build
+    npm.cmd run dev
+-4. Buka ulang aplikasi. PWA yang terpasang perlu menerima pembaruan build
+-   melalui Aplikasi & Koneksi, kemudian dibuka kembali.
+-
+-Revisi alur ini hanya mengubah frontend, tes frontend dan dokumentasi.
+-Tidak ada dependensi, endpoint, migration atau status backend baru.
+-Konfigurasi .env, database, venv dan aset model lokal tetap dipakai.
+-
+-PERUBAHAN UNTUK DIREVIEW
+-- Urutan: Pemeriksaan -> Keputusan penayangan -> Penanganan & penyelesaian.
+-- Review tersimpan otomatis membuka Keputusan penayangan.
+-- Keputusan internal tersimpan atau publikasi terbit otomatis membuka Penanganan.
+-- Alasan publikasi berada pada formulir publikasi; syarat tombol terlihat jelas.
+-- Tindak lanjut opsional; penutupan tetap aksi eksplisit dengan syarat yang ada.
+-- Respons terputus diperiksa melalui hasil tersimpan sebelum otomatis berpindah.
+-
+-NOTIFIKASI PENUTUPAN
+-Reporter menerima notifikasi di aplikasi: "Penanganan laporan telah ditutup."
+-Catatan penutupan tetap internal. Reporter belum menerima alasan penutupan;
+-menampilkannya memerlukan kesepakatan dan perubahan kontrak tersendiri.
+-
+-BATAS PAKET
+-Status backend, aturan akses, alur sesi, pengiriman email, dan runtime AI tetap
+-mengikuti implementasi sebelumnya. Inferensi AI asli dan SMTP eksternal tidak
+-dibuktikan oleh pengujian alur ini. Tidak ada commit, push atau deployment.
+-
+-Manifest: docs/slr14/revisi-alur-operator-20261113/DAFTAR_PERUBAHAN.json.
+-Patch alternatif: PERUBAHAN_SLR14_OPERATOR.patch. Pilih salin berkas ATAU
+-terapkan patch; tidak perlu keduanya. Jalankan git apply --check dahulu.
++4. Buka ulang browser. Pada PWA terpasang, ambil pembaruan build melalui
++   Aplikasi & Koneksi lalu buka kembali. Backend tetap dijalankan seperti biasa.
++
++Tidak ada dependency, migration, endpoint atau status backend baru.
++Konfigurasi .env, database, venv dan model lokal tetap digunakan.
++
++YANG BERUBAH
++- Tahap dan tab aktif berwarna biru dengan tulisan putih mengikuti Buat Laporan.
++- Landing/Portal Publik menampilkan Buka aplikasi ketika sesi masih valid.
++- Membuka login dengan sesi aktif langsung kembali ke ruang sesuai peran.
++- HP/browser/PWA menampilkan logo dan loading selama pembukaan dokumen aplikasi.
++- Logo SILAR berada di tengah, di atas formulir akun HP.
++
++YANG PERLU DICOBA
++1. Login, buka landing, klik Buka aplikasi. Tidak perlu memasukkan sandi lagi.
++2. Muat ulang landing atau buka aplikasi kembali pada browser yang sama.
++3. Periksa Reporter, Operator, Admin, mode terang/gelap dan layar HP.
++4. Tekan Keluar lalu buka ruang privat. Formulir login harus muncul kembali.
++5. Coba alur laporan dan pastikan panel biru mengikuti tahap/tab yang aktif.
++
++Sesi harus masih berlaku dan cookie browser tersedia. Login ulang tetap
++berlaku setelah logout, sesi berakhir, atau data browser dihapus. Jika koneksi
++mengganggu pemeriksaan sesi, gunakan Periksa sesi lagi pada landing.
++
++Panduan: PANDUAN_RUNNING.md.
++Catatan/bukti: docs/slr14/revisi-sesi-mobile-20261113/README.md.
++Manifest: docs/slr14/revisi-sesi-mobile-20261113/DAFTAR_PERUBAHAN.json.
++Patch alternatif: PERUBAHAN_SLR14_SESI_HP.patch.
++Pilih salin berkas ATAU git apply, jangan kedua cara sekaligus.
++Jalankan git apply --check dahulu sebelum menerapkan patch.
++
++Tidak ada commit, push, deployment atau perubahan board oleh penyusun.
+diff --git a/PANDUAN_RUNNING.md b/PANDUAN_RUNNING.md
+index 695febdd6401b166148a1ad24e627ae656a94344..7b5629079e5dd6283040495056e4f311f492854e 100644
+--- a/PANDUAN_RUNNING.md
++++ b/PANDUAN_RUNNING.md
+@@ -138,6 +138,16 @@ Publikasi tetap memerlukan **Konfirmasi isi publikasi → Publikasikan sekarang*
+ 
+ Saat laporan ditutup, Reporter menerima notifikasi di aplikasi: **Penanganan laporan telah ditutup.** Catatan penutupan tetap internal dan tidak dimuat dalam notifikasi maupun respons rincian milik Reporter. Revisi ini tidak menambahkan alasan penutupan yang dapat dibaca Reporter.
+ 
++### Kembali ke landing page dan membuka melalui HP
++
++Kembali ke landing page atau Portal Publik tidak mengeluarkan akun. Jika sesi pada browser masih valid, navigasi dan ajakan utama menampilkan **Buka aplikasi**. Reporter kembali ke Laporan Saya, sedangkan Operator/Admin kembali ke dashboard. Membuka alamat login dengan sesi aktif langsung menuju ruang tersebut atau tujuan lokal yang sebelumnya diminta. Cookie sesi tetap mengikuti masa berlaku dan aturan backend yang sudah ada. Tombol Keluar tetap mengakhiri sesi.
++
++Pada layar HP hingga lebar 640 piksel, pembukaan dokumen aplikasi menampilkan logo SILAR dan loading selama penyiapan antarmuka serta pemeriksaan sesi. Ini berlaku pada browser dan PWA. Tidak ada penundaan buatan atau persentase rekaan. URL ruang privat yang dibuka tanpa sesi valid menuju login, sedangkan sesi valid langsung membuka ruangnya. Halaman landing dan Portal Publik tetap dapat diakses tanpa akun. Navigasi di dalam aplikasi tidak memutar ulang loading pembuka.
++
++Logo SILAR berada di tengah, di atas formulir akun HP. Tampilan dua panel desktop/tablet tetap digunakan. Tahap aktif dan tab pilihan aktif memakai warna biru dengan tulisan putih mengikuti Buat Laporan. Warna status laporan dan aturan tahap tetap mengikuti fungsinya.
++
++Jika pemeriksaan sesi terganggu koneksi, landing tetap dapat dibaca. Gunakan **Periksa sesi lagi** untuk mencoba memulihkan cookie yang masih berlaku. Pemeriksaan awal berhenti setelah 15 detik bila tidak ada jawaban dan menampilkan petunjuk. Ini batas waktu permintaan awal, bukan masa berlaku akun atau sesi.
++
+ ## 7. Memasang pembaruan kode
+ 
+ Hentikan kedua server, gabungkan pembaruan sesuai path, lalu jalankan setup lengkap pada langkah 2. Pertahankan `.env`, media privat, database, dan model yang sudah tersedia.
+diff --git a/README.md b/README.md
+index ec6c6cea0302db135191d7b8a2003d3a7a20d896..c97a474758a57197e9d3c60163bedb958f303b6e 100644
+--- a/README.md
++++ b/README.md
+@@ -21,6 +21,8 @@ Revisi implementasi **SLR14** dari temuan pengujian SLR15 mencakup satu halaman
+ 
+ Urutan Operator terbaru adalah **Pemeriksaan → Keputusan penayangan → Penanganan & penyelesaian**. Review, keputusan internal dan publikasi yang sudah terbaca tersimpan membuka tahap berikutnya secara otomatis. Tindak lanjut opsional; penutupan tetap tindakan tersendiri dengan aturan status yang sudah ada. Rincian terdapat pada [revisi alur Operator SLR14](docs/slr14/revisi-alur-operator-20261113/README.md).
+ 
++Revisi lanjutan menyeragamkan panel tahap/tab aktif berwarna biru, memulihkan sesi saat kembali ke landing page, serta menambahkan loading pembuka dan logo akun di HP. Pengguna dengan sesi valid memakai **Buka aplikasi** tanpa login ulang. Baca [revisi sesi dan tampilan HP SLR14](docs/slr14/revisi-sesi-mobile-20261113/README.md).
++
+ ## Acuan proyek
+ 
+ - [Acuan Teknis SILAR v0.3](docs/architecture/SILAR_Technical_Reference.docx), termasuk Lampiran A.
+diff --git a/code/frontend/index.html b/code/frontend/index.html
+index fd47d53d1875fdc9408e981910cb6361577d89bd..8d46d2807c1370bcc76b47fc8d29be37926ed6a9 100644
+--- a/code/frontend/index.html
++++ b/code/frontend/index.html
+@@ -8,7 +8,16 @@
+     <link rel="icon" href="/brand/silar-logo.png" type="image/png">
+     <link rel="apple-touch-icon" href="/icons/icon-192.png">
+     <link rel="manifest" href="/manifest.webmanifest">
++    <link rel="stylesheet" href="/src/startup.css">
+     <title>SILAR — Pelaporan Kejadian</title>
+   </head>
+-  <body><div id="app"></div><script type="module" src="/src/main.js"></script></body>
++  <body>
++    <div id="app-startup" role="status" aria-live="polite" aria-label="Memuat SILAR">
++      <img src="/brand/silar-reference.svg" alt=""><strong>SILAR</strong>
++      <span class="startup-spinner" aria-hidden="true"></span><p id="startup-message">Menyiapkan aplikasi…</p>
++      <button id="startup-retry" type="button" hidden>Muat ulang</button>
++    </div>
++    <noscript><style>#app-startup{display:none!important}</style><p>Aktifkan JavaScript untuk membuka aplikasi SILAR.</p></noscript>
++    <div id="app"></div><script type="module" src="/src/main.js"></script>
++  </body>
+ </html>
+diff --git a/code/frontend/src/account-routing.js b/code/frontend/src/account-routing.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..c9cae9786a7f33ad592ffd42b7f926bda3e47446
+--- /dev/null
++++ b/code/frontend/src/account-routing.js
+@@ -0,0 +1,15 @@
++export function accountHome(user) {
++  return user?.role === 'REPORTER' ? '/reports' :
++    ['OPERATOR', 'ADMIN'].includes(user?.role) ? '/workspace' : '/login';
++}
++
++export function loginDestination(next, user) {
++  const home = accountHome(user);
++  if (typeof next !== 'string' || !next.startsWith('/') || next.startsWith('//') || /[\\\u0000-\u0020]/.test(next)) return home;
++  const base = 'https://silar.invalid';
++  let url;
++  try { url = new URL(next, base); } catch { return home; }
++  const path = url.pathname.replace(/\/+$/, '') || '/';
++  if (url.origin !== base || ['/login', '/register', '/verify-email', '/activate-operator', '/forgot-password', '/reset-password'].includes(path)) return home;
++  return url.pathname + url.search + url.hash;
++}
+diff --git a/code/frontend/src/api.js b/code/frontend/src/api.js
+index bf7a803e9f7b8a57bd8c55365516712ed3577511..6753c1b50c8124cdbe5e4e485f38bdf37598b0c7 100644
+--- a/code/frontend/src/api.js
++++ b/code/frontend/src/api.js
+@@ -57,16 +57,16 @@ async function send(path, options = {}) {
+   catch { throw unreadableResponse(method, response.status); }
+ }
+ 
+-async function getCsrf() {
+-  if (!csrfWork) csrfWork = send('auth/csrf/', {auth:false}).then(result => csrf = result.data.csrf_token).finally(() => csrfWork = null);
++async function getCsrf(signal) {
++  if (!csrfWork) csrfWork = send('auth/csrf/', {auth:false, signal}).then(result => csrf = result.data.csrf_token).finally(() => csrfWork = null);
+   return csrfWork;
+ }
+-export async function authPost(path, body) {
+-  const token = await getCsrf();
+-  return send('auth/' + path, {method:'POST', auth:false, body, csrfToken:token});
++export async function authPost(path, body, {signal} = {}) {
++  const token = await getCsrf(signal);
++  return send('auth/' + path, {method:'POST', auth:false, body, csrfToken:token, signal});
+ }
+-export async function refresh() {
+-  if (!refreshWork) refreshWork = authPost('refresh/', {}).then(result => { access = result.data.access; return result; }).finally(() => refreshWork = null);
++export async function refresh({signal} = {}) {
++  if (!refreshWork) refreshWork = authPost('refresh/', {}, {signal}).then(result => { access = result.data.access; return result; }).finally(() => refreshWork = null);
+   return refreshWork;
+ }
+ export async function login(email, password) {
+diff --git a/code/frontend/src/auth-ui.css b/code/frontend/src/auth-ui.css
+index f10440a23be469a009441751170b36c56ac56c76..edeacba81b273a8e1757c73e0147164310fef266 100644
+--- a/code/frontend/src/auth-ui.css
++++ b/code/frontend/src/auth-ui.css
+@@ -8,6 +8,7 @@
+ .auth-toolbar{position:absolute;inset:16px 22px auto;display:flex;align-items:center;justify-content:flex-end;gap:12px}
+ .auth-theme.quiet{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:7px 10px;border:0;font-size:11px;font-weight:500;color:var(--muted);background:transparent}
+ .auth-mobile-brand{display:none}
++.auth-mobile-logo{display:none}
+ .auth-content{width:100%;max-width:468px;min-width:0}
+ .auth-heading{text-align:center;margin-bottom:32px}
+ .auth-heading h1{font-size:36px;line-height:1.3;letter-spacing:-.8px;margin:0 0 10px;font-weight:700;outline:none;overflow-wrap:anywhere}
+@@ -82,3 +83,10 @@
+   .auth-navigation{gap:2px;margin-top:15px}.auth-register-note{font-size:11px}.auth-email-steps{gap:20px}
+ }
+ @media(max-width:360px){.auth-panel{padding-inline:20px}.auth-theme.quiet{font-size:10px;padding-inline:5px}.auth-heading h1{font-size:28px}.auth-subtitle{font-size:11.5px}.auth-local-help{padding:11px;gap:8px}.auth-email-steps li{gap:10px}.auth-email-steps strong{font-size:12px}.auth-security-note{font-size:10px}.auth-content .auth-code-field input{letter-spacing:.4em}}
++
++@media(max-width:640px){
++ .auth-content>.auth-mobile-logo{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:max-content;margin:0 auto 28px;color:var(--ink);text-decoration:none;font-size:25px;font-weight:800;line-height:1.3;letter-spacing:.3px}
++ .auth-mobile-logo img{display:block;width:64px;height:64px;object-fit:contain}
++ .auth-panel,.auth-two-panel[data-screen=register] .auth-panel,.auth-two-panel[data-screen=verify] .auth-panel{padding-top:80px}
++ .auth-heading h1{font-size:28px}.auth-heading{margin-bottom:28px}
++}
+diff --git a/code/frontend/src/components/AccountActions.vue b/code/frontend/src/components/AccountActions.vue
+new file mode 100644
+index 0000000000000000000000000000000000000000..bacb2fd4df13c79a3b9dc8547a4275305b347034
+--- /dev/null
++++ b/code/frontend/src/components/AccountActions.vue
+@@ -0,0 +1,14 @@
++<script setup>
++import { computed } from 'vue';
++import { session, restoreSession } from '../session';
++import { accountHome } from '../account-routing';
++import AppIcon from './AppIcon.vue';
++defineProps({registerOnly:Boolean});
++const home=computed(()=>accountHome(session.user));
++</script>
++<template>
++ <span v-if="!session.ready" class="account-session-loading" role="status"><AppIcon name="refresh" class="is-spinning" :size="15" />Memeriksa sesi…</span>
++ <RouterLink v-else-if="session.user" class="button primary account-resume" :to="home">Buka aplikasi<AppIcon name="arrow" :size="15" /></RouterLink>
++ <template v-else-if="session.restoreError"><button class="button account-retry" @click="restoreSession({retry:true})">Periksa sesi lagi</button><RouterLink class="button" to="/login">Masuk</RouterLink></template>
++ <template v-else><RouterLink v-if="!registerOnly" class="button" to="/login">Masuk</RouterLink><RouterLink class="button primary" to="/register">Buat akun</RouterLink></template>
++</template>
+diff --git a/code/frontend/src/components/PublicNavigation.vue b/code/frontend/src/components/PublicNavigation.vue
+index eff62cfb6f448abc08428c3a17772435ba5bc998..8fbe7f52e22514575e2819211976d8d0083d2843 100644
+--- a/code/frontend/src/components/PublicNavigation.vue
++++ b/code/frontend/src/components/PublicNavigation.vue
+@@ -3,6 +3,7 @@ import { computed } from 'vue';
+ import { useRoute } from 'vue-router';
+ import { theme, toggleTheme } from '../theme';
+ import AppIcon from './AppIcon.vue';
++import AccountActions from './AccountActions.vue';
+ defineProps({active:{type:String,default:'beranda'}});
+ const route=useRoute();
+ const portal=computed(()=>route.path==='/public');
+@@ -20,8 +21,7 @@ const sections=[['beranda','Beranda'],['alur-pelaporan','Alur pelaporan'],['sena
+     </nav>
+     <div class="landing-account">
+       <button class="quiet landing-theme" :aria-label="theme.mode==='dark'?'Gunakan mode terang':'Gunakan mode gelap'" :aria-pressed="theme.mode==='dark'" @click="toggleTheme"><AppIcon :name="theme.mode==='dark'?'sun':'moon'" :size="18" /></button>
+-      <RouterLink class="button" to="/login">Masuk</RouterLink>
+-      <RouterLink class="button primary" to="/register">Buat akun</RouterLink>
++      <AccountActions />
+     </div>
+   </header>
+ </template>
+diff --git a/code/frontend/src/main.js b/code/frontend/src/main.js
+index 5deec41e80fe420f9a11d38e24471a9863934d4e..124a2055e59a0b539557a4e22aba38c4a999ee9b 100644
+--- a/code/frontend/src/main.js
++++ b/code/frontend/src/main.js
+@@ -2,6 +2,7 @@ import { createApp } from 'vue';
+ import App from './App.vue';
+ import { router } from './router';
+ import { initializeTheme } from './theme';
++import { restoreSession, session } from './session';
+ import './theme.css';
+ import './style.css';
+ import './ui.css';
+@@ -15,8 +16,18 @@ import './report-compose.css';
+ import './page-motion.css';
+ import './workspace-reference.css';
+ import './report-feedback.css';
++import './navigation-ui.css';
+ initializeTheme();
+-createApp(App).use(router).mount('#app');
++const app=createApp(App).use(router);
++router.isReady().then(async()=>{
++  if(matchMedia('(max-width:640px)').matches&&!session.ready)await restoreSession();
++  app.mount('#app');
++  requestAnimationFrame(()=>document.getElementById('app-startup')?.remove());
++}).catch(()=>{
++  const startup=document.getElementById('app-startup');startup?.classList.add('startup-error');startup?.setAttribute('role','alert');
++  document.getElementById('startup-message').textContent='Aplikasi belum dapat dibuka. Periksa koneksi lalu muat ulang.';
++  const retry=document.getElementById('startup-retry');retry.hidden=false;retry.addEventListener('click',()=>location.reload());
++});
+ if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+   window.addEventListener('load', () => { navigator.serviceWorker.register('/sw.js').catch(() => {}); });
+ }
+diff --git a/code/frontend/src/navigation-ui.css b/code/frontend/src/navigation-ui.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..e4bee0f1d893fc80746ac6dde6b7d67f2fd3df83
+--- /dev/null
++++ b/code/frontend/src/navigation-ui.css
+@@ -0,0 +1,26 @@
++/* The Reporter stepper is the shared reference for selected stages and tabs. */
++:root{--selection-fill:var(--hero);--selection-ink:#FFF;--selection-border:#087EA7}
++:root[data-theme=dark]{--selection-fill:#155EBD;--selection-border:#3275D3}
++.compose-page .report-stepper,.workspace-frame .ws-tabs.ws-process-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:0;margin:0 0 10px;border:0;border-radius:0;background:transparent;overflow:visible}
++.compose-page .report-stepper .report-step,.workspace-frame .ws-tabs.ws-process-steps button{display:flex;align-items:center;justify-content:flex-start;gap:12px;width:100%;min-width:0;min-height:76px;padding:14px 13px;border:1px solid var(--line);border-radius:15px;background:var(--panel);color:var(--ink);text-align:left;white-space:normal;opacity:1}
++.compose-page .report-stepper .report-step.unavailable,.workspace-frame .ws-tabs.ws-process-steps button:disabled{color:var(--muted);cursor:not-allowed}
++.compose-page .report-stepper .step-number:not(.complete),.workspace-frame .ws-process-steps .ws-step-number{width:31px;height:31px;background:var(--soft);color:var(--primary);font-size:12px;border:1px solid transparent}
++.compose-page .report-stepper .step-label strong,.workspace-frame .ws-process-steps strong{font-size:13px;font-weight:600;line-height:1.5}
++.compose-page .report-stepper .step-label small,.workspace-frame .ws-process-steps small{font-size:10px;font-weight:400;line-height:1.6;color:var(--muted);margin-top:3px}
++.compose-page .report-stepper .report-step[aria-current=step],.workspace-frame .ws-tabs.ws-process-steps button[aria-current=step]{background:var(--selection-fill);color:var(--selection-ink);border-color:var(--selection-border);opacity:1}
++.compose-page .report-stepper [aria-current=step] .step-number,.workspace-frame .ws-process-steps [aria-current=step] .ws-step-number{background:#FFFFFF2E;color:#FFF;border:1px solid #FFFFFF4D}
++.compose-page .report-stepper [aria-current=step] .step-label small,.workspace-frame .ws-process-steps [aria-current=step] strong,.workspace-frame .ws-process-steps [aria-current=step] small{color:inherit}
++.workspace-frame .ws-tabs button.active:after,.notification-filters>button[aria-pressed=true]:after{content:none;display:none}
++:root[data-theme] :is(.compose-tabs>button[aria-selected=true],.report-readonly-tabs [aria-current=page],.notification-filters>button[aria-pressed=true],.workspace-frame .ws-tabs:not(.ws-process-steps) button.active){background:var(--selection-fill);color:var(--selection-ink);border-color:var(--selection-border);opacity:1}
++.account-session-loading{display:inline-flex;align-items:center;gap:8px;font-size:12px;line-height:1.6;color:var(--muted);min-height:40px}
++.landing-account .account-resume{white-space:nowrap}
++@media(max-width:1100px){.compose-page .report-stepper,.workspace-frame .ws-tabs.ws-process-steps{gap:10px}.compose-page .report-stepper .report-step,.workspace-frame .ws-tabs.ws-process-steps button{gap:9px;padding:12px 10px}}
++@media(max-width:640px){
++ .compose-page .report-stepper,.workspace-frame .ws-tabs.ws-process-steps{gap:8px}
++ .compose-page .report-stepper .report-step,.workspace-frame .ws-tabs.ws-process-steps button{flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px;min-height:96px;padding:12px 10px}
++ .compose-page .report-stepper .step-label strong,.workspace-frame .ws-process-steps strong{font-size:11px;line-height:1.6}
++ .compose-page .report-stepper .step-label small,.workspace-frame .ws-process-steps small{display:none}
++ .compose-page .report-stepper .step-number:not(.complete),.workspace-frame .ws-process-steps .ws-step-number{width:27px;height:27px}
++ .landing-account .account-session-loading{max-width:154px;font-size:11px}
++ .landing-account .account-retry{min-height:40px;font-size:11px}
++}
+diff --git a/code/frontend/src/router.js b/code/frontend/src/router.js
+index 1c5cefc0ddb906e64e10b25492b03ac01aafc00d..f9fc3b28b0035efda447b2aa6751b13d1a6a2970 100644
+--- a/code/frontend/src/router.js
++++ b/code/frontend/src/router.js
+@@ -1,5 +1,6 @@
+ import { createRouter, createWebHistory } from 'vue-router';
+ import { session, restoreSession } from './session';
++import { loginDestination } from './account-routing';
+ import { isStaff, hasPermission, ADMIN_REPORTS_PATH, ADMIN_REPORTS_TITLE } from './workspace';
+ export const router = createRouter({history:createWebHistory(), scrollBehavior(to,from,savedPosition){
+   if(savedPosition)return savedPosition;
+@@ -31,8 +32,9 @@ export const router = createRouter({history:createWebHistory(), scrollBehavior(t
+   {path:'/:pathMatch(.*)*', component:()=>import('./views/NotFoundView.vue')}
+ ]});
+ router.beforeEach(async to => {
+-  if (to.meta.publicLayout) return;
++  if (to.meta.publicLayout) { void restoreSession(); return; }
+   await restoreSession();
++  if (to.meta.mode === 'login' && session.user) return loginDestination(to.query.next, session.user);
+   if (to.meta.private && !session.user) return {path:'/login', query:{next:to.fullPath}};
+   if (to.meta.reporter && session.user?.role !== 'REPORTER') return '/workspace';
+   if (to.meta.staff && !isStaff(session.user)) return '/reports';
+diff --git a/code/frontend/src/session.js b/code/frontend/src/session.js
+index 6b42b2e3af2a169059beb4490f59780f419a9649..68f92308a81e3002af3ae792a27431ba5b7feaa9 100644
+--- a/code/frontend/src/session.js
++++ b/code/frontend/src/session.js
+@@ -1,19 +1,30 @@
+ import { reactive } from 'vue';
+-import { api, refresh, login, logout, onSessionExpired } from './api';
+-export const session = reactive({user:null, ready:false, message:''});
+-onSessionExpired(() => { session.user = null; session.message = 'Sesi berakhir. Silakan masuk kembali.'; });
++import { api, refresh, login, logout, clearAccess, onSessionExpired } from './api.js';
++export const session = reactive({user:null, ready:false, message:'', restoreError:null});
++onSessionExpired(() => { session.user = null; session.restoreError = null; session.message = 'Sesi berakhir. Silakan masuk kembali.'; });
+ let boot;
+-export function restoreSession() {
++export function restoreSession({retry = false} = {}) {
++  if (retry && session.ready && session.restoreError) boot = null;
+   if (!boot) boot = (async () => {
+-    try { await refresh(); session.user = (await api('me/')).data; }
+-    catch (error) { if (error.status !== 401 && error.code !== 'OFFLINE') session.message = error.message; }
+-    finally { session.ready = true; }
++    session.ready = false; session.restoreError = null; session.message = '';
++    const controller = new AbortController();
++    const timeout = setTimeout(() => controller.abort(), 15000);
++    try { await refresh({signal:controller.signal}); session.user = (await api('me/', {signal:controller.signal, retryRead:false})).data; session.message = ''; }
++    catch (error) {
++      clearAccess(); session.user = null;
++      if (error.status !== 401) {
++        session.restoreError = error;
++        session.message = error.name === 'AbortError' ? 'Pemeriksaan sesi belum selesai. Periksa koneksi lalu coba lagi.' :
++          error.code === 'OFFLINE' ? 'Perangkat offline. Sambungkan jaringan untuk memeriksa sesi.' : error.message;
++      }
++    }
++    finally { clearTimeout(timeout); session.ready = true; }
+   })();
+   return boot;
+ }
+-export async function signIn(email, password) { session.user = await login(email, password); session.message = ''; }
++export async function signIn(email, password) { session.user = await login(email, password); session.ready = true; session.restoreError = null; session.message = ''; }
+ export async function signOut() {
+   try { await logout(); session.message = ''; }
+   catch (error) { session.message = 'Sesi pada perangkat dibersihkan. Logout di server belum dapat dipastikan; periksa koneksi dan coba kembali.'; }
+-  finally { session.user = null; }
++  finally { session.user = null; session.restoreError = null; session.ready = true; }
+ }
+diff --git a/code/frontend/src/startup.css b/code/frontend/src/startup.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..bd38c73619f2fe39529e8aa0f91575855f7ebe9e
+--- /dev/null
++++ b/code/frontend/src/startup.css
+@@ -0,0 +1,17 @@
++#app-startup{display:none}
++#startup-retry[hidden]{display:none}
++@media(max-width:640px){
++ #app-startup{position:fixed;inset:0;z-index:500;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;min-height:100dvh;padding:32px;background:#FFF;color:#172B4D;font:14px/1.6 Inter,"Segoe UI",sans-serif;text-align:center}
++ #app-startup img{width:76px;height:76px;object-fit:contain}
++ #app-startup strong{font-size:28px;letter-spacing:.5px;line-height:1.3}
++ #app-startup p{color:#52647A;margin:0;font-size:13px}
++ #app-startup .startup-spinner{width:26px;height:26px;border:3px solid #DDEBFA;border-top-color:#155EBD;border-radius:50%;animation:silar-startup-spin .85s linear infinite}
++ @media(prefers-color-scheme:dark){html:not([data-theme=light]) #app-startup{background:#0B1220;color:#EEF4FF}html:not([data-theme=light]) #app-startup p{color:#B4C2D6}}
++ html[data-theme=dark] #app-startup{background:#0B1220;color:#EEF4FF}
++ html[data-theme=dark] #app-startup p{color:#B4C2D6}
++}
++#app-startup.startup-error{display:flex;position:fixed;inset:0;z-index:500;flex-direction:column;justify-content:center;align-items:center;gap:18px;padding:32px;background:var(--panel,#FFF);color:var(--ink,#172B4D);text-align:center;font:14px/1.6 Inter,"Segoe UI",sans-serif}
++#app-startup.startup-error img{width:76px;height:76px;object-fit:contain}
++#app-startup.startup-error .startup-spinner{display:none}
++@keyframes silar-startup-spin{to{transform:rotate(360deg)}}
++@media(prefers-reduced-motion:reduce){#app-startup .startup-spinner{animation:none}}
+diff --git a/code/frontend/src/views/AuthView.vue b/code/frontend/src/views/AuthView.vue
+index ab4a37eabb374b2c1662a6af93035febe5de7d0e..4601b4c43c7567cdbb083cd3e72e359c185462e8 100644
+--- a/code/frontend/src/views/AuthView.vue
++++ b/code/frontend/src/views/AuthView.vue
+@@ -11,6 +11,7 @@ import AppIcon from '../components/AppIcon.vue';
+ import AuthLocalHelp from '../components/AuthLocalHelp.vue';
+ import ErrorNotice from '../components/ErrorNotice.vue';
+ import PasswordInput from '../components/PasswordInput.vue';
++import { loginDestination } from '../account-routing';
+ const route=useRoute(),router=useRouter();
+ const mode=computed(()=>route.meta.mode);
+ const completed=ref(false),heading=ref(null),activationToken=ref('');
+@@ -44,7 +45,7 @@ async function submit(){
+   if(hasPassword.value&&action!=='login'&&form.password!==form.password_confirm)throw new ApiError('Konfirmasi kata sandi belum sama.','INVALID_PAYLOAD');
+   if(action==='login'){
+    await signIn(form.email,form.password);if(version!==flowVersion)return;
+-   const next=String(route.query.next||'');await router.replace(next.startsWith('/')&&!next.startsWith('//')?next:session.user.role==='REPORTER'?'/reports':'/workspace');
++   await router.replace(loginDestination(route.query.next,session.user));
+   }else if(isVerification.value){
+    if(activationToken.value){const result=await authPost('operators/activate/',{activation_token:activationToken.value,password:form.password,password_confirm:form.password_confirm});if(version!==flowVersion)return;message.value=result.data.message;successTitle.value='Akun Operator berhasil diaktifkan';activationToken.value='';completed.value=true;}
+    else{const result=accountVerificationResult(await authPost('account/verify/',{email:form.email.trim(),code:form.code}));if(version!==flowVersion)return;message.value=result.message;if(result.next==='SET_PASSWORD')activationToken.value=result.activation_token;else{successTitle.value='Email berhasil diverifikasi';completed.value=true;}}
+@@ -72,6 +73,7 @@ async function resend(){
+   <section class="auth-panel" aria-labelledby="auth-title">
+    <div class="auth-toolbar"><button class="auth-theme quiet" :aria-pressed="theme.mode==='dark'" :aria-label="theme.mode==='dark'?'Gunakan mode terang':'Gunakan mode gelap'" @click="toggleTheme"><AppIcon :name="theme.mode==='dark'?'sun':'moon'" :size="16" />{{ theme.mode==='dark'?'Mode terang':'Mode gelap' }}</button></div>
+    <div class="auth-content">
++    <RouterLink class="auth-mobile-logo" to="/" aria-label="SILAR, halaman utama"><img src="/brand/silar-reference.svg" alt=""><span>SILAR</span></RouterLink>
+     <header class="auth-heading"><h1 id="auth-title" ref="heading" tabindex="-1">{{ completed?successTitle:activationToken?'Buat kata sandi Operator':titles[mode] }}</h1><p v-if="!completed" class="auth-subtitle">{{ activationToken?'Kode sudah benar. Buat kata sandi untuk menyelesaikan aktivasi akun.':descriptions[mode] }}</p></header>
+     <div v-if="!online" class="notice warning" role="status">Perangkat offline. Sambungkan kembali jaringan untuk melanjutkan.</div><div v-if="session.message" class="notice" role="status">{{ session.message }}</div><ErrorNotice :error="error" /><div v-if="message" class="notice" :class="{success:completed}" role="status">{{ message }}</div>
+     <template v-if="completed"><RouterLink class="button primary full auth-login-success" to="/login">Lanjut ke Login<AppIcon name="arrow" :size="16" /></RouterLink></template>
+diff --git a/code/frontend/src/views/LandingView.vue b/code/frontend/src/views/LandingView.vue
+index a3a2023ffe6933973da02bb3a1c77f80c149b7af..109ba32c4aff111858e3cc6d17478ca68f186528 100644
+--- a/code/frontend/src/views/LandingView.vue
++++ b/code/frontend/src/views/LandingView.vue
+@@ -1,6 +1,9 @@
+ <script setup>
+ import { onMounted, onBeforeUnmount, ref } from 'vue';
+ import PublicNavigation from '../components/PublicNavigation.vue';
++import AccountActions from '../components/AccountActions.vue';
++import {session} from '../session';
++import {accountHome} from '../account-routing';
+ import AppIcon from '../components/AppIcon.vue';
+ import ReferenceArt from '../components/ReferenceArt.vue';
+ import scene from '../assets/reference/reporting-scene.svg';
+@@ -22,15 +25,15 @@ onBeforeUnmount(()=>observer?.disconnect());
+  <div class="landing-page">
+   <div class="landing-intro">
+    <PublicNavigation :active="active" />
+-   <section id="beranda" class="landing-hero landing-container"><p class="landing-kicker">Sistem Inteligensi Laporan Adaptif dan Responsif</p><h1>Merangkai Informasi,<br><span>Memahami <em>Situasi.</em></span></h1><p>Laporkan kejadian melalui teks, audio, foto, atau kombinasinya.<br>Periksa narasi dan hasil analisis sebelum mengirim laporan.</p><div class="landing-hero-actions"><RouterLink class="button" to="/login">Masuk</RouterLink><RouterLink class="button primary" to="/register">Buat akun</RouterLink></div><small class="landing-account-guidance"><AppIcon name="lock" :size="12" />Masuk terlebih dahulu untuk membuat laporan.</small><ReferenceArt :source="scene" :dark-source="sceneDark" alt="Alur bukti teks, foto dan audio menjadi draft laporan, lalu diperiksa oleh Reporter." class="landing-main-illustration" /><div class="landing-coverage"><span>Cakupan laporan</span><span v-for="[icon,title] in [['waves','Banjir'],['pulse','Gempa bumi'],['flame','Kebakaran'],['car','Kecelakaan']]" :key="icon"><AppIcon :name="icon" :size="16" />{{ title }}</span></div></section>
++   <section id="beranda" class="landing-hero landing-container"><p class="landing-kicker">Sistem Inteligensi Laporan Adaptif dan Responsif</p><h1>Merangkai Informasi,<br><span>Memahami <em>Situasi.</em></span></h1><p>Laporkan kejadian melalui teks, audio, foto, atau kombinasinya.<br>Periksa narasi dan hasil analisis sebelum mengirim laporan.</p><div class="landing-hero-actions"><AccountActions /></div><small class="landing-account-guidance"><AppIcon name="lock" :size="12" />{{ !session.ready?'Memeriksa sesi pada perangkat ini.':session.user?'Akun Anda sudah terhubung. Lanjutkan melalui Buka aplikasi.':'Masuk terlebih dahulu untuk membuat laporan.' }}</small><ReferenceArt :source="scene" :dark-source="sceneDark" alt="Alur bukti teks, foto dan audio menjadi draft laporan, lalu diperiksa oleh Reporter." class="landing-main-illustration" /><div class="landing-coverage"><span>Cakupan laporan</span><span v-for="[icon,title] in [['waves','Banjir'],['pulse','Gempa bumi'],['flame','Kebakaran'],['car','Kecelakaan']]" :key="icon"><AppIcon :name="icon" :size="16" />{{ title }}</span></div></section>
+   </div>
+   <div class="landing-values landing-container"><article v-for="[icon,title,text] in [['shield','Bukti dengan akses privat','Akses mengikuti kewenangan pengguna.'],['reports','Analisis SENA dan NARA','Narasi dan hasil tersedia untuk diperiksa.'],['search','Anda meninjau sebelum kirim','Konfirmasi versi, lalu kirim secara terpisah.']]" :key="title"><AppIcon :name="icon" :size="22" /><div><h3>{{ title }}</h3><p>{{ text }}</p></div></article></div>
+   <section id="alur-pelaporan" class="landing-workflow landing-container"><header class="landing-section-title"><p class="eyebrow">ALUR PELAPORAN</p><h2>Tiga tahap, satu alur pelaporan.</h2><p>Mulai dengan membuat draft, lalu ikuti tiga tahap pada halaman Buat laporan.</p></header><div class="landing-steps"><article v-for="([icon,title,text],index) in steps" :key="title"><div><small>0{{ index+1 }}</small><AppIcon :name="icon" :size="21" /></div><h3>{{ title }}</h3><p>{{ text }}</p></article></div></section>
+   <section id="sena-nara" class="landing-model-section"><div class="landing-container"><header class="landing-section-title"><p class="eyebrow">SENA & NARA</p><h2>Dua peran, satu analisis terpadu.</h2><p>Keduanya membaca narasi yang sama. Hasilnya dipadukan menjadi draft Incident Card untuk Anda periksa.</p></header><div class="landing-models"><article v-for="model in [{name:'SENA',role:'KLASIFIKASI KEJADIAN',title:'Mengenali jenis kejadian',description:'SENA membantu mengenali kategori kejadian berdasarkan narasi yang dianalisis.',note:'Hasil klasifikasi tetap perlu diperiksa.',art:sena,dark:senaDark},{name:'NARA',role:'EKSTRAKSI INFORMASI',title:'Mengurai detail kejadian',description:'NARA mengekstrak informasi dari narasi dan menatanya menjadi rincian laporan.',note:'Detail yang tidak tersedia tetap dibiarkan kosong.',art:nara,dark:naraDark}]" :key="model.name"><header><strong>{{ model.name }}</strong><span>{{ model.role }}</span></header><ReferenceArt :source="model.art" :dark-source="model.dark" alt="Ilustrasi skematis, bukan hasil analisis nyata" /><h3>{{ model.title }}</h3><p>{{ model.description }}</p><small><AppIcon name="info" :size="13" />{{ model.note }}</small></article></div></div></section>
+   <div class="landing-container landing-lower"><section class="landing-responsibility"><div class="landing-privacy-panel"><p class="eyebrow">PELAPORAN YANG BERTANGGUNG JAWAB</p><h2>Bukti tetap privat.<br>Informasi tetap diperiksa.</h2><p>Hasil AI membantu menyusun laporan, bukan menjamin kebenaran kejadian. Periksa kembali informasi yang belum pasti sebelum mengirim.</p><ReferenceArt :source="privacy" :dark-source="privacyDark" alt="" /></div><ul><li v-for="[title,text] in [['Sampaikan yang Anda ketahui','Pisahkan fakta yang dilihat dari dugaan.'],['Batasi data pribadi','Hindari identitas dan kontak yang tidak diperlukan.'],['Periksa sumber dan hasil','Tinjau bukti, narasi, serta informasi yang belum pasti.'],['Pahami proses analisis','Baca penjelasan pemrosesan sebelum analisis dimulai.']]" :key="title"><AppIcon name="circle-check" :size="19" /><div><strong>{{ title }}</strong><p>{{ text }}</p></div></li></ul></section>
+    <section class="landing-public-cta"><div><p class="eyebrow">PORTAL PUBLIK</p><h2>Informasi yang telah<br>disetujui tayang.</h2><p>Pengiriman kepada Operator belum berarti laporan diterbitkan.<br>Portal Publik menampilkan ringkasan yang telah disetujui.<br>Bukti asli dan data akun tetap berada pada akses privat.</p><RouterLink to="/public">Lihat Portal Publik <AppIcon name="arrow" :size="17" /></RouterLink></div><div class="public-document-art" aria-hidden="true"><AppIcon name="globe" :size="26" /><strong>Ringkasan publik</strong><i/><i/><i/><span><AppIcon name="shield" :size="14" />Informasi terbit</span></div></section>
+-   <section class="landing-start"><div><h2>Mulai dari laporan yang jelas.</h2><p>Siapkan bukti, periksa informasi, lalu kirim dengan tanggung jawab.</p></div><ReferenceArt :source="start" :dark-source="startDark" alt="" /><div><RouterLink class="button" to="/register">Buat akun Reporter<AppIcon name="arrow" :size="16" /></RouterLink><p>Sudah punya akun? <RouterLink to="/login">Masuk</RouterLink></p></div></section>
++   <section class="landing-start"><div><h2>Mulai dari laporan yang jelas.</h2><p>Siapkan bukti, periksa informasi, lalu kirim dengan tanggung jawab.</p></div><ReferenceArt :source="start" :dark-source="startDark" alt="" /><div><RouterLink class="button" :to="session.user?accountHome(session.user):'/register'">{{ session.user?'Buka aplikasi':'Buat akun Reporter' }}<AppIcon name="arrow" :size="16" /></RouterLink><p v-if="!session.user">Sudah punya akun? <RouterLink :to="session.user?accountHome(session.user):'/login'">{{ session.user?'Buka aplikasi':'Masuk' }}</RouterLink></p></div></section>
+   </div>
+-  <footer class="landing-footer landing-container"><div><RouterLink class="landing-brand" to="/"><img src="/brand/silar-reference.svg" alt="">SILAR</RouterLink><p>Sistem Inteligensi Laporan Adaptif dan Responsif</p></div><nav aria-label="Tautan halaman utama"><a href="#beranda">Beranda</a><a href="#alur-pelaporan">Alur pelaporan</a><RouterLink to="/public">Portal Publik</RouterLink><RouterLink to="/login">Masuk</RouterLink></nav><small>© {{ new Date().getFullYear() }} SILAR</small></footer>
++  <footer class="landing-footer landing-container"><div><RouterLink class="landing-brand" to="/"><img src="/brand/silar-reference.svg" alt="">SILAR</RouterLink><p>Sistem Inteligensi Laporan Adaptif dan Responsif</p></div><nav aria-label="Tautan halaman utama"><a href="#beranda">Beranda</a><a href="#alur-pelaporan">Alur pelaporan</a><RouterLink to="/public">Portal Publik</RouterLink><RouterLink :to="session.user?accountHome(session.user):'/login'">{{ session.user?'Buka aplikasi':'Masuk' }}</RouterLink></nav><small>© {{ new Date().getFullYear() }} SILAR</small></footer>
+  </div>
+ </template>
+diff --git a/code/frontend/tests/account-routing.test.js b/code/frontend/tests/account-routing.test.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..2269a171b20c9baee1b01a49176771c9c26d9f17
+--- /dev/null
++++ b/code/frontend/tests/account-routing.test.js
+@@ -0,0 +1,19 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {accountHome,loginDestination} from '../src/account-routing.js';
++
++test('Akun aktif kembali ke ruang sesuai peran, tanpa formulir login',()=>{
++  for(const role of ['REPORTER','OPERATOR','ADMIN']){
++    const home=role==='REPORTER'?'/reports':'/workspace';
++    assert.equal(accountHome({role}),home);
++    assert.equal(loginDestination(undefined,{role}),home);
++  }
++  assert.equal(accountHome(null),'/login');
++});
++
++test('Tujuan login mempertahankan alamat lokal dan menolak origin lain serta loop autentikasi',()=>{
++  const user={role:'REPORTER'};
++  assert.equal(loginDestination('/reports/report-id?view=review#card',user),'/reports/report-id?view=review#card');
++  for(const next of ['https://example.test','//example.test','/\\example.test','/\n/example.test','/login','/login/?next=/login','/a/../login','/register','/verify-email','/forgot-password','/reset-password?challenge_id=x',[]])
++    assert.equal(loginDestination(next,user),'/reports',String(next));
++});
+diff --git a/code/frontend/tests/api.test.js b/code/frontend/tests/api.test.js
+index 7d45a6f38f46d81433db83fa2bc9af9eda8409a7..ff6047cbaf75cda5f1233030eec650182ff41a28 100644
+--- a/code/frontend/tests/api.test.js
++++ b/code/frontend/tests/api.test.js
+@@ -50,3 +50,14 @@ test('Logout 204 tidak mencoba membaca JSON', async () => {
+   const {api} = await client(async () => new Response(null, {status: 204}));
+   assert.equal(await api('auth/logout/', {method: 'POST', body: {}}), null);
+ });
++
++test('Batas pemeriksaan sesi meneruskan pembatalan ke CSRF dan refresh tanpa retry POST',async()=>{
++  const controller=new AbortController();const calls=[];
++  const {refresh}=await client(async(path,options)=>{
++    calls.push(path);assert.equal(options.signal,controller.signal);
++    if(path.endsWith('csrf/'))return new Response(JSON.stringify({data:{csrf_token:'qa-csrf'}}));
++    controller.abort();throw new DOMException('Aborted','AbortError');
++  });
++  await assert.rejects(refresh({signal:controller.signal}),error=>error.name==='AbortError');
++  assert.equal(calls.length,2);
++});
+diff --git a/code/frontend/tests/session.test.js b/code/frontend/tests/session.test.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..49e4125740e337773f675d0c8df0c4bca362769c
+--- /dev/null
++++ b/code/frontend/tests/session.test.js
+@@ -0,0 +1,69 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++let version=0;
++async function client(fetcher){
++  Object.defineProperty(globalThis,'navigator',{configurable:true,value:{onLine:true}});
++  globalThis.fetch=fetcher;
++  return import(`../src/session.js?test=${++version}`);
++}
++const json=data=>new Response(JSON.stringify(data),{status:200});
++const actor={id:'qa-user',role:'REPORTER',full_name:'Pelapor Uji'};
++
++test('Pemulihan sesi berbagi satu refresh, membaca akun, dan tidak mengulang pada navigasi berikutnya',async()=>{
++  const calls=[];
++  const {session,restoreSession}=await client(async(path,options)=>{
++    calls.push(path);
++    if(path.endsWith('csrf/'))return json({data:{csrf_token:'qa-csrf'}});
++    if(path.endsWith('refresh/')){assert.equal(options.method,'POST');return json({data:{access:'qa-access'}});}
++    assert.equal(options.headers.Authorization,'Bearer qa-access');return json({data:actor});
++  });
++  await Promise.all([restoreSession(),restoreSession(),restoreSession()]);
++  assert.equal(session.ready,true);assert.equal(session.user.id,actor.id);assert.equal(session.restoreError,null);
++  assert.equal(calls.length,3);await restoreSession();assert.equal(calls.length,3);
++});
++
++test('Sesi kedaluwarsa menjadi anonim tanpa retry refresh otomatis',async()=>{
++  const calls=[];
++  const {session,restoreSession}=await client(async path=>{
++    calls.push(path);
++    return path.endsWith('csrf/')?json({data:{csrf_token:'qa-csrf'}}):new Response(JSON.stringify({error:{code:'TOKEN_EXPIRED',message:'Expired'}}),{status:401});
++  });
++  await restoreSession();assert.equal(session.user,null);assert.equal(session.ready,true);assert.equal(session.restoreError,null);
++  await restoreSession();assert.equal(calls.length,2);
++});
++
++test('Penolakan akun sesudah refresh baru tidak memulai refresh kedua atau melewati tenggat awal',async()=>{
++  const calls=[];
++  const {session,restoreSession}=await client(async path=>{
++    calls.push(path);
++    if(path.endsWith('csrf/'))return json({data:{csrf_token:'qa-csrf'}});
++    if(path.endsWith('refresh/'))return json({data:{access:'qa-access'}});
++    return new Response(JSON.stringify({error:{code:'AUTHENTICATION_FAILED',message:'Akun tidak tersedia.'}}),{status:401});
++  });
++  await restoreSession();assert.equal(session.user,null);assert.equal(session.ready,true);
++  assert.equal(calls.length,3);assert.equal(calls.filter(path=>path.endsWith('refresh/')).length,1);
++});
++
++test('Gangguan koneksi tidak dianggap logout: pemeriksaan eksplisit dapat memulihkan cookie yang masih valid',async()=>{
++  let connected=false;let refreshes=0;
++  const {session,restoreSession}=await client(async path=>{
++    if(!connected)throw new TypeError('connection lost');
++    if(path.endsWith('csrf/'))return json({data:{csrf_token:'qa-csrf'}});
++    if(path.endsWith('refresh/')){refreshes++;return json({data:{access:'qa-access'}});}
++    return json({data:actor});
++  });
++  await restoreSession();assert.equal(session.user,null);assert(session.restoreError);assert.equal(session.ready,true);
++  connected=true;await restoreSession({retry:true});assert.equal(session.user.id,actor.id);assert.equal(session.restoreError,null);assert.equal(session.message,'');assert.equal(refreshes,1);
++});
++
++test('Logout eksplisit menghapus akun dan tidak memulihkannya lagi saat kembali ke halaman publik',async()=>{
++  let refreshes=0;
++  const {session,restoreSession,signOut}=await client(async path=>{
++    if(path.endsWith('csrf/'))return json({data:{csrf_token:'qa-csrf'}});
++    if(path.endsWith('refresh/')){refreshes++;return json({data:{access:'qa-access'}});}
++    if(path.endsWith('logout/'))return new Response(null,{status:204});
++    return json({data:actor});
++  });
++  await restoreSession();await signOut();await restoreSession();
++  assert.equal(session.user,null);assert.equal(session.restoreError,null);assert.equal(refreshes,1);
++});
+diff --git a/docs/slr14/README.md b/docs/slr14/README.md
+index bf1ab60f477e999c154e705c6d0c54af9f467885..de71a4896551f3881343a20cb71d135fdbd454a2 100644
+--- a/docs/slr14/README.md
++++ b/docs/slr14/README.md
+@@ -1,5 +1,11 @@
+ # SLR14 — publikasi dan antarmuka SILAR
+ 
++**Revisi sesi dan tampilan HP, 13 November 2026:** tahap dan tab aktif memakai
++panel biru yang seragam. Landing/Portal Publik mengenali sesi valid dan
++menampilkan Buka aplikasi. Login HP memiliki logo di tengah dan pembukaan
++browser/PWA menampilkan loading selama inisialisasi. Baca
++[revisi sesi dan tampilan HP](revisi-sesi-mobile-20261113/README.md).
++
+ **Revisi review 13 November 2026:** implementasi akun/Operator dan pembaruan UI
+ tetap menjadi bagian SLR14; SLR15 mencatat pengujian dan temuannya. Ikon mata
+ berada di dalam setiap kolom sandi, tombol akun menyatu dengan landing page,
+@@ -180,7 +186,10 @@ perkembangan penanganan; filter digabung dengan AND. Urutan tetap
+ `published_at` menurun, lalu ID laporan. Ringkasan jumlah menggunakan `count`
+ dari daftar dalam lingkup terkait, bukan menghitung kartu pada halaman aktif.
+ 
+-Pembacaan Portal Publik menghilangkan Bearer/cookie dan tidak memulihkan sesi.
++Permintaan data publik melalui `publicRead` tetap menghilangkan Bearer/cookie
++serta tidak memicu refresh. Navigasi situs secara terpisah memeriksa sesi opsional
++agar akun aktif mendapat tombol Buka aplikasi. Kegagalan pemeriksaan itu tidak
++menutup akses anonim ke landing atau Portal Publik.
+ Cache PWA hanya berisi antarmuka/aset. Token, data laporan, media privat dan
+ respons API tidak dimasukkan ke cache atau penyimpanan browser.
+ 
+diff --git a/docs/slr14/revisi-sesi-mobile-20261113/DAFTAR_PERUBAHAN.json b/docs/slr14/revisi-sesi-mobile-20261113/DAFTAR_PERUBAHAN.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..0dd1ef5ceff8edfdaf7d098906821d428b0eb167
+--- /dev/null
++++ b/docs/slr14/revisi-sesi-mobile-20261113/DAFTAR_PERUBAHAN.json
+@@ -0,0 +1,226 @@
++{
++  "scope": "SLR14",
++  "review_findings_from": "SLR15",
++  "date": "2026-11-13",
++  "type": "incremental-session-and-mobile-ui-update-after-operator-package",
++  "requires_packages": [
++    {
++      "name": "SILAR_SLR15.zip",
++      "sha256": "51cc0cc1f53818bf478f4b3b8b9837d236cf4352c0019b60ac2029ea3ab1b3d7"
++    },
++    {
++      "name": "SILAR_SLR14_revisi_UI_13Nov2026.zip",
++      "sha256": "887aea078bd349879f49a7ecd11ce921d00c576430340b9753a892b3ed70a707"
++    },
++    {
++      "name": "SILAR_SLR14_alur_operator_13Nov2026.zip",
++      "sha256": "3ef395221fafa7b670815d2c3c5be86950d6dc089976b8162ece042eee6fe5f9"
++    }
++  ],
++  "base_commit": "7af81c8e448e12eead2b54a4e6aad72b9e2a781e",
++  "excluded_from_hash_list": [
++    "docs/slr14/revisi-sesi-mobile-20261113/DAFTAR_PERUBAHAN.json",
++    "PERUBAHAN_SLR14_SESI_HP.patch"
++  ],
++  "backend_source_changed": false,
++  "new_backend_statuses": false,
++  "session_lifetime_changed": false,
++  "browser_frontend_mode": "production build via vite preview",
++  "browser_segments": [
++    {
++      "name": "session-and-layout",
++      "completed_layout_assertions": 144,
++      "completed_flow_assertions": 10
++    },
++    {
++      "name": "notifications-and-session-boundaries",
++      "status": "PASSED",
++      "completed_layout_assertions": 6,
++      "completed_flow_assertions": 6
++    }
++  ],
++  "additional_session_regression": "PASSED",
++  "agent_committed": false,
++  "agent_pushed": false,
++  "files": [
++    {
++      "path": "MULAI_DI_SINI.txt",
++      "bytes": 2235,
++      "sha256": "e1d4f663d4a99d71cef7c830fe33faac533948d28c8a9fa601c6501d340a630d",
++      "previous_sha256": "f3f0dc5d0c7d923cd21439a7bd195632a1e596c58319e7feb6b925dedd806ad1",
++      "baseline_source": "previous_operator"
++    },
++    {
++      "path": "PANDUAN_RUNNING.md",
++      "bytes": 13799,
++      "sha256": "0a89a35565b5a013cc87f065e64333c41ac6755057f90eed92004f7f835bc47c",
++      "previous_sha256": "00dccedabbbdbf217b4814ef7f2b8e86f72fdd687f5d364589285094a19cc842",
++      "baseline_source": "previous_operator"
++    },
++    {
++      "path": "README.md",
++      "bytes": 3076,
++      "sha256": "7bb2fb88b119242f938045bb452176494f55b10d035a050b233226db5ebe2eaa",
++      "previous_sha256": "5bd4f773158be38fcd615de817f6154c02f31b8ba9b285c66752b88f2c525fbd",
++      "baseline_source": "previous_operator"
++    },
++    {
++      "path": "code/frontend/index.html",
++      "bytes": 1219,
++      "sha256": "8a1d0e2d9cb5138194636b31178d5c470057ff6942c7e2e16ddb99ebda3e95ab",
++      "previous_sha256": "a4d99fb3ebe126451e3cb06e13a95e8c7015e96cbae051e792de95752ed4fb70",
++      "baseline_source": "base_commit"
++    },
++    {
++      "path": "code/frontend/src/account-routing.js",
++      "bytes": 749,
++      "sha256": "9053a9dc2a7c1720b01d6815ae2b42330f13588dbca29bb5bc3c4d9c7cc91100",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "code/frontend/src/api.js",
++      "bytes": 4155,
++      "sha256": "a1a7bd453b9d2dc5c9b835b101c677c096c9160962bba610973f70d0cc32bf36",
++      "previous_sha256": "05b0e5e7f1f14e2d434d90c9013e27a2938f8125ebb5df9c4a6c94438cb166ca",
++      "baseline_source": "base_commit"
++    },
++    {
++      "path": "code/frontend/src/auth-ui.css",
++      "bytes": 9674,
++      "sha256": "d0f01843d704bf7ca9edb42442e4eb903c21c23d878abc2a9985a62acb20fa5d",
++      "previous_sha256": "79ed3ebcdb3e8126a382008edfbadd4819141c489f949baad0954b43821806ba",
++      "baseline_source": "previous_ui"
++    },
++    {
++      "path": "code/frontend/src/components/AccountActions.vue",
++      "bytes": 1010,
++      "sha256": "5761524b73e5d251efb9d0b4193cac4de7c215ec858dbf610eda08566e143aa3",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "code/frontend/src/components/PublicNavigation.vue",
++      "bytes": 1426,
++      "sha256": "25f1d7709eb7d88e35873ae336f8d7a65d223557e3af2de8e3603b41eb54e50c",
++      "previous_sha256": "cd90473023f03004f44b72af6b86a6e498244319199536f03429cc146ff188f3",
++      "baseline_source": "base_commit"
++    },
++    {
++      "path": "code/frontend/src/main.js",
++      "bytes": 1421,
++      "sha256": "7df07dfd432562057e10f42fd785f958f35e09d7233dc6d50d0fa9097afa7bc7",
++      "previous_sha256": "7624e30351ad88d808bc6bfe68f138fc970e7d6beede53a77f855fe1c97a357a",
++      "baseline_source": "base_commit"
++    },
++    {
++      "path": "code/frontend/src/navigation-ui.css",
++      "bytes": 3843,
++      "sha256": "e7479ca00fd68b1c2727d1700019f786b20f83cc32a634a0a50fc6797110d209",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "code/frontend/src/router.js",
++      "bytes": 4173,
++      "sha256": "fa9e6f0d840f40aac9f0a1e7e289e7dfba3289002b35db66a130bcf79b2fd6a0",
++      "previous_sha256": "83d9f6c0e8a3e1ee9b7b749bcb4f53e649e3daee6d554cbedc0d8965bfc2a964",
++      "baseline_source": "base_commit"
++    },
++    {
++      "path": "code/frontend/src/session.js",
++      "bytes": 1827,
++      "sha256": "7aa2db597dc63fb77f53180b25a30379b39087abc764af6f5027e14a67820db0",
++      "previous_sha256": "e9b6b8ebc11522e641a1fef9e20519dc835cf833fac39b2e46a1974f1f8718db",
++      "baseline_source": "base_commit"
++    },
++    {
++      "path": "code/frontend/src/startup.css",
++      "bytes": 1556,
++      "sha256": "39e445c611a18f264b93bdb7f19bf2c748dfc96c1289da490bc08a29c590aa90",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "code/frontend/src/views/AuthView.vue",
++      "bytes": 13870,
++      "sha256": "fba0904c18d478a73a2ca50fa0cc28b1f1d89630ae5333c34dae5d758d70b3ee",
++      "previous_sha256": "438004ab61ae7ead3ef10ea80cf9dd3d18f2c5e3b387e2102d31f0521ec982f9",
++      "baseline_source": "previous_ui"
++    },
++    {
++      "path": "code/frontend/src/views/LandingView.vue",
++      "bytes": 7981,
++      "sha256": "bb6a603a7543784ebe649e5a80318eea5385d4d2c0fe85a434087b387b51b4b1",
++      "previous_sha256": "5bd9e62aee99825ddccd18070c3d0f295c7ade11c650c1cb843928b65eedce75",
++      "baseline_source": "base_commit"
++    },
++    {
++      "path": "code/frontend/tests/account-routing.test.js",
++      "bytes": 1040,
++      "sha256": "ab263a5463c3bbcfe51dba39679825e15a2e164b766b8da09cdb8785a6bca3f6",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "code/frontend/tests/api.test.js",
++      "bytes": 3057,
++      "sha256": "f184c49065b63d993e20fcba6fd29bca6bfd4ec530b1526282cc1a4ed249cb4a",
++      "previous_sha256": "ca02d7a63e93641127aa73cf67d7fd675e2378607ecddd9fa7bbea1bb998437b",
++      "baseline_source": "base_commit"
++    },
++    {
++      "path": "code/frontend/tests/session.test.js",
++      "bytes": 3875,
++      "sha256": "3692050e0afaf8f1df6635d813aaee6a0f6ce9da990c5b924b227cf0b2952172",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "docs/slr14/README.md",
++      "bytes": 11576,
++      "sha256": "c1a39a26cca397b09cb136e45202e86e8423e86f1e12453121d1953f0756ccb4",
++      "previous_sha256": "fd53350a96b4aefe8ec021167d751e79d53fa0f0e35d60a5580c9810895499ad",
++      "baseline_source": "previous_operator"
++    },
++    {
++      "path": "docs/slr14/revisi-sesi-mobile-20261113/README.md",
++      "bytes": 7575,
++      "sha256": "db17bd8e6b742309ac8e9d87ad86fda88e10cf0bd44c14005668a3fcfd48778a",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "docs/slr14/revisi-sesi-mobile-20261113/bukti/browser-result.json",
++      "bytes": 8801,
++      "sha256": "b021d86404469f34163b5a7be90bf91fb7fa60cc14857c03e7f79c96699d893e",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "docs/slr14/revisi-sesi-mobile-20261113/bukti/frontend-build.txt",
++      "bytes": 3960,
++      "sha256": "e6d295cfa5b6d8c0fb6ef152587d0b3ff582433fcb87fca75a2bc1b0e191c9a4",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "docs/slr14/revisi-sesi-mobile-20261113/bukti/frontend-tests.txt",
++      "bytes": 11595,
++      "sha256": "ca3ebe5b443d680fcf62c40b7600a5cc0b99ded318c6b2265f0e178da4994d85",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    }
++  ],
++  "checks": {
++    "frontend_tests": 122,
++    "frontend_build": "PASSED",
++    "backend_tests_rerun": false,
++    "database": "PostgreSQL 16",
++    "browser_layout_cases": 150,
++    "browser_flow_checks": 16,
++    "page_errors": 0,
++    "external_email_sent": false,
++    "live_ai_inference_exercised": false
++  }
++}
+diff --git a/docs/slr14/revisi-sesi-mobile-20261113/README.md b/docs/slr14/revisi-sesi-mobile-20261113/README.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..360ac091ecc9b56a35acc08c1302ee898c6c3651
+--- /dev/null
++++ b/docs/slr14/revisi-sesi-mobile-20261113/README.md
+@@ -0,0 +1,64 @@
++# SLR14 — sesi, navigasi dan tampilan HP, 13 November 2026
++
++Kembali ke landing page kini mempertahankan akses akun selama sesi backend masih valid. Navigasi menampilkan **Buka aplikasi**, sehingga pengguna tidak perlu memasukkan sandi lagi untuk kembali ke ruangnya. Tampilan tahap dan tab aktif juga diseragamkan mengikuti Buat Laporan. Pembukaan dokumen aplikasi di HP menampilkan logo/loading, dan formulir akun HP memiliki logo SILAR di tengah.
++
++Revisi ini melanjutkan paket akun/setup, revisi UI, dan `SILAR_SLR14_alur_operator_13Nov2026.zip`. Implementasi tetap termasuk SLR14. SLR15 menjadi kegiatan pengujian dan pencatatan temuan.
++
++## Navigasi akun
++
++| Keadaan | Perilaku |
++| --- | --- |
++| Sesi masih diperiksa | Navigasi menampilkan Memeriksa sesi, tanpa meminta pengguna langsung login kembali. |
++| Reporter sudah masuk | Buka aplikasi menuju Laporan Saya. |
++| Operator/Admin sudah masuk | Buka aplikasi menuju dashboard sesuai hak aksesnya. |
++| Landing atau Portal Publik dimuat ulang | Cookie sesi yang masih valid dipulihkan melalui mekanisme refresh dan pembacaan akun yang sudah ada. |
++| Login dibuka dengan sesi aktif | Langsung menuju aplikasi atau tujuan lokal yang sebelumnya diminta. Guard peran/izin tetap diperiksa. |
++| Sesi tidak berlaku atau pengguna sudah Keluar | Formulir login kembali diperlukan. |
++| Pemeriksaan sesi terganggu jaringan | Halaman publik dapat dibaca. Periksa sesi lagi mencoba memulihkan cookie yang masih valid. |
++
++Navigasi, hero, ajakan di bagian bawah dan footer landing mengikuti keadaan akun. Login tidak diulang hanya karena berpindah ke landing atau membuka kembali dokumen pada browser yang masih menyimpan cookie valid. Sandi dan access token tidak dipindahkan ke localStorage/sessionStorage. Masa berlaku, rotasi, validasi cookie dan logout backend tetap mengikuti konfigurasi sebelumnya.
++
++Tujuan setelah login mempertahankan path, query dan hash lokal. Origin lain, alamat yang tidak aman, serta tujuan halaman autentikasi yang berpotensi berulang ditolak. Pemeriksaan awal memiliki batas 15 detik dan meneruskan pembatalan ke permintaan CSRF, refresh dan pembacaan akun. Kegagalan koneksi tidak memicu pengiriman ulang POST otomatis.
++
++Permintaan data laporan publik tetap menggunakan `publicRead`, tanpa Bearer/cookie dan tanpa refresh terselubung pada fungsi tersebut. Pemeriksaan sesi untuk tombol akun merupakan proses tersendiri. Membaca publikasi tetap dapat dilakukan tanpa akun.
++
++## Tampilan tahap dan tab
++
++- Tahap aktif Reporter dan Operator memakai panel biru penuh dengan tulisan putih. Nomor tahap, sudut, padding dan tinggi minimum memakai aturan bersama di `navigation-ui.css`. Label panjang dapat menambah tinggi sesuai ruang yang tersedia.
++- Tahap yang belum terbuka tetap mengikuti guard dan ikon kunci yang sudah ada. Penanda selesai Reporter tetap mengikuti progres sebenarnya.
++- Pilihan kanal Teks/Audio/Foto, sumber pembanding, tab laporan resmi, dan filter notifikasi Reporter/Operator/Admin memakai warna biru yang sama saat aktif.
++- Warna validasi, publikasi dan status penanganan tetap memiliki makna masing-masing. Revisi ini tidak mengubah isi atau proses laporan yang sebelumnya telah disetujui.
++- Pada layar kecil, penanda tahap menempatkan nomor di atas label dan menyembunyikan keterangan tambahan agar tetap terbaca. Mode terang dan gelap diperiksa.
++
++## Pembukaan dan formulir akun HP
++
++Pada lebar hingga 640 piksel, HTML awal menampilkan logo SILAR dan animasi loading selama dokumen, rute dan sesi disiapkan. Tampilan itu dihapus sesudah aplikasi siap dirender. Tidak ada penundaan minimum buatan atau persentase rekaan, serta tidak ditampilkan ulang pada perpindahan halaman di dalam aplikasi.
++
++Pada URL ruang privat, pengguna tanpa sesi valid menuju login dan pengguna dengan sesi valid langsung menuju ruang yang diizinkan. Shortcut PWA tetap menggunakan alamat awal yang sudah ada. URL landing/Portal Publik tetap membuka halaman publik, dengan tombol akun mengikuti hasil pemeriksaan sesi.
++
++Logo berada di tengah di atas formulir login, registrasi dan verifikasi pada HP. Kontrol sandi, kolom dan tombol tetap memakai komponen sebelumnya. Tampilan dua panel desktop/tablet tetap digunakan. Loading dan halaman akun mengikuti tema, serta animasi menghormati preferensi reduced motion.
++
++Jika sesi tidak mendapat jawaban dalam 15 detik, loading berakhir dengan petunjuk pemeriksaan koneksi. Ini batas permintaan awal, bukan perubahan masa berlaku sesi. Jika inisialisasi rute gagal, layar pembuka menyediakan tombol Muat ulang.
++
++## Verifikasi
++
++Tes frontend: **122 lulus, 0 gagal/skip**. Build produksi berhasil. Log tersedia di [bukti/frontend-tests.txt](bukti/frontend-tests.txt) dan [bukti/frontend-build.txt](bukti/frontend-build.txt).
++
++Pemeriksaan browser produksi mencakup 150 keadaan tampilan dan 16 alur utama. Matriks sesi/tampilan (144 keadaan dan 10 alur) serta pemeriksaan notifikasi/batas sesi (6 keadaan dan 6 alur) dijalankan dalam bagian terpisah. Pemulihan awal juga diperiksa ulang pada build akhir, termasuk penolakan akun setelah refresh berhasil yang harus kembali ke login tanpa refresh kedua. Hasil gabungan tersedia pada [bukti/browser-result.json](bukti/browser-result.json). Pengujian menggunakan backend PostgreSQL uji terpisah dan build produksi melalui Vite preview. Pemulihan sesi, logout dan publikasi memakai endpoint nyata. Model hanya diganti test double untuk menyiapkan laporan uji, tanpa inferensi AI asli atau pengiriman SMTP eksternal.
++
++Matriks tampilan menggunakan navigasi aplikasi normal agar tidak membuat ratusan refresh dokumen buatan. Pembatasan backend tetap aktif. Kasus muat ulang, pembukaan konteks browser baru dengan cookie, gangguan jaringan, sesi tidak berlaku dan tenggat permintaan diuji secara terpisah. Pemeriksaan PWA mencakup service worker dan cache UI produksi, bukan pemasangan pada perangkat fisik atau splash bawaan sistem operasi.
++
++Tidak ada perubahan source backend, dependency, migration, endpoint, status laporan atau masa berlaku sesi. Kelompok lengkap 152 tes backend SLR14 tidak dijalankan ulang untuk perubahan frontend ini.
++
++## Memasang dan mencoba
++
++1. Hentikan frontend, ekstrak ZIP ke folder sementara, lalu gabungkan berkas sesuai path pada clone yang sudah berisi paket sebelumnya. Jangan mengganti seluruh folder repository.
++2. Dari `code/frontend`, jalankan `npm.cmd test`, `npm.cmd run build`, lalu `npm.cmd run dev`. Backend tetap berjalan seperti biasa.
++3. Buka ulang halaman. PWA yang terpasang perlu menerima pembaruan build melalui Aplikasi & Koneksi lalu dibuka kembali.
++4. Login sebagai Reporter, buka landing dan pilih Buka aplikasi. Ulangi untuk Operator/Admin. Coba muat ulang landing dan buka login saat sesi aktif.
++5. Pada HP, buka URL aplikasi melalui browser atau PWA. Periksa loading dan logo di atas formulir ketika belum login. Setelah login, buka kembali tanpa memasukkan sandi lagi selama cookie/sesi masih valid.
++6. Tekan Keluar, kemudian buka ruang privat. Formulir login harus muncul kembali. Coba panel tahap dan pilihan tab pada mode terang/gelap.
++
++Alternatif penyalinan adalah `git apply --check PERUBAHAN_SLR14_SESI_HP.patch`, lalu `git apply PERUBAHAN_SLR14_SESI_HP.patch` dari root clone. Pilih satu cara. Patch menggunakan preimage berkas paket terdahulu, dengan hash sebelumnya dan hash baru di `DAFTAR_PERUBAHAN.json`. Perubahan lokal lain perlu digabungkan terlebih dahulu.
++
++Tidak ada commit, push, deployment atau perubahan board oleh penyusun. Nama commit yang sesuai setelah review: `fix(slr14): seragamkan navigasi dan pulihkan sesi dengan tampilan pembuka mobile`.
+diff --git a/docs/slr14/revisi-sesi-mobile-20261113/bukti/browser-result.json b/docs/slr14/revisi-sesi-mobile-20261113/bukti/browser-result.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..2f351cae0902d2a6c926eaae46cabfa51ecffd93
+--- /dev/null
++++ b/docs/slr14/revisi-sesi-mobile-20261113/bukti/browser-result.json
+@@ -0,0 +1,214 @@
++{
++  "layout_cases": [
++    "auth:login:1440:False",
++    "auth:register:1440:False",
++    "auth:verify-email:1440:False",
++    "auth:login:1100:False",
++    "auth:register:1100:False",
++    "auth:verify-email:1100:False",
++    "auth:login:820:False",
++    "auth:register:820:False",
++    "auth:verify-email:820:False",
++    "auth:login:640:False",
++    "auth:register:640:False",
++    "auth:verify-email:640:False",
++    "auth:login:390:False",
++    "auth:register:390:False",
++    "auth:verify-email:390:False",
++    "auth:login:320:False",
++    "auth:register:320:False",
++    "auth:verify-email:320:False",
++    "auth:login:1440:True",
++    "auth:register:1440:True",
++    "auth:verify-email:1440:True",
++    "auth:login:1100:True",
++    "auth:register:1100:True",
++    "auth:verify-email:1100:True",
++    "auth:login:820:True",
++    "auth:register:820:True",
++    "auth:verify-email:820:True",
++    "auth:login:640:True",
++    "auth:register:640:True",
++    "auth:verify-email:640:True",
++    "auth:login:390:True",
++    "auth:register:390:True",
++    "auth:verify-email:390:True",
++    "auth:login:320:True",
++    "auth:register:320:True",
++    "auth:verify-email:320:True",
++    "active-public:/:1440:False",
++    "active-public:/public:1440:False",
++    "active-public:/:1100:False",
++    "active-public:/public:1100:False",
++    "active-public:/:820:False",
++    "active-public:/public:820:False",
++    "active-public:/:640:False",
++    "active-public:/public:640:False",
++    "active-public:/:390:False",
++    "active-public:/public:390:False",
++    "active-public:/:320:False",
++    "active-public:/public:320:False",
++    "active-public:/:1440:True",
++    "active-public:/public:1440:True",
++    "active-public:/:1100:True",
++    "active-public:/public:1100:True",
++    "active-public:/:820:True",
++    "active-public:/public:820:True",
++    "active-public:/:640:True",
++    "active-public:/public:640:True",
++    "active-public:/:390:True",
++    "active-public:/public:390:True",
++    "active-public:/:320:True",
++    "active-public:/public:320:True",
++    "reporter:input:1440:False",
++    "operator:inspection:1440:False",
++    "operator:decision:1440:False",
++    "operator:handling:1440:False",
++    "reporter:draft_review:1440:False",
++    "reporter:draft_confirm:1440:False",
++    "reporter:submitted:1440:False",
++    "reporter:input:1100:False",
++    "operator:inspection:1100:False",
++    "operator:decision:1100:False",
++    "operator:handling:1100:False",
++    "reporter:draft_review:1100:False",
++    "reporter:draft_confirm:1100:False",
++    "reporter:submitted:1100:False",
++    "reporter:input:820:False",
++    "operator:inspection:820:False",
++    "operator:decision:820:False",
++    "operator:handling:820:False",
++    "reporter:draft_review:820:False",
++    "reporter:draft_confirm:820:False",
++    "reporter:submitted:820:False",
++    "reporter:input:640:False",
++    "operator:inspection:640:False",
++    "operator:decision:640:False",
++    "operator:handling:640:False",
++    "reporter:draft_review:640:False",
++    "reporter:draft_confirm:640:False",
++    "reporter:submitted:640:False",
++    "reporter:input:390:False",
++    "operator:inspection:390:False",
++    "operator:decision:390:False",
++    "operator:handling:390:False",
++    "reporter:draft_review:390:False",
++    "reporter:draft_confirm:390:False",
++    "reporter:submitted:390:False",
++    "reporter:input:320:False",
++    "operator:inspection:320:False",
++    "operator:decision:320:False",
++    "operator:handling:320:False",
++    "reporter:draft_review:320:False",
++    "reporter:draft_confirm:320:False",
++    "reporter:submitted:320:False",
++    "reporter:input:1440:True",
++    "operator:inspection:1440:True",
++    "operator:decision:1440:True",
++    "operator:handling:1440:True",
++    "reporter:draft_review:1440:True",
++    "reporter:draft_confirm:1440:True",
++    "reporter:submitted:1440:True",
++    "reporter:input:1100:True",
++    "operator:inspection:1100:True",
++    "operator:decision:1100:True",
++    "operator:handling:1100:True",
++    "reporter:draft_review:1100:True",
++    "reporter:draft_confirm:1100:True",
++    "reporter:submitted:1100:True",
++    "reporter:input:820:True",
++    "operator:inspection:820:True",
++    "operator:decision:820:True",
++    "operator:handling:820:True",
++    "reporter:draft_review:820:True",
++    "reporter:draft_confirm:820:True",
++    "reporter:submitted:820:True",
++    "reporter:input:640:True",
++    "operator:inspection:640:True",
++    "operator:decision:640:True",
++    "operator:handling:640:True",
++    "reporter:draft_review:640:True",
++    "reporter:draft_confirm:640:True",
++    "reporter:submitted:640:True",
++    "reporter:input:390:True",
++    "operator:inspection:390:True",
++    "operator:decision:390:True",
++    "operator:handling:390:True",
++    "reporter:draft_review:390:True",
++    "reporter:draft_confirm:390:True",
++    "reporter:submitted:390:True",
++    "reporter:input:320:True",
++    "operator:inspection:320:True",
++    "operator:decision:320:True",
++    "operator:handling:320:True",
++    "reporter:draft_review:320:True",
++    "reporter:draft_confirm:320:True",
++    "reporter:submitted:320:True",
++    "notifications:reporter:False",
++    "notifications:reporter:True",
++    "notifications:operator:False",
++    "notifications:operator:True",
++    "notifications:admin:False",
++    "notifications:admin:True"
++  ],
++  "flow_checks": [
++    "Cold mobile browser launch -> visible branded startup while real session response is held -> anonymous user reaches login without fabricated delay",
++    "Mobile logo centered above account forms; desktop/tablet two-panel layout retained across six widths and both themes",
++    "reporter: actual login -> hard-load landing/portal -> Buka aplikasi -> browser Back -> /login auto-return -> reopen with cookie without another login POST",
++    "Production PWA service worker precaches startup/static UI and excludes auth, private API and report responses",
++    "Temporary refresh connection failure leaves public landing readable; explicit session retry resumes existing cookie without password",
++    "Active-session landing and public navigation remain responsive at all six widths in light/dark",
++    "Authenticated /login preserves a local intended report destination without exposing the login form",
++    "operator: actual login -> hard-load landing/portal -> Buka aplikasi -> browser Back -> /login auto-return -> reopen with cookie without another login POST",
++    "admin: actual login -> hard-load landing/portal -> Buka aplikasi -> browser Back -> /login auto-return -> reopen with cookie without another login POST",
++    "Reporter and Operator active stages share blue fill, white text, radius and dimensions; all three Reporter stages and readonly/evidence tabs checked at six widths in light/dark",
++    "Reporter, Operator and Admin notification filters use the same active blue/white choice without recoloring report status badges",
++    "Actual Operator review -> automatic Decision -> confirm -> explicit publish -> automatic Handling remains correct after style/session changes",
++    "Explicit logout stays logged out on landing, reload and protected navigation",
++    "Invalid/expired refresh cookie cannot bypass login or reveal private app content",
++    "Unanswered refresh is aborted by the real 15-second deadline; mobile startup ends with a clear session-check message",
++    "Reduced-motion preference suppresses spinning; mobile SPA navigation to landing does not replay the startup screen"
++  ],
++  "page_errors": [],
++  "screenshots": [
++    "startup-390-light.png",
++    "login-1440-light.png",
++    "login-390-light.png",
++    "login-1440-dark.png",
++    "login-390-dark.png",
++    "active-landing-390-light.png",
++    "active-landing-390-dark.png",
++    "stepper-1440-light.png",
++    "stepper-390-light.png",
++    "stepper-1440-dark.png",
++    "stepper-390-dark.png",
++    "startup-390-dark.png"
++  ],
++  "live_ai_inference_exercised": false,
++  "external_email_sent": false,
++  "status": "PASSED",
++  "frontend_mode": "production build via vite preview",
++  "screenshots_included": false,
++  "database": "PostgreSQL 16; disposable test databases",
++  "segments": [
++    {
++      "name": "session-and-layout",
++      "completed_layout_assertions": 144,
++      "completed_flow_assertions": 10
++    },
++    {
++      "name": "notifications-and-session-boundaries",
++      "status": "PASSED",
++      "completed_layout_assertions": 6,
++      "completed_flow_assertions": 6
++    }
++  ],
++  "final_initial_session_regression": {
++    "status": "PASSED",
++    "checks": [
++      "operator: actual login -> hard-load landing/portal -> Buka aplikasi -> browser Back -> /login auto-return -> reopen with cookie without another login POST",
++      "Controlled 401 from me after a real successful refresh returns to login without another refresh or private UI"
++    ]
++  },
++  "visual_review": "Desktop/mobile and light/dark examined from internal screenshots"
++}
+diff --git a/docs/slr14/revisi-sesi-mobile-20261113/bukti/frontend-build.txt b/docs/slr14/revisi-sesi-mobile-20261113/bukti/frontend-build.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..72ed241e9a1fe267d56871b87e827c9a21846249
+--- /dev/null
++++ b/docs/slr14/revisi-sesi-mobile-20261113/bukti/frontend-build.txt
+@@ -0,0 +1,56 @@
++npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
++
++> silar-slr10-frontend@1.1.1 build
++> vite build
++
++vite v7.3.7 building client environment for production...
++transforming...
++✓ 122 modules transformed.
++rendering chunks...
++computing gzip size...
++dist/index.html                                     1.27 kB │ gzip:     0.68 kB
++dist/sw.js                                          3.27 kB
++dist/assets/nara-ZsaGgmM6.svg                      70.54 kB │ gzip:    13.20 kB
++dist/assets/nara-dark-IbaIl4kU.svg                 70.56 kB │ gzip:    13.21 kB
++dist/assets/portal-hero-CeIvL_w2.webp              98.82 kB
++dist/assets/sena-C3A4rkNV.svg                     102.82 kB │ gzip:    15.17 kB
++dist/assets/sena-dark-Big5evOc.svg                102.84 kB │ gzip:    15.18 kB
++dist/assets/start-CtsQazq9.svg                    234.14 kB │ gzip:   149.82 kB
++dist/assets/start-dark-DVcX997r.svg               234.16 kB │ gzip:   149.84 kB
++dist/assets/privacy-BW608JbX.svg                  234.67 kB │ gzip:   149.94 kB
++dist/assets/privacy-dark-LiBJFNyc.svg             234.69 kB │ gzip:   149.96 kB
++dist/assets/reporting-scene-Chx1PA0k.svg          412.43 kB │ gzip:   183.08 kB
++dist/assets/reporting-scene-dark-DtLdqysh.svg     412.45 kB │ gzip:   183.10 kB
++dist/assets/auth-identity-BIULP5db.svg            573.05 kB │ gzip:   207.74 kB
++dist/assets/auth-identity-dark-QRPyuOka.svg       573.07 kB │ gzip:   207.76 kB
++dist/assets/reporter-welcome-DDZdLYCb.svg       2,211.79 kB │ gzip: 1,535.36 kB
++dist/assets/index-nUao148s.css                    242.43 kB │ gzip:    41.90 kB
++dist/assets/WorkspaceStatus-DsPeHJJy.js             0.26 kB │ gzip:     0.22 kB
++dist/assets/NotFoundView-BV2FiX1c.js                0.57 kB │ gzip:     0.40 kB
++dist/assets/ErrorNotice-DWZjS7aA.js                 1.04 kB │ gzip:     0.63 kB
++dist/assets/analysis-Do-MLo4m.js                    1.16 kB │ gzip:     0.62 kB
++dist/assets/AppDialog-B3PFr4MN.js                   1.33 kB │ gzip:     0.71 kB
++dist/assets/DeleteDraftDialog-DYgt3D3F.js           2.21 kB │ gzip:     1.21 kB
++dist/assets/recovery-BoZ7d3JM.js                    2.29 kB │ gzip:     1.05 kB
++dist/assets/PublicNavigation-Cky2-15a.js            2.48 kB │ gzip:     1.19 kB
++dist/assets/PublicIncidentCard-_kMeXjan.js          2.51 kB │ gzip:     1.28 kB
++dist/assets/ReportSentView-qQcdqAN6.js              2.70 kB │ gzip:     1.38 kB
++dist/assets/report-list-CIE95uQD.js                 3.38 kB │ gzip:     1.50 kB
++dist/assets/ProfileView-D9SXMZIK.js                 3.58 kB │ gzip:     1.63 kB
++dist/assets/WorkspaceServicesView-DS5viEkj.js       3.60 kB │ gzip:     1.54 kB
++dist/assets/FetchState-kidOL8cY.js                  4.15 kB │ gzip:     2.17 kB
++dist/assets/PwaView-DqKQCOwX.js                     4.17 kB │ gzip:     1.84 kB
++dist/assets/WorkspaceAssignment-C3_xSEu9.js         4.44 kB │ gzip:     2.07 kB
++dist/assets/WorkspaceAuditView-B-XYvaja.js          5.44 kB │ gzip:     2.35 kB
++dist/assets/NotificationsView-CcP3Xyje.js           6.04 kB │ gzip:     2.44 kB
++dist/assets/WorkspaceView-DoJB-JAL.js               8.23 kB │ gzip:     3.23 kB
++dist/assets/PublicPortalView-uvVhI8ni.js            8.63 kB │ gzip:     3.47 kB
++dist/assets/LandingView-DgTGVdsn.js                 8.75 kB │ gzip:     3.50 kB
++dist/assets/WorkspaceReportsView-BmBcap5z.js       12.37 kB │ gzip:     4.59 kB
++dist/assets/WorkspaceOperatorsView-bWuXa_kL.js     13.05 kB │ gzip:     4.77 kB
++dist/assets/AuthView-CdnQpmVB.js                   17.08 kB │ gzip:     6.58 kB
++dist/assets/ReportsView-CfbIwAMD.js                17.68 kB │ gzip:     6.45 kB
++dist/assets/WorkspaceReportView-BmkVQQ3d.js        64.49 kB │ gzip:    18.67 kB
++dist/assets/DraftView-BlFJF5WP.js                  83.76 kB │ gzip:    26.02 kB
++dist/assets/index-XeWrx8tA.js                     135.03 kB │ gzip:    52.09 kB
++✓ built in 2.82s
+diff --git a/docs/slr14/revisi-sesi-mobile-20261113/bukti/frontend-tests.txt b/docs/slr14/revisi-sesi-mobile-20261113/bukti/frontend-tests.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..580f49c63abf9140dab499be3fd4c381744b70b5
+--- /dev/null
++++ b/docs/slr14/revisi-sesi-mobile-20261113/bukti/frontend-tests.txt
+@@ -0,0 +1,135 @@
++npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
++
++> silar-slr10-frontend@1.1.1 test
++> node --test tests/*.test.js
++
++✔ Akun aktif kembali ke ruang sesuai peran, tanpa formulir login (5.915499ms)
++✔ Tujuan login mempertahankan alamat lokal dan menolak origin lain serta loop autentikasi (0.630054ms)
++✔ Seven evidence routes and revised narratives use only the stages actually executed (20.182218ms)
++✔ Progress stays at zero without server evidence and counts completed stages, not elapsed time (1.998575ms)
++✔ 100 percent requires both a succeeded run and a completed read of its stored result (0.811791ms)
++✔ An earlier run is never shown as the newly requested analysis (3.942117ms)
++✔ The request and report scope must match before a running analysis can be bound (6.005444ms)
++✔ A reservation is rechecked before binding the report latest run (0.489763ms)
++✔ A concurrent later run cannot replace the result linked by the original request (0.602629ms)
++✔ Bound runs with the wrong source, mode or report are rejected (1.857478ms)
++✔ Peringatan tampil ketika uncertain false tanpa mengubah flag (6.825241ms)
++✔ Peringatan dan uncertain true tetap terpisah (0.367127ms)
++✔ Kode baru memakai pesan umum dan label field aman (6.845464ms)
++✔ Hasil kosong dan NARA yang belum tersedia aman (0.454977ms)
++✔ Analisis terbaru gagal tidak memasangkan peringatan/keyakinannya ke kartu lama (0.355756ms)
++✔ Identitas run, hasil, bundle, dan narasi harus cocok (1.742456ms)
++✔ Narasi baru tidak dilabeli sebagai sumber kartu lama (1.108849ms)
++✔ Body sukses yang terputus setelah POST menahan hasil sebagai belum pasti tanpa retry (30.288688ms)
++✔ Koneksi POST terputus tidak mengirim ulang request (5.924981ms)
++✔ Respons gateway tanpa hasil backend pasti mengharuskan pembacaan keadaan tersimpan (17.87316ms)
++✔ Kegagalan AI yang telah dicatat mempertahankan kode backend (5.495931ms)
++✔ Body GET yang tidak terbaca tidak menyatakan mutasi telah dilakukan (8.62249ms)
++✔ Logout 204 tidak mencoba membaca JSON (11.725156ms)
++✔ Batas pemeriksaan sesi meneruskan pembatalan ke CSRF dan refresh tanpa retry POST (21.060608ms)
++✔ Recorder mendahulukan WebM dengan codec Opus (0.900054ms)
++✔ Recorder memakai AAC atau MP4 generik ketika WebM tidak tersedia (0.217145ms)
++✔ Tidak ada fallback OGG atau format default yang tidak diketahui (0.2287ms)
++✔ Nama dan MIME mengikuti keluaran rekaman yang sebenarnya (1.01583ms)
++✔ Keluaran OGG, Vorbis, ALAC, video dan MIME kosong tidak disamarkan (0.374045ms)
++✔ Password reset link challenge accepts the canonical UUID supplied by the backend (5.188828ms)
++✔ Missing, malformed and duplicate challenge parameters cannot enable password reset (2.444125ms)
++✔ Local email help defaults to development running on loopback, never a public deployment (2.807919ms)
++✔ An explicit local-help setting controls local preview without inferring backend email delivery (0.316478ms)
++✔ Registration carries only the email once into the code form (0.523094ms)
++✔ Operator password form requires an explicit valid activation proof from the server (2.68848ms)
++✔ Unicode dihitung per code point, bukan byte atau UTF16 (5.649037ms)
++✔ Teks kosong ditolak (0.360343ms)
++✔ Ekstensi gambar dan batas ukuran diperiksa (0.486174ms)
++✔ Lima format audio sesuai kontrak diperiksa server (0.589003ms)
++✔ OGG ditolak dan pesan format tidak menawarkan codec lain (4.143326ms)
++✔ Bundle membutuhkan kanal asli dan menahan jumlah berlebih (0.301622ms)
++✔ Bundle menghitung byte teks juga (0.224384ms)
++✔ Gemini tidak digunakan pada teks atau audio tunggal (0.246464ms)
++✔ Gemini diinformasikan untuk lima rute yang relevan (0.661587ms)
++✔ Pagination hanya menyusun path API lokal (2.900739ms)
++✔ Keterangan terbaru menjadi aktif sebelum bundle; semua gambar dan satu audio ikut otomatis (13.288298ms)
++✔ Bundle aktif mempertahankan pilihan sumber lama; hanya unggahan sesudahnya yang mengganti kanal (0.647162ms)
++✔ Penggantian keterangan/audio mempertahankan gambar dan tidak menyertakan dua item kanal yang sama (0.383639ms)
++✔ Riwayat gambar lebih dari tiga tidak dipangkas diam-diam (0.570571ms)
++✔ Batas gambar dan total byte diperiksa sebelum kelompok unggahan dikirim (0.422031ms)
++✔ Pemeriksaan sumber sama mengabaikan urutan tetapi menolak ID duplikat (0.556989ms)
++✔ Analisis satu klik menyimpan snapshot dahulu dan memakai revision hasil commit (1.977541ms)
++✔ Sumber tidak berubah memakai bundle aktif tanpa membentuk versi baru (0.351905ms)
++✔ Informasi Gemini diperiksa sebelum persiapan sumber atau analisis (1.30222ms)
++✔ Respons persiapan terputus menahan analisis dan tidak mengulang POST (3.757509ms)
++✔ Sumber pada respons persiapan yang tidak sesuai tidak diteruskan ke analisis (0.380186ms)
++✔ Kegagalan analisis setelah snapshot tersimpan mempertahankan snapshot untuk pemulihan (0.483039ms)
++✔ Review success requires a newly stored matching review, official source and current operator (6.47154ms)
++✔ Publication editor only opens for a Valid review of the exact official card with no active candidate (2.917396ms)
++✔ Public draft values exclude private fields and preserve unknown values as null (9.175566ms)
++✔ A successful HTTP response cannot advance publication without the exact report, revision and version receipt (2.231839ms)
++✔ Publication recovery is bound to the original idempotency key, report and operation (1.656562ms)
++✔ Guided confirmation only approves a stored candidate with exactly the reviewed public content (2.109028ms)
++✔ Internal decision advances only after the same operator, source, reason and state are read back (0.662215ms)
++✔ Publication completion cannot advance for approval alone or another version, report or assignee (1.670568ms)
++✔ Publication prerequisites explain the missing reason and consent, and accept an unknown exact time (3.830525ms)
++✔ Public pagination retains both filters and requests exactly ten cards (1.536651ms)
++✔ Internal publication preview cannot project extra legacy fields or a version UUID (1.35351ms)
++✔ Preparing a replacement preserves a published report, including after candidate cancellation (0.39776ms)
++✔ Public requests omit account credentials and do not refresh after an HTTP error (7.202542ms)
++✔ Custom manifest icons work without the old icons directory, including a filename with spaces (12.53007ms)
++✔ A stale icon reference warns without ENOENT or precaching a missing file; API/private data stays out (1.834585ms)
++✔ Changing icon bytes or HTML changes the UI cache version without renaming the asset (10.805517ms)
++✔ Precache hanya daftar aset antarmuka (12.19254ms)
++✔ Auth, API privat, media, POST dan origin lain tidak diintersep (7.671675ms)
++✔ Aktivasi pembaruan menghapus cache aset SILAR lama dan mempertahankan cache aktif serta aplikasi lain (1.625448ms)
++✔ Pembacaan respons hilang memakai GET request, run dan draft tanpa POST atau replay otomatis (11.337677ms)
++✔ RUNNING dan UNKNOWN tanpa hasil terminal hanya dibaca tanpa menebak run atau mengulang (0.815407ms)
++✔ Request dan run dari laporan lain tidak digabungkan ke draft yang dibuka (0.963195ms)
++✔ Daftar pemulihan analisis menyaring request upload dan laporan lain (0.29487ms)
++✔ Respons hilang, REQUEST_RUNNING dan REQUEST_UNKNOWN menahan tindakan baru sampai dibaca (0.319064ms)
++✔ Fresh draft and saved evidence without a completed analysis keep stages 2 and 3 locked (6.566121ms)
++✔ Completed current analysis opens review but confirmation requires advancing the exact card (0.576905ms)
++✔ Unsaved evidence and an open correction prevent jumping to confirmation (0.40017ms)
++✔ A corrected card invalidates local progress; legitimate stored verification allows resuming (0.267345ms)
++✔ Missing or mismatched result references and RUNNING/UNKNOWN/FAILED do not unlock review (0.624179ms)
++✔ NON_EVENT remains readable at stage 2 while stage 3 stays locked (1.918282ms)
++✔ Saved narrative revision keeps reanalysis accessible but cannot unlock confirmation without new results (0.366896ms)
++✔ Official reports remain readable through the steps without allowing another send (0.230779ms)
++✔ Four actual incident categories include earthquake; NON_EVENT is not an event category (9.000614ms)
++✔ Prepared drafts combine category and both states in a paginated server query (3.597075ms)
++✔ Confirmation does not imply submission and workflow has precedence after sending (0.866233ms)
++✔ Uncertain with missing incident fields can be confirmed; submission needs verification of the exact card (8.348518ms)
++✔ NON_EVENT, mismatched source/run and unknown execution never enable confirmation or submission (0.844678ms)
++✔ Official reports stay read-only even when their historical source is valid (0.344929ms)
++✔ Partial corrections preserve untouched arrays and exact stored time, including milliseconds (6.193244ms)
++✔ Explicit clearing remains null or an empty array; empty information does not become zero victims (3.34588ms)
++✔ Lost submit/correction/confirmation responses read only the ledger and latest report, never POST (1.002971ms)
++✔ Recovery includes report mutations but never combines a foreign report or run (8.13012ms)
++✔ Pemulihan sesi berbagi satu refresh, membaca akun, dan tidak mengulang pada navigasi berikutnya (174.509464ms)
++✔ Sesi kedaluwarsa menjadi anonim tanpa retry refresh otomatis (2.850889ms)
++✔ Penolakan akun sesudah refresh baru tidak memulai refresh kedua atau melewati tenggat awal (3.726215ms)
++✔ Gangguan koneksi tidak dianggap logout: pemeriksaan eksplisit dapat memulihkan cookie yang masih valid (4.65341ms)
++✔ Logout eksplisit menghapus akun dan tidak memulihkannya lagi saat kembali ke halaman publik (7.212986ms)
++✔ Four metric links use separate destinations and respect read permissions (2.12884ms)
++✔ Shortcut filters preserve scope and pagination without accepting inherited object keys (1.924636ms)
++✔ Unsaved review text never unlocks dependent tabs (0.298908ms)
++✔ All saved outcomes unlock dependent reading, including CLOSED; old-card reviews do not (0.413087ms)
++✔ Four Admin cards open their own matching report and account destinations (1.21448ms)
++✔ Admin shortcut routing uses explicit permissions and does not grant them by role (1.19412ms)
++✔ Admin views preserve all official reports, current unassigned state and CLOSED separately (3.064036ms)
++✔ Operator account status links accept only supported single query values (0.188705ms)
++✔ Empty or stale form values cannot erase a fixed CLOSED dashboard filter (1.787083ms)
++✔ Merged Admin reports use the API scope permitted by the account (1.418209ms)
++✔ Monitoring and assignment have one navigation entry for either explicit Admin permission (1.118476ms)
++✔ All report shortcuts share the merged page and keep their filters under either permitted API scope (0.810547ms)
++✔ Assignee labels follow account names rather than fixed Operator A/B/C slots (2.79079ms)
++✔ Pure Admin navigation has management but no inherited Operator actions (0.678547ms)
++✔ A role label cannot grant private reading or mutation after reassignment (0.276284ms)
++✔ Closed reports and unmet close requirements never enable a mutation (0.183734ms)
++✔ Prepare requires valid review; Internal cannot replace a publication or active candidate (1.71745ms)
++✔ Workspace filters remain server-scoped and preserve independent states (1.605947ms)
++ℹ tests 122
++ℹ suites 0
++ℹ pass 122
++ℹ fail 0
++ℹ cancelled 0
++ℹ skipped 0
++ℹ todo 0
++ℹ duration_ms 1416.715492

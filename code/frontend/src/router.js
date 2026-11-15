@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import { session, restoreSession } from './session';
+import { loginDestination } from './account-routing';
 import { isStaff, hasPermission, ADMIN_REPORTS_PATH, ADMIN_REPORTS_TITLE } from './workspace';
 export const router = createRouter({history:createWebHistory(), scrollBehavior(to,from,savedPosition){
   if(savedPosition)return savedPosition;
@@ -31,8 +32,9 @@ export const router = createRouter({history:createWebHistory(), scrollBehavior(t
   {path:'/:pathMatch(.*)*', component:()=>import('./views/NotFoundView.vue')}
 ]});
 router.beforeEach(async to => {
-  if (to.meta.publicLayout) return;
+  if (to.meta.publicLayout) { void restoreSession(); return; }
   await restoreSession();
+  if (to.meta.mode === 'login' && session.user) return loginDestination(to.query.next, session.user);
   if (to.meta.private && !session.user) return {path:'/login', query:{next:to.fullPath}};
   if (to.meta.reporter && session.user?.role !== 'REPORTER') return '/workspace';
   if (to.meta.staff && !isStaff(session.user)) return '/reports';

@@ -7,6 +7,7 @@ const props=defineProps({
   modelValue:{type:String,default:''},
   id:{type:String,required:true},
   disabled:Boolean,
+  leadingIcon:{type:String,default:''},
   toggleLabel:{type:String,default:'kata sandi'},
 });
 const emit=defineEmits(['update:modelValue']);
@@ -16,6 +17,7 @@ watch(()=>props.disabled,value=>{if(value)visible.value=false;});
 </script>
 <template>
   <div class="auth-password-input">
+    <AppIcon v-if="leadingIcon" class="auth-password-leading" :name="leadingIcon" :size="20" />
     <input :id="id" v-bind="$attrs" :type="visible?'text':'password'" :value="modelValue"
       :disabled="disabled" autocapitalize="off" spellcheck="false"
       @input="emit('update:modelValue',$event.target.value)">

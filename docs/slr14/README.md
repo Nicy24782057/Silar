@@ -1,5 +1,21 @@
 # SLR14 — publikasi dan antarmuka SILAR
 
+**Revisi HP dan pencarian, 14 November 2026:** penerapan SVG yang disetujui,
+kartu laporan di HP, grafik status utuh, label filter serta pencarian teks/narasi
+dan ID laporan milik Reporter. Baca [revisi HP dan pencarian](revisi-hp-pencarian-20261114/README.md).
+
+**Revisi desain login HP yang telah disetujui, 13 November 2026:** header biru
+memakai ilustrasi dan pattern desktop, dengan panel formulir melengkung.
+Registrasi, OTP, aktivasi dan pemulihan memiliki header lebih pendek. Pembukaan
+browser HP/PWA memiliki minimum sekitar 1,2 detik, termasuk waktu penyiapan.
+Baca [revisi desain login HP](revisi-login-mobile-20261113/README.md).
+
+**Revisi sesi dan tampilan HP, 13 November 2026:** tahap dan tab aktif memakai
+panel biru yang seragam. Landing/Portal Publik mengenali sesi valid dan
+menampilkan Buka aplikasi. Login HP memiliki logo di tengah dan pembukaan
+browser/PWA menampilkan loading selama inisialisasi. Baca
+[revisi sesi dan tampilan HP](revisi-sesi-mobile-20261113/README.md).
+
 **Revisi review 13 November 2026:** implementasi akun/Operator dan pembaruan UI
 tetap menjadi bagian SLR14; SLR15 mencatat pengujian dan temuannya. Ikon mata
 berada di dalam setiap kolom sandi, tombol akun menyatu dengan landing page,
@@ -10,10 +26,13 @@ dan panduan menyiapkan aset model diperjelas. Baca
 model asli, serta perintah PostgreSQL + sembilan tes pipeline, tersedia di
 [PENUNTASAN_VERIFIKASI_20261030.md](PENUNTASAN_VERIFIKASI_20261030.md).
 
-**Revisi terkini — alur Operator:** review tersimpan otomatis membuka Tindak
-Lanjut. Pilihan publikasi langsung menampilkan formulir/pratinjau, dengan dua
-aksi utama Konfirmasi isi publikasi → Publikasikan sekarang. Baca
-[ALUR_OPERATOR_20261030.md](ALUR_OPERATOR_20261030.md).
+**Revisi terkini — alur Operator, 13 November 2026:** urutan menjadi
+Pemeriksaan → Keputusan penayangan → Penanganan & penyelesaian. Review tersimpan
+otomatis membuka Keputusan; keputusan internal tersimpan atau publikasi terbit
+otomatis membuka Penanganan. Tindak lanjut opsional dan penutupan tetap eksplisit.
+Alasan publikasi berada pada formulir publikasi, dengan syarat tombol yang jelas.
+Baca [revisi alur Operator](revisi-alur-operator-20261113/README.md).
+Catatan [alur 30 Oktober](ALUR_OPERATOR_20261030.md) dipertahankan sebagai riwayat.
 
 **Revisi Reporter/notifikasi:** notifikasi Admin dirapikan, penanda tahap draft kembali ke
 tampilan acuan, dan Periksa hasil otomatis terbuka sesudah analisis tersimpan.
@@ -103,26 +122,38 @@ sendiri tidak memberi kewenangan Operator.
 1. Buka **Penanganan Saya → Detail Laporan → Pemeriksaan**. Bagian ini memuat
    ringkasan, narasi, bukti dan formulir review; rincian AI dapat dibuka bila
    diperlukan. Riwayat dibuka melalui tombol tersendiri. Pilih hasil dan simpan
-   review beserta alasan. Setelah tersimpan dan terbaca kembali, Tindak Lanjut
-   otomatis terbuka dengan pesan **Review Anda sudah tersimpan**.
-2. Catat serta selesaikan/batalkan tindak lanjut bila diperlukan, lalu gunakan
-   **Lanjut ke keputusan**. Untuk review VALID atas versi resmi, pilih
-   **Tinjau untuk publikasi** dan isi alasan keputusan.
+   review beserta alasan. Setelah tersimpan dan terbaca kembali, Keputusan
+   penayangan otomatis terbuka dengan pesan **Review Anda sudah tersimpan**.
+2. Untuk review VALID atas versi resmi, pilih **Tinjau untuk publikasi**.
+   Untuk keputusan internal, pilih **Tetap internal**, isi alasan lalu tekan
+   **Simpan keputusan & lanjut**. Keputusan internal yang tersimpan membuka
+   Penanganan & penyelesaian; laporan tetap terbuka sampai ditutup secara eksplisit.
 3. Formulir dan pratinjau langsung tersedia. Periksa semua isi dan hilangkan
    informasi privat. Kategori mengikuti versi resmi; waktu pasti boleh kosong.
+   Isi alasan keputusan publikasi di dalam formulir tersebut. Daftar syarat
+   di dekat tombol menunjukkan isian atau persetujuan yang masih kurang.
 4. Setelah memeriksa sanitasi, tekan **Konfirmasi isi publikasi**. Keputusan,
    penyimpanan versi serta persetujuan versi tepat dicatat melalui API yang
    terpisah. Isi tersimpan harus sama dengan isi yang diperiksa. Ini belum terbit.
 5. Periksa **Pratinjau terkonfirmasi**, pastikan versi yang akan diterbitkan,
    lalu tekan **Publikasikan sekarang**. Publikasi menunggu tindakan terakhir ini.
-6. Pembaruan berikutnya memakai **Tinjau pembaruan informasi**. Pembatalan draf
+6. Setelah publikasi terbit dan terbaca kembali, Penanganan & penyelesaian terbuka
+   otomatis. Tindak lanjut boleh kosong; yang sudah dibuat harus selesai atau
+   dibatalkan sebelum penutupan. Periksa syarat, lalu gunakan **Selesaikan
+   penanganan laporan** dan konfirmasi dengan catatan penutupan internal.
+7. Pembaruan berikutnya memakai **Tinjau pembaruan informasi**. Pembatalan draf
    memerlukan alasan; parent pengganti mengikuti versi terakhir, termasuk yang
    dibatalkan. Versi terbit lama bertahan sampai penggantinya diterbitkan.
-7. Respons terputus menahan langkah berikutnya. **Periksa hasil tindakan**
+8. Respons terputus menahan langkah berikutnya. **Periksa hasil tindakan**
    membaca ledger/keadaan tersimpan melalui GET. Pemulihan POST dengan kunci/body
    sama hanya tersedia secara eksplisit bila rekam request belum ditemukan.
    Draf hasil pemulihan dapat memerlukan konfirmasi eksplisit lagi. Review dikunci
    setelah publikasi pertama; laporan tertutup tidak menerima perubahan baru.
+
+Status backend tidak ditambah atau diubah. Keputusan internal maupun publikasi
+tidak otomatis berarti CLOSED. Saat penutupan sebenarnya berhasil, Reporter
+menerima notifikasi aplikasi **Penanganan laporan telah ditutup.** Notifikasi
+itu tidak memuat alasan; catatan penutupan hanya tersedia bagi petugas berwenang.
 
 ## Menghapus laporan yang belum dikirim
 
@@ -165,7 +196,10 @@ perkembangan penanganan; filter digabung dengan AND. Urutan tetap
 `published_at` menurun, lalu ID laporan. Ringkasan jumlah menggunakan `count`
 dari daftar dalam lingkup terkait, bukan menghitung kartu pada halaman aktif.
 
-Pembacaan Portal Publik menghilangkan Bearer/cookie dan tidak memulihkan sesi.
+Permintaan data publik melalui `publicRead` tetap menghilangkan Bearer/cookie
+serta tidak memicu refresh. Navigasi situs secara terpisah memeriksa sesi opsional
+agar akun aktif mendapat tombol Buka aplikasi. Kegagalan pemeriksaan itu tidak
+menutup akses anonim ke landing atau Portal Publik.
 Cache PWA hanya berisi antarmuka/aset. Token, data laporan, media privat dan
 respons API tidak dimasukkan ke cache atau penyimpanan browser.
 

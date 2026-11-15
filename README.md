@@ -19,6 +19,12 @@ Di Windows, jalankan **SETUP_SILAR.bat** dari folder utama, atau `py -3.12 tools
 
 Revisi implementasi **SLR14** dari temuan pengujian SLR15 mencakup satu halaman verifikasi email/kode, sandi minimal 15 karakter, serta tiga tahap pengelolaan laporan Operator. Penyesuaian kontrol sandi dan tombol landing page ada pada [revisi review SLR14](docs/slr14/revisi-review-20261113/README.md). Bukti pengujian paket akun sebelumnya tetap tersedia pada [catatan pengujian SLR15](docs/slr15/revisi-20261113/README.md).
 
+Urutan Operator terbaru adalah **Pemeriksaan → Keputusan penayangan → Penanganan & penyelesaian**. Review, keputusan internal dan publikasi yang sudah terbaca tersimpan membuka tahap berikutnya secara otomatis. Tindak lanjut opsional; penutupan tetap tindakan tersendiri dengan aturan status yang sudah ada. Rincian terdapat pada [revisi alur Operator SLR14](docs/slr14/revisi-alur-operator-20261113/README.md).
+
+Revisi lanjutan menyeragamkan panel tahap/tab aktif berwarna biru, memulihkan sesi saat kembali ke landing page, serta menambahkan loading pembuka dan logo akun di HP. Pengguna dengan sesi valid memakai **Buka aplikasi** tanpa login ulang. Baca [revisi sesi dan tampilan HP SLR14](docs/slr14/revisi-sesi-mobile-20261113/README.md).
+
+Revisi desain HP yang telah disetujui memakai ilustrasi/pattern login desktop, header biru dan panel formulir melengkung. Header registrasi, OTP, aktivasi dan pemulihan sandi lebih pendek agar formulir mulai lebih tinggi. Layar pembuka browser HP/PWA memiliki minimum sekitar 1,2 detik, dengan waktu pemeriksaan sesi dihitung dalam durasi yang sama. Baca [revisi desain login HP SLR14](docs/slr14/revisi-login-mobile-20261113/README.md).
+
 ## Acuan proyek
 
 - [Acuan Teknis SILAR v0.3](docs/architecture/SILAR_Technical_Reference.docx), termasuk Lampiran A.

@@ -97,7 +97,7 @@ async function exit() { await closeMenu(false); await signOut(); router.push('/l
     <div class="page-shell" :inert="smallScreen&&menu">
       <header class="topline">
         <div v-if="work" class="ws-breadcrumb"><RouterLink to="/workspace">Ruang kerja</RouterLink><span>/</span><strong>{{ workTitle }}</strong></div><div v-if="work" class="ws-header-account"><RouterLink to="/notifications" aria-label="Buka notifikasi"><AppIcon name="bell" :size="18" /></RouterLink><span class="avatar" :title="session.user.full_name">{{ accountInitials }}</span></div>
-        <button ref="menuButton" class="mobile-menu" :aria-expanded="menu" aria-controls="app-navigation" aria-label="Buka navigasi" @click="openMenu">Menu <AppIcon name="menu" :size="18" /></button>
+        <button ref="menuButton" class="mobile-menu" :aria-expanded="menu" aria-controls="app-navigation" aria-label="Buka navigasi" @click="openMenu"><AppIcon name="menu" :size="18" /></button>
         <RouterLink class="mobile-brand" to="/" aria-label="SILAR, halaman utama"><img src="/brand/silar-reference.svg" alt=""><span>SILAR</span></RouterLink>
       </header>
       <div v-if="!online" class="offline-banner" role="status"><AppIcon name="alert" :size="18" /><span>Perangkat offline. Sambungkan kembali jaringan untuk membaca atau menyimpan laporan. Data privat tidak disimpan untuk penggunaan offline.</span></div>

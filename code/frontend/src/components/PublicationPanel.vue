@@ -6,7 +6,7 @@ import {online} from '../network';
 import {date,label,paginationPath} from '../domain';
 import {handlerCan,workspaceLabel} from '../workspace';
 import {publicProjection} from '../publication';
-import {canDraftPublication,publicationValues,publicationReceipt,publicationRequest,reviewedPublicationCandidate} from '../operator-flow';
+import {canDraftPublication,publicationValues,publicationReceipt,publicationRequest,reviewedPublicationCandidate,publicationRequirements} from '../operator-flow';
 import {requiresStoredState} from '../recovery';
 import AppDialog from './AppDialog.vue';
 import AppIcon from './AppIcon.vue';
@@ -15,7 +15,7 @@ import WorkspaceStatus from './WorkspaceStatus.vue';
 import ErrorNotice from './ErrorNotice.vue';
 import ProcessOutlet from './ProcessOutlet.vue';
 const props=defineProps({detail:{type:Object,required:true},blocked:Boolean,start:Boolean,decisionReason:{type:String,default:''}});
-const emit=defineEmits(['saved','busy']);
+const emit=defineEmits(['saved','busy','uncertain','update:decisionReason']);
 const data=ref(null),versions=ref([]),latest=ref(null),busy=ref(false),saving=ref(false),error=ref(null),message=ref('');
 const editor=ref(false),sanitized=ref(false),preview=ref(null),confirmation=ref(null),confirmed=ref(false),reason=ref('');
 const unknown=ref(null),missingRequest=ref(false),activePacket=ref(null),savingLabel=ref(''),draftBase=ref(null),startConsumed=ref(false);
@@ -28,6 +28,10 @@ const allowed=computed(()=>handlerCan(session.user,props.detail,'publish_report'
 const disabled=computed(()=>!online.value||busy.value||saving.value||props.blocked||Boolean(unknown.value));
 const canCreate=computed(()=>allowed.value&&canDraftPublication(data.value));
 const needsDecision=computed(()=>data.value?.report.publication_status!=='PENDING_APPROVAL');
+const inputRequirements=computed(()=>publicationRequirements(form,{needsDecision:needsDecision.value,decisionReason:props.decisionReason,sanitized:sanitized.value}));
+const operationBlockReason=computed(()=>!online.value?'Sambungkan jaringan untuk melanjutkan.':saving.value?'Tunggu penyimpanan dan pembacaan hasil selesai.':busy.value?'Tunggu pembacaan versi publikasi selesai.':unknown.value?'Periksa hasil tindakan yang belum pasti sebelum melanjutkan.':props.blocked?'Selesaikan pemeriksaan keadaan laporan sebelum melakukan tindakan berikutnya.':'');
+function focusField(id){document.getElementById(id)?.focus();}
+function savedEvent(target){return {action:target?.action,reportId:target?.reportId,versionId:target?.versionId,operatorId:target?.operatorId,revision:data.value?.report.revision};}
 const viewKey=computed(()=>candidate.value?candidate.value.state+':'+candidate.value.id:editor.value?'editor':published.value?'published':'start');
 const formPreview=computed(()=>{
  const validTime=/(Z|[+-]\d{2}:\d{2})$/i.test(form.occurred_at)&&Number.isFinite(Date.parse(form.occurred_at));
@@ -64,7 +68,7 @@ function edit(){
 }
 function packet(action,body,versionId=null){
  const id=reportId.value,part=action==='decision'?'publication-decision':action==='create'?'publication-versions':`publication-versions/${versionId}/${action}`;
- return {reportId:id,key:crypto.randomUUID(),action,versionId,path:`reports/${id}/${part}/`,
+ return {reportId:id,key:crypto.randomUUID(),operatorId:session.user.id,action,versionId,path:`reports/${id}/${part}/`,
   scope:`publication.${action}${versionId?':'+versionId:''}:${id}`,body:{...body,expected_revision:data.value.report.revision}};
 }
 async function step(target){
@@ -81,7 +85,7 @@ async function task(work){
  const id=reportId.value;
  try{
   await work();if(!alive||id!==reportId.value)return;
-  const action=activePacket.value?.action;unknown.value=null;activePacket.value=null;confirmed.value=false;confirmation.value=null;emit('saved',{action});
+  const receipt=savedEvent(activePacket.value);unknown.value=null;activePacket.value=null;confirmed.value=false;confirmation.value=null;emit('saved',receipt);
  }catch(e){
   if(!alive||id!==reportId.value)return;
   if(requiresStoredState(e)&&activePacket.value)unknown.value=activePacket.value;
@@ -92,7 +96,7 @@ async function create(){
  if(disabled.value||!canCreate.value||!sanitized.value)return;
  let values;
  try{values=publicationValues(form);}catch(e){error.value=e;return;}
- if(needsDecision.value&&!props.decisionReason.trim()){error.value=new ApiError('Isi alasan keputusan publikasi di atas sebelum melanjutkan.','INVALID_PAYLOAD');return;}
+ if(needsDecision.value&&!props.decisionReason.trim()){error.value=new ApiError('Isi alasan keputusan publikasi pada formulir ini sebelum mengonfirmasi isi.','INVALID_PAYLOAD');return;}
  if(draftBase.value?.revision!==data.value.report.revision){error.value=new ApiError('Keadaan laporan berubah. Baca ulang sumber sebelum menyimpan isi publik.','VERSION_CONFLICT');return;}
  const parentId=draftBase.value.parentId,decisionReason=props.decisionReason.trim(),category=data.value.official_card.data.event_type;
  await task(async()=>{
@@ -143,15 +147,15 @@ async function recover(){
    if(editor.value&&!candidate.value)draftBase.value={revision:data.value.report.revision,parentId:latest.value?.id??null};
    message.value=target.action==='publish'?'Publikasi telah tersimpan. Keadaan terbit sudah dibaca kembali.':'Tindakan sudah tersimpan. Lanjutkan dari keadaan publikasi yang ditampilkan.';
   }else message.value='Tindakan gagal dan sudah tercatat. Periksa isian sebelum mencoba kembali.';
-  emit('saved',{action:target.action});
+  emit('saved',record.state==='SUCCEEDED'?savedEvent(target):undefined);
  }catch(e){if(alive){error.value=e;if(e.status===404)missingRequest.value=true;}}
  finally{if(alive){saving.value=false;emit('busy',false);}}
 }
 async function replay(){
  const target=unknown.value;if(!target||!missingRequest.value||saving.value)return;
- // Only explicit recovery reuses the frozen key/body. It never starts the next step.
+ // Only explicit recovery reuses the frozen key/body. It never starts another mutation.
  saving.value=true;emit('busy',true);error.value=null;
- try{await step(target);if(!alive)return;unknown.value=null;activePacket.value=null;missingRequest.value=false;confirmed.value=false;confirmation.value=null;message.value='Keadaan tindakan sudah dipulihkan. Periksa hasil sebelum melanjutkan.';emit('saved',{action:target.action});}
+ try{await step(target);if(!alive)return;unknown.value=null;activePacket.value=null;missingRequest.value=false;confirmed.value=false;confirmation.value=null;message.value='Keadaan tindakan sudah dipulihkan. Periksa hasil sebelum melanjutkan.';emit('saved',savedEvent(target));}
  catch(e){if(alive)error.value=e;}finally{if(alive){saving.value=false;emit('busy',false);}}
 }
 async function openVersion(item){
@@ -163,7 +167,8 @@ watch(()=>props.start,value=>{startConsumed.value=false;if(value&&!busy.value&&!
 watch(()=>props.detail.report.revision,revision=>{if(!saving.value&&data.value?.report.revision!==revision)load({clearError:false});});
 watch(reportId,()=>{startConsumed.value=false;editor.value=false;unknown.value=null;confirmation.value=null;preview.value=null;data.value=null;message.value='';load();},{immediate:true});
 watch(()=>candidate.value?.id+':'+candidate.value?.state,()=>{confirmed.value=false;});
-onBeforeUnmount(()=>{alive=false;++sequence;controller?.abort();emit('busy',false);});
+watch(unknown,value=>emit('uncertain',Boolean(value)));
+onBeforeUnmount(()=>{alive=false;++sequence;controller?.abort();emit('busy',false);emit('uncertain',false);});
 </script>
 <template>
  <section class="card publication-panel publication-guided" aria-labelledby="publication-panel-title" :aria-busy="busy||saving">
@@ -183,17 +188,21 @@ onBeforeUnmount(()=>{alive=false;++sequence;controller?.abort();emit('busy',fals
      <PublicIncidentCard :record="publicProjection(candidate,reportId)" preview />
      <p class="fine">Pratinjau ini adalah isi publik versi tersimpan. Bukti privat dan data akun tidak ditampilkan di portal.</p>
      <template v-if="allowed">
-      <label class="check-label"><input v-model="confirmed" type="checkbox" :disabled="disabled"><span>{{ candidate.state==='DRAFT'?'Saya sudah memeriksa pratinjau dan memastikan informasi ini layak untuk publik.':'Saya memastikan versi tersimpan ini adalah informasi yang akan diterbitkan.' }}</span></label>
-      <div class="actions"><button class="primary" :disabled="disabled||!confirmed" @click="confirmCandidate(candidate.state==='DRAFT'?'approve':'publish')">{{ candidate.state==='DRAFT'?'Konfirmasi isi publikasi':'Publikasikan sekarang' }}<AppIcon :name="candidate.state==='DRAFT'?'check':'globe'" :size="16" /></button><button class="danger" :disabled="disabled" @click="askCancel">Batalkan draf publikasi</button></div>
+      <label class="check-label"><input id="public-confirmed" v-model="confirmed" type="checkbox" :disabled="disabled"><span>{{ candidate.state==='DRAFT'?'Saya sudah memeriksa pratinjau dan memastikan informasi ini layak untuk publik.':'Saya memastikan versi tersimpan ini adalah informasi yang akan diterbitkan.' }}</span></label>
+      <p v-if="!confirmed" id="publication-confirm-hint" class="fine">Centang pemeriksaan versi tersimpan di atas untuk mengaktifkan tombol berikutnya.</p><p v-if="operationBlockReason" class="notice warning" role="status">{{ operationBlockReason }}</p>
+      <div class="actions"><button class="primary" :disabled="disabled||!confirmed" :aria-describedby="!confirmed?'publication-confirm-hint':undefined" @click="confirmCandidate(candidate.state==='DRAFT'?'approve':'publish')">{{ candidate.state==='DRAFT'?'Konfirmasi isi publikasi':'Publikasikan sekarang' }}<AppIcon :name="candidate.state==='DRAFT'?'check':'globe'" :size="16" /></button><button class="danger" :disabled="disabled" @click="askCancel">Batalkan draf publikasi</button></div>
      </template>
     </section>
     <form v-else-if="editor&&canCreate" class="publication-editor" @submit.prevent="create">
      <h3 data-process-heading>Periksa isi dan pratinjau publikasi</h3><p class="fine">Isi awal mengikuti {{ latest?'versi publikasi terakhir':'sumber resmi' }}. Hapus identitas, kontak, alamat terperinci, dan informasi privat. Kategori tetap {{ label(data.official_card.data.event_type) }}.</p>
      <div class="publication-edit-grid"><div class="publication-fields"><div class="field wide"><label for="public-summary">Ringkasan kejadian *</label><textarea id="public-summary" v-model="form.summary" required maxlength="2000" :disabled="disabled" /></div><div class="field"><label for="public-location">Lokasi umum</label><input id="public-location" v-model="form.general_location" maxlength="500" :disabled="disabled"></div><div class="field"><label for="public-time">Waktu yang disebut</label><input id="public-time" v-model="form.time_text" maxlength="300" :disabled="disabled"></div><div class="field wide"><label for="public-occurred">Waktu pasti (jika diketahui)</label><input id="public-occurred" v-model="form.occurred_at" placeholder="2026-10-30T15:00:00+07:00" aria-describedby="public-time-note" :disabled="disabled"><small id="public-time-note">Sertakan zona waktu. Kosongkan jika belum diketahui.</small></div><div class="field"><label for="public-impact">Dampak umum</label><textarea id="public-impact" v-model="form.general_impact" maxlength="2000" :disabled="disabled" /></div><div class="field"><label for="public-handling">Perkembangan penanganan</label><textarea id="public-handling" v-model="form.handling_update" maxlength="2000" :disabled="disabled" /></div></div>
      <section class="publication-live-preview"><h3>Pratinjau untuk publik</h3><PublicIncidentCard :record="formPreview" preview /><p class="fine">Pratinjau mengikuti isian formulir. Informasi ini belum diterbitkan.</p></section></div>
-     <label class="check-label"><input v-model="sanitized" type="checkbox" :disabled="disabled"><span>Saya telah memeriksa sumber, sanitasi informasi pribadi, dan kelayakan isi untuk publik.</span></label>
-     <p v-if="needsDecision&&!decisionReason.trim()" class="fine">Isi alasan keputusan di atas untuk melanjutkan.</p>
-     <div class="actions"><button class="primary" :disabled="disabled||!sanitized||!form.summary.trim()||(needsDecision&&!decisionReason.trim())">Konfirmasi isi publikasi<AppIcon name="check" :size="16" /></button><button type="button" :disabled="disabled" @click="edit">Baca ulang sumber</button></div>
+     <div v-if="needsDecision" class="field publication-decision-reason"><label for="public-decision-reason">Alasan keputusan publikasi *</label><textarea id="public-decision-reason" :value="decisionReason" required maxlength="3000" placeholder="Jelaskan alasan informasi ini layak ditayangkan kepada publik." aria-describedby="public-decision-help" :disabled="disabled" @input="emit('update:decisionReason',$event.target.value)" /><small id="public-decision-help">Alasan ini disimpan bersama keputusan publikasi saat Anda mengonfirmasi isi di bawah.</small></div>
+     <label class="check-label"><input id="public-sanitized" v-model="sanitized" type="checkbox" :disabled="disabled"><span>Saya telah memeriksa sumber, sanitasi informasi pribadi, dan kelayakan isi untuk publik.</span></label>
+     <div v-if="inputRequirements.length" id="publication-input-requirements" class="publication-prerequisites" role="status"><strong>Lengkapi sebelum mengonfirmasi:</strong><ul><li v-for="item in inputRequirements" :key="item.field"><a :href="'#'+item.field" @click.prevent="focusField(item.field)">{{ item.message }}</a></li></ul></div>
+     <p v-else id="publication-input-requirements" class="fine">Isian wajib dan pemeriksaan isi sudah lengkap. Anda dapat mengonfirmasi isi publikasi.</p>
+     <p v-if="operationBlockReason" id="publication-operation-block" class="notice warning" role="status">{{ operationBlockReason }}</p>
+     <div class="actions"><button class="primary" :disabled="disabled||Boolean(inputRequirements.length)" aria-describedby="publication-input-requirements">Konfirmasi isi publikasi<AppIcon name="check" :size="16" /></button><button type="button" :disabled="disabled" @click="edit">Baca ulang sumber</button></div>
      <p class="fine">Konfirmasi menyimpan dan menyetujui isi yang Anda periksa. Setelah itu, tekan Publikasikan sekarang. Laporan belum terbit hanya dengan konfirmasi.</p>
     </form>
     <div v-else-if="published" class="publication-complete"><AppIcon name="circle-check" :size="34" /><h3 data-process-heading>Informasi sudah tersedia untuk publik</h3><div class="actions"><button :disabled="disabled" @click="preview=publicProjection(published,reportId)">Lihat informasi terbit</button><RouterLink class="button primary" to="/public">Buka Portal Publik<AppIcon name="arrow" :size="15" /></RouterLink></div><button v-if="canCreate&&start" :disabled="disabled" @click="edit">Perbaiki isi publikasi</button><p v-else-if="canCreate" class="fine">Untuk memperbarui informasi, pilih Tinjau untuk publikasi pada bagian Keputusan.</p></div>

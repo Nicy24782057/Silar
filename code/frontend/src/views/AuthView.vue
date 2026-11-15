@@ -7,11 +7,17 @@ import { online } from '../network';
 import { theme, toggleTheme } from '../theme';
 import { challengeFromQuery, showLocalEmailHelp, rememberVerificationEmail, takeVerificationEmail, accountVerificationResult } from '../auth-ui';
 import AuthIdentity from '../components/AuthIdentity.vue';
+import MobileAuthHeader from '../components/MobileAuthHeader.vue';
 import AppIcon from '../components/AppIcon.vue';
 import AuthLocalHelp from '../components/AuthLocalHelp.vue';
 import ErrorNotice from '../components/ErrorNotice.vue';
 import PasswordInput from '../components/PasswordInput.vue';
+import { loginDestination } from '../account-routing';
 const route=useRoute(),router=useRouter();
+const authViewport=matchMedia('(min-width:641px)'),wideScreen=ref(authViewport.matches);
+function resizeAuth(event){wideScreen.value=event.matches;}
+onMounted(()=>authViewport.addEventListener('change',resizeAuth));
+onBeforeUnmount(()=>authViewport.removeEventListener('change',resizeAuth));
 const mode=computed(()=>route.meta.mode);
 const completed=ref(false),heading=ref(null),activationToken=ref('');
 const isVerification=computed(()=>['verify','activate'].includes(mode.value));
@@ -44,7 +50,7 @@ async function submit(){
   if(hasPassword.value&&action!=='login'&&form.password!==form.password_confirm)throw new ApiError('Konfirmasi kata sandi belum sama.','INVALID_PAYLOAD');
   if(action==='login'){
    await signIn(form.email,form.password);if(version!==flowVersion)return;
-   const next=String(route.query.next||'');await router.replace(next.startsWith('/')&&!next.startsWith('//')?next:session.user.role==='REPORTER'?'/reports':'/workspace');
+   await router.replace(loginDestination(route.query.next,session.user));
   }else if(isVerification.value){
    if(activationToken.value){const result=await authPost('operators/activate/',{activation_token:activationToken.value,password:form.password,password_confirm:form.password_confirm});if(version!==flowVersion)return;message.value=result.data.message;successTitle.value='Akun Operator berhasil diaktifkan';activationToken.value='';completed.value=true;}
    else{const result=accountVerificationResult(await authPost('account/verify/',{email:form.email.trim(),code:form.code}));if(version!==flowVersion)return;message.value=result.message;if(result.next==='SET_PASSWORD')activationToken.value=result.activation_token;else{successTitle.value='Email berhasil diverifikasi';completed.value=true;}}
@@ -68,9 +74,11 @@ async function resend(){
 </script>
 <template>
  <div class="auth-two-panel" :data-screen="isVerification?'verify':mode">
-  <AuthIdentity />
+  <AuthIdentity v-if="wideScreen" />
+  <MobileAuthHeader v-else :compact="mode!=='login'||completed" />
   <section class="auth-panel" aria-labelledby="auth-title">
    <div class="auth-toolbar"><button class="auth-theme quiet" :aria-pressed="theme.mode==='dark'" :aria-label="theme.mode==='dark'?'Gunakan mode terang':'Gunakan mode gelap'" @click="toggleTheme"><AppIcon :name="theme.mode==='dark'?'sun':'moon'" :size="16" />{{ theme.mode==='dark'?'Mode terang':'Mode gelap' }}</button></div>
+   <svg class="mobile-auth-wave" viewBox="0 0 390 36" preserveAspectRatio="none" aria-hidden="true"><path d="M0 36V28C0 11 12-1 30 0C88 3 129 18 193 12C258 6 313-7 359 0C378 3 390 14 390 33V36Z" /></svg>
    <div class="auth-content">
     <header class="auth-heading"><h1 id="auth-title" ref="heading" tabindex="-1">{{ completed?successTitle:activationToken?'Buat kata sandi Operator':titles[mode] }}</h1><p v-if="!completed" class="auth-subtitle">{{ activationToken?'Kode sudah benar. Buat kata sandi untuk menyelesaikan aktivasi akun.':descriptions[mode] }}</p></header>
     <div v-if="!online" class="notice warning" role="status">Perangkat offline. Sambungkan kembali jaringan untuk melanjutkan.</div><div v-if="session.message" class="notice" role="status">{{ session.message }}</div><ErrorNotice :error="error" /><div v-if="message" class="notice" :class="{success:completed}" role="status">{{ message }}</div>
@@ -78,11 +86,11 @@ async function resend(){
     <template v-else>
      <p v-if="mode==='reset'&&!challenge" class="notice warning">Buka halaman ini melalui tautan pemulihan pada email terbaru, atau <RouterLink to="/forgot-password">minta petunjuk baru</RouterLink>.</p>
      <form class="auth-form" method="post" action="#" @submit.prevent="submit">
-      <div v-if="mode==='register'" class="field"><label for="full_name">Nama lengkap</label><input id="full_name" v-model="form.full_name" name="full_name" placeholder="Nama lengkap Anda" autocomplete="name" required maxlength="150" :disabled="busy"></div>
-      <div v-if="mode!=='reset'" class="field"><label for="email">Email</label><input id="email" v-model="form.email" name="email" type="email" placeholder="nama@example.com" autocomplete="username" autocapitalize="off" spellcheck="false" required maxlength="254" :disabled="busy" :readonly="Boolean(activationToken)"></div>
+      <div v-if="mode==='register'" class="field"><label for="full_name">Nama lengkap</label><div class="auth-input-with-icon"><AppIcon class="auth-input-decoration" name="user" :size="20" /><input id="full_name" v-model="form.full_name" name="full_name" placeholder="Nama lengkap Anda" autocomplete="name" required maxlength="150" :disabled="busy"></div></div>
+      <div v-if="mode!=='reset'" class="field"><label for="email">Email</label><div class="auth-input-with-icon"><AppIcon class="auth-input-decoration" name="mail" :size="20" /><input id="email" v-model="form.email" name="email" type="email" placeholder="nama@example.com" autocomplete="username" autocapitalize="off" spellcheck="false" required maxlength="254" :disabled="busy" :readonly="Boolean(activationToken)"></div></div>
       <div v-if="needsCode" class="field auth-code-field"><label for="code">Kode verifikasi (6 digit)</label><input id="code" v-model="form.code" name="code" type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="— — — — — —" autocomplete="one-time-code" required aria-describedby="otp-help" :disabled="busy||!online||mode==='reset'&&!challenge"></div>
-      <div v-if="hasPassword" class="field"><label for="password">{{ mode==='login'?'Kata sandi':'Kata sandi baru' }}</label><PasswordInput id="password" v-model="form.password" name="password" :placeholder="mode==='login'?'Masukkan kata sandi':'Buat kata sandi'" :autocomplete="mode==='login'?'current-password':'new-password'" required :minlength="mode==='login'?undefined:policy.password_min_length" maxlength="1024" :aria-describedby="mode!=='login'?'password-help':undefined" :disabled="busy" /><small v-if="mode!=='login'" id="password-help">Minimal {{ policy.password_min_length }} karakter. Gunakan beberapa kata yang tidak berkaitan. Hindari nama/email ditambah angka, pola berulang, atau urutan keyboard.</small><p v-if="mode!=='login'&&form.password" class="auth-password-length" :class="{'is-met':passwordLength>=policy.password_min_length}">{{ passwordLength>=policy.password_min_length?'Panjang minimum terpenuhi':`Masih perlu ${policy.password_min_length-passwordLength} karakter` }}. Kelayakan sandi diperiksa saat disimpan.</p></div>
-      <div v-if="hasPassword&&mode!=='login'" class="field"><label for="password_confirm">Ulangi kata sandi baru</label><PasswordInput id="password_confirm" v-model="form.password_confirm" name="password_confirm" toggle-label="konfirmasi kata sandi" placeholder="Ketik kembali kata sandi" autocomplete="new-password" required :minlength="policy.password_min_length" maxlength="1024" :disabled="busy" /></div>
+      <div v-if="hasPassword" class="field"><label for="password">{{ mode==='login'?'Kata sandi':'Kata sandi baru' }}</label><PasswordInput leading-icon="lock" id="password" v-model="form.password" name="password" :placeholder="mode==='login'?'Masukkan kata sandi':'Buat kata sandi'" :autocomplete="mode==='login'?'current-password':'new-password'" required :minlength="mode==='login'?undefined:policy.password_min_length" maxlength="1024" :aria-describedby="mode!=='login'?'password-help':undefined" :disabled="busy" /><small v-if="mode!=='login'" id="password-help">Minimal {{ policy.password_min_length }} karakter. Gunakan beberapa kata yang tidak berkaitan. Hindari nama/email ditambah angka, pola berulang, atau urutan keyboard.</small><p v-if="mode!=='login'&&form.password" class="auth-password-length" :class="{'is-met':passwordLength>=policy.password_min_length}">{{ passwordLength>=policy.password_min_length?'Panjang minimum terpenuhi':`Masih perlu ${policy.password_min_length-passwordLength} karakter` }}. Kelayakan sandi diperiksa saat disimpan.</p></div>
+      <div v-if="hasPassword&&mode!=='login'" class="field"><label for="password_confirm">Ulangi kata sandi baru</label><PasswordInput leading-icon="lock" id="password_confirm" v-model="form.password_confirm" name="password_confirm" toggle-label="konfirmasi kata sandi" placeholder="Ketik kembali kata sandi" autocomplete="new-password" required :minlength="policy.password_min_length" maxlength="1024" :disabled="busy" /></div>
       <div v-if="mode==='login'" class="auth-forgot"><RouterLink to="/forgot-password">Lupa sandi?</RouterLink></div><button class="primary full auth-submit" type="submit" :disabled="!canSubmit">{{ busy?'Memproses…':retryRemaining?`Coba lagi dalam ${retryRemaining} detik`:mode==='login'?'Masuk':mode==='register'?'Buat akun Reporter':mode==='forgot'?'Kirim petunjuk pemulihan':mode==='reset'?'Simpan kata sandi baru':activationToken?'Aktifkan akun':'Verifikasi akun' }}<AppIcon v-if="mode==='login'" name="arrow" :size="16" /></button>
       <p v-if="needsCode" id="otp-help" class="auth-field-note">Kode berlaku {{ Math.ceil(policy.otp_ttl_seconds/60) }} menit dan hanya bisa dipakai sekali. Pemeriksaan dibatasi {{ policy.otp_max_attempts }} percobaan dalam {{ Math.ceil(policy.otp_window_seconds/60) }} menit.</p>
      </form>

@@ -28,3 +28,12 @@ test('Confirmation does not imply submission and workflow has precedence after s
   assert.equal(reportStatus({workflow_status:'CLOSED',preparation_status:'READY'}).label,'Ditutup');
   assert.equal(reportStatus({workflow_status:'NOT_SUBMITTED',preparation_status:'FAILED'}).tone,'error');
 });
+
+test('Keyword/ID search is encoded on the owner-scoped server query and retained across pages', () => {
+  const url=new URL(reportsPath('SUBMITTED','-created_at','FLOOD',2,'  Jalan Melati & pasar  '),'https://silar.test/');
+  assert.equal(url.searchParams.get('q'),'Jalan Melati & pasar');
+  assert.equal(url.searchParams.get('scope'),'owned');
+  assert.equal(url.searchParams.get('page'),'2');
+  assert.equal(url.searchParams.get('event_type'),'FLOOD');
+  assert.equal(new URL(reportsPath('','-created_at','',1,'   '),'https://silar.test/').searchParams.has('q'),false);
+});

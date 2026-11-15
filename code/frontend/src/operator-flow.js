@@ -8,6 +8,34 @@ export function savedReview(detail, packet) {
     item.outcome===packet.body.outcome&&item.reason===packet.body.reason)||null;
 }
 
+export function savedInternalDecision(detail, packet) {
+  return Boolean(packet?.action==='decision'&&packet.body?.decision==='INTERNAL'&&
+    detail?.private_access&&detail.report?.id===packet.id&&
+    detail.assignment?.operator_id===packet.operatorId&&
+    detail.report.official_card_version_id===packet.officialCardId&&
+    detail.report.revision>packet.body.expected_revision&&
+    detail.report.publication_status==='INTERNAL'&&!detail.has_active_candidate&&
+    !detail.report.published_version_id&&detail.decision_reason===packet.body.reason);
+}
+
+export function savedPublication(detail, receipt) {
+  return Boolean(receipt?.action==='publish'&&receipt.versionId&&Number.isInteger(receipt.revision)&&
+    detail?.private_access&&detail.report?.id===receipt.reportId&&
+    detail.assignment?.operator_id===receipt.operatorId&&
+    detail.report.revision>=receipt.revision&&detail.report.publication_status==='PUBLISHED'&&
+    detail.report.published_version_id===receipt.versionId&&!detail.has_active_candidate);
+}
+
+export function publicationRequirements(form, {needsDecision=false,decisionReason='',sanitized=false}={}) {
+  let contentIssue=null;
+  try { publicationValues(form); } catch(error) { contentIssue=error.message; }
+  return [
+    ...(needsDecision&&!decisionReason.trim()?[{field:'public-decision-reason',message:'Isi alasan keputusan publikasi.'}]:[]),
+    ...(contentIssue?[{field:String(form.summary??'').trim()?'public-occurred':'public-summary',message:contentIssue}]:[]),
+    ...(!sanitized?[{field:'public-sanitized',message:'Centang pemeriksaan sumber, sanitasi informasi pribadi, dan kelayakan isi.'}]:[]),
+  ];
+}
+
 export function canDraftPublication(detail) {
   const report=detail?.report,review=detail?.latest_review;
   return Boolean(report&&report.workflow_status!=='CLOSED'&&report.validation_status==='VALID'&&

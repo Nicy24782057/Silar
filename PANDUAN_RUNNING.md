@@ -132,7 +132,23 @@ Reporter mendaftar lalu langsung menuju formulir kode dengan email terisi. Ambil
 
 Kode berlaku 10 menit secara bawaan, dengan 5 pemeriksaan per akun/keperluan dalam 15 menit. Kirim ulang memiliki jeda 60 detik dan batas 5 permintaan per 15 menit. Meminta kode baru tidak menghapus hitungan pemeriksaan; kode sebelumnya menjadi tidak berlaku. Nilai aktual mengikuti konfigurasi backend dan ditampilkan pada halaman kode.
 
-Ruang kerja Operator terdiri atas **Pemeriksaan → Tindak lanjut → Keputusan**. Ringkasan, narasi, bukti dan formulir review berada di Pemeriksaan. Setelah review tersimpan dan dibaca kembali, aplikasi otomatis membuka Tindak lanjut. Tindak lanjut tidak wajib ditambahkan. Publikasi tetap memerlukan pemeriksaan pratinjau, konfirmasi, dan tindakan menerbitkan. Riwayat dibuka melalui tombol tersendiri.
+Ruang kerja Operator terdiri atas **Pemeriksaan → Keputusan penayangan → Penanganan & penyelesaian**. Ringkasan, narasi, bukti dan formulir review berada di Pemeriksaan. Setelah review tersimpan dan dibaca kembali, aplikasi otomatis membuka Keputusan penayangan. Pilih **Tetap internal**, isi alasan dan tekan **Simpan keputusan & lanjut**, atau pilih **Tinjau untuk publikasi** untuk membuka formulir dan pratinjau. Alasan publikasi berada di formulir publikasi; syarat yang belum lengkap ditampilkan dekat tombol konfirmasi.
+
+Publikasi tetap memerlukan **Konfirmasi isi publikasi → Publikasikan sekarang**. Konfirmasi saja belum menerbitkan informasi. Setelah keputusan internal tersimpan atau publikasi benar-benar terbit, aplikasi otomatis membuka Penanganan & penyelesaian. Tindak lanjut opsional; bila sudah dibuat, selesaikan atau batalkan sebelum penutupan. **Selesaikan penanganan laporan** adalah tindakan terpisah yang memeriksa syarat penutupan. Keputusan internal tidak otomatis menutup laporan. Status backend yang ada tetap digunakan. Riwayat dibuka melalui tombol tersendiri.
+
+Saat laporan ditutup, Reporter menerima notifikasi di aplikasi: **Penanganan laporan telah ditutup.** Catatan penutupan tetap internal dan tidak dimuat dalam notifikasi maupun respons rincian milik Reporter. Revisi ini tidak menambahkan alasan penutupan yang dapat dibaca Reporter.
+
+### Kembali ke landing page dan membuka melalui HP
+
+Kembali ke landing page atau Portal Publik tidak mengeluarkan akun. Jika sesi pada browser masih valid, navigasi dan ajakan utama menampilkan **Buka aplikasi**. Reporter kembali ke Laporan Saya, sedangkan Operator/Admin kembali ke dashboard. Membuka alamat login dengan sesi aktif langsung menuju ruang tersebut atau tujuan lokal yang sebelumnya diminta. Cookie sesi tetap mengikuti masa berlaku dan aturan backend yang sudah ada. Tombol Keluar tetap mengakhiri sesi.
+
+Pada layar HP hingga lebar 640 piksel, pembukaan dokumen aplikasi menampilkan logo SILAR dan loading selama penyiapan antarmuka serta pemeriksaan sesi. Ini berlaku pada browser dan PWA. Sesuai desain yang disetujui, layar pembuka bertahan minimum sekitar 1,2 detik, lalu memudar selama 0,2 detik bila animasi diizinkan. Waktu penyiapan yang lebih lama dihitung dalam durasi yang sama; tidak ditambah jeda minimum kedua. Tidak ada persentase rekaan. URL ruang privat yang dibuka tanpa sesi valid menuju login, sedangkan sesi valid langsung membuka ruangnya. Halaman landing dan Portal Publik tetap dapat diakses tanpa akun. Navigasi di dalam aplikasi tidak memutar ulang loading pembuka.
+
+Pada HP, logo berada di tengah header biru dengan ilustrasi dan pattern asli login desktop. Panel formulir memiliki tepi atas melengkung. Header registrasi, OTP, aktivasi Operator dan pemulihan sandi lebih pendek agar formulir mulai lebih tinggi; ukuran kolom/tombol tetap nyaman dan halaman dapat digulir. Pada lebar mulai 641 piksel, tampilan dua panel desktop/tablet tetap digunakan. Tahap aktif dan tab pilihan aktif memakai warna biru dengan tulisan putih mengikuti Buat Laporan. Warna status laporan dan aturan tahap tetap mengikuti fungsinya.
+
+Jika pemeriksaan sesi terganggu koneksi, landing tetap dapat dibaca. Gunakan **Periksa sesi lagi** untuk mencoba memulihkan cookie yang masih berlaku. Pemeriksaan awal berhenti setelah 15 detik bila tidak ada jawaban dan menampilkan petunjuk. Ini batas waktu permintaan awal, bukan masa berlaku akun atau sesi.
+
+Panduan revisi desain HP dan langkah pemeriksaannya terdapat pada [revisi login mobile](docs/slr14/revisi-login-mobile-20261113/README.md).
 
 ## 7. Memasang pembaruan kode
 

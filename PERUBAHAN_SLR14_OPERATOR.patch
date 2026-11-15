@@ -1,0 +1,1061 @@
+diff --git a/MULAI_DI_SINI.txt b/MULAI_DI_SINI.txt
+index 330fc6a8dcc94338d533ad90e0a6d5ebbbad1194..0eef4515919e8d651545135db19868204d5c784b 100644
+--- a/MULAI_DI_SINI.txt
++++ b/MULAI_DI_SINI.txt
+@@ -1,44 +1,44 @@
+-SILAR — SLR14, PAKET LANJUTAN REVISI UI, 13 NOVEMBER 2026
++SILAR — SLR14, PAKET LANJUTAN ALUR OPERATOR, 13 NOVEMBER 2026
+ 
+-Paket ini melanjutkan paket akun/Operator/setup SILAR_SLR15.zip yang sudah
+-Anda terapkan. Implementasinya masuk SLR14. SLR15 memuat pengujian/temuan.
++Paket ini melanjutkan paket akun/Operator/setup SILAR_SLR15.zip dan revisi UI
++SILAR_SLR14_revisi_UI_13Nov2026.zip yang sebelumnya telah diterapkan.
++Implementasi tetap pada SLR14; SLR15 mencatat pengujian dan temuannya.
+ Panduan utama: PANDUAN_RUNNING.md.
+-Catatan revisi: docs/slr14/revisi-review-20261113/README.md.
++Catatan revisi: docs/slr14/revisi-alur-operator-20261113/README.md.
+ 
+ CARA MEMASANG
+-1. Hentikan frontend/backend, lalu ekstrak ZIP ini ke folder sementara.
++1. Hentikan server, lalu ekstrak ZIP ini ke folder sementara.
+ 2. Gabungkan berkas mengikuti path yang sama pada clone Silar Anda.
+    Gunakan berkas yang disertakan; tidak perlu mengganti seluruh folder proyek.
+ 3. Dari code/frontend, jalankan:
+    npm.cmd test
+    npm.cmd run build
+    npm.cmd run dev
+-4. Mulai ulang backend. PWA yang terpasang perlu menerima pembaruan build
++4. Buka ulang aplikasi. PWA yang terpasang perlu menerima pembaruan build
+    melalui Aplikasi & Koneksi, kemudian dibuka kembali.
+ 
+-Paket lanjutan ini tidak menambah dependensi atau migration backend.
+-Migration akun 0002 dari paket sebelumnya harus sudah diterapkan.
++Revisi alur ini hanya mengubah frontend, tes frontend dan dokumentasi.
++Tidak ada dependensi, endpoint, migration atau status backend baru.
+ Konfigurasi .env, database, venv dan aset model lokal tetap dipakai.
+ 
+ PERUBAHAN UNTUK DIREVIEW
+-- Ikon mata di dalam kolom sandi utama dan konfirmasi; keadaan tiap kolom terpisah.
+-- Tombol Masuk mengikuti latar landing page, Buat akun mengikuti aksen biru-sian.
+-- Catatan implementasi ditautkan ke SLR14, dengan bukti pengujian lama tetap di SLR15.
+-- Panduan konkret menyiapkan arsip model dan Whisper.
++- Urutan: Pemeriksaan -> Keputusan penayangan -> Penanganan & penyelesaian.
++- Review tersimpan otomatis membuka Keputusan penayangan.
++- Keputusan internal tersimpan atau publikasi terbit otomatis membuka Penanganan.
++- Alasan publikasi berada pada formulir publikasi; syarat tombol terlihat jelas.
++- Tindak lanjut opsional; penutupan tetap aksi eksplisit dengan syarat yang ada.
++- Respons terputus diperiksa melalui hasil tersimpan sebelum otomatis berpindah.
+ 
+-MENYIAPKAN SENA/NARA
+-Dari code/backend:
+-.\.venv\Scripts\python.exe manage.py prepare_ai_models
+-Command memverifikasi hash arsip di models/ lalu mengekstrak model runtime.
+-Mulai ulang backend dan uji analisis teks. Audio memerlukan aset Whisper;
+-foto/kombinasi kanal memerlukan konfigurasi Gemini. Lihat panduan utama.
+-Runtime saat ini memakai CPU; NVIDIA/CUDA tidak diwajibkan.
++NOTIFIKASI PENUTUPAN
++Reporter menerima notifikasi di aplikasi: "Penanganan laporan telah ditutup."
++Catatan penutupan tetap internal. Reporter belum menerima alasan penutupan;
++menampilkannya memerlukan kesepakatan dan perubahan kontrak tersendiri.
+ 
+ BATAS PAKET
+-Alur sesi/tombol silang masih menunggu kepastian kontrol yang dimaksud pengguna.
+-Pengiriman SMTP dan inferensi AI asli tidak diuji ulang dalam revisi UI ini.
+-Belum ada commit, push, deployment, atau perubahan board oleh penyusun.
++Status backend, aturan akses, alur sesi, pengiriman email, dan runtime AI tetap
++mengikuti implementasi sebelumnya. Inferensi AI asli dan SMTP eksternal tidak
++dibuktikan oleh pengujian alur ini. Tidak ada commit, push atau deployment.
+ 
+-Manifest berkas: docs/slr14/revisi-review-20261113/DAFTAR_PERUBAHAN.json.
+-Patch alternatif: PERUBAHAN_SLR14_UI.patch. Pilih salin berkas ATAU terapkan patch;
+-tidak perlu melakukan kedua cara sekaligus. Jalankan git apply --check dahulu.
++Manifest: docs/slr14/revisi-alur-operator-20261113/DAFTAR_PERUBAHAN.json.
++Patch alternatif: PERUBAHAN_SLR14_OPERATOR.patch. Pilih salin berkas ATAU
++terapkan patch; tidak perlu keduanya. Jalankan git apply --check dahulu.
+diff --git a/PANDUAN_RUNNING.md b/PANDUAN_RUNNING.md
+index e5ad08df43863169f482f0caa5cfc107d43596cd..695febdd6401b166148a1ad24e627ae656a94344 100644
+--- a/PANDUAN_RUNNING.md
++++ b/PANDUAN_RUNNING.md
+@@ -132,7 +132,11 @@ Reporter mendaftar lalu langsung menuju formulir kode dengan email terisi. Ambil
+ 
+ Kode berlaku 10 menit secara bawaan, dengan 5 pemeriksaan per akun/keperluan dalam 15 menit. Kirim ulang memiliki jeda 60 detik dan batas 5 permintaan per 15 menit. Meminta kode baru tidak menghapus hitungan pemeriksaan; kode sebelumnya menjadi tidak berlaku. Nilai aktual mengikuti konfigurasi backend dan ditampilkan pada halaman kode.
+ 
+-Ruang kerja Operator terdiri atas **Pemeriksaan → Tindak lanjut → Keputusan**. Ringkasan, narasi, bukti dan formulir review berada di Pemeriksaan. Setelah review tersimpan dan dibaca kembali, aplikasi otomatis membuka Tindak lanjut. Tindak lanjut tidak wajib ditambahkan. Publikasi tetap memerlukan pemeriksaan pratinjau, konfirmasi, dan tindakan menerbitkan. Riwayat dibuka melalui tombol tersendiri.
++Ruang kerja Operator terdiri atas **Pemeriksaan → Keputusan penayangan → Penanganan & penyelesaian**. Ringkasan, narasi, bukti dan formulir review berada di Pemeriksaan. Setelah review tersimpan dan dibaca kembali, aplikasi otomatis membuka Keputusan penayangan. Pilih **Tetap internal**, isi alasan dan tekan **Simpan keputusan & lanjut**, atau pilih **Tinjau untuk publikasi** untuk membuka formulir dan pratinjau. Alasan publikasi berada di formulir publikasi; syarat yang belum lengkap ditampilkan dekat tombol konfirmasi.
++
++Publikasi tetap memerlukan **Konfirmasi isi publikasi → Publikasikan sekarang**. Konfirmasi saja belum menerbitkan informasi. Setelah keputusan internal tersimpan atau publikasi benar-benar terbit, aplikasi otomatis membuka Penanganan & penyelesaian. Tindak lanjut opsional; bila sudah dibuat, selesaikan atau batalkan sebelum penutupan. **Selesaikan penanganan laporan** adalah tindakan terpisah yang memeriksa syarat penutupan. Keputusan internal tidak otomatis menutup laporan. Status backend yang ada tetap digunakan. Riwayat dibuka melalui tombol tersendiri.
++
++Saat laporan ditutup, Reporter menerima notifikasi di aplikasi: **Penanganan laporan telah ditutup.** Catatan penutupan tetap internal dan tidak dimuat dalam notifikasi maupun respons rincian milik Reporter. Revisi ini tidak menambahkan alasan penutupan yang dapat dibaca Reporter.
+ 
+ ## 7. Memasang pembaruan kode
+ 
+diff --git a/README.md b/README.md
+index 9666a31a1bbe71690de22c86b12fd46687f1eab6..ec6c6cea0302db135191d7b8a2003d3a7a20d896 100644
+--- a/README.md
++++ b/README.md
+@@ -19,6 +19,8 @@ Di Windows, jalankan **SETUP_SILAR.bat** dari folder utama, atau `py -3.12 tools
+ 
+ Revisi implementasi **SLR14** dari temuan pengujian SLR15 mencakup satu halaman verifikasi email/kode, sandi minimal 15 karakter, serta tiga tahap pengelolaan laporan Operator. Penyesuaian kontrol sandi dan tombol landing page ada pada [revisi review SLR14](docs/slr14/revisi-review-20261113/README.md). Bukti pengujian paket akun sebelumnya tetap tersedia pada [catatan pengujian SLR15](docs/slr15/revisi-20261113/README.md).
+ 
++Urutan Operator terbaru adalah **Pemeriksaan → Keputusan penayangan → Penanganan & penyelesaian**. Review, keputusan internal dan publikasi yang sudah terbaca tersimpan membuka tahap berikutnya secara otomatis. Tindak lanjut opsional; penutupan tetap tindakan tersendiri dengan aturan status yang sudah ada. Rincian terdapat pada [revisi alur Operator SLR14](docs/slr14/revisi-alur-operator-20261113/README.md).
++
+ ## Acuan proyek
+ 
+ - [Acuan Teknis SILAR v0.3](docs/architecture/SILAR_Technical_Reference.docx), termasuk Lampiran A.
+diff --git a/code/frontend/src/components/PublicationPanel.vue b/code/frontend/src/components/PublicationPanel.vue
+index 6064c67abcefbbdf984e1bde05c0a67e9a4eb896..2cdebb0c0528e1482e7b0ce126f46e748fce19cf 100644
+--- a/code/frontend/src/components/PublicationPanel.vue
++++ b/code/frontend/src/components/PublicationPanel.vue
+@@ -6,7 +6,7 @@ import {online} from '../network';
+ import {date,label,paginationPath} from '../domain';
+ import {handlerCan,workspaceLabel} from '../workspace';
+ import {publicProjection} from '../publication';
+-import {canDraftPublication,publicationValues,publicationReceipt,publicationRequest,reviewedPublicationCandidate} from '../operator-flow';
++import {canDraftPublication,publicationValues,publicationReceipt,publicationRequest,reviewedPublicationCandidate,publicationRequirements} from '../operator-flow';
+ import {requiresStoredState} from '../recovery';
+ import AppDialog from './AppDialog.vue';
+ import AppIcon from './AppIcon.vue';
+@@ -15,7 +15,7 @@ import WorkspaceStatus from './WorkspaceStatus.vue';
+ import ErrorNotice from './ErrorNotice.vue';
+ import ProcessOutlet from './ProcessOutlet.vue';
+ const props=defineProps({detail:{type:Object,required:true},blocked:Boolean,start:Boolean,decisionReason:{type:String,default:''}});
+-const emit=defineEmits(['saved','busy']);
++const emit=defineEmits(['saved','busy','uncertain','update:decisionReason']);
+ const data=ref(null),versions=ref([]),latest=ref(null),busy=ref(false),saving=ref(false),error=ref(null),message=ref('');
+ const editor=ref(false),sanitized=ref(false),preview=ref(null),confirmation=ref(null),confirmed=ref(false),reason=ref('');
+ const unknown=ref(null),missingRequest=ref(false),activePacket=ref(null),savingLabel=ref(''),draftBase=ref(null),startConsumed=ref(false);
+@@ -28,6 +28,10 @@ const allowed=computed(()=>handlerCan(session.user,props.detail,'publish_report'
+ const disabled=computed(()=>!online.value||busy.value||saving.value||props.blocked||Boolean(unknown.value));
+ const canCreate=computed(()=>allowed.value&&canDraftPublication(data.value));
+ const needsDecision=computed(()=>data.value?.report.publication_status!=='PENDING_APPROVAL');
++const inputRequirements=computed(()=>publicationRequirements(form,{needsDecision:needsDecision.value,decisionReason:props.decisionReason,sanitized:sanitized.value}));
++const operationBlockReason=computed(()=>!online.value?'Sambungkan jaringan untuk melanjutkan.':saving.value?'Tunggu penyimpanan dan pembacaan hasil selesai.':busy.value?'Tunggu pembacaan versi publikasi selesai.':unknown.value?'Periksa hasil tindakan yang belum pasti sebelum melanjutkan.':props.blocked?'Selesaikan pemeriksaan keadaan laporan sebelum melakukan tindakan berikutnya.':'');
++function focusField(id){document.getElementById(id)?.focus();}
++function savedEvent(target){return {action:target?.action,reportId:target?.reportId,versionId:target?.versionId,operatorId:target?.operatorId,revision:data.value?.report.revision};}
+ const viewKey=computed(()=>candidate.value?candidate.value.state+':'+candidate.value.id:editor.value?'editor':published.value?'published':'start');
+ const formPreview=computed(()=>{
+  const validTime=/(Z|[+-]\d{2}:\d{2})$/i.test(form.occurred_at)&&Number.isFinite(Date.parse(form.occurred_at));
+@@ -64,7 +68,7 @@ function edit(){
+ }
+ function packet(action,body,versionId=null){
+  const id=reportId.value,part=action==='decision'?'publication-decision':action==='create'?'publication-versions':`publication-versions/${versionId}/${action}`;
+- return {reportId:id,key:crypto.randomUUID(),action,versionId,path:`reports/${id}/${part}/`,
++ return {reportId:id,key:crypto.randomUUID(),operatorId:session.user.id,action,versionId,path:`reports/${id}/${part}/`,
+   scope:`publication.${action}${versionId?':'+versionId:''}:${id}`,body:{...body,expected_revision:data.value.report.revision}};
+ }
+ async function step(target){
+@@ -81,7 +85,7 @@ async function task(work){
+  const id=reportId.value;
+  try{
+   await work();if(!alive||id!==reportId.value)return;
+-  const action=activePacket.value?.action;unknown.value=null;activePacket.value=null;confirmed.value=false;confirmation.value=null;emit('saved',{action});
++  const receipt=savedEvent(activePacket.value);unknown.value=null;activePacket.value=null;confirmed.value=false;confirmation.value=null;emit('saved',receipt);
+  }catch(e){
+   if(!alive||id!==reportId.value)return;
+   if(requiresStoredState(e)&&activePacket.value)unknown.value=activePacket.value;
+@@ -92,7 +96,7 @@ async function create(){
+  if(disabled.value||!canCreate.value||!sanitized.value)return;
+  let values;
+  try{values=publicationValues(form);}catch(e){error.value=e;return;}
+- if(needsDecision.value&&!props.decisionReason.trim()){error.value=new ApiError('Isi alasan keputusan publikasi di atas sebelum melanjutkan.','INVALID_PAYLOAD');return;}
++ if(needsDecision.value&&!props.decisionReason.trim()){error.value=new ApiError('Isi alasan keputusan publikasi pada formulir ini sebelum mengonfirmasi isi.','INVALID_PAYLOAD');return;}
+  if(draftBase.value?.revision!==data.value.report.revision){error.value=new ApiError('Keadaan laporan berubah. Baca ulang sumber sebelum menyimpan isi publik.','VERSION_CONFLICT');return;}
+  const parentId=draftBase.value.parentId,decisionReason=props.decisionReason.trim(),category=data.value.official_card.data.event_type;
+  await task(async()=>{
+@@ -143,15 +147,15 @@ async function recover(){
+    if(editor.value&&!candidate.value)draftBase.value={revision:data.value.report.revision,parentId:latest.value?.id??null};
+    message.value=target.action==='publish'?'Publikasi telah tersimpan. Keadaan terbit sudah dibaca kembali.':'Tindakan sudah tersimpan. Lanjutkan dari keadaan publikasi yang ditampilkan.';
+   }else message.value='Tindakan gagal dan sudah tercatat. Periksa isian sebelum mencoba kembali.';
+-  emit('saved',{action:target.action});
++  emit('saved',record.state==='SUCCEEDED'?savedEvent(target):undefined);
+  }catch(e){if(alive){error.value=e;if(e.status===404)missingRequest.value=true;}}
+  finally{if(alive){saving.value=false;emit('busy',false);}}
+ }
+ async function replay(){
+  const target=unknown.value;if(!target||!missingRequest.value||saving.value)return;
+- // Only explicit recovery reuses the frozen key/body. It never starts the next step.
++ // Only explicit recovery reuses the frozen key/body. It never starts another mutation.
+  saving.value=true;emit('busy',true);error.value=null;
+- try{await step(target);if(!alive)return;unknown.value=null;activePacket.value=null;missingRequest.value=false;confirmed.value=false;confirmation.value=null;message.value='Keadaan tindakan sudah dipulihkan. Periksa hasil sebelum melanjutkan.';emit('saved',{action:target.action});}
++ try{await step(target);if(!alive)return;unknown.value=null;activePacket.value=null;missingRequest.value=false;confirmed.value=false;confirmation.value=null;message.value='Keadaan tindakan sudah dipulihkan. Periksa hasil sebelum melanjutkan.';emit('saved',savedEvent(target));}
+  catch(e){if(alive)error.value=e;}finally{if(alive){saving.value=false;emit('busy',false);}}
+ }
+ async function openVersion(item){
+@@ -163,7 +167,8 @@ watch(()=>props.start,value=>{startConsumed.value=false;if(value&&!busy.value&&!
+ watch(()=>props.detail.report.revision,revision=>{if(!saving.value&&data.value?.report.revision!==revision)load({clearError:false});});
+ watch(reportId,()=>{startConsumed.value=false;editor.value=false;unknown.value=null;confirmation.value=null;preview.value=null;data.value=null;message.value='';load();},{immediate:true});
+ watch(()=>candidate.value?.id+':'+candidate.value?.state,()=>{confirmed.value=false;});
+-onBeforeUnmount(()=>{alive=false;++sequence;controller?.abort();emit('busy',false);});
++watch(unknown,value=>emit('uncertain',Boolean(value)));
++onBeforeUnmount(()=>{alive=false;++sequence;controller?.abort();emit('busy',false);emit('uncertain',false);});
+ </script>
+ <template>
+  <section class="card publication-panel publication-guided" aria-labelledby="publication-panel-title" :aria-busy="busy||saving">
+@@ -183,17 +188,21 @@ onBeforeUnmount(()=>{alive=false;++sequence;controller?.abort();emit('busy',fals
+      <PublicIncidentCard :record="publicProjection(candidate,reportId)" preview />
+      <p class="fine">Pratinjau ini adalah isi publik versi tersimpan. Bukti privat dan data akun tidak ditampilkan di portal.</p>
+      <template v-if="allowed">
+-      <label class="check-label"><input v-model="confirmed" type="checkbox" :disabled="disabled"><span>{{ candidate.state==='DRAFT'?'Saya sudah memeriksa pratinjau dan memastikan informasi ini layak untuk publik.':'Saya memastikan versi tersimpan ini adalah informasi yang akan diterbitkan.' }}</span></label>
+-      <div class="actions"><button class="primary" :disabled="disabled||!confirmed" @click="confirmCandidate(candidate.state==='DRAFT'?'approve':'publish')">{{ candidate.state==='DRAFT'?'Konfirmasi isi publikasi':'Publikasikan sekarang' }}<AppIcon :name="candidate.state==='DRAFT'?'check':'globe'" :size="16" /></button><button class="danger" :disabled="disabled" @click="askCancel">Batalkan draf publikasi</button></div>
++      <label class="check-label"><input id="public-confirmed" v-model="confirmed" type="checkbox" :disabled="disabled"><span>{{ candidate.state==='DRAFT'?'Saya sudah memeriksa pratinjau dan memastikan informasi ini layak untuk publik.':'Saya memastikan versi tersimpan ini adalah informasi yang akan diterbitkan.' }}</span></label>
++      <p v-if="!confirmed" id="publication-confirm-hint" class="fine">Centang pemeriksaan versi tersimpan di atas untuk mengaktifkan tombol berikutnya.</p><p v-if="operationBlockReason" class="notice warning" role="status">{{ operationBlockReason }}</p>
++      <div class="actions"><button class="primary" :disabled="disabled||!confirmed" :aria-describedby="!confirmed?'publication-confirm-hint':undefined" @click="confirmCandidate(candidate.state==='DRAFT'?'approve':'publish')">{{ candidate.state==='DRAFT'?'Konfirmasi isi publikasi':'Publikasikan sekarang' }}<AppIcon :name="candidate.state==='DRAFT'?'check':'globe'" :size="16" /></button><button class="danger" :disabled="disabled" @click="askCancel">Batalkan draf publikasi</button></div>
+      </template>
+     </section>
+     <form v-else-if="editor&&canCreate" class="publication-editor" @submit.prevent="create">
+      <h3 data-process-heading>Periksa isi dan pratinjau publikasi</h3><p class="fine">Isi awal mengikuti {{ latest?'versi publikasi terakhir':'sumber resmi' }}. Hapus identitas, kontak, alamat terperinci, dan informasi privat. Kategori tetap {{ label(data.official_card.data.event_type) }}.</p>
+      <div class="publication-edit-grid"><div class="publication-fields"><div class="field wide"><label for="public-summary">Ringkasan kejadian *</label><textarea id="public-summary" v-model="form.summary" required maxlength="2000" :disabled="disabled" /></div><div class="field"><label for="public-location">Lokasi umum</label><input id="public-location" v-model="form.general_location" maxlength="500" :disabled="disabled"></div><div class="field"><label for="public-time">Waktu yang disebut</label><input id="public-time" v-model="form.time_text" maxlength="300" :disabled="disabled"></div><div class="field wide"><label for="public-occurred">Waktu pasti (jika diketahui)</label><input id="public-occurred" v-model="form.occurred_at" placeholder="2026-10-30T15:00:00+07:00" aria-describedby="public-time-note" :disabled="disabled"><small id="public-time-note">Sertakan zona waktu. Kosongkan jika belum diketahui.</small></div><div class="field"><label for="public-impact">Dampak umum</label><textarea id="public-impact" v-model="form.general_impact" maxlength="2000" :disabled="disabled" /></div><div class="field"><label for="public-handling">Perkembangan penanganan</label><textarea id="public-handling" v-model="form.handling_update" maxlength="2000" :disabled="disabled" /></div></div>
+      <section class="publication-live-preview"><h3>Pratinjau untuk publik</h3><PublicIncidentCard :record="formPreview" preview /><p class="fine">Pratinjau mengikuti isian formulir. Informasi ini belum diterbitkan.</p></section></div>
+-     <label class="check-label"><input v-model="sanitized" type="checkbox" :disabled="disabled"><span>Saya telah memeriksa sumber, sanitasi informasi pribadi, dan kelayakan isi untuk publik.</span></label>
+-     <p v-if="needsDecision&&!decisionReason.trim()" class="fine">Isi alasan keputusan di atas untuk melanjutkan.</p>
+-     <div class="actions"><button class="primary" :disabled="disabled||!sanitized||!form.summary.trim()||(needsDecision&&!decisionReason.trim())">Konfirmasi isi publikasi<AppIcon name="check" :size="16" /></button><button type="button" :disabled="disabled" @click="edit">Baca ulang sumber</button></div>
++     <div v-if="needsDecision" class="field publication-decision-reason"><label for="public-decision-reason">Alasan keputusan publikasi *</label><textarea id="public-decision-reason" :value="decisionReason" required maxlength="3000" placeholder="Jelaskan alasan informasi ini layak ditayangkan kepada publik." aria-describedby="public-decision-help" :disabled="disabled" @input="emit('update:decisionReason',$event.target.value)" /><small id="public-decision-help">Alasan ini disimpan bersama keputusan publikasi saat Anda mengonfirmasi isi di bawah.</small></div>
++     <label class="check-label"><input id="public-sanitized" v-model="sanitized" type="checkbox" :disabled="disabled"><span>Saya telah memeriksa sumber, sanitasi informasi pribadi, dan kelayakan isi untuk publik.</span></label>
++     <div v-if="inputRequirements.length" id="publication-input-requirements" class="publication-prerequisites" role="status"><strong>Lengkapi sebelum mengonfirmasi:</strong><ul><li v-for="item in inputRequirements" :key="item.field"><a :href="'#'+item.field" @click.prevent="focusField(item.field)">{{ item.message }}</a></li></ul></div>
++     <p v-else id="publication-input-requirements" class="fine">Isian wajib dan pemeriksaan isi sudah lengkap. Anda dapat mengonfirmasi isi publikasi.</p>
++     <p v-if="operationBlockReason" id="publication-operation-block" class="notice warning" role="status">{{ operationBlockReason }}</p>
++     <div class="actions"><button class="primary" :disabled="disabled||Boolean(inputRequirements.length)" aria-describedby="publication-input-requirements">Konfirmasi isi publikasi<AppIcon name="check" :size="16" /></button><button type="button" :disabled="disabled" @click="edit">Baca ulang sumber</button></div>
+      <p class="fine">Konfirmasi menyimpan dan menyetujui isi yang Anda periksa. Setelah itu, tekan Publikasikan sekarang. Laporan belum terbit hanya dengan konfirmasi.</p>
+     </form>
+     <div v-else-if="published" class="publication-complete"><AppIcon name="circle-check" :size="34" /><h3 data-process-heading>Informasi sudah tersedia untuk publik</h3><div class="actions"><button :disabled="disabled" @click="preview=publicProjection(published,reportId)">Lihat informasi terbit</button><RouterLink class="button primary" to="/public">Buka Portal Publik<AppIcon name="arrow" :size="15" /></RouterLink></div><button v-if="canCreate&&start" :disabled="disabled" @click="edit">Perbaiki isi publikasi</button><p v-else-if="canCreate" class="fine">Untuk memperbarui informasi, pilih Tinjau untuk publikasi pada bagian Keputusan.</p></div>
+diff --git a/code/frontend/src/operator-flow.js b/code/frontend/src/operator-flow.js
+index a391265750991f4b0ac626ee72303294a9a5ce59..841fe3007ef22e9766779c034e0b2fcb65368df3 100644
+--- a/code/frontend/src/operator-flow.js
++++ b/code/frontend/src/operator-flow.js
+@@ -8,6 +8,34 @@ export function savedReview(detail, packet) {
+     item.outcome===packet.body.outcome&&item.reason===packet.body.reason)||null;
+ }
+ 
++export function savedInternalDecision(detail, packet) {
++  return Boolean(packet?.action==='decision'&&packet.body?.decision==='INTERNAL'&&
++    detail?.private_access&&detail.report?.id===packet.id&&
++    detail.assignment?.operator_id===packet.operatorId&&
++    detail.report.official_card_version_id===packet.officialCardId&&
++    detail.report.revision>packet.body.expected_revision&&
++    detail.report.publication_status==='INTERNAL'&&!detail.has_active_candidate&&
++    !detail.report.published_version_id&&detail.decision_reason===packet.body.reason);
++}
++
++export function savedPublication(detail, receipt) {
++  return Boolean(receipt?.action==='publish'&&receipt.versionId&&Number.isInteger(receipt.revision)&&
++    detail?.private_access&&detail.report?.id===receipt.reportId&&
++    detail.assignment?.operator_id===receipt.operatorId&&
++    detail.report.revision>=receipt.revision&&detail.report.publication_status==='PUBLISHED'&&
++    detail.report.published_version_id===receipt.versionId&&!detail.has_active_candidate);
++}
++
++export function publicationRequirements(form, {needsDecision=false,decisionReason='',sanitized=false}={}) {
++  let contentIssue=null;
++  try { publicationValues(form); } catch(error) { contentIssue=error.message; }
++  return [
++    ...(needsDecision&&!decisionReason.trim()?[{field:'public-decision-reason',message:'Isi alasan keputusan publikasi.'}]:[]),
++    ...(contentIssue?[{field:String(form.summary??'').trim()?'public-occurred':'public-summary',message:contentIssue}]:[]),
++    ...(!sanitized?[{field:'public-sanitized',message:'Centang pemeriksaan sumber, sanitasi informasi pribadi, dan kelayakan isi.'}]:[]),
++  ];
++}
++
+ export function canDraftPublication(detail) {
+   const report=detail?.report,review=detail?.latest_review;
+   return Boolean(report&&report.workflow_status!=='CLOSED'&&report.validation_status==='VALID'&&
+diff --git a/code/frontend/src/views/WorkspaceReportView.vue b/code/frontend/src/views/WorkspaceReportView.vue
+index ba6615057567fccb2627b0b6dabbffc12d652eb9..ec04483a9941cb3e2010e56c74e5aa6f20cb2312 100644
+--- a/code/frontend/src/views/WorkspaceReportView.vue
++++ b/code/frontend/src/views/WorkspaceReportView.vue
+@@ -18,19 +18,19 @@ import WorkspaceEvidence from '../components/WorkspaceEvidence.vue';
+ import PublicationPanel from '../components/PublicationPanel.vue';
+ import WorkspaceAi from '../components/WorkspaceAi.vue';
+ import ProcessOutlet from '../components/ProcessOutlet.vue';
+-import {savedReview} from '../operator-flow';
++import {savedReview,savedInternalDecision,savedPublication} from '../operator-flow';
+ const route=useRoute();
+ const detail=ref(null),busy=ref(false),saving=ref(false),error=ref(null),message=ref(''),tab=ref('inspection');
+ const assignment=ref(false),closing=ref(false),finish=ref(null),historyOpen=ref(false);
+ const uncertain=ref(false),publicationSaving=ref(false),technical=ref(false),pendingAction=ref(null),missingAction=ref(false);
+ const historyRows=computed(()=>(detail.value?.history||[]).filter(item=>technical.value||!/^(ANALYSIS_|EVIDENCE_|BUNDLE_|NARRATIVE_|CARD_|REPORT_CREATED|HUMAN_VERIFIED)/.test(item.action)));
+-const mutationBlocked=computed(()=>saving.value||busy.value||uncertain.value||publicationSaving.value||Boolean(readError.value));
+-const reviewReceipt=ref(null),tabNavigation=ref(null);
++const mutationBlocked=computed(()=>saving.value||busy.value||uncertain.value||publicationSaving.value||publicationUncertain.value||Boolean(readError.value));
++const reviewReceipt=ref(null),decisionReceipt=ref(null),publicationUncertain=ref(false),tabNavigation=ref(null);
+ watch(tab,async()=>{await nextTick();const nav=tabNavigation.value,button=nav?.querySelector('[aria-current="step"]');if(!button)return;const a=button.getBoundingClientRect(),n=nav.getBoundingClientRect();if(a.left<n.left||a.right>n.right)nav.scrollBy({left:a.left-n.left-(n.width-a.width)/2,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});});
+ const review=reactive({outcome:'',reason:''}),followup=ref(''),decision=reactive({decision:'',reason:''}),closure=ref(''),finishReason=ref('');
+ const closed=computed(()=>detail.value?.report?.workflow_status==='CLOSED');
+ const privateAccess=computed(()=>detail.value?.private_access===true);
+-const tabs=computed(()=>[['inspection',privateAccess.value?'Pemeriksaan':'Ringkasan Monitoring'],['followup','Tindak lanjut'],['decision','Keputusan']]);
++const tabs=computed(()=>[['inspection',privateAccess.value?'Pemeriksaan':'Ringkasan Monitoring'],['decision','Keputusan penayangan'],['followup','Penanganan & penyelesaian']]);
+ const canAssign=computed(()=>session.user?.role==='ADMIN'&&hasPermission(session.user,'assign_report')&&!closed.value&&!uncertain.value);
+ const reviewOpen=computed(()=>handlerCan(session.user,detail.value,'review_report')&&!detail.value.has_active_candidate&&!detail.value.report.published_version_id&&!['APPROVED','PUBLISHED'].includes(detail.value.report.publication_status));
+ const back=computed(()=>adminReportsScope(session.user)?ADMIN_REPORTS_PATH:'/workspace/assigned');
+@@ -56,16 +56,21 @@ async function load({quiet=false}={}){
+   return null;
+  }finally{if(version===generation)busy.value=false;}
+ }
+-function changeTab(value){if(saving.value||publicationSaving.value||reportTabLocked(detail.value,value))return;if(tab.value!==value)message.value='';tab.value=value;}
++function changeTab(value){if(saving.value||publicationSaving.value||publicationUncertain.value||reportTabLocked(detail.value,value))return;if(tab.value!==value)message.value='';tab.value=value;}
+ function advanceReview(packet){
+  const stored=savedReview(detail.value,packet);
+  if(!stored)throw new ApiError('Review perlu dibaca kembali sebelum melanjutkan.','RESPONSE_UNKNOWN');
+- reviewReceipt.value=stored;review.outcome='';review.reason='';tab.value='followup';
+- message.value='Review resmi berhasil disimpan. Lanjutkan penanganan laporan.';
++ reviewReceipt.value=stored;decisionReceipt.value=null;review.outcome='';review.reason='';decision.decision=detail.value.report.publication_status==='INTERNAL'?'INTERNAL':'';decision.reason=detail.value.decision_reason||'';tab.value='decision';
++ message.value='Review resmi berhasil disimpan. Tentukan keputusan penayangan laporan.';
++}
++function advanceInternalDecision(packet){
++ if(!savedInternalDecision(detail.value,packet))throw new ApiError('Keputusan internal perlu dibaca kembali sebelum melanjutkan.','RESPONSE_UNKNOWN');
++ decisionReceipt.value={kind:'internal'};tab.value='followup';
++ message.value='Keputusan internal berhasil disimpan. Tindak lanjut opsional; periksa syarat penyelesaian laporan.';
+ }
+ async function write(action,body){
+  if(mutationBlocked.value||!detail.value)return false;
+- const packet={id:detail.value.report.id,key:crypto.randomUUID(),action,body:{...body,expected_revision:detail.value.report.revision},...(action==='reviews'?{reviewContext:{previousIds:detail.value.reviews.map(item=>item.id),cardId:detail.value.report.official_card_version_id,operatorId:session.user.id}}:{})};
++ const packet={id:detail.value.report.id,operatorId:session.user.id,officialCardId:detail.value.report.official_card_version_id,key:crypto.randomUUID(),action,body:{...body,expected_revision:detail.value.report.revision},...(action==='reviews'?{reviewContext:{previousIds:detail.value.reviews.map(item=>item.id),cardId:detail.value.report.official_card_version_id,operatorId:session.user.id}}:{})};
+  return perform(packet);
+ }
+ async function perform(packet){
+@@ -79,6 +84,7 @@ async function perform(packet){
+   pendingAction.value=null;uncertain.value=false;missingAction.value=false;
+   message.value=r.data.message||'Tindakan berhasil disimpan.';
+   if(packet.action==='reviews')advanceReview(packet);
++  else if(packet.action==='decision'&&packet.body.decision==='INTERNAL')advanceInternalDecision(packet);
+   return true;
+  }catch(e){
+   if(route.params.id!==packet.id)return false;
+@@ -98,6 +104,7 @@ async function recoverAction(){
+    if(!await load({quiet:true}))throw new ApiError('Keadaan laporan belum dapat dibaca kembali.','NETWORK_ERROR');
+    if(route.params.id!==packet.id)return;
+    if(record.state==='SUCCEEDED'&&packet.action==='reviews')advanceReview(packet);
++   else if(record.state==='SUCCEEDED'&&packet.action==='decision'&&packet.body.decision==='INTERNAL')advanceInternalDecision(packet);
+    else message.value=record.state==='SUCCEEDED'?'Tindakan telah tersimpan. Keadaan laporan sudah dibaca kembali.':'Kegagalan tindakan telah tercatat. Periksa keadaan laporan sebelum mencoba kembali.';
+    pendingAction.value=null;uncertain.value=false;
+   }else message.value='Hasil tindakan masih diproses atau belum pasti. Tindakan baru tetap ditahan.';
+@@ -109,9 +116,16 @@ async function saveDecision(){if(decision.decision==='INTERNAL'&&!reportTabLocke
+ async function close(){if(await write('close',{closure_note:closure.value.trim()})){closing.value=false;closure.value='';}}
+ function finishing(item,status){finish.value={...item,nextStatus:status};finishReason.value='';}
+ async function saveFinish(){if(await write(`followups/${finish.value.id}`,{status:finish.value.nextStatus,completion_reason:finishReason.value.trim()}))finish.value=null;}
+-async function publicationSaved(event){message.value='';if(event?.action==='publish'){decision.decision='';decision.reason='';}await load({quiet:true});}
++async function publicationSaved(event){
++ const stored=await load({quiet:true});if(!stored)return;
++ if(event?.action==='publish'){
++  if(!savedPublication(stored,event)){error.value=new ApiError('Keadaan publikasi perlu dipastikan sebelum melanjutkan.','RESPONSE_UNKNOWN');return;}
++  decision.decision='';decision.reason='';decisionReceipt.value={kind:'published'};tab.value='followup';
++  message.value='Publikasi berhasil diterbitkan. Lanjutkan penanganan atau selesaikan laporan jika seluruh syarat terpenuhi.';
++ }
++}
+ async function assigned(text){assignment.value=false;message.value=text;await load({quiet:true});}
+-watch(()=>route.params.id,()=>{detail.value=null;tab.value='inspection';message.value='';uncertain.value=false;pendingAction.value=null;missingAction.value=false;technical.value=false;historyOpen.value=false;review.outcome='';review.reason='';reviewReceipt.value=null;followup.value='';decision.decision='';decision.reason='';load();},{immediate:true});
++watch(()=>route.params.id,()=>{detail.value=null;tab.value='inspection';message.value='';uncertain.value=false;pendingAction.value=null;missingAction.value=false;technical.value=false;historyOpen.value=false;review.outcome='';review.reason='';reviewReceipt.value=null;decisionReceipt.value=null;publicationUncertain.value=false;followup.value='';decision.decision='';decision.reason='';load();},{immediate:true});
+ onBeforeUnmount(()=>{generation+=1;detail.value=null;});
+ </script>
+ <template>
+@@ -123,7 +137,7 @@ onBeforeUnmount(()=>{generation+=1;detail.value=null;});
+   <div v-if="canAssign" class="ws-reference-assignment"><button :disabled="busy||saving||publicationSaving" @click="assignment=true">{{ detail.assignment?'Alihkan petugas':'Tugaskan laporan' }}</button></div>
+   <p v-if="closed" class="notice success"><AppIcon name="lock" :size="17" />Laporan ditutup pada {{ date(detail.report.closed_at) }}. Perubahan laporan dan penugasan telah dikunci; pembacaan tetap mengikuti hak akses.</p>
+   <p v-else-if="!privateAccess" class="ws-info-line"><AppIcon name="shield" :size="18" />Ringkasan administratif. Bukti, narasi, dan hasil AI privat hanya dapat dibaca penanggung jawab saat ini yang memiliki izin.</p>
+-  <nav ref="tabNavigation" class="ws-tabs ws-process-steps" aria-label="Tahap penanganan laporan"><button v-for="([key,title],index) in tabs" :key="key" :class="{active:tab===key}" :disabled="saving||publicationSaving||reportTabLocked(detail,key)" :aria-describedby="reportTabLocked(detail,key)?'review-step-hint':undefined" :aria-current="tab===key?'step':undefined" aria-controls="workspace-process-body" @click="changeTab(key)"><span class="ws-step-number"><AppIcon v-if="reportTabLocked(detail,key)" name="lock" :size="14" /><template v-else>{{ index+1 }}</template></span><span><strong>{{ title }}</strong><small>{{ key==='inspection'?'Bukti, narasi & review':key==='followup'?'Penanganan bila diperlukan':'Internal atau publikasi' }}</small></span></button></nav>
++  <nav ref="tabNavigation" class="ws-tabs ws-process-steps" aria-label="Tahap penanganan laporan"><button v-for="([key,title],index) in tabs" :key="key" :class="{active:tab===key}" :disabled="saving||publicationSaving||publicationUncertain||reportTabLocked(detail,key)" :aria-describedby="reportTabLocked(detail,key)?'review-step-hint':undefined" :aria-current="tab===key?'step':undefined" aria-controls="workspace-process-body" @click="changeTab(key)"><span class="ws-step-number"><AppIcon v-if="reportTabLocked(detail,key)" name="lock" :size="14" /><template v-else>{{ index+1 }}</template></span><span><strong>{{ title }}</strong><small>{{ key==='inspection'?'Bukti, narasi & review':key==='decision'?'Internal atau publikasi':'Tindak lanjut opsional & penutupan' }}</small></span></button></nav>
+   <p v-if="reportTabLocked(detail,'followup')" id="review-step-hint" class="ws-info-line"><AppIcon name="info" :size="17" />{{ reviewOpen?'Periksa sumber, lalu simpan hasil review untuk melanjutkan.':'Tahap berikutnya menunggu review resmi dari petugas yang berwenang.' }}</p>
+ 
+   <ProcessOutlet id="workspace-process-body" :view-key="tab" :label="tabs.find(item=>item[0]===tab)?.[1]">
+@@ -137,26 +151,29 @@ onBeforeUnmount(()=>{generation+=1;detail.value=null;});
+      <details class="card ws-inspection-metadata"><summary>Metadata laporan</summary><dl class="ws-definition"><dt>ID laporan</dt><dd>{{ detail.report.id }}</dd><dt>Versi resmi</dt><dd>{{ detail.report.official_version }}</dd><dt>Waktu pengiriman</dt><dd>{{ date(detail.report.submitted_at) }}</dd><dt>Penanggung jawab</dt><dd>{{ detail.assignment?.operator_name||'Belum ditugaskan' }}</dd><dt>Revisi data</dt><dd>{{ detail.report.revision }}</dd></dl></details>
+     </div>
+     <aside class="ws-inspection-review" aria-label="Hasil pemeriksaan">
+-     <section v-if="reviewOpen" class="card ws-review-form"><header class="ws-tone-heading"><h2>Catat hasil pemeriksaan</h2><p>Pemeriksaan untuk laporan {{ shortId(detail.report.id) }} · versi resmi {{ detail.report.official_version }}.</p></header><div class="ws-tone-body"><form @submit.prevent="saveReview"><div class="field"><label for="review-outcome">Hasil review *</label><select id="review-outcome" v-model="review.outcome" :disabled="saving" required><option disabled value="">Pilih hasil review</option><option value="VALID">Valid</option><option value="INVALID">Tidak valid</option><option value="INCONCLUSIVE">Belum dapat disimpulkan</option></select></div><div class="field"><label for="review-reason">Alasan review *</label><textarea id="review-reason" v-model="review.reason" required maxlength="3000" placeholder="Jelaskan hasil pemeriksaan bukti dan alasan penilaian Anda." :disabled="saving" /></div><p class="fine">Hasil dan alasan wajib diisi sebelum disimpan.</p><button class="primary" :disabled="mutationBlocked||!review.outcome||!review.reason.trim()">{{ saving?'Menyimpan…':'Simpan review & lanjut' }}</button></form></div></section><section v-else class="card"><h2>Review resmi tersimpan</h2><p v-if="detail.reviews.length"><WorkspaceStatus :value="detail.report.validation_status" /></p><p v-else class="muted">Review mengikuti penanggung jawab yang berwenang.</p><button v-if="!reportTabLocked(detail,'followup')" @click="changeTab('followup')">Lanjutkan penanganan</button></section>
+-     <p class="fine">Review disimpan terpisah dari sumber Reporter dan hasil AI. Sesudah berhasil disimpan, Anda otomatis menuju Tindak lanjut.</p>
++     <section v-if="reviewOpen" class="card ws-review-form"><header class="ws-tone-heading"><h2>Catat hasil pemeriksaan</h2><p>Pemeriksaan untuk laporan {{ shortId(detail.report.id) }} · versi resmi {{ detail.report.official_version }}.</p></header><div class="ws-tone-body"><form @submit.prevent="saveReview"><div class="field"><label for="review-outcome">Hasil review *</label><select id="review-outcome" v-model="review.outcome" :disabled="saving" required><option disabled value="">Pilih hasil review</option><option value="VALID">Valid</option><option value="INVALID">Tidak valid</option><option value="INCONCLUSIVE">Belum dapat disimpulkan</option></select></div><div class="field"><label for="review-reason">Alasan review *</label><textarea id="review-reason" v-model="review.reason" required maxlength="3000" placeholder="Jelaskan hasil pemeriksaan bukti dan alasan penilaian Anda." :disabled="saving" /></div><p class="fine">Hasil dan alasan wajib diisi sebelum disimpan.</p><button class="primary" :disabled="mutationBlocked||!review.outcome||!review.reason.trim()">{{ saving?'Menyimpan…':'Simpan review & lanjut' }}</button></form></div></section><section v-else class="card"><h2>Review resmi tersimpan</h2><p v-if="detail.reviews.length"><WorkspaceStatus :value="detail.report.validation_status" /></p><p v-else class="muted">Review mengikuti penanggung jawab yang berwenang.</p><button v-if="!reportTabLocked(detail,'followup')" @click="changeTab('decision')">Ke keputusan penayangan</button></section>
++     <p class="fine">Review disimpan terpisah dari sumber Reporter dan hasil AI. Sesudah berhasil disimpan, Anda otomatis menuju Keputusan penayangan.</p>
+     </aside>
+    </div>
+   </template>
+ 
+-  <template v-else-if="tab==='followup'">
+-   <section v-if="reviewReceipt" class="card ws-review-receipt" role="status"><AppIcon name="circle-check" :size="30" /><div><h2 data-process-heading>Review Anda sudah tersimpan</h2><p><WorkspaceStatus :value="reviewReceipt.outcome" /> · Versi resmi {{ detail.report.official_version }} · {{ date(reviewReceipt.reviewed_at) }}</p><small>Catat tindak lanjut bila diperlukan, lalu lanjutkan ke Keputusan.</small></div></section>
+-   <section v-if="handlerCan(session.user,detail,'manage_followup')" class="card ws-followup-form"><header class="ws-tone-heading"><h2>Tambahkan tindak lanjut</h2><p>Tindak lanjut baru berstatus Menunggu.</p></header><div class="ws-tone-body"><p v-if="!detail.reviews.length" class="notice warning">Catat review resmi terlebih dahulu.</p><form @submit.prevent="saveFollowup"><div class="field"><label for="followup-description">Catatan tindak lanjut *</label><textarea id="followup-description" v-model="followup" required maxlength="3000" :disabled="saving||!detail.reviews.length" /></div><button class="primary" :disabled="mutationBlocked||!detail.reviews.length||!followup.trim()">{{ saving?'Menyimpan…':'Tambah tindak lanjut' }}</button></form></div></section>
+-   <section class="card"><h2>Daftar tindak lanjut</h2><p v-if="!detail.followups.length" class="muted">Belum ada tindak lanjut yang dicatat.</p><ol class="ws-timeline"><li v-for="item in detail.followups" :key="item.id"><WorkspaceStatus :value="item.status" /><p v-if="item.description" class="preserve">{{ item.description }}</p><small>Dibuat oleh {{ item.operator_name }} · {{ date(item.created_at) }}</small><p v-if="item.completion_reason">{{ item.completion_reason }}</p><small v-if="item.finished_at">Selesai/dibatalkan pada {{ date(item.finished_at) }}</small><div v-if="item.status==='PENDING'&&handlerCan(session.user,detail,'manage_followup')" class="actions"><button :disabled="saving" @click="finishing(item,'DONE')">Selesaikan</button><button :disabled="saving" @click="finishing(item,'CANCELLED')">Batalkan tindak lanjut</button></div></li></ol></section>
+-   <div class="ws-process-navigation"><button :disabled="mutationBlocked" @click="changeTab('inspection')"><AppIcon name="left" :size="15" />Kembali ke pemeriksaan</button><button class="primary" :disabled="mutationBlocked" @click="changeTab('decision')">Lanjut ke keputusan<AppIcon name="arrow" :size="15" /></button></div>
+-  </template>
+-
+   <template v-else-if="tab==='decision'">
+-<div class="ws-decision-layout"><div class="ws-decision-main"><section class="card ws-direction-form"><header class="ws-tone-heading"><h2>Arah keputusan</h2></header><div class="ws-tone-body"><p><WorkspaceStatus :value="detail.report.publication_status" /></p><p v-if="detail.decision_reason" class="preserve">{{ detail.decision_reason }}</p><p v-if="detail.report.publication_status==='PENDING_APPROVAL'" class="notice">Isi publikasi belum terbit. Periksa pratinjau, konfirmasi isinya, lalu publikasikan di bawah.</p><form v-if="handlerCan(session.user,detail,'publish_report')&&!detail.has_active_candidate&&(!detail.report.published_version_id||decision.decision==='PREPARE')" @submit.prevent="saveDecision"><div class="field"><label for="publication-direction">Keputusan *</label><select id="publication-direction" v-model="decision.decision" :disabled="mutationBlocked||detail.has_active_candidate"><option disabled value="">Pilih keputusan</option><option value="INTERNAL" :disabled="Boolean(detail.report.published_version_id)">Tetap internal</option><option value="PREPARE" :disabled="detail.report.validation_status!=='VALID'">Tinjau untuk publikasi</option></select><small>Pilih publikasi untuk langsung memeriksa isi dan pratinjau. Review Tidak valid atau Belum dapat disimpulkan tetap internal.</small></div><div class="field"><label for="publication-reason">Alasan keputusan *</label><textarea id="publication-reason" v-model="decision.reason" required maxlength="3000" :disabled="mutationBlocked" /></div><button v-if="decision.decision==='INTERNAL'" class="primary" :disabled="mutationBlocked||!decision.reason.trim()||!decisionAllowed(detail,decision.decision)">{{ saving?'Menyimpan…':'Simpan keputusan' }}</button></form><button v-if="handlerCan(session.user,detail,'publish_report')&&detail.report.published_version_id&&!detail.has_active_candidate&&decision.decision!=='PREPARE'" @click="decision.decision='PREPARE'">Tinjau pembaruan informasi</button></div></section>
+-</div><section class="card ws-closure-panel"><header class="ws-tone-heading"><h2>Penutupan laporan</h2><p>Seluruh syarat berikut perlu terpenuhi.</p></header><div class="ws-tone-body"><ul class="ws-requirements"><li v-for="item in detail.close_requirements" :key="item.key"><AppIcon :name="item.met?'circle-check':'clock'" :size="19" :class="{'text-success':item.met}" /><span>{{ item.label }}</span><strong>{{ item.met?'Terpenuhi':'Belum terpenuhi' }}</strong></li></ul><p class="fine">Review yang sah dapat berupa VALID, INVALID, atau INCONCLUSIVE. Penutupan tidak mensyaratkan hasil selalu VALID.</p><button v-if="handlerCan(session.user,detail,'close_report')" class="danger" :disabled="mutationBlocked||!closeAllowed(session.user,detail)" @click="closing=true">Tutup laporan</button><p v-if="detail.closure_note" class="preserve">Catatan penutupan: {{ detail.closure_note }}</p></div></section>
+-   <PublicationPanel class="ws-publication-section" :key="detail.report.id" :detail="detail" :blocked="saving||busy||uncertain" :start="decision.decision==='PREPARE'" :decision-reason="decision.reason" @busy="publicationSaving=$event" @saved="publicationSaved" />
+-</div>
++   <section v-if="reviewReceipt" class="card ws-review-receipt" role="status"><AppIcon name="circle-check" :size="30" /><div><h2 data-process-heading>Review Anda sudah tersimpan</h2><p><WorkspaceStatus :value="reviewReceipt.outcome" /> · Versi resmi {{ detail.report.official_version }} · {{ date(reviewReceipt.reviewed_at) }}</p><small>Tentukan penayangan laporan: tetap internal atau tinjau untuk publikasi. Tindak lanjut tidak wajib dibuat.</small></div></section>
++   <div class="ws-decision-flow"><section class="card ws-direction-form"><header class="ws-tone-heading"><h2>Keputusan penayangan</h2><p>Tentukan apakah informasi tetap internal atau ditayangkan kepada publik.</p></header><div class="ws-tone-body"><p><WorkspaceStatus :value="detail.report.publication_status" /></p><p v-if="detail.decision_reason" class="preserve">Alasan keputusan tersimpan: {{ detail.decision_reason }}</p><p v-if="detail.report.publication_status==='PENDING_APPROVAL'" class="notice">Informasi belum terbit. Periksa isi dan pratinjau di bawah, konfirmasi isinya, lalu publikasikan.</p><form v-if="handlerCan(session.user,detail,'publish_report')&&!detail.has_active_candidate&&(!detail.report.published_version_id||decision.decision==='PREPARE')" @submit.prevent="saveDecision"><div class="field"><label for="publication-direction">Keputusan penayangan *</label><select id="publication-direction" v-model="decision.decision" :disabled="mutationBlocked||detail.has_active_candidate"><option disabled value="">Pilih keputusan</option><option value="INTERNAL" :disabled="Boolean(detail.report.published_version_id)">Tetap internal</option><option value="PREPARE" :disabled="detail.report.validation_status!=='VALID'">Tinjau untuk publikasi</option></select><small>Pilihan publikasi langsung membuka formulir dan pratinjau. Review Tidak valid atau Belum dapat disimpulkan tetap internal.</small></div><template v-if="decision.decision==='INTERNAL'"><div class="field"><label for="publication-reason">Alasan keputusan internal *</label><textarea id="publication-reason" v-model="decision.reason" required maxlength="3000" :disabled="mutationBlocked" /></div><p v-if="!decision.reason.trim()" class="fine">Isi alasan keputusan internal untuk mengaktifkan penyimpanan.</p><button class="primary" :disabled="mutationBlocked||!decision.reason.trim()||!decisionAllowed(detail,decision.decision)">{{ saving?'Menyimpan…':'Simpan keputusan & lanjut' }}</button></template></form><button v-if="handlerCan(session.user,detail,'publish_report')&&detail.report.published_version_id&&!detail.has_active_candidate&&decision.decision!=='PREPARE'" :disabled="mutationBlocked" @click="decision.decision='PREPARE'">Tinjau pembaruan informasi</button></div></section>
++    <PublicationPanel class="ws-publication-section" :key="detail.report.id" :detail="detail" :blocked="saving||busy||uncertain" :start="decision.decision==='PREPARE'" v-model:decision-reason="decision.reason" @busy="publicationSaving=$event" @uncertain="publicationUncertain=$event" @saved="publicationSaved" />
++   </div>
++   <div class="ws-process-navigation"><button :disabled="mutationBlocked" @click="changeTab('inspection')"><AppIcon name="left" :size="15" />Kembali ke pemeriksaan</button><button :disabled="mutationBlocked" @click="changeTab('followup')">Lihat penanganan & penyelesaian<AppIcon name="arrow" :size="15" /></button></div>
+   </template>
+ 
++  <template v-else-if="tab==='followup'">
++   <section v-if="decisionReceipt" class="card ws-review-receipt" role="status"><AppIcon name="circle-check" :size="30" /><div><h2 data-process-heading>{{ decisionReceipt.kind==='published'?'Informasi sudah diterbitkan':'Keputusan internal sudah tersimpan' }}</h2><p>{{ decisionReceipt.kind==='published'?'Informasi yang dikonfirmasi sudah tersedia di Portal Publik.':'Laporan tetap internal dan tidak ditampilkan di Portal Publik.' }}</p><small>Tindak lanjut bersifat opsional. Selesaikan penanganan laporan ketika seluruh pekerjaan dan syarat penutupan sudah terpenuhi.</small><RouterLink v-if="decisionReceipt.kind==='published'" class="button" to="/public">Buka Portal Publik</RouterLink></div></section>
++   <p class="notice ws-optional-followup"><AppIcon name="info" :size="17" />Tidak wajib membuat tindak lanjut. Jika tidak diperlukan, periksa syarat di bagian Penyelesaian laporan lalu selesaikan penanganannya.</p>
++   <div class="ws-handling-layout"><div class="ws-handling-main">
++    <section v-if="handlerCan(session.user,detail,'manage_followup')" class="card ws-followup-form"><header class="ws-tone-heading"><h2>Tambahkan tindak lanjut (opsional)</h2><p>Isi hanya jika memang ada penanganan yang perlu dicatat. Catatan baru berstatus Menunggu.</p></header><div class="ws-tone-body"><form @submit.prevent="saveFollowup"><div class="field"><label for="followup-description">Catatan tindak lanjut *</label><textarea id="followup-description" v-model="followup" required maxlength="3000" :disabled="saving||!detail.reviews.length" /></div><button class="primary" :disabled="mutationBlocked||!detail.reviews.length||!followup.trim()">{{ saving?'Menyimpan…':'Tambah tindak lanjut' }}</button></form></div></section>
++    <section class="card"><h2>Daftar tindak lanjut</h2><p v-if="!detail.followups.length" class="muted">Belum ada tindak lanjut yang dicatat. Anda tetap dapat menyelesaikan penanganan jika seluruh syarat penutupan terpenuhi.</p><ol class="ws-timeline"><li v-for="item in detail.followups" :key="item.id"><WorkspaceStatus :value="item.status" /><p v-if="item.description" class="preserve">{{ item.description }}</p><small>Dibuat oleh {{ item.operator_name }} · {{ date(item.created_at) }}</small><p v-if="item.completion_reason">{{ item.completion_reason }}</p><small v-if="item.finished_at">Selesai/dibatalkan pada {{ date(item.finished_at) }}</small><div v-if="item.status==='PENDING'&&handlerCan(session.user,detail,'manage_followup')" class="actions"><button :disabled="mutationBlocked" @click="finishing(item,'DONE')">Selesaikan</button><button :disabled="mutationBlocked" @click="finishing(item,'CANCELLED')">Batalkan tindak lanjut</button></div></li></ol></section>
++   </div><section class="card ws-closure-panel"><header class="ws-tone-heading"><h2>Penyelesaian laporan</h2><p>Tetap internal atau sudah terbit belum berarti penanganannya selesai.</p></header><div class="ws-tone-body"><ul class="ws-requirements"><li v-for="item in detail.close_requirements" :key="item.key"><AppIcon :name="item.met?'circle-check':'clock'" :size="19" :class="{'text-success':item.met}" /><span>{{ item.label }}</span><strong>{{ item.met?'Terpenuhi':'Belum terpenuhi' }}</strong></li></ul><p class="fine">Tindak lanjut tidak wajib dibuat. Catatan yang sudah dibuat harus diselesaikan atau dibatalkan sebelum penutupan.</p><p class="fine">Setelah ditutup, pelapor menerima notifikasi penutupan di aplikasi. Catatan penutupan tetap merupakan informasi internal petugas.</p><button v-if="handlerCan(session.user,detail,'close_report')" class="danger" :disabled="mutationBlocked||!closeAllowed(session.user,detail)" @click="closing=true">Selesaikan penanganan laporan</button><p v-if="detail.closure_note" class="preserve">Catatan penutupan internal: {{ detail.closure_note }}</p></div></section></div>
++   <div class="ws-process-navigation"><button :disabled="mutationBlocked" @click="changeTab('decision')"><AppIcon name="left" :size="15" />Kembali ke keputusan penayangan</button></div>
++  </template>
+   </ProcessOutlet>
+ 
+   <AppDialog v-if="historyOpen" title="Riwayat laporan" class="ws-history-dialog" :caption="shortId(detail.report.id)" @close="historyOpen=false">
+@@ -167,7 +184,7 @@ onBeforeUnmount(()=>{generation+=1;detail.value=null;});
+    <template #actions><button @click="historyOpen=false">Tutup riwayat</button></template>
+   </AppDialog>
+   <WorkspaceAssignment v-if="assignment" :report="{...detail.report,operator_id:detail.assignment?.operator_id||null,operator_name:detail.assignment?.operator_name||null}" @close="assignment=false" @saved="assigned" />
+-  <AppDialog v-if="closing" title="Tutup laporan?" :caption="shortId(detail.report.id)" @close="!saving&&(closing=false)"><ErrorNotice :error="error" /><p>Penutupan mengunci perubahan laporan dan mempertahankan sumber serta riwayatnya.</p><form id="closure-form" @submit.prevent="close"><div class="field"><label for="closure-note">Catatan penutupan *</label><textarea id="closure-note" v-model="closure" required maxlength="3000" :disabled="saving" /></div></form><template #actions><button :disabled="saving" @click="closing=false">Batal</button><button class="danger" type="submit" form="closure-form" :disabled="mutationBlocked||!closure.trim()">{{ saving?'Menutup…':'Tutup laporan' }}</button></template></AppDialog>
++  <AppDialog v-if="closing" title="Selesaikan penanganan laporan?" :caption="shortId(detail.report.id)" @close="!saving&&(closing=false)"><ErrorNotice :error="error" /><p>Penutupan mengunci perubahan laporan dan mempertahankan sumber serta riwayatnya. Pelapor menerima notifikasi penutupan; catatan di bawah hanya dapat dibaca petugas yang berwenang.</p><form id="closure-form" @submit.prevent="close"><div class="field"><label for="closure-note">Catatan penutupan internal *</label><textarea id="closure-note" v-model="closure" required maxlength="3000" :disabled="saving" /></div></form><template #actions><button :disabled="saving" @click="closing=false">Batal</button><button class="danger" type="submit" form="closure-form" :disabled="mutationBlocked||!closure.trim()">{{ saving?'Menyelesaikan…':'Selesaikan penanganan' }}</button></template></AppDialog>
+   <AppDialog v-if="finish" :title="finish.nextStatus==='DONE'?'Selesaikan tindak lanjut':'Batalkan tindak lanjut'" @close="!saving&&(finish=null)"><ErrorNotice :error="error" /><p class="preserve">{{ finish.description }}</p><form id="finish-form" @submit.prevent="saveFinish"><div class="field"><label for="finish-reason">Catatan / alasan *</label><textarea id="finish-reason" v-model="finishReason" required maxlength="3000" :disabled="saving" /></div></form><template #actions><button :disabled="saving" @click="finish=null">Kembali</button><button class="primary" type="submit" form="finish-form" :disabled="mutationBlocked||!finishReason.trim()">{{ saving?'Menyimpan…':'Simpan tindak lanjut' }}</button></template></AppDialog>
+  </template>
+ </template>
+diff --git a/code/frontend/src/workspace-reference.css b/code/frontend/src/workspace-reference.css
+index f019ecb9e0ce05b2084509e910954faaa54f3fe6..6c02cfb88ce3a3a0d57889ce4829f0b398aa618b 100644
+--- a/code/frontend/src/workspace-reference.css
++++ b/code/frontend/src/workspace-reference.css
+@@ -45,7 +45,7 @@
+ 
+ :root[data-theme=dark] .ws-tone-heading .eyebrow{color:#22D3EE}
+ 
+-/* Operator process feedback retains the supplied panels and seven tabs. */
++/* Operator process feedback uses shared panels and page transitions. */
+ .ws-review-receipt{display:flex;align-items:flex-start;gap:16px;border-color:var(--success-ink);background:var(--success-bg)}.ws-review-receipt>.app-icon{flex:none;color:var(--success-ink);margin-top:4px}.ws-review-receipt h2{margin:0 0 8px}.ws-review-receipt p{margin:0 0 6px}.ws-review-receipt small{color:var(--muted)}
+ .ws-process-navigation{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:24px 0}.publication-progress{display:flex;align-items:center;gap:10px;color:var(--primary);font-size:13px}.publication-progress>.app-icon{flex:none}.publication-guided .section-heading{align-items:flex-start;flex-wrap:wrap}.publication-guided .section-heading>button{margin-left:auto}.publication-preview-step h3{margin:0 0 5px}.publication-preview-step>.public-incident{margin-top:20px}.publication-live-preview{border-top:1px solid var(--line);padding-top:20px;margin-top:14px}.publication-live-preview>.public-incident{background:var(--panel)}.publication-complete{padding:22px 0}.publication-complete>.app-icon{color:var(--success-ink);margin-bottom:12px}.publication-history{border-top:1px solid var(--line);padding-top:18px;margin-top:22px}.publication-history>summary{font-size:12px;color:var(--muted);cursor:pointer}.publication-history .ws-table-scroll{margin-top:16px}.publication-guided .process-content h3:focus{outline:none}
+ @media(max-width:640px){.ws-process-navigation{align-items:stretch;flex-direction:column-reverse}.ws-process-navigation>button{width:100%}.ws-review-receipt{gap:12px}.ws-review-receipt>.app-icon{width:24px;height:24px}.publication-guided .publication-editor,.publication-guided .publication-version{padding:18px 14px}.publication-preview-step header{align-items:flex-start}.publication-guided .actions{align-items:stretch;flex-direction:column}.publication-guided .actions>button,.publication-guided .actions>.button{width:100%;white-space:normal}.publication-guided .check-label{font-size:12px}.publication-guided .section-heading>button{margin-left:0}.publication-guided .public-incident{padding:18px 14px}}
+@@ -61,3 +61,6 @@
+ .ws-inspection-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(300px,1fr);gap:24px;align-items:start}.ws-inspection-sources,.ws-inspection-review{min-width:0}.ws-inspection-review{position:sticky;top:24px}.ws-inspection-sources>.card{margin-bottom:20px}.ws-inspection-sources .incident-fields{grid-template-columns:repeat(2,minmax(0,1fr))}.ws-inspection-evidence{margin-block:22px}.ws-inspection-evidence>h2{font-size:20px;margin-bottom:14px}.ws-inspection-evidence .ws-evidence-grid{grid-template-columns:1fr}.ws-inspection-evidence .ws-evidence-text-card{grid-column:auto}.ws-inspection-ai{margin-block:20px;border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:18px}.ws-inspection-ai>summary,.ws-inspection-metadata>summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--ink)}.ws-inspection-ai[open]>summary,.ws-inspection-metadata[open]>summary{margin-bottom:20px}.ws-inspection-ai .ws-ai-model-grid{grid-template-columns:1fr}.ws-inspection-ai .ws-model-confidence{flex-wrap:wrap}.ws-inspection-metadata dl{margin-top:18px}.ws-history-dialog{width:min(1000px,calc(100vw - 32px));max-width:calc(100vw - 32px)}.ws-history-dialog .ws-table-scroll{max-width:100%;overflow-x:auto}
+ @media(max-width:1100px){.ws-inspection-grid{grid-template-columns:1fr}.ws-inspection-review{position:static}.workspace-frame .ws-process-steps button{gap:8px;padding:12px 10px}}
+ @media(max-width:640px){.workspace-frame .ws-tabs.ws-process-steps{gap:3px;padding:3px}.workspace-frame .ws-process-steps button{flex-direction:column;align-items:flex-start;gap:7px;padding:10px 8px;min-height:102px}.ws-process-steps strong{font-size:11px}.ws-process-steps small{font-size:9px}.ws-step-number{width:25px;height:25px}.ws-inspection-sources .incident-fields{grid-template-columns:1fr}.ws-inspection-grid{gap:16px}.ws-inspection-ai{padding:14px}.ws-history-dialog{width:calc(100vw - 24px);max-width:calc(100vw - 24px)}}
++/* Review -> publication direction -> optional handling and explicit closure. */
++.ws-decision-flow>.card{margin-bottom:22px}.ws-decision-flow .ws-direction-form form{max-width:760px}.ws-handling-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,1fr);gap:24px;align-items:start}.ws-handling-main{min-width:0}.ws-handling-main>.card{margin-bottom:22px}.ws-handling-layout>.ws-closure-panel{position:sticky;top:24px}.ws-optional-followup{display:flex;align-items:flex-start;gap:10px;line-height:1.8}.ws-optional-followup>.app-icon{flex:none;margin-top:3px}.ws-review-receipt .button{margin-top:12px}.publication-decision-reason{margin-top:22px}.publication-decision-reason textarea{min-height:110px}.publication-prerequisites{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:16px 0;font-size:12px;line-height:1.8}.publication-prerequisites ul{margin:5px 0 0;padding-left:20px}.publication-prerequisites a{color:var(--primary)}
++@media(max-width:1100px){.ws-handling-layout{grid-template-columns:1fr}.ws-handling-layout>.ws-closure-panel{position:static}}
+diff --git a/code/frontend/tests/operator-flow.test.js b/code/frontend/tests/operator-flow.test.js
+index 747f757112f32072f62535b86993ba1577c03126..9502e2aba26640e8b8a9b57d3f881da4f7217b2f 100644
+--- a/code/frontend/tests/operator-flow.test.js
++++ b/code/frontend/tests/operator-flow.test.js
+@@ -50,3 +50,32 @@ test('Guided confirmation only approves a stored candidate with exactly the revi
+   {...candidate,data:{...candidate.data,owner:'private'}},{...candidate,data:{...candidate.data,occurred_at:'2026-10-30T09:00:00Z'}}])
+   assert.throws(()=>reviewedPublicationCandidate({...detail,active_candidate:candidateChange},'candidate',values,'FLOOD'),e=>e.code==='VERSION_CONFLICT');
+ });
++
++test('Internal decision advances only after the same operator, source, reason and state are read back',async()=>{
++ const {savedInternalDecision}=await import('../src/operator-flow.js');
++ const packet={id:'report',action:'decision',operatorId:'operator',officialCardId:'card',body:{decision:'INTERNAL',reason:'Keputusan tersimpan.',expected_revision:7}};
++ const detail={private_access:true,assignment:{operator_id:'operator'},report:{id:'report',official_card_version_id:'card',revision:8,publication_status:'INTERNAL'},decision_reason:'Keputusan tersimpan.',has_active_candidate:false};
++ assert.equal(savedInternalDecision(detail,packet),true);
++ for(const bad of [{...detail,private_access:false},{...detail,assignment:{operator_id:'another'}},{...detail,decision_reason:'Alasan berbeda'},
++  {...detail,has_active_candidate:true},{...detail,report:{...detail.report,id:'another'}},{...detail,report:{...detail.report,revision:7}},
++  {...detail,report:{...detail.report,official_card_version_id:'different'}},{...detail,report:{...detail.report,publication_status:'NOT_DECIDED'}},
++  {...detail,report:{...detail.report,published_version_id:'published'}}])assert.equal(savedInternalDecision(bad,packet),false);
++});
++test('Publication completion cannot advance for approval alone or another version, report or assignee',async()=>{
++ const {savedPublication}=await import('../src/operator-flow.js');
++ const receipt={action:'publish',versionId:'version',reportId:'report',operatorId:'operator',revision:9};
++ const detail={private_access:true,assignment:{operator_id:'operator'},report:{id:'report',revision:9,publication_status:'PUBLISHED',published_version_id:'version'},has_active_candidate:false};
++ assert.equal(savedPublication(detail,receipt),true);
++ for(const bad of [{...receipt,action:'approve'},{...receipt,versionId:'another'},{...receipt,reportId:'another'},{...receipt,operatorId:'another'},{...receipt,revision:10},{...receipt,revision:undefined}])assert.equal(savedPublication(detail,bad),false);
++ assert.equal(savedPublication({...detail,private_access:false},receipt),false);
++ assert.equal(savedPublication({...detail,has_active_candidate:true},receipt),false);
++});
++test('Publication prerequisites explain the missing reason and consent, and accept an unknown exact time',async()=>{
++ const {publicationRequirements}=await import('../src/operator-flow.js');
++ const form={summary:'Ringkasan yang diperiksa',occurred_at:''};
++ assert.deepEqual(publicationRequirements(form,{needsDecision:true}).map(x=>x.field),['public-decision-reason','public-sanitized']);
++ assert.deepEqual(publicationRequirements(form,{needsDecision:true,decisionReason:'Layak ditayangkan.',sanitized:true}),[]);
++ assert.deepEqual(publicationRequirements(form,{needsDecision:false,sanitized:true}),[]);
++ assert.equal(publicationRequirements({...form,occurred_at:'2026-11-13T10:00:00'},{sanitized:true})[0].field,'public-occurred');
++ assert.equal(publicationRequirements({...form,summary:' '},{sanitized:true})[0].field,'public-summary');
++});
+diff --git a/docs/slr14/README.md b/docs/slr14/README.md
+index b8425e8090f886a2d9fc356f43e11c3a7273bfa2..bf1ab60f477e999c154e705c6d0c54af9f467885 100644
+--- a/docs/slr14/README.md
++++ b/docs/slr14/README.md
+@@ -10,10 +10,13 @@ dan panduan menyiapkan aset model diperjelas. Baca
+ model asli, serta perintah PostgreSQL + sembilan tes pipeline, tersedia di
+ [PENUNTASAN_VERIFIKASI_20261030.md](PENUNTASAN_VERIFIKASI_20261030.md).
+ 
+-**Revisi terkini — alur Operator:** review tersimpan otomatis membuka Tindak
+-Lanjut. Pilihan publikasi langsung menampilkan formulir/pratinjau, dengan dua
+-aksi utama Konfirmasi isi publikasi → Publikasikan sekarang. Baca
+-[ALUR_OPERATOR_20261030.md](ALUR_OPERATOR_20261030.md).
++**Revisi terkini — alur Operator, 13 November 2026:** urutan menjadi
++Pemeriksaan → Keputusan penayangan → Penanganan & penyelesaian. Review tersimpan
++otomatis membuka Keputusan; keputusan internal tersimpan atau publikasi terbit
++otomatis membuka Penanganan. Tindak lanjut opsional dan penutupan tetap eksplisit.
++Alasan publikasi berada pada formulir publikasi, dengan syarat tombol yang jelas.
++Baca [revisi alur Operator](revisi-alur-operator-20261113/README.md).
++Catatan [alur 30 Oktober](ALUR_OPERATOR_20261030.md) dipertahankan sebagai riwayat.
+ 
+ **Revisi Reporter/notifikasi:** notifikasi Admin dirapikan, penanda tahap draft kembali ke
+ tampilan acuan, dan Periksa hasil otomatis terbuka sesudah analisis tersimpan.
+@@ -103,27 +106,39 @@ sendiri tidak memberi kewenangan Operator.
+ 1. Buka **Penanganan Saya → Detail Laporan → Pemeriksaan**. Bagian ini memuat
+    ringkasan, narasi, bukti dan formulir review; rincian AI dapat dibuka bila
+    diperlukan. Riwayat dibuka melalui tombol tersendiri. Pilih hasil dan simpan
+-   review beserta alasan. Setelah tersimpan dan terbaca kembali, Tindak Lanjut
+-   otomatis terbuka dengan pesan **Review Anda sudah tersimpan**.
+-2. Catat serta selesaikan/batalkan tindak lanjut bila diperlukan, lalu gunakan
+-   **Lanjut ke keputusan**. Untuk review VALID atas versi resmi, pilih
+-   **Tinjau untuk publikasi** dan isi alasan keputusan.
++   review beserta alasan. Setelah tersimpan dan terbaca kembali, Keputusan
++   penayangan otomatis terbuka dengan pesan **Review Anda sudah tersimpan**.
++2. Untuk review VALID atas versi resmi, pilih **Tinjau untuk publikasi**.
++   Untuk keputusan internal, pilih **Tetap internal**, isi alasan lalu tekan
++   **Simpan keputusan & lanjut**. Keputusan internal yang tersimpan membuka
++   Penanganan & penyelesaian; laporan tetap terbuka sampai ditutup secara eksplisit.
+ 3. Formulir dan pratinjau langsung tersedia. Periksa semua isi dan hilangkan
+    informasi privat. Kategori mengikuti versi resmi; waktu pasti boleh kosong.
++   Isi alasan keputusan publikasi di dalam formulir tersebut. Daftar syarat
++   di dekat tombol menunjukkan isian atau persetujuan yang masih kurang.
+ 4. Setelah memeriksa sanitasi, tekan **Konfirmasi isi publikasi**. Keputusan,
+    penyimpanan versi serta persetujuan versi tepat dicatat melalui API yang
+    terpisah. Isi tersimpan harus sama dengan isi yang diperiksa. Ini belum terbit.
+ 5. Periksa **Pratinjau terkonfirmasi**, pastikan versi yang akan diterbitkan,
+    lalu tekan **Publikasikan sekarang**. Publikasi menunggu tindakan terakhir ini.
+-6. Pembaruan berikutnya memakai **Tinjau pembaruan informasi**. Pembatalan draf
++6. Setelah publikasi terbit dan terbaca kembali, Penanganan & penyelesaian terbuka
++   otomatis. Tindak lanjut boleh kosong; yang sudah dibuat harus selesai atau
++   dibatalkan sebelum penutupan. Periksa syarat, lalu gunakan **Selesaikan
++   penanganan laporan** dan konfirmasi dengan catatan penutupan internal.
++7. Pembaruan berikutnya memakai **Tinjau pembaruan informasi**. Pembatalan draf
+    memerlukan alasan; parent pengganti mengikuti versi terakhir, termasuk yang
+    dibatalkan. Versi terbit lama bertahan sampai penggantinya diterbitkan.
+-7. Respons terputus menahan langkah berikutnya. **Periksa hasil tindakan**
++8. Respons terputus menahan langkah berikutnya. **Periksa hasil tindakan**
+    membaca ledger/keadaan tersimpan melalui GET. Pemulihan POST dengan kunci/body
+    sama hanya tersedia secara eksplisit bila rekam request belum ditemukan.
+    Draf hasil pemulihan dapat memerlukan konfirmasi eksplisit lagi. Review dikunci
+    setelah publikasi pertama; laporan tertutup tidak menerima perubahan baru.
+ 
++Status backend tidak ditambah atau diubah. Keputusan internal maupun publikasi
++tidak otomatis berarti CLOSED. Saat penutupan sebenarnya berhasil, Reporter
++menerima notifikasi aplikasi **Penanganan laporan telah ditutup.** Notifikasi
++itu tidak memuat alasan; catatan penutupan hanya tersedia bagi petugas berwenang.
++
+ ## Menghapus laporan yang belum dikirim
+ 
+ Pada **Laporan Saya** atau detail draft, pilih **Hapus** dan konfirmasi.
+diff --git a/docs/slr14/revisi-alur-operator-20261113/DAFTAR_PERUBAHAN.json b/docs/slr14/revisi-alur-operator-20261113/DAFTAR_PERUBAHAN.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..cfbd47950b1cd9e4d72e3f31dba4606c5c444067
+--- /dev/null
++++ b/docs/slr14/revisi-alur-operator-20261113/DAFTAR_PERUBAHAN.json
+@@ -0,0 +1,136 @@
++{
++  "scope": "SLR14",
++  "review_findings_from": "SLR15",
++  "date": "2026-11-13",
++  "type": "incremental-operator-flow-update-after-account-and-ui-packages",
++  "requires_packages": [
++    {
++      "name": "SILAR_SLR15.zip",
++      "sha256": "51cc0cc1f53818bf478f4b3b8b9837d236cf4352c0019b60ac2029ea3ab1b3d7"
++    },
++    {
++      "name": "SILAR_SLR14_revisi_UI_13Nov2026.zip",
++      "sha256": "887aea078bd349879f49a7ecd11ce921d00c576430340b9753a892b3ed70a707"
++    }
++  ],
++  "base_commit": "7af81c8e448e12eead2b54a4e6aad72b9e2a781e",
++  "excluded_from_hash_list": [
++    "docs/slr14/revisi-alur-operator-20261113/DAFTAR_PERUBAHAN.json",
++    "PERUBAHAN_SLR14_OPERATOR.patch"
++  ],
++  "backend_source_changed": false,
++  "new_backend_statuses": false,
++  "agent_committed": false,
++  "agent_pushed": false,
++  "files": [
++    {
++      "path": "MULAI_DI_SINI.txt",
++      "bytes": 2242,
++      "sha256": "f3f0dc5d0c7d923cd21439a7bd195632a1e596c58319e7feb6b925dedd806ad1",
++      "previous_sha256": "874f3e423f08640c9893f44955c01b78026fd1c3a8cab91abe7c117de5118507",
++      "baseline_source": "previous_ui"
++    },
++    {
++      "path": "PANDUAN_RUNNING.md",
++      "bytes": 12220,
++      "sha256": "00dccedabbbdbf217b4814ef7f2b8e86f72fdd687f5d364589285094a19cc842",
++      "previous_sha256": "776f0134c4e82ad8380f122e24097d06bf7157a52dffc6af13036b6e20e4b6e5",
++      "baseline_source": "previous_ui"
++    },
++    {
++      "path": "README.md",
++      "bytes": 2743,
++      "sha256": "5bd4f773158be38fcd615de817f6154c02f31b8ba9b285c66752b88f2c525fbd",
++      "previous_sha256": "f5df37431ffc608bda67b5a1698fd028cb8ee234f58e558df579889b7bff307b",
++      "baseline_source": "previous_ui"
++    },
++    {
++      "path": "code/frontend/src/components/PublicationPanel.vue",
++      "bytes": 23865,
++      "sha256": "098f07496f5cfc862757a62d0c14e919c66842701b4fa72b7236b2bf0a748552",
++      "previous_sha256": "8370882e675904496d003514f6a59d0b28ee04e24570890f5038407947cdcce6",
++      "baseline_source": "base_commit"
++    },
++    {
++      "path": "code/frontend/src/operator-flow.js",
++      "bytes": 4883,
++      "sha256": "c77acd48acfa4640f7d582b69ccc31b33e083a632bee50e4c5ee9fa5253fafef",
++      "previous_sha256": "31351ee039f12083248fbf0d74c8fe33798dddf16066fd35b49f4bd5a4b5b5c5",
++      "baseline_source": "base_commit"
++    },
++    {
++      "path": "code/frontend/src/views/WorkspaceReportView.vue",
++      "bytes": 31593,
++      "sha256": "1b6d9476dcccaa3bb6640bacac7d198a4623a2ab2380436db788ea889fa615a4",
++      "previous_sha256": "297f8b362b7f8c127931dab92b4e8837e0d69513891dc2e19baa7c6003a37844",
++      "baseline_source": "previous_account"
++    },
++    {
++      "path": "code/frontend/src/workspace-reference.css",
++      "bytes": 25311,
++      "sha256": "e6b02a8126a49e7f0cb0ad72caf38e417bc582c413297ad12d8e5dbfb01f46c8",
++      "previous_sha256": "6708412280935f5598c5f017da8ef3f5a2d7efb032357d8c9d5423a6ba669f63",
++      "baseline_source": "previous_account"
++    },
++    {
++      "path": "code/frontend/tests/operator-flow.test.js",
++      "bytes": 8302,
++      "sha256": "3da6a72ded6812d4b6ed0e32b63975449626497db1c48026019f5ef35a10dd14",
++      "previous_sha256": "47025e54093adb2723e0f0d0cc96d5a3f837d241d09cf6589c5341a58ac7315e",
++      "baseline_source": "base_commit"
++    },
++    {
++      "path": "docs/slr14/README.md",
++      "bytes": 11009,
++      "sha256": "fd53350a96b4aefe8ec021167d751e79d53fa0f0e35d60a5580c9810895499ad",
++      "previous_sha256": "885b641018777b0585586b7672811707dfc94602d51cb4d9449363c591bad776",
++      "baseline_source": "previous_ui"
++    },
++    {
++      "path": "docs/slr14/revisi-alur-operator-20261113/README.md",
++      "bytes": 7073,
++      "sha256": "2f227d7465860350c37f5c42ec2a09ab72f9d7b3e3d3877a2a36e1f22052b29b",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "docs/slr14/revisi-alur-operator-20261113/bukti/backend-tests.txt",
++      "bytes": 470,
++      "sha256": "ba710a11c5723e97011bbd4c4669107114a25dc4b80a6f406ce80c1f67038d7e",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "docs/slr14/revisi-alur-operator-20261113/bukti/browser-result.json",
++      "bytes": 4430,
++      "sha256": "3fc506f4df7f836323ab0006d605a6cf624fdcbade5ed9ce7d0c0d241f8d9130",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "docs/slr14/revisi-alur-operator-20261113/bukti/frontend-build.txt",
++      "bytes": 3960,
++      "sha256": "68c0638308b0ca06502296ec952a549f0d5b82582aef422ac9a31aa1fa64d999",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    },
++    {
++      "path": "docs/slr14/revisi-alur-operator-20261113/bukti/frontend-tests.txt",
++      "bytes": 10787,
++      "sha256": "2cd16640ae430b833aa3577ee8da3c5f58946f09ab8e7f60999bd9ae45fca86f",
++      "previous_sha256": null,
++      "baseline_source": "new_file"
++    }
++  ],
++  "checks": {
++    "frontend_tests": 114,
++    "frontend_build": "PASSED",
++    "targeted_backend_tests": 35,
++    "database": "PostgreSQL 16",
++    "browser_layout_cases": 64,
++    "browser_flow_checks": 12,
++    "page_errors": 0,
++    "external_email_sent": false,
++    "live_ai_inference_exercised": false
++  }
++}
+diff --git a/docs/slr14/revisi-alur-operator-20261113/README.md b/docs/slr14/revisi-alur-operator-20261113/README.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..d984aaa8b9162d193848d7059f3bd846b4cacf7d
+--- /dev/null
++++ b/docs/slr14/revisi-alur-operator-20261113/README.md
+@@ -0,0 +1,60 @@
++# SLR14 — perbaikan alur Operator, 13 November 2026
++
++Pengelolaan laporan sekarang mengikuti **Pemeriksaan → Keputusan penayangan → Penanganan & penyelesaian**. Sebelumnya, tindak lanjut tampil sebelum keputusan, review yang sudah tersimpan masih terasa belum selesai, dan alasan wajib publikasi berada jauh dari tombol konfirmasi. Revisi ini memperjelas langkah berikutnya tanpa menambah status atau mengubah kontrak backend.
++
++## Perilaku yang disepakati
++
++| Tindakan | Hasil pada antarmuka |
++| --- | --- |
++| Simpan review | Setelah review yang tepat terbaca tersimpan, otomatis buka Keputusan penayangan dan tampilkan bukti bahwa review telah tersimpan. |
++| Tetap internal | Isi alasan internal, lalu Simpan keputusan & lanjut. Setelah keputusan terbaca tersimpan, otomatis buka Penanganan & penyelesaian. |
++| Tinjau untuk publikasi | Langsung buka formulir dan pratinjau; alasan publikasi berada dalam formulir yang sama. |
++| Isian publikasi belum lengkap | Tampilkan syarat yang kurang dekat tombol. Tautan syarat memfokuskan kolom atau centang yang dimaksud. Waktu pasti boleh kosong; jika diisi harus menyertakan zona waktu. |
++| Konfirmasi isi publikasi | Simpan keputusan, versi dan persetujuan terhadap isi yang diperiksa. Informasi belum terbit. |
++| Publikasikan sekarang | Perlu centang versi tersimpan dan tindakan eksplisit. Setelah versi yang sama terbaca terbit, otomatis buka Penanganan & penyelesaian. |
++| Penanganan | Tindak lanjut opsional. Tidak ada catatan tindak lanjut yang dibuat otomatis. |
++| Selesaikan penanganan laporan | Periksa syarat penutupan, lalu konfirmasi dengan catatan internal. Tindak lanjut yang sudah ada harus diselesaikan atau dibatalkan. |
++| Respons terputus | Tahan tindakan baru dan periksa ledger serta keadaan tersimpan. Perpindahan otomatis hanya setelah hasil yang sesuai terverifikasi. Pemulihan tidak otomatis mengirim mutasi berikutnya. |
++
++Tahap kedua dan ketiga tetap mengikuti syarat review yang sudah ada. Tahap Penanganan yang dapat dibuka bukan tanda bahwa tindak lanjut wajib dibuat. Tombol penutupan tetap mengikuti seluruh syarat dari backend. Operator dapat kembali membaca bagian sebelumnya; mutasi tetap diperiksa terhadap izin, penugasan, versi dan keadaan laporan terkini.
++
++Keputusan internal tidak otomatis menutup laporan. Sebelum tindakan penutupan sebenarnya, status penanganan tetap memakai status yang sudah ada, termasuk `IN_REVIEW`. Revisi ini tidak mengubah enum, label status backend, endpoint, dependency atau migration.
++
++## Notifikasi penutupan untuk Reporter
++
++Backend yang sudah ada mengirim satu notifikasi aplikasi `REPORT_CLOSED` setelah penutupan berhasil, dengan pesan **Penanganan laporan telah ditutup.** Reporter dapat mengetahui bahwa laporan ditutup, tetapi pesan itu tidak memuat alasan.
++
++`closure_note` adalah catatan internal petugas. Respons detail laporan milik Reporter maupun notifikasinya tidak memuat catatan tersebut. Antarmuka Operator sekarang menamai kolom itu **Catatan penutupan internal** agar kegunaannya jelas. Revisi ini tidak membuka catatan lama atau menambah alasan yang dapat dilihat Reporter. Jika alasan penutupan perlu ditampilkan kelak, isi, kewenangan dan kontrak datanya perlu disepakati tersendiri.
++
++## Hasil verifikasi
++
++| Pemeriksaan | Hasil |
++| --- | --- |
++| Tes frontend | 114 lulus, 0 gagal/skip; [log](bukti/frontend-tests.txt) |
++| Build produksi | Berhasil; [log](bukti/frontend-build.txt) |
++| Tes backend yang relevan | 35 lulus pada PostgreSQL 16; [log](bukti/backend-tests.txt) |
++| Browser Chromium dengan animasi aktif | 64 keadaan halaman/ukuran/tema, 12 pemeriksaan alur, 0 page error; [hasil](bukti/browser-result.json) |
++| Patch pemasangan | Diperiksa terhadap isi paket sebelumnya, diterapkan pada salinan sementara, lalu hasilnya dibandingkan per berkas. |
++| Isi ZIP | CRC dan kesamaan berkas diperiksa; daftar hash tersedia di `DAFTAR_PERUBAHAN.json`. |
++
++Matriks browser memeriksa lebar 1440, 1100, 820, 640, 390 dan 320 piksel pada mode terang/gelap. Pemeriksaan meliputi Pemeriksaan, Keputusan, formulir/pratinjau publikasi, Penanganan dan Riwayat tanpa overflow horizontal. Tampilan desktop dan ponsel juga ditinjau secara visual melalui tangkapan layar internal; gambar itu tidak disertakan dalam paket.
++
++Alur nyata melalui UI mencakup review menuju Keputusan, konfirmasi yang belum menerbitkan informasi, publikasi eksplisit menuju Penanganan, keputusan internal dengan status tetap `IN_REVIEW`, penutupan tanpa tindak lanjut, tindak lanjut tertunda yang memblokir penutupan, review Tidak valid, laporan terbit/tertutup yang sudah ada, serta notifikasi penutupan dan batas data Reporter/Admin. Dua skenario memutus respons setelah mutasi benar-benar commit: keputusan internal dan publikasi. Keduanya pulih lewat pembacaan hasil tanpa penggandaan mutasi.
++
++Backend berjalan pada database PostgreSQL uji terpisah. Model AI diganti test double hanya untuk menyiapkan laporan uji; tidak ada inferensi model asli atau SMTP eksternal. Kelompok lengkap 152 tes SLR14 dan tes akun/setup dari paket sebelumnya tidak dijalankan ulang untuk revisi frontend ini. Verifikasi ini tidak menyatakan kesamaan piksel dengan ZIP desain asli yang tidak tersedia, pengujian perangkat fisik, atau penerimaan keseluruhan SLR15.
++
++## Memasang paket lanjutan
++
++Paket ini melanjutkan `SILAR_SLR15.zip` (akun/Operator/setup) dan `SILAR_SLR14_revisi_UI_13Nov2026.zip` (kontrol sandi dan landing page) yang telah diterapkan. Nama arsip akun terdahulu tetap dipertahankan sebagai riwayat; implementasi perbaikannya termasuk SLR14.
++
++1. Hentikan frontend. Ekstrak ZIP baru ke folder sementara, lalu gabungkan berkas mengikuti path pada clone Silar. Jangan mengganti seluruh folder proyek.
++2. Dari `code/frontend`, jalankan `npm.cmd test` dan `npm.cmd run build`, kemudian `npm.cmd run dev`.
++3. Buka ulang aplikasi. Untuk PWA yang terpasang, ambil pembaruan build melalui Aplikasi & Koneksi lalu buka kembali.
++4. Gunakan laporan yang berbeda untuk mencoba jalur internal dan publikasi. Pastikan review otomatis menuju Keputusan, alasan publikasi terlihat dekat konfirmasi, dan Penanganan terbuka setelah keputusan/publikasi berhasil.
++5. Coba tutup laporan tanpa tindak lanjut, kemudian periksa notifikasi pada akun Reporter pemilik laporan. Catatan penutupan internal tidak ditampilkan kepada Reporter.
++
++Tidak ada pemasangan dependency atau migration tambahan untuk revisi alur ini. Konfigurasi, database, venv dan model lokal yang sudah tersedia tetap dipakai.
++
++Alternatif penyalinan berkas adalah `git apply --check PERUBAHAN_SLR14_OPERATOR.patch`, lalu `git apply PERUBAHAN_SLR14_OPERATOR.patch` dari root clone. Pilih satu cara. Patch menggunakan preimage source paket terdahulu; jika berkas sudah diedit lagi, gabungkan perbedaannya terlebih dahulu. Manifest merekam hash sebelumnya dan hash isi baru. Manifest paket lama tetap mendokumentasikan versi saat paket tersebut dibuat.
++
++Belum ada commit, push, deployment atau perubahan board oleh penyusun. Nama commit lanjutan yang sesuai: `fix(slr14): perjelas alur keputusan dan penyelesaian laporan operator`.
+diff --git a/docs/slr14/revisi-alur-operator-20261113/bukti/backend-tests.txt b/docs/slr14/revisi-alur-operator-20261113/bukti/backend-tests.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..8dd87cf6a51a11cd87a2a63e6e8d1e76fa5376f2
+--- /dev/null
++++ b/docs/slr14/revisi-alur-operator-20261113/bukti/backend-tests.txt
+@@ -0,0 +1,11 @@
++Creating test database for alias 'default'...
++...................................
++----------------------------------------------------------------------
++Ran 35 tests in 5.088s
++
++OK
++Destroying test database for alias 'default'...
++Found 35 test(s).
++System check identified no issues (0 silenced).
++Katalog 13 izin dan tiga Group tersedia. Izin Operator/Admin tetap diberikan eksplisit.
++Katalog 13 izin dan tiga Group tersedia. Izin Operator/Admin tetap diberikan eksplisit.
+diff --git a/docs/slr14/revisi-alur-operator-20261113/bukti/browser-result.json b/docs/slr14/revisi-alur-operator-20261113/bukti/browser-result.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..ae970a2308fc9b75a1ee9b3157ee82088109e6da
+--- /dev/null
++++ b/docs/slr14/revisi-alur-operator-20261113/bukti/browser-result.json
+@@ -0,0 +1,100 @@
++{
++  "layout_cases": [
++    "operator:inspection:1440:False",
++    "operator:decision:1440:False",
++    "operator:publication-editor:1440:False",
++    "operator:handling:1440:False",
++    "operator:history:1440:False",
++    "operator:inspection:1100:False",
++    "operator:decision:1100:False",
++    "operator:publication-editor:1100:False",
++    "operator:handling:1100:False",
++    "operator:history:1100:False",
++    "operator:inspection:820:False",
++    "operator:decision:820:False",
++    "operator:publication-editor:820:False",
++    "operator:handling:820:False",
++    "operator:history:820:False",
++    "operator:inspection:640:False",
++    "operator:decision:640:False",
++    "operator:publication-editor:640:False",
++    "operator:handling:640:False",
++    "operator:history:640:False",
++    "operator:inspection:390:False",
++    "operator:decision:390:False",
++    "operator:publication-editor:390:False",
++    "operator:handling:390:False",
++    "operator:history:390:False",
++    "operator:inspection:320:False",
++    "operator:decision:320:False",
++    "operator:publication-editor:320:False",
++    "operator:handling:320:False",
++    "operator:history:320:False",
++    "operator:inspection:1440:True",
++    "operator:decision:1440:True",
++    "operator:publication-editor:1440:True",
++    "operator:handling:1440:True",
++    "operator:history:1440:True",
++    "operator:inspection:1100:True",
++    "operator:decision:1100:True",
++    "operator:publication-editor:1100:True",
++    "operator:handling:1100:True",
++    "operator:history:1100:True",
++    "operator:inspection:820:True",
++    "operator:decision:820:True",
++    "operator:publication-editor:820:True",
++    "operator:handling:820:True",
++    "operator:history:820:True",
++    "operator:inspection:640:True",
++    "operator:decision:640:True",
++    "operator:publication-editor:640:True",
++    "operator:handling:640:True",
++    "operator:history:640:True",
++    "operator:inspection:390:True",
++    "operator:decision:390:True",
++    "operator:publication-editor:390:True",
++    "operator:handling:390:True",
++    "operator:history:390:True",
++    "operator:inspection:320:True",
++    "operator:decision:320:True",
++    "operator:publication-editor:320:True",
++    "operator:handling:320:True",
++    "operator:history:320:True",
++    "existing-published",
++    "existing-closed",
++    "reporter-closure-notification-390",
++    "admin-monitor-private-content-absent"
++  ],
++  "flow_checks": [
++    "Review commit/readback -> automatic Decision stage; no manual next click",
++    "Publication reason is local to preview; disabled action explains reason/consent/time; prerequisite link focuses missing field",
++    "Preview/approve remains unpublished -> explicit checkbox/publish -> verified automatic Handling; no dummy follow-up",
++    "Internal decision -> verified automatic Handling; IN_REVIEW retained until explicit closure; optional follow-up stays empty",
++    "No follow-up needed -> explicit closure confirmation/reason -> CLOSED through unchanged backend guard",
++    "Existing pending follow-up blocks closure; actual completion with reason enables it",
++    "INVALID publication remains blocked; internal decision and existing closure path work",
++    "Internal lost response after real commit -> no premature advance -> ledger/readback -> automatic Handling without repeat mutation",
++    "Publish lost response after real commit -> stages held -> ledger/readback -> automatic Handling without duplicate publish",
++    "Existing published and closed reports remain readable; closed actions stay locked",
++    "Actual close produces one Reporter in-app notification; generic closure message and CLOSED visible, internal closure reason absent from owner response",
++    "Unassigned Admin monitor remains metadata-only; source and internal closure note absent"
++  ],
++  "page_errors": [],
++  "screenshots": [
++    "publication-editor-1440-light.png",
++    "handling-1440-light.png",
++    "publication-editor-390-light.png",
++    "handling-390-light.png",
++    "publication-editor-1440-dark.png",
++    "handling-1440-dark.png",
++    "publication-editor-390-dark.png",
++    "handling-390-dark.png"
++  ],
++  "live_ai_inference_exercised": false,
++  "external_email_sent": false,
++  "status": "PASSED",
++  "screenshots_included": false,
++  "database": "PostgreSQL 16; disposable test database",
++  "model_seed": "Explicit model test doubles; no live inference",
++  "visual_review": "Desktop/mobile light/dark checked from internal screenshots"
++}
+diff --git a/docs/slr14/revisi-alur-operator-20261113/bukti/frontend-build.txt b/docs/slr14/revisi-alur-operator-20261113/bukti/frontend-build.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..22fd763a2598f1be311278ecc8054845451a24f7
+--- /dev/null
++++ b/docs/slr14/revisi-alur-operator-20261113/bukti/frontend-build.txt
+@@ -0,0 +1,56 @@
++npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
++
++> silar-slr10-frontend@1.1.1 build
++> vite build
++
++vite v7.3.7 building client environment for production...
++transforming...
++✓ 117 modules transformed.
++rendering chunks...
++computing gzip size...
++dist/index.html                                     0.77 kB │ gzip:     0.45 kB
++dist/sw.js                                          3.27 kB
++dist/assets/nara-ZsaGgmM6.svg                      70.54 kB │ gzip:    13.20 kB
++dist/assets/nara-dark-IbaIl4kU.svg                 70.56 kB │ gzip:    13.21 kB
++dist/assets/portal-hero-CeIvL_w2.webp              98.82 kB
++dist/assets/sena-C3A4rkNV.svg                     102.82 kB │ gzip:    15.17 kB
++dist/assets/sena-dark-Big5evOc.svg                102.84 kB │ gzip:    15.18 kB
++dist/assets/start-CtsQazq9.svg                    234.14 kB │ gzip:   149.82 kB
++dist/assets/start-dark-DVcX997r.svg               234.16 kB │ gzip:   149.84 kB
++dist/assets/privacy-BW608JbX.svg                  234.67 kB │ gzip:   149.94 kB
++dist/assets/privacy-dark-LiBJFNyc.svg             234.69 kB │ gzip:   149.96 kB
++dist/assets/reporting-scene-Chx1PA0k.svg          412.43 kB │ gzip:   183.08 kB
++dist/assets/reporting-scene-dark-DtLdqysh.svg     412.45 kB │ gzip:   183.10 kB
++dist/assets/auth-identity-BIULP5db.svg            573.05 kB │ gzip:   207.74 kB
++dist/assets/auth-identity-dark-QRPyuOka.svg       573.07 kB │ gzip:   207.76 kB
++dist/assets/reporter-welcome-DDZdLYCb.svg       2,211.79 kB │ gzip: 1,535.36 kB
++dist/assets/index-BejsKaqD.css                    236.61 kB │ gzip:    40.93 kB
++dist/assets/WorkspaceStatus--wdeVvAO.js             0.26 kB │ gzip:     0.22 kB
++dist/assets/NotFoundView-DsEDa_xr.js                0.57 kB │ gzip:     0.40 kB
++dist/assets/ErrorNotice-B4i8eRPi.js                 1.04 kB │ gzip:     0.64 kB
++dist/assets/analysis-Do-MLo4m.js                    1.16 kB │ gzip:     0.62 kB
++dist/assets/AppDialog-CewkouDA.js                   1.33 kB │ gzip:     0.71 kB
++dist/assets/PublicNavigation-DgWCXBnn.js            1.66 kB │ gzip:     0.88 kB
++dist/assets/DeleteDraftDialog-Cskt9CJr.js           2.21 kB │ gzip:     1.21 kB
++dist/assets/recovery-KAggwLEM.js                    2.29 kB │ gzip:     1.05 kB
++dist/assets/PublicIncidentCard-eLAmOJmp.js          2.51 kB │ gzip:     1.28 kB
++dist/assets/ReportSentView-fl_dh22I.js              2.70 kB │ gzip:     1.38 kB
++dist/assets/report-list-D5Rd6l1W.js                 3.38 kB │ gzip:     1.50 kB
++dist/assets/ProfileView-CaMzqKdk.js                 3.58 kB │ gzip:     1.63 kB
++dist/assets/WorkspaceServicesView-gIXBmVBQ.js       3.60 kB │ gzip:     1.54 kB
++dist/assets/FetchState-CojaUOJ-.js                  4.14 kB │ gzip:     2.17 kB
++dist/assets/PwaView-D0X0FPAw.js                     4.17 kB │ gzip:     1.83 kB
++dist/assets/WorkspaceAssignment-BY7rK7G-.js         4.44 kB │ gzip:     2.07 kB
++dist/assets/WorkspaceAuditView-DikFqcHa.js          5.44 kB │ gzip:     2.35 kB
++dist/assets/NotificationsView-CNJL5-Bd.js           6.04 kB │ gzip:     2.44 kB
++dist/assets/WorkspaceView-DPWls8Ip.js               8.23 kB │ gzip:     3.23 kB
++dist/assets/LandingView-DR27tL6G.js                 8.63 kB │ gzip:     3.43 kB
++dist/assets/PublicPortalView-B4G_0mnA.js            8.63 kB │ gzip:     3.47 kB
++dist/assets/WorkspaceReportsView-Foxrdjor.js       12.36 kB │ gzip:     4.59 kB
++dist/assets/WorkspaceOperatorsView-d_KVRKk8.js     13.05 kB │ gzip:     4.77 kB
++dist/assets/AuthView-DH5vwM5S.js                   16.99 kB │ gzip:     6.58 kB
++dist/assets/ReportsView-CkjdcaFS.js                17.68 kB │ gzip:     6.45 kB
++dist/assets/WorkspaceReportView-GOsIdk58.js        64.49 kB │ gzip:    18.67 kB
++dist/assets/DraftView-BPQjW89Z.js                  83.76 kB │ gzip:    26.02 kB
++dist/assets/index-C0Sb1P97.js                     133.29 kB │ gzip:    51.53 kB
++✓ built in 4.94s
+diff --git a/docs/slr14/revisi-alur-operator-20261113/bukti/frontend-tests.txt b/docs/slr14/revisi-alur-operator-20261113/bukti/frontend-tests.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..ceb92ca608b20d9cec9f4951a84bacfa8c152f09
+--- /dev/null
++++ b/docs/slr14/revisi-alur-operator-20261113/bukti/frontend-tests.txt
+@@ -0,0 +1,127 @@
++npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
++
++> silar-slr10-frontend@1.1.1 test
++> node --test tests/*.test.js
++
++✔ Seven evidence routes and revised narratives use only the stages actually executed (7.194288ms)
++✔ Progress stays at zero without server evidence and counts completed stages, not elapsed time (1.365266ms)
++✔ 100 percent requires both a succeeded run and a completed read of its stored result (2.004568ms)
++✔ An earlier run is never shown as the newly requested analysis (2.059831ms)
++✔ The request and report scope must match before a running analysis can be bound (1.213701ms)
++✔ A reservation is rechecked before binding the report latest run (0.517106ms)
++✔ A concurrent later run cannot replace the result linked by the original request (6.226771ms)
++✔ Bound runs with the wrong source, mode or report are rejected (0.814402ms)
++✔ Peringatan tampil ketika uncertain false tanpa mengubah flag (7.566575ms)
++✔ Peringatan dan uncertain true tetap terpisah (2.657984ms)
++✔ Kode baru memakai pesan umum dan label field aman (3.096866ms)
++✔ Hasil kosong dan NARA yang belum tersedia aman (1.665247ms)
++✔ Analisis terbaru gagal tidak memasangkan peringatan/keyakinannya ke kartu lama (0.521713ms)
++✔ Identitas run, hasil, bundle, dan narasi harus cocok (2.174306ms)
++✔ Narasi baru tidak dilabeli sebagai sumber kartu lama (1.492146ms)
++✔ Body sukses yang terputus setelah POST menahan hasil sebagai belum pasti tanpa retry (16.312284ms)
++✔ Koneksi POST terputus tidak mengirim ulang request (1.891191ms)
++✔ Respons gateway tanpa hasil backend pasti mengharuskan pembacaan keadaan tersimpan (9.01263ms)
++✔ Kegagalan AI yang telah dicatat mempertahankan kode backend (4.10257ms)
++✔ Body GET yang tidak terbaca tidak menyatakan mutasi telah dilakukan (2.115274ms)
++✔ Logout 204 tidak mencoba membaca JSON (1.405201ms)
++✔ Recorder mendahulukan WebM dengan codec Opus (7.142845ms)
++✔ Recorder memakai AAC atau MP4 generik ketika WebM tidak tersedia (1.988988ms)
++✔ Tidak ada fallback OGG atau format default yang tidak diketahui (0.447489ms)
++✔ Nama dan MIME mengikuti keluaran rekaman yang sebenarnya (4.905821ms)
++✔ Keluaran OGG, Vorbis, ALAC, video dan MIME kosong tidak disamarkan (3.108569ms)
++✔ Password reset link challenge accepts the canonical UUID supplied by the backend (5.331578ms)
++✔ Missing, malformed and duplicate challenge parameters cannot enable password reset (4.202291ms)
++✔ Local email help defaults to development running on loopback, never a public deployment (0.504781ms)
++✔ An explicit local-help setting controls local preview without inferring backend email delivery (0.341566ms)
++✔ Registration carries only the email once into the code form (0.741664ms)
++✔ Operator password form requires an explicit valid activation proof from the server (6.723307ms)
++✔ Unicode dihitung per code point, bukan byte atau UTF16 (7.329636ms)
++✔ Teks kosong ditolak (2.029499ms)
++✔ Ekstensi gambar dan batas ukuran diperiksa (0.526844ms)
++✔ Lima format audio sesuai kontrak diperiksa server (1.925384ms)
++✔ OGG ditolak dan pesan format tidak menawarkan codec lain (0.484302ms)
++✔ Bundle membutuhkan kanal asli dan menahan jumlah berlebih (1.389094ms)
++✔ Bundle menghitung byte teks juga (0.285628ms)
++✔ Gemini tidak digunakan pada teks atau audio tunggal (0.331733ms)
++✔ Gemini diinformasikan untuk lima rute yang relevan (1.659622ms)
++✔ Pagination hanya menyusun path API lokal (2.169023ms)
++✔ Keterangan terbaru menjadi aktif sebelum bundle; semua gambar dan satu audio ikut otomatis (41.206817ms)
++✔ Bundle aktif mempertahankan pilihan sumber lama; hanya unggahan sesudahnya yang mengganti kanal (0.352112ms)
++✔ Penggantian keterangan/audio mempertahankan gambar dan tidak menyertakan dua item kanal yang sama (0.312544ms)
++✔ Riwayat gambar lebih dari tiga tidak dipangkas diam-diam (0.637583ms)
++✔ Batas gambar dan total byte diperiksa sebelum kelompok unggahan dikirim (0.350963ms)
++✔ Pemeriksaan sumber sama mengabaikan urutan tetapi menolak ID duplikat (0.24532ms)
++✔ Analisis satu klik menyimpan snapshot dahulu dan memakai revision hasil commit (2.058392ms)
++✔ Sumber tidak berubah memakai bundle aktif tanpa membentuk versi baru (0.426593ms)
++✔ Informasi Gemini diperiksa sebelum persiapan sumber atau analisis (1.553699ms)
++✔ Respons persiapan terputus menahan analisis dan tidak mengulang POST (1.134008ms)
++✔ Sumber pada respons persiapan yang tidak sesuai tidak diteruskan ke analisis (0.648096ms)
++✔ Kegagalan analisis setelah snapshot tersimpan mempertahankan snapshot untuk pemulihan (0.72477ms)
++✔ Review success requires a newly stored matching review, official source and current operator (5.202451ms)
++✔ Publication editor only opens for a Valid review of the exact official card with no active candidate (0.607881ms)
++✔ Public draft values exclude private fields and preserve unknown values as null (8.014299ms)
++✔ A successful HTTP response cannot advance publication without the exact report, revision and version receipt (0.668065ms)
++✔ Publication recovery is bound to the original idempotency key, report and operation (0.571934ms)
++✔ Guided confirmation only approves a stored candidate with exactly the reviewed public content (3.355184ms)
++✔ Internal decision advances only after the same operator, source, reason and state are read back (2.420383ms)
++✔ Publication completion cannot advance for approval alone or another version, report or assignee (0.732308ms)
++✔ Publication prerequisites explain the missing reason and consent, and accept an unknown exact time (2.649771ms)
++✔ Public pagination retains both filters and requests exactly ten cards (1.372021ms)
++✔ Internal publication preview cannot project extra legacy fields or a version UUID (4.272567ms)
++✔ Preparing a replacement preserves a published report, including after candidate cancellation (0.274311ms)
++✔ Public requests omit account credentials and do not refresh after an HTTP error (14.459968ms)
++✔ Custom manifest icons work without the old icons directory, including a filename with spaces (6.077059ms)
++✔ A stale icon reference warns without ENOENT or precaching a missing file; API/private data stays out (1.941521ms)
++✔ Changing icon bytes or HTML changes the UI cache version without renaming the asset (7.951435ms)
++✔ Precache hanya daftar aset antarmuka (18.556923ms)
++✔ Auth, API privat, media, POST dan origin lain tidak diintersep (3.04303ms)
++✔ Aktivasi pembaruan menghapus cache aset SILAR lama dan mempertahankan cache aktif serta aplikasi lain (2.723148ms)
++✔ Pembacaan respons hilang memakai GET request, run dan draft tanpa POST atau replay otomatis (10.60432ms)
++✔ RUNNING dan UNKNOWN tanpa hasil terminal hanya dibaca tanpa menebak run atau mengulang (2.101225ms)
++✔ Request dan run dari laporan lain tidak digabungkan ke draft yang dibuka (3.594324ms)
++✔ Daftar pemulihan analisis menyaring request upload dan laporan lain (0.300457ms)
++✔ Respons hilang, REQUEST_RUNNING dan REQUEST_UNKNOWN menahan tindakan baru sampai dibaca (0.696275ms)
++✔ Fresh draft and saved evidence without a completed analysis keep stages 2 and 3 locked (5.201363ms)
++✔ Completed current analysis opens review but confirmation requires advancing the exact card (0.454615ms)
++✔ Unsaved evidence and an open correction prevent jumping to confirmation (0.372017ms)
++✔ A corrected card invalidates local progress; legitimate stored verification allows resuming (0.61117ms)
++✔ Missing or mismatched result references and RUNNING/UNKNOWN/FAILED do not unlock review (0.415713ms)
++✔ NON_EVENT remains readable at stage 2 while stage 3 stays locked (0.283798ms)
++✔ Saved narrative revision keeps reanalysis accessible but cannot unlock confirmation without new results (0.241478ms)
++✔ Official reports remain readable through the steps without allowing another send (2.40427ms)
++✔ Four actual incident categories include earthquake; NON_EVENT is not an event category (7.731206ms)
++✔ Prepared drafts combine category and both states in a paginated server query (1.895966ms)
++✔ Confirmation does not imply submission and workflow has precedence after sending (0.237719ms)
++✔ Uncertain with missing incident fields can be confirmed; submission needs verification of the exact card (4.255364ms)
++✔ NON_EVENT, mismatched source/run and unknown execution never enable confirmation or submission (3.025096ms)
++✔ Official reports stay read-only even when their historical source is valid (0.24648ms)
++✔ Partial corrections preserve untouched arrays and exact stored time, including milliseconds (9.094433ms)
++✔ Explicit clearing remains null or an empty array; empty information does not become zero victims (2.015067ms)
++✔ Lost submit/correction/confirmation responses read only the ledger and latest report, never POST (3.271749ms)
++✔ Recovery includes report mutations but never combines a foreign report or run (0.503442ms)
++✔ Four metric links use separate destinations and respect read permissions (3.240679ms)
++✔ Shortcut filters preserve scope and pagination without accepting inherited object keys (3.367591ms)
++✔ Unsaved review text never unlocks dependent tabs (0.953873ms)
++✔ All saved outcomes unlock dependent reading, including CLOSED; old-card reviews do not (2.016019ms)
++✔ Four Admin cards open their own matching report and account destinations (2.90129ms)
++✔ Admin shortcut routing uses explicit permissions and does not grant them by role (1.12931ms)
++✔ Admin views preserve all official reports, current unassigned state and CLOSED separately (2.705366ms)
++✔ Operator account status links accept only supported single query values (0.883385ms)
++✔ Empty or stale form values cannot erase a fixed CLOSED dashboard filter (1.189118ms)
++✔ Merged Admin reports use the API scope permitted by the account (1.858328ms)
++✔ Monitoring and assignment have one navigation entry for either explicit Admin permission (1.089412ms)
++✔ All report shortcuts share the merged page and keep their filters under either permitted API scope (6.623251ms)
++✔ Assignee labels follow account names rather than fixed Operator A/B/C slots (1.407762ms)
++✔ Pure Admin navigation has management but no inherited Operator actions (0.744763ms)
++✔ A role label cannot grant private reading or mutation after reassignment (0.229201ms)
++✔ Closed reports and unmet close requirements never enable a mutation (0.355727ms)
++✔ Prepare requires valid review; Internal cannot replace a publication or active candidate (0.435314ms)
++✔ Workspace filters remain server-scoped and preserve independent states (1.370635ms)
++ℹ tests 114
++ℹ suites 0
++ℹ pass 114
++ℹ fail 0
++ℹ cancelled 0
++ℹ skipped 0
++ℹ todo 0
++ℹ duration_ms 1165.716746

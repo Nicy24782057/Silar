@@ -11,12 +11,12 @@ import ReportCardPreview from '../components/ReportCardPreview.vue';
 import FetchState from '../components/FetchState.vue';
 import DeleteDraftDialog from '../components/DeleteDraftDialog.vue';
 const deleting=ref(null),deleteMessage=ref('');
-function deleted(){deleting.value=null;closeDetail();deleteMessage.value='Laporan yang belum dikirim telah dihapus.';load(reportsPath(loadedFilters.value.status,loadedFilters.value.order,loadedFilters.value.category,1),true);loadCounts();}
+function deleted(){deleting.value=null;closeDetail();deleteMessage.value='Laporan yang belum dikirim telah dihapus.';load(reportsPath(loadedFilters.value.status,loadedFilters.value.order,loadedFilters.value.category,1,loadedFilters.value.search),true);loadCounts();}
 
 const items = ref([]), count = ref(0), next = ref(null), previous = ref(null);
 const busy = ref(false), error = ref(null), loaded = ref(false), refreshedAt = ref(null);
-const status = ref(''), category = ref(''), order = ref('-created_at');
-const loadedFilters = ref({status:'',category:'',order:'-created_at'}), loadedPath = ref(reportsPath());
+const status = ref(''), category = ref(''), order = ref('-created_at'), search = ref('');
+const loadedFilters = ref({status:'',category:'',order:'-created_at',search:''}), loadedPath = ref(reportsPath());
 const selected = ref(null), detail = ref(null), detailBusy = ref(false), detailError = ref(null), showStatuses = ref(false);
 const counts = ref(null), countsError = ref(null), countsBusy=ref(false);
 const officialStates=['SUBMITTED','ASSIGNED','IN_REVIEW','FOLLOW_UP','CLOSED'];
@@ -45,7 +45,7 @@ const pageNumbers = computed(() => {
   const start = Math.max(1,Math.min(activePage.value-2,pages.value-4));
   return Array.from({length:Math.min(5,pages.value)},(_,i)=>start+i);
 });
-const filtered = computed(() => Boolean(loadedFilters.value.status || loadedFilters.value.category));
+const filtered = computed(() => Boolean(loadedFilters.value.status || loadedFilters.value.category || loadedFilters.value.search));
 const previewOfficial = computed(() => Boolean(detail.value?.report.submitted_at || (detail.value && detail.value.report.workflow_status !== 'NOT_SUBMITTED')));
 const previewAction = computed(() => previewOfficial.value ? 'Lihat rincian' : !detail.value?.current_card ? 'Lanjutkan laporan' : detail.value.report.preparation_status === 'BLOCKED' ? 'Perbaiki laporan' : 'Edit');
 const dateFormatter = new Intl.DateTimeFormat('id-ID',{dateStyle:'medium'});
@@ -55,24 +55,24 @@ const formatTime = value => value ? timeFormatter.format(new Date(value)) : '';
 
 async function load(path, refreshing = false) {
   const sequence = ++listSequence;
-  const requested = {status:status.value,category:category.value,order:order.value};
-  const target = path || reportsPath(requested.status,requested.order,requested.category);
+  const requested = path ? {...loadedFilters.value} : {status:status.value,category:category.value,order:order.value,search:search.value.trim()};
+  const target = path || reportsPath(requested.status,requested.order,requested.category,1,requested.search);
   busy.value = true; error.value = null;
   if (!refreshing) refreshedAt.value = null;
   try {
     const result = await api(target);
     if (sequence !== listSequence) return;
     items.value = result.results; count.value = result.count; next.value = result.next; previous.value = result.previous;
-    loadedFilters.value = requested; loadedPath.value = target; loaded.value = true;
+    loadedFilters.value = requested; loadedPath.value = target; loaded.value = true; search.value = requested.search;
     if (refreshing) refreshedAt.value = new Intl.DateTimeFormat('id-ID',{timeStyle:'medium'}).format(new Date());
   } catch (e) {
     if (sequence !== listSequence) return;
     error.value = e;
-    ({status:status.value,category:category.value,order:order.value} = loadedFilters.value);
+    ({status:status.value,category:category.value,order:order.value,search:search.value} = loadedFilters.value);
   } finally { if (sequence === listSequence) busy.value = false; }
 }
-function resetFilters() { status.value='';category.value='';load(); }
-function goPage(page) { load(reportsPath(loadedFilters.value.status,loadedFilters.value.order,loadedFilters.value.category,page)); }
+function resetFilters() { status.value='';category.value='';search.value='';load(); }
+function goPage(page) { load(reportsPath(loadedFilters.value.status,loadedFilters.value.order,loadedFilters.value.category,page,loadedFilters.value.search)); }
 async function readDetail() {
   const item = selected.value; if (!item) return;
   const sequence = ++detailSequence;
@@ -97,29 +97,30 @@ onBeforeUnmount(() => { ++listSequence;++detailSequence;++countsSequence; });
   <div v-if="countsError" class="notice warning" role="status">Ringkasan seluruh laporan belum dapat dibaca.<button :disabled="countsBusy||!online" @click="loadCounts">Muat ulang ringkasan</button></div>
   <section class="card reporter-distribution" aria-labelledby="report-status-title">
     <header><div><h2 id="report-status-title">Sebaran laporan resmi</h2><p>Jumlah pada setiap status saat ini; bukan urutan waktu.</p></div><span>{{ officialCount??'—' }} laporan</span></header>
-    <div class="reporter-distribution-body"><div class="distribution-bar" aria-hidden="true"><span v-for="(key,index) in officialStates" :key="key" :style="{'--segment':segmentColors[index],flex:counts?counts[key]:1}"></span></div><div class="distribution-counts"><div v-for="(key,index) in officialStates" :key="key" :style="{'--segment':segmentColors[index]}"><p><i></i>{{ reportStatuses[key].label }}</p><strong>{{ counts?counts[key]:'—' }}</strong><small>laporan</small></div></div></div>
+    <div class="reporter-distribution-body"><div class="distribution-bar" aria-hidden="true"><span v-for="(key,index) in officialStates" :key="key" :style="{'--segment':segmentColors[index],flex:counts?counts[key]:1,display:!counts||counts[key]===0?'none':undefined}"></span></div><div class="distribution-counts" :aria-busy="countsBusy"><div v-for="(key,index) in officialStates" :key="key" :style="{'--segment':segmentColors[index]}"><p><i></i>{{ reportStatuses[key].label }}</p><strong>{{ counts?counts[key]:'—' }}</strong><small>laporan</small></div></div></div>
   </section>
   <section class="card reports-table-card" :aria-busy="busy" aria-labelledby="report-list-title">
     <div class="report-list-toolbar">
       <div class="report-list-title"><h2 id="report-list-title">Daftar laporan</h2></div><button class="small report-status-help" @click="showStatuses=true"><AppIcon name="info" :size="16" />Arti warna & status</button>
+      <form class="report-search" @submit.prevent="load()"><label for="report-search">Cari laporan</label><div><AppIcon name="search" :size="18" /><input id="report-search" v-model="search" type="search" maxlength="100" placeholder="Cari kata kunci atau ID laporan" aria-describedby="report-search-help" :disabled="busy||!online"><button class="primary" type="submit" :disabled="busy||!online">Cari</button></div><small id="report-search-help">Mencari teks atau narasi dalam seluruh laporan milik Anda. Maksimal 8 kata.</small></form>
       <div class="report-list-controls">
-        <label class="report-select"><span class="sr-only">Status laporan</span><select v-model="status" aria-label="Status laporan" :disabled="busy||!online" @change="load()"><option v-for="item in statusFilters" :key="item.value" :value="item.value">{{ item.label }}</option></select><AppIcon name="down" :size="14" /></label>
-        <label class="report-select"><span class="sr-only">Kategori laporan</span><select v-model="category" aria-label="Kategori laporan" :disabled="busy||!online" @change="load()"><option v-for="item in categoryFilters" :key="item.value" :value="item.value">{{ item.label }}</option></select><AppIcon name="down" :size="14" /></label>
-        <label class="report-select"><span class="sr-only">Urutkan laporan</span><select v-model="order" aria-label="Urutkan laporan" :disabled="busy||!online" @change="load()"><option value="-created_at">Terbaru</option><option value="created_at">Terlama</option></select><AppIcon name="down" :size="14" /></label>
+        <label class="report-select"><span class="report-filter-label">Status laporan</span><select v-model="status" aria-label="Status laporan" :disabled="busy||!online" @change="load()"><option v-for="item in statusFilters" :key="item.value" :value="item.value">{{ item.label }}</option></select><AppIcon name="down" :size="14" /></label>
+        <label class="report-select"><span class="report-filter-label">Kategori laporan</span><select v-model="category" aria-label="Kategori laporan" :disabled="busy||!online" @change="load()"><option v-for="item in categoryFilters" :key="item.value" :value="item.value">{{ item.label }}</option></select><AppIcon name="down" :size="14" /></label>
+        <label class="report-select"><span class="report-filter-label">Urutkan laporan</span><select v-model="order" aria-label="Urutkan laporan" :disabled="busy||!online" @change="load()"><option value="-created_at">Terbaru</option><option value="created_at">Terlama</option></select><AppIcon name="down" :size="14" /></label>
         <button class="report-list-reload" :disabled="busy||!online" @click="refreshAll"><AppIcon name="refresh" :size="14" />{{ busy?'Memuat…':'Muat ulang' }}</button>
       </div>
     </div>
     <div class="report-list-caption"><p>{{ loaded?count+' laporan':'Membaca daftar laporan Anda' }}</p><p v-if="refreshedAt" role="status">Dimuat ulang · {{ refreshedAt }}</p><span v-else>Hanya laporan milik Anda</span></div>
     <FetchState v-if="busy" title="Memuat daftar laporan…" description="Membaca laporan sesuai akun dan filter yang dipilih." />
     <FetchState v-else-if="error" state="error" title="Daftar laporan belum dapat dimuat" description="Coba lagi untuk membaca laporan tersimpan. Kegagalan pembacaan berbeda dari status analisis laporan." :error="error" :disabled="busy||!online" @retry="refreshAll" />
-    <FetchState v-else-if="loaded&&!items.length" state="empty" :title="filtered?'Tidak ada laporan yang sesuai':'Belum ada laporan'" :description="filtered?'Pilih kategori atau status lain untuk menemukan laporan Anda.':'Buat draft pertama dan simpan bukti yang Anda ketahui.'"><template #actions><button v-if="filtered" :disabled="!online" @click="resetFilters">Atur ulang filter</button><RouterLink v-else class="button primary" to="/reports/new">Buat laporan</RouterLink></template></FetchState>
-    <div v-else class="report-table-wrap" tabindex="0" role="region" aria-label="Tabel daftar laporan, dapat digeser mendatar">
+    <FetchState v-else-if="loaded&&!items.length" state="empty" :title="filtered?'Tidak ada laporan yang sesuai':'Belum ada laporan'" :description="filtered?'Ubah kata kunci, kategori, atau status untuk menemukan laporan Anda.':'Buat draft pertama dan simpan bukti yang Anda ketahui.'"><template #actions><button v-if="filtered" :disabled="!online" @click="resetFilters">Atur ulang filter</button><RouterLink v-else class="button primary" to="/reports/new">Buat laporan</RouterLink></template></FetchState>
+    <div v-else class="report-table-wrap" tabindex="0" role="region" aria-label="Daftar laporan Anda">
       <table class="reports-table"><thead><tr><th scope="col">Laporan</th><th scope="col">Kategori</th><th scope="col">Tanggal</th><th scope="col">Tahap & pengiriman</th><th scope="col"><span class="sr-only">Tindakan</span></th></tr></thead>
         <tbody><tr v-for="item in items" :key="item.id">
           <td><div class="report-reference"><span class="report-file-symbol"><AppIcon :name="incidentIcon(item.event_type)" :size="18" /></span><span><strong class="report-id">#{{ item.id.slice(0,8) }}</strong><small>{{ item.preparation_status==='DRAFT'?'Draft laporan':'Laporan tersimpan' }}</small></span></div></td>
-          <td class="report-category">{{ item.event_type==='EARTHQUAKE'?'Gempa Bumi':item.event_type?label(item.event_type):item.preparation_status==='DRAFT'?'Belum dianalisis':'Belum terklasifikasi' }}</td>
-          <td class="report-date"><time :datetime="item.created_at">{{ formatDate(item.created_at) }}<small>{{ formatTime(item.created_at) }}</small></time></td>
-          <td><div class="report-stage"><ReportStatus :status="reportStatus(item)" compact /><span class="report-stage-note">{{ item.workflow_status==='NOT_SUBMITTED'?'Belum dikirim':item.workflow_status==='SUBMITTED'?'Menunggu Operator':'Laporan resmi' }}</span><span v-if="item.uncertain" class="report-uncertain"><AppIcon name="alert" :size="12" />Tidak pasti</span></div></td>
+          <td class="report-category" data-label="Kategori">{{ item.event_type==='EARTHQUAKE'?'Gempa Bumi':item.event_type?label(item.event_type):item.preparation_status==='DRAFT'?'Belum dianalisis':'Belum terklasifikasi' }}</td>
+          <td class="report-date" data-label="Tanggal dibuat"><time :datetime="item.created_at">{{ formatDate(item.created_at) }}<small>{{ formatTime(item.created_at) }}</small></time></td>
+          <td class="report-stage-cell" data-label="Tahap & pengiriman"><div class="report-stage"><ReportStatus :status="reportStatus(item)" compact /><span class="report-stage-note">{{ item.workflow_status==='NOT_SUBMITTED'?'Belum dikirim':item.workflow_status==='SUBMITTED'?'Menunggu Operator':'Laporan resmi' }}</span><span v-if="item.uncertain" class="report-uncertain"><AppIcon name="alert" :size="12" />Tidak pasti</span></div></td>
           <td class="report-table-action"><button class="report-detail-button" :aria-label="'Detail laporan '+item.id.slice(0,8)" @click="openDetail(item)">Detail <AppIcon name="arrow" :size="14" /></button><button v-if="item.workflow_status==='NOT_SUBMITTED'&&!item.submitted_at" class="link small report-delete-button" :aria-label="'Hapus laporan '+item.id.slice(0,8)" :disabled="busy||!online" @click="deleting=item">Hapus</button></td>
         </tr></tbody>
       </table>

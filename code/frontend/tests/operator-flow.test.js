@@ -50,3 +50,32 @@ test('Guided confirmation only approves a stored candidate with exactly the revi
   {...candidate,data:{...candidate.data,owner:'private'}},{...candidate,data:{...candidate.data,occurred_at:'2026-10-30T09:00:00Z'}}])
   assert.throws(()=>reviewedPublicationCandidate({...detail,active_candidate:candidateChange},'candidate',values,'FLOOD'),e=>e.code==='VERSION_CONFLICT');
 });
+
+test('Internal decision advances only after the same operator, source, reason and state are read back',async()=>{
+ const {savedInternalDecision}=await import('../src/operator-flow.js');
+ const packet={id:'report',action:'decision',operatorId:'operator',officialCardId:'card',body:{decision:'INTERNAL',reason:'Keputusan tersimpan.',expected_revision:7}};
+ const detail={private_access:true,assignment:{operator_id:'operator'},report:{id:'report',official_card_version_id:'card',revision:8,publication_status:'INTERNAL'},decision_reason:'Keputusan tersimpan.',has_active_candidate:false};
+ assert.equal(savedInternalDecision(detail,packet),true);
+ for(const bad of [{...detail,private_access:false},{...detail,assignment:{operator_id:'another'}},{...detail,decision_reason:'Alasan berbeda'},
+  {...detail,has_active_candidate:true},{...detail,report:{...detail.report,id:'another'}},{...detail,report:{...detail.report,revision:7}},
+  {...detail,report:{...detail.report,official_card_version_id:'different'}},{...detail,report:{...detail.report,publication_status:'NOT_DECIDED'}},
+  {...detail,report:{...detail.report,published_version_id:'published'}}])assert.equal(savedInternalDecision(bad,packet),false);
+});
+test('Publication completion cannot advance for approval alone or another version, report or assignee',async()=>{
+ const {savedPublication}=await import('../src/operator-flow.js');
+ const receipt={action:'publish',versionId:'version',reportId:'report',operatorId:'operator',revision:9};
+ const detail={private_access:true,assignment:{operator_id:'operator'},report:{id:'report',revision:9,publication_status:'PUBLISHED',published_version_id:'version'},has_active_candidate:false};
+ assert.equal(savedPublication(detail,receipt),true);
+ for(const bad of [{...receipt,action:'approve'},{...receipt,versionId:'another'},{...receipt,reportId:'another'},{...receipt,operatorId:'another'},{...receipt,revision:10},{...receipt,revision:undefined}])assert.equal(savedPublication(detail,bad),false);
+ assert.equal(savedPublication({...detail,private_access:false},receipt),false);
+ assert.equal(savedPublication({...detail,has_active_candidate:true},receipt),false);
+});
+test('Publication prerequisites explain the missing reason and consent, and accept an unknown exact time',async()=>{
+ const {publicationRequirements}=await import('../src/operator-flow.js');
+ const form={summary:'Ringkasan yang diperiksa',occurred_at:''};
+ assert.deepEqual(publicationRequirements(form,{needsDecision:true}).map(x=>x.field),['public-decision-reason','public-sanitized']);
+ assert.deepEqual(publicationRequirements(form,{needsDecision:true,decisionReason:'Layak ditayangkan.',sanitized:true}),[]);
+ assert.deepEqual(publicationRequirements(form,{needsDecision:false,sanitized:true}),[]);
+ assert.equal(publicationRequirements({...form,occurred_at:'2026-11-13T10:00:00'},{sanitized:true})[0].field,'public-occurred');
+ assert.equal(publicationRequirements({...form,summary:' '},{sanitized:true})[0].field,'public-summary');
+});

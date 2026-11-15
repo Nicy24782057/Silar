@@ -1,0 +1,192 @@
+{
+  "scope": "SLR14",
+  "review_findings_from": "SLR15",
+  "date": "2026-11-13",
+  "type": "incremental-approved-mobile-auth-design-after-session-package",
+  "requires_packages": [
+    {
+      "name": "SILAR_SLR15.zip",
+      "sha256": "51cc0cc1f53818bf478f4b3b8b9837d236cf4352c0019b60ac2029ea3ab1b3d7"
+    },
+    {
+      "name": "SILAR_SLR14_revisi_UI_13Nov2026.zip",
+      "sha256": "887aea078bd349879f49a7ecd11ce921d00c576430340b9753a892b3ed70a707"
+    },
+    {
+      "name": "SILAR_SLR14_alur_operator_13Nov2026.zip",
+      "sha256": "3ef395221fafa7b670815d2c3c5be86950d6dc089976b8162ece042eee6fe5f9"
+    },
+    {
+      "name": "SILAR_SLR14_sesi_dan_tampilan_HP_13Nov2026.zip",
+      "sha256": "47e1256ffbd3e0af087e5f77de1f91fcb1ae2efbb8d4192433c3721305201faa"
+    }
+  ],
+  "base_commit": "7af81c8e448e12eead2b54a4e6aad72b9e2a781e",
+  "approval_reference": "SILAR_Pratinjau_Desain_Login_HP_SVG.zip plus compact registration/OTP header requested by user",
+  "excluded_from_hash_list": [
+    "docs/slr14/revisi-login-mobile-20261113/DAFTAR_PERUBAHAN.json",
+    "PERUBAHAN_SLR14_LOGIN_HP.patch"
+  ],
+  "backend_source_changed": false,
+  "new_backend_statuses": false,
+  "session_lifetime_changed": false,
+  "browser_frontend_mode": "production build via vite preview",
+  "startup_timings": [
+    {
+      "case": "fast mobile browser",
+      "visible_ms": 1400
+    },
+    {
+      "case": "slow preparation with reduced motion",
+      "extra_after_release_ms": 77
+    }
+  ],
+  "agent_committed": false,
+  "agent_pushed": false,
+  "files": [
+    {
+      "path": "MULAI_DI_SINI.txt",
+      "bytes": 2319,
+      "sha256": "a6135925959043eed6864cc9fa3e40bc1a4bf9fd8e3e76ffc2fdc58d6a76fdc3",
+      "previous_sha256": "e1d4f663d4a99d71cef7c830fe33faac533948d28c8a9fa601c6501d340a630d",
+      "baseline_source": "previous_mobile_session"
+    },
+    {
+      "path": "PANDUAN_RUNNING.md",
+      "bytes": 14433,
+      "sha256": "a1fa08b2b1ef45f85c0fa9373a498c8ae8a8facf0fa36721916980e5cdb5bc54",
+      "previous_sha256": "0a89a35565b5a013cc87f065e64333c41ac6755057f90eed92004f7f835bc47c",
+      "baseline_source": "previous_mobile_session"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3515,
+      "sha256": "30550091b2a59bc3dcfc25f066c5ad7c184e2ea3d758a350aabfa07874dced3a",
+      "previous_sha256": "7bb2fb88b119242f938045bb452176494f55b10d035a050b233226db5ebe2eaa",
+      "baseline_source": "previous_mobile_session"
+    },
+    {
+      "path": "code/frontend/index.html",
+      "bytes": 1507,
+      "sha256": "141586c4def637e994e8154ed358ab0327ac766054c4dd63a34cae1f298ab649",
+      "previous_sha256": "8a1d0e2d9cb5138194636b31178d5c470057ff6942c7e2e16ddb99ebda3e95ab",
+      "baseline_source": "previous_mobile_session"
+    },
+    {
+      "path": "code/frontend/public/brand/silar-auth-pattern.svg",
+      "bytes": 1981,
+      "sha256": "b0bb084d77e5121dd15d20f58402c072570368638e16a478ba163998e8148bae",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "code/frontend/src/assets/reference/auth-mobile-scene-dark.svg",
+      "bytes": 388185,
+      "sha256": "bd1c005d63bf6f651c1e5ac085b082b22211c8665cbdbca27015b5be476f7e0f",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "code/frontend/src/assets/reference/auth-mobile-scene.svg",
+      "bytes": 388166,
+      "sha256": "ca5a13e14bad15543cee17e150eec335aae368a6d26243e6770d4e87d1fe5c3a",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "code/frontend/src/auth-mobile.css",
+      "bytes": 6181,
+      "sha256": "195a673553800ffac67b3a285a758a09ca8817485871a69765a69d4928dbf393",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "code/frontend/src/components/AppIcon.vue",
+      "bytes": 3926,
+      "sha256": "15867902fc8a42b29d1d73def456723b69bbfc7c6d15c6274af872b9eaa67aab",
+      "previous_sha256": "0945d9566f91e5d686e33ba0386d25ed6fad46f2d260334c7a8290da8476fd65",
+      "baseline_source": "previous_ui"
+    },
+    {
+      "path": "code/frontend/src/components/MobileAuthHeader.vue",
+      "bytes": 1166,
+      "sha256": "51b77ed263461f6438327fe00ccec14e1c3912853c47be0a56765f5e277f1405",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "code/frontend/src/components/PasswordInput.vue",
+      "bytes": 1321,
+      "sha256": "007cf066f95ac5345bb43cf29dd2c70d7a2a08c293c39a9539220d22b7bff997",
+      "previous_sha256": "1e3ae73a31555936715259ca696efff576afacd080811d687d7466fb7bfcafe0",
+      "baseline_source": "previous_ui"
+    },
+    {
+      "path": "code/frontend/src/main.js",
+      "bytes": 2008,
+      "sha256": "31eda4ea5cd3af34e0abcf083f760fab99433de770ce1da2955f8e3b115599cc",
+      "previous_sha256": "7df07dfd432562057e10f42fd785f958f35e09d7233dc6d50d0fa9097afa7bc7",
+      "baseline_source": "previous_mobile_session"
+    },
+    {
+      "path": "code/frontend/src/startup.css",
+      "bytes": 2536,
+      "sha256": "e97a62b3ee93ca4f78318a5b05e5ed3c8ed6ac6f67f0aa0aa8b0eb8062f61b6d",
+      "previous_sha256": "39e445c611a18f264b93bdb7f19bf2c748dfc96c1289da490bc08a29c590aa90",
+      "baseline_source": "previous_mobile_session"
+    },
+    {
+      "path": "code/frontend/src/views/AuthView.vue",
+      "bytes": 14607,
+      "sha256": "077055f94fe26db78ce03fe33df3bbdab218a4cc06bff5a1e132116f5e68efc1",
+      "previous_sha256": "fba0904c18d478a73a2ca50fa0cc28b1f1d89630ae5333c34dae5d758d70b3ee",
+      "baseline_source": "previous_mobile_session"
+    },
+    {
+      "path": "docs/slr14/README.md",
+      "bytes": 11957,
+      "sha256": "5de12acf6e3eedb6b0adb671e5d47e5ee6728f1a00d8c1dfee9803bca7c0935d",
+      "previous_sha256": "c1a39a26cca397b09cb136e45202e86e8423e86f1e12453121d1953f0756ccb4",
+      "baseline_source": "previous_mobile_session"
+    },
+    {
+      "path": "docs/slr14/revisi-login-mobile-20261113/README.md",
+      "bytes": 4919,
+      "sha256": "c7a32a6b0ce26896b594f452cfd1e5fecb85a21d0d2ff51e031525168dfd7a59",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-login-mobile-20261113/bukti/browser-result.json",
+      "bytes": 5343,
+      "sha256": "b34216f760677648306f773896c911777ce1e098396a836008363125f9331ad7",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-login-mobile-20261113/bukti/frontend-build.txt",
+      "bytes": 4254,
+      "sha256": "bc9a0997727f036cb222183ca79a05920c779c34939e336a91f4a6adc294e64d",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-login-mobile-20261113/bukti/frontend-tests.txt",
+      "bytes": 11597,
+      "sha256": "9b12faa541b52ba42a0489a0a0e4e4d4a17f91d9e572bbc9ddb6dc2358918cbe",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    }
+  ],
+  "checks": {
+    "frontend_tests": 122,
+    "frontend_build": "PASSED",
+    "backend_tests_rerun": false,
+    "database": "PostgreSQL 16",
+    "browser_layout_cases": 75,
+    "browser_flow_checks": 9,
+    "page_errors": 0,
+    "external_email_sent": false,
+    "live_ai_inference_exercised": false
+  }
+}

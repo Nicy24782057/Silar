@@ -1,0 +1,176 @@
+{
+  "layout_cases": [
+    "login:1440x1000:light",
+    "register:1440x1000:light",
+    "verify-email:1440x1000:light",
+    "forgot-password:1440x1000:light",
+    "reset-password:1440x1000:light",
+    "activate-operator:1440x1000:light",
+    "login:820x1000:light",
+    "register:820x1000:light",
+    "verify-email:820x1000:light",
+    "forgot-password:820x1000:light",
+    "reset-password:820x1000:light",
+    "activate-operator:820x1000:light",
+    "login:641x1000:light",
+    "register:641x1000:light",
+    "verify-email:641x1000:light",
+    "forgot-password:641x1000:light",
+    "reset-password:641x1000:light",
+    "activate-operator:641x1000:light",
+    "login:640x900:light",
+    "register:640x900:light",
+    "verify-email:640x900:light",
+    "forgot-password:640x900:light",
+    "reset-password:640x900:light",
+    "activate-operator:640x900:light",
+    "login:390x844:light",
+    "register:390x844:light",
+    "verify-email:390x844:light",
+    "forgot-password:390x844:light",
+    "reset-password:390x844:light",
+    "activate-operator:390x844:light",
+    "login:320x568:light",
+    "register:320x568:light",
+    "verify-email:320x568:light",
+    "forgot-password:320x568:light",
+    "reset-password:320x568:light",
+    "activate-operator:320x568:light",
+    "login:1440x1000:dark",
+    "register:1440x1000:dark",
+    "verify-email:1440x1000:dark",
+    "forgot-password:1440x1000:dark",
+    "reset-password:1440x1000:dark",
+    "activate-operator:1440x1000:dark",
+    "login:820x1000:dark",
+    "register:820x1000:dark",
+    "verify-email:820x1000:dark",
+    "forgot-password:820x1000:dark",
+    "reset-password:820x1000:dark",
+    "activate-operator:820x1000:dark",
+    "login:641x1000:dark",
+    "register:641x1000:dark",
+    "verify-email:641x1000:dark",
+    "forgot-password:641x1000:dark",
+    "reset-password:641x1000:dark",
+    "activate-operator:641x1000:dark",
+    "login:640x900:dark",
+    "register:640x900:dark",
+    "verify-email:640x900:dark",
+    "forgot-password:640x900:dark",
+    "reset-password:640x900:dark",
+    "activate-operator:640x900:dark",
+    "login:390x844:dark",
+    "register:390x844:dark",
+    "verify-email:390x844:dark",
+    "forgot-password:390x844:dark",
+    "reset-password:390x844:dark",
+    "activate-operator:390x844:dark",
+    "login:320x568:dark",
+    "register:320x568:dark",
+    "verify-email:320x568:dark",
+    "forgot-password:320x568:dark",
+    "reset-password:320x568:dark",
+    "activate-operator:320x568:dark",
+    "verification success mobile",
+    "operator set password False",
+    "operator set password True"
+  ],
+  "flow_checks": [
+    "Mobile browser startup shows brand/pattern and remains for at least 1.2 seconds plus fade",
+    "72 account layouts checked at 320–1440 px, light/dark, with short-screen scrolling and 641 px tablet two-panel layout",
+    "Password eye controls toggle independently by keyboard without submitting and remask when cleared",
+    "Real registration -> prefilled email -> wrong OTP rejection -> correct OTP success",
+    "Actual local password-reset challenge -> compact reset form -> successful password update",
+    "Actual Operator verification code -> compact set-password layout -> activation succeeds",
+    "Reporter login -> landing Buka aplikasi -> return without login -> reopen browser page restores session; SPA does not replay splash",
+    "Slow preparation adds no second 1.2-second delay; reduced motion suppresses spin/fade and startup releases input controls",
+    "Production service-worker cache contains new mobile artwork/pattern and excludes API/private responses; reload displays the new header"
+  ],
+  "page_errors": [],
+  "live_ai_inference_exercised": false,
+  "external_email_sent": false,
+  "frontend_mode": "production build via vite preview",
+  "startup_timings": [
+    {
+      "case": "fast mobile browser",
+      "visible_ms": 1400
+    },
+    {
+      "case": "slow preparation with reduced motion",
+      "extra_after_release_ms": 77
+    }
+  ],
+  "compact_positions": [
+    {
+      "screen": "login",
+      "theme": "light",
+      "heading_y": 332
+    },
+    {
+      "screen": "register",
+      "theme": "light",
+      "heading_y": 231
+    },
+    {
+      "screen": "verify-email",
+      "theme": "light",
+      "heading_y": 231
+    },
+    {
+      "screen": "forgot-password",
+      "theme": "light",
+      "heading_y": 231
+    },
+    {
+      "screen": "reset-password",
+      "theme": "light",
+      "heading_y": 231
+    },
+    {
+      "screen": "activate-operator",
+      "theme": "light",
+      "heading_y": 231
+    },
+    {
+      "screen": "login",
+      "theme": "dark",
+      "heading_y": 332
+    },
+    {
+      "screen": "register",
+      "theme": "dark",
+      "heading_y": 231
+    },
+    {
+      "screen": "verify-email",
+      "theme": "dark",
+      "heading_y": 231
+    },
+    {
+      "screen": "forgot-password",
+      "theme": "dark",
+      "heading_y": 231
+    },
+    {
+      "screen": "reset-password",
+      "theme": "dark",
+      "heading_y": 231
+    },
+    {
+      "screen": "activate-operator",
+      "theme": "dark",
+      "heading_y": 231
+    }
+  ],
+  "password_controls": [
+    "password",
+    "password_confirm"
+  ],
+  "status": "PASSED",
+  "visual_review": {
+    "internal_browser_screenshots_reviewed": true,
+    "screenshots_in_delivery": false,
+    "approved_svg_comparison": true
+  }
+}

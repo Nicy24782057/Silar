@@ -1,0 +1,226 @@
+{
+  "scope": "SLR14",
+  "review_findings_from": "SLR15",
+  "date": "2026-11-13",
+  "type": "incremental-session-and-mobile-ui-update-after-operator-package",
+  "requires_packages": [
+    {
+      "name": "SILAR_SLR15.zip",
+      "sha256": "51cc0cc1f53818bf478f4b3b8b9837d236cf4352c0019b60ac2029ea3ab1b3d7"
+    },
+    {
+      "name": "SILAR_SLR14_revisi_UI_13Nov2026.zip",
+      "sha256": "887aea078bd349879f49a7ecd11ce921d00c576430340b9753a892b3ed70a707"
+    },
+    {
+      "name": "SILAR_SLR14_alur_operator_13Nov2026.zip",
+      "sha256": "3ef395221fafa7b670815d2c3c5be86950d6dc089976b8162ece042eee6fe5f9"
+    }
+  ],
+  "base_commit": "7af81c8e448e12eead2b54a4e6aad72b9e2a781e",
+  "excluded_from_hash_list": [
+    "docs/slr14/revisi-sesi-mobile-20261113/DAFTAR_PERUBAHAN.json",
+    "PERUBAHAN_SLR14_SESI_HP.patch"
+  ],
+  "backend_source_changed": false,
+  "new_backend_statuses": false,
+  "session_lifetime_changed": false,
+  "browser_frontend_mode": "production build via vite preview",
+  "browser_segments": [
+    {
+      "name": "session-and-layout",
+      "completed_layout_assertions": 144,
+      "completed_flow_assertions": 10
+    },
+    {
+      "name": "notifications-and-session-boundaries",
+      "status": "PASSED",
+      "completed_layout_assertions": 6,
+      "completed_flow_assertions": 6
+    }
+  ],
+  "additional_session_regression": "PASSED",
+  "agent_committed": false,
+  "agent_pushed": false,
+  "files": [
+    {
+      "path": "MULAI_DI_SINI.txt",
+      "bytes": 2235,
+      "sha256": "e1d4f663d4a99d71cef7c830fe33faac533948d28c8a9fa601c6501d340a630d",
+      "previous_sha256": "f3f0dc5d0c7d923cd21439a7bd195632a1e596c58319e7feb6b925dedd806ad1",
+      "baseline_source": "previous_operator"
+    },
+    {
+      "path": "PANDUAN_RUNNING.md",
+      "bytes": 13799,
+      "sha256": "0a89a35565b5a013cc87f065e64333c41ac6755057f90eed92004f7f835bc47c",
+      "previous_sha256": "00dccedabbbdbf217b4814ef7f2b8e86f72fdd687f5d364589285094a19cc842",
+      "baseline_source": "previous_operator"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3076,
+      "sha256": "7bb2fb88b119242f938045bb452176494f55b10d035a050b233226db5ebe2eaa",
+      "previous_sha256": "5bd4f773158be38fcd615de817f6154c02f31b8ba9b285c66752b88f2c525fbd",
+      "baseline_source": "previous_operator"
+    },
+    {
+      "path": "code/frontend/index.html",
+      "bytes": 1219,
+      "sha256": "8a1d0e2d9cb5138194636b31178d5c470057ff6942c7e2e16ddb99ebda3e95ab",
+      "previous_sha256": "a4d99fb3ebe126451e3cb06e13a95e8c7015e96cbae051e792de95752ed4fb70",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/src/account-routing.js",
+      "bytes": 749,
+      "sha256": "9053a9dc2a7c1720b01d6815ae2b42330f13588dbca29bb5bc3c4d9c7cc91100",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "code/frontend/src/api.js",
+      "bytes": 4155,
+      "sha256": "a1a7bd453b9d2dc5c9b835b101c677c096c9160962bba610973f70d0cc32bf36",
+      "previous_sha256": "05b0e5e7f1f14e2d434d90c9013e27a2938f8125ebb5df9c4a6c94438cb166ca",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/src/auth-ui.css",
+      "bytes": 9674,
+      "sha256": "d0f01843d704bf7ca9edb42442e4eb903c21c23d878abc2a9985a62acb20fa5d",
+      "previous_sha256": "79ed3ebcdb3e8126a382008edfbadd4819141c489f949baad0954b43821806ba",
+      "baseline_source": "previous_ui"
+    },
+    {
+      "path": "code/frontend/src/components/AccountActions.vue",
+      "bytes": 1010,
+      "sha256": "5761524b73e5d251efb9d0b4193cac4de7c215ec858dbf610eda08566e143aa3",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "code/frontend/src/components/PublicNavigation.vue",
+      "bytes": 1426,
+      "sha256": "25f1d7709eb7d88e35873ae336f8d7a65d223557e3af2de8e3603b41eb54e50c",
+      "previous_sha256": "cd90473023f03004f44b72af6b86a6e498244319199536f03429cc146ff188f3",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/src/main.js",
+      "bytes": 1421,
+      "sha256": "7df07dfd432562057e10f42fd785f958f35e09d7233dc6d50d0fa9097afa7bc7",
+      "previous_sha256": "7624e30351ad88d808bc6bfe68f138fc970e7d6beede53a77f855fe1c97a357a",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/src/navigation-ui.css",
+      "bytes": 3843,
+      "sha256": "e7479ca00fd68b1c2727d1700019f786b20f83cc32a634a0a50fc6797110d209",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "code/frontend/src/router.js",
+      "bytes": 4173,
+      "sha256": "fa9e6f0d840f40aac9f0a1e7e289e7dfba3289002b35db66a130bcf79b2fd6a0",
+      "previous_sha256": "83d9f6c0e8a3e1ee9b7b749bcb4f53e649e3daee6d554cbedc0d8965bfc2a964",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/src/session.js",
+      "bytes": 1827,
+      "sha256": "7aa2db597dc63fb77f53180b25a30379b39087abc764af6f5027e14a67820db0",
+      "previous_sha256": "e9b6b8ebc11522e641a1fef9e20519dc835cf833fac39b2e46a1974f1f8718db",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/src/startup.css",
+      "bytes": 1556,
+      "sha256": "39e445c611a18f264b93bdb7f19bf2c748dfc96c1289da490bc08a29c590aa90",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "code/frontend/src/views/AuthView.vue",
+      "bytes": 13870,
+      "sha256": "fba0904c18d478a73a2ca50fa0cc28b1f1d89630ae5333c34dae5d758d70b3ee",
+      "previous_sha256": "438004ab61ae7ead3ef10ea80cf9dd3d18f2c5e3b387e2102d31f0521ec982f9",
+      "baseline_source": "previous_ui"
+    },
+    {
+      "path": "code/frontend/src/views/LandingView.vue",
+      "bytes": 7981,
+      "sha256": "bb6a603a7543784ebe649e5a80318eea5385d4d2c0fe85a434087b387b51b4b1",
+      "previous_sha256": "5bd9e62aee99825ddccd18070c3d0f295c7ade11c650c1cb843928b65eedce75",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/tests/account-routing.test.js",
+      "bytes": 1040,
+      "sha256": "ab263a5463c3bbcfe51dba39679825e15a2e164b766b8da09cdb8785a6bca3f6",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "code/frontend/tests/api.test.js",
+      "bytes": 3057,
+      "sha256": "f184c49065b63d993e20fcba6fd29bca6bfd4ec530b1526282cc1a4ed249cb4a",
+      "previous_sha256": "ca02d7a63e93641127aa73cf67d7fd675e2378607ecddd9fa7bbea1bb998437b",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/tests/session.test.js",
+      "bytes": 3875,
+      "sha256": "3692050e0afaf8f1df6635d813aaee6a0f6ce9da990c5b924b227cf0b2952172",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/README.md",
+      "bytes": 11576,
+      "sha256": "c1a39a26cca397b09cb136e45202e86e8423e86f1e12453121d1953f0756ccb4",
+      "previous_sha256": "fd53350a96b4aefe8ec021167d751e79d53fa0f0e35d60a5580c9810895499ad",
+      "baseline_source": "previous_operator"
+    },
+    {
+      "path": "docs/slr14/revisi-sesi-mobile-20261113/README.md",
+      "bytes": 7575,
+      "sha256": "db17bd8e6b742309ac8e9d87ad86fda88e10cf0bd44c14005668a3fcfd48778a",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-sesi-mobile-20261113/bukti/browser-result.json",
+      "bytes": 8801,
+      "sha256": "b021d86404469f34163b5a7be90bf91fb7fa60cc14857c03e7f79c96699d893e",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-sesi-mobile-20261113/bukti/frontend-build.txt",
+      "bytes": 3960,
+      "sha256": "e6d295cfa5b6d8c0fb6ef152587d0b3ff582433fcb87fca75a2bc1b0e191c9a4",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-sesi-mobile-20261113/bukti/frontend-tests.txt",
+      "bytes": 11595,
+      "sha256": "ca3ebe5b443d680fcf62c40b7600a5cc0b99ded318c6b2265f0e178da4994d85",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    }
+  ],
+  "checks": {
+    "frontend_tests": 122,
+    "frontend_build": "PASSED",
+    "backend_tests_rerun": false,
+    "database": "PostgreSQL 16",
+    "browser_layout_cases": 150,
+    "browser_flow_checks": 16,
+    "page_errors": 0,
+    "external_email_sent": false,
+    "live_ai_inference_exercised": false
+  }
+}

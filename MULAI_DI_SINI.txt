@@ -1,44 +1,45 @@
-SILAR — SLR14, PAKET LANJUTAN REVISI UI, 13 NOVEMBER 2026
+SILAR — SLR14, DESAIN LOGIN HP YANG TELAH DISETUJUI, 13 NOVEMBER 2026
 
-Paket ini melanjutkan paket akun/Operator/setup SILAR_SLR15.zip yang sudah
-Anda terapkan. Implementasinya masuk SLR14. SLR15 memuat pengujian/temuan.
-Panduan utama: PANDUAN_RUNNING.md.
-Catatan revisi: docs/slr14/revisi-review-20261113/README.md.
+Paket ini melanjutkan SILAR_SLR14_sesi_dan_tampilan_HP_13Nov2026.zip
+beserta paket-paket sebelumnya. Ini tambahan frontend/dokumentasi.
+Implementasi tetap SLR14; SLR15 untuk pengujian dan pencatatan temuan.
 
 CARA MEMASANG
-1. Hentikan frontend/backend, lalu ekstrak ZIP ini ke folder sementara.
-2. Gabungkan berkas mengikuti path yang sama pada clone Silar Anda.
-   Gunakan berkas yang disertakan; tidak perlu mengganti seluruh folder proyek.
+1. Hentikan frontend. Ekstrak ZIP ini ke folder sementara.
+2. Gabungkan berkas sesuai path ke clone Silar yang sudah berisi paket terakhir.
+   Jangan mengganti seluruh folder repository.
 3. Dari code/frontend, jalankan:
    npm.cmd test
    npm.cmd run build
    npm.cmd run dev
-4. Mulai ulang backend. PWA yang terpasang perlu menerima pembaruan build
-   melalui Aplikasi & Koneksi, kemudian dibuka kembali.
+4. Buka ulang halaman. PWA produksi perlu menerima pembaruan melalui
+   Aplikasi & Koneksi, lalu dibuka kembali. Backend dijalankan seperti biasa.
 
-Paket lanjutan ini tidak menambah dependensi atau migration backend.
-Migration akun 0002 dari paket sebelumnya harus sudah diterapkan.
-Konfigurasi .env, database, venv dan aset model lokal tetap dipakai.
+YANG BERUBAH
+- Header akun HP memakai biru SILAR, logo, pattern dan ilustrasi desktop asli.
+- Panel formulir melengkung mengikuti pratinjau SVG yang telah disetujui.
+- Header registrasi, OTP, aktivasi dan pemulihan lebih pendek: form lebih tinggi.
+- Layar pembuka browser HP/PWA minimum sekitar 1,2 detik, termasuk penyiapan.
+  Tidak diputar ulang pada navigasi antarhalaman di dalam aplikasi.
+- Dua panel desktop/tablet tetap tampil mulai lebar 641 piksel.
+- Sesi valid tetap menawarkan Buka aplikasi pada landing tanpa login ulang.
 
-PERUBAHAN UNTUK DIREVIEW
-- Ikon mata di dalam kolom sandi utama dan konfirmasi; keadaan tiap kolom terpisah.
-- Tombol Masuk mengikuti latar landing page, Buat akun mengikuti aksen biru-sian.
-- Catatan implementasi ditautkan ke SLR14, dengan bukti pengujian lama tetap di SLR15.
-- Panduan konkret menyiapkan arsip model dan Whisper.
+YANG PERLU DICOBA
+1. Pada HP, buka /login melalui browser. Periksa layar pembuka dan login baru.
+2. Buka Buat akun dan Verifikasi akun: formulir mulai lebih tinggi.
+3. Gulir sampai tombol terakhir, termasuk pada layar pendek atau keyboard terbuka.
+4. Periksa terang/gelap, ikon mata dan tidak ada gambar/kolom bertumpuk.
+5. Coba daftar/kode, aktivasi Operator, lupa sandi dan penyimpanan sandi baru.
+6. Pada desktop/tablet, pastikan kedua panel masih tampil.
+7. Login, buka landing lalu Buka aplikasi; coba muat ulang dengan sesi valid.
 
-MENYIAPKAN SENA/NARA
-Dari code/backend:
-.\.venv\Scripts\python.exe manage.py prepare_ai_models
-Command memverifikasi hash arsip di models/ lalu mengekstrak model runtime.
-Mulai ulang backend dan uji analisis teks. Audio memerlukan aset Whisper;
-foto/kombinasi kanal memerlukan konfigurasi Gemini. Lihat panduan utama.
-Runtime saat ini memakai CPU; NVIDIA/CUDA tidak diwajibkan.
+Tidak ada dependency, migration, endpoint atau status backend baru.
+Konfigurasi .env, database, venv dan model lokal tetap digunakan.
 
-BATAS PAKET
-Alur sesi/tombol silang masih menunggu kepastian kontrol yang dimaksud pengguna.
-Pengiriman SMTP dan inferensi AI asli tidak diuji ulang dalam revisi UI ini.
-Belum ada commit, push, deployment, atau perubahan board oleh penyusun.
+Catatan/bukti: docs/slr14/revisi-login-mobile-20261113/README.md.
+Manifest: docs/slr14/revisi-login-mobile-20261113/DAFTAR_PERUBAHAN.json.
+Patch alternatif: PERUBAHAN_SLR14_LOGIN_HP.patch.
+Pilih penggabungan berkas ATAU git apply, jangan kedua cara sekaligus.
+Jalankan git apply --check dahulu sebelum menerapkan patch.
 
-Manifest berkas: docs/slr14/revisi-review-20261113/DAFTAR_PERUBAHAN.json.
-Patch alternatif: PERUBAHAN_SLR14_UI.patch. Pilih salin berkas ATAU terapkan patch;
-tidak perlu melakukan kedua cara sekaligus. Jalankan git apply --check dahulu.
+Tidak ada commit, push, deployment atau perubahan board oleh penyusun.

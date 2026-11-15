@@ -1,3 +1,5 @@
+> Revisi SLR14 14 November 2026: `GET /api/v1/reports/?scope=owned&q=...` mendukung pencarian kata kunci/ID milik Reporter. Lihat [kontrak pencarian](../slr14/revisi-hp-pencarian-20261114/KONTRAK_PENCARIAN.md). Respons ringkasan dan scope/izin tetap mengikuti endpoint bisnis yang sudah ada.
+
 > Revisi akun 13 November 2026: gunakan [kontrak verifikasi email dan kode](../slr15/revisi-20261113/KONTRAK_AKUN.md). Endpoint berbasis challenge di bawah tetap tersedia untuk kompatibilitas dan reset sandi. Alur baru memakai satu halaman verifikasi, sandi minimal 15 karakter, serta bukti aktivasi Operator sekali pakai.
 
 # Handoff frontend SLR_07 ke backend SLR_08

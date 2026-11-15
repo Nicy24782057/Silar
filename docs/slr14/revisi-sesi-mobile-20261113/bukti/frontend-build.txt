@@ -1,0 +1,56 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> silar-slr10-frontend@1.1.1 build
+> vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 122 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                     1.27 kB │ gzip:     0.68 kB
+dist/sw.js                                          3.27 kB
+dist/assets/nara-ZsaGgmM6.svg                      70.54 kB │ gzip:    13.20 kB
+dist/assets/nara-dark-IbaIl4kU.svg                 70.56 kB │ gzip:    13.21 kB
+dist/assets/portal-hero-CeIvL_w2.webp              98.82 kB
+dist/assets/sena-C3A4rkNV.svg                     102.82 kB │ gzip:    15.17 kB
+dist/assets/sena-dark-Big5evOc.svg                102.84 kB │ gzip:    15.18 kB
+dist/assets/start-CtsQazq9.svg                    234.14 kB │ gzip:   149.82 kB
+dist/assets/start-dark-DVcX997r.svg               234.16 kB │ gzip:   149.84 kB
+dist/assets/privacy-BW608JbX.svg                  234.67 kB │ gzip:   149.94 kB
+dist/assets/privacy-dark-LiBJFNyc.svg             234.69 kB │ gzip:   149.96 kB
+dist/assets/reporting-scene-Chx1PA0k.svg          412.43 kB │ gzip:   183.08 kB
+dist/assets/reporting-scene-dark-DtLdqysh.svg     412.45 kB │ gzip:   183.10 kB
+dist/assets/auth-identity-BIULP5db.svg            573.05 kB │ gzip:   207.74 kB
+dist/assets/auth-identity-dark-QRPyuOka.svg       573.07 kB │ gzip:   207.76 kB
+dist/assets/reporter-welcome-DDZdLYCb.svg       2,211.79 kB │ gzip: 1,535.36 kB
+dist/assets/index-nUao148s.css                    242.43 kB │ gzip:    41.90 kB
+dist/assets/WorkspaceStatus-DsPeHJJy.js             0.26 kB │ gzip:     0.22 kB
+dist/assets/NotFoundView-BV2FiX1c.js                0.57 kB │ gzip:     0.40 kB
+dist/assets/ErrorNotice-DWZjS7aA.js                 1.04 kB │ gzip:     0.63 kB
+dist/assets/analysis-Do-MLo4m.js                    1.16 kB │ gzip:     0.62 kB
+dist/assets/AppDialog-B3PFr4MN.js                   1.33 kB │ gzip:     0.71 kB
+dist/assets/DeleteDraftDialog-DYgt3D3F.js           2.21 kB │ gzip:     1.21 kB
+dist/assets/recovery-BoZ7d3JM.js                    2.29 kB │ gzip:     1.05 kB
+dist/assets/PublicNavigation-Cky2-15a.js            2.48 kB │ gzip:     1.19 kB
+dist/assets/PublicIncidentCard-_kMeXjan.js          2.51 kB │ gzip:     1.28 kB
+dist/assets/ReportSentView-qQcdqAN6.js              2.70 kB │ gzip:     1.38 kB
+dist/assets/report-list-CIE95uQD.js                 3.38 kB │ gzip:     1.50 kB
+dist/assets/ProfileView-D9SXMZIK.js                 3.58 kB │ gzip:     1.63 kB
+dist/assets/WorkspaceServicesView-DS5viEkj.js       3.60 kB │ gzip:     1.54 kB
+dist/assets/FetchState-kidOL8cY.js                  4.15 kB │ gzip:     2.17 kB
+dist/assets/PwaView-DqKQCOwX.js                     4.17 kB │ gzip:     1.84 kB
+dist/assets/WorkspaceAssignment-C3_xSEu9.js         4.44 kB │ gzip:     2.07 kB
+dist/assets/WorkspaceAuditView-B-XYvaja.js          5.44 kB │ gzip:     2.35 kB
+dist/assets/NotificationsView-CcP3Xyje.js           6.04 kB │ gzip:     2.44 kB
+dist/assets/WorkspaceView-DoJB-JAL.js               8.23 kB │ gzip:     3.23 kB
+dist/assets/PublicPortalView-uvVhI8ni.js            8.63 kB │ gzip:     3.47 kB
+dist/assets/LandingView-DgTGVdsn.js                 8.75 kB │ gzip:     3.50 kB
+dist/assets/WorkspaceReportsView-BmBcap5z.js       12.37 kB │ gzip:     4.59 kB
+dist/assets/WorkspaceOperatorsView-bWuXa_kL.js     13.05 kB │ gzip:     4.77 kB
+dist/assets/AuthView-CdnQpmVB.js                   17.08 kB │ gzip:     6.58 kB
+dist/assets/ReportsView-CfbIwAMD.js                17.68 kB │ gzip:     6.45 kB
+dist/assets/WorkspaceReportView-BmkVQQ3d.js        64.49 kB │ gzip:    18.67 kB
+dist/assets/DraftView-BlFJF5WP.js                  83.76 kB │ gzip:    26.02 kB
+dist/assets/index-XeWrx8tA.js                     135.03 kB │ gzip:    52.09 kB
+✓ built in 2.82s

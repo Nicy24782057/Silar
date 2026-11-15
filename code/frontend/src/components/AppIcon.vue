@@ -2,6 +2,7 @@
 import { computed } from 'vue';
 const props=defineProps({name:{type:String,default:'file'},size:{type:[Number,String],default:20}});
 const paths={
+  mail:['M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z','m3 6 9 7 9-7'],
   globe:['M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z','M2 12h20M12 2c6 5 6 15 0 20-6-5-6-15 0-20Z'],
   pin:['M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z','M15 10a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z'],
   calendar:['M3 5h18v16H3Z','M7 2v6M17 2v6M3 10h18'],

@@ -2,7 +2,7 @@
 import { ref, watch, nextTick } from 'vue';
 const props = defineProps({error:Object});
 const box = ref(null);
-const fieldNames={password:'Kata sandi',password_confirm:'Konfirmasi kata sandi',email:'Email',full_name:'Nama lengkap',code:'Kode verifikasi',activation_token:'Aktivasi akun',challenge_id:'Tautan pemulihan',non_field_errors:'Isian'};
+const fieldNames={q:'Pencarian',password:'Kata sandi',password_confirm:'Konfirmasi kata sandi',email:'Email',full_name:'Nama lengkap',code:'Kode verifikasi',activation_token:'Aktivasi akun',challenge_id:'Tautan pemulihan',non_field_errors:'Isian'};
 watch(() => props.error, async value => { if (value) { await nextTick(); box.value?.focus(); } });
 </script>
 <template>

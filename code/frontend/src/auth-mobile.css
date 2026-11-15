@@ -1,0 +1,64 @@
+/* Mobile account composition approved in the SILAR SVG preview. */
+.mobile-auth-header,.mobile-auth-wave,.auth-input-decoration,.auth-password-leading{display:none}
+@media(max-width:640px){
+ .auth-main .auth-two-panel{display:block;min-height:100dvh;background:var(--panel)}
+ .mobile-auth-header{display:block;position:relative;height:327px;min-width:0;overflow:hidden;background:var(--hero)}
+ .mobile-auth-header:before{content:'';position:absolute;inset:0;background:url('/brand/silar-auth-pattern.svg') center top/100% auto no-repeat;pointer-events:none}
+ .mobile-auth-control{position:absolute;top:19px;z-index:1;display:grid;place-items:center;width:44px;height:44px;min-height:44px;padding:0;border:0;background:transparent;box-shadow:none;color:#FFF;text-decoration:none}
+ .mobile-auth-control:before{content:'';position:absolute;inset:6px;border:1px solid #FFFFFF33;background:#FFFFFF1F;border-radius:11px}
+ .mobile-auth-control>.app-icon{position:relative}
+ .mobile-auth-control:hover:not(:disabled){background:transparent;color:#FFF}
+ .mobile-auth-control:hover:before{background:#FFFFFF30}
+ .mobile-auth-back{left:18px}.mobile-auth-theme{right:18px}
+ .mobile-auth-brand{position:absolute;top:25px;left:50%;transform:translateX(-50%);display:flex;align-items:center;flex-direction:column;gap:6px;color:#FFF;text-decoration:none}
+ .mobile-auth-brand img{display:block;width:44px;height:44px;object-fit:contain}
+ .mobile-auth-brand strong{font:800 25px/1 Inter,"Segoe UI",sans-serif;letter-spacing:.7px;color:#FFF}
+ .mobile-auth-tagline{position:absolute;top:106px;left:16px;right:16px;margin:0;text-align:center;color:#D8F4FF;font-size:10.5px;line-height:17px;font-weight:500}
+ .mobile-auth-header>.mobile-auth-scene{position:absolute;top:141px;left:50%;transform:translateX(-50%);width:calc(100% - 44px);max-width:346px;height:133px;object-fit:contain}
+ .mobile-auth-header.is-compact{height:220px}
+ .is-compact .mobile-auth-control{top:12px}
+ .is-compact .mobile-auth-brand{top:18px;gap:6px}
+ .is-compact .mobile-auth-brand img{width:32px;height:32px}
+ .is-compact .mobile-auth-brand strong{font-size:20px}
+ .is-compact .mobile-auth-tagline{top:80px;font-size:9.5px;line-height:15px}
+ .mobile-auth-header.is-compact>.mobile-auth-scene{top:105px;width:204px;max-width:calc(100% - 80px);height:78px}
+ .auth-main .auth-two-panel[data-screen] .auth-panel{position:relative;z-index:1;margin-top:-32px;min-height:calc(100dvh - 295px);padding:43px 28px 25px;justify-content:flex-start;background:linear-gradient(to bottom,transparent 0,transparent 32px,var(--panel) 32px,var(--panel) 100%)}
+ .auth-main .auth-two-panel[data-screen]:not([data-screen=login]) .auth-panel{min-height:calc(100dvh - 188px);padding-top:43px}
+ .auth-main .auth-panel>.auth-toolbar{display:none}
+ .auth-main .auth-panel>.mobile-auth-wave{display:block;position:absolute;top:0;left:0;width:100%;height:36px;fill:var(--panel);pointer-events:none}
+ .auth-main .auth-content{width:100%;max-width:408px;transform:none}
+ .auth-main .auth-two-panel[data-screen] .auth-heading{margin-bottom:28px}
+ .auth-main .auth-heading h1{font-size:27px;line-height:1.3;letter-spacing:-.7px;margin:0 0 10px}
+ .auth-main .auth-two-panel[data-screen]:not([data-screen=login]) .auth-heading h1{font-size:25px}
+ .auth-main .auth-subtitle{font-size:12.5px;line-height:1.8}
+ .auth-main .auth-content label{font-size:12.5px;line-height:1.6;margin-bottom:8px}
+ .auth-main .auth-content input{height:50px;min-height:50px;border-radius:12px;background:#F8FBFE;border-color:#D5E1ED;font-size:16px;padding-block:12px}
+ .auth-main .auth-form .field{margin-bottom:21px}
+ .auth-input-with-icon{position:relative;min-width:0}
+ .auth-main .auth-input-decoration,.auth-main .auth-password-leading{display:block;position:absolute;left:16px;top:15px;z-index:1;pointer-events:none;color:var(--primary)}
+ .auth-main .auth-input-with-icon>input,.auth-main .auth-password-input>input{padding-inline-start:48px}
+ .auth-main .auth-password-input>input{padding-inline-end:56px}
+ .auth-main .auth-content .auth-password-toggle{color:var(--muted)}
+ .auth-main .auth-content .auth-submit{min-height:52px;border-radius:12px;border:0;background:linear-gradient(100deg,#0876BB,#155EBD);color:#FFF;font-size:14px;box-shadow:none}
+ .auth-main .auth-content .auth-submit:hover:not(:disabled){background:linear-gradient(100deg,#0868A6,#104E9E)}
+ .auth-main .auth-content .auth-submit:disabled{opacity:.55;cursor:not-allowed}
+ .auth-main .auth-content .auth-resend-button{border-radius:12px;min-height:50px}
+ .auth-main .auth-forgot{margin:-3px 0 17px}
+ .auth-main .auth-forgot a{font-size:12px;min-height:32px}
+ .auth-main .auth-navigation{margin-top:20px;gap:4px}
+ .auth-main .auth-navigation p,.auth-main .auth-navigation a{font-size:12px}
+ .auth-main .auth-security-note{font-size:10.1px;margin-top:24px;line-height:1.8}
+ .auth-main .auth-footer{position:static;inset:auto;margin-top:auto;padding:26px 0 0;font-size:10px}
+ .auth-main .auth-two-panel[data-screen=login] .auth-panel{padding-top:37px;padding-bottom:12px}
+ .auth-main .auth-two-panel[data-screen=login] .auth-heading{margin-bottom:14px}
+ .auth-main .auth-two-panel[data-screen=login] .auth-heading h1{margin-bottom:0;font-weight:750}
+ .auth-main .auth-two-panel[data-screen=login] .auth-form .field{margin-bottom:12px}
+ .auth-main .auth-two-panel[data-screen=login] .auth-forgot{margin:-3px 0 6px}
+ .auth-main .auth-two-panel[data-screen=login] .auth-navigation{margin-top:12px;gap:0}
+ .auth-main .auth-two-panel[data-screen=login] .auth-security-note{margin-top:16px}
+ .auth-main .auth-two-panel[data-screen=login] .auth-footer{padding-top:8px}
+ :root[data-theme=dark] .auth-main .auth-content input{background:#17283D;border-color:#45617F}
+ :root[data-theme=dark] .auth-main .auth-content .auth-submit{background:linear-gradient(100deg,#0876BB,#246ADE);color:#FFF}
+ :root[data-theme=dark] .auth-main .auth-content .auth-submit:hover:not(:disabled){background:linear-gradient(100deg,#0B83CE,#2C74EF)}
+ @media(max-width:360px){.auth-main .auth-two-panel[data-screen] .auth-panel{padding-inline:22px}.auth-main .auth-heading h1{font-size:26px}.auth-main .auth-security-note{font-size:9.6px}}
+}

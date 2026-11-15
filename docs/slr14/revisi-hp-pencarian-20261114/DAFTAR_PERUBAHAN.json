@@ -1,0 +1,223 @@
+{
+  "scope": "SLR14",
+  "review_findings_from": "SLR15",
+  "date": "2026-11-14",
+  "type": "incremental-approved-mobile-revision-and-owner-report-search",
+  "requires_packages": [
+    {
+      "name": "SILAR_SLR15.zip",
+      "sha256": "51cc0cc1f53818bf478f4b3b8b9837d236cf4352c0019b60ac2029ea3ab1b3d7"
+    },
+    {
+      "name": "SILAR_SLR14_revisi_UI_13Nov2026.zip",
+      "sha256": "887aea078bd349879f49a7ecd11ce921d00c576430340b9753a892b3ed70a707"
+    },
+    {
+      "name": "SILAR_SLR14_alur_operator_13Nov2026.zip",
+      "sha256": "3ef395221fafa7b670815d2c3c5be86950d6dc089976b8162ece042eee6fe5f9"
+    },
+    {
+      "name": "SILAR_SLR14_sesi_dan_tampilan_HP_13Nov2026.zip",
+      "sha256": "47e1256ffbd3e0af087e5f77de1f91fcb1ae2efbb8d4192433c3721305201faa"
+    },
+    {
+      "name": "SILAR_SLR14_login_mobile_ACC_13Nov2026.zip",
+      "sha256": "373384672bb96ad1d900e8909fb2e6e3618d280c43c01eafdd2744f9065fbc11"
+    }
+  ],
+  "base_commit": "7af81c8e448e12eead2b54a4e6aad72b9e2a781e",
+  "approval_reference": "Five SILAR_Revisi_HP SVGs, canonical brand correction and Reporter keyword/ID search approved by user",
+  "excluded_from_hash_list": [
+    "docs/slr14/revisi-hp-pencarian-20261114/DAFTAR_PERUBAHAN.json",
+    "PERUBAHAN_SLR14_HP_PENCARIAN.patch"
+  ],
+  "backend_source_changed": true,
+  "new_backend_statuses": false,
+  "session_lifetime_changed": false,
+  "browser_frontend_mode": "production build via vite preview",
+  "search_contract": "docs/slr14/revisi-hp-pencarian-20261114/KONTRAK_PENCARIAN.md",
+  "agent_committed": false,
+  "agent_pushed": false,
+  "files": [
+    {
+      "path": "MULAI_DI_SINI.txt",
+      "bytes": 1571,
+      "sha256": "ab40703fa1db311703f6656d8a8320d4392f2d4d3c7d988a72d6a41d3dd556de",
+      "previous_sha256": "a6135925959043eed6864cc9fa3e40bc1a4bf9fd8e3e76ffc2fdc58d6a76fdc3",
+      "baseline_source": "previous_approved_auth"
+    },
+    {
+      "path": "PANDUAN_RUNNING.md",
+      "bytes": 15017,
+      "sha256": "a87b722391184bb6ffea7850606ce6a1740bfa6cfe49a0eea819c447384b59be",
+      "previous_sha256": "a1fa08b2b1ef45f85c0fa9373a498c8ae8a8facf0fa36721916980e5cdb5bc54",
+      "baseline_source": "previous_approved_auth"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3777,
+      "sha256": "88267f93c75f8a89b1649677f97c24904cbd058875208e3bd6653160e4fa62bb",
+      "previous_sha256": "30550091b2a59bc3dcfc25f066c5ad7c184e2ea3d758a350aabfa07874dced3a",
+      "baseline_source": "previous_approved_auth"
+    },
+    {
+      "path": "code/backend/reporting/search.py",
+      "bytes": 2349,
+      "sha256": "28db2a3526ffb8d77859e6d9b64068b9c76ed169ab2b013e55a42cf691371ba9",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "code/backend/reporting/tests/test_report_search.py",
+      "bytes": 6519,
+      "sha256": "8ca00663cd87a9924b026bc1055c26419362c72f9d18f3aec196b9d182329eb9",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "code/backend/reporting/views.py",
+      "bytes": 8227,
+      "sha256": "fba3f1a34ff4e210fa4e5a342a7a4c31b2a5d128d57d664d5212ec1df286025d",
+      "previous_sha256": "856ef2ee14686432933cef94b1d36781e9750989b57fef46452afeb61201cdbc",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/src/App.vue",
+      "bytes": 9352,
+      "sha256": "34e9249c272b02b50862975c7bf027c33ca85ceda93b3c3697f44cb06aaa98e9",
+      "previous_sha256": "24a5c4bbde4cd921c44499dc48d161921cd90c74060b5965873f739e2958c22a",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/src/components/ErrorNotice.vue",
+      "bytes": 987,
+      "sha256": "ffe06c3510412520a1e54e893c18ad3fa3187ba38ed2ac44b49ba55385975ad7",
+      "previous_sha256": "12e27e99294d357be54f60dfe98534121fc7115c218a9a7e818d23127967a3f5",
+      "baseline_source": "previous_account"
+    },
+    {
+      "path": "code/frontend/src/components/PublicNavigation.vue",
+      "bytes": 3869,
+      "sha256": "d1d30a3b599eb735f86fb24b234bac057726119095732846df9aecf4100338ec",
+      "previous_sha256": "25f1d7709eb7d88e35873ae336f8d7a65d223557e3af2de8e3603b41eb54e50c",
+      "baseline_source": "previous_mobile_session"
+    },
+    {
+      "path": "code/frontend/src/main.js",
+      "bytes": 2040,
+      "sha256": "6fb026602b24db49deb859ca681d353a400f2c7b1520d0f50593094ab18260d2",
+      "previous_sha256": "31eda4ea5cd3af34e0abcf083f760fab99433de770ce1da2955f8e3b115599cc",
+      "baseline_source": "previous_approved_auth"
+    },
+    {
+      "path": "code/frontend/src/mobile-reviewed.css",
+      "bytes": 20204,
+      "sha256": "72de422a5df6a6ab72d5d2bd7fbf137e221116639a5efbff43f6c682598d1c72",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "code/frontend/src/report-list.js",
+      "bytes": 4544,
+      "sha256": "8e9c5f91e63d7a4d78117deb73aebbb33d15b95af7312773d4ef7688772a7901",
+      "previous_sha256": "04567ff0a8dfa9bc6f22eaa3c627f3084df7c7f53f74e02933278440b96f1f12",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/src/views/LandingView.vue",
+      "bytes": 7984,
+      "sha256": "e32510bd5bdceca265a4598ab5d649d6611c66bc7e0b441e0a0a7f6d169e9b95",
+      "previous_sha256": "bb6a603a7543784ebe649e5a80318eea5385d4d2c0fe85a434087b387b51b4b1",
+      "baseline_source": "previous_mobile_session"
+    },
+    {
+      "path": "code/frontend/src/views/ReportsView.vue",
+      "bytes": 16398,
+      "sha256": "35be7a73e70f65955d32eadc05dc57cbe04a125a02c8f0ff9fea207433cc7bbb",
+      "previous_sha256": "68ce15cc53d64918aa325191726c30aaf97ca3cd94674d273205f30eaf21edd6",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/src/views/WorkspaceReportsView.vue",
+      "bytes": 12738,
+      "sha256": "d76db6ab71adca6a45e61ff067def1db039251a7ec832bca1d11f49d92ee4d65",
+      "previous_sha256": "5814f94fb685143c00b446e2215d1ad1e485e2f565ea5e0b6a96fbdad135dd1a",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "code/frontend/tests/report-list.test.js",
+      "bytes": 2649,
+      "sha256": "f8c2cc1440beb2eb7dff92c89182daffa68c0773c86fafb325d0f35451093c12",
+      "previous_sha256": "50bf83e831257ed3b4f3e2d247346c0a4eb61451ce5e2293e3d98c33626e2af9",
+      "baseline_source": "base_commit"
+    },
+    {
+      "path": "docs/backend/frontend-handoff.md",
+      "bytes": 8766,
+      "sha256": "5bfe9dcaeb6e1d2a08307a5a4d69622a4c8debb4ba3ca786f674a264724ee78e",
+      "previous_sha256": "c6a915108ae9531483e415b72c8f1d9303922e6bc7c12e39a03a61f0164f30dc",
+      "baseline_source": "previous_account"
+    },
+    {
+      "path": "docs/slr14/README.md",
+      "bytes": 12220,
+      "sha256": "b1a77af91d07addac27d3ee1b768acd47711076ce03f9b48226fd3b28947e244",
+      "previous_sha256": "5de12acf6e3eedb6b0adb671e5d47e5ee6728f1a00d8c1dfee9803bca7c0935d",
+      "baseline_source": "previous_approved_auth"
+    },
+    {
+      "path": "docs/slr14/revisi-hp-pencarian-20261114/KONTRAK_PENCARIAN.md",
+      "bytes": 2854,
+      "sha256": "c0f62c31f7c86293f8acf32ea5c40e05a5a23ba40068b5c21c7d991ac32e4430",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-hp-pencarian-20261114/README.md",
+      "bytes": 5511,
+      "sha256": "55acc4764f8aa84b118d542868ff5189bc6091cae0b38d3bf3f43923a4505e5a",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-hp-pencarian-20261114/bukti/backend-tests.txt",
+      "bytes": 276,
+      "sha256": "9802d25aa76db9663f883f7561159482763bb469c60ec42c10c45bc3481e9611",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-hp-pencarian-20261114/bukti/browser-result.json",
+      "bytes": 5850,
+      "sha256": "0516d53c0f41c9f0faaa898d333b1f5061d95f04318dadee246fb64f87831d04",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-hp-pencarian-20261114/bukti/frontend-build.txt",
+      "bytes": 4254,
+      "sha256": "41f476eb29c2b63bb7c54a1585c047b042792b853f5ec6bdcd8bdbfaa1ed507d",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    },
+    {
+      "path": "docs/slr14/revisi-hp-pencarian-20261114/bukti/frontend-tests.txt",
+      "bytes": 11702,
+      "sha256": "741fcb2ab223d4341bc480194c62da4111b9f8053f6e14bc0df6585ed9d177d7",
+      "previous_sha256": null,
+      "baseline_source": "new_file"
+    }
+  ],
+  "checks": {
+    "frontend_tests": 123,
+    "frontend_build": "PASSED",
+    "backend_search_filter_tests": 17,
+    "full_backend_suite_rerun": false,
+    "database": "PostgreSQL 16",
+    "browser_layout_cases": 98,
+    "browser_flow_checks": 13,
+    "page_errors": 0,
+    "external_email_sent": false,
+    "live_ai_inference_exercised": false
+  }
+}

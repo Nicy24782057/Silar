@@ -2,7 +2,7 @@ import { label } from './domain.js';
 
 export const REPORT_PAGE_SIZE = 5;
 export const categoryFilters = Object.freeze([
-  { value: '', label: 'Kategori' },
+  { value: '', label: 'Semua kategori' },
   ...['FLOOD', 'EARTHQUAKE', 'FIRE', 'ACCIDENT'].map(value => ({
     value, label: value === 'EARTHQUAKE' ? 'Gempa Bumi' : label(value),
   })),
@@ -47,7 +47,7 @@ export function reportStatus(item) {
   return reportStatuses[item.preparation_status] || unavailable;
 }
 
-export function reportsPath(status = '', order = '-created_at', category = '', page = 1) {
+export function reportsPath(status = '', order = '-created_at', category = '', page = 1, search = '') {
   if (!statusFilters.some(item => item.value === status)) throw new Error('Filter status tidak dikenal.');
   if (!categoryFilters.some(item => item.value === category)) throw new Error('Filter kategori tidak dikenal.');
   if (!['created_at', '-created_at'].includes(order)) throw new Error('Urutan laporan tidak dikenal.');
@@ -59,6 +59,7 @@ export function reportsPath(status = '', order = '-created_at', category = '', p
     if (chosen.preparation) query.set('preparation_status', chosen.preparation);
   }
   if (category) query.set('event_type', category);
+  if (search.trim()) query.set('q', search.trim());
   if (page > 1) query.set('page', String(page));
   return 'reports/?' + query;
 }

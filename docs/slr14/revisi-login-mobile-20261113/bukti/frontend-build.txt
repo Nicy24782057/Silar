@@ -1,0 +1,59 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> silar-slr10-frontend@1.1.1 build
+> vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 126 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                      1.56 kB │ gzip:     0.80 kB
+dist/sw.js                                           3.43 kB
+dist/assets/nara-ZsaGgmM6.svg                       70.54 kB │ gzip:    13.20 kB
+dist/assets/nara-dark-IbaIl4kU.svg                  70.56 kB │ gzip:    13.21 kB
+dist/assets/portal-hero-CeIvL_w2.webp               98.82 kB
+dist/assets/sena-C3A4rkNV.svg                      102.82 kB │ gzip:    15.17 kB
+dist/assets/sena-dark-Big5evOc.svg                 102.84 kB │ gzip:    15.18 kB
+dist/assets/start-CtsQazq9.svg                     234.14 kB │ gzip:   149.82 kB
+dist/assets/start-dark-DVcX997r.svg                234.16 kB │ gzip:   149.84 kB
+dist/assets/privacy-BW608JbX.svg                   234.67 kB │ gzip:   149.94 kB
+dist/assets/privacy-dark-LiBJFNyc.svg              234.69 kB │ gzip:   149.96 kB
+dist/assets/auth-mobile-scene-CZSFMt6V.svg         388.17 kB │ gzip:   179.44 kB
+dist/assets/auth-mobile-scene-dark-BA1p18Nl.svg    388.19 kB │ gzip:   179.45 kB
+dist/assets/reporting-scene-Chx1PA0k.svg           412.43 kB │ gzip:   183.08 kB
+dist/assets/reporting-scene-dark-DtLdqysh.svg      412.45 kB │ gzip:   183.10 kB
+dist/assets/auth-identity-BIULP5db.svg             573.05 kB │ gzip:   207.74 kB
+dist/assets/auth-identity-dark-QRPyuOka.svg        573.07 kB │ gzip:   207.76 kB
+dist/assets/reporter-welcome-DDZdLYCb.svg        2,211.79 kB │ gzip: 1,535.36 kB
+dist/assets/index-B61JjMMp.css                     249.38 kB │ gzip:    43.39 kB
+dist/assets/WorkspaceStatus-Bin63DEV.js              0.26 kB │ gzip:     0.22 kB
+dist/assets/ReferenceArt-CMsl8xRp.js                 0.38 kB │ gzip:     0.28 kB
+dist/assets/NotFoundView-DCR99b5-.js                 0.57 kB │ gzip:     0.40 kB
+dist/assets/ErrorNotice-JJj_sT0K.js                  1.03 kB │ gzip:     0.63 kB
+dist/assets/analysis-Do-MLo4m.js                     1.16 kB │ gzip:     0.62 kB
+dist/assets/AppDialog-3Wdi8EA0.js                    1.33 kB │ gzip:     0.71 kB
+dist/assets/DeleteDraftDialog-BzF-eL9e.js            2.21 kB │ gzip:     1.21 kB
+dist/assets/recovery-DTKugUUO.js                     2.29 kB │ gzip:     1.05 kB
+dist/assets/PublicNavigation-_ZY874Bv.js             2.48 kB │ gzip:     1.20 kB
+dist/assets/PublicIncidentCard-B1vAjquJ.js           2.52 kB │ gzip:     1.28 kB
+dist/assets/ReportSentView-QbIaEjo_.js               2.70 kB │ gzip:     1.38 kB
+dist/assets/report-list-DgUmTgY_.js                  3.38 kB │ gzip:     1.50 kB
+dist/assets/ProfileView-DZsPhfk6.js                  3.58 kB │ gzip:     1.63 kB
+dist/assets/WorkspaceServicesView-vRs1ZqaE.js        3.60 kB │ gzip:     1.54 kB
+dist/assets/FetchState-D5vQF-9W.js                   4.14 kB │ gzip:     2.17 kB
+dist/assets/PwaView-D8NHVPHS.js                      4.17 kB │ gzip:     1.83 kB
+dist/assets/WorkspaceAssignment-C1eaWA5r.js          4.44 kB │ gzip:     2.07 kB
+dist/assets/WorkspaceAuditView-DdT9weGc.js           5.44 kB │ gzip:     2.35 kB
+dist/assets/NotificationsView-B0izyyfC.js            6.04 kB │ gzip:     2.44 kB
+dist/assets/WorkspaceView-9mIP8-zW.js                8.23 kB │ gzip:     3.23 kB
+dist/assets/LandingView-CcMRUUEc.js                  8.47 kB │ gzip:     3.38 kB
+dist/assets/PublicPortalView-B9CPm0wM.js             8.63 kB │ gzip:     3.48 kB
+dist/assets/WorkspaceReportsView-DaxJc2SP.js        12.37 kB │ gzip:     4.59 kB
+dist/assets/WorkspaceOperatorsView-AkphzQQ3.js      13.05 kB │ gzip:     4.77 kB
+dist/assets/ReportsView-CuyoG7oy.js                 17.68 kB │ gzip:     6.45 kB
+dist/assets/AuthView-Mxbu49OE.js                    18.99 kB │ gzip:     7.18 kB
+dist/assets/WorkspaceReportView-vI_btmMW.js         64.49 kB │ gzip:    18.67 kB
+dist/assets/DraftView-B3A-zf07.js                   83.76 kB │ gzip:    26.02 kB
+dist/assets/index-CBoYvH_8.js                      135.50 kB │ gzip:    52.28 kB
+✓ built in 3.98s

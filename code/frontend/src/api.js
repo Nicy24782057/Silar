@@ -57,16 +57,16 @@ async function send(path, options = {}) {
   catch { throw unreadableResponse(method, response.status); }
 }
 
-async function getCsrf() {
-  if (!csrfWork) csrfWork = send('auth/csrf/', {auth:false}).then(result => csrf = result.data.csrf_token).finally(() => csrfWork = null);
+async function getCsrf(signal) {
+  if (!csrfWork) csrfWork = send('auth/csrf/', {auth:false, signal}).then(result => csrf = result.data.csrf_token).finally(() => csrfWork = null);
   return csrfWork;
 }
-export async function authPost(path, body) {
-  const token = await getCsrf();
-  return send('auth/' + path, {method:'POST', auth:false, body, csrfToken:token});
+export async function authPost(path, body, {signal} = {}) {
+  const token = await getCsrf(signal);
+  return send('auth/' + path, {method:'POST', auth:false, body, csrfToken:token, signal});
 }
-export async function refresh() {
-  if (!refreshWork) refreshWork = authPost('refresh/', {}).then(result => { access = result.data.access; return result; }).finally(() => refreshWork = null);
+export async function refresh({signal} = {}) {
+  if (!refreshWork) refreshWork = authPost('refresh/', {}, {signal}).then(result => { access = result.data.access; return result; }).finally(() => refreshWork = null);
   return refreshWork;
 }
 export async function login(email, password) {

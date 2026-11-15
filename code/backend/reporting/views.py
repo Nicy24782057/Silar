@@ -15,6 +15,7 @@ from . import services
 from .media import validate_upload
 from .serializers import EvidenceUpload, BundleCreate, summary_data, detail_data, evidence_data
 from .review_serializers import DeleteDraft
+from .search import search_owned_reports
 
 
 def response_mutation(result):
@@ -33,7 +34,7 @@ def owner_report(request, pk):
 
 class ReportListCreate(APIView):
     def get(self, request):
-        validate_query(request, ['scope', 'workflow_status', 'preparation_status', 'validation_status', 'publication_status', 'event_type', 'ordering'])
+        validate_query(request, ['scope', 'q', 'workflow_status', 'preparation_status', 'validation_status', 'publication_status', 'event_type', 'ordering'])
         actor = request.user
         permissions = effective_permissions(actor)
         default = {'REPORTER': 'owned', 'OPERATOR': 'assigned', 'ADMIN': 'monitor'}[actor.role]
@@ -73,6 +74,10 @@ class ReportListCreate(APIView):
             qs = qs.filter(
                 (Q(submitted_at__isnull=True) & category_match('current_card_version')) |
                 (Q(submitted_at__isnull=False) & category_match('official_card_version')))
+        if 'q' in request.query_params:
+            if actor.role != Role.REPORTER or scope != 'owned':
+                raise ApiProblem('INVALID_PAYLOAD', 'Pencarian kata kunci tersedia untuk laporan milik Reporter.', 400)
+            qs = search_owned_reports(qs, request.query_params['q'])
         order = request.query_params.get('ordering', '-created_at')
         if order not in ('created_at', '-created_at', 'submitted_at', '-submitted_at'):
             raise ApiProblem('INVALID_PAYLOAD', 'Urutan tidak dikenal.', 400)
