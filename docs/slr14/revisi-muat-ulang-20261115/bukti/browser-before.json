@@ -1,0 +1,48 @@
+{
+  "mode": "before",
+  "frontend_mode": "production build via vite preview",
+  "api_mode": "local browser read fixtures; no live backend, AI or email exercised",
+  "layout_cases": [
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 1408,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 1136,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 1408,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 1136,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 1297.984375,
+        "right": 1475.984375,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "407.172px 339.297px 237.516px 110px",
+      "issues": [
+        "button clipped by panel",
+        "filter row overflows",
+        "button hit target clipped"
+      ],
+      "case": "desktop-before:1440"
+    }
+  ],
+  "flow_checks": [],
+  "page_errors": [],
+  "unexpected_api_calls": [],
+  "status": "REPRODUCED",
+  "screenshots_in_package": false
+}

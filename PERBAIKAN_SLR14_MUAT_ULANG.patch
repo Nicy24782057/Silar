@@ -1,0 +1,2273 @@
+diff --git a/BACA_PERBAIKAN_MUAT_ULANG.txt b/BACA_PERBAIKAN_MUAT_ULANG.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..51ee2385ec681f4a8ebedd90a468e0a2c42c5aa8
+--- /dev/null
++++ b/BACA_PERBAIKAN_MUAT_ULANG.txt
+@@ -0,0 +1,30 @@
++SILAR — SLR14, PERBAIKAN TOMBOL MUAT ULANG, 15 NOVEMBER 2026
++
++Paket lanjutan untuk proyek yang sudah memakai:
++SILAR_SLR14_revisi_HP_dan_pencarian_14Nov2026.zip
++
++1. Hentikan frontend.
++2. Gabungkan isi paket sesuai path ke proyek. Berkas antarmuka yang diperbarui:
++   code/frontend/src/mobile-reviewed.css
++3. Dari code/frontend, jalankan:
++   npm.cmd run build
++   npm.cmd run dev
++4. Buka Laporan Saya. Periksa tombol Muat ulang pada desktop dan HP.
++   Untuk PWA produksi, ambil pembaruan build melalui Aplikasi & Koneksi.
++
++Alternatif: dari root proyek, jalankan:
++   git apply --check PERBAIKAN_SLR14_MUAT_ULANG.patch
++   git apply PERBAIKAN_SLR14_MUAT_ULANG.patch
++Pilih penggabungan berkas ATAU git apply. Jika berkas sudah Anda ubah sendiri,
++gabungkan perubahan satu aturan grid setelah memeriksa perbedaannya.
++
++Panduan dan hasil uji:
++docs/slr14/revisi-muat-ulang-20261115/README.md
++
++Catatan siap ditempel ke card sesudah commit/push:
++docs/slr14/revisi-muat-ulang-20261115/BUKTI_PEKERJAAN_SLR14.md
++
++Saran commit untuk perbaikan ini:
++fix(slr14): perbaiki tombol muat ulang pada Laporan Saya
++
++Penyusun belum melakukan commit, push atau memperbarui card GitHub.
+diff --git a/code/frontend/src/mobile-reviewed.css b/code/frontend/src/mobile-reviewed.css
+index e65729a29176ed9c7971f10c85d84b24952642d6..a8b61fad5afa132fee16aa0e872d570799b31c61 100644
+--- a/code/frontend/src/mobile-reviewed.css
++++ b/code/frontend/src/mobile-reviewed.css
+@@ -9,7 +9,7 @@
+ .report-search>div>.app-icon{position:absolute;left:14px;color:var(--muted);pointer-events:none}
+ .report-search button{flex:none;min-width:92px;min-height:46px;background:var(--hero);color:#FFF;border:0;border-radius:10px}
+ .report-search>small{display:block;font-size:11px;line-height:1.7;color:var(--muted);margin-top:8px}
+-.reports-table-card .report-list-controls{align-items:end;grid-template-columns:minmax(170px,1.2fr) minmax(150px,1fr) minmax(115px,.7fr) 110px;width:100%;min-width:0;flex:1 1 100%;gap:14px;margin-top:6px}
++.reports-table-card .report-list-controls{align-items:end;grid-template-columns:minmax(170px,1.2fr) minmax(150px,1fr) minmax(115px,.7fr) max-content;width:100%;min-width:0;flex:1 1 100%;gap:14px;margin-top:6px}
+ .reports-table-card .report-select select{min-height:46px;font-size:13px;border-radius:10px}
+ .reports-table-card .report-select>.app-icon{top:auto;bottom:16px;transform:none}
+ .reports-table-card .report-list-reload{min-height:46px;justify-self:stretch;border-radius:10px}
+diff --git a/docs/slr14/revisi-muat-ulang-20261115/BUKTI_PEKERJAAN_SLR14.md b/docs/slr14/revisi-muat-ulang-20261115/BUKTI_PEKERJAAN_SLR14.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..73f1d4594d48a2359b8d8b35cf132e2c7758c3da
+--- /dev/null
++++ b/docs/slr14/revisi-muat-ulang-20261115/BUKTI_PEKERJAAN_SLR14.md
+@@ -0,0 +1,25 @@
++# Tambahan bukti pekerjaan SLR14 — 15 November 2026
++
++Catatan ini disiapkan untuk ditambahkan ke bukti pekerjaan yang sudah ada pada card SLR14 setelah commit/push.
++
++## Perbaikan
++
++Memperbaiki tombol Muat ulang pada Laporan Saya yang terpotong pada desktop. Kolom tindakan sekarang mengikuti lebar tombol sehingga teks, ikon dan area klik tampil utuh. Tata letak filter desktop, tablet dan HP tetap mengikuti rancangan responsif yang telah diterapkan.
++
++## Berkas dan bukti
++
++- Implementasi: `code/frontend/src/mobile-reviewed.css`.
++- Panduan: `docs/slr14/revisi-muat-ulang-20261115/README.md`.
++- Build: `docs/slr14/revisi-muat-ulang-20261115/bukti/frontend-build.txt`.
++- Reproduksi awal: `docs/slr14/revisi-muat-ulang-20261115/bukti/browser-before.json`.
++- Hasil perbaikan: `docs/slr14/revisi-muat-ulang-20261115/bukti/browser-result.json`.
++
++## Hasil
++
++Build produksi lulus. Sebanyak 60 pemeriksaan tata letak dan tiga alur penggunaan tombol lulus pada mode terang/gelap, termasuk emulasi sentuhan HP. Tombol tetap utuh saat Memuat…, dan reload mempertahankan kata kunci serta filter yang telah diterapkan. Pengujian tampilan menggunakan fixture respons API lokal, tanpa pengujian ulang backend/AI/email.
++
++Temuan dicatat pada SLR15, perbaikan implementasi pada SLR14, kemudian hasil pengujian ulang ditautkan kembali pada temuan terkait.
++
++Commit SHA/URL: **diisi sesudah commit/push oleh pemilik repository**.
++
++Saran judul commit: `fix(slr14): perbaiki tombol muat ulang pada Laporan Saya`.
+diff --git a/docs/slr14/revisi-muat-ulang-20261115/DAFTAR_PERUBAHAN.json b/docs/slr14/revisi-muat-ulang-20261115/DAFTAR_PERUBAHAN.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..78074b80a18c3055d7cf9da4e9905c5cbcdd80d5
+--- /dev/null
++++ b/docs/slr14/revisi-muat-ulang-20261115/DAFTAR_PERUBAHAN.json
+@@ -0,0 +1,78 @@
++{
++  "scope": "SLR14",
++  "finding_source": "SLR15 / user screenshot",
++  "date": "2026-11-15",
++  "type": "incremental-frontend-layout-fix",
++  "problem": "Reload button minimum width exceeded its fixed grid track and was clipped by the report panel",
++  "requires_package": {
++    "name": "SILAR_SLR14_revisi_HP_dan_pencarian_14Nov2026.zip",
++    "sha256": "269b6973254c9ebe088155c11c912b4b2f35cb306ce89affb2c094686963a579"
++  },
++  "application_files_changed": [
++    "code/frontend/src/mobile-reviewed.css"
++  ],
++  "suggested_commit": "fix(slr14): perbaiki tombol muat ulang pada Laporan Saya",
++  "agent_committed": false,
++  "agent_pushed": false,
++  "github_card_updated": false,
++  "checks": {
++    "frontend_build": "PASSED",
++    "before_bug_reproduced": true,
++    "browser_layout_cases": 60,
++    "browser_flow_checks": 3,
++    "page_errors": 0,
++    "api_mode": "local read fixtures",
++    "backend_rerun": false,
++    "live_ai_inference_exercised": false,
++    "external_email_sent": false,
++    "screenshots_in_package": false
++  },
++  "excluded_from_hash_list": [
++    "docs/slr14/revisi-muat-ulang-20261115/DAFTAR_PERUBAHAN.json",
++    "PERBAIKAN_SLR14_MUAT_ULANG.patch"
++  ],
++  "files": [
++    {
++      "path": "BACA_PERBAIKAN_MUAT_ULANG.txt",
++      "sha256": "43be1853e0d8ec7b7a83a693826b78401661a90ca00b01a6731410d3b80f8bc7",
++      "bytes": 1158,
++      "previous_sha256": null
++    },
++    {
++      "path": "code/frontend/src/mobile-reviewed.css",
++      "sha256": "36491fcb0ca61b7d5dcda4104e814730c0a733f30f302d3d2e0ac6eff8197e78",
++      "bytes": 20210,
++      "previous_sha256": "72de422a5df6a6ab72d5d2bd7fbf137e221116639a5efbff43f6c682598d1c72"
++    },
++    {
++      "path": "docs/slr14/revisi-muat-ulang-20261115/BUKTI_PEKERJAAN_SLR14.md",
++      "sha256": "9b594e19f71da64ab6d342c53869be2901fd7c4bd2c447138ea9019c13fb8d00",
++      "bytes": 1491,
++      "previous_sha256": null
++    },
++    {
++      "path": "docs/slr14/revisi-muat-ulang-20261115/README.md",
++      "sha256": "aabcb7d23d5a06e3a23fff9dc1358fe0915bd3d9857eddc2fdb43075ae295ffd",
++      "bytes": 3401,
++      "previous_sha256": null
++    },
++    {
++      "path": "docs/slr14/revisi-muat-ulang-20261115/bukti/browser-before.json",
++      "sha256": "c658aa0c1eefa9ab63110f0dc7d6f72364ae324e997f4e986009495e769687e6",
++      "bytes": 1199,
++      "previous_sha256": null
++    },
++    {
++      "path": "docs/slr14/revisi-muat-ulang-20261115/bukti/browser-result.json",
++      "sha256": "aa98dcfbed623623cef915b0c6a3a2f7a83d1e29b49810029c8eb9649f62fc41",
++      "bytes": 44403,
++      "previous_sha256": null
++    },
++    {
++      "path": "docs/slr14/revisi-muat-ulang-20261115/bukti/frontend-build.txt",
++      "sha256": "8f11688489ea5e9f4ed444c8ca0988d926a223c69adcdd4874fdf6893c11ea56",
++      "bytes": 4254,
++      "previous_sha256": null
++    }
++  ]
++}
+diff --git a/docs/slr14/revisi-muat-ulang-20261115/README.md b/docs/slr14/revisi-muat-ulang-20261115/README.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..b0a3a614a7951b00f7ef2ccc50d36ddf00218704
+--- /dev/null
++++ b/docs/slr14/revisi-muat-ulang-20261115/README.md
+@@ -0,0 +1,41 @@
++# SLR14 — tombol Muat ulang pada Laporan Saya
++
++Pada desktop, kolom tombol Muat ulang sebelumnya berukuran 110 piksel, sedangkan tombol memiliki lebar minimum 178 piksel. Akibatnya, tombol melampaui kolom dan terpotong oleh panel daftar. Sebelum perbaikan, masalah ini direproduksi pada viewport 1440 piksel dengan sekitar 68 piksel tombol berada di luar panel.
++
++Kolom tindakan sekarang mengikuti lebar isi dan batas minimum tombol melalui `max-content`. Tiga filter tetap menggunakan pembagian ruang yang ada. Aturan dua kolom pada panel sempit dan satu kolom pada HP tetap digunakan. Tombol Muat ulang maupun keadaan Memuat… mendapat ruang yang cukup, termasuk ikon dan area kliknya.
++
++Perubahan aplikasi hanya satu aturan pada `code/frontend/src/mobile-reviewed.css`. Revisi ini merupakan implementasi SLR14 dari temuan pengujian SLR15.
++
++## Memasang dan mencoba
++
++Paket ini melanjutkan `SILAR_SLR14_revisi_HP_dan_pencarian_14Nov2026.zip`. Hentikan frontend, lalu gabungkan berkas sesuai path ke proyek yang sudah menggunakan paket tersebut. Dari `code/frontend`, jalankan `npm.cmd run build`, kemudian `npm.cmd run dev`.
++
++Sebagai alternatif, jalankan `git apply --check PERBAIKAN_SLR14_MUAT_ULANG.patch` lalu `git apply PERBAIKAN_SLR14_MUAT_ULANG.patch` dari root proyek. Gunakan salah satu cara penggabungan. Patch diuji terhadap isi persis paket 14 November. Jika ada perubahan lokal pada berkas yang sama, periksa dan gabungkan perbedaannya terlebih dahulu.
++
++Di Laporan Saya, pastikan tombol terbaca utuh pada desktop, tablet dan HP. Pilih kategori/status, gunakan pencarian, lalu tekan Muat ulang. Pilihan yang sudah diterapkan harus tetap sama dan daftar dibaca kembali. Keadaan Memuat… harus terbaca selama permintaan berjalan. Untuk PWA produksi, terima pembaruan build melalui Aplikasi & Koneksi.
++
++## Verifikasi
++
++- Build produksi berhasil.
++- Sebelum perbaikan, pemotongan tombol berhasil direproduksi.
++- Sesudah perbaikan, 60 pemeriksaan tata letak lulus tanpa tombol/filter terpotong, saling menimpa atau melampaui panel. Cakupan: 16 lebar viewport dari 320 hingga 1640 piksel, batas ukuran panel untuk container query, keadaan loading, serta emulasi sentuhan HP. Pemeriksaan mencakup mode terang dan gelap.
++- Tiga alur tombol lulus: loading dan pemulihan keadaan siap, pemeliharaan kata kunci/filter saat reload, dan aktivasi menggunakan keyboard.
++- Tidak ada page error atau panggilan API di luar fixture yang disiapkan.
++
++Pengujian ini memakai Chromium/Playwright pada build produksi dengan respons API lokal yang disimulasikan untuk mengisolasi tata letak. Backend, inferensi AI dan email tidak diuji ulang dalam perbaikan CSS ini. Bukti tersedia di `bukti/frontend-build.txt`, `bukti/browser-before.json` dan `bukti/browser-result.json`. Screenshot digunakan untuk pemeriksaan internal dan tidak disertakan dalam paket.
++
++## Commit dan pencatatan card
++
++Saran commit untuk perbaikan ini:
++
++```text
++fix(slr14): perbaiki tombol muat ulang pada Laporan Saya
++```
++
++Jika seluruh revisi antarmuka dan pencarian paket sebelumnya belum di-commit dan akan digabung menjadi satu commit, judul yang mencakup semuanya:
++
++```text
++feat(slr14): selaraskan antarmuka responsif dan pencarian laporan
++```
++
++[Catatan bukti pekerjaan](BUKTI_PEKERJAAN_SLR14.md) dapat ditempel sebagai tambahan pada card SLR14 setelah SHA/URL commit tersedia. Penyusun belum melakukan commit, push atau perubahan card GitHub.
+diff --git a/docs/slr14/revisi-muat-ulang-20261115/bukti/browser-before.json b/docs/slr14/revisi-muat-ulang-20261115/bukti/browser-before.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..7d28d8e79230ffd5c6ed08dc6bc87ba728d9ca1b
+--- /dev/null
++++ b/docs/slr14/revisi-muat-ulang-20261115/bukti/browser-before.json
+@@ -0,0 +1,48 @@
++{
++  "mode": "before",
++  "frontend_mode": "production build via vite preview",
++  "api_mode": "local browser read fixtures; no live backend, AI or email exercised",
++  "layout_cases": [
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 1408,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 1136,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 1408,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 1136,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 1297.984375,
++        "right": 1475.984375,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "407.172px 339.297px 237.516px 110px",
++      "issues": [
++        "button clipped by panel",
++        "filter row overflows",
++        "button hit target clipped"
++      ],
++      "case": "desktop-before:1440"
++    }
++  ],
++  "flow_checks": [],
++  "page_errors": [],
++  "unexpected_api_calls": [],
++  "status": "REPRODUCED",
++  "screenshots_in_package": false
++}
+diff --git a/docs/slr14/revisi-muat-ulang-20261115/bukti/browser-result.json b/docs/slr14/revisi-muat-ulang-20261115/bukti/browser-result.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..af2b27e715bb6c0ffba818d65aa0d7e39bd71a25
+--- /dev/null
++++ b/docs/slr14/revisi-muat-ulang-20261115/bukti/browser-result.json
+@@ -0,0 +1,1937 @@
++{
++  "mode": "after",
++  "frontend_mode": "production build via vite preview",
++  "api_mode": "local browser read fixtures; no live backend, AI or email exercised",
++  "layout_cases": [
++    {
++      "viewport": 1640,
++      "panel": {
++        "left": 272,
++        "right": 1608,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 1336,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 1608,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 1336,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 1430,
++        "right": 1608,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "461.781px 384.828px 269.391px 178px",
++      "issues": [],
++      "case": "viewport:1640:False"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 1408,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 1136,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 1408,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 1136,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 1229.984375,
++        "right": 1407.984375,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "379.031px 315.859px 221.094px 178px",
++      "issues": [],
++      "case": "viewport:1440:False"
++    },
++    {
++      "viewport": 1366,
++      "panel": {
++        "left": 272,
++        "right": 1334,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 1062,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 1334,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 1062,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 1155.984375,
++        "right": 1333.984375,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "348.406px 290.344px 203.234px 178px",
++      "issues": [],
++      "case": "viewport:1366:False"
++    },
++    {
++      "viewport": 1280,
++      "panel": {
++        "left": 272,
++        "right": 1248,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 976,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 1248,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 976,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 1069.984375,
++        "right": 1247.984375,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "312.812px 260.703px 182.469px 178px",
++      "issues": [],
++      "case": "viewport:1280:False"
++    },
++    {
++      "viewport": 1243,
++      "panel": {
++        "left": 272,
++        "right": 1211,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 939,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 1211,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 939,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 1032.984375,
++        "right": 1210.984375,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "297.516px 247.922px 173.547px 178px",
++      "issues": [],
++      "case": "viewport:1243:False"
++    },
++    {
++      "viewport": 1101,
++      "panel": {
++        "left": 272,
++        "right": 1069,
++        "top": 246.34375,
++        "bottom": 1114.171875,
++        "width": 797,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 1069,
++        "top": 422.625,
++        "bottom": 496.421875,
++        "width": 797,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 891,
++        "right": 1069,
++        "top": 450.421875,
++        "bottom": 496.421875,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "238.75px 198.969px 139.281px 178px",
++      "issues": [],
++      "case": "viewport:1101:False"
++    },
++    {
++      "viewport": 1100,
++      "panel": {
++        "left": 264,
++        "right": 1076,
++        "top": 246.125,
++        "bottom": 1113.953125,
++        "width": 812,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 264,
++        "right": 1076,
++        "top": 422.40625,
++        "bottom": 496.203125,
++        "width": 812,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 966.984375,
++        "right": 1075.984375,
++        "top": 450.203125,
++        "bottom": 496.203125,
++        "width": 109,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "273.516px 227.922px 159.547px 109px",
++      "issues": [],
++      "case": "viewport:1100:False"
++    },
++    {
++      "viewport": 1024,
++      "panel": {
++        "left": 264,
++        "right": 1000,
++        "top": 246.125,
++        "bottom": 1113.953125,
++        "width": 736,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 264,
++        "right": 1000,
++        "top": 422.40625,
++        "bottom": 496.203125,
++        "width": 736,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 891,
++        "right": 1000,
++        "top": 450.203125,
++        "bottom": 496.203125,
++        "width": 109,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "242.062px 201.719px 141.219px 109px",
++      "issues": [],
++      "case": "viewport:1024:False"
++    },
++    {
++      "viewport": 980,
++      "panel": {
++        "left": 264,
++        "right": 956,
++        "top": 246.125,
++        "bottom": 1113.953125,
++        "width": 692,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 264,
++        "right": 956,
++        "top": 422.40625,
++        "bottom": 496.203125,
++        "width": 692,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 846.984375,
++        "right": 955.984375,
++        "top": 450.203125,
++        "bottom": 496.203125,
++        "width": 109,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "223.859px 186.547px 130.578px 109px",
++      "issues": [],
++      "case": "viewport:980:False"
++    },
++    {
++      "viewport": 900,
++      "panel": {
++        "left": 264,
++        "right": 876,
++        "top": 158.125,
++        "bottom": 1113.75,
++        "width": 612,
++        "height": 955.625
++      },
++      "controls": {
++        "left": 264,
++        "right": 876,
++        "top": 334.40625,
++        "bottom": 496,
++        "width": 612,
++        "height": 161.59375
++      },
++      "button": {
++        "left": 577,
++        "right": 876,
++        "top": 450,
++        "bottom": 496,
++        "width": 299,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "299px 299px",
++      "issues": [],
++      "case": "viewport:900:False"
++    },
++    {
++      "viewport": 820,
++      "panel": {
++        "left": 264,
++        "right": 796,
++        "top": 158.125,
++        "bottom": 1113.75,
++        "width": 532,
++        "height": 955.625
++      },
++      "controls": {
++        "left": 264,
++        "right": 796,
++        "top": 334.40625,
++        "bottom": 496,
++        "width": 532,
++        "height": 161.59375
++      },
++      "button": {
++        "left": 537,
++        "right": 796,
++        "top": 450,
++        "bottom": 496,
++        "width": 259,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "259px 259px",
++      "issues": [],
++      "case": "viewport:820:False"
++    },
++    {
++      "viewport": 761,
++      "panel": {
++        "left": 264,
++        "right": 737,
++        "top": 158.125,
++        "bottom": 1113.75,
++        "width": 473,
++        "height": 955.625
++      },
++      "controls": {
++        "left": 264,
++        "right": 737,
++        "top": 334.40625,
++        "bottom": 496,
++        "width": 473,
++        "height": 161.59375
++      },
++      "button": {
++        "left": 507.5,
++        "right": 737,
++        "top": 450,
++        "bottom": 496,
++        "width": 229.5,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "229.5px 229.5px",
++      "issues": [],
++      "case": "viewport:761:False"
++    },
++    {
++      "viewport": 760,
++      "panel": {
++        "left": 16,
++        "right": 744,
++        "top": -96.3125,
++        "bottom": 2960.9375,
++        "width": 728,
++        "height": 3057.25
++      },
++      "controls": {
++        "left": 34,
++        "right": 726,
++        "top": 166.171875,
++        "bottom": 500.046875,
++        "width": 692,
++        "height": 333.875
++      },
++      "button": {
++        "left": 34,
++        "right": 726,
++        "top": 450.046875,
++        "bottom": 500.046875,
++        "width": 692,
++        "height": 50
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "692px",
++      "issues": [],
++      "case": "viewport:760:False"
++    },
++    {
++      "viewport": 640,
++      "panel": {
++        "left": 16,
++        "right": 624,
++        "top": -96.3125,
++        "bottom": 2960.9375,
++        "width": 608,
++        "height": 3057.25
++      },
++      "controls": {
++        "left": 34,
++        "right": 606,
++        "top": 166.171875,
++        "bottom": 500.046875,
++        "width": 572,
++        "height": 333.875
++      },
++      "button": {
++        "left": 34,
++        "right": 606,
++        "top": 450.046875,
++        "bottom": 500.046875,
++        "width": 572,
++        "height": 50
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "572px",
++      "issues": [],
++      "case": "viewport:640:False"
++    },
++    {
++      "viewport": 390,
++      "panel": {
++        "left": 16,
++        "right": 374,
++        "top": -114.9375,
++        "bottom": 2961,
++        "width": 358,
++        "height": 3075.9375
++      },
++      "controls": {
++        "left": 34,
++        "right": 356,
++        "top": 166.234375,
++        "bottom": 500.109375,
++        "width": 322,
++        "height": 333.875
++      },
++      "button": {
++        "left": 34,
++        "right": 356,
++        "top": 450.109375,
++        "bottom": 500.109375,
++        "width": 322,
++        "height": 50
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "322px",
++      "issues": [],
++      "case": "viewport:390:False"
++    },
++    {
++      "viewport": 320,
++      "panel": {
++        "left": 16,
++        "right": 304,
++        "top": -157.5,
++        "bottom": 2961.03125,
++        "width": 288,
++        "height": 3118.53125
++      },
++      "controls": {
++        "left": 34,
++        "right": 286,
++        "top": 166.265625,
++        "bottom": 500.140625,
++        "width": 252,
++        "height": 333.875
++      },
++      "button": {
++        "left": 34,
++        "right": 286,
++        "top": 450.140625,
++        "bottom": 500.140625,
++        "width": 252,
++        "height": 50
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "252px",
++      "issues": [],
++      "case": "viewport:320:False"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 1122,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 850,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 1122,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 850,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 944,
++        "right": 1122,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "260.688px 217.234px 152.078px 178px",
++      "issues": [],
++      "case": "container:850:False"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 992,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 720,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 992,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 720,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 814,
++        "right": 992,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "206.891px 172.406px 120.703px 178px",
++      "issues": [],
++      "case": "container:720:False"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 972,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 700,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 972,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 700,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 794,
++        "right": 972,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "198.609px 165.516px 115.875px 178px",
++      "issues": [],
++      "case": "container:700:False"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 953,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 681,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 953,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 681,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 774.984375,
++        "right": 952.984375,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "188.719px 157.266px 115px 178px",
++      "issues": [],
++      "case": "container:681:False"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 952,
++        "top": 157.65625,
++        "bottom": 1113.28125,
++        "width": 680,
++        "height": 955.625
++      },
++      "controls": {
++        "left": 272,
++        "right": 952,
++        "top": 333.9375,
++        "bottom": 495.53125,
++        "width": 680,
++        "height": 161.59375
++      },
++      "button": {
++        "left": 619,
++        "right": 952,
++        "top": 449.53125,
++        "bottom": 495.53125,
++        "width": 333,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "333px 333px",
++      "issues": [],
++      "case": "container:680:False"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 927,
++        "top": 157.65625,
++        "bottom": 1113.28125,
++        "width": 655,
++        "height": 955.625
++      },
++      "controls": {
++        "left": 272,
++        "right": 927,
++        "top": 333.9375,
++        "bottom": 495.53125,
++        "width": 655,
++        "height": 161.59375
++      },
++      "button": {
++        "left": 606.5,
++        "right": 927,
++        "top": 449.53125,
++        "bottom": 495.53125,
++        "width": 320.5,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "320.5px 320.5px",
++      "issues": [],
++      "case": "container:655:False"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 693,
++        "top": 157.65625,
++        "bottom": 1152.28125,
++        "width": 421,
++        "height": 994.625
++      },
++      "controls": {
++        "left": 272,
++        "right": 693,
++        "top": 333.9375,
++        "bottom": 495.53125,
++        "width": 421,
++        "height": 161.59375
++      },
++      "button": {
++        "left": 489.5,
++        "right": 693,
++        "top": 449.53125,
++        "bottom": 495.53125,
++        "width": 203.5,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "203.5px 203.5px",
++      "issues": [],
++      "case": "container:421:False"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 692,
++        "top": 10.65625,
++        "bottom": 1153.078125,
++        "width": 420,
++        "height": 1142.421875
++      },
++      "controls": {
++        "left": 272,
++        "right": 692,
++        "top": 186.9375,
++        "bottom": 496.328125,
++        "width": 420,
++        "height": 309.390625
++      },
++      "button": {
++        "left": 272,
++        "right": 692,
++        "top": 450.328125,
++        "bottom": 496.328125,
++        "width": 420,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "420px",
++      "issues": [],
++      "case": "container:420:False"
++    },
++    {
++      "viewport": 1640,
++      "panel": {
++        "left": 272,
++        "right": 1608,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 1336,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 1608,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 1336,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 1430,
++        "right": 1608,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "461.781px 384.828px 269.391px 178px",
++      "issues": [],
++      "case": "viewport:1640:True"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 1408,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 1136,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 1408,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 1136,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 1229.984375,
++        "right": 1407.984375,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "379.031px 315.859px 221.094px 178px",
++      "issues": [],
++      "case": "viewport:1440:True"
++    },
++    {
++      "viewport": 1366,
++      "panel": {
++        "left": 272,
++        "right": 1334,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 1062,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 1334,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 1062,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 1155.984375,
++        "right": 1333.984375,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "348.406px 290.344px 203.234px 178px",
++      "issues": [],
++      "case": "viewport:1366:True"
++    },
++    {
++      "viewport": 1280,
++      "panel": {
++        "left": 272,
++        "right": 1248,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 976,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 1248,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 976,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 1069.984375,
++        "right": 1247.984375,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "312.812px 260.703px 182.469px 178px",
++      "issues": [],
++      "case": "viewport:1280:True"
++    },
++    {
++      "viewport": 1243,
++      "panel": {
++        "left": 272,
++        "right": 1211,
++        "top": 246.34375,
++        "bottom": 1114.171875,
++        "width": 939,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 1211,
++        "top": 422.625,
++        "bottom": 496.421875,
++        "width": 939,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 1032.984375,
++        "right": 1210.984375,
++        "top": 450.421875,
++        "bottom": 496.421875,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "297.516px 247.922px 173.547px 178px",
++      "issues": [],
++      "case": "viewport:1243:True"
++    },
++    {
++      "viewport": 1101,
++      "panel": {
++        "left": 272,
++        "right": 1069,
++        "top": 246.34375,
++        "bottom": 1114.171875,
++        "width": 797,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 1069,
++        "top": 422.625,
++        "bottom": 496.421875,
++        "width": 797,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 891,
++        "right": 1069,
++        "top": 450.421875,
++        "bottom": 496.421875,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "238.75px 198.969px 139.281px 178px",
++      "issues": [],
++      "case": "viewport:1101:True"
++    },
++    {
++      "viewport": 1100,
++      "panel": {
++        "left": 264,
++        "right": 1076,
++        "top": 246.125,
++        "bottom": 1113.953125,
++        "width": 812,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 264,
++        "right": 1076,
++        "top": 422.40625,
++        "bottom": 496.203125,
++        "width": 812,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 966.984375,
++        "right": 1075.984375,
++        "top": 450.203125,
++        "bottom": 496.203125,
++        "width": 109,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "273.516px 227.922px 159.547px 109px",
++      "issues": [],
++      "case": "viewport:1100:True"
++    },
++    {
++      "viewport": 1024,
++      "panel": {
++        "left": 264,
++        "right": 1000,
++        "top": 246.125,
++        "bottom": 1113.953125,
++        "width": 736,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 264,
++        "right": 1000,
++        "top": 422.40625,
++        "bottom": 496.203125,
++        "width": 736,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 891,
++        "right": 1000,
++        "top": 450.203125,
++        "bottom": 496.203125,
++        "width": 109,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "242.062px 201.719px 141.219px 109px",
++      "issues": [],
++      "case": "viewport:1024:True"
++    },
++    {
++      "viewport": 980,
++      "panel": {
++        "left": 264,
++        "right": 956,
++        "top": 246.125,
++        "bottom": 1113.953125,
++        "width": 692,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 264,
++        "right": 956,
++        "top": 422.40625,
++        "bottom": 496.203125,
++        "width": 692,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 846.984375,
++        "right": 955.984375,
++        "top": 450.203125,
++        "bottom": 496.203125,
++        "width": 109,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "223.859px 186.547px 130.578px 109px",
++      "issues": [],
++      "case": "viewport:980:True"
++    },
++    {
++      "viewport": 900,
++      "panel": {
++        "left": 264,
++        "right": 876,
++        "top": 158.125,
++        "bottom": 1113.75,
++        "width": 612,
++        "height": 955.625
++      },
++      "controls": {
++        "left": 264,
++        "right": 876,
++        "top": 334.40625,
++        "bottom": 496,
++        "width": 612,
++        "height": 161.59375
++      },
++      "button": {
++        "left": 577,
++        "right": 876,
++        "top": 450,
++        "bottom": 496,
++        "width": 299,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "299px 299px",
++      "issues": [],
++      "case": "viewport:900:True"
++    },
++    {
++      "viewport": 820,
++      "panel": {
++        "left": 264,
++        "right": 796,
++        "top": 158.125,
++        "bottom": 1113.75,
++        "width": 532,
++        "height": 955.625
++      },
++      "controls": {
++        "left": 264,
++        "right": 796,
++        "top": 334.40625,
++        "bottom": 496,
++        "width": 532,
++        "height": 161.59375
++      },
++      "button": {
++        "left": 537,
++        "right": 796,
++        "top": 450,
++        "bottom": 496,
++        "width": 259,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "259px 259px",
++      "issues": [],
++      "case": "viewport:820:True"
++    },
++    {
++      "viewport": 761,
++      "panel": {
++        "left": 264,
++        "right": 737,
++        "top": 158.125,
++        "bottom": 1113.75,
++        "width": 473,
++        "height": 955.625
++      },
++      "controls": {
++        "left": 264,
++        "right": 737,
++        "top": 334.40625,
++        "bottom": 496,
++        "width": 473,
++        "height": 161.59375
++      },
++      "button": {
++        "left": 507.5,
++        "right": 737,
++        "top": 450,
++        "bottom": 496,
++        "width": 229.5,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "229.5px 229.5px",
++      "issues": [],
++      "case": "viewport:761:True"
++    },
++    {
++      "viewport": 760,
++      "panel": {
++        "left": 16,
++        "right": 744,
++        "top": -96.3125,
++        "bottom": 2960.9375,
++        "width": 728,
++        "height": 3057.25
++      },
++      "controls": {
++        "left": 34,
++        "right": 726,
++        "top": 166.171875,
++        "bottom": 500.046875,
++        "width": 692,
++        "height": 333.875
++      },
++      "button": {
++        "left": 34,
++        "right": 726,
++        "top": 450.046875,
++        "bottom": 500.046875,
++        "width": 692,
++        "height": 50
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "692px",
++      "issues": [],
++      "case": "viewport:760:True"
++    },
++    {
++      "viewport": 640,
++      "panel": {
++        "left": 16,
++        "right": 624,
++        "top": -96.3125,
++        "bottom": 2960.9375,
++        "width": 608,
++        "height": 3057.25
++      },
++      "controls": {
++        "left": 34,
++        "right": 606,
++        "top": 166.171875,
++        "bottom": 500.046875,
++        "width": 572,
++        "height": 333.875
++      },
++      "button": {
++        "left": 34,
++        "right": 606,
++        "top": 450.046875,
++        "bottom": 500.046875,
++        "width": 572,
++        "height": 50
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "572px",
++      "issues": [],
++      "case": "viewport:640:True"
++    },
++    {
++      "viewport": 390,
++      "panel": {
++        "left": 16,
++        "right": 374,
++        "top": -114.9375,
++        "bottom": 2961,
++        "width": 358,
++        "height": 3075.9375
++      },
++      "controls": {
++        "left": 34,
++        "right": 356,
++        "top": 166.234375,
++        "bottom": 500.109375,
++        "width": 322,
++        "height": 333.875
++      },
++      "button": {
++        "left": 34,
++        "right": 356,
++        "top": 450.109375,
++        "bottom": 500.109375,
++        "width": 322,
++        "height": 50
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "322px",
++      "issues": [],
++      "case": "viewport:390:True"
++    },
++    {
++      "viewport": 320,
++      "panel": {
++        "left": 16,
++        "right": 304,
++        "top": -157.5,
++        "bottom": 2961.03125,
++        "width": 288,
++        "height": 3118.53125
++      },
++      "controls": {
++        "left": 34,
++        "right": 286,
++        "top": 166.265625,
++        "bottom": 500.140625,
++        "width": 252,
++        "height": 333.875
++      },
++      "button": {
++        "left": 34,
++        "right": 286,
++        "top": 450.140625,
++        "bottom": 500.140625,
++        "width": 252,
++        "height": 50
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "252px",
++      "issues": [],
++      "case": "viewport:320:True"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 1122,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 850,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 1122,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 850,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 944,
++        "right": 1122,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "260.688px 217.234px 152.078px 178px",
++      "issues": [],
++      "case": "container:850:True"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 992,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 720,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 992,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 720,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 814,
++        "right": 992,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "206.891px 172.406px 120.703px 178px",
++      "issues": [],
++      "case": "container:720:True"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 972,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 700,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 972,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 700,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 794,
++        "right": 972,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "198.609px 165.516px 115.875px 178px",
++      "issues": [],
++      "case": "container:700:True"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 953,
++        "top": 245.65625,
++        "bottom": 1113.484375,
++        "width": 681,
++        "height": 867.828125
++      },
++      "controls": {
++        "left": 272,
++        "right": 953,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 681,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 774.984375,
++        "right": 952.984375,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "188.719px 157.266px 115px 178px",
++      "issues": [],
++      "case": "container:681:True"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 952,
++        "top": 157.65625,
++        "bottom": 1113.28125,
++        "width": 680,
++        "height": 955.625
++      },
++      "controls": {
++        "left": 272,
++        "right": 952,
++        "top": 333.9375,
++        "bottom": 495.53125,
++        "width": 680,
++        "height": 161.59375
++      },
++      "button": {
++        "left": 619,
++        "right": 952,
++        "top": 449.53125,
++        "bottom": 495.53125,
++        "width": 333,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "333px 333px",
++      "issues": [],
++      "case": "container:680:True"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 927,
++        "top": 157.65625,
++        "bottom": 1113.28125,
++        "width": 655,
++        "height": 955.625
++      },
++      "controls": {
++        "left": 272,
++        "right": 927,
++        "top": 333.9375,
++        "bottom": 495.53125,
++        "width": 655,
++        "height": 161.59375
++      },
++      "button": {
++        "left": 606.5,
++        "right": 927,
++        "top": 449.53125,
++        "bottom": 495.53125,
++        "width": 320.5,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "320.5px 320.5px",
++      "issues": [],
++      "case": "container:655:True"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 693,
++        "top": 157.65625,
++        "bottom": 1152.28125,
++        "width": 421,
++        "height": 994.625
++      },
++      "controls": {
++        "left": 272,
++        "right": 693,
++        "top": 333.9375,
++        "bottom": 495.53125,
++        "width": 421,
++        "height": 161.59375
++      },
++      "button": {
++        "left": 489.5,
++        "right": 693,
++        "top": 449.53125,
++        "bottom": 495.53125,
++        "width": 203.5,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "203.5px 203.5px",
++      "issues": [],
++      "case": "container:421:True"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 692,
++        "top": 10.65625,
++        "bottom": 1153.078125,
++        "width": 420,
++        "height": 1142.421875
++      },
++      "controls": {
++        "left": 272,
++        "right": 692,
++        "top": 186.9375,
++        "bottom": 496.328125,
++        "width": 420,
++        "height": 309.390625
++      },
++      "button": {
++        "left": 272,
++        "right": 692,
++        "top": 450.328125,
++        "bottom": 496.328125,
++        "width": 420,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "178px",
++      "grid_columns": "420px",
++      "issues": [],
++      "case": "container:420:True"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 1408,
++        "top": 245.65625,
++        "bottom": 815.15625,
++        "width": 1136,
++        "height": 569.5
++      },
++      "controls": {
++        "left": 272,
++        "right": 1408,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 1136,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 1229.984375,
++        "right": 1407.984375,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Memuat…",
++      "button_min_width": "178px",
++      "grid_columns": "379.031px 315.859px 221.094px 178px",
++      "issues": [],
++      "case": "loading:1440:False"
++    },
++    {
++      "viewport": 820,
++      "panel": {
++        "left": 264,
++        "right": 796,
++        "top": 158.125,
++        "bottom": 838.8125,
++        "width": 532,
++        "height": 680.6875
++      },
++      "controls": {
++        "left": 264,
++        "right": 796,
++        "top": 334.40625,
++        "bottom": 496,
++        "width": 532,
++        "height": 161.59375
++      },
++      "button": {
++        "left": 537,
++        "right": 796,
++        "top": 450,
++        "bottom": 496,
++        "width": 259,
++        "height": 46
++      },
++      "button_text": "Memuat…",
++      "button_min_width": "0px",
++      "grid_columns": "259px 259px",
++      "issues": [],
++      "case": "loading:820:False"
++    },
++    {
++      "viewport": 390,
++      "panel": {
++        "left": 16,
++        "right": 374,
++        "top": -114.9375,
++        "bottom": 907.421875,
++        "width": 358,
++        "height": 1022.359375
++      },
++      "controls": {
++        "left": 34,
++        "right": 356,
++        "top": 166.234375,
++        "bottom": 500.109375,
++        "width": 322,
++        "height": 333.875
++      },
++      "button": {
++        "left": 34,
++        "right": 356,
++        "top": 450.109375,
++        "bottom": 500.109375,
++        "width": 322,
++        "height": 50
++      },
++      "button_text": "Memuat…",
++      "button_min_width": "0px",
++      "grid_columns": "322px",
++      "issues": [],
++      "case": "loading:390:False"
++    },
++    {
++      "viewport": 1440,
++      "panel": {
++        "left": 272,
++        "right": 1408,
++        "top": 245.65625,
++        "bottom": 816.15625,
++        "width": 1136,
++        "height": 570.5
++      },
++      "controls": {
++        "left": 272,
++        "right": 1408,
++        "top": 421.9375,
++        "bottom": 495.734375,
++        "width": 1136,
++        "height": 73.796875
++      },
++      "button": {
++        "left": 1229.984375,
++        "right": 1407.984375,
++        "top": 449.734375,
++        "bottom": 495.734375,
++        "width": 178,
++        "height": 46
++      },
++      "button_text": "Memuat…",
++      "button_min_width": "178px",
++      "grid_columns": "379.031px 315.859px 221.094px 178px",
++      "issues": [],
++      "case": "loading:1440:True"
++    },
++    {
++      "viewport": 820,
++      "panel": {
++        "left": 264,
++        "right": 796,
++        "top": 158.125,
++        "bottom": 839.8125,
++        "width": 532,
++        "height": 681.6875
++      },
++      "controls": {
++        "left": 264,
++        "right": 796,
++        "top": 334.40625,
++        "bottom": 496,
++        "width": 532,
++        "height": 161.59375
++      },
++      "button": {
++        "left": 537,
++        "right": 796,
++        "top": 450,
++        "bottom": 496,
++        "width": 259,
++        "height": 46
++      },
++      "button_text": "Memuat…",
++      "button_min_width": "0px",
++      "grid_columns": "259px 259px",
++      "issues": [],
++      "case": "loading:820:True"
++    },
++    {
++      "viewport": 390,
++      "panel": {
++        "left": 16,
++        "right": 374,
++        "top": -114.9375,
++        "bottom": 908.421875,
++        "width": 358,
++        "height": 1023.359375
++      },
++      "controls": {
++        "left": 34,
++        "right": 356,
++        "top": 166.234375,
++        "bottom": 500.109375,
++        "width": 322,
++        "height": 333.875
++      },
++      "button": {
++        "left": 34,
++        "right": 356,
++        "top": 450.109375,
++        "bottom": 500.109375,
++        "width": 322,
++        "height": 50
++      },
++      "button_text": "Memuat…",
++      "button_min_width": "0px",
++      "grid_columns": "322px",
++      "issues": [],
++      "case": "loading:390:True"
++    },
++    {
++      "viewport": 820,
++      "panel": {
++        "left": 264,
++        "right": 796,
++        "top": 150.125,
++        "bottom": 1123.75,
++        "width": 532,
++        "height": 973.625
++      },
++      "controls": {
++        "left": 264,
++        "right": 796,
++        "top": 334.40625,
++        "bottom": 496,
++        "width": 532,
++        "height": 161.59375
++      },
++      "button": {
++        "left": 537,
++        "right": 796,
++        "top": 450,
++        "bottom": 496,
++        "width": 259,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "259px 259px",
++      "issues": [],
++      "case": "touch:820:False"
++    },
++    {
++      "viewport": 390,
++      "panel": {
++        "left": 16,
++        "right": 374,
++        "top": -114.9375,
++        "bottom": 2961,
++        "width": 358,
++        "height": 3075.9375
++      },
++      "controls": {
++        "left": 34,
++        "right": 356,
++        "top": 166.234375,
++        "bottom": 500.109375,
++        "width": 322,
++        "height": 333.875
++      },
++      "button": {
++        "left": 34,
++        "right": 356,
++        "top": 450.109375,
++        "bottom": 500.109375,
++        "width": 322,
++        "height": 50
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "322px",
++      "issues": [],
++      "case": "touch:390:False"
++    },
++    {
++      "viewport": 320,
++      "panel": {
++        "left": 16,
++        "right": 304,
++        "top": -157.5,
++        "bottom": 2961.03125,
++        "width": 288,
++        "height": 3118.53125
++      },
++      "controls": {
++        "left": 34,
++        "right": 286,
++        "top": 166.265625,
++        "bottom": 500.140625,
++        "width": 252,
++        "height": 333.875
++      },
++      "button": {
++        "left": 34,
++        "right": 286,
++        "top": 450.140625,
++        "bottom": 500.140625,
++        "width": 252,
++        "height": 50
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "252px",
++      "issues": [],
++      "case": "touch:320:False"
++    },
++    {
++      "viewport": 820,
++      "panel": {
++        "left": 264,
++        "right": 796,
++        "top": 150.125,
++        "bottom": 1123.75,
++        "width": 532,
++        "height": 973.625
++      },
++      "controls": {
++        "left": 264,
++        "right": 796,
++        "top": 334.40625,
++        "bottom": 496,
++        "width": 532,
++        "height": 161.59375
++      },
++      "button": {
++        "left": 537,
++        "right": 796,
++        "top": 450,
++        "bottom": 496,
++        "width": 259,
++        "height": 46
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "259px 259px",
++      "issues": [],
++      "case": "touch:820:True"
++    },
++    {
++      "viewport": 390,
++      "panel": {
++        "left": 16,
++        "right": 374,
++        "top": -114.9375,
++        "bottom": 2961,
++        "width": 358,
++        "height": 3075.9375
++      },
++      "controls": {
++        "left": 34,
++        "right": 356,
++        "top": 166.234375,
++        "bottom": 500.109375,
++        "width": 322,
++        "height": 333.875
++      },
++      "button": {
++        "left": 34,
++        "right": 356,
++        "top": 450.109375,
++        "bottom": 500.109375,
++        "width": 322,
++        "height": 50
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "322px",
++      "issues": [],
++      "case": "touch:390:True"
++    },
++    {
++      "viewport": 320,
++      "panel": {
++        "left": 16,
++        "right": 304,
++        "top": -157.5,
++        "bottom": 2961.03125,
++        "width": 288,
++        "height": 3118.53125
++      },
++      "controls": {
++        "left": 34,
++        "right": 286,
++        "top": 166.265625,
++        "bottom": 500.140625,
++        "width": 252,
++        "height": 333.875
++      },
++      "button": {
++        "left": 34,
++        "right": 286,
++        "top": 450.140625,
++        "bottom": 500.140625,
++        "width": 252,
++        "height": 50
++      },
++      "button_text": "Muat ulang",
++      "button_min_width": "0px",
++      "grid_columns": "252px",
++      "issues": [],
++      "case": "touch:320:True"
++    }
++  ],
++  "flow_checks": [
++    "Reload shows a fully visible disabled loading button and returns to the ready state",
++    "Reload retains the committed Reporter search and category/status filters",
++    "Keyboard activation triggers the same report-list reload"
++  ],
++  "page_errors": [],
++  "unexpected_api_calls": [],
++  "status": "PASSED",
++  "screenshots_in_package": false,
++  "visual_review": "Desktop and phone filter/reload panels inspected in light and dark; screenshots remain internal."
++}
+diff --git a/docs/slr14/revisi-muat-ulang-20261115/bukti/frontend-build.txt b/docs/slr14/revisi-muat-ulang-20261115/bukti/frontend-build.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..4a18aef3cff01f9ff5a2dfea39cb5a26ebad4810
+--- /dev/null
++++ b/docs/slr14/revisi-muat-ulang-20261115/bukti/frontend-build.txt
+@@ -0,0 +1,59 @@
++npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
++
++> silar-slr10-frontend@1.1.1 build
++> vite build
++
++vite v7.3.7 building client environment for production...
++transforming...
++✓ 127 modules transformed.
++rendering chunks...
++computing gzip size...
++dist/index.html                                      1.56 kB │ gzip:     0.80 kB
++dist/sw.js                                           3.43 kB
++dist/assets/nara-ZsaGgmM6.svg                       70.54 kB │ gzip:    13.20 kB
++dist/assets/nara-dark-IbaIl4kU.svg                  70.56 kB │ gzip:    13.21 kB
++dist/assets/portal-hero-CeIvL_w2.webp               98.82 kB
++dist/assets/sena-C3A4rkNV.svg                      102.82 kB │ gzip:    15.17 kB
++dist/assets/sena-dark-Big5evOc.svg                 102.84 kB │ gzip:    15.18 kB
++dist/assets/start-CtsQazq9.svg                     234.14 kB │ gzip:   149.82 kB
++dist/assets/start-dark-DVcX997r.svg                234.16 kB │ gzip:   149.84 kB
++dist/assets/privacy-BW608JbX.svg                   234.67 kB │ gzip:   149.94 kB
++dist/assets/privacy-dark-LiBJFNyc.svg              234.69 kB │ gzip:   149.96 kB
++dist/assets/auth-mobile-scene-CZSFMt6V.svg         388.17 kB │ gzip:   179.44 kB
++dist/assets/auth-mobile-scene-dark-BA1p18Nl.svg    388.19 kB │ gzip:   179.45 kB
++dist/assets/reporting-scene-Chx1PA0k.svg           412.43 kB │ gzip:   183.08 kB
++dist/assets/reporting-scene-dark-DtLdqysh.svg      412.45 kB │ gzip:   183.10 kB
++dist/assets/auth-identity-BIULP5db.svg             573.05 kB │ gzip:   207.74 kB
++dist/assets/auth-identity-dark-QRPyuOka.svg        573.07 kB │ gzip:   207.76 kB
++dist/assets/reporter-welcome-DDZdLYCb.svg        2,211.79 kB │ gzip: 1,535.36 kB
++dist/assets/index-C4CJ_e9a.css                     269.13 kB │ gzip:    46.44 kB
++dist/assets/WorkspaceStatus-COtZ8ILm.js              0.26 kB │ gzip:     0.22 kB
++dist/assets/ReferenceArt-BbcV1Eld.js                 0.38 kB │ gzip:     0.28 kB
++dist/assets/NotFoundView-BSn4sXfn.js                 0.57 kB │ gzip:     0.40 kB
++dist/assets/ErrorNotice-4jvjSzYU.js                  1.05 kB │ gzip:     0.64 kB
++dist/assets/analysis-Do-MLo4m.js                     1.16 kB │ gzip:     0.62 kB
++dist/assets/AppDialog-BBnyV0s9.js                    1.33 kB │ gzip:     0.71 kB
++dist/assets/DeleteDraftDialog-8bFPpiDO.js            2.21 kB │ gzip:     1.21 kB
++dist/assets/recovery-CcPSnDTt.js                     2.29 kB │ gzip:     1.05 kB
++dist/assets/PublicIncidentCard-Cm6vtCxN.js           2.52 kB │ gzip:     1.28 kB
++dist/assets/ReportSentView-5eBzLyKd.js               2.70 kB │ gzip:     1.38 kB
++dist/assets/report-list-Bq8r8NVh.js                  3.43 kB │ gzip:     1.51 kB
++dist/assets/ProfileView-C1G7GO0X.js                  3.58 kB │ gzip:     1.63 kB
++dist/assets/WorkspaceServicesView-DtmY1Ua2.js        3.60 kB │ gzip:     1.54 kB
++dist/assets/FetchState-Df_CpvvI.js                   4.14 kB │ gzip:     2.17 kB
++dist/assets/PwaView-DDmAaQIj.js                      4.17 kB │ gzip:     1.83 kB
++dist/assets/WorkspaceAssignment-iB-TVnys.js          4.44 kB │ gzip:     2.07 kB
++dist/assets/PublicNavigation-CrXoo-S_.js             4.86 kB │ gzip:     1.96 kB
++dist/assets/WorkspaceAuditView-CMKkCqSU.js           5.44 kB │ gzip:     2.35 kB
++dist/assets/NotificationsView-AyMJgCnY.js            6.04 kB │ gzip:     2.44 kB
++dist/assets/WorkspaceView-DcvysMXU.js                8.23 kB │ gzip:     3.23 kB
++dist/assets/LandingView-DoYIheAm.js                  8.48 kB │ gzip:     3.38 kB
++dist/assets/PublicPortalView-CiFIbENt.js             8.63 kB │ gzip:     3.48 kB
++dist/assets/WorkspaceReportsView-YFZzi96I.js        12.48 kB │ gzip:     4.63 kB
++dist/assets/WorkspaceOperatorsView-BQksnByS.js      13.05 kB │ gzip:     4.77 kB
++dist/assets/ReportsView-D3CH-2lS.js                 18.76 kB │ gzip:     6.81 kB
++dist/assets/AuthView-Cj3QuXZH.js                    18.99 kB │ gzip:     7.18 kB
++dist/assets/WorkspaceReportView-CcFdhm1R.js         64.49 kB │ gzip:    18.67 kB
++dist/assets/DraftView-Bac1nDtj.js                   83.76 kB │ gzip:    26.02 kB
++dist/assets/index-BLNh6EyB.js                      135.47 kB │ gzip:    52.26 kB
++✓ built in 2.18s

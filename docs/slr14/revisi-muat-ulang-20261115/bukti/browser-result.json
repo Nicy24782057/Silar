@@ -1,0 +1,1937 @@
+{
+  "mode": "after",
+  "frontend_mode": "production build via vite preview",
+  "api_mode": "local browser read fixtures; no live backend, AI or email exercised",
+  "layout_cases": [
+    {
+      "viewport": 1640,
+      "panel": {
+        "left": 272,
+        "right": 1608,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 1336,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 1608,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 1336,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 1430,
+        "right": 1608,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "461.781px 384.828px 269.391px 178px",
+      "issues": [],
+      "case": "viewport:1640:False"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 1408,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 1136,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 1408,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 1136,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 1229.984375,
+        "right": 1407.984375,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "379.031px 315.859px 221.094px 178px",
+      "issues": [],
+      "case": "viewport:1440:False"
+    },
+    {
+      "viewport": 1366,
+      "panel": {
+        "left": 272,
+        "right": 1334,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 1062,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 1334,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 1062,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 1155.984375,
+        "right": 1333.984375,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "348.406px 290.344px 203.234px 178px",
+      "issues": [],
+      "case": "viewport:1366:False"
+    },
+    {
+      "viewport": 1280,
+      "panel": {
+        "left": 272,
+        "right": 1248,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 976,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 1248,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 976,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 1069.984375,
+        "right": 1247.984375,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "312.812px 260.703px 182.469px 178px",
+      "issues": [],
+      "case": "viewport:1280:False"
+    },
+    {
+      "viewport": 1243,
+      "panel": {
+        "left": 272,
+        "right": 1211,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 939,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 1211,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 939,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 1032.984375,
+        "right": 1210.984375,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "297.516px 247.922px 173.547px 178px",
+      "issues": [],
+      "case": "viewport:1243:False"
+    },
+    {
+      "viewport": 1101,
+      "panel": {
+        "left": 272,
+        "right": 1069,
+        "top": 246.34375,
+        "bottom": 1114.171875,
+        "width": 797,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 1069,
+        "top": 422.625,
+        "bottom": 496.421875,
+        "width": 797,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 891,
+        "right": 1069,
+        "top": 450.421875,
+        "bottom": 496.421875,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "238.75px 198.969px 139.281px 178px",
+      "issues": [],
+      "case": "viewport:1101:False"
+    },
+    {
+      "viewport": 1100,
+      "panel": {
+        "left": 264,
+        "right": 1076,
+        "top": 246.125,
+        "bottom": 1113.953125,
+        "width": 812,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 264,
+        "right": 1076,
+        "top": 422.40625,
+        "bottom": 496.203125,
+        "width": 812,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 966.984375,
+        "right": 1075.984375,
+        "top": 450.203125,
+        "bottom": 496.203125,
+        "width": 109,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "273.516px 227.922px 159.547px 109px",
+      "issues": [],
+      "case": "viewport:1100:False"
+    },
+    {
+      "viewport": 1024,
+      "panel": {
+        "left": 264,
+        "right": 1000,
+        "top": 246.125,
+        "bottom": 1113.953125,
+        "width": 736,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 264,
+        "right": 1000,
+        "top": 422.40625,
+        "bottom": 496.203125,
+        "width": 736,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 891,
+        "right": 1000,
+        "top": 450.203125,
+        "bottom": 496.203125,
+        "width": 109,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "242.062px 201.719px 141.219px 109px",
+      "issues": [],
+      "case": "viewport:1024:False"
+    },
+    {
+      "viewport": 980,
+      "panel": {
+        "left": 264,
+        "right": 956,
+        "top": 246.125,
+        "bottom": 1113.953125,
+        "width": 692,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 264,
+        "right": 956,
+        "top": 422.40625,
+        "bottom": 496.203125,
+        "width": 692,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 846.984375,
+        "right": 955.984375,
+        "top": 450.203125,
+        "bottom": 496.203125,
+        "width": 109,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "223.859px 186.547px 130.578px 109px",
+      "issues": [],
+      "case": "viewport:980:False"
+    },
+    {
+      "viewport": 900,
+      "panel": {
+        "left": 264,
+        "right": 876,
+        "top": 158.125,
+        "bottom": 1113.75,
+        "width": 612,
+        "height": 955.625
+      },
+      "controls": {
+        "left": 264,
+        "right": 876,
+        "top": 334.40625,
+        "bottom": 496,
+        "width": 612,
+        "height": 161.59375
+      },
+      "button": {
+        "left": 577,
+        "right": 876,
+        "top": 450,
+        "bottom": 496,
+        "width": 299,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "299px 299px",
+      "issues": [],
+      "case": "viewport:900:False"
+    },
+    {
+      "viewport": 820,
+      "panel": {
+        "left": 264,
+        "right": 796,
+        "top": 158.125,
+        "bottom": 1113.75,
+        "width": 532,
+        "height": 955.625
+      },
+      "controls": {
+        "left": 264,
+        "right": 796,
+        "top": 334.40625,
+        "bottom": 496,
+        "width": 532,
+        "height": 161.59375
+      },
+      "button": {
+        "left": 537,
+        "right": 796,
+        "top": 450,
+        "bottom": 496,
+        "width": 259,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "259px 259px",
+      "issues": [],
+      "case": "viewport:820:False"
+    },
+    {
+      "viewport": 761,
+      "panel": {
+        "left": 264,
+        "right": 737,
+        "top": 158.125,
+        "bottom": 1113.75,
+        "width": 473,
+        "height": 955.625
+      },
+      "controls": {
+        "left": 264,
+        "right": 737,
+        "top": 334.40625,
+        "bottom": 496,
+        "width": 473,
+        "height": 161.59375
+      },
+      "button": {
+        "left": 507.5,
+        "right": 737,
+        "top": 450,
+        "bottom": 496,
+        "width": 229.5,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "229.5px 229.5px",
+      "issues": [],
+      "case": "viewport:761:False"
+    },
+    {
+      "viewport": 760,
+      "panel": {
+        "left": 16,
+        "right": 744,
+        "top": -96.3125,
+        "bottom": 2960.9375,
+        "width": 728,
+        "height": 3057.25
+      },
+      "controls": {
+        "left": 34,
+        "right": 726,
+        "top": 166.171875,
+        "bottom": 500.046875,
+        "width": 692,
+        "height": 333.875
+      },
+      "button": {
+        "left": 34,
+        "right": 726,
+        "top": 450.046875,
+        "bottom": 500.046875,
+        "width": 692,
+        "height": 50
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "692px",
+      "issues": [],
+      "case": "viewport:760:False"
+    },
+    {
+      "viewport": 640,
+      "panel": {
+        "left": 16,
+        "right": 624,
+        "top": -96.3125,
+        "bottom": 2960.9375,
+        "width": 608,
+        "height": 3057.25
+      },
+      "controls": {
+        "left": 34,
+        "right": 606,
+        "top": 166.171875,
+        "bottom": 500.046875,
+        "width": 572,
+        "height": 333.875
+      },
+      "button": {
+        "left": 34,
+        "right": 606,
+        "top": 450.046875,
+        "bottom": 500.046875,
+        "width": 572,
+        "height": 50
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "572px",
+      "issues": [],
+      "case": "viewport:640:False"
+    },
+    {
+      "viewport": 390,
+      "panel": {
+        "left": 16,
+        "right": 374,
+        "top": -114.9375,
+        "bottom": 2961,
+        "width": 358,
+        "height": 3075.9375
+      },
+      "controls": {
+        "left": 34,
+        "right": 356,
+        "top": 166.234375,
+        "bottom": 500.109375,
+        "width": 322,
+        "height": 333.875
+      },
+      "button": {
+        "left": 34,
+        "right": 356,
+        "top": 450.109375,
+        "bottom": 500.109375,
+        "width": 322,
+        "height": 50
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "322px",
+      "issues": [],
+      "case": "viewport:390:False"
+    },
+    {
+      "viewport": 320,
+      "panel": {
+        "left": 16,
+        "right": 304,
+        "top": -157.5,
+        "bottom": 2961.03125,
+        "width": 288,
+        "height": 3118.53125
+      },
+      "controls": {
+        "left": 34,
+        "right": 286,
+        "top": 166.265625,
+        "bottom": 500.140625,
+        "width": 252,
+        "height": 333.875
+      },
+      "button": {
+        "left": 34,
+        "right": 286,
+        "top": 450.140625,
+        "bottom": 500.140625,
+        "width": 252,
+        "height": 50
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "252px",
+      "issues": [],
+      "case": "viewport:320:False"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 1122,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 850,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 1122,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 850,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 944,
+        "right": 1122,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "260.688px 217.234px 152.078px 178px",
+      "issues": [],
+      "case": "container:850:False"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 992,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 720,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 992,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 720,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 814,
+        "right": 992,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "206.891px 172.406px 120.703px 178px",
+      "issues": [],
+      "case": "container:720:False"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 972,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 700,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 972,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 700,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 794,
+        "right": 972,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "198.609px 165.516px 115.875px 178px",
+      "issues": [],
+      "case": "container:700:False"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 953,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 681,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 953,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 681,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 774.984375,
+        "right": 952.984375,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "188.719px 157.266px 115px 178px",
+      "issues": [],
+      "case": "container:681:False"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 952,
+        "top": 157.65625,
+        "bottom": 1113.28125,
+        "width": 680,
+        "height": 955.625
+      },
+      "controls": {
+        "left": 272,
+        "right": 952,
+        "top": 333.9375,
+        "bottom": 495.53125,
+        "width": 680,
+        "height": 161.59375
+      },
+      "button": {
+        "left": 619,
+        "right": 952,
+        "top": 449.53125,
+        "bottom": 495.53125,
+        "width": 333,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "333px 333px",
+      "issues": [],
+      "case": "container:680:False"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 927,
+        "top": 157.65625,
+        "bottom": 1113.28125,
+        "width": 655,
+        "height": 955.625
+      },
+      "controls": {
+        "left": 272,
+        "right": 927,
+        "top": 333.9375,
+        "bottom": 495.53125,
+        "width": 655,
+        "height": 161.59375
+      },
+      "button": {
+        "left": 606.5,
+        "right": 927,
+        "top": 449.53125,
+        "bottom": 495.53125,
+        "width": 320.5,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "320.5px 320.5px",
+      "issues": [],
+      "case": "container:655:False"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 693,
+        "top": 157.65625,
+        "bottom": 1152.28125,
+        "width": 421,
+        "height": 994.625
+      },
+      "controls": {
+        "left": 272,
+        "right": 693,
+        "top": 333.9375,
+        "bottom": 495.53125,
+        "width": 421,
+        "height": 161.59375
+      },
+      "button": {
+        "left": 489.5,
+        "right": 693,
+        "top": 449.53125,
+        "bottom": 495.53125,
+        "width": 203.5,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "203.5px 203.5px",
+      "issues": [],
+      "case": "container:421:False"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 692,
+        "top": 10.65625,
+        "bottom": 1153.078125,
+        "width": 420,
+        "height": 1142.421875
+      },
+      "controls": {
+        "left": 272,
+        "right": 692,
+        "top": 186.9375,
+        "bottom": 496.328125,
+        "width": 420,
+        "height": 309.390625
+      },
+      "button": {
+        "left": 272,
+        "right": 692,
+        "top": 450.328125,
+        "bottom": 496.328125,
+        "width": 420,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "420px",
+      "issues": [],
+      "case": "container:420:False"
+    },
+    {
+      "viewport": 1640,
+      "panel": {
+        "left": 272,
+        "right": 1608,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 1336,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 1608,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 1336,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 1430,
+        "right": 1608,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "461.781px 384.828px 269.391px 178px",
+      "issues": [],
+      "case": "viewport:1640:True"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 1408,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 1136,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 1408,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 1136,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 1229.984375,
+        "right": 1407.984375,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "379.031px 315.859px 221.094px 178px",
+      "issues": [],
+      "case": "viewport:1440:True"
+    },
+    {
+      "viewport": 1366,
+      "panel": {
+        "left": 272,
+        "right": 1334,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 1062,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 1334,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 1062,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 1155.984375,
+        "right": 1333.984375,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "348.406px 290.344px 203.234px 178px",
+      "issues": [],
+      "case": "viewport:1366:True"
+    },
+    {
+      "viewport": 1280,
+      "panel": {
+        "left": 272,
+        "right": 1248,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 976,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 1248,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 976,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 1069.984375,
+        "right": 1247.984375,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "312.812px 260.703px 182.469px 178px",
+      "issues": [],
+      "case": "viewport:1280:True"
+    },
+    {
+      "viewport": 1243,
+      "panel": {
+        "left": 272,
+        "right": 1211,
+        "top": 246.34375,
+        "bottom": 1114.171875,
+        "width": 939,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 1211,
+        "top": 422.625,
+        "bottom": 496.421875,
+        "width": 939,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 1032.984375,
+        "right": 1210.984375,
+        "top": 450.421875,
+        "bottom": 496.421875,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "297.516px 247.922px 173.547px 178px",
+      "issues": [],
+      "case": "viewport:1243:True"
+    },
+    {
+      "viewport": 1101,
+      "panel": {
+        "left": 272,
+        "right": 1069,
+        "top": 246.34375,
+        "bottom": 1114.171875,
+        "width": 797,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 1069,
+        "top": 422.625,
+        "bottom": 496.421875,
+        "width": 797,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 891,
+        "right": 1069,
+        "top": 450.421875,
+        "bottom": 496.421875,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "238.75px 198.969px 139.281px 178px",
+      "issues": [],
+      "case": "viewport:1101:True"
+    },
+    {
+      "viewport": 1100,
+      "panel": {
+        "left": 264,
+        "right": 1076,
+        "top": 246.125,
+        "bottom": 1113.953125,
+        "width": 812,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 264,
+        "right": 1076,
+        "top": 422.40625,
+        "bottom": 496.203125,
+        "width": 812,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 966.984375,
+        "right": 1075.984375,
+        "top": 450.203125,
+        "bottom": 496.203125,
+        "width": 109,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "273.516px 227.922px 159.547px 109px",
+      "issues": [],
+      "case": "viewport:1100:True"
+    },
+    {
+      "viewport": 1024,
+      "panel": {
+        "left": 264,
+        "right": 1000,
+        "top": 246.125,
+        "bottom": 1113.953125,
+        "width": 736,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 264,
+        "right": 1000,
+        "top": 422.40625,
+        "bottom": 496.203125,
+        "width": 736,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 891,
+        "right": 1000,
+        "top": 450.203125,
+        "bottom": 496.203125,
+        "width": 109,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "242.062px 201.719px 141.219px 109px",
+      "issues": [],
+      "case": "viewport:1024:True"
+    },
+    {
+      "viewport": 980,
+      "panel": {
+        "left": 264,
+        "right": 956,
+        "top": 246.125,
+        "bottom": 1113.953125,
+        "width": 692,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 264,
+        "right": 956,
+        "top": 422.40625,
+        "bottom": 496.203125,
+        "width": 692,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 846.984375,
+        "right": 955.984375,
+        "top": 450.203125,
+        "bottom": 496.203125,
+        "width": 109,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "223.859px 186.547px 130.578px 109px",
+      "issues": [],
+      "case": "viewport:980:True"
+    },
+    {
+      "viewport": 900,
+      "panel": {
+        "left": 264,
+        "right": 876,
+        "top": 158.125,
+        "bottom": 1113.75,
+        "width": 612,
+        "height": 955.625
+      },
+      "controls": {
+        "left": 264,
+        "right": 876,
+        "top": 334.40625,
+        "bottom": 496,
+        "width": 612,
+        "height": 161.59375
+      },
+      "button": {
+        "left": 577,
+        "right": 876,
+        "top": 450,
+        "bottom": 496,
+        "width": 299,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "299px 299px",
+      "issues": [],
+      "case": "viewport:900:True"
+    },
+    {
+      "viewport": 820,
+      "panel": {
+        "left": 264,
+        "right": 796,
+        "top": 158.125,
+        "bottom": 1113.75,
+        "width": 532,
+        "height": 955.625
+      },
+      "controls": {
+        "left": 264,
+        "right": 796,
+        "top": 334.40625,
+        "bottom": 496,
+        "width": 532,
+        "height": 161.59375
+      },
+      "button": {
+        "left": 537,
+        "right": 796,
+        "top": 450,
+        "bottom": 496,
+        "width": 259,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "259px 259px",
+      "issues": [],
+      "case": "viewport:820:True"
+    },
+    {
+      "viewport": 761,
+      "panel": {
+        "left": 264,
+        "right": 737,
+        "top": 158.125,
+        "bottom": 1113.75,
+        "width": 473,
+        "height": 955.625
+      },
+      "controls": {
+        "left": 264,
+        "right": 737,
+        "top": 334.40625,
+        "bottom": 496,
+        "width": 473,
+        "height": 161.59375
+      },
+      "button": {
+        "left": 507.5,
+        "right": 737,
+        "top": 450,
+        "bottom": 496,
+        "width": 229.5,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "229.5px 229.5px",
+      "issues": [],
+      "case": "viewport:761:True"
+    },
+    {
+      "viewport": 760,
+      "panel": {
+        "left": 16,
+        "right": 744,
+        "top": -96.3125,
+        "bottom": 2960.9375,
+        "width": 728,
+        "height": 3057.25
+      },
+      "controls": {
+        "left": 34,
+        "right": 726,
+        "top": 166.171875,
+        "bottom": 500.046875,
+        "width": 692,
+        "height": 333.875
+      },
+      "button": {
+        "left": 34,
+        "right": 726,
+        "top": 450.046875,
+        "bottom": 500.046875,
+        "width": 692,
+        "height": 50
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "692px",
+      "issues": [],
+      "case": "viewport:760:True"
+    },
+    {
+      "viewport": 640,
+      "panel": {
+        "left": 16,
+        "right": 624,
+        "top": -96.3125,
+        "bottom": 2960.9375,
+        "width": 608,
+        "height": 3057.25
+      },
+      "controls": {
+        "left": 34,
+        "right": 606,
+        "top": 166.171875,
+        "bottom": 500.046875,
+        "width": 572,
+        "height": 333.875
+      },
+      "button": {
+        "left": 34,
+        "right": 606,
+        "top": 450.046875,
+        "bottom": 500.046875,
+        "width": 572,
+        "height": 50
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "572px",
+      "issues": [],
+      "case": "viewport:640:True"
+    },
+    {
+      "viewport": 390,
+      "panel": {
+        "left": 16,
+        "right": 374,
+        "top": -114.9375,
+        "bottom": 2961,
+        "width": 358,
+        "height": 3075.9375
+      },
+      "controls": {
+        "left": 34,
+        "right": 356,
+        "top": 166.234375,
+        "bottom": 500.109375,
+        "width": 322,
+        "height": 333.875
+      },
+      "button": {
+        "left": 34,
+        "right": 356,
+        "top": 450.109375,
+        "bottom": 500.109375,
+        "width": 322,
+        "height": 50
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "322px",
+      "issues": [],
+      "case": "viewport:390:True"
+    },
+    {
+      "viewport": 320,
+      "panel": {
+        "left": 16,
+        "right": 304,
+        "top": -157.5,
+        "bottom": 2961.03125,
+        "width": 288,
+        "height": 3118.53125
+      },
+      "controls": {
+        "left": 34,
+        "right": 286,
+        "top": 166.265625,
+        "bottom": 500.140625,
+        "width": 252,
+        "height": 333.875
+      },
+      "button": {
+        "left": 34,
+        "right": 286,
+        "top": 450.140625,
+        "bottom": 500.140625,
+        "width": 252,
+        "height": 50
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "252px",
+      "issues": [],
+      "case": "viewport:320:True"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 1122,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 850,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 1122,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 850,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 944,
+        "right": 1122,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "260.688px 217.234px 152.078px 178px",
+      "issues": [],
+      "case": "container:850:True"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 992,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 720,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 992,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 720,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 814,
+        "right": 992,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "206.891px 172.406px 120.703px 178px",
+      "issues": [],
+      "case": "container:720:True"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 972,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 700,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 972,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 700,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 794,
+        "right": 972,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "198.609px 165.516px 115.875px 178px",
+      "issues": [],
+      "case": "container:700:True"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 953,
+        "top": 245.65625,
+        "bottom": 1113.484375,
+        "width": 681,
+        "height": 867.828125
+      },
+      "controls": {
+        "left": 272,
+        "right": 953,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 681,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 774.984375,
+        "right": 952.984375,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "188.719px 157.266px 115px 178px",
+      "issues": [],
+      "case": "container:681:True"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 952,
+        "top": 157.65625,
+        "bottom": 1113.28125,
+        "width": 680,
+        "height": 955.625
+      },
+      "controls": {
+        "left": 272,
+        "right": 952,
+        "top": 333.9375,
+        "bottom": 495.53125,
+        "width": 680,
+        "height": 161.59375
+      },
+      "button": {
+        "left": 619,
+        "right": 952,
+        "top": 449.53125,
+        "bottom": 495.53125,
+        "width": 333,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "333px 333px",
+      "issues": [],
+      "case": "container:680:True"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 927,
+        "top": 157.65625,
+        "bottom": 1113.28125,
+        "width": 655,
+        "height": 955.625
+      },
+      "controls": {
+        "left": 272,
+        "right": 927,
+        "top": 333.9375,
+        "bottom": 495.53125,
+        "width": 655,
+        "height": 161.59375
+      },
+      "button": {
+        "left": 606.5,
+        "right": 927,
+        "top": 449.53125,
+        "bottom": 495.53125,
+        "width": 320.5,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "320.5px 320.5px",
+      "issues": [],
+      "case": "container:655:True"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 693,
+        "top": 157.65625,
+        "bottom": 1152.28125,
+        "width": 421,
+        "height": 994.625
+      },
+      "controls": {
+        "left": 272,
+        "right": 693,
+        "top": 333.9375,
+        "bottom": 495.53125,
+        "width": 421,
+        "height": 161.59375
+      },
+      "button": {
+        "left": 489.5,
+        "right": 693,
+        "top": 449.53125,
+        "bottom": 495.53125,
+        "width": 203.5,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "203.5px 203.5px",
+      "issues": [],
+      "case": "container:421:True"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 692,
+        "top": 10.65625,
+        "bottom": 1153.078125,
+        "width": 420,
+        "height": 1142.421875
+      },
+      "controls": {
+        "left": 272,
+        "right": 692,
+        "top": 186.9375,
+        "bottom": 496.328125,
+        "width": 420,
+        "height": 309.390625
+      },
+      "button": {
+        "left": 272,
+        "right": 692,
+        "top": 450.328125,
+        "bottom": 496.328125,
+        "width": 420,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "178px",
+      "grid_columns": "420px",
+      "issues": [],
+      "case": "container:420:True"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 1408,
+        "top": 245.65625,
+        "bottom": 815.15625,
+        "width": 1136,
+        "height": 569.5
+      },
+      "controls": {
+        "left": 272,
+        "right": 1408,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 1136,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 1229.984375,
+        "right": 1407.984375,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Memuat…",
+      "button_min_width": "178px",
+      "grid_columns": "379.031px 315.859px 221.094px 178px",
+      "issues": [],
+      "case": "loading:1440:False"
+    },
+    {
+      "viewport": 820,
+      "panel": {
+        "left": 264,
+        "right": 796,
+        "top": 158.125,
+        "bottom": 838.8125,
+        "width": 532,
+        "height": 680.6875
+      },
+      "controls": {
+        "left": 264,
+        "right": 796,
+        "top": 334.40625,
+        "bottom": 496,
+        "width": 532,
+        "height": 161.59375
+      },
+      "button": {
+        "left": 537,
+        "right": 796,
+        "top": 450,
+        "bottom": 496,
+        "width": 259,
+        "height": 46
+      },
+      "button_text": "Memuat…",
+      "button_min_width": "0px",
+      "grid_columns": "259px 259px",
+      "issues": [],
+      "case": "loading:820:False"
+    },
+    {
+      "viewport": 390,
+      "panel": {
+        "left": 16,
+        "right": 374,
+        "top": -114.9375,
+        "bottom": 907.421875,
+        "width": 358,
+        "height": 1022.359375
+      },
+      "controls": {
+        "left": 34,
+        "right": 356,
+        "top": 166.234375,
+        "bottom": 500.109375,
+        "width": 322,
+        "height": 333.875
+      },
+      "button": {
+        "left": 34,
+        "right": 356,
+        "top": 450.109375,
+        "bottom": 500.109375,
+        "width": 322,
+        "height": 50
+      },
+      "button_text": "Memuat…",
+      "button_min_width": "0px",
+      "grid_columns": "322px",
+      "issues": [],
+      "case": "loading:390:False"
+    },
+    {
+      "viewport": 1440,
+      "panel": {
+        "left": 272,
+        "right": 1408,
+        "top": 245.65625,
+        "bottom": 816.15625,
+        "width": 1136,
+        "height": 570.5
+      },
+      "controls": {
+        "left": 272,
+        "right": 1408,
+        "top": 421.9375,
+        "bottom": 495.734375,
+        "width": 1136,
+        "height": 73.796875
+      },
+      "button": {
+        "left": 1229.984375,
+        "right": 1407.984375,
+        "top": 449.734375,
+        "bottom": 495.734375,
+        "width": 178,
+        "height": 46
+      },
+      "button_text": "Memuat…",
+      "button_min_width": "178px",
+      "grid_columns": "379.031px 315.859px 221.094px 178px",
+      "issues": [],
+      "case": "loading:1440:True"
+    },
+    {
+      "viewport": 820,
+      "panel": {
+        "left": 264,
+        "right": 796,
+        "top": 158.125,
+        "bottom": 839.8125,
+        "width": 532,
+        "height": 681.6875
+      },
+      "controls": {
+        "left": 264,
+        "right": 796,
+        "top": 334.40625,
+        "bottom": 496,
+        "width": 532,
+        "height": 161.59375
+      },
+      "button": {
+        "left": 537,
+        "right": 796,
+        "top": 450,
+        "bottom": 496,
+        "width": 259,
+        "height": 46
+      },
+      "button_text": "Memuat…",
+      "button_min_width": "0px",
+      "grid_columns": "259px 259px",
+      "issues": [],
+      "case": "loading:820:True"
+    },
+    {
+      "viewport": 390,
+      "panel": {
+        "left": 16,
+        "right": 374,
+        "top": -114.9375,
+        "bottom": 908.421875,
+        "width": 358,
+        "height": 1023.359375
+      },
+      "controls": {
+        "left": 34,
+        "right": 356,
+        "top": 166.234375,
+        "bottom": 500.109375,
+        "width": 322,
+        "height": 333.875
+      },
+      "button": {
+        "left": 34,
+        "right": 356,
+        "top": 450.109375,
+        "bottom": 500.109375,
+        "width": 322,
+        "height": 50
+      },
+      "button_text": "Memuat…",
+      "button_min_width": "0px",
+      "grid_columns": "322px",
+      "issues": [],
+      "case": "loading:390:True"
+    },
+    {
+      "viewport": 820,
+      "panel": {
+        "left": 264,
+        "right": 796,
+        "top": 150.125,
+        "bottom": 1123.75,
+        "width": 532,
+        "height": 973.625
+      },
+      "controls": {
+        "left": 264,
+        "right": 796,
+        "top": 334.40625,
+        "bottom": 496,
+        "width": 532,
+        "height": 161.59375
+      },
+      "button": {
+        "left": 537,
+        "right": 796,
+        "top": 450,
+        "bottom": 496,
+        "width": 259,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "259px 259px",
+      "issues": [],
+      "case": "touch:820:False"
+    },
+    {
+      "viewport": 390,
+      "panel": {
+        "left": 16,
+        "right": 374,
+        "top": -114.9375,
+        "bottom": 2961,
+        "width": 358,
+        "height": 3075.9375
+      },
+      "controls": {
+        "left": 34,
+        "right": 356,
+        "top": 166.234375,
+        "bottom": 500.109375,
+        "width": 322,
+        "height": 333.875
+      },
+      "button": {
+        "left": 34,
+        "right": 356,
+        "top": 450.109375,
+        "bottom": 500.109375,
+        "width": 322,
+        "height": 50
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "322px",
+      "issues": [],
+      "case": "touch:390:False"
+    },
+    {
+      "viewport": 320,
+      "panel": {
+        "left": 16,
+        "right": 304,
+        "top": -157.5,
+        "bottom": 2961.03125,
+        "width": 288,
+        "height": 3118.53125
+      },
+      "controls": {
+        "left": 34,
+        "right": 286,
+        "top": 166.265625,
+        "bottom": 500.140625,
+        "width": 252,
+        "height": 333.875
+      },
+      "button": {
+        "left": 34,
+        "right": 286,
+        "top": 450.140625,
+        "bottom": 500.140625,
+        "width": 252,
+        "height": 50
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "252px",
+      "issues": [],
+      "case": "touch:320:False"
+    },
+    {
+      "viewport": 820,
+      "panel": {
+        "left": 264,
+        "right": 796,
+        "top": 150.125,
+        "bottom": 1123.75,
+        "width": 532,
+        "height": 973.625
+      },
+      "controls": {
+        "left": 264,
+        "right": 796,
+        "top": 334.40625,
+        "bottom": 496,
+        "width": 532,
+        "height": 161.59375
+      },
+      "button": {
+        "left": 537,
+        "right": 796,
+        "top": 450,
+        "bottom": 496,
+        "width": 259,
+        "height": 46
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "259px 259px",
+      "issues": [],
+      "case": "touch:820:True"
+    },
+    {
+      "viewport": 390,
+      "panel": {
+        "left": 16,
+        "right": 374,
+        "top": -114.9375,
+        "bottom": 2961,
+        "width": 358,
+        "height": 3075.9375
+      },
+      "controls": {
+        "left": 34,
+        "right": 356,
+        "top": 166.234375,
+        "bottom": 500.109375,
+        "width": 322,
+        "height": 333.875
+      },
+      "button": {
+        "left": 34,
+        "right": 356,
+        "top": 450.109375,
+        "bottom": 500.109375,
+        "width": 322,
+        "height": 50
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "322px",
+      "issues": [],
+      "case": "touch:390:True"
+    },
+    {
+      "viewport": 320,
+      "panel": {
+        "left": 16,
+        "right": 304,
+        "top": -157.5,
+        "bottom": 2961.03125,
+        "width": 288,
+        "height": 3118.53125
+      },
+      "controls": {
+        "left": 34,
+        "right": 286,
+        "top": 166.265625,
+        "bottom": 500.140625,
+        "width": 252,
+        "height": 333.875
+      },
+      "button": {
+        "left": 34,
+        "right": 286,
+        "top": 450.140625,
+        "bottom": 500.140625,
+        "width": 252,
+        "height": 50
+      },
+      "button_text": "Muat ulang",
+      "button_min_width": "0px",
+      "grid_columns": "252px",
+      "issues": [],
+      "case": "touch:320:True"
+    }
+  ],
+  "flow_checks": [
+    "Reload shows a fully visible disabled loading button and returns to the ready state",
+    "Reload retains the committed Reporter search and category/status filters",
+    "Keyboard activation triggers the same report-list reload"
+  ],
+  "page_errors": [],
+  "unexpected_api_calls": [],
+  "status": "PASSED",
+  "screenshots_in_package": false,
+  "visual_review": "Desktop and phone filter/reload panels inspected in light and dark; screenshots remain internal."
+}

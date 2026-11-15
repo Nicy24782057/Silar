@@ -9,7 +9,7 @@
 .report-search>div>.app-icon{position:absolute;left:14px;color:var(--muted);pointer-events:none}
 .report-search button{flex:none;min-width:92px;min-height:46px;background:var(--hero);color:#FFF;border:0;border-radius:10px}
 .report-search>small{display:block;font-size:11px;line-height:1.7;color:var(--muted);margin-top:8px}
-.reports-table-card .report-list-controls{align-items:end;grid-template-columns:minmax(170px,1.2fr) minmax(150px,1fr) minmax(115px,.7fr) 110px;width:100%;min-width:0;flex:1 1 100%;gap:14px;margin-top:6px}
+.reports-table-card .report-list-controls{align-items:end;grid-template-columns:minmax(170px,1.2fr) minmax(150px,1fr) minmax(115px,.7fr) max-content;width:100%;min-width:0;flex:1 1 100%;gap:14px;margin-top:6px}
 .reports-table-card .report-select select{min-height:46px;font-size:13px;border-radius:10px}
 .reports-table-card .report-select>.app-icon{top:auto;bottom:16px;transform:none}
 .reports-table-card .report-list-reload{min-height:46px;justify-self:stretch;border-radius:10px}

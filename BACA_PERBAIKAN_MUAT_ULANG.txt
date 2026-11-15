@@ -1,0 +1,30 @@
+SILAR — SLR14, PERBAIKAN TOMBOL MUAT ULANG, 15 NOVEMBER 2026
+
+Paket lanjutan untuk proyek yang sudah memakai:
+SILAR_SLR14_revisi_HP_dan_pencarian_14Nov2026.zip
+
+1. Hentikan frontend.
+2. Gabungkan isi paket sesuai path ke proyek. Berkas antarmuka yang diperbarui:
+   code/frontend/src/mobile-reviewed.css
+3. Dari code/frontend, jalankan:
+   npm.cmd run build
+   npm.cmd run dev
+4. Buka Laporan Saya. Periksa tombol Muat ulang pada desktop dan HP.
+   Untuk PWA produksi, ambil pembaruan build melalui Aplikasi & Koneksi.
+
+Alternatif: dari root proyek, jalankan:
+   git apply --check PERBAIKAN_SLR14_MUAT_ULANG.patch
+   git apply PERBAIKAN_SLR14_MUAT_ULANG.patch
+Pilih penggabungan berkas ATAU git apply. Jika berkas sudah Anda ubah sendiri,
+gabungkan perubahan satu aturan grid setelah memeriksa perbedaannya.
+
+Panduan dan hasil uji:
+docs/slr14/revisi-muat-ulang-20261115/README.md
+
+Catatan siap ditempel ke card sesudah commit/push:
+docs/slr14/revisi-muat-ulang-20261115/BUKTI_PEKERJAAN_SLR14.md
+
+Saran commit untuk perbaikan ini:
+fix(slr14): perbaiki tombol muat ulang pada Laporan Saya
+
+Penyusun belum melakukan commit, push atau memperbarui card GitHub.

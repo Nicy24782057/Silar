@@ -1,0 +1,78 @@
+{
+  "scope": "SLR14",
+  "finding_source": "SLR15 / user screenshot",
+  "date": "2026-11-15",
+  "type": "incremental-frontend-layout-fix",
+  "problem": "Reload button minimum width exceeded its fixed grid track and was clipped by the report panel",
+  "requires_package": {
+    "name": "SILAR_SLR14_revisi_HP_dan_pencarian_14Nov2026.zip",
+    "sha256": "269b6973254c9ebe088155c11c912b4b2f35cb306ce89affb2c094686963a579"
+  },
+  "application_files_changed": [
+    "code/frontend/src/mobile-reviewed.css"
+  ],
+  "suggested_commit": "fix(slr14): perbaiki tombol muat ulang pada Laporan Saya",
+  "agent_committed": false,
+  "agent_pushed": false,
+  "github_card_updated": false,
+  "checks": {
+    "frontend_build": "PASSED",
+    "before_bug_reproduced": true,
+    "browser_layout_cases": 60,
+    "browser_flow_checks": 3,
+    "page_errors": 0,
+    "api_mode": "local read fixtures",
+    "backend_rerun": false,
+    "live_ai_inference_exercised": false,
+    "external_email_sent": false,
+    "screenshots_in_package": false
+  },
+  "excluded_from_hash_list": [
+    "docs/slr14/revisi-muat-ulang-20261115/DAFTAR_PERUBAHAN.json",
+    "PERBAIKAN_SLR14_MUAT_ULANG.patch"
+  ],
+  "files": [
+    {
+      "path": "BACA_PERBAIKAN_MUAT_ULANG.txt",
+      "sha256": "43be1853e0d8ec7b7a83a693826b78401661a90ca00b01a6731410d3b80f8bc7",
+      "bytes": 1158,
+      "previous_sha256": null
+    },
+    {
+      "path": "code/frontend/src/mobile-reviewed.css",
+      "sha256": "36491fcb0ca61b7d5dcda4104e814730c0a733f30f302d3d2e0ac6eff8197e78",
+      "bytes": 20210,
+      "previous_sha256": "72de422a5df6a6ab72d5d2bd7fbf137e221116639a5efbff43f6c682598d1c72"
+    },
+    {
+      "path": "docs/slr14/revisi-muat-ulang-20261115/BUKTI_PEKERJAAN_SLR14.md",
+      "sha256": "9b594e19f71da64ab6d342c53869be2901fd7c4bd2c447138ea9019c13fb8d00",
+      "bytes": 1491,
+      "previous_sha256": null
+    },
+    {
+      "path": "docs/slr14/revisi-muat-ulang-20261115/README.md",
+      "sha256": "aabcb7d23d5a06e3a23fff9dc1358fe0915bd3d9857eddc2fdb43075ae295ffd",
+      "bytes": 3401,
+      "previous_sha256": null
+    },
+    {
+      "path": "docs/slr14/revisi-muat-ulang-20261115/bukti/browser-before.json",
+      "sha256": "c658aa0c1eefa9ab63110f0dc7d6f72364ae324e997f4e986009495e769687e6",
+      "bytes": 1199,
+      "previous_sha256": null
+    },
+    {
+      "path": "docs/slr14/revisi-muat-ulang-20261115/bukti/browser-result.json",
+      "sha256": "aa98dcfbed623623cef915b0c6a3a2f7a83d1e29b49810029c8eb9649f62fc41",
+      "bytes": 44403,
+      "previous_sha256": null
+    },
+    {
+      "path": "docs/slr14/revisi-muat-ulang-20261115/bukti/frontend-build.txt",
+      "sha256": "8f11688489ea5e9f4ed444c8ca0988d926a223c69adcdd4874fdf6893c11ea56",
+      "bytes": 4254,
+      "previous_sha256": null
+    }
+  ]
+}
