@@ -135,6 +135,7 @@ class GeminiClient:
                     retry_options=self.types.HttpRetryOptions(attempts=1),
                 ),
             ) as client:
+                print(f"[U08-03] Gemini | field={sorted(evidence)} | jumlah_gambar={len(images)}", flush=True)
                 response = client.models.generate_content(
                     model=self.options.gemini_model,
                     contents=[self.types.Content(role="user", parts=parts)],
