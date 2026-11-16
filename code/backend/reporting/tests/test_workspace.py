@@ -19,9 +19,9 @@ class WorkspaceTests(TestCase):
         call_command('bootstrap_silar', verbosity=0)
         cls.owner = user('private-reporter@example.test')
         cls.owner.full_name = 'Nama Reporter Rahasia'; cls.owner.save()
-        cls.andi = user('andi@example.test', role='OPERATOR', perms=OPERATOR_PERMISSIONS)
+        cls.andi = user('andi@example.test', role='OPERATOR')
         cls.andi.full_name = 'Andi Pratama'; cls.andi.save()
-        cls.rina = user('rina@example.test', role='OPERATOR', perms=OPERATOR_PERMISSIONS)
+        cls.rina = user('rina@example.test', role='OPERATOR')
         cls.rina.full_name = 'Rina Lestari'; cls.rina.save()
         cls.admin = user('admin@example.test', role='ADMIN', perms=ADMIN_PERMISSIONS)
         cls.report, cls.bundle, cls.analysis_run, cls.card, cls.evidence = source_chain(cls.owner, official=True)
@@ -80,8 +80,12 @@ class WorkspaceTests(TestCase):
         self.assertEqual(OperatorAssignment.objects.filter(report=self.report).count(), 1)
         self.assertEqual(AuditEvent.objects.filter(report=self.report, action='REPORT_CLAIMED').count(), 1)
 
-    def test_claim_requires_both_claim_and_assigned_read_permissions(self):
+    def test_legacy_partial_operator_receives_complete_role_and_can_claim(self):
         person = user('queue-only@example.test', role='OPERATOR', perms=['view_queue', 'claim_report'])
+        self.assertEqual(self.write('claim', person=person).status_code, 200)
+
+    def test_admin_claim_still_requires_explicit_assigned_read_permission(self):
+        person = user('admin-queue-only@example.test', role='ADMIN', perms=['view_queue', 'claim_report'])
         self.assertEqual(self.write('claim', person=person).status_code, 403)
 
     def test_admin_role_does_not_allow_operator_decisions_or_private_source(self):
@@ -202,15 +206,14 @@ class WorkspaceTests(TestCase):
     def test_account_changes_retain_reason_and_full_name_in_targets(self):
         self.as_user(self.admin)
         old_ids=set(permission_queryset().filter(codename__in=OPERATOR_PERMISSIONS).values_list('id',flat=True))
-        read_id=permission_queryset().get(codename='view_assigned_report').id
-        response=self.client.patch(f'/api/v1/admin/operators/{self.andi.id}/',{'full_name':'Andi Nama Baru','permission_ids':[read_id],'reason':'Pembaruan nama petugas.'},format='json')
+        response=self.client.patch(f'/api/v1/admin/operators/{self.andi.id}/',{'full_name':'Andi Nama Baru','reason':'Pembaruan nama petugas.'},format='json')
         self.assertEqual(response.status_code,200,response.content)
         data=self.read('assignment-targets/').json()['results']
         self.assertIn('Andi Nama Baru',[x['full_name']for x in data])
         event=AuditEvent.objects.filter(object_id=self.andi.id).latest('created_at')
         self.assertEqual(event.after['reason'],'Pembaruan nama petugas.')
         self.assertEqual(set(event.before['permission_ids']),old_ids)
-        self.assertEqual(event.after['permission_ids'],[read_id])
+        self.assertEqual(set(event.after['permission_ids']),old_ids)
 
 
 class ClaimConcurrencyTests(TransactionTestCase):

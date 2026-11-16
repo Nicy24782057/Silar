@@ -1,0 +1,20 @@
+{
+  "collector_version": "1.0.0",
+  "session": "session_I_20261111_083941_b381fe",
+  "route": "I",
+  "condition": "hangat",
+  "trial": 3,
+  "report_id": "2d893a50-074c-462d-b2b9-47b8523cada8",
+  "run_id": "ce2a8320-7054-4485-a455-a24dc5117391",
+  "status": "SUCCEEDED",
+  "observation": "SUCCEEDED",
+  "backend_total_ms": 2771.883,
+  "http_ms": 3150.0,
+  "input_signature": "de8087b558dcd74845d32500393b938a9b3443c4d1e0fba18d1a64b58600b190",
+  "cpu_peak_pct_machine_observed": 13.7807,
+  "rss_peak_mib_observed": 843.1797,
+  "samples": 40,
+  "max_sample_gap_s": 0.324643,
+  "comparable": true,
+  "notes": ""
+}

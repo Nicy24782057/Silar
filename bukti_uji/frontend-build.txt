@@ -1,0 +1,59 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> silar-slr10-frontend@1.1.1 build
+> vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 127 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                      1.56 kB │ gzip:     0.79 kB
+dist/sw.js                                           3.43 kB
+dist/assets/nara-ZsaGgmM6.svg                       70.54 kB │ gzip:    13.20 kB
+dist/assets/nara-dark-IbaIl4kU.svg                  70.56 kB │ gzip:    13.21 kB
+dist/assets/portal-hero-CeIvL_w2.webp               98.82 kB
+dist/assets/sena-C3A4rkNV.svg                      102.82 kB │ gzip:    15.17 kB
+dist/assets/sena-dark-Big5evOc.svg                 102.84 kB │ gzip:    15.18 kB
+dist/assets/start-CtsQazq9.svg                     234.14 kB │ gzip:   149.82 kB
+dist/assets/start-dark-DVcX997r.svg                234.16 kB │ gzip:   149.84 kB
+dist/assets/privacy-BW608JbX.svg                   234.67 kB │ gzip:   149.94 kB
+dist/assets/privacy-dark-LiBJFNyc.svg              234.69 kB │ gzip:   149.96 kB
+dist/assets/auth-mobile-scene-CZSFMt6V.svg         388.17 kB │ gzip:   179.44 kB
+dist/assets/auth-mobile-scene-dark-BA1p18Nl.svg    388.19 kB │ gzip:   179.45 kB
+dist/assets/reporting-scene-Chx1PA0k.svg           412.43 kB │ gzip:   183.08 kB
+dist/assets/reporting-scene-dark-DtLdqysh.svg      412.45 kB │ gzip:   183.10 kB
+dist/assets/auth-identity-BIULP5db.svg             573.05 kB │ gzip:   207.74 kB
+dist/assets/auth-identity-dark-QRPyuOka.svg        573.07 kB │ gzip:   207.76 kB
+dist/assets/reporter-welcome-DDZdLYCb.svg        2,211.79 kB │ gzip: 1,535.36 kB
+dist/assets/index-C4CJ_e9a.css                     269.13 kB │ gzip:    46.44 kB
+dist/assets/WorkspaceStatus-C4ibKu-_.js              0.26 kB │ gzip:     0.22 kB
+dist/assets/ReferenceArt-uLer66SX.js                 0.38 kB │ gzip:     0.28 kB
+dist/assets/NotFoundView-B58QUXlY.js                 0.57 kB │ gzip:     0.40 kB
+dist/assets/ErrorNotice-AkzFq5PN.js                  1.05 kB │ gzip:     0.64 kB
+dist/assets/analysis-Do-MLo4m.js                     1.16 kB │ gzip:     0.62 kB
+dist/assets/AppDialog-h2YmRwKW.js                    1.33 kB │ gzip:     0.71 kB
+dist/assets/DeleteDraftDialog-CCPv3LNr.js            2.21 kB │ gzip:     1.21 kB
+dist/assets/recovery-nJFSe3yh.js                     2.29 kB │ gzip:     1.05 kB
+dist/assets/PublicIncidentCard-Cg6K--lm.js           2.52 kB │ gzip:     1.28 kB
+dist/assets/ReportSentView-BpH67aZr.js               2.70 kB │ gzip:     1.38 kB
+dist/assets/report-list-BYqC0Bxz.js                  3.43 kB │ gzip:     1.51 kB
+dist/assets/ProfileView-_lIKnjrP.js                  3.58 kB │ gzip:     1.63 kB
+dist/assets/WorkspaceServicesView-A2waYPJs.js        3.60 kB │ gzip:     1.54 kB
+dist/assets/FetchState-C_RS9yWb.js                   4.14 kB │ gzip:     2.17 kB
+dist/assets/PwaView-C9dMKpsl.js                      4.17 kB │ gzip:     1.83 kB
+dist/assets/WorkspaceAssignment-C5ghtr_e.js          4.44 kB │ gzip:     2.07 kB
+dist/assets/PublicNavigation-BNDtiWfU.js             4.86 kB │ gzip:     1.96 kB
+dist/assets/WorkspaceAuditView-Bq-8wuBe.js           5.44 kB │ gzip:     2.35 kB
+dist/assets/NotificationsView-qcXQ4bWK.js            6.04 kB │ gzip:     2.44 kB
+dist/assets/WorkspaceView--u2f7dQS.js                8.23 kB │ gzip:     3.23 kB
+dist/assets/LandingView-DAIvwoNf.js                  8.48 kB │ gzip:     3.38 kB
+dist/assets/PublicPortalView-DnM7KQtZ.js             8.63 kB │ gzip:     3.48 kB
+dist/assets/WorkspaceOperatorsView-B3mzxSQm.js      11.72 kB │ gzip:     4.40 kB
+dist/assets/WorkspaceReportsView-CGZdEtLr.js        12.48 kB │ gzip:     4.63 kB
+dist/assets/ReportsView-CkHg4ZNZ.js                 18.76 kB │ gzip:     6.81 kB
+dist/assets/AuthView-CKNo_4gv.js                    18.99 kB │ gzip:     7.18 kB
+dist/assets/WorkspaceReportView-Cq6W16si.js         64.49 kB │ gzip:    18.67 kB
+dist/assets/DraftView-BYegYWBM.js                   83.76 kB │ gzip:    26.02 kB
+dist/assets/index-CBB4Diqn.js                      135.47 kB │ gzip:    52.26 kB
+✓ built in 3.24s

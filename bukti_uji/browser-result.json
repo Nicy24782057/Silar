@@ -1,0 +1,28 @@
+{
+  "layout_cases": [
+    "create-1440-light",
+    "create-1440-dark",
+    "create-1024-light",
+    "create-1024-dark",
+    "create-768-light",
+    "create-768-dark",
+    "create-390-light",
+    "create-390-dark",
+    "create-320-light",
+    "create-320-dark"
+  ],
+  "flow_checks": [
+    "Admin list has no permission column or permission editor; catalogue not fetched for normal use",
+    "Historical permission audit remains readable with catalogue labels",
+    "Create Operator sends only name/email and shows pending activation",
+    "Email OTP and self-selected password activate full Operator role on mobile",
+    "New Operator completes claim-review-internal decision-follow-up-close through mobile UI",
+    "Legacy partial-grant Operator has all seven capabilities but cannot read another assignee report",
+    "Admin status controls still deactivate/reactivate an account without permission selection"
+  ],
+  "page_errors": [],
+  "live_ai_inference_exercised": false,
+  "external_email_sent": false,
+  "browser_version": "153.0.8010.0",
+  "passed": true
+}

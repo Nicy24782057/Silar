@@ -1,0 +1,71 @@
+{
+  "measurement_start_utc": "2026-11-11 01:10:56.430048+00:00",
+  "observation": "SUCCEEDED",
+  "run": {
+    "id": "fa36f4b6-5985-41b8-ac2c-321c9f42e26b",
+    "report_id": "22357599-7af1-4baa-b622-b47270e0c0bb",
+    "bundle_id": "d5e4b8f4-7b38-43a3-b5e5-f22a40b504aa",
+    "route": "T",
+    "mode": "EVIDENCE",
+    "status": "SUCCEEDED",
+    "stage": "PERSIST",
+    "started_at": "2026-11-11 01:11:01.151840+00:00",
+    "finished_at": "2026-11-11 01:11:01.888899+00:00",
+    "timings_ms": {
+      "NARA": 200.573,
+      "SENA": 150.183,
+      "TOTAL": 791.358,
+      "FUSION": 0.888,
+      "NARRATIVE": 0.133
+    },
+    "model_versions": {
+      "nara": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3",
+      "sena": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3",
+      "fusion": "silar-fusion-a4.22-0.1.0",
+      "adapter": "silar-adapter-0.5.3",
+      "runtime": "silar-candidate-runtime-0.6.5",
+      "pipeline": "silar-pipeline-0.1.0",
+      "normalizer": "silar-normalizer-0.1.0",
+      "asset_lock_sha256": "6a857bf11d15dec334a5543d4a559d22e3eaca58df23b4f1c0c79ff4dfa05df5",
+      "confidence_threshold": 0.95,
+      "configuration_sha256": "978f751ed95657fe8cfc94de7406d459432c3ba93f7d9b316f3e4104e96968ee",
+      "calibration_reference": "SILAR_SENA_context_v084_20261020T144453Z:OPERATING_CUTOFF_0.95_NOT_PROBABILITY_CALIBRATED",
+      "inference_profile_sha256": "d0df6184eed987309a51c2186cc7c6e82bbf8aa13bbc5413aac61782bb5a4498"
+    },
+    "error_code": null,
+    "backend_pid": 15428,
+    "backend_process_started_at": 1794356857.4378245
+  },
+  "input_evidence": [
+    {
+      "id": "9661658d-d41c-4ecb-b2f8-34b24fb98a00",
+      "type": "TEXT",
+      "original_name": null,
+      "byte_size": 191,
+      "sha256": "b59f5e8a7f40c2ebbc3518ae72a0922b090d75595333f09106c9bd59fe254573"
+    }
+  ],
+  "audio_metadata": null,
+  "resource_summary": {
+    "samples": 21,
+    "cpu_peak_pct_machine_observed": 36.8702,
+    "rss_peak_mib_observed": 757.457,
+    "rss_baseline_mib": 755.6641,
+    "max_sample_gap_s": 0.348929,
+    "window_s": 5.412026,
+    "logical_cpus": 4,
+    "monitored_pids": [
+      8520,
+      15428
+    ],
+    "access_errors": 0,
+    "root_process_changed_or_disappeared": false,
+    "sampler_errors": []
+  },
+  "definitions": {
+    "sample_interval_s": 0.2,
+    "cpu_machine_percent": "one-core equivalent divided by logical CPU count",
+    "rss_mib": "sum of sampled backend process working sets / 1048576",
+    "observation_window": "before user clicks analysis until terminal state observed; not request latency"
+  }
+}

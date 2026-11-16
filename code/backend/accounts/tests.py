@@ -12,7 +12,7 @@ from rest_framework.test import APIClient
 from rest_framework_simplejwt.tokens import RefreshToken
 from common.testing import user,email_challenge,PASSWORD,NEW_PASSWORD
 from core.models import AuditEvent
-from core.permissions import permission_queryset,OPERATOR_PERMISSIONS
+from core.permissions import permission_queryset,OPERATOR_PERMISSIONS,effective_permissions
 from .models import User,Role,EmailOTP,OTPPurpose
 from . import services
 
@@ -247,28 +247,33 @@ class AccountAPITests(TestCase):
         self.assertEqual({x['codename'] for x in rows},set(OPERATOR_PERMISSIONS))
         self.assertTrue(all(isinstance(x['id'],int) for x in rows))
 
-    def test_operator_create_then_activation_uses_explicit_permissions(self):
+    def test_operator_create_then_activation_receives_complete_role_permissions(self):
         admin=user(role=Role.ADMIN,perms=['manage_operator']);self.bearer(admin)
-        permission=permission_queryset().get(codename='view_assigned_report')
-        response=self.post('admin/operators/',{'full_name':'Operator Baru','email':'operator@example.test','permission_ids':[permission.id]})
+        response=self.post('admin/operators/',{'full_name':'Operator Baru','email':'operator@example.test'})
         self.assertEqual(response.status_code,201,response.content)
         obj=User.objects.get(email='operator@example.test')
         self.assertFalse(obj.is_active);self.assertFalse(obj.has_usable_password())
-        self.assertEqual(response.json()['data']['permission_ids'],[permission.id])
+        expected=set(permission_queryset().filter(codename__in=OPERATOR_PERMISSIONS).values_list('id',flat=True))
+        self.assertEqual(set(response.json()['data']['permission_ids']),expected)
+        self.assertEqual(response.json()['data']['effective_permissions'],[])
+        self.assertFalse(obj.user_permissions.exists())
         challenge,code=email_challenge()
         self.client.credentials(HTTP_X_CSRFTOKEN=self.client.get('/api/v1/auth/csrf/').json()['data']['csrf_token'])
         response=self.post('auth/operators/activate/',{'challenge_id':challenge,'code':code,'password':PASSWORD,'password_confirm':PASSWORD})
         self.assertEqual(response.status_code,200,response.content)
         obj.refresh_from_db();self.assertTrue(obj.is_active);self.assertIsNotNone(obj.email_verified_at)
+        self.assertEqual(effective_permissions(obj),set(OPERATOR_PERMISSIONS))
 
-    def test_operator_permissions_cannot_include_admin_or_duplicate(self):
+    def test_operator_create_rejects_client_permission_configuration(self):
         admin=user(role=Role.ADMIN,perms=['manage_operator']);self.bearer(admin)
-        permission=permission_queryset().get(codename='manage_operator')
-        response=self.post('admin/operators/',{'full_name':'Operator','email':'op@example.test','permission_ids':[permission.id]})
-        self.assertEqual(response.status_code,400)
-        permission=permission_queryset().get(codename='view_queue')
-        response=self.post('admin/operators/',{'full_name':'Operator','email':'op@example.test','permission_ids':[permission.id,permission.id]})
-        self.assertEqual(response.status_code,400)
+        read=permission_queryset().get(codename='view_queue').id
+        admin_id=permission_queryset().get(codename='manage_operator').id
+        for ids in ([],[read],[read,read],[admin_id],list(permission_queryset().filter(codename__in=OPERATOR_PERMISSIONS).values_list('id',flat=True))):
+            with self.subTest(ids=ids):
+                response=self.post('admin/operators/',{'full_name':'Operator','email':'op@example.test','permission_ids':ids})
+                self.assertEqual(response.status_code,400,response.content)
+                self.assertIn('permission_ids',response.json()['error']['fields'])
+        self.assertFalse(User.objects.filter(email='op@example.test').exists())
 
     def test_admin_role_without_grant_is_denied(self):
         admin=user(role=Role.ADMIN);self.bearer(admin)
@@ -299,7 +304,7 @@ class AccountAPITests(TestCase):
     @patch('accounts.services.EmailMessage.send',return_value=0)
     def test_operator_create_survives_delivery_failure_and_resend_is_503(self,send):
         admin=user(role=Role.ADMIN,perms=['manage_operator']);self.bearer(admin)
-        response=self.post('admin/operators/',{'full_name':'Operator','email':'op@example.test','permission_ids':[]})
+        response=self.post('admin/operators/',{'full_name':'Operator','email':'op@example.test'})
         self.assertEqual(response.status_code,201)
         obj=User.objects.get(email='op@example.test');self.assertFalse(obj.is_active)
         EmailOTP.objects.filter(user=obj).update(resend_after=timezone.now()-timedelta(seconds=1))

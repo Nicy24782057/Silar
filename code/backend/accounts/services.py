@@ -10,7 +10,6 @@ from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError as DjangoValidationError
 from django.core.mail import EmailMultiAlternatives as EmailMessage
 from django.db import transaction, IntegrityError
-from django.db.models import Q
 from django.utils import timezone
 from rest_framework.exceptions import ValidationError
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -18,7 +17,7 @@ from rest_framework_simplejwt.exceptions import TokenError
 from rest_framework_simplejwt.token_blacklist.models import OutstandingToken, BlacklistedToken
 from common.api import ApiProblem
 from core.audit import record_event
-from core.permissions import require_admin, permission_queryset, OPERATOR_PERMISSIONS
+from core.permissions import require_admin, operator_permission_ids
 from .models import User, Role, EmailOTP, OTPPurpose, SecurityThrottle
 
 GENERIC_MESSAGE='Jika alamat memenuhi syarat, kode dikirim melalui email. Masukkan kode dari pesan SILAR terbaru di aplikasi.'
@@ -304,23 +303,15 @@ def logout(raw,request_id=None):
         if outstanding:BlacklistedToken.objects.get_or_create(token=outstanding)
         record_event(actor=user,action='ACCOUNT_LOGOUT',object_type='User',object_id=user.id,request_id=request_id)
 
-def operator_permission_ids(ids):
-    if len(set(ids))!=len(ids):raise ValidationError({'permission_ids':['ID izin tidak boleh duplikat.']})
-    permissions=list(permission_queryset().filter(pk__in=ids,codename__in=OPERATOR_PERMISSIONS))
-    if len(permissions)!=len(ids):raise ValidationError({'permission_ids':['Gunakan ID dari katalog tujuh izin Operator.']})
-    return permissions
-
 def create_operator(actor,data,request_id=None):
     require_admin(actor,'manage_operator')
-    permissions=operator_permission_ids(data['permission_ids'])
     with transaction.atomic():
         try:
             with transaction.atomic():
                 user=User.objects.create_user(data['email'],None,full_name=data['full_name'],role=Role.OPERATOR,is_active=False)
         except (IntegrityError,DjangoValidationError):raise ValidationError({'email':['Akun tidak dapat dibuat dengan email ini.']})
-        user.user_permissions.set(permissions)
         record_event(actor=actor,action='OPERATOR_CREATED',object_type='User',object_id=user.id,
-                     after={'role':Role.OPERATOR,'is_active':False,'permission_ids':data['permission_ids']},request_id=request_id)
+                     after={'role':Role.OPERATOR,'is_active':False,'permission_ids':operator_permission_ids()},request_id=request_id)
     dispatch_otp(user,OTPPurpose.ACCOUNT_ACTIVATION,actor=actor,request_id=request_id)
     return user
 
@@ -330,21 +321,16 @@ def patch_operator(actor,user_id,data,request_id=None):
     with transaction.atomic():
         user=User.objects.select_for_update().filter(pk=user_id,role=Role.OPERATOR).first()
         if not user:raise Http404
-        def granted_ids():
-            return sorted(permission_queryset().filter(Q(user=user)|Q(group__user=user)).values_list('id',flat=True).distinct())
-        before={'is_active':user.is_active,'permission_ids':granted_ids()}
+        configured_ids=operator_permission_ids()
+        before={'is_active':user.is_active,'permission_ids':configured_ids}
         if data.get('is_active') and not user.email_verified_at:
             raise ApiProblem('ACTIVATION_NOT_ALLOWED','Pemilik perlu menyelesaikan aktivasi melalui email.',422)
-        if 'permission_ids' in data:
-            permissions=operator_permission_ids(data['permission_ids'])
-            user.groups.clear()
-            user.user_permissions.set(permissions)
         for field in ('full_name','is_active'):
             if field in data:setattr(user,field,data[field])
         user.save()
         record_event(actor=actor,action='OPERATOR_UPDATED',object_type='User',object_id=user.id,
                      before=before,
                      after={'changed_fields':sorted(set(data)-{'reason'}),'is_active':user.is_active,
-                            'permission_ids':granted_ids(),
+                            'permission_ids':configured_ids,
                             **({'reason':data['reason']} if data.get('reason') else {})},request_id=request_id)
     return user

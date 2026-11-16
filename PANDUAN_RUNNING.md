@@ -109,7 +109,9 @@ code/backend/.venv/Scripts/python.exe code/backend/manage.py create_silar_admin
 
 Pilih email dan kata sandi sendiri. Tidak ada sandi bawaan. Sandi baru minimal **15 karakter**, serta diperiksa terhadap sandi umum dan pola mudah ditebak. Gunakan beberapa kata yang tidak berkaitan. Menambahkan angka/simbol pada nama tidak otomatis membuatnya layak.
 
-Admin membuat Operator melalui **Manajemen Operator**. Email aktivasi dikirim melalui mode yang dipilih pada langkah 4. Operator memasukkan email dan kode pada halaman Verifikasi akun, kemudian membuat kata sandinya sendiri. Akun belum aktif sebelum kata sandi berhasil disimpan.
+Admin membuat Operator melalui **Manajemen Operator** dengan mengisi nama lengkap dan email, tanpa memilih izin satu per satu. Email aktivasi dikirim melalui mode yang dipilih pada langkah 4. Operator memasukkan email dan kode pada halaman Verifikasi akun, kemudian membuat kata sandinya sendiri. Akun belum aktif sebelum kata sandi berhasil disimpan.
+
+Semua Operator aktif dan terverifikasi, termasuk akun lama, memiliki kewenangan menangani laporan dari antrean hingga penutupan. Membaca isi privat dan melakukan tindakan tetap memerlukan penugasan sebagai penanggung jawab saat ini. Penonaktifan akun menghentikan aksesnya. Ketentuan API dan penyesuaian acuan teknis tersedia pada [revisi izin Operator SLR14](docs/slr14/revisi-izin-operator-20261116/README.md).
 
 ## 6. Jalankan aplikasi setiap hari
 

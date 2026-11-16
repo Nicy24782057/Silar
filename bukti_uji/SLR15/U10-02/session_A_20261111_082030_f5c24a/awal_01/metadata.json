@@ -1,0 +1,76 @@
+{
+  "measurement_start_utc": "2026-11-11 01:28:25.165606+00:00",
+  "observation": "SUCCEEDED",
+  "run": {
+    "id": "7ae93786-4637-4ca5-998c-3410a8cc7f6e",
+    "report_id": "845e8351-bdeb-4cea-b20d-0d284a18c2f0",
+    "bundle_id": "8776e4e4-fb08-4325-b71e-a208dd187eb0",
+    "route": "A",
+    "mode": "EVIDENCE",
+    "status": "SUCCEEDED",
+    "stage": "PERSIST",
+    "started_at": "2026-11-11 01:28:42.582027+00:00",
+    "finished_at": "2026-11-11 01:29:40.105669+00:00",
+    "timings_ms": {
+      "NARA": 2574.62,
+      "SENA": 30749.694,
+      "TOTAL": 57730.99,
+      "FUSION": 1.085,
+      "WHISPER": 18561.076,
+      "NARRATIVE": 0.441
+    },
+    "model_versions": {
+      "nara": "SILAR_NARA_reviewed_pilot_20261018T001122_607337Z|silar-adapter-0.5.3",
+      "sena": "SILAR_SENA_context_v084_20261020T144453Z|silar-adapter-0.5.3",
+      "fusion": "silar-fusion-a4.22-0.1.0",
+      "adapter": "silar-adapter-0.5.3",
+      "runtime": "silar-candidate-runtime-0.6.5",
+      "whisper": "whisper-small|536b0662742c0234|cpu-int8",
+      "pipeline": "silar-pipeline-0.1.0",
+      "normalizer": "silar-normalizer-0.1.0",
+      "asset_lock_sha256": "6a857bf11d15dec334a5543d4a559d22e3eaca58df23b4f1c0c79ff4dfa05df5",
+      "confidence_threshold": 0.95,
+      "configuration_sha256": "978f751ed95657fe8cfc94de7406d459432c3ba93f7d9b316f3e4104e96968ee",
+      "calibration_reference": "SILAR_SENA_context_v084_20261020T144453Z:OPERATING_CUTOFF_0.95_NOT_PROBABILITY_CALIBRATED",
+      "inference_profile_sha256": "d0df6184eed987309a51c2186cc7c6e82bbf8aa13bbc5413aac61782bb5a4498"
+    },
+    "error_code": null,
+    "backend_pid": 16404,
+    "backend_process_started_at": 1794359991.8822386
+  },
+  "input_evidence": [
+    {
+      "id": "de3bf23f-0449-4a24-a8af-3b53e209102a",
+      "type": "AUDIO",
+      "original_name": "WhatsApp Audio 2026-11-11 at 08.26.26 (online-audio-converter.com).mp3",
+      "byte_size": 223233,
+      "sha256": "58a28dd684c6d1fe0abce3d22d6a7ad97858fc6a2bd7e8bddff6388fc81ccca3"
+    }
+  ],
+  "audio_metadata": {
+    "duration_ms": 13888,
+    "model_version": "whisper-small|536b0662742c0234|cpu-int8"
+  },
+  "resource_summary": {
+    "samples": 291,
+    "cpu_peak_pct_machine_observed": 45.3845,
+    "rss_peak_mib_observed": 902.6055,
+    "rss_baseline_mib": 87.7344,
+    "max_sample_gap_s": 0.450232,
+    "window_s": 74.871642,
+    "logical_cpus": 4,
+    "monitored_pids": [
+      16404,
+      18340
+    ],
+    "access_errors": 0,
+    "root_process_changed_or_disappeared": false,
+    "sampler_errors": []
+  },
+  "definitions": {
+    "sample_interval_s": 0.2,
+    "cpu_machine_percent": "one-core equivalent divided by logical CPU count",
+    "rss_mib": "sum of sampled backend process working sets / 1048576",
+    "observation_window": "before user clicks analysis until terminal state observed; not request latency"
+  }
+}

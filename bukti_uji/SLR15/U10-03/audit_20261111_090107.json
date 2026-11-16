@@ -1,0 +1,29 @@
+{
+  "capacity": 1,
+  "max_active_observed": 1,
+  "active_at_end": 0,
+  "runs": [
+    {
+      "id": "5722161b-0e8e-45c4-ad60-ce8403862788",
+      "report_id": "65a41911-b950-40e4-a4d7-214b5c2451ff",
+      "status": "SUCCEEDED",
+      "capacity_slot": 1,
+      "request_record__key": "4a11f790-41b8-439d-97b2-b13aff5040f9",
+      "timings_ms": {
+        "NARA": 1750.286,
+        "SENA": 1605.901,
+        "TOTAL": 15060.987,
+        "FUSION": 0.88,
+        "WHISPER": 10671.098,
+        "NARRATIVE": 0.458
+      }
+    }
+  ],
+  "counts": [
+    {
+      "report_id": "65a41911-b950-40e4-a4d7-214b5c2451ff",
+      "runs": 1,
+      "ai_cards": 1
+    }
+  ]
+}

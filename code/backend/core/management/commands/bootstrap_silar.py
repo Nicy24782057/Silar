@@ -18,5 +18,5 @@ class Command(BaseCommand):
                                ('SILAR_ADMIN',tuple(x for x in ADMIN_PERMISSIONS if x!='view_private_evidence'))]:
                 group,_=Group.objects.get_or_create(name=name)
                 group.permissions.set([permissions[x] for x in codes])
-        self.stdout.write(self.style.SUCCESS('Katalog 13 izin dan tiga Group tersedia. Izin Operator/Admin tetap diberikan eksplisit.'))
+        self.stdout.write(self.style.SUCCESS('Katalog 13 izin dan tiga Group tersedia. Operator memakai paket tujuh izin; izin Admin tetap diberikan eksplisit.'))
 

@@ -1,0 +1,49 @@
+{
+  "capacity": 1,
+  "max_active_observed": 1,
+  "active_at_end": 0,
+  "runs": [
+    {
+      "id": "603cde09-a6b7-4f69-bb46-783b4a50ee9f",
+      "report_id": "7758c63e-b943-42ea-b1fc-223064ad65a0",
+      "status": "SUCCEEDED",
+      "capacity_slot": 1,
+      "request_record__key": "50709b6d-15be-412c-9904-eb7275ccf2ef",
+      "timings_ms": {
+        "NARA": 5073.328,
+        "SENA": 3928.291,
+        "TOTAL": 27968.614,
+        "FUSION": 1.247,
+        "WHISPER": 18052.163,
+        "NARRATIVE": 0.251
+      }
+    },
+    {
+      "id": "947baf92-a54b-4df4-afcf-413283648e2a",
+      "report_id": "262f9648-9963-49ed-a8a0-e4fd308b3d15",
+      "status": "SUCCEEDED",
+      "capacity_slot": 1,
+      "request_record__key": "6edf2233-03c0-4516-be93-7719568d06be",
+      "timings_ms": {
+        "NARA": 164.304,
+        "SENA": 1110.878,
+        "TOTAL": 12746.598,
+        "FUSION": 0.689,
+        "WHISPER": 10762.879,
+        "NARRATIVE": 0.082
+      }
+    }
+  ],
+  "counts": [
+    {
+      "report_id": "262f9648-9963-49ed-a8a0-e4fd308b3d15",
+      "runs": 1,
+      "ai_cards": 1
+    },
+    {
+      "report_id": "7758c63e-b943-42ea-b1fc-223064ad65a0",
+      "runs": 1,
+      "ai_cards": 1
+    }
+  ]
+}

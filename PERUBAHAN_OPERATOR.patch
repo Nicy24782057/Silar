@@ -1,0 +1,839 @@
+diff --git a/PANDUAN_RUNNING.md b/PANDUAN_RUNNING.md
+index f20fe87..5932b81 100644
+--- a/PANDUAN_RUNNING.md
++++ b/PANDUAN_RUNNING.md
+@@ -109,7 +109,9 @@ code/backend/.venv/Scripts/python.exe code/backend/manage.py create_silar_admin
+ 
+ Pilih email dan kata sandi sendiri. Tidak ada sandi bawaan. Sandi baru minimal **15 karakter**, serta diperiksa terhadap sandi umum dan pola mudah ditebak. Gunakan beberapa kata yang tidak berkaitan. Menambahkan angka/simbol pada nama tidak otomatis membuatnya layak.
+ 
+-Admin membuat Operator melalui **Manajemen Operator**. Email aktivasi dikirim melalui mode yang dipilih pada langkah 4. Operator memasukkan email dan kode pada halaman Verifikasi akun, kemudian membuat kata sandinya sendiri. Akun belum aktif sebelum kata sandi berhasil disimpan.
++Admin membuat Operator melalui **Manajemen Operator** dengan mengisi nama lengkap dan email, tanpa memilih izin satu per satu. Email aktivasi dikirim melalui mode yang dipilih pada langkah 4. Operator memasukkan email dan kode pada halaman Verifikasi akun, kemudian membuat kata sandinya sendiri. Akun belum aktif sebelum kata sandi berhasil disimpan.
++
++Semua Operator aktif dan terverifikasi, termasuk akun lama, memiliki kewenangan menangani laporan dari antrean hingga penutupan. Membaca isi privat dan melakukan tindakan tetap memerlukan penugasan sebagai penanggung jawab saat ini. Penonaktifan akun menghentikan aksesnya. Ketentuan API dan penyesuaian acuan teknis tersedia pada [revisi izin Operator SLR14](docs/slr14/revisi-izin-operator-20261116/README.md).
+ 
+ ## 6. Jalankan aplikasi setiap hari
+ 
+diff --git a/code/backend/accounts/serializers.py b/code/backend/accounts/serializers.py
+index 6a725ca..5150ad2 100644
+--- a/code/backend/accounts/serializers.py
++++ b/code/backend/accounts/serializers.py
+@@ -54,25 +54,22 @@ class ProfilePatch(StrictSerializer):
+ class OperatorCreate(StrictSerializer):
+     full_name=serializers.CharField(max_length=150,trim_whitespace=True)
+     email=serializers.EmailField(max_length=254)
+-    permission_ids=serializers.ListField(child=serializers.IntegerField(min_value=1),allow_empty=True)
+ 
+ class OperatorPatch(StrictSerializer):
+     reason=serializers.CharField(max_length=1500,trim_whitespace=True,required=False)
+     full_name=serializers.CharField(max_length=150,trim_whitespace=True,required=False)
+     is_active=serializers.BooleanField(required=False)
+-    permission_ids=serializers.ListField(child=serializers.IntegerField(min_value=1),required=False,allow_empty=True)
+     def validate(self,attrs):
+         if not set(attrs)-{'reason'}:raise serializers.ValidationError('Minimal satu field perubahan diperlukan.')
+         return attrs
+ 
+ def account_data(user,operator=False,target=False):
+-    from core.permissions import effective_permissions,permission_queryset,OPERATOR_PERMISSIONS
+-    from django.db.models import Q
++    from core.permissions import effective_permissions,operator_permission_ids
+     data={'id':str(user.id),'full_name':user.full_name,'is_active':user.is_active,
+           'email_verified_at':user.email_verified_at,'effective_permissions':sorted(effective_permissions(user))}
+     if target:return data
+     data.update(email=user.email,role=user.role)
+     if operator:
+-        data['permission_ids']=list(permission_queryset().filter(codename__in=OPERATOR_PERMISSIONS).filter(Q(user=user)|Q(group__user=user)).values_list('id',flat=True).distinct().order_by('id'))
++        data['permission_ids']=operator_permission_ids()
+     return data
+ 
+diff --git a/code/backend/accounts/services.py b/code/backend/accounts/services.py
+index b594e9f..4d2169d 100644
+--- a/code/backend/accounts/services.py
++++ b/code/backend/accounts/services.py
+@@ -10,7 +10,6 @@ from django.contrib.auth.password_validation import validate_password
+ from django.core.exceptions import ValidationError as DjangoValidationError
+ from django.core.mail import EmailMultiAlternatives as EmailMessage
+ from django.db import transaction, IntegrityError
+-from django.db.models import Q
+ from django.utils import timezone
+ from rest_framework.exceptions import ValidationError
+ from rest_framework_simplejwt.tokens import RefreshToken
+@@ -18,7 +17,7 @@ from rest_framework_simplejwt.exceptions import TokenError
+ from rest_framework_simplejwt.token_blacklist.models import OutstandingToken, BlacklistedToken
+ from common.api import ApiProblem
+ from core.audit import record_event
+-from core.permissions import require_admin, permission_queryset, OPERATOR_PERMISSIONS
++from core.permissions import require_admin, operator_permission_ids
+ from .models import User, Role, EmailOTP, OTPPurpose, SecurityThrottle
+ 
+ GENERIC_MESSAGE='Jika alamat memenuhi syarat, kode dikirim melalui email. Masukkan kode dari pesan SILAR terbaru di aplikasi.'
+@@ -304,23 +303,15 @@ def logout(raw,request_id=None):
+         if outstanding:BlacklistedToken.objects.get_or_create(token=outstanding)
+         record_event(actor=user,action='ACCOUNT_LOGOUT',object_type='User',object_id=user.id,request_id=request_id)
+ 
+-def operator_permission_ids(ids):
+-    if len(set(ids))!=len(ids):raise ValidationError({'permission_ids':['ID izin tidak boleh duplikat.']})
+-    permissions=list(permission_queryset().filter(pk__in=ids,codename__in=OPERATOR_PERMISSIONS))
+-    if len(permissions)!=len(ids):raise ValidationError({'permission_ids':['Gunakan ID dari katalog tujuh izin Operator.']})
+-    return permissions
+-
+ def create_operator(actor,data,request_id=None):
+     require_admin(actor,'manage_operator')
+-    permissions=operator_permission_ids(data['permission_ids'])
+     with transaction.atomic():
+         try:
+             with transaction.atomic():
+                 user=User.objects.create_user(data['email'],None,full_name=data['full_name'],role=Role.OPERATOR,is_active=False)
+         except (IntegrityError,DjangoValidationError):raise ValidationError({'email':['Akun tidak dapat dibuat dengan email ini.']})
+-        user.user_permissions.set(permissions)
+         record_event(actor=actor,action='OPERATOR_CREATED',object_type='User',object_id=user.id,
+-                     after={'role':Role.OPERATOR,'is_active':False,'permission_ids':data['permission_ids']},request_id=request_id)
++                     after={'role':Role.OPERATOR,'is_active':False,'permission_ids':operator_permission_ids()},request_id=request_id)
+     dispatch_otp(user,OTPPurpose.ACCOUNT_ACTIVATION,actor=actor,request_id=request_id)
+     return user
+ 
+@@ -330,21 +321,16 @@ def patch_operator(actor,user_id,data,request_id=None):
+     with transaction.atomic():
+         user=User.objects.select_for_update().filter(pk=user_id,role=Role.OPERATOR).first()
+         if not user:raise Http404
+-        def granted_ids():
+-            return sorted(permission_queryset().filter(Q(user=user)|Q(group__user=user)).values_list('id',flat=True).distinct())
+-        before={'is_active':user.is_active,'permission_ids':granted_ids()}
++        configured_ids=operator_permission_ids()
++        before={'is_active':user.is_active,'permission_ids':configured_ids}
+         if data.get('is_active') and not user.email_verified_at:
+             raise ApiProblem('ACTIVATION_NOT_ALLOWED','Pemilik perlu menyelesaikan aktivasi melalui email.',422)
+-        if 'permission_ids' in data:
+-            permissions=operator_permission_ids(data['permission_ids'])
+-            user.groups.clear()
+-            user.user_permissions.set(permissions)
+         for field in ('full_name','is_active'):
+             if field in data:setattr(user,field,data[field])
+         user.save()
+         record_event(actor=actor,action='OPERATOR_UPDATED',object_type='User',object_id=user.id,
+                      before=before,
+                      after={'changed_fields':sorted(set(data)-{'reason'}),'is_active':user.is_active,
+-                            'permission_ids':granted_ids(),
++                            'permission_ids':configured_ids,
+                             **({'reason':data['reason']} if data.get('reason') else {})},request_id=request_id)
+     return user
+diff --git a/code/backend/accounts/tests.py b/code/backend/accounts/tests.py
+index 802a12d..64b6cd3 100644
+--- a/code/backend/accounts/tests.py
++++ b/code/backend/accounts/tests.py
+@@ -12,7 +12,7 @@ from rest_framework.test import APIClient
+ from rest_framework_simplejwt.tokens import RefreshToken
+ from common.testing import user,email_challenge,PASSWORD,NEW_PASSWORD
+ from core.models import AuditEvent
+-from core.permissions import permission_queryset,OPERATOR_PERMISSIONS
++from core.permissions import permission_queryset,OPERATOR_PERMISSIONS,effective_permissions
+ from .models import User,Role,EmailOTP,OTPPurpose
+ from . import services
+ 
+@@ -247,28 +247,33 @@ class AccountAPITests(TestCase):
+         self.assertEqual({x['codename'] for x in rows},set(OPERATOR_PERMISSIONS))
+         self.assertTrue(all(isinstance(x['id'],int) for x in rows))
+ 
+-    def test_operator_create_then_activation_uses_explicit_permissions(self):
++    def test_operator_create_then_activation_receives_complete_role_permissions(self):
+         admin=user(role=Role.ADMIN,perms=['manage_operator']);self.bearer(admin)
+-        permission=permission_queryset().get(codename='view_assigned_report')
+-        response=self.post('admin/operators/',{'full_name':'Operator Baru','email':'operator@example.test','permission_ids':[permission.id]})
++        response=self.post('admin/operators/',{'full_name':'Operator Baru','email':'operator@example.test'})
+         self.assertEqual(response.status_code,201,response.content)
+         obj=User.objects.get(email='operator@example.test')
+         self.assertFalse(obj.is_active);self.assertFalse(obj.has_usable_password())
+-        self.assertEqual(response.json()['data']['permission_ids'],[permission.id])
++        expected=set(permission_queryset().filter(codename__in=OPERATOR_PERMISSIONS).values_list('id',flat=True))
++        self.assertEqual(set(response.json()['data']['permission_ids']),expected)
++        self.assertEqual(response.json()['data']['effective_permissions'],[])
++        self.assertFalse(obj.user_permissions.exists())
+         challenge,code=email_challenge()
+         self.client.credentials(HTTP_X_CSRFTOKEN=self.client.get('/api/v1/auth/csrf/').json()['data']['csrf_token'])
+         response=self.post('auth/operators/activate/',{'challenge_id':challenge,'code':code,'password':PASSWORD,'password_confirm':PASSWORD})
+         self.assertEqual(response.status_code,200,response.content)
+         obj.refresh_from_db();self.assertTrue(obj.is_active);self.assertIsNotNone(obj.email_verified_at)
++        self.assertEqual(effective_permissions(obj),set(OPERATOR_PERMISSIONS))
+ 
+-    def test_operator_permissions_cannot_include_admin_or_duplicate(self):
++    def test_operator_create_rejects_client_permission_configuration(self):
+         admin=user(role=Role.ADMIN,perms=['manage_operator']);self.bearer(admin)
+-        permission=permission_queryset().get(codename='manage_operator')
+-        response=self.post('admin/operators/',{'full_name':'Operator','email':'op@example.test','permission_ids':[permission.id]})
+-        self.assertEqual(response.status_code,400)
+-        permission=permission_queryset().get(codename='view_queue')
+-        response=self.post('admin/operators/',{'full_name':'Operator','email':'op@example.test','permission_ids':[permission.id,permission.id]})
+-        self.assertEqual(response.status_code,400)
++        read=permission_queryset().get(codename='view_queue').id
++        admin_id=permission_queryset().get(codename='manage_operator').id
++        for ids in ([],[read],[read,read],[admin_id],list(permission_queryset().filter(codename__in=OPERATOR_PERMISSIONS).values_list('id',flat=True))):
++            with self.subTest(ids=ids):
++                response=self.post('admin/operators/',{'full_name':'Operator','email':'op@example.test','permission_ids':ids})
++                self.assertEqual(response.status_code,400,response.content)
++                self.assertIn('permission_ids',response.json()['error']['fields'])
++        self.assertFalse(User.objects.filter(email='op@example.test').exists())
+ 
+     def test_admin_role_without_grant_is_denied(self):
+         admin=user(role=Role.ADMIN);self.bearer(admin)
+@@ -299,7 +304,7 @@ class AccountAPITests(TestCase):
+     @patch('accounts.services.EmailMessage.send',return_value=0)
+     def test_operator_create_survives_delivery_failure_and_resend_is_503(self,send):
+         admin=user(role=Role.ADMIN,perms=['manage_operator']);self.bearer(admin)
+-        response=self.post('admin/operators/',{'full_name':'Operator','email':'op@example.test','permission_ids':[]})
++        response=self.post('admin/operators/',{'full_name':'Operator','email':'op@example.test'})
+         self.assertEqual(response.status_code,201)
+         obj=User.objects.get(email='op@example.test');self.assertFalse(obj.is_active)
+         EmailOTP.objects.filter(user=obj).update(resend_after=timezone.now()-timedelta(seconds=1))
+diff --git a/code/backend/core/management/commands/bootstrap_silar.py b/code/backend/core/management/commands/bootstrap_silar.py
+index 6a1ce40..bec8ea0 100644
+--- a/code/backend/core/management/commands/bootstrap_silar.py
++++ b/code/backend/core/management/commands/bootstrap_silar.py
+@@ -18,5 +18,5 @@ class Command(BaseCommand):
+                                ('SILAR_ADMIN',tuple(x for x in ADMIN_PERMISSIONS if x!='view_private_evidence'))]:
+                 group,_=Group.objects.get_or_create(name=name)
+                 group.permissions.set([permissions[x] for x in codes])
+-        self.stdout.write(self.style.SUCCESS('Katalog 13 izin dan tiga Group tersedia. Izin Operator/Admin tetap diberikan eksplisit.'))
++        self.stdout.write(self.style.SUCCESS('Katalog 13 izin dan tiga Group tersedia. Operator memakai paket tujuh izin; izin Admin tetap diberikan eksplisit.'))
+ 
+diff --git a/code/backend/core/permissions.py b/code/backend/core/permissions.py
+index 75e18b8..a6989d2 100644
+--- a/code/backend/core/permissions.py
++++ b/code/backend/core/permissions.py
+@@ -11,11 +11,21 @@ ALL_PERMISSIONS = OPERATOR_PERMISSIONS + ADMIN_PERMISSIONS
+ def permission_queryset():
+     return Permission.objects.filter(content_type__app_label='core',content_type__model='report',codename__in=ALL_PERMISSIONS)
+ 
++def operator_permission_ids():
++    """Read-only catalogue IDs for the fixed Operator role, including pending accounts."""
++    return list(permission_queryset().filter(codename__in=OPERATOR_PERMISSIONS)
++                .order_by('id').values_list('id',flat=True))
++
+ def effective_permissions(user):
+     if not user or not user.is_active or not user.email_verified_at:
+         return set()
+-    # Deliberately read explicit grants, not has_perm's superuser shortcut or a
+-    # stale _perm_cache. ADMIN alone never grants Operator decisions.
++    # Every eligible Operator has the same complete workflow capabilities.
++    # This also covers existing accounts with partial or absent legacy grants.
++    # Assignment and report-state guards are still checked separately.
++    if user.role==Role.OPERATOR:
++        return set(OPERATOR_PERMISSIONS)
++    # Other roles still use current explicit grants, never a superuser shortcut
++    # or stale _perm_cache. ADMIN alone never grants Operator decisions.
+     return set(permission_queryset().filter(Q(user=user)|Q(group__user=user)).values_list('codename',flat=True).distinct())
+ 
+ def require_admin(user, permission):
+diff --git a/code/backend/reporting/tests/test_publication.py b/code/backend/reporting/tests/test_publication.py
+index 4bfe899..8c9ffd1 100644
+--- a/code/backend/reporting/tests/test_publication.py
++++ b/code/backend/reporting/tests/test_publication.py
+@@ -38,8 +38,8 @@ class PublicationTests(TestCase):
+     def setUpTestData(cls):
+         call_command('bootstrap_silar', verbosity=0)
+         cls.owner = user('reporter-private@example.test')
+-        cls.operator = user('publisher@example.test', role='OPERATOR', perms=OPERATOR_PERMISSIONS)
+-        cls.other = user('other-operator@example.test', role='OPERATOR', perms=OPERATOR_PERMISSIONS)
++        cls.operator = user('publisher@example.test', role='OPERATOR')
++        cls.other = user('other-operator@example.test', role='OPERATOR')
+         cls.admin = user('administrator@example.test', role='ADMIN', perms=ADMIN_PERMISSIONS)
+         cls.report, cls.card = reviewed_report(cls.owner, cls.operator)
+ 
+@@ -208,6 +208,11 @@ class PublicationTests(TestCase):
+         self.assertEqual(self.post('cancel', {'reason': 'Tarik terbit.'}, version=second['id']).status_code, 422)
+ 
+     def test_idempotent_replay_precedes_lifecycle_and_revision_but_not_current_permission(self):
++        # Admins still need explicit Operator grants, checked again on replay.
++        self.operator.role = 'ADMIN'
++        self.operator.save(update_fields=['role'])
++        from core.permissions import permission_queryset
++        self.operator.user_permissions.set(permission_queryset().filter(codename__in=OPERATOR_PERMISSIONS))
+         candidate = self.candidate()
+         self.post('approve', version=candidate['id'])
+         self.report.refresh_from_db(); revision = self.report.revision; key = uuid4()
+diff --git a/code/backend/reporting/tests/test_workspace.py b/code/backend/reporting/tests/test_workspace.py
+index b63fb00..8eee59b 100644
+--- a/code/backend/reporting/tests/test_workspace.py
++++ b/code/backend/reporting/tests/test_workspace.py
+@@ -19,9 +19,9 @@ class WorkspaceTests(TestCase):
+         call_command('bootstrap_silar', verbosity=0)
+         cls.owner = user('private-reporter@example.test')
+         cls.owner.full_name = 'Nama Reporter Rahasia'; cls.owner.save()
+-        cls.andi = user('andi@example.test', role='OPERATOR', perms=OPERATOR_PERMISSIONS)
++        cls.andi = user('andi@example.test', role='OPERATOR')
+         cls.andi.full_name = 'Andi Pratama'; cls.andi.save()
+-        cls.rina = user('rina@example.test', role='OPERATOR', perms=OPERATOR_PERMISSIONS)
++        cls.rina = user('rina@example.test', role='OPERATOR')
+         cls.rina.full_name = 'Rina Lestari'; cls.rina.save()
+         cls.admin = user('admin@example.test', role='ADMIN', perms=ADMIN_PERMISSIONS)
+         cls.report, cls.bundle, cls.analysis_run, cls.card, cls.evidence = source_chain(cls.owner, official=True)
+@@ -80,8 +80,12 @@ class WorkspaceTests(TestCase):
+         self.assertEqual(OperatorAssignment.objects.filter(report=self.report).count(), 1)
+         self.assertEqual(AuditEvent.objects.filter(report=self.report, action='REPORT_CLAIMED').count(), 1)
+ 
+-    def test_claim_requires_both_claim_and_assigned_read_permissions(self):
++    def test_legacy_partial_operator_receives_complete_role_and_can_claim(self):
+         person = user('queue-only@example.test', role='OPERATOR', perms=['view_queue', 'claim_report'])
++        self.assertEqual(self.write('claim', person=person).status_code, 200)
++
++    def test_admin_claim_still_requires_explicit_assigned_read_permission(self):
++        person = user('admin-queue-only@example.test', role='ADMIN', perms=['view_queue', 'claim_report'])
+         self.assertEqual(self.write('claim', person=person).status_code, 403)
+ 
+     def test_admin_role_does_not_allow_operator_decisions_or_private_source(self):
+@@ -202,15 +206,14 @@ class WorkspaceTests(TestCase):
+     def test_account_changes_retain_reason_and_full_name_in_targets(self):
+         self.as_user(self.admin)
+         old_ids=set(permission_queryset().filter(codename__in=OPERATOR_PERMISSIONS).values_list('id',flat=True))
+-        read_id=permission_queryset().get(codename='view_assigned_report').id
+-        response=self.client.patch(f'/api/v1/admin/operators/{self.andi.id}/',{'full_name':'Andi Nama Baru','permission_ids':[read_id],'reason':'Pembaruan nama petugas.'},format='json')
++        response=self.client.patch(f'/api/v1/admin/operators/{self.andi.id}/',{'full_name':'Andi Nama Baru','reason':'Pembaruan nama petugas.'},format='json')
+         self.assertEqual(response.status_code,200,response.content)
+         data=self.read('assignment-targets/').json()['results']
+         self.assertIn('Andi Nama Baru',[x['full_name']for x in data])
+         event=AuditEvent.objects.filter(object_id=self.andi.id).latest('created_at')
+         self.assertEqual(event.after['reason'],'Pembaruan nama petugas.')
+         self.assertEqual(set(event.before['permission_ids']),old_ids)
+-        self.assertEqual(event.after['permission_ids'],[read_id])
++        self.assertEqual(set(event.after['permission_ids']),old_ids)
+ 
+ 
+ class ClaimConcurrencyTests(TransactionTestCase):
+diff --git a/code/frontend/src/views/WorkspaceOperatorsView.vue b/code/frontend/src/views/WorkspaceOperatorsView.vue
+index 0297263..a61c9d5 100644
+--- a/code/frontend/src/views/WorkspaceOperatorsView.vue
++++ b/code/frontend/src/views/WorkspaceOperatorsView.vue
+@@ -16,51 +16,52 @@ async function reconcileAccount(){await load();if(!readError.value){unknownAccou
+ const route=useRoute(),router=useRouter();
+ const search=ref(''),mode=ref(''),target=ref(null),history=ref([]),historyLoading=ref(false);let historySequence=0;onBeforeUnmount(()=>{historySequence++;});
+ const filter=computed({get:()=>operatorStatusFilter(route.query.status),set:value=>router.replace({path:route.path,query:{...route.query,status:operatorStatusFilter(value)||undefined}})});
+-const form=reactive({full_name:'',email:'',permission_ids:[],reason:''});
++const form=reactive({full_name:'',email:'',reason:''});
+ const formValid=computed(()=>mode.value==='create'?Boolean(form.full_name.trim()&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())):Boolean(form.reason.trim()));
+ function grantNames(ids){return (ids||[]).map(id=>{const item=catalogue.value.find(x=>x.id===id);return item?(permissionLabels[item.codename]||item.name):'Izin '+id;}).join(', ')||'Tidak ada izin';}
+ const state=user=>!user.email_verified_at?'pending':user.is_active?'active':'inactive';
+ const stateLabel=user=>({pending:'Menunggu aktivasi',active:'Aktif',inactive:'Nonaktif'}[state(user)]);
+ const visible=computed(()=>rows.value.filter(x=>(!filter.value||state(x)===filter.value)&&(!search.value||[x.full_name,x.email].some(v=>v.toLowerCase().includes(search.value.toLowerCase())))));
+ async function all(path){const result=[];do{const r=await api(path);result.push(...r.results);path=r.next?paginationPath(r.next):null;}while(path);return result;}
+-async function load(){busy.value=true;error.value=null;readError.value=null;try{[rows.value,catalogue.value]=await Promise.all([all('admin/operators/?page_size=100'),all('admin/operator-permissions/?page_size=100')]);}catch(e){readError.value=e;rows.value=[];}finally{busy.value=false;}}
+-function open(kind,user=null){mode.value=kind;target.value=user;dialogError.value=null;Object.assign(form,{full_name:user?.full_name||'',email:user?.email||'',permission_ids:[...(user?.permission_ids||[])],reason:''});}
++async function load(){busy.value=true;error.value=null;readError.value=null;try{rows.value=await all('admin/operators/?page_size=100');}catch(e){readError.value=e;rows.value=[];}finally{busy.value=false;}}
++function open(kind,user=null){mode.value=kind;target.value=user;dialogError.value=null;Object.assign(form,{full_name:user?.full_name||'',email:user?.email||'',reason:''});}
+ async function save(){
+  if(saving.value)return;saving.value=true;dialogError.value=null;
+  try{
+   if(mode.value==='create'){
+-   await api('admin/operators/',{method:'POST',body:{full_name:form.full_name.trim(),email:form.email.trim(),permission_ids:form.permission_ids}});
++   await api('admin/operators/',{method:'POST',body:{full_name:form.full_name.trim(),email:form.email.trim()}});
+    message.value='Akun Operator dibuat dan menunggu aktivasi pemilik email. Gunakan Kirim ulang aktivasi bila petunjuk belum diterima.';
+   }else{
+-   const body=mode.value==='permissions'?{full_name:form.full_name.trim(),permission_ids:form.permission_ids,reason:form.reason.trim()}:{is_active:mode.value==='activate',reason:form.reason.trim()};
+-   await api(`admin/operators/${target.value.id}/`,{method:'PATCH',body});message.value=mode.value==='permissions'?'Izin Operator diperbarui.':'Status akun Operator diperbarui. Riwayat tetap disimpan.';
++   const body={is_active:mode.value==='activate',reason:form.reason.trim()};
++   await api(`admin/operators/${target.value.id}/`,{method:'PATCH',body});message.value='Status akun Operator diperbarui. Riwayat tetap disimpan.';
+   }
+   mode.value='';await load();
+  }catch(e){dialogError.value=e;if(requiresStoredState(e))unknownAccount.value=true;}finally{saving.value=false;}
+ }
+ async function resend(user){if(saving.value)return;saving.value=true;error.value=null;message.value='';try{await api(`admin/operators/${user.id}/activation-otp/`,{method:'POST',body:{}});message.value='Petunjuk aktivasi baru disiapkan untuk '+user.full_name+'. Pemilik akun menggunakan tautan dan OTP dari pesan terbaru.';}catch(e){error.value=e;}finally{saving.value=false;}}
+-async function viewHistory(user){open('history',user);const version=++historySequence;history.value=[];historyLoading.value=true;try{const rows=await all('workspace/audit/?operator_id='+user.id+'&page_size=100');if(version===historySequence&&target.value?.id===user.id)history.value=rows;}catch(e){if(version===historySequence)dialogError.value=e;}finally{if(version===historySequence)historyLoading.value=false;}}
++async function viewHistory(user){open('history',user);const version=++historySequence;history.value=[];historyLoading.value=true;try{const rows=await all('workspace/audit/?operator_id='+user.id+'&page_size=100');if(rows.some(event=>event.after.changed_fields?.includes('permission_ids'))&&!catalogue.value.length)catalogue.value=await all('admin/operator-permissions/?page_size=100');if(version===historySequence&&target.value?.id===user.id)history.value=rows;}catch(e){if(version===historySequence)dialogError.value=e;}finally{if(version===historySequence)historyLoading.value=false;}}
+ onMounted(load);
+ </script>
+ <template>
+- <div class="page-heading ws-page-heading"><div><div class="eyebrow">RUANG KERJA ADMIN</div><h1>Manajemen Operator</h1><p class="subtitle">Kelola akun, aktivasi, dan izin petugas dengan riwayat yang tetap terjaga.</p></div><button class="primary" :disabled="busy||saving||Boolean(readError)" @click="open('create')"><AppIcon name="plus" :size="16" />Tambah Operator</button></div>
++ <div class="page-heading ws-page-heading"><div><div class="eyebrow">RUANG KERJA ADMIN</div><h1>Manajemen Operator</h1><p class="subtitle">Kelola akun dan aktivasi petugas dengan riwayat yang tetap terjaga.</p></div><button class="primary" :disabled="busy||saving||Boolean(readError)" @click="open('create')"><AppIcon name="plus" :size="16" />Tambah Operator</button></div>
+  <ErrorNotice :error="error" /><p v-if="message" class="notice success" role="status">{{ message }}</p>
+  <p v-if="filter" class="ws-quick-filter"><span><AppIcon name="users" :size="17" />{{ {active:'Operator aktif',pending:'Operator menunggu aktivasi',inactive:'Operator nonaktif'}[filter] }}</span><RouterLink to="/workspace/operators">Tampilkan semua Operator<AppIcon name="arrow" :size="15" /></RouterLink></p>
+  <section class="card ws-table-panel ws-operator-table"><header class="ws-panel-heading"><div><h2>Akun Operator</h2><p>{{ busy?'Membaca akun…':readError?'Jumlah akun belum tersedia':visible.length+' dari '+rows.length+' akun ditampilkan.' }} Nama petugas mengikuti nama lengkap pada akun.</p></div><button :disabled="busy||saving" @click="load"><AppIcon name="refresh" :size="15" />Muat ulang</button></header>
+  <div class="ws-filters"><label class="ws-search"><AppIcon name="search" :size="17" /><span class="sr-only">Cari nama atau email</span><input v-model="search" placeholder="Cari nama atau email"></label><label><span class="sr-only">Status akun</span><select v-model="filter"><option value="">Semua status</option><option value="active">Aktif</option><option value="pending">Menunggu aktivasi</option><option value="inactive">Nonaktif</option></select></label></div>
+- <FetchState v-if="busy" compact title="Memuat akun Operator…" description="Membaca akun dan katalog izin." /><FetchState v-else-if="readError" state="error" compact title="Akun Operator belum dapat dimuat" description="Coba lagi untuk membaca akun petugas." :error="readError" :disabled="busy||saving" @retry="load" /><FetchState v-else-if="!visible.length" state="empty" compact title="Belum ada Operator yang sesuai" description="Ubah filter atau tambahkan akun petugas sesuai kewenangan Anda." />
+- <div v-if="!busy&&!readError&&visible.length" class="ws-table-scroll"><table class="ws-table"><thead><tr><th>Operator</th><th>Status akun</th><th>Aktivasi email</th><th>Izin</th><th>Aksi</th></tr></thead><tbody><tr v-for="user in visible" :key="user.id"><td><div class="ws-person"><span class="avatar">{{ initials(user.full_name) }}</span><div><strong>{{ user.full_name }}</strong><small>{{ user.email }}</small></div></div></td><td><span class="ws-badge" :class="state(user)==='active'?'tone-success':state(user)==='pending'?'tone-warning':'tone-grey'">{{ stateLabel(user) }}</span></td><td>{{ user.email_verified_at?'Terverifikasi':'Belum diverifikasi' }}</td><td><span>{{ user.permission_ids.length }} izin diberikan</span></td><td class="ws-row-actions"><button class="link" :disabled="saving" @click="open('permissions',user)">Kelola akun & izin</button><button v-if="!user.email_verified_at" class="link" :disabled="saving" @click="resend(user)">Kirim ulang aktivasi</button><button v-else class="link" :disabled="saving" @click="open(user.is_active?'deactivate':'activate',user)">{{ user.is_active?'Nonaktifkan':'Aktifkan kembali' }}</button><button v-if="hasPermission(session.user,'view_audit')" class="link" :disabled="saving" @click="viewHistory(user)">Lihat riwayat</button></td></tr></tbody></table></div>
++ <FetchState v-if="busy" compact title="Memuat akun Operator…" description="Membaca daftar akun petugas." /><FetchState v-else-if="readError" state="error" compact title="Akun Operator belum dapat dimuat" description="Coba lagi untuk membaca akun petugas." :error="readError" :disabled="busy||saving" @retry="load" /><FetchState v-else-if="!visible.length" state="empty" compact title="Belum ada Operator yang sesuai" description="Ubah filter atau tambahkan akun petugas sesuai kewenangan Anda." />
++ <div v-if="!busy&&!readError&&visible.length" class="ws-table-scroll"><table class="ws-table"><thead><tr><th>Operator</th><th>Status akun</th><th>Aktivasi email</th><th>Aksi</th></tr></thead><tbody><tr v-for="user in visible" :key="user.id"><td><div class="ws-person"><span class="avatar">{{ initials(user.full_name) }}</span><div><strong>{{ user.full_name }}</strong><small>{{ user.email }}</small></div></div></td><td><span class="ws-badge" :class="state(user)==='active'?'tone-success':state(user)==='pending'?'tone-warning':'tone-grey'">{{ stateLabel(user) }}</span></td><td>{{ user.email_verified_at?'Terverifikasi':'Belum diverifikasi' }}</td><td class="ws-row-actions"><button v-if="!user.email_verified_at" class="link" :disabled="saving" @click="resend(user)">Kirim ulang aktivasi</button><button v-else class="link" :disabled="saving" @click="open(user.is_active?'deactivate':'activate',user)">{{ user.is_active?'Nonaktifkan':'Aktifkan kembali' }}</button><button v-if="hasPermission(session.user,'view_audit')" class="link" :disabled="saving" @click="viewHistory(user)">Lihat riwayat</button></td></tr></tbody></table></div>
+  </section>
+  <p class="fine">Pemilik akun menetapkan kata sandinya sendiri melalui aktivasi email. Akun dan riwayat tidak dihapus saat dinonaktifkan.</p>
+- <AppDialog v-if="mode" class="ws-operator-dialog" eyebrow="AKUN OPERATOR" :class="{'is-wide':mode==='create'||mode==='permissions'}" :title="mode==='create'?'Tambah Operator':mode==='permissions'?'Kelola akun dan izin':mode==='history'?'Riwayat akun Operator':mode==='deactivate'?'Nonaktifkan Operator?':'Aktifkan kembali Operator?'" :caption="target?target.full_name+' / '+target.email:'Buat akun petugas dan kirim petunjuk aktivasi.'" @close="!saving&&!unknownAccount&&(mode='')">
++ <AppDialog v-if="mode" class="ws-operator-dialog" eyebrow="AKUN OPERATOR" :title="mode==='create'?'Tambah Operator':mode==='history'?'Riwayat akun Operator':mode==='deactivate'?'Nonaktifkan Operator?':'Aktifkan kembali Operator?'" :caption="target?target.full_name+' / '+target.email:'Buat akun petugas dan kirim petunjuk aktivasi.'" @close="!saving&&!unknownAccount&&(mode='')">
+   <ErrorNotice v-if="mode!=='history'" :error="dialogError" /><p v-if="unknownAccount" class="notice warning" role="status">Respons perubahan akun belum pasti. Baca akun dan riwayat tersimpan sebelum mencoba lagi. Tidak ada pengiriman ulang otomatis.</p>
+   <template v-if="mode==='history'"><FetchState v-if="historyLoading" compact title="Memuat riwayat akun…" /><FetchState v-else-if="dialogError" compact state="error" title="Riwayat akun belum dapat dimuat" description="Coba lagi untuk membaca akun yang sama." :error="dialogError" @retry="viewHistory(target)" /><FetchState v-else-if="!history.length" compact state="empty" title="Belum ada catatan perubahan akun" /><ol v-if="!historyLoading&&!dialogError" class="ws-timeline"><li v-for="event in history" :key="event.id"><strong>{{ eventLabels[event.action]||event.action }}</strong><small>{{ event.actor_name }} · {{ date(event.created_at) }}</small><p v-if="event.after.reason">{{ event.after.reason }}</p><small v-if="event.after.changed_fields?.length">Perubahan: {{ event.after.changed_fields.map(key=>({full_name:'nama lengkap',permission_ids:'izin',is_active:'status akun'}[key]||key)).join(', ') }}</small><details v-if="event.after.changed_fields?.includes('permission_ids')"><summary>Perubahan izin</summary><p>Sebelumnya: {{ grantNames(event.before.permission_ids) }}</p><p>Sesudahnya: {{ grantNames(event.after.permission_ids) }}</p></details></li></ol></template>
+   <form v-else id="operator-form" @submit.prevent="save"><fieldset :disabled="saving||unknownAccount">
+-   <div v-if="mode==='create'||mode==='permissions'" class="ws-operator-form-grid"><div class="ws-operator-identity"><div class="field"><label for="operator-name">Nama lengkap *</label><input id="operator-name" v-model="form.full_name" required maxlength="150" autocomplete="name" :disabled="saving" :readonly="mode==='permissions'"></div><div class="field"><label for="operator-email">Email *</label><input id="operator-email" v-model="form.email" type="email" required maxlength="254" autocomplete="email" :disabled="saving" :readonly="mode==='permissions'"></div><p v-if="mode==='permissions'" class="fine">Nama dan email ditampilkan hanya baca. Pemilik akun mengubah nama melalui Profil.</p></div><fieldset class="ws-permissions"><legend>Izin Operator</legend><div class="ws-permission-options"><label v-for="item in catalogue" :key="item.id" class="check-label"><input v-model="form.permission_ids" type="checkbox" :value="item.id" :disabled="saving">{{ permissionLabels[item.codename]||item.name }}</label></div><small>Izin mengikuti katalog sistem. Akses privat tetap memerlukan penugasan sebagai penanggung jawab.</small></fieldset></div>
++   <div v-if="mode==='create'" class="ws-operator-identity"><div class="field"><label for="operator-name">Nama lengkap *</label><input id="operator-name" v-model="form.full_name" required maxlength="150" autocomplete="name" :disabled="saving"></div><div class="field"><label for="operator-email">Email *</label><input id="operator-email" v-model="form.email" type="email" required maxlength="254" autocomplete="email" :disabled="saving"></div></div>
++   <p v-if="mode==='create'" class="fine">Operator menangani laporan yang menjadi tanggung jawabnya hingga selesai.</p>
+    <p v-if="mode==='deactivate'" class="notice warning">Akun akan dinonaktifkan. Tinjau laporan yang masih ditangani dan lakukan pengalihan sesuai kewenangan. Riwayat akun tetap disimpan.</p>
+    <div v-if="mode!=='create'" class="field"><label for="operator-reason">Alasan perubahan *</label><textarea id="operator-reason" v-model="form.reason" required maxlength="1500" :disabled="saving" /></div>
+    <p v-else class="notice">Setelah akun dibuat, pemilik email menyelesaikan aktivasi dengan OTP dan menetapkan kata sandinya sendiri.</p>
+   </fieldset></form>
+-  <template #actions><button :disabled="saving||unknownAccount" @click="mode=''">{{ mode==='history'?'Tutup':'Batal' }}</button><button v-if="unknownAccount" class="primary" :disabled="busy||saving" @click="reconcileAccount">Periksa akun tersimpan</button><button v-else-if="mode!=='history'" form="operator-form" type="submit" :class="mode==='deactivate'?'danger':'primary'" :disabled="saving||!formValid">{{ saving?'Menyimpan…':mode==='create'?'Buat akun & kirim aktivasi':mode==='permissions'?'Simpan perubahan':mode==='deactivate'?'Nonaktifkan akun':'Aktifkan kembali' }}</button></template>
++  <template #actions><button :disabled="saving||unknownAccount" @click="mode=''">{{ mode==='history'?'Tutup':'Batal' }}</button><button v-if="unknownAccount" class="primary" :disabled="busy||saving" @click="reconcileAccount">Periksa akun tersimpan</button><button v-else-if="mode!=='history'" form="operator-form" type="submit" :class="mode==='deactivate'?'danger':'primary'" :disabled="saving||!formValid">{{ saving?'Menyimpan…':mode==='create'?'Buat akun & kirim aktivasi':mode==='deactivate'?'Nonaktifkan akun':'Aktifkan kembali' }}</button></template>
+  </AppDialog>
+ </template>
+diff --git a/docs/backend/frontend-handoff.md b/docs/backend/frontend-handoff.md
+index 0d8a7c9..d5642a7 100644
+--- a/docs/backend/frontend-handoff.md
++++ b/docs/backend/frontend-handoff.md
+@@ -1,3 +1,5 @@
++> Revisi SLR14 16 November 2026: seluruh Operator aktif dan terverifikasi memperoleh paket tujuh kewenangan. Admin cukup mengisi nama dan email. Lihat [kontrak Operator terkini](../slr14/revisi-izin-operator-20261116/README.md); ketentuan ini menggantikan pemilihan izin Operator pada handoff awal.
++
+ > Revisi SLR14 14 November 2026: `GET /api/v1/reports/?scope=owned&q=...` mendukung pencarian kata kunci/ID milik Reporter. Lihat [kontrak pencarian](../slr14/revisi-hp-pencarian-20261114/KONTRAK_PENCARIAN.md). Respons ringkasan dan scope/izin tetap mengikuti endpoint bisnis yang sudah ada.
+ 
+ > Revisi akun 13 November 2026: gunakan [kontrak verifikasi email dan kode](../slr15/revisi-20261113/KONTRAK_AKUN.md). Endpoint berbasis challenge di bawah tetap tersedia untuk kompatibilitas dan reset sandi. Alur baru memakai satu halaman verifikasi, sandi minimal 15 karakter, serta bukti aktivasi Operator sekali pakai.
+@@ -69,7 +71,7 @@ Respons akun:
+ 
+ Contoh ID di atas merupakan penanda penjelasan, bukan UUID yang dikirim. DTO lengkap dan tipe dapat diimpor dari [openapi.json](openapi.json). Semua kunci response schema hadir; nilai nullable tetap `null`. Daftar menggunakan `{count,next,previous,results}`, bukan envelope `data`. Query pagination `page` positif, `page_size` 1–100.
+ 
+-OperatorCreate menerima `full_name,email,permission_ids`. Ambil ID integer dari katalog tujuh permission; jangan hardcode angka. Role Operator ditetapkan backend, akun awal nonaktif, password belum dapat dipakai. Admin `manage_operator` memperoleh OperatorAccount termasuk `permission_ids`; Admin `assign_report` saja memperoleh OperatorTarget tanpa email/ID permission. Pengiriman ulang aktivasi Admin menghasilkan metadata challenge pada 202, tanpa kode; kegagalan pengiriman menghasilkan 503.
++OperatorCreate hanya menerima `full_name,email`; akun awal nonaktif dan password belum dapat dipakai. Paket tujuh kewenangan otomatis berlaku setelah akun aktif dan terverifikasi, termasuk bagi Operator lama dengan izin sebagian. `permission_ids` ditolak pada request pembuatan/perubahan. Admin `manage_operator` memperoleh OperatorAccount termasuk `permission_ids` sebagai metadata baca saja untuk paket tetap; `effective_permissions` kosong selama akun belum aktif/terverifikasi. Admin `assign_report` saja memperoleh OperatorTarget tanpa email/ID permission. Pengiriman ulang aktivasi Admin menghasilkan metadata challenge pada 202, tanpa kode; kegagalan pengiriman menghasilkan 503. Katalog izin tetap tersedia untuk membaca riwayat audit lama.
+ 
+ ## Perbedaan dengan simulasi SLR_07
+ 
+@@ -102,4 +104,4 @@ Header `X-Request-ID`, `Retry-After` dan `Idempotency-Replayed` diekspos melalui
+ 
+ ## Uji bersama yang masih perlu dilakukan
+ 
+-Catat browser/versi, OS, viewport dan origin. Telusuri registrasi–email–verifikasi–login, aktivasi Operator, kode salah/kedaluwarsa, resend, reset dan sesi lama, reload/refresh, logout 204, pencabutan permission serta penonaktifan akun. Pastikan route challenge aktual dapat dibuka, keyboard/fokus dan pesan error dipahami pengguna. Bukti manual serta penerimaan kelompok dimasukkan ke checklist penyerahan.
++Catat browser/versi, OS, viewport dan origin. Telusuri registrasi–email–verifikasi–login, aktivasi Operator, kode salah/kedaluwarsa, resend, reset dan sesi lama, reload/refresh, logout 204, pencabutan izin Admin, batas penugasan Operator serta penonaktifan akun. Pastikan route challenge aktual dapat dibuka, keyboard/fokus dan pesan error dipahami pengguna. Bukti manual serta penerimaan kelompok dimasukkan ke checklist penyerahan.
+diff --git a/docs/backend/openapi.json b/docs/backend/openapi.json
+index 3e6bfec..20aeacc 100644
+--- a/docs/backend/openapi.json
++++ b/docs/backend/openapi.json
+@@ -4303,7 +4303,7 @@
+       "post": {
+         "operationId": "createOperator",
+         "summary": "Buat Operator nonaktif",
+-        "description": "ADMIN manage_operator. Tidak menerima role/password. SMTP awal gagal tidak menghapus akun; gunakan resend Admin.",
++        "description": "ADMIN manage_operator. Request hanya full_name dan email. Semua akun OPERATOR aktif dan terverifikasi mendapat tujuh kewenangan Operator; akses privat tetap memerlukan penugasan. Tidak menerima role/password/permission_ids. SMTP awal gagal tidak menghapus akun; gunakan resend Admin.",
+         "security": [
+           {
+             "BearerAuth": []
+@@ -5013,8 +5013,8 @@
+       },
+       "patch": {
+         "operationId": "patchOperator",
+-        "summary": "Ubah akun/izin/nonaktif Operator",
+-        "description": "ADMIN manage_operator. Tidak dapat mengaktifkan akun belum verified melalui PATCH.",
++        "summary": "Ubah nama atau status akun Operator",
++        "description": "ADMIN manage_operator. Paket kewenangan tetap berdasarkan peran; permission_ids ditolak. Tidak dapat mengaktifkan akun belum verified melalui PATCH. reason dicatat jika disertakan.",
+         "security": [
+           {
+             "BearerAuth": []
+@@ -5381,7 +5381,7 @@
+       "get": {
+         "operationId": "listOperatorPermissions",
+         "summary": "Katalog tujuh izin Operator",
+-        "description": "ADMIN manage_operator. ID permission integer framework.",
++        "description": "ADMIN manage_operator. Katalog baca saja untuk metadata dan riwayat audit. ID permission integer framework. Tidak digunakan untuk memilih izin saat membuat/mengubah Operator.",
+         "security": [
+           {
+             "BearerAuth": []
+@@ -7459,22 +7459,14 @@
+             "type": "string",
+             "format": "email",
+             "maxLength": 254
+-          },
+-          "permission_ids": {
+-            "type": "array",
+-            "items": {
+-              "type": "integer",
+-              "minimum": 1
+-            },
+-            "uniqueItems": true
+           }
+         },
+         "additionalProperties": false,
+         "required": [
+           "full_name",
+-          "email",
+-          "permission_ids"
+-        ]
++          "email"
++        ],
++        "description": "Admin membuat akun nonaktif dengan nama dan email. Server menetapkan paket tetap tujuh kewenangan Operator; permission_ids tidak diterima dalam request. Pemilik email menyelesaikan aktivasi dan menetapkan sandi sendiri."
+       },
+       "OperatorPatch": {
+         "type": "object",
+@@ -7487,17 +7479,28 @@
+           "is_active": {
+             "type": "boolean"
+           },
+-          "permission_ids": {
+-            "type": "array",
+-            "items": {
+-              "type": "integer",
+-              "minimum": 1
+-            },
+-            "uniqueItems": true
++          "reason": {
++            "type": "string",
++            "minLength": 1,
++            "maxLength": 1500,
++            "description": "Alasan perubahan akun; dicatat pada audit bila disertakan."
+           }
+         },
+         "additionalProperties": false,
+-        "minProperties": 1
++        "minProperties": 1,
++        "anyOf": [
++          {
++            "required": [
++              "full_name"
++            ]
++          },
++          {
++            "required": [
++              "is_active"
++            ]
++          }
++        ],
++        "description": "Ubah nama/status akun Operator. permission_ids tidak diterima; reason saja bukan perubahan akun. Akun belum terverifikasi tidak dapat diaktifkan melalui PATCH."
+       },
+       "OperatorPermission": {
+         "type": "object",
+@@ -7735,22 +7738,24 @@
+                 "review_report",
+                 "manage_followup",
+                 "publish_report",
+-                "close_report",
+-                "manage_operator",
+-                "assign_report",
+-                "monitor_report",
+-                "view_private_evidence",
+-                "view_audit",
+-                "monitor_services"
++                "close_report"
+               ]
+-            }
++            },
++            "readOnly": true,
++            "uniqueItems": true,
++            "description": "Ketujuh kewenangan Operator untuk akun aktif dan terverifikasi; kosong untuk akun belum aktif/terverifikasi. Penugasan dan guard laporan diperiksa terpisah."
+           },
+           "permission_ids": {
+             "type": "array",
+             "items": {
+               "type": "integer",
+               "minimum": 1
+-            }
++            },
++            "readOnly": true,
++            "uniqueItems": true,
++            "minItems": 7,
++            "maxItems": 7,
++            "description": "ID katalog paket tetap tujuh kewenangan untuk peran Operator, termasuk akun menunggu aktivasi/nonaktif. Metadata baca saja; bukan daftar izin yang dapat dipilih Admin atau bukti akun berhak mengakses."
+           }
+         },
+         "additionalProperties": false,
+diff --git a/docs/slr14/README.md b/docs/slr14/README.md
+index ff9ffe2..f58bb8d 100644
+--- a/docs/slr14/README.md
++++ b/docs/slr14/README.md
+@@ -1,5 +1,10 @@
+ # SLR14 — publikasi dan antarmuka SILAR
+ 
++**Revisi izin Operator, 16 November 2026:** semua Operator aktif dan terverifikasi
++memiliki paket kewenangan lengkap. Admin membuat akun dengan nama dan email,
++tanpa pilihan izin sebagian. Penugasan, batas akses privat dan guard laporan
++tetap berlaku. Baca [revisi izin Operator](revisi-izin-operator-20261116/README.md).
++
+ **Revisi HP dan pencarian, 14 November 2026:** penerapan SVG yang disetujui,
+ kartu laporan di HP, grafik status utuh, label filter serta pencarian teks/narasi
+ dan ID laporan milik Reporter. Baca [revisi HP dan pencarian](revisi-hp-pencarian-20261114/README.md).
+diff --git a/code/backend/accounts/test_operator_role.py b/code/backend/accounts/test_operator_role.py
+new file mode 100644
+index 0000000..1bed139
+--- /dev/null
++++ b/code/backend/accounts/test_operator_role.py
+@@ -0,0 +1,122 @@
++"""Fixed Operator capabilities, eligibility and read-only account metadata."""
++from django.contrib.auth.models import Group
++from django.core.management import call_command
++from django.test import TestCase
++from rest_framework.test import APIClient
++
++from accounts import services
++from accounts.models import Role
++from common.testing import user
++from core.models import AuditEvent
++from core.permissions import (ADMIN_PERMISSIONS, OPERATOR_PERMISSIONS,
++                              effective_permissions, operator_permission_ids,
++                              permission_queryset)
++
++
++class OperatorRoleTests(TestCase):
++    @classmethod
++    def setUpTestData(cls):
++        call_command('bootstrap_silar', verbosity=0)
++        cls.admin = user('role-admin@example.test', role=Role.ADMIN,
++                         perms=['manage_operator', 'assign_report', 'view_audit'])
++        cls.operator = user('role-operator@example.test', role=Role.OPERATOR)
++
++    def setUp(self):
++        self.client = APIClient()
++
++    def bearer(self, person):
++        access, _ = services.issue_tokens(person)
++        self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + access)
++
++    def test_existing_operator_without_grants_has_complete_role_in_me_and_queue(self):
++        self.assertFalse(self.operator.user_permissions.exists())
++        self.assertFalse(self.operator.groups.exists())
++        self.bearer(self.operator)
++        response = self.client.get('/api/v1/me/')
++        self.assertEqual(response.status_code, 200, response.content)
++        self.assertEqual(set(response.json()['data']['effective_permissions']), set(OPERATOR_PERMISSIONS))
++        self.assertEqual(self.client.get('/api/v1/workspace/reports/?scope=queue').status_code, 200)
++
++    def test_partial_legacy_grants_do_not_limit_role_or_allow_admin_privileges(self):
++        self.operator.user_permissions.set(permission_queryset().filter(
++            codename__in=['view_queue', 'review_report', 'manage_operator']))
++        self.assertEqual(effective_permissions(self.operator), set(OPERATOR_PERMISSIONS))
++        self.bearer(self.operator)
++        self.assertEqual(self.client.get('/api/v1/admin/operators/').status_code, 403)
++        self.assertEqual(self.client.get('/api/v1/workspace/audit/').status_code, 403)
++
++    def test_group_grants_do_not_add_admin_privileges_to_operator(self):
++        group = Group.objects.create(name='Legacy mixed role grants')
++        group.permissions.set(permission_queryset().filter(codename__in=ADMIN_PERMISSIONS))
++        self.operator.groups.add(group)
++        self.operator.is_superuser = True
++        self.operator.save(update_fields=['is_superuser'])
++        self.assertEqual(effective_permissions(self.operator), set(OPERATOR_PERMISSIONS))
++
++    def test_current_account_status_is_checked_on_existing_token(self):
++        self.bearer(self.operator)
++        self.assertEqual(self.client.get('/api/v1/me/').status_code, 200)
++        for change in ({'is_active': False}, {'is_active': True, 'email_verified_at': None}):
++            with self.subTest(change=change):
++                for name, value in change.items():
++                    setattr(self.operator, name, value)
++                self.operator.save(update_fields=list(change))
++                self.assertEqual(effective_permissions(self.operator), set())
++                self.assertEqual(self.client.get('/api/v1/me/').status_code, 401)
++                self.assertEqual(self.client.get('/api/v1/workspace/reports/?scope=queue').status_code, 401)
++
++    def test_admin_does_not_inherit_operator_package(self):
++        self.assertEqual(effective_permissions(self.admin),
++                         {'manage_operator', 'assign_report', 'view_audit'})
++        self.bearer(self.admin)
++        self.assertEqual(self.client.get('/api/v1/workspace/reports/?scope=queue').status_code, 403)
++
++    def test_assignment_targets_include_operator_without_legacy_grants(self):
++        self.bearer(self.admin)
++        response = self.client.get('/api/v1/workspace/assignment-targets/')
++        self.assertEqual(response.status_code, 200, response.content)
++        self.assertEqual([row['id'] for row in response.json()['results']], [str(self.operator.id)])
++
++    def test_account_permission_ids_are_fixed_metadata_even_before_activation(self):
++        pending = user('pending-role@example.test', role=Role.OPERATOR, active=False, verified=False)
++        disabled = user('disabled-role@example.test', role=Role.OPERATOR, active=False,
++                        perms=['review_report'])
++        self.bearer(self.admin)
++        for person in (self.operator, pending, disabled):
++            with self.subTest(person=person.email):
++                response = self.client.get(f'/api/v1/admin/operators/{person.id}/')
++                self.assertEqual(response.status_code, 200, response.content)
++                data = response.json()['data']
++                self.assertEqual(data['permission_ids'], operator_permission_ids())
++                self.assertEqual(set(data['effective_permissions']),
++                                 set(OPERATOR_PERMISSIONS) if person == self.operator else set())
++
++    def test_patch_cannot_change_permissions_or_apply_accompanying_changes(self):
++        self.bearer(self.admin)
++        for ids in ([], operator_permission_ids(), [permission_queryset().get(codename='manage_operator').id]):
++            with self.subTest(ids=ids):
++                response = self.client.patch(f'/api/v1/admin/operators/{self.operator.id}/',
++                    {'permission_ids': ids, 'full_name': 'Tidak boleh berubah',
++                     'is_active': False, 'reason': 'Permintaan lama.'}, format='json')
++                self.assertEqual(response.status_code, 400, response.content)
++                self.assertIn('permission_ids', response.json()['error']['fields'])
++        self.operator.refresh_from_db()
++        self.assertEqual(self.operator.full_name, 'Penguji SILAR')
++        self.assertTrue(self.operator.is_active)
++        self.assertFalse(AuditEvent.objects.filter(action='OPERATOR_UPDATED', object_id=self.operator.id).exists())
++
++    def test_admin_disable_and_reactivate_preserves_complete_operator_role(self):
++        access, _ = services.issue_tokens(self.operator)
++        self.bearer(self.admin)
++        response = self.client.patch(f'/api/v1/admin/operators/{self.operator.id}/',
++            {'is_active': False, 'reason': 'Petugas sementara tidak bertugas.'}, format='json')
++        self.assertEqual(response.status_code, 200, response.content)
++        self.assertEqual(response.json()['data']['effective_permissions'], [])
++        self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + access)
++        self.assertEqual(self.client.get('/api/v1/me/').status_code, 401)
++        self.bearer(self.admin)
++        response = self.client.patch(f'/api/v1/admin/operators/{self.operator.id}/',
++            {'is_active': True, 'reason': 'Petugas kembali bertugas.'}, format='json')
++        self.assertEqual(response.status_code, 200, response.content)
++        self.assertEqual(set(response.json()['data']['effective_permissions']), set(OPERATOR_PERMISSIONS))
++        self.assertEqual(AuditEvent.objects.filter(action='OPERATOR_UPDATED', object_id=self.operator.id).count(), 2)
+diff --git a/docs/architecture/ADENDUM_OPERATOR_20261116.md b/docs/architecture/ADENDUM_OPERATOR_20261116.md
+new file mode 100644
+index 0000000..f847956
+--- /dev/null
++++ b/docs/architecture/ADENDUM_OPERATOR_20261116.md
+@@ -0,0 +1,26 @@
++# Adendum Technical Reference — paket kewenangan Operator
++
++Disepakati pada revisi SLR14, 16 November 2026. Adendum ini menjadi acuan terkini
++untuk ketentuan izin Operator pada Bagian 4.4, A5.7 dan DTO/endpoint Operator A6.
++Dokumen sumber Word tidak ditulis ulang pada revisi ini.
++
++Admin mengelola identitas, aktivasi dan status akun Operator. Admin tidak lagi
++memilih, menambah atau mencabut kewenangan Operator satu per satu. Seluruh akun
++berperan OPERATOR yang aktif dan terverifikasi memperoleh paket tujuh kewenangan
++penanganan yang sama, termasuk akun lama dengan grant sebagian atau kosong.
++
++Paket tersebut mencakup antrean, pembacaan laporan yang ditugaskan, klaim,
++review/validasi, tindak lanjut, publikasi dan penutupan. Kewenangan bukan akses ke
++semua bukti: kepemilikan/penugasan terkini, ruang lingkup privat, review VALID,
++status, versi, idempotency, sanitasi, approval dan audit tetap diperiksa.
++Penonaktifan akun menghentikan akses. Kewenangan Admin tetap terpisah dan
++memerlukan grant eksplisit.
++
++Request pembuatan Operator hanya menerima nama dan email. Request perubahan
++menerima nama/status serta alasan opsional; `permission_ids` tidak diterima.
++Respons akun mempertahankan `permission_ids` sebagai metadata paket tetap yang
++hanya dapat dibaca. Katalog tetap tersedia untuk membaca riwayat audit.
++
++Rincian request, respons, penerapan akun lama dan pemeriksaan tersedia pada
++[kontrak revisi SLR14](../slr14/revisi-izin-operator-20261116/README.md) dan
++[OpenAPI](../backend/openapi.json). Bagian Technical Reference lain tetap berlaku.
+diff --git a/docs/slr14/revisi-izin-operator-20261116/HASIL_UJI.md b/docs/slr14/revisi-izin-operator-20261116/HASIL_UJI.md
+new file mode 100644
+index 0000000..2d50c51
+--- /dev/null
++++ b/docs/slr14/revisi-izin-operator-20261116/HASIL_UJI.md
+@@ -0,0 +1,59 @@
++# Hasil pengujian revisi Operator
++
++16 November 2026. Basis kode: `785a2762a9f7dcbd8ecfb1522165995e6c02b0cd` (`SLR_15 Mutu AI`).
++Implementasi revisi ini berada pada branch lokal SLR14 dan belum dipush.
++
++| Pemeriksaan | Hasil |
++| --- | --- |
++| Backend `accounts core reporting`, PostgreSQL 16 | 268 tes lulus; 0 gagal, 0 skip. |
++| Frontend `npm test`, Node 24.22.1 | 123 tes lulus; 0 gagal, 0 skip. |
++| Frontend `npm run build` | Berhasil. |
++| Django `check` | Tidak ada masalah. |
++| Django `makemigrations --check --dry-run` | Tidak ada perubahan schema. |
++| Browser Chromium 153.0.8010.0 | 10 kombinasi ukuran/tema dan 7 pemeriksaan alur lulus; tidak ada kesalahan JavaScript halaman. |
++| OpenAPI JSON, field request dan tautan dokumen baru | Valid. |
++| Patch terhadap basis kode | Diperiksa saat pembuatan ZIP; seluruh isi hasil penerapan dibandingkan dengan berkas revisi. |
++
++Tes backend mencakup paket tetap untuk Operator lama/baru, akun belum aktif,
++penonaktifan pada token yang sudah diterbitkan, batas kewenangan Admin,
++penugasan/pengalihan, guard status, sanitasi, approval, penerbitan, audit,
++notifikasi dan replay. Konfigurasi `permission_ids` dari klien ditolak tanpa
++menjalankan perubahan akun lain yang disertakan dalam request tersebut.
++
++Formulir diperiksa pada lebar 1440, 1024, 768, 390 dan 320 piksel, masing-masing
++pada tema terang dan gelap. Kolom nama/email tetap di dalam layar; tidak ada
++pilihan izin atau kolom jumlah izin. Dialog pada layar pendek dapat digulir.
++
++Pemeriksaan alur browser:
++
++1. Daftar akun tanpa pengaturan/jumlah izin dan tanpa pembacaan katalog yang tidak diperlukan.
++2. Riwayat perubahan izin lama tetap terbaca menggunakan label katalog.
++3. Pembuatan akun benar-benar hanya mengirim nama dan email, lalu menampilkan status menunggu aktivasi.
++4. Aktivasi OTP dan penetapan sandi oleh pemilik pada tampilan HP memberikan tujuh kewenangan.
++5. Operator baru mengklaim, mereview, memilih internal, mencatat/menyelesaikan tindak lanjut dan menutup laporan melalui antarmuka HP.
++6. Operator lama dengan grant sebagian memperoleh paket lengkap, tetapi ditolak saat membuka laporan milik penanggung jawab lain.
++7. Admin dapat menonaktifkan dan mengaktifkan kembali akun tanpa pemilihan izin.
++
++Pengujian memakai database dan akun uji terpisah. OTP diterima melalui kotak
++email lokal. Inferensi AI nyata, SMTP eksternal dan deployment server tidak
++dijalankan dalam revisi izin ini. Bukti ini tidak menggantikan penerimaan
++terintegrasi SLR15 maupun verifikasi deployment SLR16.
++
++Perintah pengulangan pada `code/backend`, dengan PostgreSQL 16 serta `.env`
++pengembangan yang sudah disiapkan:
++
++```powershell
++.\.venv\Scripts\python.exe manage.py test accounts core reporting --settings=config.test_settings --noinput
++.\.venv\Scripts\python.exe manage.py check
++.\.venv\Scripts\python.exe manage.py makemigrations --check --dry-run
++```
++
++Pada `code/frontend`:
++
++```powershell
++npm.cmd test
++npm.cmd run build
++```
++
++Database pengujian memerlukan hak membuat/menghapus database uji pada instance
++lokal. Langkah review manual tersedia pada README revisi ini.
+diff --git a/docs/slr14/revisi-izin-operator-20261116/README.md b/docs/slr14/revisi-izin-operator-20261116/README.md
+new file mode 100644
+index 0000000..d46f226
+--- /dev/null
++++ b/docs/slr14/revisi-izin-operator-20261116/README.md
+@@ -0,0 +1,69 @@
++# SLR14 — penyederhanaan kewenangan Operator
++
++Revisi yang disepakati 16 November 2026. Admin cukup mengisi **nama lengkap dan
++email** saat membuat Operator. Pilihan izin, kolom jumlah izin dan tindakan
++pengaturan izin dihapus dari Manajemen Operator.
++
++## Kebijakan akses
++
++Setiap akun berperan `OPERATOR` yang aktif dan terverifikasi memiliki paket tetap:
++`view_queue`, `view_assigned_report`, `claim_report`, `review_report`,
++`manage_followup`, `publish_report`, `close_report`.
++
++Kebijakan berdasarkan peran ini juga berlaku bagi akun lama dengan grant kosong
++atau sebagian, tanpa migrasi data/schema. Grant lama tetap tersimpan untuk
++riwayat, tetapi tidak menentukan paket Operator. Grant Admin yang keliru melekat
++pada Operator tidak memperluas paket tersebut.
++
++Antrean hanya menampilkan ringkasan yang diizinkan. Isi/bukti privat dan tindakan
++penanganan tetap memerlukan penugasan aktif sebagai penanggung jawab. Pengalihan
++mencabut akses penanggung jawab sebelumnya. Persetujuan publikasi versi tepat,
++review VALID, revisi, idempotency, transaksi, audit, serta guard CLOSED tetap
++diperiksa. Operator tidak mendapat kewenangan Admin. Admin tetap membutuhkan
++grant eksplisit untuk kewenangannya dan tidak otomatis menjadi Operator.
++
++Akun menunggu aktivasi/nonaktif tidak memperoleh akses. Admin tetap dapat
++mengirim ulang aktivasi serta mengaktifkan kembali/menonaktifkan akun yang sudah
++terverifikasi. OTP dan penetapan sandi oleh pemilik email tetap berlaku.
++
++## Kontrak API
++
++Semua path di bawah diawali `/api/v1/`. Kontrak lengkap: [OpenAPI](../../backend/openapi.json).
++
++| Operasi | Request / perilaku |
++| --- | --- |
++| `POST admin/operators/` | Hanya `full_name` dan `email`; akun menunggu aktivasi. |
++| `PATCH admin/operators/{id}/` | `full_name` dan/atau `is_active`; `reason` opsional dicatat pada audit. `reason` saja ditolak. |
++| `GET admin/operators/`, `GET admin/operators/{id}/` | `permission_ids` adalah metadata baca saja untuk paket tetap tujuh izin, termasuk pada akun nonaktif. `effective_permissions` hanya terisi bagi akun aktif dan terverifikasi. |
++| `GET me/` | `effective_permissions` berisi ketujuh kewenangan bagi Operator yang memenuhi syarat. |
++| `GET admin/operator-permissions/` | Katalog baca saja dipertahankan untuk metadata dan riwayat audit lama. |
++
++`permission_ids` pada POST/PATCH ditolak dengan HTTP 400, termasuk array kosong.
++Frontend dan backend perlu diperbarui bersama. Frontend lama yang masih mengirim
++field tersebut harus diperbarui; server tidak menafsirkan pilihan izin sebagian.
++`permission_ids` pada respons bukan bukti kelayakan akses: gunakan
++`effective_permissions`, penugasan dan kondisi laporan terkini.
++
++## Acuan teknis
++
++Revisi ini menggantikan ketentuan pengaturan izin Operator secara individual
++pada Technical Reference Bagian 4.4, A5.7 dan DTO/endpoint Operator A6, serta
++handoff awal. Lihat [adendum Technical Reference](../../architecture/ADENDUM_OPERATOR_20261116.md).
++Ketentuan lain pada dokumen tersebut tetap berlaku. Implementasi berada pada
++SLR14; hasil uji dan penerimaan terintegrasi tetap dicatat pada SLR15.
++
++## Pemeriksaan setelah diterapkan
++
++1. Admin membuat akun menggunakan nama/email, lalu pemilik menyelesaikan OTP dan
++   membuat sandi sendiri. Tidak ada pilihan izin di formulir atau daftar akun.
++2. Operator baru dan lama dapat mengklaim, mereview, menentukan penayangan,
++   mengelola tindak lanjut dan menutup laporan sesuai syarat bisnis.
++3. Operator lain tidak dapat membaca bukti atau mengubah laporan yang sudah
++   ditugaskan. Pengalihan memindahkan akses penanganan.
++4. Penonaktifan akun menghentikan akses; aktivasi kembali memulihkan paket tetap.
++5. Riwayat izin lama tetap dapat dibaca Admin, tetapi tidak dapat diubah.
++
++Tidak ada perubahan dependensi atau migration untuk revisi ini. Panduan setup
++tetap mengikuti [PANDUAN_RUNNING.md](../../../PANDUAN_RUNNING.md).
++
++Hasil dan batas verifikasi: [HASIL_UJI.md](HASIL_UJI.md).

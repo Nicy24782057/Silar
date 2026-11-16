@@ -1,0 +1,9 @@
+✔ Workspace filters remain server-scoped and preserve independent states (1.397908ms)
+ℹ tests 123
+ℹ suites 0
+ℹ pass 123
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 605.938943

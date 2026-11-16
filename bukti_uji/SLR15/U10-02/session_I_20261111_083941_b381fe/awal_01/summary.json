@@ -1,0 +1,20 @@
+{
+  "collector_version": "1.0.0",
+  "session": "session_I_20261111_083941_b381fe",
+  "route": "I",
+  "condition": "awal",
+  "trial": 1,
+  "report_id": "e38b4cd8-8c6c-42b3-b42d-29f837077243",
+  "run_id": "c601e499-22b5-4a6f-9aef-cbcedacc830e",
+  "status": "SUCCEEDED",
+  "observation": "SUCCEEDED",
+  "backend_total_ms": 37366.363,
+  "http_ms": 48190.0,
+  "input_signature": "de8087b558dcd74845d32500393b938a9b3443c4d1e0fba18d1a64b58600b190",
+  "cpu_peak_pct_machine_observed": 26.9718,
+  "rss_peak_mib_observed": 703.9727,
+  "samples": 246,
+  "max_sample_gap_s": 0.426627,
+  "comparable": true,
+  "notes": ""
+}

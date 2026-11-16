@@ -38,8 +38,8 @@ class PublicationTests(TestCase):
     def setUpTestData(cls):
         call_command('bootstrap_silar', verbosity=0)
         cls.owner = user('reporter-private@example.test')
-        cls.operator = user('publisher@example.test', role='OPERATOR', perms=OPERATOR_PERMISSIONS)
-        cls.other = user('other-operator@example.test', role='OPERATOR', perms=OPERATOR_PERMISSIONS)
+        cls.operator = user('publisher@example.test', role='OPERATOR')
+        cls.other = user('other-operator@example.test', role='OPERATOR')
         cls.admin = user('administrator@example.test', role='ADMIN', perms=ADMIN_PERMISSIONS)
         cls.report, cls.card = reviewed_report(cls.owner, cls.operator)
 
@@ -208,6 +208,11 @@ class PublicationTests(TestCase):
         self.assertEqual(self.post('cancel', {'reason': 'Tarik terbit.'}, version=second['id']).status_code, 422)
 
     def test_idempotent_replay_precedes_lifecycle_and_revision_but_not_current_permission(self):
+        # Admins still need explicit Operator grants, checked again on replay.
+        self.operator.role = 'ADMIN'
+        self.operator.save(update_fields=['role'])
+        from core.permissions import permission_queryset
+        self.operator.user_permissions.set(permission_queryset().filter(codename__in=OPERATOR_PERMISSIONS))
         candidate = self.candidate()
         self.post('approve', version=candidate['id'])
         self.report.refresh_from_db(); revision = self.report.revision; key = uuid4()

@@ -1,3 +1,5 @@
+> Revisi SLR14 16 November 2026: seluruh Operator aktif dan terverifikasi memperoleh paket tujuh kewenangan. Admin cukup mengisi nama dan email. Lihat [kontrak Operator terkini](../slr14/revisi-izin-operator-20261116/README.md); ketentuan ini menggantikan pemilihan izin Operator pada handoff awal.
+
 > Revisi SLR14 14 November 2026: `GET /api/v1/reports/?scope=owned&q=...` mendukung pencarian kata kunci/ID milik Reporter. Lihat [kontrak pencarian](../slr14/revisi-hp-pencarian-20261114/KONTRAK_PENCARIAN.md). Respons ringkasan dan scope/izin tetap mengikuti endpoint bisnis yang sudah ada.
 
 > Revisi akun 13 November 2026: gunakan [kontrak verifikasi email dan kode](../slr15/revisi-20261113/KONTRAK_AKUN.md). Endpoint berbasis challenge di bawah tetap tersedia untuk kompatibilitas dan reset sandi. Alur baru memakai satu halaman verifikasi, sandi minimal 15 karakter, serta bukti aktivasi Operator sekali pakai.
@@ -69,7 +71,7 @@ Respons akun:
 
 Contoh ID di atas merupakan penanda penjelasan, bukan UUID yang dikirim. DTO lengkap dan tipe dapat diimpor dari [openapi.json](openapi.json). Semua kunci response schema hadir; nilai nullable tetap `null`. Daftar menggunakan `{count,next,previous,results}`, bukan envelope `data`. Query pagination `page` positif, `page_size` 1–100.
 
-OperatorCreate menerima `full_name,email,permission_ids`. Ambil ID integer dari katalog tujuh permission; jangan hardcode angka. Role Operator ditetapkan backend, akun awal nonaktif, password belum dapat dipakai. Admin `manage_operator` memperoleh OperatorAccount termasuk `permission_ids`; Admin `assign_report` saja memperoleh OperatorTarget tanpa email/ID permission. Pengiriman ulang aktivasi Admin menghasilkan metadata challenge pada 202, tanpa kode; kegagalan pengiriman menghasilkan 503.
+OperatorCreate hanya menerima `full_name,email`; akun awal nonaktif dan password belum dapat dipakai. Paket tujuh kewenangan otomatis berlaku setelah akun aktif dan terverifikasi, termasuk bagi Operator lama dengan izin sebagian. `permission_ids` ditolak pada request pembuatan/perubahan. Admin `manage_operator` memperoleh OperatorAccount termasuk `permission_ids` sebagai metadata baca saja untuk paket tetap; `effective_permissions` kosong selama akun belum aktif/terverifikasi. Admin `assign_report` saja memperoleh OperatorTarget tanpa email/ID permission. Pengiriman ulang aktivasi Admin menghasilkan metadata challenge pada 202, tanpa kode; kegagalan pengiriman menghasilkan 503. Katalog izin tetap tersedia untuk membaca riwayat audit lama.
 
 ## Perbedaan dengan simulasi SLR_07
 
@@ -102,4 +104,4 @@ Header `X-Request-ID`, `Retry-After` dan `Idempotency-Replayed` diekspos melalui
 
 ## Uji bersama yang masih perlu dilakukan
 
-Catat browser/versi, OS, viewport dan origin. Telusuri registrasi–email–verifikasi–login, aktivasi Operator, kode salah/kedaluwarsa, resend, reset dan sesi lama, reload/refresh, logout 204, pencabutan permission serta penonaktifan akun. Pastikan route challenge aktual dapat dibuka, keyboard/fokus dan pesan error dipahami pengguna. Bukti manual serta penerimaan kelompok dimasukkan ke checklist penyerahan.
+Catat browser/versi, OS, viewport dan origin. Telusuri registrasi–email–verifikasi–login, aktivasi Operator, kode salah/kedaluwarsa, resend, reset dan sesi lama, reload/refresh, logout 204, pencabutan izin Admin, batas penugasan Operator serta penonaktifan akun. Pastikan route challenge aktual dapat dibuka, keyboard/fokus dan pesan error dipahami pengguna. Bukti manual serta penerimaan kelompok dimasukkan ke checklist penyerahan.

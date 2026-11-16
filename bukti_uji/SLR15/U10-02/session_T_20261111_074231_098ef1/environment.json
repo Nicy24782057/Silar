@@ -1,0 +1,28 @@
+{
+  "collector_version": "1.0.0",
+  "started_utc": "2026-11-11T00:42:31.763341+00:00",
+  "platform": "Windows-11-10.0.22631-SP0",
+  "logical_cpus": 4,
+  "ram_total_bytes": 8173371392,
+  "postgresql": "16.15",
+  "commit": "984e6a5",
+  "backend_processes_initial": [
+    {
+      "pid": 8520,
+      "process_started_at": 1794356857.299
+    },
+    {
+      "pid": 15428,
+      "process_started_at": 1794356857.438
+    }
+  ],
+  "route": "T",
+  "warm_repeats_planned": 3,
+  "sample_interval_s": 0.2,
+  "db_poll_interval_s": 0.5,
+  "analysis_capacity": 1,
+  "ai_cpu_threads": "2",
+  "gemini_timeout_ms": "90000",
+  "analysis_deadline_seconds": "240",
+  "scope": "LOCAL_BACKEND_PROCESS_TREE; NOT_TARGET_VM_BENCHMARK"
+}

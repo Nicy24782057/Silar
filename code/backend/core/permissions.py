@@ -11,11 +11,21 @@ ALL_PERMISSIONS = OPERATOR_PERMISSIONS + ADMIN_PERMISSIONS
 def permission_queryset():
     return Permission.objects.filter(content_type__app_label='core',content_type__model='report',codename__in=ALL_PERMISSIONS)
 
+def operator_permission_ids():
+    """Read-only catalogue IDs for the fixed Operator role, including pending accounts."""
+    return list(permission_queryset().filter(codename__in=OPERATOR_PERMISSIONS)
+                .order_by('id').values_list('id',flat=True))
+
 def effective_permissions(user):
     if not user or not user.is_active or not user.email_verified_at:
         return set()
-    # Deliberately read explicit grants, not has_perm's superuser shortcut or a
-    # stale _perm_cache. ADMIN alone never grants Operator decisions.
+    # Every eligible Operator has the same complete workflow capabilities.
+    # This also covers existing accounts with partial or absent legacy grants.
+    # Assignment and report-state guards are still checked separately.
+    if user.role==Role.OPERATOR:
+        return set(OPERATOR_PERMISSIONS)
+    # Other roles still use current explicit grants, never a superuser shortcut
+    # or stale _perm_cache. ADMIN alone never grants Operator decisions.
     return set(permission_queryset().filter(Q(user=user)|Q(group__user=user)).values_list('codename',flat=True).distinct())
 
 def require_admin(user, permission):

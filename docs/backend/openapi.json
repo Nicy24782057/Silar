@@ -4303,7 +4303,7 @@
       "post": {
         "operationId": "createOperator",
         "summary": "Buat Operator nonaktif",
-        "description": "ADMIN manage_operator. Tidak menerima role/password. SMTP awal gagal tidak menghapus akun; gunakan resend Admin.",
+        "description": "ADMIN manage_operator. Request hanya full_name dan email. Semua akun OPERATOR aktif dan terverifikasi mendapat tujuh kewenangan Operator; akses privat tetap memerlukan penugasan. Tidak menerima role/password/permission_ids. SMTP awal gagal tidak menghapus akun; gunakan resend Admin.",
         "security": [
           {
             "BearerAuth": []
@@ -5013,8 +5013,8 @@
       },
       "patch": {
         "operationId": "patchOperator",
-        "summary": "Ubah akun/izin/nonaktif Operator",
-        "description": "ADMIN manage_operator. Tidak dapat mengaktifkan akun belum verified melalui PATCH.",
+        "summary": "Ubah nama atau status akun Operator",
+        "description": "ADMIN manage_operator. Paket kewenangan tetap berdasarkan peran; permission_ids ditolak. Tidak dapat mengaktifkan akun belum verified melalui PATCH. reason dicatat jika disertakan.",
         "security": [
           {
             "BearerAuth": []
@@ -5381,7 +5381,7 @@
       "get": {
         "operationId": "listOperatorPermissions",
         "summary": "Katalog tujuh izin Operator",
-        "description": "ADMIN manage_operator. ID permission integer framework.",
+        "description": "ADMIN manage_operator. Katalog baca saja untuk metadata dan riwayat audit. ID permission integer framework. Tidak digunakan untuk memilih izin saat membuat/mengubah Operator.",
         "security": [
           {
             "BearerAuth": []
@@ -7459,22 +7459,14 @@
             "type": "string",
             "format": "email",
             "maxLength": 254
-          },
-          "permission_ids": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "minimum": 1
-            },
-            "uniqueItems": true
           }
         },
         "additionalProperties": false,
         "required": [
           "full_name",
-          "email",
-          "permission_ids"
-        ]
+          "email"
+        ],
+        "description": "Admin membuat akun nonaktif dengan nama dan email. Server menetapkan paket tetap tujuh kewenangan Operator; permission_ids tidak diterima dalam request. Pemilik email menyelesaikan aktivasi dan menetapkan sandi sendiri."
       },
       "OperatorPatch": {
         "type": "object",
@@ -7487,17 +7479,28 @@
           "is_active": {
             "type": "boolean"
           },
-          "permission_ids": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "minimum": 1
-            },
-            "uniqueItems": true
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1500,
+            "description": "Alasan perubahan akun; dicatat pada audit bila disertakan."
           }
         },
         "additionalProperties": false,
-        "minProperties": 1
+        "minProperties": 1,
+        "anyOf": [
+          {
+            "required": [
+              "full_name"
+            ]
+          },
+          {
+            "required": [
+              "is_active"
+            ]
+          }
+        ],
+        "description": "Ubah nama/status akun Operator. permission_ids tidak diterima; reason saja bukan perubahan akun. Akun belum terverifikasi tidak dapat diaktifkan melalui PATCH."
       },
       "OperatorPermission": {
         "type": "object",
@@ -7735,22 +7738,24 @@
                 "review_report",
                 "manage_followup",
                 "publish_report",
-                "close_report",
-                "manage_operator",
-                "assign_report",
-                "monitor_report",
-                "view_private_evidence",
-                "view_audit",
-                "monitor_services"
+                "close_report"
               ]
-            }
+            },
+            "readOnly": true,
+            "uniqueItems": true,
+            "description": "Ketujuh kewenangan Operator untuk akun aktif dan terverifikasi; kosong untuk akun belum aktif/terverifikasi. Penugasan dan guard laporan diperiksa terpisah."
           },
           "permission_ids": {
             "type": "array",
             "items": {
               "type": "integer",
               "minimum": 1
-            }
+            },
+            "readOnly": true,
+            "uniqueItems": true,
+            "minItems": 7,
+            "maxItems": 7,
+            "description": "ID katalog paket tetap tujuh kewenangan untuk peran Operator, termasuk akun menunggu aktivasi/nonaktif. Metadata baca saja; bukan daftar izin yang dapat dipilih Admin atau bukti akun berhak mengakses."
           }
         },
         "additionalProperties": false,

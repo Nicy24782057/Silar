@@ -1,0 +1,20 @@
+{
+  "collector_version": "1.0.0",
+  "session": "session_T_20261111_074712_96f91a",
+  "route": "T",
+  "condition": "awal",
+  "trial": 1,
+  "report_id": "84a076d0-281b-477d-afaa-4dee53e7f37f",
+  "run_id": "3af860cc-4d31-4142-aeb6-88408000c497",
+  "status": "SUCCEEDED",
+  "observation": "SUCCEEDED",
+  "backend_total_ms": 90839.194,
+  "http_ms": 96000.0,
+  "input_signature": "48486e05799225a936b83335e5f1430aa982be5c059ebc79c1258cfb9f323439",
+  "cpu_peak_pct_machine_observed": 23.4171,
+  "rss_peak_mib_observed": 728.5469,
+  "samples": 450,
+  "max_sample_gap_s": 0.840947,
+  "comparable": true,
+  "notes": "Durasi HTTP perkiraan dari tampilan Network 1.6 min yang dibulatkan."
+}

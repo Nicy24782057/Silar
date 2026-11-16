@@ -54,25 +54,22 @@ class ProfilePatch(StrictSerializer):
 class OperatorCreate(StrictSerializer):
     full_name=serializers.CharField(max_length=150,trim_whitespace=True)
     email=serializers.EmailField(max_length=254)
-    permission_ids=serializers.ListField(child=serializers.IntegerField(min_value=1),allow_empty=True)
 
 class OperatorPatch(StrictSerializer):
     reason=serializers.CharField(max_length=1500,trim_whitespace=True,required=False)
     full_name=serializers.CharField(max_length=150,trim_whitespace=True,required=False)
     is_active=serializers.BooleanField(required=False)
-    permission_ids=serializers.ListField(child=serializers.IntegerField(min_value=1),required=False,allow_empty=True)
     def validate(self,attrs):
         if not set(attrs)-{'reason'}:raise serializers.ValidationError('Minimal satu field perubahan diperlukan.')
         return attrs
 
 def account_data(user,operator=False,target=False):
-    from core.permissions import effective_permissions,permission_queryset,OPERATOR_PERMISSIONS
-    from django.db.models import Q
+    from core.permissions import effective_permissions,operator_permission_ids
     data={'id':str(user.id),'full_name':user.full_name,'is_active':user.is_active,
           'email_verified_at':user.email_verified_at,'effective_permissions':sorted(effective_permissions(user))}
     if target:return data
     data.update(email=user.email,role=user.role)
     if operator:
-        data['permission_ids']=list(permission_queryset().filter(codename__in=OPERATOR_PERMISSIONS).filter(Q(user=user)|Q(group__user=user)).values_list('id',flat=True).distinct().order_by('id'))
+        data['permission_ids']=operator_permission_ids()
     return data
 

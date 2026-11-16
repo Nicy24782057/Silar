@@ -1,0 +1,89 @@
+{
+  "capacity": 1,
+  "max_active_observed": 1,
+  "active_at_end": 0,
+  "runs": [
+    {
+      "id": "d7341cb0-f56f-4344-9355-065011996589",
+      "report_id": "f0de0353-5a4f-4ce1-a107-d726928065de",
+      "status": "SUCCEEDED",
+      "capacity_slot": 1,
+      "request_record__key": "8b88cd76-8567-44af-87f8-d1c4f46a60a4",
+      "timings_ms": {
+        "NARA": 1809.139,
+        "SENA": 1701.245,
+        "TOTAL": 12334.002,
+        "FUSION": 0.961,
+        "WHISPER": 8261.895,
+        "NARRATIVE": 0.168
+      }
+    },
+    {
+      "id": "da353151-fc8c-4303-a3b0-22b0c0f51c46",
+      "report_id": "37ef1bc5-0d2a-4b64-9364-8007ffdbcb0b",
+      "status": "SUCCEEDED",
+      "capacity_slot": 1,
+      "request_record__key": "abc7be80-63f4-4a12-8bb6-765c541139da",
+      "timings_ms": {
+        "NARA": 538.699,
+        "SENA": 160.897,
+        "TOTAL": 9294.933,
+        "FUSION": 0.447,
+        "WHISPER": 7921.248,
+        "NARRATIVE": 0.064
+      }
+    },
+    {
+      "id": "975ddb86-ce1b-4dc9-b26f-98b50c5b022d",
+      "report_id": "47991592-c75e-4016-bc2e-b06ea91057bb",
+      "status": "SUCCEEDED",
+      "capacity_slot": 1,
+      "request_record__key": "84b6246b-7832-43f8-968f-c3a4041d73e5",
+      "timings_ms": {
+        "NARA": 2233.228,
+        "SENA": 2544.706,
+        "TOTAL": 21870.355,
+        "FUSION": 2.08,
+        "WHISPER": 16313.662,
+        "NARRATIVE": 0.222
+      }
+    },
+    {
+      "id": "0dc76082-1d09-4ebd-976b-e2bbbf9b103a",
+      "report_id": "900beedd-fad7-4097-a2d3-6bb3836bced2",
+      "status": "SUCCEEDED",
+      "capacity_slot": 1,
+      "request_record__key": "612aa1e9-83ec-40a1-aacc-912cb55192c1",
+      "timings_ms": {
+        "NARA": 3374.605,
+        "SENA": 1682.904,
+        "TOTAL": 19845.741,
+        "FUSION": 1.8,
+        "WHISPER": 14041.169,
+        "NARRATIVE": 0.244
+      }
+    }
+  ],
+  "counts": [
+    {
+      "report_id": "37ef1bc5-0d2a-4b64-9364-8007ffdbcb0b",
+      "runs": 1,
+      "ai_cards": 1
+    },
+    {
+      "report_id": "47991592-c75e-4016-bc2e-b06ea91057bb",
+      "runs": 1,
+      "ai_cards": 1
+    },
+    {
+      "report_id": "900beedd-fad7-4097-a2d3-6bb3836bced2",
+      "runs": 1,
+      "ai_cards": 1
+    },
+    {
+      "report_id": "f0de0353-5a4f-4ce1-a107-d726928065de",
+      "runs": 1,
+      "ai_cards": 1
+    }
+  ]
+}
